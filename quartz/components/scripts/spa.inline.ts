@@ -1,17 +1,5 @@
 import micromorph from "micromorph"
 import { FullSlug, RelativeURL, getFullSlug, normalizeRelativeURLs } from "../../util/path"
-// import { init } from "@waline/client"
-
-// document.addEventListener("nav", () => {
-//   const walineElement = document.getElementById("waline")
-//   const walineInstance = init({
-//     el: walineElement,
-//     serverURL: "https://comment.jayclock-garden.top",
-//     comment: true,
-//     login: "force",
-//   })
-//   window.addCleanup(() => walineInstance?.destroy())
-// })
 
 // adapted from `micromorph`
 // https://github.com/natemoo-re/micromorph
