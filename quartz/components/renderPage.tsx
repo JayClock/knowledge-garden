@@ -27,11 +27,7 @@ export function pageResources(
   const contentIndexScript = `const fetchData = fetch("${contentIndexPath}").then(data => data.json())`
 
   return {
-    css: [
-      joinSegments(baseDir, "index.css"),
-      ...staticResources.css,
-      "https://unpkg.com/@waline/client@v3/dist/waline.css",
-    ],
+    css: [joinSegments(baseDir, "index.css"), ...staticResources.css],
     js: [
       {
         src: joinSegments(baseDir, "prescript.js"),
