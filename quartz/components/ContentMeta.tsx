@@ -25,8 +25,11 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
     if (text) {
       const segments: string[] = []
 
+      const timeInfo: string[] = []
+      const articaleInfo: string[] = []
       if (fileData.dates) {
-        segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
+        timeInfo.push(`创建时间：${formatDate(fileData.dates.created, cfg.locale)}`)
+        timeInfo.push(`最后编辑时间：${formatDate(fileData.dates.modified, cfg.locale)}`)
       }
 
       // Display reading time if enabled
@@ -35,10 +38,17 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
           minutes: Math.ceil(minutes),
         })
-        segments.push(displayedTime)
+        const wordCounts = `📖本文约 ${_words} 字`
+        articaleInfo.push(wordCounts)
+        articaleInfo.push(displayedTime)
       }
 
-      return <p class={classNames(displayClass, "content-meta")}>{segments.join(", ")}</p>
+      return (
+        <div>
+          <p class={classNames(displayClass, "content-meta")}>{timeInfo.join("、")}</p>
+          <p class={classNames(displayClass, "content-meta")}>{articaleInfo.join("，")}</p>
+        </div>
+      )
     } else {
       return null
     }
@@ -47,6 +57,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   ContentMetadata.css = `
   .content-meta {
     margin-top: 0;
+    margin-bottom: 2px;
     color: var(--gray);
   }
   `
