@@ -13,8 +13,6 @@ export default ((opts?: Options) => {
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
-        {/* <hr /> */}
-        {/* <div id="waline" spa-preserve="true"></div> */}
         <hr />
         <p>
           {i18n(cfg.locale).components.footer.createdWith}{" "}
