@@ -2,7 +2,6 @@ import { render } from "preact-render-to-string"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import HeaderConstructor from "./Header"
 import BodyConstructor from "./Body"
-import CommentConstructor from "./Comment"
 import { JSResourceToScriptElement, StaticResources } from "../util/resources"
 import { clone, FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path"
 import { visit } from "unist-util-visit"
@@ -194,7 +193,6 @@ export function renderPage(
   } = components
   const Header = HeaderConstructor()
   const Body = BodyConstructor()
-  const Comment = CommentConstructor()
 
   const LeftComponent = (
     <div class="left sidebar">
@@ -237,8 +235,6 @@ export function renderPage(
             </div>
             {RightComponent}
           </Body>
-          <Comment {...componentData} />
-          <hr />
           <Footer {...componentData} />
         </div>
       </body>
