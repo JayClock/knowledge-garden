@@ -16,7 +16,6 @@ export default ((opts?: Options) => {
     const Comment = CommentConstructor()
     return (
       <footer class={`${displayClass ?? ""}`}>
-        <hr />
         <Comment {...componentData} />
         <hr />
         <p>
