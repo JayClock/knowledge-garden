@@ -7,8 +7,10 @@ document.addEventListener("nav", () => {
     el: walineElement,
     serverURL: "https://comment.jayclock-garden.top",
     comment: true,
+    pageview: true,
     login: "force",
     path: date.getTime().toString(),
+    copyright: false,
   })
   window.addCleanup(() => walineInstance?.destroy())
 })
