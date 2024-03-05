@@ -5,7 +5,8 @@ import style from "./styles/comment.scss"
 
 export default (() => {
   const Comment: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
-    return <div id="waline" created-time={`${fileData.dates?.created}`}></div>
+    const createdTimeStamp = new Date(fileData.dates?.created!).getTime().toString()
+    return <div id="waline" data-path={`${createdTimeStamp}`}></div>
   }
 
   Comment.afterDOMLoaded = script
