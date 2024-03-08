@@ -1,3 +1,6 @@
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
 @use "./variables.scss" as *;
 @use "./syntax.scss";
 @use "./callouts.scss";
