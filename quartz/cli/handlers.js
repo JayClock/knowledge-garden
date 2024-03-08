@@ -31,6 +31,10 @@ import {
   cacheFile,
   cwd,
 } from "./constants.js"
+import postcss from "postcss"
+import autoprefixer from "autoprefixer"
+import postcssPresetEnv from "postcss-preset-env"
+import tailwindcss from "tailwindcss"
 
 /**
  * Handles `npx quartz create`
@@ -235,6 +239,15 @@ export async function handleBuild(argv) {
       sassPlugin({
         type: "css-text",
         cssImports: true,
+        async transform(source) {
+          const { css } = await postcss([
+            tailwindcss,
+            autoprefixer,
+            postcssPresetEnv,
+          ]).process(source, { from: undefined })
+          return css
+        },
+        filter: /.(s[ac]ss|css)$/,
       }),
       {
         name: "inline-script-loader",
