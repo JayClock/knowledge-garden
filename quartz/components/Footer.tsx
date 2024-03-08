@@ -2,7 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import style from "./styles/footer.scss"
 import { version } from "../../package.json"
 import { i18n } from "../i18n"
-import CommentConstructor from "./Comment"
+import CommentConstructor from "./comment/Comment"
 
 interface Options {
   links: Record<string, string>
