@@ -4,7 +4,7 @@ import * as Component from "./quartz/components"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  header: [Component.Navigation()],
   footer: Component.Footer({
     links: {
       "沪ICP备2024051021号-1": "https://beian.miit.gov.cn/",
