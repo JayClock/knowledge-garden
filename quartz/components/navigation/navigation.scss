@@ -1,0 +1,14 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  transition: 0.3s;
+}
+
+.fixed {
+  top: 0;
+  background: white;
+}
