@@ -19,7 +19,7 @@ import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
-import Comment from "./Comment"
+import Comment from "./comment/Comment"
 
 export {
   ArticleTitle,

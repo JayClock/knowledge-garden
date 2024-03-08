@@ -1,7 +1,7 @@
-import { QuartzComponent, QuartzComponentProps, QuartzComponentConstructor } from "./types"
+import { QuartzComponent, QuartzComponentProps, QuartzComponentConstructor } from "../types"
 // @ts-ignore
-import script from "./scripts/comment.inline"
-import style from "./styles/comment.scss"
+import script from "./comment.inline"
+import style from "./comment.scss"
 
 export default (() => {
   const Comment: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
