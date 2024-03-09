@@ -19,6 +19,7 @@ import { options } from "./util/sourcemap"
 import { Mutex } from "async-mutex"
 import DepGraph from "./depgraph"
 import { getStaticResourcesFromPlugins } from "./plugins"
+import { execSync } from "child_process"
 
 type Dependencies = Record<string, DepGraph<FilePath> | null>
 
@@ -63,6 +64,10 @@ async function buildQuartz(argv: Argv, mut: Mutex, clientRefresh: () => void) {
   await rimraf(path.join(output, "*"), { glob: true })
   console.log(`Cleaned output directory \`${output}\` in ${perf.timeSince("clean")}`)
 
+  await execSync(
+    `npx tailwindcss -i ./quartz/styles/tailwind.css -o ./public/tailwind.css --minify`,
+  )
+  console.log("create tailwind.css")
   perf.addEvent("glob")
   const allFiles = await glob("**/*.*", argv.directory, cfg.configuration.ignorePatterns)
   const fps = allFiles.filter((fp) => fp.endsWith(".md")).sort()
