@@ -31,17 +31,12 @@ import {
   cacheFile,
   cwd,
 } from "./constants.js"
-import postcss from "postcss"
-import autoprefixer from "autoprefixer"
-import postcssPresetEnv from "postcss-preset-env"
-import tailwindcss from "tailwindcss"
 
 /**
  * Handles `npx quartz create`
  * @param {*} argv arguments for `create`
  */
 export async function handleCreate(argv) {
-  console.log()
   intro(chalk.bgGreen.black(` Quartz v${version} `))
   const contentFolder = path.join(cwd, argv.directory)
   let setupStrategy = argv.strategy?.toLowerCase()
@@ -239,15 +234,6 @@ export async function handleBuild(argv) {
       sassPlugin({
         type: "css-text",
         cssImports: true,
-        async transform(source) {
-          const { css } = await postcss([
-            tailwindcss,
-            autoprefixer,
-            postcssPresetEnv,
-          ]).process(source, { from: undefined })
-          return css
-        },
-        filter: /.(s[ac]ss|css)$/,
       }),
       {
         name: "inline-script-loader",
