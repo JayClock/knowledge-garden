@@ -27,6 +27,7 @@ export const Latex: QuartzTransformerPlugin<Options> = (opts?: Options) => {
           css: [
             // base css
             "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css",
+            "./tailwind.css",
           ],
           js: [
             {
