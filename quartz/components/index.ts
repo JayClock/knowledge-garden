@@ -21,6 +21,7 @@ import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
 import Comment from "./comment/Comment"
 import Navigation from "./navigation/Navigation"
+import PageInfo from "./page-info/PageInfo"
 
 export {
   ArticleTitle,
@@ -46,4 +47,5 @@ export {
   Breadcrumbs,
   Comment,
   Navigation,
+  PageInfo,
 }

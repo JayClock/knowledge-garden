@@ -10,6 +10,7 @@ html {
   text-size-adjust: none;
   overflow-x: hidden;
   width: 100vw;
+  scroll-padding-top: 4rem;
 }
 
 body,
@@ -100,7 +101,7 @@ a {
 }
 
 .desktop-only {
-  display: initial;
+  display: block;
   @media all and (max-width: $fullPageWidth) {
     display: none;
   }
@@ -147,30 +148,16 @@ a {
   }
 
   & > #quartz-body {
-    width: 100%;
     display: flex;
     @media all and (max-width: $fullPageWidth) {
       flex-direction: column;
     }
 
     & .sidebar {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
       gap: 2rem;
-      top: 0;
-      width: $sidePanelWidth;
-      margin-top: $topSpacing;
+      width: 300px;
       box-sizing: border-box;
-      padding: 0 4rem;
-      position: fixed;
-      @media all and (max-width: $fullPageWidth) {
-        position: initial;
-        flex-direction: row;
-        padding: 0;
-        width: initial;
-        margin-top: 2rem;
-      }
+      padding-left: 1rem;
     }
 
     & .sidebar.left {
@@ -182,8 +169,9 @@ a {
     }
 
     & .sidebar.right {
-      right: calc(calc(100vw - $pageWidth) / 2 - $sidePanelWidth);
-      flex-wrap: wrap;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
       & > * {
         @media all and (max-width: $fullPageWidth) {
           flex: 1;

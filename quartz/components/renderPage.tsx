@@ -222,17 +222,7 @@ export function renderPage(
             ))}
           </Header>
           <Body {...componentData}>
-            {LeftComponent}
-            <div class="center">
-              <div class="page-header">
-                <div class="popover-hint">
-                  {beforeBody.map((BodyComponent) => (
-                    <BodyComponent {...componentData} />
-                  ))}
-                </div>
-              </div>
-              <Content {...componentData} />
-            </div>
+            <Content {...componentData} />
             {RightComponent}
           </Body>
           <Footer {...componentData} />

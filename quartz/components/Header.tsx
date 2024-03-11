@@ -2,7 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import style from "./styles/header.scss"
 
 const Header: QuartzComponent = ({ children }: QuartzComponentProps) => {
-  return children.length > 0 ? <header>{children}</header> : null
+  return children.length > 0 ? <header class="page-bg">{children}</header> : null
 }
 
 Header.css = style

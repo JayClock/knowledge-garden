@@ -23,3 +23,11 @@ export function removeAllChildren(node: HTMLElement) {
     node.removeChild(node.firstChild)
   }
 }
+
+export function getScrollPrecent() {
+  const totalHeight = document.body.scrollHeight || document.documentElement.scrollHeight
+  const clientHeight = window.innerHeight || document.documentElement.clientHeight
+  const validHeight = totalHeight - clientHeight
+  const scrollHeight = document.body.scrollTop || document.documentElement.scrollTop
+  return Math.floor((scrollHeight / validHeight) * 100)
+}

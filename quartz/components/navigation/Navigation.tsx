@@ -6,8 +6,11 @@ import script from "./navigation.inline"
 const Navigation: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
   const title = fileData.frontmatter?.title
   return (
-    <div id="nav" class="navigation">
-      {title}
+    <div id="nav" class="navigation h-16 overflow-hidden">
+      <div id="menus" class="menus font-bold">
+        <div class="flex items-center justify-center h-16">menus</div>
+        <div class="flex items-center justify-center h-16">{title}</div>
+      </div>
     </div>
   )
 }
