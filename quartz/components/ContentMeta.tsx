@@ -29,8 +29,11 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
     if (text) {
       const segments: (string | JSX.Element)[] = []
 
+      const timeInfo: string[] = []
+      const articaleInfo: string[] = []
       if (fileData.dates) {
-        segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
+        timeInfo.push(`创建时间：${formatDate(fileData.dates.created, cfg.locale)}`)
+        timeInfo.push(`最后编辑时间：${formatDate(fileData.dates.modified, cfg.locale)}`)
       }
 
       // Display reading time if enabled
@@ -39,22 +42,22 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
           minutes: Math.ceil(minutes),
         })
-        segments.push(displayedTime)
+        const wordCounts = `📖本文约 ${_words} 字`
+        articaleInfo.push(wordCounts)
+        articaleInfo.push(displayedTime)
       }
 
-      const segmentsElements = segments.map((segment) => <span>{segment}</span>)
-
       return (
-        <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
-          {segmentsElements}
-        </p>
+        <div>
+          <p class={classNames(displayClass, "content-meta")}>{timeInfo.join("、")}</p>
+          <p class={classNames(displayClass, "content-meta")}>{articaleInfo.join("，")}</p>
+        </div>
       )
     } else {
       return null
     }
   }
 
-  ContentMetadata.css = style
-
+  ContentMetadata.css = style;
   return ContentMetadata
 }) satisfies QuartzComponentConstructor
