@@ -4,7 +4,7 @@ import clipboardStyle from "./styles/clipboard.scss"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 const Body: QuartzComponent = ({ children }: QuartzComponentProps) => {
-  return <div id="quartz-body">{children}</div>
+  return <div id="quartz-body" class="px-5 py-6 flex">{children}</div>
 }
 
 Body.afterDOMLoaded = clipboardScript

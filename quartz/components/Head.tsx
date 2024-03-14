@@ -16,6 +16,7 @@ export default (() => {
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
 
     const iconPath = joinSegments(baseDir, "static/icon.png")
+    const tailwindPath = joinSegments(baseDir, "tailwind.css")
     const ogImagePath = `https://${cfg.baseUrl}/static/og-image.png`
 
     return (
@@ -36,6 +37,7 @@ export default (() => {
         <meta property="og:width" content="1200" />
         <meta property="og:height" content="675" />
         <link rel="icon" href={iconPath} />
+        <link rel="stylesheet" type="text/css" spa-preserve href={tailwindPath}></link>
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
         {css.map((href) => (

@@ -11,6 +11,7 @@ button#toc {
   & h3 {
     font-size: 1rem;
     display: inline-block;
+    font-weight: 700;
     margin: 0;
   }
 
@@ -55,6 +56,14 @@ button#toc {
   @for $i from 0 through 6 {
     & .depth-#{$i} {
       padding-left: calc(1rem * #{$i});
+      font-size: 16px
     }
   }
+}
+
+.toc {
+  border-radius: 12px;
+  border: 1px solid #e3e8f7;
+  padding: 20px 24px;
+  background: #ffffff;
 }
