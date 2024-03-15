@@ -15,7 +15,7 @@ share: true
 
 以下代码是我们平时常见的对用户信息的处理，比如注册、登陆、根据手机号获取用户信息等。假设我们现在有一个需求，需要实现一个删除用户的功能，在不考虑接口隔离的情况下，就是直接在`UserService`中添加一个`deleteUserByCellphone` 或者`deleteUserByCellphone`，但这样会导致一个问题，所有可以调用获取信息的地方，也可以调用删除的逻辑，很有可能导致误删用户。也就是“获取用户信息接口的调用者，不应该被强迫依赖它不需要的删除用户的接口”。
 
-```Java
+```java
 public interface UserService {
   boolean register(String cellphone, String password);
   boolean login(String cellphone, String password);
