@@ -1,8 +1,9 @@
 ---
 date: 2024-04-10T12:31:17
-updated: 2024-04-10T17:25:43
+updated: 2024-04-11T15:58:27
 share: true
 ---
+![[../../images/test.svg|test.excalidraw]]
 # 逻辑关系
 ## 相似关系
 > 两段信息块存在交叉和重合，表达相同或相近的内容
