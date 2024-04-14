@@ -53,6 +53,20 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
       v,
     ]),
   )
+
+  const current = data.get(slug)
+  const svgContainer = document.querySelectorAll("div.excalidraw-svg")
+
+  svgContainer.forEach((container) => {
+    container.querySelectorAll("a").forEach((a) => {
+      const slug = a.getAttribute("data-slug") as SimpleSlug
+
+      if (slug && !current?.links.includes(slug)) {
+        current?.links.push(slug)
+      }
+    })
+  })
+  
   const links: LinkData[] = []
   const tags: SimpleSlug[] = []
 

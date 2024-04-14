@@ -34,9 +34,12 @@ export const Image: QuartzTransformerPlugin<Partial<Options> | undefined> = (use
                 visit(svgElement, "element", (node) => {
                   if (node.tagName === "a") {
                     const herf = node.properties.href as string
-                    const targetName = herf.slice(2, -2)
-                    const targetSlug = ctx.allSlugs.find((slug) => slug.endsWith(targetName))
-                    node.properties.href = resolveRelative(file.data.slug!, targetSlug!)
+                    if (!herf.includes("http")) {
+                      const targetName = herf.slice(2, -2)
+                      const targetSlug = ctx.allSlugs.find((slug) => slug.endsWith(targetName))
+                      node.properties.href = resolveRelative(file.data.slug!, targetSlug!)
+                      node.properties["data-slug"] = targetSlug
+                    }
                   }
                 })
                 node.children = [svgElement]
