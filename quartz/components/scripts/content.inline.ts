@@ -197,8 +197,8 @@ const addImgMutationObserver = () => {
   observer.observe(targetElement, config)
 }
 
-document.body.querySelectorAll(`div.excalidraw-svg`).forEach((img) => {
-  processSvg(img as HTMLImageElement)
+document.body.querySelectorAll(`div.excalidraw-svg`).forEach((element) => {
+  processSvg(element as HTMLDivElement)
 })
 
 addImgMutationObserver()

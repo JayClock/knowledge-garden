@@ -1,16 +1,3 @@
-@font-face {
-  font-family: "Virgil";
-  src: url("https://excalidraw.com/Virgil.woff2");
-}
-@font-face {
-  font-family: "Cascadia";
-  src: url("https://excalidraw.com/Cascadia.woff2");
-}
-@font-face {
-  font-family: "Assistant";
-  src: url("https://excalidraw.com/Assistant-Regular.woff2");
-}
-
 div.markdown-embed-title {
   display: none;
 }
@@ -24,6 +11,7 @@ div.markdown-embed {
 div.excalidraw-svg {
   /*width: fit-content;*/
   height: 100%;
+  overflow: hidden;
 }
 
 svg.excalidraw-svg {
@@ -71,3 +59,4 @@ a.site-body-left-column-site-name {
 div.site-footer {
   display: none;
 }
+
