@@ -7,6 +7,7 @@ import path from "path"
 import { readFileSync } from "fs"
 import rehypeParse from "rehype-parse"
 import { rehype } from "rehype"
+import { resolveRelative } from "../../util/path"
 
 export const Image: QuartzTransformerPlugin<Partial<Options> | undefined> = (userOpts) => {
   return {
@@ -29,6 +30,15 @@ export const Image: QuartzTransformerPlugin<Partial<Options> | undefined> = (use
                 node.properties = {
                   class: "excalidraw-svg",
                 }
+
+                visit(svgElement, "element", (node) => {
+                  if (node.tagName === "a") {
+                    const herf = node.properties.href as string
+                    const targetName = herf.slice(2, -2)
+                    const targetSlug = ctx.allSlugs.find((slug) => slug.endsWith(targetName))
+                    node.properties.href = resolveRelative(file.data.slug!, targetSlug!)
+                  }
+                })
                 node.children = [svgElement]
               }
             })
