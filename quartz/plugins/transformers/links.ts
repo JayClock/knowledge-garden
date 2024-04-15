@@ -9,11 +9,16 @@ import {
   splitAnchor,
   transformLink,
   joinSegments,
+  resolveRelative,
+  isRelativeURL,
 } from "../../util/path"
 import path from "path"
 import { visit } from "unist-util-visit"
 import isAbsoluteUrl from "is-absolute-url"
-import { Root } from "hast"
+import { ElementContent, Root } from "hast"
+import { readFileSync } from "fs"
+import { rehype } from "rehype"
+import rehypeParse from "rehype-parse"
 
 interface Options {
   /** How to resolve Markdown paths */
@@ -50,6 +55,43 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options> | undefined> =
             }
 
             visit(tree, "element", (node, _index, _parent) => {
+              // svg in images
+              if (
+                node.tagName === "img" &&
+                node.properties &&
+                typeof node.properties.src === "string" &&
+                node.properties.src.endsWith(".svg")
+              ) {
+                const src = transformLink(file.data.slug!, node.properties.src, transformOptions)
+                const startIndex = src.indexOf("images")
+                const absolutePath = path.resolve(`content/${src.slice(startIndex)}`)
+                const svgString = readFileSync(absolutePath).toString()
+                const parser = rehype().use(rehypeParse, { fragment: true })
+                const svgElement = parser.parse(svgString).children[0] as ElementContent
+                delete (svgElement as any).properties.width
+                delete (svgElement as any).properties.height
+                node.tagName = "div"
+                node.properties = {
+                  class: "excalidraw-svg",
+                }
+
+                visit(svgElement, "element", (node) => {
+                  if (node.tagName === "a") {
+                    const herf = node.properties.href as string
+                    if (herf.includes("http")) return
+                    const targetName = herf.slice(2, -2)
+                    const targetSlug = ctx.allSlugs.find((slug) => slug.endsWith(targetName))
+                    outgoing.add(simplifySlug(targetSlug!))
+                    node.properties.href = transformLink(
+                      file.data.slug!,
+                      targetName,
+                      transformOptions,
+                    )
+                  }
+                })
+
+                node.children = [svgElement]
+              }
               // rewrite all links
               if (
                 node.tagName === "a" &&
@@ -100,12 +142,14 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options> | undefined> =
                 // don't process external links or intra-document anchors
                 const isInternal = !(isAbsoluteUrl(dest) || dest.startsWith("#"))
                 if (isInternal) {
+                  if (isRelativeURL(dest)) {
+                    dest = dest.split("/").pop() as RelativeURL
+                  }
                   dest = node.properties.href = transformLink(
                     file.data.slug!,
                     dest,
                     transformOptions,
                   )
-
                   // url.resolve is considered legacy
                   // WHATWG equivalent https://nodejs.dev/en/api/v18/url/#urlresolvefrom-to
                   const url = new URL(dest, "https://base.com/" + stripSlashes(curSlug, true))
