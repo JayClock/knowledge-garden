@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    locale: 'zh-CN',
+    locale: "zh-CN",
     baseUrl: "www.jayclock-garden.top",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
