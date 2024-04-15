@@ -28,7 +28,8 @@ const [isDesktop, isMobile, isTablet] = (() => {
 })()
 
 const addNavigationToDiv = (container: HTMLDivElement) => {
-  const svgElement: SVGElement | null = container?.querySelector(".excalidraw-svg")
+  const svgElement: SVGElement | null = container?.querySelector("svg.excalidraw-svg")
+  
   if (!svgElement) return
   if (!isDesktop) return
 
@@ -197,6 +198,7 @@ const addImgMutationObserver = () => {
   observer.observe(targetElement, config)
 }
 
+console.log(document.body.querySelectorAll(`div.excalidraw-svg`).length)
 document.body.querySelectorAll(`div.excalidraw-svg`).forEach((element) => {
   processSvg(element as HTMLDivElement)
 })
