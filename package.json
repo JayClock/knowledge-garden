@@ -107,6 +107,6 @@
     "rehype": "^13.0.1",
     "rehype-parse": "^9.0.0",
     "tsx": "^4.7.1",
-    "typescript": "^5.4.3"
+    "typescript": "^5.5.2"
   }
 }
