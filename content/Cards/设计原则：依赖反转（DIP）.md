@@ -1,7 +1,9 @@
 ---
 date: 2024-03-17T15:49:04
-updated: 2024-03-17T15:58:43
+updated: 2024-09-14T11:00:11
 share: true
+tags:
+  - design-principles
 ---
 # 如何理解依赖反转原则
 > [!Quote] Dependency Inversion Prin
