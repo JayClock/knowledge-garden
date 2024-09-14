@@ -1,7 +1,9 @@
 ---
 date: 2024-03-08T07:22:14
-updated: 2024-03-08T07:39:31
+updated: 2024-09-14T10:57:07
 share: true
+tags:
+  - design-principles
 ---
 # 如何理解开闭原则
 Open Closed Principle —— software entities (modules, classes, functions, etc) should be open for extension, but closed for modification.
