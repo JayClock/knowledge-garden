@@ -34,6 +34,14 @@ fs.readdirSync(contentDir).forEach((file) => {
   fs.copyFileSync(src, dest)
 })
 
+// 移除 hexo 不支持的双链语法
+fs.readFileSync(postsDir).forEach((file) => {
+  const content = file.toString()
+  const regex = /$$\[.*\| (.*) $$\]/g
+  const updatedContent = content.replace(regex, "$1")
+  fs.writeFileSync(file, updatedContent)
+})
+
 // 切换到仓库 B 目录
 process.chdir(repoBDir)
 
