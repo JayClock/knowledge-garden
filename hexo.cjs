@@ -8,11 +8,11 @@ execSync("git clone git@github.com:JayClock/knowledge-graden-blog.git")
 const repoBDir = path.join(__dirname, "knowledge-graden-blog")
 const contentDir = path.join(__dirname, "content", "Express")
 const postsDir = path.join(repoBDir, "source", "_posts")
+
 execSync("git config core.quotepath false")
 
-const latestCommitHash = execSync("git rev-parse HEAD").toString().trim()
 // 获取 commit 变更的文件列表
-const filesChanged = execSync(`git diff --name-only ${latestCommitHash}`)
+const filesChanged = execSync(`git show HEAD --name-only`)
   .toString()
   .trim()
   .split("\n")
