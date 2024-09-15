@@ -35,11 +35,20 @@ fs.readdirSync(contentDir).forEach((file) => {
 })
 
 // 移除 hexo 不支持的双链语法
-fs.readFileSync(postsDir).forEach((file) => {
-  const content = file.toString()
-  const regex = /$$\[.*\| (.*) $$\]/g
-  const updatedContent = content.replace(regex, "$1")
-  fs.writeFileSync(file, updatedContent)
+fs.readdirSync(postsDir).forEach((file) => {
+  const filePath = path.join(postsDir, file)
+  const content = fs.readFileSync(filePath).toString()
+  const regex = /(!?)\[\[([^\]]+)\]\]/g
+  const matchs = content.match(regex)
+  if (matchs && matchs.length) {
+    let updatedContent = content
+    matchs.forEach((item) => {
+      const link = item.substring(2, item.length - 2)
+      const final = link.split("|")[1].trim()
+      updatedContent = updatedContent.replace(item, final)
+    })
+    fs.writeFileSync(filePath, updatedContent)
+  }
 })
 
 // 切换到仓库 B 目录
