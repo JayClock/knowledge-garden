@@ -8,36 +8,27 @@ execSync("git clone git@github.com:JayClock/knowledge-graden-blog.git")
 const repoBDir = path.join(__dirname, "knowledge-graden-blog")
 const contentDir = path.join(__dirname, "content", "Express")
 const postsDir = path.join(repoBDir, "source", "_posts")
+execSync("git config core.quotepath false")
 
-// 检查是否有文件更新
-const hasChanges = fs.readdirSync(contentDir).some((file) => {
-  const src = path.join(contentDir, file);
-  const dest = path.join(postsDir, file);
-  // 如果目标文件不存在，或者内容不同，则认为有更新
-  return !fs.existsSync(dest) || !fs.readFileSync(src).equals(fs.readFileSync(dest));
-});
+const latestCommitHash = execSync("git rev-parse HEAD").toString().trim()
+// 获取 commit 变更的文件列表
+const filesChanged = execSync(`git diff --name-only ${latestCommitHash}`)
+  .toString()
+  .trim()
+  .split("\n")
+  .filter((file) => file.includes("Express"))
+  .map((file) => file.split("/Express/")[1].trim())
 
-if (!hasChanges) {
-  console.log("没有代码变更，结束程序");
-  process.exit(0);
+// 如果 Express 没有代码变更，则直接退出
+if (filesChanged.length === 0) {
+  console.log("没有输出变更")
+  process.exit(0)
 }
 
-// 确保目标目录存在
-if (!fs.existsSync(postsDir)) {
-  fs.mkdirSync(postsDir, { recursive: true })
-}
-
-// 复制文件
-fs.readdirSync(contentDir).forEach((file) => {
-  const src = path.join(contentDir, file)
-  const dest = path.join(postsDir, file)
-  fs.copyFileSync(src, dest)
-})
-
-// 移除 hexo 不支持的双链语法
-fs.readdirSync(postsDir).forEach((file) => {
-  const filePath = path.join(postsDir, file)
-  const content = fs.readFileSync(filePath).toString()
+filesChanged.forEach((fileName) => {
+  const src = path.join(contentDir, fileName)
+  const dest = path.join(postsDir, fileName)
+  const content = fs.readFileSync(src).toString()
   const regex = /(!?)\[\[([^\]]+)\]\]/g
   const matchs = content.match(regex)
   if (matchs && matchs.length) {
@@ -47,7 +38,7 @@ fs.readdirSync(postsDir).forEach((file) => {
       const final = link.split("|")[1].trim()
       updatedContent = updatedContent.replace(item, final)
     })
-    fs.writeFileSync(filePath, updatedContent)
+    fs.writeFileSync(dest, updatedContent)
   }
 })
 
