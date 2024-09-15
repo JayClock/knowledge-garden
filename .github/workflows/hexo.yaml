@@ -1,0 +1,31 @@
+name: Sync Content to Repo B
+
+on:
+  push:
+    branches:
+      - main # 设置触发 workflow 的分支
+
+jobs:
+  sync_content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: JayClock/knowledge-garden
+          token: ${{ secrets.GITHUB_TOKEN }} # 用于访问仓库 A 的 PAT
+          ref: main
+
+      # 配置 SSH 密钥以访问仓库 B
+      - name: Setup SSH for knowledge-garden-blog
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.KNOWLEDGE_GARGEN_BLOG }} # 用于访问仓库 B 的 SSH 密钥
+      
+      - name: Configuration environment
+        run: |
+          git config --global user.name JayClock
+          git config --global user.email 891853602@qq.com
+
+      # 拷贝文件到仓库 B 的特定目录
+      - name: Copy files to directory in Repo B
+        run: node hexo.cjs
