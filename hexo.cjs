@@ -31,15 +31,15 @@ filesChanged.forEach((fileName) => {
   const content = fs.readFileSync(src).toString()
   const regex = /(!?)\[\[([^\]]+)\]\]/g
   const matchs = content.match(regex)
+  let updatedContent = content
   if (matchs && matchs.length) {
-    let updatedContent = content
     matchs.forEach((item) => {
       const link = item.substring(2, item.length - 2)
       const final = link.split("|")[1].trim()
       updatedContent = updatedContent.replace(item, final)
     })
-    fs.writeFileSync(dest, updatedContent)
   }
+  fs.writeFileSync(dest, updatedContent)
 })
 
 // 切换到仓库 B 目录

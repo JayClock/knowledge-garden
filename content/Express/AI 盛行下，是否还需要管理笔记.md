@@ -1,9 +1,9 @@
 ---
 date: 2024-03-04T22:33:16
-updated: 2024-09-16T13:15:35
+updated: 2024-09-16T21:45:05
 share: true
 title: AI 盛行下，是否还需要管理笔记
-cover: 5. Express/attachments/ai-blog.png
+cover: https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/202409162144760.png
 ---
 
 要回答这个问题，首先我们要明白，我们平时做笔记是为了什么。
