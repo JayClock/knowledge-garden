@@ -1,9 +1,11 @@
 ---
 date: 2024-03-04T22:33:16
-updated: 2024-09-15T20:46:15
+updated: 2024-09-16T13:15:35
 share: true
 title: AI 盛行下，是否还需要管理笔记
+cover: 5. Express/attachments/ai-blog.png
 ---
+
 要回答这个问题，首先我们要明白，我们平时做笔记是为了什么。
 
 笔记总的来说有 2 种作用：
