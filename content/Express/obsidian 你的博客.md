@@ -1,9 +1,11 @@
 ---
 date: 2024-03-05T13:19:38
-updated: 2024-09-17T15:45:54
+updated: 2024-09-17T16:18:27
 share: true
 title: obsidian 你的博客
 tags:
+  - 知识管理
+categories:
   - 知识管理
 ---
 # 背景
