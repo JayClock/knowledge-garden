@@ -1,6 +1,6 @@
 ---
 date: 2024-10-09T15:30:30
-updated: 2024-10-09T17:29:27
+updated: 2024-10-09T17:48:00
 share: true
 ---
 # 业务建模：难以同频的“方法论”
@@ -190,5 +190,5 @@ userService
   .pipe(switchMap((user) => userService.getCurrentWorkspace(user)))
   .subscribe((workspace) => console.log(workspace));
 ```
-# 测试 or 注释？
+
 
