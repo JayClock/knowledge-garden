@@ -28,18 +28,22 @@ if (filesChanged.length === 0) {
 filesChanged.forEach((fileName) => {
   const src = path.join(contentDir, fileName)
   const dest = path.join(postsDir, fileName)
-  const content = fs.readFileSync(src).toString()
-  const regex = /(!?)\[\[([^\]]+)\]\]/g
-  const matchs = content.match(regex)
-  let updatedContent = content
-  if (matchs && matchs.length) {
-    matchs.forEach((item) => {
-      const link = item.substring(2, item.length - 2)
-      const final = link.split("|")[1].trim()
-      updatedContent = updatedContent.replace(item, final)
+  fs.promises
+    .readFile(src)
+    .then((content) => {
+      const regex = /(!?)\[\[([^\]]+)\]\]/g
+      const matchs = content.match(regex)
+      let updatedContent = content
+      if (matchs && matchs.length) {
+        matchs.forEach((item) => {
+          const link = item.substring(2, item.length - 2)
+          const final = link.split("|")[1].trim()
+          updatedContent = updatedContent.replace(item, final)
+        })
+      }
+      fs.writeFileSync(dest, updatedContent)
     })
-  }
-  fs.writeFileSync(dest, updatedContent)
+    .catch(() => fs.promises.rm(dest, { force: true }))
 })
 
 // 切换到仓库 B 目录
