@@ -28,28 +28,35 @@ if (filesChanged.length === 0) {
 filesChanged.forEach((fileName) => {
   const src = path.join(contentDir, fileName)
   const dest = path.join(postsDir, fileName)
-  const content = fs.readFileSync(src).toString()
-  const regex = /(!?)\[\[([^\]]+)\]\]/g
-  const matchs = content.match(regex)
-  let updatedContent = content
-  if (matchs && matchs.length) {
-    matchs.forEach((item) => {
-      const link = item.substring(2, item.length - 2)
-      const final = link.split("|")[1].trim()
-      updatedContent = updatedContent.replace(item, final)
+  fs.promises
+    .readFile(src)
+    .then((content) => {
+      const regex = /(!?)\[\[([^\]]+)\]\]/g
+      const matchs = content.toString().match(regex)
+      let updatedContent = content.toString()
+      if (matchs && matchs.length) {
+        matchs.forEach((item) => {
+          const link = item.substring(2, item.length - 2)
+          const final = link.split("|")[1].trim()
+          updatedContent = updatedContent.replace(item, final)
+        })
+      }
+      fs.writeFileSync(dest, updatedContent)
     })
-  }
-  fs.writeFileSync(dest, updatedContent)
+    .catch(() => fs.promises.rm(dest, { force: true }))
 })
 
 // 切换到仓库 B 目录
 process.chdir(repoBDir)
 
-// 添加更改
-execSync("git add .")
-
-// 提交更改
-execSync('git commit -m "Sync content knowledge-graden"')
-
-// 推送更改到仓库 B
-execSync("git push origin main")
+try {
+  execSync("git add .")
+  const status = execSync("git status --porcelain").toString()
+  if (status.trim().length > 0) {
+    execSync('git commit -m "Sync content knowledge-garden"')
+  } else {
+    console.log("No changes to commit.")
+  }
+} catch (error) {
+  console.error("Error:", error.message)
+}
