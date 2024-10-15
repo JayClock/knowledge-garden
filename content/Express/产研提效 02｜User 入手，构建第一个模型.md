@@ -1,6 +1,6 @@
 ---
 date: 2024-10-09T15:30:30
-updated: 2024-10-15T22:53:36
+updated: 2024-10-16T06:36:14
 share: true
 title: 产研提效 02｜User 入手，构建第一个模型
 categories:
@@ -15,7 +15,7 @@ categories:
 选择 User 接口其实还和业务模型两大难题有关
 1. **没有迭代**：建模不怕差，就怕没有反馈去迭代，而基本每一个功能，都多少和 user 相关，这样可以让建模辐射到更多的人上。
 2. **没有共识**：User 及其直接关联的实体，都是业务早期就定义下来的，相对来说概念分歧较少，也更好的获取团队的共识。
-![[../images/Pasted image 20241008094046.png|Pasted image 20241008094046.png]]
+![Pasted image 20241008094046](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/Pasted%20image%2020241008094046.png)
 在上面的接口信息中，`lastWsInfo` 是一个典型的冗余部分，它反映了后端在同一个接口函数中不断增添内容，导致返回的数据中包含大量与用户信息无关的内容。这种基础的 CURD 接口实现，即使不做后端开发，我们也可以推测其代码结构。例如，在 Java 中，`getUserInfo` 方法可能会调用多个子方法来获取不同的信息，如 `getBaseInfo()` 获取基本信息，`getLastWsInfo()` 获取工作区信息，以及 `getOthers()` 获取其他各种信息，最终将这些信息整合在一起返回给前端。这种设计虽然简化了后端的开发，但却导致了接口的冗余和低效。
 ```Java
 // 整体的代码结构差不多是下面这样，多数情况下甚至不会划分成 getBaseInfo、getLastWsInfo、getOthers 子函数
