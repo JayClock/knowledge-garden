@@ -54,6 +54,7 @@ try {
   const status = execSync("git status --porcelain").toString()
   if (status.trim().length > 0) {
     execSync('git commit -m "Sync content knowledge-garden"')
+    execSync("git push origin main")
   } else {
     console.log("No changes to commit.")
   }
