@@ -1,10 +1,10 @@
 ---
 date: 2024-10-09T15:30:30
-updated: 2024-10-15T07:41:55
+updated: 2024-10-15T10:17:47
 share: true
-title: 02｜User 入手，构建第一个模型
+title: 产研提效 02｜User 入手，构建第一个模型
 categories:
-  - 代码设计与 AI
+  - 产研提效
 ---
 # 从最熟悉的入手
 
