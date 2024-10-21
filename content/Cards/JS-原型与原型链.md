@@ -1,6 +1,6 @@
 ---
 date: 2024-10-12T17:57:32
-updated: 2024-10-15T14:32:44
+updated: 2024-10-21T13:27:53
 share: true
 ---
 # 为什么继承需要调用 super()
@@ -76,37 +76,4 @@ wanglaoshi.eat()
 ![[../images/基于原型的执行规则.png|基于原型的执行规则.png]]
 # 原型链
 原型对象也可能拥有原型，并从中继承方法和属性，一层一层、依次类推。这种关系常常被称为原型链（prototype chain），它解释了为何一个对象会拥有定义在其它对象中的属性和方法。
-![[../images/原型和原型链.png|原型和原型链.png]]
-# 实现一个 new 操作符
-- 创建一个新的对象 obj
-- 将对象与构造函数通过原型链连接起来
-- 将构造函数中的 this 绑定到新建的对象上 obj 上
-- 根据构造函数的返回类型作判断，如果是原始值则被忽略，如果是返回对象，需要正常处理
-
-
-```ts
-function newFn(fn, ...args) {
-	// 创建一个新对象
-  const obj = {}
-  // 新对象的原型指向构造函数原型对象
-  obj.__proto__ = fn.prototype
-  // 将构造函数的this指向新对象
-  let res = fn.apply(obj, args)
-  // 根据返回值判断
-  return res instanceof Object ? res : obj
-}
-```
-# instanceOf 的本质是原型链
-
-```ts
-function instanceOf(left, right) {
-  let proto = left.__proto__
-  while (true) {
-    if (proto == null) return false
-    if (proto === right.prototype) {
-      return true
-    }
-    proto = proto.__proto__
-  }
-}
-```
+![[../images/原型和原型链.png|原型和原型链.png]]```
