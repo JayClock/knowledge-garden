@@ -1,50 +1,49 @@
 ---
 date: 2024-10-12T16:32:06
-updated: 2024-10-12T17:46:57
+updated: 2024-10-25T14:32:22
 share: true
 ---
-# 盒模型宽度计算
-- offsetWidth = (内容宽度 + 内边距 + 边框)，无外边距
-- offsetWidth = 100 + 20 + 2 = 122
-```css
-#div1 {
-  width: 100px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin: 10px;
-  box-sizing: border-box; // offsetWidth 为100
-}
+- 盒模型宽度计算
+	- offsetWidth = (内容宽度 + 内边距 + 边框)，无外边距
+	- offsetWidth = 100 + 20 + 2 = 122
+	```css
+	#div1 {
+	  width: 100px;
+	  padding: 10px;
+	  border: 1px solid #ccc;
+	  margin: 10px;
+	  box-sizing: border-box; // offsetWidth 为100
+	}
 ```
-# margin 纵向重叠问题
-- 相邻元素的 margin-top 和 margin-bottom 会发生重叠
-- 空白内容的 `<p></p>` 也会重叠
-- AAA 和 BBB 之间相距 15px
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>margin 纵向重叠</title>
-    <style type="text/css">
-      p {
-        font-size: 16px;
-        line-height: 1;
-        margin-top: 10px;
-        margin-bottom: 15px;
-      }
-    </style>
-  </head>
-  <body>
-    <p>AAA</p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p>BBB</p>
-  </body>
-</html>
+- margin 纵向重叠问题
+	- 相邻元素的 margin-top 和 margin-bottom 会发生重叠
+	- 空白内容的 `<p></p>` 也会重叠
+	- AAA 和 BBB 之间相距 15px
+	```html
+	<!DOCTYPE html>
+	<html>
+	  <head>
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	    <title>margin 纵向重叠</title>
+	    <style type="text/css">
+	      p {
+	        font-size: 16px;
+	        line-height: 1;
+	        margin-top: 10px;
+	        margin-bottom: 15px;
+	      }
+	    </style>
+	  </head>
+	  <body>
+	    <p>AAA</p>
+	    <p></p>
+	    <p></p>
+	    <p></p>
+	    <p>BBB</p>
+	  </body>
+	</html>
 ```
 # margin 负值问题
 - margin-top 和 margin-left 负值、元素向上、向左移动
