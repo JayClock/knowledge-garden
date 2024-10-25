@@ -1,12 +1,12 @@
 ---
 date: 2024-10-22T10:00:50
-updated: 2024-10-22T10:10:07
+updated: 2024-10-25T16:15:26
 share: true
 ---
 - 组件默认会按照既定层次嵌套渲染
 - 如何让组件渲染到父组件以外？
 - 一些 portals 使用场景，多数处理 css 兼容性问题：
-	1. 父组件 `overflow-hidden`，构造了[[CSS-BFC|CSS-BFC]]
+	1. 父组件 `overflow-hidden`，构造了[[CSS BFC|CSS BFC]]
 	2. 父组件 `z-index` 值太小
 	3. fixed 需要放在 body 第一层级
 
