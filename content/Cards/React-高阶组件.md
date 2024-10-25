@@ -1,9 +1,9 @@
 ---
 date: 2024-10-23T10:59:51
-updated: 2024-10-23T11:03:43
+updated: 2024-10-23T18:11:00
 share: true
 ---
-高阶组件不是一种功能，而是一种类似于工厂的模式
+高阶组件不是一种功能，而是一种类似于工厂的模式，用于多个组件公共逻辑抽离。
 
 ```js
 import React from "react";
@@ -26,7 +26,7 @@ const withMouse = (Component) => {
     render() {
       return (
         <div style={{ height: "500px" }} onMouseMove={this.handleMouseMove}>
-          {/* 1. 透传所有 props 2. 增加 mouse 属性 */}
+          {/* 1. 透传所有 props (Vue: $props v-bind) 2. 增加 mouse 属性 */}
           <Component {...this.props} mouse={this.state} />
         </div>
       );
