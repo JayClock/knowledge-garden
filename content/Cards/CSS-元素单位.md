@@ -1,12 +1,12 @@
 ---
 date: 2024-10-21T13:05:30
-updated: 2024-10-21T13:14:00
+updated: 2024-10-25T16:17:46
 share: true
 ---
 # px
 像素，基本单位
 # %
-相对于父元素的尺寸。比如[[./CSS-定位|CSS-定位]]中，根据 `position: absolute` 居中显示时，需要设置 `left: 50%`
+相对于父元素的尺寸。比如[[./CSS 对齐|CSS 对齐]]中，根据 `position: absolute` 居中显示时，需要设置 `left: 50%`
 
 ```css
 .container {
