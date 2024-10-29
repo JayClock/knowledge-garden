@@ -1,9 +1,9 @@
 ---
 date: 2024-10-21T11:44:18
-updated: 2024-10-21T11:46:37
+updated: 2024-10-26T20:49:38
 share: true
 ---
-instanceOf 的本质是在[[./JS-原型与原型链|原型链]]上查找
+instanceOf 的本质是在[[./JS 原型与原型链|原型链]]上查找
 
 ```ts
 function instanceOf(left, right) {
