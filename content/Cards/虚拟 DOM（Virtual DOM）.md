@@ -1,6 +1,6 @@
 ---
 date: 2024-09-24T22:00:31
-updated: 2024-10-25T14:35:54
+updated: 2024-10-26T22:43:26
 share: true
 ---
 - 出现原因：
@@ -46,3 +46,9 @@ share: true
 	}
 	```
 - 典型的 vdom 库：[snabbdom](https://github.com/snabbdom/snabbdom)
+- vdom 真的很快吗？
+	- vdom 并不快，JS 直接操作 DOM 才是最快的
+	- 但“数据驱动视图”要有合适的技术方案，不能全部 DOM 重建
+	- vdom 就是目前最合适的技术方案（并不是因为它快，而是合适）
+	- svelte 就不用 vdom
+	- angular 用不用？
