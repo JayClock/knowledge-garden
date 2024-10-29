@@ -1,6 +1,6 @@
 ---
 date: 2024-10-23T09:35:47
-updated: 2024-10-23T10:55:31
+updated: 2024-10-27T10:41:46
 share: true
 ---
 # 背景
@@ -27,7 +27,7 @@ shouldComponentUpdate(nextProps, nextState) {
 }
 ```
 
-如果不配合[[./React-setState|state不可变值]]规范去写，比如下面的代码
+如果不配合[[./React setState|state不可变值]]规范去写，比如下面的代码
 
 ```js
 this.state.list.push({

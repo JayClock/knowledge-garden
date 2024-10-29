@@ -1,6 +1,6 @@
 ---
 date: 2024-10-14T15:43:44
-updated: 2024-10-22T09:39:22
+updated: 2024-10-27T10:41:51
 share: true
 ---
 # setState 只能使用不可变值
@@ -25,7 +25,7 @@ this.setState({
 // 注意，不能直接对 this.state.obj 进行属性设置，这样违反不可变值
 ```
 # setState 可能是异步更新
-- 直接使用，是异步的， [[vue-$nextTick|vue-$nextTick]] 联想
+- 直接使用，是异步的， [[vue $nextTick|vue $nextTick]] 联想
 ```js
     this.setState({
         count: this.state.count + 1

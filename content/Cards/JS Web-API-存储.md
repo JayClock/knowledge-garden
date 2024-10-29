@@ -17,7 +17,7 @@ share: true
 - 只能用 document.cookie 来修改，太过简陋
 # localStorage 和 sessionStorage
 
-- [[./HTML|HTML]]5 专门为存储而设计，最大可存5M
+- [[HTML|HTML]]5 专门为存储而设计，最大可存5M
 - API 简单易用 setItem getItem
 - 不会随着 http 请求被发出去
 - localStorage 数据会永久存储，除非代码手动删除
