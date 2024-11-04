@@ -1,6 +1,6 @@
 ---
 date: 2024-10-09T15:30:30
-updated: 2024-10-31T09:54:14
+updated: 2024-11-01T18:31:26
 share: true
 title: 产研提效 02｜User 入手，构建第一个模型
 categories:
@@ -390,109 +390,179 @@ categories:
 
 即使所有文档都保存完好，也很难有人能完完整整地阅读下来。虽然现在有 AI 了，但是没有人能保证系统的实现和文档描述是完全吻合的。错误的业务知识传递，可能在 AI 的情况下比过去更加严重。
 # 隐性概念显性化，降低认知负载
+## 用图片代替文字
 
-我们最优先应该做的，其实是把代码库中，被埋藏在历史长河中的概念提取出来，使其变得可读。这里我举一个用户权限的例子。软件开发中，权限体系是和 user 绑定的至关重要的一环，我们经常会根据全局信息，判断当前用户是否有权限。在常规情况下，我们会在每一个获取权限的地方，进行逻辑上的判断。比如下面这种形式：
+`User` 虽然复杂，但我们提取概念并不需要一步到位，我们完全可以从一些从项目初始就被顶益下来的内容入手。以常见的低代码为例子，大家都有一个常见的工作区功能，简单描述就是“我现在有一个 user 实体，一个 user 实体对应一个 workspace，workspace 对应一个 auth 值对象，用来表明当前用户是工作区管理员还是工作区创建者”。在多数情况下，这些内容只存在于我们的脑海类，对于新入职的员工来说，必须对相关功能具体使用，才会有一个感性的认知。如果写在文档内，也会带来诸如“文档更新不及时”，”文档太长看不下去“的问题。相比文字， UML 一类的流程图传递信息更高。在当前生成式 AI 流行的状态下，我们完全不需要一点点地去绘制出来。只需要再其后面增加一点 prompt:"我现在有一个 user 实体，一个 user 实体对应一个 workspace，workspace 对应一个 auth 值对象，用来表明当前用户是工作区管理员还是工作区创建者，**请将其绘制为 PLANT UML，并标注是实体还是值对象**"
 
-```js
-const wsInfo = this.rootStore.workspaceInfo();
-const auth = wsInfo?.auth;
+经过 deepseek 的帮忙，并，我们可以得到如下最基础的模型图。
 
-return auth === UserWsAuth.ADMIN || auth === UserWsAuth.CREATOR;
+```plantuml
+@startuml
+class User {
+    +String id
+}
+
+class Workspace {
+    +String id
+    +WorkspaceAuth auth
+}
+
+enum WorkspaceAuth {
+    ADMIN
+    CREATOR
+}
+
+User "1" -- "1..*" Workspace : has
+Workspace "1" -- "1" WorkspaceAuth : has
+@enduml
 ```
-由或者是。
-```js
-this.personalWorkSpace = res.filter(ws => ws.auth === UserWsAuth.CREATOR);
-this.otherWorkSpace = res.filter(ws => ws.auth !== UserWsAuth.CREATOR);
-```
+# 用值对象代替枚举
 
-尽管我们可以将判断逻辑抽象至一个  util 函数中，比如 `authUtil.isCreater(auth)`（实际上大部分企业都是这么做的）。但这个方式治标不治本。对于功能描述为“当用户是管理员时，用户可以编辑数据”，直观的描述应该是：
+在我们平时的代码中，我们会在每一个用到权限的地方，进行类似于如下判断代码。
 ```js
-if (user.isCreater()) {
-	user.editData()
+const workspace = this.globalUser.workspaceInfo();
+const auth = workspace?.auth;
+
+return auth === UserWsAuth.CREATOR;
+```
+尽管我们可以将判断逻辑抽象至一个  util 函数中，比如 `WsAuthUtil.isCreater(auth)`（实际上大部分企业都是这么做的）。但这个方式治标不治本。对于用户故事 “当用户是工作区管理员时，用户可以邀请别人”，最能体现业务的描述应该是：
+```js
+if (user.isWorkspaceCreater()) {
+	user.invite()
 }
 ```
 而不是：
 ```js
-if (AuthUtil.isCreater(user.auth)) {
-	user.editData()
+if (WsAuthUtil.isCreater(auth)) {
+	user.invite()
 }
 ```
 
-第二种方法中 `AuthUtil` 它本身只是一些静态方法的集合，这种方法虽然实现了功能，但是并没有明确表达出**用户权限**这个业务概念。而且每一个初次上手代码库的人，不仅需要知道 user 中有权限相关的参数，还需要明确知道代码库中有一个专门叫 `AuthUtil` 来判断权限的类。一旦在人员变动交付的过程中，没有传递好信息，立马就会出现，**不同的人，在不同的地方，用不同的方式写了相同的功能**。即使大家都统一调用工具类方法，也依旧导致业务逻辑分散在各个地方，变成我们平时所说的屎山代码。
+第二种方法中 `WsAuthUtil.isCreater(auth)` 它本身只是一些静态方法的集合，这种方法虽然实现了功能，但是并没有明确表达出**用户工作区权限**这个业务概念。而且每一个初次上手代码库的人，我们除了知道用户可以作为工作区管理员这一信息外，还必须知道**代码库中存在一个叫做 `WsAuthUtil` 的工具类**。这对于代码的学习者来说，是一个额外且不必要的负担。如果在某一次信息传递出现问题，没有明确告知 `WsAuthUtil`工具类的存在，又会在各种地方出现功能类似，写法不同的重复代码。
 
-我们可以基于 DDD 的思想，构造一个叫做 `UserAuth` 的值对象，将各种判断条件写入值对象中，这样在实现层就不需要写大量的判断了。
+在上面的例子中，我们发现，枚举值是一个几乎难以传递信息的代码形式。它只能作为权限的标识符，不能体现权限本身的概念，基于 DDD 的思想，我们构造一个叫做 `UserAuth` 的值对象，将各种判断条件写入值对象中，这样在实现层就不需要写大量的判断了。
 
 ```ts
-enum UserAuthEnum {
+enum WorkspaceAuthEnum {
   MEMBER,
   ADMIN,
   CREATOR,
   DATA_MANAGER,
 }
 
-export class UserAuth {
-  private constructor(private params: { label: string; value: UserAuthEnum }) {}
-
-  readonly label = this.params.label;
-
-  readonly value = this.params.value;
-
-  isMember(): boolean {
-    return this.value === UserAuthEnum.MEMBER;
+export class WorkspaceAuth {
+  private constructor(
+    private params: { label: string; value: WorkspaceAuthEnum }
+  ) {
+    this.label = this.params.label;
+    this.value = this.params.value;
   }
 
-  isAdmin(): boolean {
-    return this.value === UserAuthEnum.ADMIN;
+  readonly label!: string;
+  
+  readonly value!: WorkspaceAuthEnum;
+
+  static readonly MEMBER = new WorkspaceAuth({
+    label: '工作区成员',
+    value: WorkspaceAuthEnum.MEMBER,
+  });
+
+  static readonly ADMIN = new WorkspaceAuth({
+    label: '工作区管理员',
+    value: WorkspaceAuthEnum.ADMIN,
+  });
+
+  static readonly CREATOR = new WorkspaceAuth({
+    label: '工作区创建者',
+    value: WorkspaceAuthEnum.CREATOR,
+  });
+
+  static values(): WorkspaceAuth[] {
+    return Object.values(this).filter((item) => item instanceof WorkspaceAuth);
   }
 
-  isCreater(): boolean {
-    return this.value === UserAuthEnum.CREATOR;
-  }
-
-  static readonly MEMBER = new UserAuth({ label: '成员', value: UserAuthEnum.MEMBER });
-
-  static readonly ADMIN = new UserAuth({ label: '管理元', value: UserAuthEnum.ADMIN });
-
-  static readonly CREATOR = new UserAuth({ label: '创建者', value: UserAuthEnum.CREATOR });
-
-  static values(): UserAuth[] {
-    return Object.values(this).filter(item => item instanceof UserAuth);
-  }
-
-  static valueOf(value: UserAuthEnum): UserAuth {
-    const userAuth = this.values().find(item => item.value === value);
-    if (!userAuth) {
-      throw new Error(`未知的用户权限 ${value}`);
+  static valueOf(value: WorkspaceAuthEnum): WorkspaceAuth {
+    const WorkspaceAuth = this.values().find((item) => item.value === value);
+    if (!WorkspaceAuth) {
+      throw new Error(`未知的工作区权限 ${value}`);
     }
-    return userAuth;
+    return WorkspaceAuth;
   }
 }
 ```
 
-接下去我们在构造 user 实体时，使用 `userAuth` 值对象，在 user 中的权限数据就变为了：
-
+接下去我们在构造 user 和 workspace 实体时，使用 `userAuth` 值对象，在 user 中的权限数据就变为了：
 ```ts
-export interface BackendUser {
-  auth: UserAuthEnum;
+import { WorkspaceAuth } from './workspace-auth';
+
+export interface BackendWorkspace {
+  auth: WorkspaceAuth['value'];
 }
 
-class User {
-  constructor(private backendUser: BackendUser) {}
+export class Workspace {
+  constructor(private backendWorkspace: BackendWorkspace) {}
 
-  auth = UserAuth.valueOf(this.backendUser.auth);
-
-  isCreater = this.auth.isCreater();
-
-  isAdmin = this.auth.isAdmin();
-
-  isMemer = this.auth.isMember();
+  get auth(): WorkspaceAuth {
+    return WorkspaceAuth.valueOf(this.backendWorkspace.auth);
+  }
 }
 ```
-在这样的设计下，我们对 user 的调用逻辑就变为了：
 
 ```ts
-// 拿到 user 权限在前端显示的名称
-user.auth.label
-// 判断用户是否是管理员
-user.isAdmin()
+import { WorkspaceAuth } from '../workspace';
+import { type BackendWorkspace, Workspace } from '../workspace/workspace';
+
+export interface BackendUser {
+  id: number;
+  currentWorkspace: BackendWorkspace;
+}
+
+export class User {
+  constructor(private backendUser: BackendUser) {
+    this.id = this.backendUser.id;
+    this.currentWorkspace = new Workspace(this.backendUser.currentWorkspace);
+  }
+
+  id: number;
+  currentWorkspace: Workspace;
+
+  isWorkspaceCreator(): boolean {
+    return this.currentWorkspace.auth === WorkspaceAuth.CREATOR;
+  }
+}
+```
+在这样的设计下，判断用户是否是工作区管理员，就变为了：
+```ts
+user.isWorkspaceCreator()
+```
+如果我们想知道用户当前工作区权限的具体信息，只需要：
+```ts
+user.currentWorkspace.auth
+```
+# 显性概念隐性化，快速信息传递
+
+到这里为止，其实我们碰到了很多人落地业务建模第一个忽略的点，那就是代码变更后，并没有同步至模型中。这也是多数人落地业务建模时，虽然在考评里写的很多，但从结果上来说，只是在遗留系统之外，由写了一个隐藏大量业务知识的遗留系统。后续开发者的维护成本可想而知。我们现在重新更新一下模型：
+
+```plantuml
+@startuml
+class User <<Entity>> {
+    +String id
+    +Workspace currentWorkspace
+    +isWorkspaceCreator(): boolean
+}
+
+class Workspace <<Entity>> {
+    +String id
+    +String name
+    +WorkspaceAuth auth
+}
+
+enum WorkspaceAuth <<Value Object>> {
+    ADMIN
+    CREATOR
+}
+
+User "1" -- "1..*" Workspace : has
+Workspace "1" -- "1" WorkspaceAuth : has
+@enduml
 ```
