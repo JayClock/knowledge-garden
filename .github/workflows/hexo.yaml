@@ -9,7 +9,7 @@ jobs:
   sync_content:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: JayClock/knowledge-garden
           token: ${{ secrets.GITHUB_TOKEN }} # 用于访问仓库 A 的 PAT
@@ -17,7 +17,7 @@ jobs:
 
       # 配置 SSH 密钥以访问仓库 B
       - name: Setup SSH for knowledge-garden-blog
-        uses: webfactory/ssh-agent@v0.5.4
+        uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.KNOWLEDGE_GARGEN_BLOG }} # 用于访问仓库 B 的 SSH 密钥
       
