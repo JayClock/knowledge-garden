@@ -1,7 +1,9 @@
 ---
 date: 2024-10-21T10:53:57
-updated: 2024-10-21T11:48:14
+updated: 2024-12-31T18:09:30
 share: true
+tags:
+  - review
 ---
 ```ts
 import { MyPromise } from './my-promise';

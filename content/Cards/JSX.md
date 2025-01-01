@@ -1,8 +1,10 @@
 ---
 date: 2024-09-24T17:02:14
-updated: 2024-09-24T18:09:31
+updated: 2024-12-31T18:13:55
 share: true
 source: https://facebook.github.io/jsx/
+tags:
+  - review
 ---
 - JSX 就是 React?
 	- 不是。JSX 只是 React 其中一个 API，`createElement` 函数的语法糖 

@@ -1,7 +1,9 @@
 ---
 date: 2024-10-25T16:16:45
-updated: 2024-10-25T16:16:53
+updated: 2024-12-31T18:11:53
 share: true
+tags:
+  - review
 ---
 - absolute 和 relateive 分别依据什么定位
 	- relative 依据自身定位

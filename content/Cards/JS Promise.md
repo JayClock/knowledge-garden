@@ -1,7 +1,12 @@
 ---
 date: 2024-10-19T14:19:16
-updated: 2024-10-25T14:34:00
+updated: 2024-12-31T18:21:43
 share: true
+tags:
+  - review
+sr-due: 2025-01-04
+sr-interval: 4
+sr-ease: 270
 ---
 
 - 三种状态

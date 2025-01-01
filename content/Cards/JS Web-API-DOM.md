@@ -1,7 +1,9 @@
 ---
 date: 2024-10-12T18:00:52
-updated: 2024-10-16T09:31:26
+updated: 2024-12-31T18:13:49
 share: true
+tags:
+  - review
 ---
 # DOM 本质
 DOM 本质是一颗树，首先 [[HTML|HTML]] 本身是一个树形的结构，HTML 是文件或者代码，DOM 是浏览器内存中初始化好的书。DOM 本质是**浏览器从 HTML 语言中解析出来的一颗树**。

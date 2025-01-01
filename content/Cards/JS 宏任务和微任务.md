@@ -1,7 +1,9 @@
 ---
 date: 2024-10-19T18:40:14
-updated: 2024-10-26T20:49:46
+updated: 2024-12-31T18:12:56
 share: true
+tags:
+  - review
 ---
 - 宏任务和微任务
 	- 宏任务：setTimeout，setInterval，Ajax，[[./JS Web-API-DOM|DOM]] 事件

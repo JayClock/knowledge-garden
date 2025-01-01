@@ -1,7 +1,9 @@
 ---
 date: 2024-10-12T18:02:01
-updated: 2024-10-16T09:52:48
+updated: 2024-12-31T18:13:44
 share: true
+tags:
+  - review
 ---
 # 核心 API - XMLHttpRequest
 
