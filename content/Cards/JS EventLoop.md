@@ -1,7 +1,9 @@
 ---
 date: 2024-10-19T11:00:11
-updated: 2024-10-26T22:37:21
+updated: 2024-12-31T18:13:29
 share: true
+tags:
+  - review
 ---
 - 浏览器中的事件循环
 	- 同步代码，一行一行访在 Call Stack 执行
