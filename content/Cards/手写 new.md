@@ -1,7 +1,9 @@
 ---
 date: 2024-10-21T13:25:41
-updated: 2024-10-21T13:32:38
+updated: 2024-12-31T18:09:26
 share: true
+tags:
+  - review
 ---
 # new 一个对象的过程
 - 创建一个新的对象 obj
