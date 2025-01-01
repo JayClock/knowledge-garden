@@ -1,7 +1,9 @@
 ---
 date: 2024-10-25T16:32:14
-updated: 2024-10-25T16:34:10
+updated: 2024-12-31T18:13:02
 share: true
+tags:
+  - review
 ---
 通过 typeof 运算符判断
 
