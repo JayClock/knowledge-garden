@@ -1,7 +1,12 @@
 ---
 date: 2024-10-12T17:57:32
-updated: 2024-10-25T14:41:57
+updated: 2024-12-31T18:21:36
 share: true
+tags:
+  - review
+sr-due: 2025-01-04
+sr-interval: 4
+sr-ease: 270
 ---
 # 为什么继承需要调用 super()
 
