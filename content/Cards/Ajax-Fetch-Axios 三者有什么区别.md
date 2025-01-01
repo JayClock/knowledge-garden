@@ -1,7 +1,9 @@
 ---
 date: 2024-10-12T15:57:33
-updated: 2024-10-12T16:07:31
+updated: 2024-12-31T18:11:49
 share: true
+tags:
+  - review
 ---
 三者都用于网络请求，但是不同纬度
 - Ajax（Asynchronous Javascript and XML）一种技术统称
