@@ -1,7 +1,9 @@
 ---
 date: 2024-10-14T15:33:55
-updated: 2024-10-14T15:38:01
+updated: 2024-12-31T18:14:17
 share: true
+tags:
+  - review
 ---
 # 事件为何绑定 this
 ```jsx
