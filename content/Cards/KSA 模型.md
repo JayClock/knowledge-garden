@@ -1,7 +1,9 @@
 ---
 date: 2024-04-20T13:22:09
-updated: 2024-04-20T13:38:17
+updated: 2024-12-31T18:14:00
 share: true
+tags:
+  - review
 ---
 一个阐述了知识与技能的区别与联系的模型。分为知识（Knowledge）、技能（Skill）、才华框架（Abilities framework）
 
