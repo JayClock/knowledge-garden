@@ -1,12 +1,9 @@
 ---
 date: 2024-03-14T11:22:36
-updated: 2024-12-31T18:21:24
+updated: 2025-01-02T10:28:32
 share: true
 tags:
   - review
-sr-due: 2025-01-04
-sr-interval: 4
-sr-ease: 270
 ---
 Cynefin框架是一种识别复杂性的方式。限定在知识管理和知识传递的场景里，归类为有因果关系定义的五个“领域”。分别为：清晰（Clear）、庞杂（Complicated）、复杂（Complex）、混乱（Chaotic）、困惑（Confused / Aporetic），混乱和困惑都是我们平时需要极力避免的，可以不用深入探索。
 
