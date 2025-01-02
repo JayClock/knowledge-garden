@@ -3,12 +3,9 @@ tags:
   - 知识管理
   - review
 share: true
-updated: 2024-12-31T18:21:35
+updated: 2025-01-02T10:28:32
 date: 2024-02-06T22:01:19
 source: https://book.douban.com/subject/36089614
-sr-due: 2025-01-04
-sr-interval: 4
-sr-ease: 270
 ---
 INKP 是由《打开心智》作者提出的一种记录笔记、组织笔记的方法
 - 一个原则：一张知识卡片就是一个概念

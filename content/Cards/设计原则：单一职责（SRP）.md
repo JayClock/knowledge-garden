@@ -1,13 +1,10 @@
 ---
 date: 2024-03-07T22:08:11
-updated: 2024-12-31T18:25:20
+updated: 2025-01-02T10:28:32
 share: true
 tags:
   - design-principles
   - review
-sr-due: 2025-01-04
-sr-interval: 4
-sr-ease: 270
 ---
 # 如何理解单一职责原则
 Single Responsibility Principle —— A class or module should have a single responsibility

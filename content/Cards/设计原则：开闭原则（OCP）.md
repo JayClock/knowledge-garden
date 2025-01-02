@@ -1,6 +1,6 @@
 ---
 date: 2024-03-08T07:22:14
-updated: 2024-12-31T18:09:04
+updated: 2025-01-02T10:28:32
 share: true
 tags:
   - design-principles

@@ -1,6 +1,6 @@
 ---
 date: 2024-10-22T09:44:17
-updated: 2024-12-31T18:14:23
+updated: 2025-01-02T10:28:32
 share: true
 source: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 tags:
