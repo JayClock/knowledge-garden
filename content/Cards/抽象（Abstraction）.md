@@ -1,12 +1,9 @@
 ---
 date: 2024-03-07T09:58:34
-updated: 2024-12-31T18:04:16
+updated: 2025-01-02T10:28:32
 share: true
 tags:
   - review
-sr-due: 2025-01-04
-sr-interval: 4
-sr-ease: 270
 ---
 # 定义
 
