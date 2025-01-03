@@ -1,6 +1,6 @@
 ---
 date: 2024-10-09T15:37:23
-updated: 2024-10-15T10:18:52
+updated: 2024-11-07T09:49:52
 share: true
 title: 产研提效 05｜从 on boarding 看要成为怎样的程序员
 categories:
@@ -88,3 +88,6 @@ on boarding，指的是企业从面试招人，到验证这个人是否符合公
 4. 由可测试性引出的代码设计能力（设计模式）
 
 埋点设计
+
+
+Protocol 和 restful API
