@@ -1,6 +1,6 @@
 ---
 date: 2024-10-09T15:37:23
-updated: 2024-11-07T09:49:52
+updated: 2025-02-19T10:50:34
 share: true
 title: 产研提效 05｜从 on boarding 看要成为怎样的程序员
 categories:
