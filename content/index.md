@@ -1,7 +1,7 @@
 ---
 share: true
 date: 2024-02-06T11:14:12
-updated: 2025-04-13T22:22:59
+updated: 2025-04-15T13:25:19
 title: 终结者的数字花园
 ---
 hello 👋，我是 JayClock，一个默默无闻，努力想办法提升自己的前端工程师，目前在用 angular 做低代码行业相关的工作。
@@ -17,7 +17,7 @@ hello 👋，我是 JayClock，一个默默无闻，努力想办法提升自己�
 
 - 关于本站
 	- 域名：阿里云
-	- 记录：Obsidian + [lifeOS](https://obsidian-life-os.netlify.app/zh/)
+	- 记录：Obsidian
 	- 格式：Markdown
 	- 托管：[Vercel](https://vercel.com/dashboard)
 	- CDN：阿里云
