@@ -1,7 +1,9 @@
 ---
 date: 2025-04-16T13:14:31
-updated: 2025-04-17T10:35:08
+updated: 2025-04-17T22:02:31
 share: true
+in:
+  - "[[Maps|Maps]]"
 ---
 - 为什么需要 Hooks ?
 	1.  React 组件之间不会互相继承，我们不推荐创建一个 Button 组件，然后再创建一个 Dropdown Button 来继承 Button
@@ -13,6 +15,24 @@ share: true
 	1. [[../Cards/React-useState|useState]]
 	2. [[../Cards/React-useEffect|useEffect]]
 	3. [[ React-useCallback|useCallback]]
+	4. [[../Cards/React-useMemo|useMemo]]
+	5. [[../Cards/React-useRef|useRef]]
 - hooks 定义规则：
 	1. 所有 hook 必须被执行到，也就是不能放在判断条件中
-	2. 所有 hook 必须按照顺序执行
+	2. 所有 hook 必须按照顺序执行。
+- 四个典型的使用场景
+	1. 抽取业务逻辑
+	2. 封装通用逻辑
+	3. 监听浏览器状态
+	4. 拆分复杂组件
+
+
+tanstack query
+
+本身19已经支持 async function
+
+常用的第三方库
+1. lodash
+2. ant design 
+3. material ui
+4. react-use
