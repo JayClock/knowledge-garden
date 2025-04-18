@@ -1,10 +1,9 @@
 ---
 date: 2024-10-22T09:51:40
-updated: 2025-02-19T10:50:36
+updated: 2025-04-17T16:53:12
 share: true
 tags:
   - review
 ---
 - 是一个纯函数，输入 props，输出 JSX
-- 因为不是 class，所以没有实例，没有生命周期，没有 state
-- 不能拓展其他方法
+- 因为不是 class，所以没有实例，没有生命周期，没有 state 属性，需要使用 [[../Knowledges/React-Hooks|React-Hooks]]
