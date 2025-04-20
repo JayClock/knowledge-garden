@@ -1,6 +1,6 @@
 ---
 date: 2024-04-11T17:55:51
-updated: 2025-04-18T22:10:43
+updated: 2025-04-19T20:03:27
 share: true
 ---
 > 在“理解需求，明白架构”是一切工程化软件开发的前提，那么 TDD 就是目前已知的**工程效能最高**的办法
@@ -35,5 +35,7 @@ share: true
 - vibe codeing 是完全与 tdd 相反的实践：
 	所谓 vibe codeing，就是把需求告诉 ai，让 ai 去实现，如果运行错误，就把控制台的报错，贴给 ai 去修复，然后循环往复。
 	这个和我们平时的“跑一下，看看效果，再修改”的 debug 编码模式并没有任何区别，整个软件开发过程中，开发者始终处于 Complicated 认知模式[^1]下，并没有理解业务和代码的过程（这也是我们平时重复工作感的来源），在这种模式下写出来的代码，自然也不会有什么可读性。
+- 合适的与 ai 协作的模式
+	![Pasted image 20250419200257](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/Pasted%20image%2020250419200257.png)
 
 [^1]: [[./Cynefin框架|Cynefin框架]]
