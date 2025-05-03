@@ -1,6 +1,6 @@
 ---
 date: 2024-10-21T13:25:41
-updated: 2025-02-19T10:50:37
+updated: 2025-05-02T16:35:55
 share: true
 tags:
   - review
@@ -12,15 +12,13 @@ tags:
 - 根据构造函数的返回类型作判断，如果是原始值则被忽略，如果是返回对象，需要正常处理
 
 ```ts
-function newFn(fn, ...args) {
-	// 创建一个新对象
-  const obj = {}
-  // 新对象的原型指向构造函数原型对象
-  obj.__proto__ = fn.prototype
-  // 将构造函数的this指向新对象
-  let res = fn.apply(obj, args)
-  // 根据返回值判断
-  return res instanceof Object ? res : obj
+function myNew(constructor, ...args) {
+  // 创建一个空对象，该对象的原型为构造函数的原型对象
+  var obj = Object.create(constructor.prototype);
+  // 将构造函数的 this 绑定到该空对象上，执行构造函数的代码
+  var result = constructor.apply(obj, args);
+  // 如果构造函数有显式返回一个对象，则返回该对象，否则返回空对象
+  return (typeof result === 'object' && result !== null) ? result : obj;
 }
 ```
 # Object.create 和 {} 的区别
