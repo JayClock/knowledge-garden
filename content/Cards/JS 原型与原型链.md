@@ -1,6 +1,6 @@
 ---
 date: 2024-10-12T17:57:32
-updated: 2025-02-19T10:50:37
+updated: 2025-05-02T14:41:29
 share: true
 tags:
   - review
@@ -75,7 +75,7 @@ wanglaoshi.eat()
 1. 获取属性 xialuo.name 或执行方法 xialuo.sayHi() 时
 2. 先在自身属性和方法寻找
 3. 如果找不到则自动去 `_proto_` 中查找
-![[../images/基于原型的执行规则.png|基于原型的执行规则.png]]
+![基于原型的执行规则](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E5%9F%BA%E4%BA%8E%E5%8E%9F%E5%9E%8B%E7%9A%84%E6%89%A7%E8%A1%8C%E8%A7%84%E5%88%99.png)
 # 原型链
 原型对象也可能拥有原型，并从中继承方法和属性，一层一层、依次类推。这种关系常常被称为原型链（prototype chain），它解释了为何一个对象会拥有定义在其它对象中的属性和方法。
-![[../images/原型和原型链.png|原型和原型链.png]]```
+![原型和原型链](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE.png)```
