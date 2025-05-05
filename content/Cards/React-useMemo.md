@@ -1,8 +1,8 @@
 ---
 date: 2025-04-17T10:36:30
-updated: 2025-04-17T11:08:30
+updated: 2025-05-05T09:37:31
 up:
-  - "[[React-Hooks|React-Hooks]]"
+  - "[[React Hooks|React Hooks]]"
 share: true
 ---
 - 背景：如果某个数据时通过其它数据得到的，那么只有当用到的数据，也就是依赖的数据发生变化时，才应该需要重新计算。

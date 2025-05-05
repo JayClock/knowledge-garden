@@ -1,8 +1,8 @@
 ---
 date: 2025-04-17T10:21:36
-updated: 2025-04-17T10:34:01
+updated: 2025-05-05T09:37:31
 up:
-  - "[[React-Hooks|React-Hooks]]"
+  - "[[React Hooks|React Hooks]]"
 share: true
 ---
 - 背景：在 React 组件中，每一次 UI 的变化，都是通过重新执行整个函数来完成的，并没有一个直接的方式，在多次渲染之间维持一个状态。
