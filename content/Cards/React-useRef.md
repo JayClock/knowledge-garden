@@ -1,8 +1,8 @@
 ---
 date: 2025-04-17T16:31:32
-updated: 2025-04-17T16:35:54
+updated: 2025-05-05T09:37:31
 up:
-  - "[[React-Hooks|React-Hooks]]"
+  - "[[React Hooks|React Hooks]]"
 share: true
 ---
 - 背景：在 class 组件中，我们可以定义类的成员变量，来保存一些数据，但是在函数组件中，没有这样一个空间去保存数据。
