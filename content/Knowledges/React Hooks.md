@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16T13:14:31
-updated: 2025-05-05T09:50:34
+updated: 2025-05-06T10:14:30
 share: true
 in:
   - "[[Maps|Maps]]"
@@ -17,7 +17,7 @@ in:
 	3. [[../Cards/React-useCallback|useCallback]]
 	4. [[../Cards/React-useMemo|useMemo]]
 - 副作用 Hooks
-	1. [[../Cards/React-useEffect|useEffect]]：用于在函数组件中执行副作用操作（如数据获取、订阅、手动 DOM 操作等）
+	1. [[../Cards/React useEffect|useEffect]]：用于在函数组件中执行副作用操作（如数据获取、订阅、手动 DOM 操作等）
 	2. useLayoutEffect：与 useEffect 类似，但在 DOM 更新后同步执行，适用于需要直接操作 DOM 的场景
 - 上下文 Hooks
 	1. useContext：用于访问 React 的上下文
