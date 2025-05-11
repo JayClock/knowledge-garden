@@ -1,9 +1,11 @@
 ---
 date: 2025-05-10T22:45:27
-updated: 2025-05-10T22:47:45
+updated: 2025-05-11T16:41:59
 share: true
 ---
 超文本传输安全协议（Hypertext Transfer Protocol Secure，简称：HTTPS）是一种通过计算机网络进行安全通信的传输协议。HTTPS经由HTTP进行通信，利用SSL/TLS来加密数据包。HTTPS的主要目的是提供对网站服务器的身份认证，保护交换数据的隐私与完整性。
+
+![HTTP VS HTTPS](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/HTTP%20VS%20HTTPS.png)
 
 HTTP协议采用**明文传输**信息，存在**信息窃听**、**信息篡改**和**信息劫持**的风险，而协议TLS/SSL具有**身份验证**、**信息加密**和**完整性校验**的功能，可以避免此类问题发生。
 
