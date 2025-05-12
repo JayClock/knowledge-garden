@@ -1,6 +1,6 @@
 ---
 date: 2025-05-09T19:13:30
-updated: 2025-05-12T22:49:58
+updated: 2025-05-12T22:54:20
 share: true
 in:
   - "[[Maps|Maps]]"
@@ -16,6 +16,7 @@ in:
 	- [[../Cards/DNS 解析|DNS 解析]] 获取 IP 地址
 	- 获取 MAC 地址
 	- [[../Cards/HTTPS|HTTPS]] 握手（可能有）
+	- 等待 [[../Cards/TCP|TCP]] 队列，Chrome 统一域名同时建立 6 个 [[../Cards/TCP|TCP]] 连接
 	- 建立 [[../Cards/TCP|TCP]] 连接，浏览器端构建请求行，[[../Cards/HTTP 常见请求头|请求头]]等信息
 	- 剩下的是 [[../Cards/OSI 七层模型|OSI 七层模型]] 下几层处理
 - 网络进程接收到了[[../Cards/浏览器常见响应头|响应头]]数据，解析响应头数据，并将数据转发给浏览器进程；
