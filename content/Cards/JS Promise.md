@@ -1,96 +1,79 @@
 ---
 date: 2024-10-19T14:19:16
-updated: 2025-01-02T10:28:32
+updated: 2025-05-13T19:58:48
 share: true
 tags:
   - review
 ---
+**1. 什么是 Promise？**
 
-- 三种状态
-	- pending resolved rejected
-	- pending -> reolved 或 pending -> rejected
-	- 变化不可逆
-		```js
-		// 刚定义时，状态默认为 pending
-		const p1 = new Promise((resolve, reject) => {})
-		
-		// 执行 resolve() 后，状态变成 resolved
-		const p2 = new Promise((resolve, reject) => {
-		    setTimeout(() => {
-		        resolve()
-		    })
-		})
-		
-		// 执行 reject() 后，状态变成 rejected
-		const p3 = new Promise((resolve, reject) => {
-		    setTimeout(() => {
-		        reject()
-		    })
-		})
-		```
-- 状态表现
-	- pending 状态，不会触发 then 和 catch
-	- resolved 状态，会触发后续的 then 回调函数
-	- rejected 状态，会触发后续的 catch 回调函数
-# then 和 catch 改变状态
-- then 正常返回 resolved，里面有报错则返回 rejected
-- catch 正常返回 resolved，里面有报错则返回 rejected
+> **Promise 是 JavaScript 处理异步操作的一种方式**，用于解决回调地狱（Callback Hell）问题。
+> 它表示一个未来才会完成（或失败）的异步操作，并提供 `.then()`、`.catch()`、`.finally()` 方法进行处理。
+
+**2. Promise 的基本用法**
+
+**创建一个 Promise**
 
 ```js
-// then() 一般正常返回 resolved 状态的 promise
-Promise.resolve().then(() => {
-    return 100
-})
-
-// then() 里抛出错误，会返回 rejected 状态的 promise
-Promise.resolve().then(() => {
-    throw new Error('err')
-})
-
-// catch() 不抛出错误，会返回 resolved 状态的 promise
-Promise.reject().catch(() => {
-    console.error('catch some error')
-})
-
-// catch() 抛出错误，会返回 rejected 状态的 promise
-Promise.reject().catch(() => {
-    console.error('catch some error')
-    throw new Error('err')
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    let success = true
+    success ? resolve('操作成功') : reject('操作失败')
+  }, 1000)
 })
 ```
 
+**使用 `then`、`catch` 处理结果**
 
 ```js
-// 第一题
-Promise.resolve().then(() => {
-    console.log(1)
-}).catch(() => {
-    console.log(2)
-}).then(() => {
-    console.log(3)
-})
-
-// 1, 3
-
-// 第二题
-Promise.resolve().then(() => { // 返回 rejected 状态的 promise
-    console.log(1)
-    throw new Error('erro1')
-}).catch(() => { // 返回 resolved 状态的 promise
-    console.log(2)
-}).then(() => {
-    console.log(3)
-})
-// 1, 2, 3
-
-// 第三题
-Promise.resolve().then(() => { // 返回 rejected 状态的 promise
-    console.log(1)
-    throw new Error('erro1')
-}).catch(() => { // 返回 resolved 状态的 promise
-    console.log(2)
-}).catch(() => {
-    console.log(3)
-})
-// 1, 2
+myPromise
+  .then((result) => console.log('成功:', result)) // 处理成功
+  .catch((error) => console.log('失败:', error)) // 处理失败
+  .finally(() => console.log('操作结束')) // 无论成功或失败都会执行
 ```
+
+**3. Promise 串行执行**
+
+**多个异步操作依次执行（避免回调地狱）**
+
+```js
+function step1() {
+  return new Promise((resolve) => setTimeout(() => resolve('Step 1 完成'), 1000))
+}
+function step2() {
+  return new Promise((resolve) => setTimeout(() => resolve('Step 2 完成'), 1000))
+}
+
+step1()
+  .then((result) => {
+    console.log(result)
+    return step2() // 返回 Promise
+  })
+  .then((result) => console.log(result))
+  .catch((error) => console.error('错误:', error))
+```
+
+**4. Promise 并行执行**
+
+**多个异步任务同时执行，全部完成后再处理**
+
+```js
+const p1 = new Promise((resolve) => setTimeout(() => resolve('任务 1'), 1000))
+const p2 = new Promise((resolve) => setTimeout(() => resolve('任务 2'), 1500))
+
+Promise.all([p1, p2])
+  .then((results) => console.log('所有任务完成:', results))
+  .catch((error) => console.error('任务失败:', error))
+```
+
+**如果只要最快完成的结果**
+
+```js
+Promise.race([p1, p2])
+  .then((result) => console.log('最先完成的:', result))
+  .catch((error) => console.error('失败:', error))
+```
+
+**5. 面试回答总结**
+
+> **Promise 解决异步回调问题，提供 `.then()`、`.catch()`、`.finally()` 处理状态变化。支持 `Promise.all()` 并行执行，`Promise.race()` 竞争执行。用 `async/await` 可以让异步代码更清晰。**
