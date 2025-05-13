@@ -1,6 +1,6 @@
 ---
 date: 2025-05-05T11:14:49
-updated: 2025-05-08T20:13:48
+updated: 2025-05-13T22:31:52
 share: true
 ---
 1. **Fiber 架构的本质与设计目标**：Fiber 是 React 16+ 的**核心算法重写**，本质是**基于链表的增量式协调模型**。其核心目标并非单纯提升性能，而是重构架构以实现：  
@@ -64,12 +64,12 @@ share: true
 			- 每次循环执行一个 Fiber 节点，生成子 Fiber 并连接成树。  
 			- 通过 `requestIdleCallback`（或 Scheduler 包）在浏览器空闲时段执行，避免阻塞主线程。  
 		- **对比策略**：根据 `key` 和 `type` 复用节点，标记 `Placement`（新增）、`Update`（更新）、`Deletion`（删除）等副作用。  
+		- **[[./React batchUpdate|React 批处理]]**：React 会收集所有优先级相同的更新，合并它们，然后生成最终的更新计划
 		- **执行流程**：
 			-  当 state 或者 context 更新时，react 会进入渲染阶段，Fiber 协调引擎会从根部开始遍历，快速跳过已处理的节点
 			- 对有变化的节点，引擎会为 `Current` **（当前）节点**克隆一个 WorkInProgress **（进行中）节点**，将这两个 FiberNode 的 alternate 属性分别指向对方，并把更新都记录在在 WorkInProgress 上
 			- 一棵 Current 树，对应着目前已经渲染到页面上的内容；另一棵是 WorkInProgress 树，记录着即将发生的修改。
-			- 将 [[../Knowledges/React Hooks|Hooks]] 按照顺序构造单向链表，并挂载至 `FiberNode.memoizedState` 上。
-			- 将 [[./React useEffect|Effect]] 
+			- 将 [[../Knowledges/React Hooks|Hooks]] 按照顺序构造单向链表，并挂载至 `FiberNode.memoizedState` 上。**这也是为啥 Hooks 不能放在判断条件中**
 	- **阶段 2：Commit（提交阶段）**  
 		- **不可中断的 DOM 更新**：  
 		  同步执行所有标记的副作用（如 [[./JS Web-API-DOM|DOM]] 操作、生命周期调用），确保 UI 一致性。  
