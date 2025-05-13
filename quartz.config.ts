@@ -18,7 +18,7 @@ const config: QuartzConfig = {
     locale: 'zh-CN',
     baseUrl: "www.jayclock-garden.top",
     ignorePatterns: ["private", "templates", ".obsidian"],
-    defaultDateType: "created",
+    defaultDateType: "modified",
     generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
