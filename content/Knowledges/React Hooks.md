@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16T13:14:31
-updated: 2025-05-06T10:14:30
+updated: 2025-05-13T22:41:34
 share: true
 in:
   - "[[Maps|Maps]]"
@@ -43,15 +43,4 @@ in:
 	1. 抽取业务逻辑
 	2. 封装通用逻辑
 	3. 监听浏览器状态
-	4. 拆分复杂组件
-
-
-tanstack query
-
-本身19已经支持 async function
-
-常用的第三方库
-1. lodash
-2. ant design 
-3. material ui
-4. react-use
+	4. 拆分复杂组件å
