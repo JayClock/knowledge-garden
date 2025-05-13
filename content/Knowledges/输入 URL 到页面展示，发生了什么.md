@@ -1,10 +1,12 @@
 ---
 date: 2025-05-09T19:13:30
-updated: 2025-05-12T22:54:20
+updated: 2025-05-13T09:27:11
 share: true
 in:
   - "[[Maps|Maps]]"
 ---
+![从输入 URL 到页面展示完整流程示意图](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E4%BB%8E%E8%BE%93%E5%85%A5%20URL%20%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
+
 ![HTTP 请求流程示意图](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/HTTP%20%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
 
 - 浏览器进程解析 URL：
@@ -17,7 +19,8 @@ in:
 	- 获取 MAC 地址
 	- [[../Cards/HTTPS|HTTPS]] 握手（可能有）
 	- 等待 [[../Cards/TCP|TCP]] 队列，Chrome 统一域名同时建立 6 个 [[../Cards/TCP|TCP]] 连接
-	- 建立 [[../Cards/TCP|TCP]] 连接，浏览器端构建请求行，[[../Cards/HTTP 常见请求头|请求头]]等信息
+	- 建立 [[../Cards/TCP|TCP]] 连接，
+	- 浏览器端构建请求行，[[../Cards/HTTP 常见请求头|请求头]]等信息
 	- 剩下的是 [[../Cards/OSI 七层模型|OSI 七层模型]] 下几层处理
 - 网络进程接收到了[[../Cards/浏览器常见响应头|响应头]]数据，解析响应头数据，并将数据转发给浏览器进程；
 	- **重定向**：返回的[[../Cards/HTTP 常见状态码|状态码]]是 301 或者 302，网络进程会从响应头的 **Location 字段**读取重定向地址重新发起请求
@@ -27,4 +30,4 @@ in:
 - 等文档数据传输完成后，渲染进程会返回“确认提交”的消息给浏览器进程，这时告诉浏览器进程：“已经准备好接收和解析页面数据了”；
 - 浏览器进程接收到渲染进程“提交文档”的消息后，会更新浏览器界面状态，包括了安全状态、地址栏的 URL、前进后退的历史状态，并更新 Web 界面。
 - 渲染进程开始[[../Cards/浏览器的渲染过程|页面解析和子资源加载]]，**接收到多少，渲染多少**
-- 客户端确认数据发送完成，进行 [[../Cards/TCP|TCP]] 四次挥手
+- 客户端确认数据发送完成，进行 [[../Cards/TCP|TCP]] 四次挥手断开连接，[[../Cards/HTTP 1.1|HTTP/1.1]] 的引入了 Keep-alive，可以让 TCP 连接在发送后将仍然保持打开状态，这样浏览器就可以继续通过同一个 TCP 连接发送请求。**保持 TCP 连接可以省去下次请求时需要建立连接的时间，提升资源加载速度。**
