@@ -1,56 +1,18 @@
 ---
 date: 2024-09-24T22:00:31
-updated: 2025-02-19T10:50:35
+updated: 2025-05-13T21:58:26
 share: true
 tags:
   - review
 ---
 - 出现原因：
-	DOM 操作非常耗时，[[./数据驱动（MVVM）|数据驱动]]视图下，如何有效控制 DOM 操作。
-- 解决方案：
-	DOM 操作很慢，但是 JS 执行很快，通过 JS 模拟 DOM 结构，[[./Diff 算法|Diff 算法]]计算出最小的变更，来操作对应的 DOM
-- JS 模拟 DOM 结构示例：
-
-	```html
-	<div id="div1" class="container">
-	  <p>vdom</p>
-	  <ul style="font-size: 20px">
-	    <li>a</li>
-	  </ul>
-	</div>
-	```
-
-	```js
-	{
-	  tag: 'div',
-	  props: {
-	    className: 'container',
-	    id: 'div1',
-	  },
-	  children: [
-	    {
-	      tag: 'p',
-	      children: 'vdom',
-	    },
-	    {
-	      tag: 'ui',
-	      props: {
-	        style: 'font-size:20px',
-	      },
-	      children: [
-	        {
-	          tag: 'li',
-	          children: 'a',
-	        },
-	      ],
-	    },
-	  ],
-	}
-	```
-- 典型的 vdom 库：[snabbdom](https://github.com/snabbdom/snabbdom)
-- vdom 真的很快吗？
-	- vdom 并不快，JS 直接操作 DOM 才是最快的
-	- 但“数据驱动视图”要有合适的技术方案，不能全部 DOM 重建
-	- vdom 就是目前最合适的技术方案（并不是因为它快，而是合适）
-	- svelte 就不用 vdom
-	- angular 用不用？
+	- DOM 操作非常耗时，[[./数据驱动（MVVM）|数据驱动]]视图下，如何有效控制 DOM 操作。
+- 虚拟 DOM 解决哪些事情
+	- 将页面改变的内容应用到虚拟 DOM 上，而不是应用到真实的 DOM 上
+	- 变化被应用到虚拟 DOM 上时，虚拟 DOM 并不急着去渲染页面，而仅仅是调整虚拟 DOM 的内部状态，这样操作虚拟 DOM 的代价就变得非常轻了。
+	- 在虚拟 DOM 收集到足够的改变时，再把这些变化一次性应用到真实的 DOM 上
+- 什么是虚拟 DOM：以 React 为例
+	![虚拟 DOM 执行流程](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E8%99%9A%E6%8B%9F%20DOM%20%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.png)
+	- **创建阶段**。首先依据 [[./JSX|JSX]] 和基础数据创建出来虚拟 DOM，它反映了真实的 DOM 树的结构。然后由虚拟 DOM 树创建出真实 DOM 树，真实的 DOM 树生成完后，再触发渲染流水线往屏幕输出页面
+	- **更新阶段**。如果数据发生了改变，那么就需要根据新的数据创建一个新的虚拟 DOM 树；然后 React 比较两个树，找出变化的地方，并把变化的地方一次性更新到真实的 DOM 树上；最后渲染引擎更新渲染流水线，并生成新的页面。
+	- 现在 React 使用 [[./React Fiber|React Fiber]] 进行更高性能的更新
