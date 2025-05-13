@@ -1,6 +1,6 @@
 ---
 date: 2024-10-19T14:19:16
-updated: 2025-05-13T19:58:48
+updated: 2025-05-13T20:00:27
 share: true
 tags:
   - review
@@ -77,3 +77,5 @@ Promise.race([p1, p2])
 **5. 面试回答总结**
 
 > **Promise 解决异步回调问题，提供 `.then()`、`.catch()`、`.finally()` 处理状态变化。支持 `Promise.all()` 并行执行，`Promise.race()` 竞争执行。用 `async/await` 可以让异步代码更清晰。**
+
+**6. [[./手写 Promise|手写 Promise]]**
