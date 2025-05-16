@@ -1,6 +1,6 @@
 ---
 date: 2025-05-14T11:02:16
-updated: 2025-05-14T18:32:01
+updated: 2025-05-16T18:30:07
 share: true
 ---
 ![FCP Values](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/FCP%20Values.svg)
@@ -10,7 +10,7 @@ share: true
 	- 避免 JavaScript 阻塞 HTML 的解析
 		- 尽量将 JavaScript 文件放在body的最后
 		- 使用 defer 或者 async 属性，延迟加载 script 脚本
-		- 使用 npm 引入，而不是 script 引入
+		- 使用 npm 引入而不是 script 引入
 	- 移除未使用的 CSS 和 JavaScript 代码
 	- 避免网络负载庞大
 		- 图片格式使用 WebP 等格式，而非 JPEG 或 PNG 格式
