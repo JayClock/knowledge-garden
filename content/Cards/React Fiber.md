@@ -1,6 +1,6 @@
 ---
 date: 2025-05-05T11:14:49
-updated: 2025-05-13T22:48:55
+updated: 2025-05-18T20:53:03
 share: true
 ---
 1. **Fiber 架构的本质与设计目标**：Fiber 是 React 16+ 的**核心算法重写**，本质是**基于链表的增量式协调模型**。其核心目标并非单纯提升性能，而是重构架构以实现：  
@@ -71,7 +71,7 @@ share: true
 		- **执行流程**：
 			-  当 state 或者 context 更新时，react 会进入渲染阶段，Fiber 协调引擎会从根部开始遍历，快速跳过已处理的节点
 			- 对有变化的节点，引擎会为 `Current` **（当前）节点**克隆一个 WorkInProgress **（进行中）节点**，将这两个 FiberNode 的 alternate 属性分别指向对方，并把更新都记录在在 WorkInProgress 上
-			- 一棵 Current 树，对应着目前已经渲染到页面上的内容；另一棵是 WorkInProgress 树，记录着即将发生的修改。
+			- 我们可以理解为有两颗树，一棵 `Current` 树，对应着目前已经渲染到页面上的内容；另一棵是 `WorkInProgress` 树，记录着即将发生的修改。
 			- 将 [[../Knowledges/React Hooks|Hooks]] 按照顺序构造单向链表，并挂载至 `FiberNode.memoizedState` 上。**这也是为啥 Hooks 不能放在判断条件中**
 	- **阶段 2：Commit（提交阶段）**  
 		- **不可中断的 DOM 更新**：  
