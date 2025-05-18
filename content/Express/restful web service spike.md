@@ -1,6 +1,6 @@
 ---
 date: 2025-04-10T22:01:23
-updated: 2025-04-12T21:53:25
+updated: 2025-05-18T21:45:34
 share: true
 ---
 首先，我们构造一个最简单的测试用例，仅仅是请求 `/users`，并返回 'user list'
@@ -250,7 +250,8 @@ class StringMessageBodyWriter implements BodyWriter<string> {
 
 现在我们的代码中，有些没有必要的实例创建，比如 BodyWriter 全局不管怎样，我们都应该拿到同一个实例。自然地，我们可以借助依赖注入，进行全局实例的管理。
 
-比如在 inversify js 的帮助下，获取 body writer 可以这么做
+比如在 inversify js 的帮助下，获取 body writer 可以这么做。
+目前 ts 的元数据 api 和 java 比太弱了，有点难整。
 ```ts
 class TestProviders {
   private readonly container = new Container();
