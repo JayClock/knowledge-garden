@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16T13:14:31
-updated: 2025-05-19T15:16:09
+updated: 2025-05-19T16:01:21
 share: true
 in:
   - "[[Maps|Maps]]"
@@ -36,8 +36,9 @@ in:
 	7. useId: 用于生成唯一的 ID，可以生成传递给无障碍属性的唯一 ID。
 	8. useSyncExternalStore: 用于订阅外部存储（如 Redux 或 Zustand）的状态。
 	9. useInsertionEffect: 为 CSS-in-JS 库的作者特意打造的，在布局副作用触发之前将元素插入到 DOM 中
-- 自定义 Hooks，通用函数 Hook 需要编写测试
+- 自定义 Hooks
 	1. [[../Cards/React useTimer|useCount]]
+	2. [[react useRequest|useRequest]]
 - hooks 定义规则：
 	1. 所有 hook 必须被执行到，也就是不能放在判断条件中
 	2. 所有 hook 必须按照顺序执行。
