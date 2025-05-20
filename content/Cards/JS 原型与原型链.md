@@ -1,10 +1,30 @@
 ---
 date: 2024-10-12T17:57:32
-updated: 2025-05-02T14:41:29
+updated: 2025-05-19T17:00:44
 share: true
 tags:
   - review
 ---
+# 原型
+
+`JavaScript` 常被描述为一种基于原型的语言 —— 每个对象都有一个原型对象。
+
+当试图访问一个对象属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。
+
+%% 准确地说，这些属性和方法定义在Object的构造器函数（constructor functions）之上的prototype属性上，而非实例对象本身 %%
+
+1. 每个 class 都有一个显示原型 `prototype`
+2. 每个实例都有隐式原型 `_proto_`
+3. 每个 `_proto_` 指向对应 class 的 `prototype`
+
+# 基于原型的执行规则
+1. 获取属性 xialuo.name 或执行方法 xialuo.sayHi() 时
+2. 先在自身属性和方法寻找
+3. 如果找不到则自动去 `_proto_` 中查找
+![基于原型的执行规则](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E5%9F%BA%E4%BA%8E%E5%8E%9F%E5%9E%8B%E7%9A%84%E6%89%A7%E8%A1%8C%E8%A7%84%E5%88%99.png)
+# 原型链
+原型对象也可能拥有原型，并从中继承方法和属性，一层一层、依次类推。这种关系常常被称为原型链（prototype chain），它解释了为何一个对象会拥有定义在其它对象中的属性和方法。
+![原型和原型链](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE.png)```
 # 为什么继承需要调用 super()
 
 在子类 `constructor` 中必须调用 `super` 方法，因为子类没有自己的 `this` 对象，而是继承在父类的 `this` 对象，然后对其进行加工，而 `super` 就代表了父类的构造函数。
@@ -58,24 +78,3 @@ console.log(wanglaoshi.major)
 wanglaoshi.teach()
 wanglaoshi.eat()
 ```
-
-# 原型
-
-`JavaScript` 常被描述为一种基于原型的语言 —— 每个对象都有一个原型对象。
-
-当试图访问一个对象属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。
-
-%% 准确地说，这些属性和方法定义在Object的构造器函数（constructor functions）之上的prototype属性上，而非实例对象本身 %%
-
-1. 每个 class 都有一个显示原型 `prototype`
-2. 每个实例都有隐式原型 `_proto_`
-3. 每个 `_proto_` 指向对应 class 的 `prototype`
-
-# 基于原型的执行规则
-1. 获取属性 xialuo.name 或执行方法 xialuo.sayHi() 时
-2. 先在自身属性和方法寻找
-3. 如果找不到则自动去 `_proto_` 中查找
-![基于原型的执行规则](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E5%9F%BA%E4%BA%8E%E5%8E%9F%E5%9E%8B%E7%9A%84%E6%89%A7%E8%A1%8C%E8%A7%84%E5%88%99.png)
-# 原型链
-原型对象也可能拥有原型，并从中继承方法和属性，一层一层、依次类推。这种关系常常被称为原型链（prototype chain），它解释了为何一个对象会拥有定义在其它对象中的属性和方法。
-![原型和原型链](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE.png)```
