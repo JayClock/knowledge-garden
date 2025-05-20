@@ -1,6 +1,6 @@
 ---
 date: 2025-05-20T16:49:44
-updated: 2025-05-20T16:52:34
+updated: 2025-05-20T16:55:35
 share: true
 ---
 LocalStorage是HTML5新引入的特性，由于有的时候我们存储的信息较大，[[./浏览器 Cookie|Cookie]]就不能满足我们的需求，这时候LocalStorage就派上用场了。
@@ -16,16 +16,14 @@ LocalStorage是HTML5新引入的特性，由于有的时候我们存储的信息
 	```js
 	// 保存数据到 localStorage
 	localStorage.setItem('key', 'value');
-	
 	// 从 localStorage 获取数据
 	let data = localStorage.getItem('key');
-	
 	// 从 localStorage 删除保存的数据
 	localStorage.removeItem('key');
-	
 	// 从 localStorage 删除所有保存的数据
 	localStorage.clear();
-	
 	// 获取某个索引的Key
 	localStorage.key(index)
 	```
+- **使用场景**：
+	- 在网站中的用户浏览信息也会存储在LocalStorage中，还有网站的一些不常变动的个人信息等也可以存储在本地的LocalStorage中
