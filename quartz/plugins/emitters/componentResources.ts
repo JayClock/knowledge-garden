@@ -159,10 +159,14 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       posthog.init('${cfg.analytics.apiKey}', {
         api_host: '${cfg.analytics.host ?? "https://app.posthog.com"}',
         capture_pageview: false,
-      });
-      document.addEventListener('nav', () => {
-        posthog.capture('$pageview', { path: location.pathname });
       })\`
+      posthogScript.onload = () => {
+        posthog.capture('$pageview', { path: location.pathname });
+      
+        document.addEventListener('nav', () => {
+          posthog.capture('$pageview', { path: location.pathname });
+        });
+      };
 
       document.head.appendChild(posthogScript);
     `)
