@@ -1,6 +1,6 @@
 ---
 date: 2025-07-11 23:29:39
-updated: 2025-07-14 23:42:27
+updated: 2025-09-17 20:26:40
 share: true
 ---
 在传统的 DDD 设计中，我们往往会想下面这样写
@@ -44,7 +44,7 @@ class UserService {
 在真正的DDD中，我们追求的是**充血模型（Rich Domain Model）**。
 - 完全[[../Knowledges/面向对象|面向对象]]（没有 service）
 - 所有模型建立成完全连接的对象图（所有聚合都不会断开）
-- 所有模型会直接映射成 [[../Knowledges/HATEOAS|RESTful api]]（HATEOAS 形式）
+- 所有模型会直接映射成 [[../Knowledges/Restful|RESTful api]]（HATEOAS 形式）
 - 屏蔽所有实现细节抽象层
 - 概念模型、模型、api 上完全映射一致
 [代码样例](https://github.com/JayClock/platform/tree/main)
