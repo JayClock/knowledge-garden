@@ -1,6 +1,6 @@
 ---
 date: 2025-05-05T11:14:49
-updated: 2025-05-20T22:36:51
+updated: 2025-10-09 12:33:16
 share: true
 ---
 1. **Fiber 架构的本质与设计目标**：Fiber 是 React 16+ 的**核心算法重写**，本质是**基于链表的增量式协调模型**。其核心目标并非单纯提升性能，而是重构架构以实现：  
@@ -72,7 +72,7 @@ share: true
 			- 对有变化的节点，引擎会为 `Current` **（当前）节点**克隆一个 WorkInProgress **（进行中）节点**，将这两个 FiberNode 的 alternate 属性分别指向对方，并把更新都记录在在 WorkInProgress 上
 			- 我们可以理解为有两颗树，一棵 `Current` 树，对应着目前已经渲染到页面上的内容；另一棵是 `WorkInProgress` 树，记录着即将发生的修改。
 			- 将 [[../Knowledges/React Hooks|Hooks]] 按照顺序构造形成由 `Hook.next` 属性连接的单向链表，并挂载至 `FiberNode.memoizedState` 上。每次对比都会一一对比单向链表，React 会收集所有优先级相同的更新，合并它们，然后生成最终的更新计划（[[./React batchUpdate|React 批处理]]）
-			- 对于 [[./React useEffect|useEffect]] 这种会产生副作用的 Hooks，会额外创建与 `Hook` 对象一一对应的 `Effect` 对象，赋值给 Hook.memoizedState 属性，此外，也会在 `FiberNode.updateQueue` 属性上，维护一个由 `Effect.next` 属性连接的单向链表，并把这个 `Effect` 对象加入到链表末尾。
+			- 对于 [[./React-useEffect|useEffect]] 这种会产生副作用的 Hooks，会额外创建与 `Hook` 对象一一对应的 `Effect` 对象，赋值给 Hook.memoizedState 属性，此外，也会在 `FiberNode.updateQueue` 属性上，维护一个由 `Effect.next` 属性连接的单向链表，并把这个 `Effect` 对象加入到链表末尾。
 			- 当 Fiber 树所有节点都完成工作后，`WorkInProgress` 节点会被改称为 `FinishedWork`（已完成）节点，`WorkInProgress` 树也会被改称为 `FinishedWork树`。这时 React 会进入提交阶段（Commit Phase），这一阶段主要是同步执行的。Fiber 协调引擎会把 `FinishedWork` 节点上记录的所有修改，按一定顺序提交并体现在页面上。
 	- **阶段 2：Commit（提交阶段）**  
 		- **不可中断的 DOM 更新**：  
