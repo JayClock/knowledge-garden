@@ -1,112 +1,171 @@
 ---
 date: 2025-05-05T11:14:49
-updated: 2025-10-09 12:33:16
+updated: 2026-03-09 16:31:49
 share: true
 ---
-1. **Fiber 架构的本质与设计目标**：Fiber 是 React 16+ 的**核心算法重写**，本质是**基于链表的增量式协调模型**。其核心目标并非单纯提升性能，而是重构架构以实现：  
-	- **改进了协调算法**：React Fiber 使用的是基于优先级的协调算法，将任务分解为多个小任务，并根据任务的优先级来调度任务的执行，从而提高了应用的性能。
-	- **支持增量渲染**：React Fiber 支持增量渲染，即在处理任务时可以中断任务，并优先处理更高优先级的任务，从而使得用户能够更快地看到页面的变化。
-	- **可中断和恢复**：React Fiber 允许开发者在组件渲染的过程中对任务进行中断和恢复，从而支持更细粒度的控制，提高了应用的性能和响应速度。
-	- **支持并发模式**：React Fiber 的设计是支持并发模式的，可以在多个线程中同时执行任务，从而提高了应用的性能。
-	- **向后兼容**：React Fiber 的设计是向后兼容的，可以在不影响旧的应用的情况下逐步升级到新的版本，从而使得 React 应用的升级变得更加容易。
-	- **支持错误边界**：React Fiber 支持错误边界机制，当组件发生错误时，可以通过错误边界机制来捕获错误并展示友好的错误信息，从而提高了应用的健壮性和用户体验。
-2. **Fiber 节点的核心设计**：每个组件对应一个 **Fiber 节点**，构成**双向链表树结构**，包含以下关键信息：  
-	```ts
-	type Fiber = {
-	  // ---- Fiber类型 ----
-	
-	  /** 工作类型，枚举值包括：函数组件、类组件、HTML元素、Fragment等 */
-	  tag: WorkTag,
-	  /** 就是那个子元素列表用的key属性 */
-	  key: null | string,
-	  /** 对应React元素ReactElmement.type属性 */
-	  elementType: any,
-	  /** 函数组件对应的函数或类组件对应的类 */
-	  type: any,
-	
-	  // ---- Fiber Tree树形结构 ----
-	
-	  /** 指向父FiberNode的指针 */
-	  return: Fiber | null,
-	  /** 指向子FiberNode的指针 */
-	  child: Fiber | null,
-	  /** 指向平级FiberNode的指针 */
-	  sibling: Fiber | null,
-	  
-	  // ---- Fiber数据 ----
-	
-	  /** 经本次渲染更新的props值 */  
-	  pendingProps: any,
-	  /** 上一次渲染的props值 */
-	  memoizedProps: any,
-	  /** 上一次渲染的state值，或是本次更新中的state值 */
-	  memoizedState: any,
-	  /** 各种state更新、回调、副作用回调和DOM更新的队列 */
-	  updateQueue: mixed,
-	  /** 为类组件保存对实例对象的引用，或为HTML元素保存对真实DOM的引用 */
-	  stateNode: any,
-	
-	  // ---- Effect副作用 ----
-	
-	  /** 副作用种类的位域，可同时标记多种副作用，如Placement、Update、Callback等 */
-	  flags: Flags,
-	  /** 指向下一个具有副作用的Fiber的引用，在React 18中貌似已被弃用 */
-	  nextEffect: Fiber | null,
-	
-	  // ---- 异步性/并发性 ----
-	  
-	  /** 当前Fiber与成对的进行中Fiber的双向引用 */
-	  alternate: Fiber | null,
-	  /** 标记Lane车道模型中车道的位域，表示调度的优先级 */
-	  lanes: Lanes
-	};
-	```
-3. **Fiber 协调流程（两阶段提交）**  
-	 - **阶段 1：Reconciliation（协调/渲染阶段）**  
-		- **可中断的增量计算**： React 将组件树遍历拆解为多个 Fiber 工作单元，通过**两层循环进行深度优先遍历**（而非递归）逐个处理。  
-			- 每次循环执行一个 Fiber 节点，生成子 Fiber 并连接成树。  
-			- 通过 `requestIdleCallback`（或 Scheduler 包）在浏览器空闲时段执行，避免阻塞主线程。  
-		- **对比策略**：根据 `key` 和 `type` 复用节点，标记 `Placement`（新增）、`Update`（更新）、`Deletion`（删除）等副作用。  
-		- **执行流程**：
-			-  当 state 或者 context 更新时，react 会进入渲染阶段，Fiber 协调引擎会从根部开始遍历，快速跳过已处理的节点
-			- 对有变化的节点，引擎会为 `Current` **（当前）节点**克隆一个 WorkInProgress **（进行中）节点**，将这两个 FiberNode 的 alternate 属性分别指向对方，并把更新都记录在在 WorkInProgress 上
-			- 我们可以理解为有两颗树，一棵 `Current` 树，对应着目前已经渲染到页面上的内容；另一棵是 `WorkInProgress` 树，记录着即将发生的修改。
-			- 将 [[../Knowledges/React Hooks|Hooks]] 按照顺序构造形成由 `Hook.next` 属性连接的单向链表，并挂载至 `FiberNode.memoizedState` 上。每次对比都会一一对比单向链表，React 会收集所有优先级相同的更新，合并它们，然后生成最终的更新计划（[[./React batchUpdate|React 批处理]]）
-			- 对于 [[./React-useEffect|useEffect]] 这种会产生副作用的 Hooks，会额外创建与 `Hook` 对象一一对应的 `Effect` 对象，赋值给 Hook.memoizedState 属性，此外，也会在 `FiberNode.updateQueue` 属性上，维护一个由 `Effect.next` 属性连接的单向链表，并把这个 `Effect` 对象加入到链表末尾。
-			- 当 Fiber 树所有节点都完成工作后，`WorkInProgress` 节点会被改称为 `FinishedWork`（已完成）节点，`WorkInProgress` 树也会被改称为 `FinishedWork树`。这时 React 会进入提交阶段（Commit Phase），这一阶段主要是同步执行的。Fiber 协调引擎会把 `FinishedWork` 节点上记录的所有修改，按一定顺序提交并体现在页面上。
-	- **阶段 2：Commit（提交阶段）**  
-		- **不可中断的 DOM 更新**：  
-		  同步执行所有标记的副作用（如 [[./JS Web-API-DOM|DOM]] 操作、生命周期调用），确保 UI 一致性。  
-		- **副作用分类**：  
-		  - **BeforeMutation**：`getSnapshotBeforeUpdate`。  
-		  - **Mutation**：DOM 插入/更新/删除。  
-		  - **Layout**：`useLayoutEffect`、`componentDidMount`/`Update`。 
-4. **优先级调度机制** ：React 通过 **Lane 模型** 管理任务优先级（共 31 个优先级车道）：  
-	- **事件优先级**：  
-	```javascript  
-	  // 优先级从高到低  
-	  ImmediatePriority（用户输入）  
-	  UserBlockingPriority（悬停、点击）  
-	  NormalPriority（数据请求）  
-	  LowPriority（分析日志）  
-	  IdlePriority（非必要任务）  
-	  ```
-	- **调度策略**：  
-		- 高优先级任务可抢占低优先级任务的执行权。  
-		- 过期任务（如 Suspense 回退）会被强制同步执行。  
-5. **Fiber 架构的优势与局限性**  
-	- **优势**  	  
-		- **流畅的用户体验**：异步渲染避免主线程阻塞，保障高优先级任务即时响应。  
-		- **复杂场景优化**：支持大规模组件树的高效更新（如虚拟滚动、动画串联）。  
-		- **未来特性基础**：为并发模式（Concurrent Mode）、离线渲染（SSR）提供底层支持。  
-	- **局限性**   
-		- **学习成本高**：开发者需理解底层调度逻辑以优化性能。  
-		- **内存开销**：Fiber 树的双向链表结构比传统虚拟 DOM 占用更多内存。  
-6. **与旧架构的关键差异** 
+`React Fiber` 是 React 为了解决“复杂更新会长时间阻塞主线程”而重写出来的协调架构。它不是一个单独可用的 API，而是并发渲染、优先级调度、Suspense、`useTransition` 这些能力的底层前提。
 
-| 特性        | Stack Reconciler（React 15-）       | Fiber Reconciler（React 16+） |     |
-| --------- | --------------------------------- | --------------------------- | --- |
-| **遍历方式**  | 递归（不可中断）                          | 循环（可中断 + 恢复）                |     |
-| **任务调度**  | 同步执行，阻塞主线程                        | 异步分片，空闲时段执行                 |     |
-| **优先级控制** | 无                                 | 基于 Lane 模型的优先级抢占            |     |
-| **数据结构**  | [[./虚拟 DOM（Virtual DOM）\|虚拟 DOM]] 树 | Fiber 链表树（含调度信息）            |     |
+## 它解决什么问题
+
+浏览器的主线程既要执行 JavaScript，也要处理输入、布局和绘制。
+
+如果一次 React 更新太重，就会出现：
+
+- 用户输入卡顿
+- 页面反馈变慢
+- 长任务阻塞渲染
+
+在早期 React 的同步协调模型里，一次更新开始后，很难中断。组件树一大、某些节点一重，整个渲染过程就可能把主线程占住。
+
+Fiber 解决的核心问题就是：
+
+**能不能把渲染工作拆小、排序、暂停、恢复，并优先处理更重要的更新。**
+
+## 一句话理解
+
+Fiber 让 React 从“同步一路算到底”的更新模型，升级为“可拆分、可抢占、按优先级调度”的更新模型。
+
+这里增强的是“渲染调度能力”。
+
+## 为什么它重要
+
+Fiber 不是为了“让所有渲染都异步”，而是为了让 React 有能力区分不同更新的轻重缓急。
+
+例如：
+
+- 用户输入要优先响应
+- 列表过滤可以稍后完成
+- 首屏之外的内容可以延迟
+- 副作用和 DOM 提交必须保持一致性
+
+这也是为什么后来的这些能力都和 Fiber 强相关：
+
+- [[./React-useTransition|useTransition]]
+- [[./React-useDeferredValue|useDeferredValue]]
+- Suspense
+- 流式 SSR
+- 选择性 hydration
+
+## 一个直观例子
+
+假设页面正在渲染一个很重的列表，这时用户点击了输入框。
+
+如果 React 只能同步一路算完：
+
+- 输入反馈会被阻塞
+
+如果 React 能把工作分片并调度：
+
+- 低优先级列表更新可以先让开
+- 输入相关更新优先执行
+- 用户先看到最重要的反馈
+
+这就是 Fiber 想达到的效果。
+
+## Fiber 到底做了什么
+
+可以先抓住 4 个关键点：
+
+1. 把组件更新拆成更细的工作单元
+2. 为这些工作单元附带调度信息
+3. 允许高优先级任务打断低优先级任务
+4. 在最终提交时，仍然保证 DOM 更新的一致性
+
+所以 Fiber 不是单纯的数据结构，而是一整套“可中断协调 + 同步提交”的架构。
+
+## 两个阶段
+
+### 1. Render / Reconciliation 阶段
+
+这一阶段的目标是：
+
+- 计算出下一棵 UI 树应该长什么样
+- 标记哪些节点需要插入、更新、删除
+
+这一阶段可以被打断、恢复、重做。
+
+也正是在这一层，React 才有机会做优先级调度。
+
+### 2. Commit 阶段
+
+这一阶段的目标是：
+
+- 把前面算好的修改真正提交到 DOM
+- 执行布局相关和副作用相关逻辑
+
+这一阶段必须保持同步和一致，不能随便中断。
+
+所以 Fiber 不是“什么都可中断”，而是：
+
+- 计算阶段可调度
+- 提交阶段必须稳定
+
+## 为什么会影响 Hooks
+
+Fiber 不只是影响调度，也反过来影响了 [[../Knowledges/React Hooks|React Hooks]] 的设计和运行方式。
+
+### Hook 为什么强调调用顺序
+
+Hooks 依赖稳定的调用顺序，React 才能在 Fiber 对应的组件工作单元上，把每个 Hook 的状态槽位正确对应起来。
+
+这就是为什么：
+
+- 不能在条件里调用 Hook
+- 不能在循环里调用 Hook
+- 必须保证顺序稳定
+
+### 为什么副作用分成不同阶段
+
+像 [[./React-useEffect|useEffect]] 和 [[./React-useLayoutEffect|useLayoutEffect]] 的差异，本质上也和 Fiber 的提交顺序有关：
+
+- `useEffect` 更偏向提交后的异步副作用
+- [[./React-useLayoutEffect|useLayoutEffect]] 更靠近 DOM 变更后的同步布局阶段
+
+### 为什么会有并发相关 Hook
+
+[[./React-useTransition|useTransition]]、[[./React-useDeferredValue|useDeferredValue]] 这些能力，本质上是在利用 Fiber 的调度系统，让不同更新进入不同优先级通道。
+
+## 和优先级的关系
+
+可以粗略把 Fiber 的调度理解成：
+
+- 特别紧急的更新优先
+- 用户交互相关的更新优先
+- 普通状态更新随后
+- 可推迟的更新延后
+- 空闲任务放到最后
+
+这也是为什么：
+
+- `flushSync` 很重，但有时必须同步
+- 输入响应必须足够快
+- [[./React-useTransition|useTransition]] 适合把“能晚一点”的 UI 放后面
+
+## Fiber 节点可以怎么理解
+
+如果不深究实现细节，可以把一个 Fiber 节点理解成：
+
+- 某个组件或元素的工作描述
+- 里面不仅有类型、props、state
+- 还带着这次更新需要的调度和副作用信息
+
+它让 React 不只是“知道 UI 长什么样”，还“知道这份工作该怎么被调度”。
+
+## 一个常见误区
+
+很多人会把 Fiber 理解成“React 变成了多线程”。
+
+这不准确。
+
+更准确的说法是：
+
+- React 仍然主要运行在单线程 JavaScript 环境里
+- Fiber 做的是更细粒度的任务拆分与调度
+- 它让主线程上的工作更容易被安排，而不是平白多出线程
+
+## 和其它笔记的关系
+
+- 在 [[../Knowledges/React Hooks|React Hooks]] 里，Fiber 是并发渲染和 Hook 调度的底层背景
+- 在 [[./React-useEffect|useEffect]] 里，可以继续连接到副作用提交时机
+- 在 [[../Express/渐进式集成：从浏览器渲染到框架设计的统一哲学|渐进式集成：从浏览器渲染到框架设计的统一哲学]] 里，它对应“按优先级渐进渲染”的框架实现
+- 在 [[./React-useSyncExternalStore|useSyncExternalStore]]、[[./React-useTransition|useTransition]]、[[./React-useDeferredValue|useDeferredValue]] 这些能力里，可以继续看到 Fiber 的调度影响
