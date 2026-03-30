@@ -1,7 +1,7 @@
 ---
 share: true
 date: 2024-02-06T11:14:12
-updated: 2025-09-14 10:57:02
+updated: 2026-03-28 20:55:39
 title: 终结者的数字花园
 ---
 hello 👋，我是 JayClock，一个默默无闻，努力想办法提升自己的前端工程师，目前在用 angular 做低代码行业相关的工作。
@@ -21,4 +21,3 @@ hello 👋，我是 JayClock，一个默默无闻，努力想办法提升自己�
 	- 格式：Markdown
 	- 托管：[Vercel](https://vercel.com/dashboard)
 	- CDN：阿里云
-	- 灵感收集：[Memos](https://usememos.com/)
