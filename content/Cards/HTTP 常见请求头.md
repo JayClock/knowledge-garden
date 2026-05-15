@@ -1,8 +1,13 @@
 ---
 date: 2025-05-12T22:30:27
-updated: 2025-05-12T22:35:36
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807091090
 ---
+HTTP 常见请求头有哪些，分别用于什么场景？
+
+---
+
 - accept: text/html 告诉服务端我期望接收到一个html的文件
 - accept-encoding: gzip, deflate, br 告诉服务端以这种方式压缩
 - accept-language: zh-CN 告诉服务端以中文的格式返回
