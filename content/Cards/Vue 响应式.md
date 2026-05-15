@@ -1,10 +1,13 @@
 ---
 date: 2024-10-24T09:57:57
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807093623
 ---
+Vue 响应式的核心机制和使用方式是什么？
+
+---
+
 # Vue2 使用 Object.defineProperty
 
 1. 通过递归到底进行深度监听，一次性计算量大
