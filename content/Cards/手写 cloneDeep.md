@@ -1,6 +1,6 @@
 ---
 date: 2024-10-25T16:37:42
-updated: 2026-05-15 09:58:44
+updated: 2026-05-15 12:16:33
 share: true
 noteId: 1778807088646
 ---
@@ -13,7 +13,7 @@ noteId: 1778807088646
 - 考虑循环引用，判断如果hash中含有直接返回hash中的值
 - 新建一个相应的new obj.constructor加入hash
 - 遍历对象递归（普通key和key是symbol情况）
-  
+
 ```js
 function deepClone(obj, hash = new WeakMap()) {
   if (obj instanceof RegExp) return new RegExp(obj)
