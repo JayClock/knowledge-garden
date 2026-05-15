@@ -1,13 +1,16 @@
 ---
 date: 2024-10-23T09:35:47
-updated: 2025-02-19T10:50:34
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807092526
 ---
+React SCU（shouldComponentUpdate）的核心作用和使用场景是什么？
+
+---
+
 # 背景
 
-在 React 中，只要父组件更新了，子组件不管是否发生变化都要更新。每一个组件都有一个默认  SCU 生命周期。
+在 React 中，只要父组件更新了，子组件不管是否发生变化都要更新。每一个组件都有一个默认 SCU 生命周期。
 
 ```js
 shouldComponentUpdate(nextProps, nextState) {
