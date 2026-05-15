@@ -1,6 +1,6 @@
 ---
 date: 2025-01-02T16:16:07
-updated: 2026-05-15 10:03:23
+updated: 2026-05-15 12:16:33
 share: true
 source: https://martinfowler.com/bliki/StranglerFigApplication.html
 noteId: 1778807093360
