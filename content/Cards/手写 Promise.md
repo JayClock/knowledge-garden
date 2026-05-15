@@ -1,10 +1,13 @@
 ---
 date: 2024-10-21T10:53:57
-updated: 2025-01-02T10:28:32
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807088754
 ---
+如何实现 Promise？
+
+---
+
 ```ts
 import { MyPromise } from './my-promise';
 
