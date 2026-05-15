@@ -1,8 +1,13 @@
 ---
 date: 2025-05-04T21:22:13
-updated: 2025-07-14 14:34:03
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807093521
 ---
+URL 包含哪些部分？
+
+---
+
 1. 协议（protocol）：如 `http://`、`https://`、`ftp://` 等
 2. 域名（domain）：如 `www.example.com`
 	- 子域名：`www`
