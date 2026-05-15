@@ -1,9 +1,7 @@
 ---
 date: 2024-03-17T15:49:04
-updated: 2026-05-15 09:58:44
+updated: 2026-05-15 12:16:33
 share: true
-tags:
-  - design-principles
 noteId: 1778807088623
 ---
 如何理解依赖反转（DIP）？
