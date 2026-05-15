@@ -1,10 +1,13 @@
 ---
 date: 2024-10-21T11:41:29
-updated: 2025-02-19T10:50:35
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807088698
 ---
+如何实现 lodash.isEqual？
+
+---
+
 ```js
 // 判断是否是对象或数组
 function isObject(obj) {
