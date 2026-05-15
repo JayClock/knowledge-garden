@@ -1,6 +1,6 @@
 ---
 date: 2026-03-09T16:20:01
-updated: 2026-05-15 10:03:24
+updated: 2026-05-15 12:16:33
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 share: true
@@ -115,5 +115,5 @@ function SearchPage() {
  和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于“并发渲染时代的调度增强”
-- 在 [[./React Fiber|React Fiber]] 里，可以理解它为什么建立在调度系统之上
+- 在 [[../Knowledges/React Fiber|React Fiber]] 里，可以理解它为什么建立在调度系统之上
 - 和 [[./React-useDeferredValue|useDeferredValue]] 一样，它们都在解决“哪些更新该先发生”这个问题
