@@ -1,10 +1,13 @@
 ---
 date: 2024-04-10T17:39:29
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807093647
 ---
+WYH 模型的核心概念和应用要点是什么？
+
+---
+
 # WYH 模型是什么？
 W：WHAT 是什么
 Y ：WHY 为什么
