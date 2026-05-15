@@ -1,16 +1,19 @@
 ---
 date: 2024-10-12T17:08:49
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807090525
 ---
+CSS 图文样式的规则和常见用法是什么？
+
+---
+
 - 如何支持小于 12px 的文字
 	- zoom
-		- `zoom: 50%`，表示缩小到原来的一半
-		- `zoom: 0.5`，表示缩小到原来的一半
-		- 需要考虑[兼容性](https://developer.mozilla.org/en-US/docs/Web/CSS/zoom)
-		- 缩放会改变元素占据的空间大小，触发重排
+ - `zoom: 50%`，表示缩小到原来的一半
+ - `zoom: 0.5`，表示缩小到原来的一半
+ - 需要考虑[兼容性](https://developer.mozilla.org/en-US/docs/Web/CSS/zoom)
+ - 缩放会改变元素占据的空间大小，触发重排
 		```html
 		<!DOCTYPE html>
 		<html lang="en">
@@ -36,8 +39,8 @@ tags:
 		</html>
 	````
 	- transform: scale()
-		- 只对可以定义宽高的元素有效
-		- 缩放不会改变元素占据的空间大小，页面布局不会发生变化
+ - 只对可以定义宽高的元素有效
+ - 缩放不会改变元素占据的空间大小，页面布局不会发生变化
 		```html
 		<!DOCTYPE html>
 		<html lang="en">
