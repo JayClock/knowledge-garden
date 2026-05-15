@@ -1,11 +1,15 @@
 ---
 date: 2024-03-07T22:08:11
-updated: 2025-02-19T10:50:36
+updated: 2026-05-15 09:58:44
 share: true
 tags:
   - design-principles
-  - review
+noteId: 1778807088546
 ---
+如何理解单一职责（SRP）？
+
+---
+
 # 如何理解单一职责原则
 Single Responsibility Principle —— A class or module should have a single responsibility
 
