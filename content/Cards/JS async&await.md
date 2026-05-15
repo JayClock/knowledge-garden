@@ -1,12 +1,15 @@
 ---
 date: 2024-10-19T16:09:56
-updated: 2025-01-02T10:28:32
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807091730
 ---
+JS async/await 的执行机制是什么？
+
+---
+
 # 基本使用
- 
+
 - 异步回调会带来 callback hell
 - [[./JS Promise|Promise]] 通过 then、catch 链式调用，一定程度上会解决了回调函数的问题
 - 结束 async&await，可以把异步函数转化为同步形式，彻底消除回调函数
@@ -61,7 +64,7 @@ async function loadImg2() {
     }
 })()
 ```
-# 和  Promise 的关系
+# 和 Promise 的关系
 
 async 函数返回结果都是 [[./JS Promise|Promise]] 对象（如果函数没返回 Promise，则自动封装一下）
 
