@@ -1,10 +1,13 @@
 ---
 date: 2024-03-12T12:29:31
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807087975
 ---
+接口隔离（ISP） 中“如何理解接口隔离原则”的关键方法是什么？
+
+---
+
 # 如何理解接口隔离原则
 
 > [!Quote] Interface Segregation Principle
