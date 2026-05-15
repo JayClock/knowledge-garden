@@ -1,8 +1,13 @@
 ---
 date: 2025-05-19T20:49:50
-updated: 2025-05-20T15:13:58
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807091445
 ---
+JS 脚本异步加载的核心机制是什么？
+
+---
+
 1. 动态创建 `<script>` 标签，并设置其 src 属性为需要加载的脚本 URL。这种方式可以通过设置 onload 或 onreadystatechange 事件来检测脚本是否加载完成。
 	```js
 	const script = document.createElement('script');
