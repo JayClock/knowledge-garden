@@ -1,13 +1,16 @@
 ---
 date: 2024-09-24T17:02:14
-updated: 2025-04-18T11:04:16
+updated: 2026-05-15 10:03:24
 share: true
 source: https://facebook.github.io/jsx/
-tags:
-  - review
+noteId: 1778807091981
 ---
+JSX 的核心概念和应用要点是什么？
+
+---
+
 - JSX 就是 React?
-	- 不是。JSX 只是 React 其中一个 API，`createElement` 函数的语法糖 
+	- 不是。JSX 只是 React 其中一个 API，`createElement` 函数的语法糖
 - JSX 就是 React 组件？
 	- 不是。JSX 是 React 组件渲染方法返回值的一部分，React 组件还有其他的功能
 - JSX 就是另一种 HTML?
