@@ -1,8 +1,13 @@
 ---
 date: 2025-05-05T22:28:45
-updated: 2025-05-05T22:29:02
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807092271
 ---
+React 受控组件的核心作用和使用场景是什么？
+
+---
+
 在 React 中，受控组件（Controlled Component） 是指表单元素（如 `<input>`、`<textarea>`、`<select>` 等）的值由 React 的状态（state）控制，而不是由 DOM 自身管理。换句话说，表单元素的值通过 value 属性绑定到 React 的状态，并通过 onChange 事件处理函数来更新状态。
 
 这是一个简单的受控组件示例：

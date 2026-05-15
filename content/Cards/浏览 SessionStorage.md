@@ -1,8 +1,13 @@
 ---
 date: 2025-05-20T16:53:10
-updated: 2025-05-20T16:56:29
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807088130
 ---
+浏览器 SessionStorage 的机制和使用要点是什么？
+
+---
+
 SessionStorage 和 [[./浏览器 LocalStorage|LocalStorage]] 都是在HTML5才提出来的存储方案，SessionStorage 主要用于临时保存同一窗口(或标签页)的数据，刷新页面时不会删除，关闭窗口或标签页之后将会删除这些数据。
 - **SessionStorage与LocalStorage对比**：
 	- SessionStorage和LocalStorage都在**本地进行数据存储**；

@@ -1,12 +1,15 @@
 ---
 date: 2024-10-17T14:28:42
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807093447
 ---
+TS enum 的核心概念和应用要点是什么？
+
+---
+
 在 TypeScript 中，即使两个 `enum` 的成员完全一致，它们仍然是不同的类型。这是因为 `enum` 在 TypeScript 中是命名空间的一部分，每个 `enum` 都有自己的命名空间。因此，即使它们的成员相同，也不能互相替代。
-### 示例
+ 示例
 
 ```typescript
 enum Color1 {
@@ -29,9 +32,9 @@ let color2: Color2 = Color2.Red;
 // color2 = color1; // Error: Type 'Color1' is not assignable to type 'Color2'.
 ```
 
-### 解决方案
+ 解决方案
 
-#### 1. 使用联合类型
+ 1. 使用联合类型
 如果你希望两个 `enum` 能够互相替代，可以将它们转换为联合类型。
 
 ```typescript
@@ -56,7 +59,7 @@ color1 = color2; // 现在可以互相替代
 color2 = color1; // 现在可以互相替代
 ```
 
-#### 2. 使用字符串枚举
+ 2. 使用字符串枚举
 如果你不介意使用字符串枚举，可以考虑使用字符串枚举，因为字符串枚举的值是字符串，而不是数字，因此更容易进行类型转换。
 
 ```typescript
@@ -80,7 +83,7 @@ color1 = color2;
 color2 = color1;
 ```
 
-#### 3. 使用常量枚举
+ 3. 使用常量枚举
 如果你希望 `enum` 的值在编译时被内联，可以使用常量枚举（const enum）。
 
 ```typescript
@@ -104,7 +107,7 @@ color1 = color2;
 color2 = color1;
 ```
 
-### 总结
+ 总结
 - **联合类型**：适用于需要将两个 `enum` 互相替代的情况。
 - **字符串枚举**：适用于希望 `enum` 的值是字符串的情况。
 - **常量枚举**：适用于希望 `enum` 的值在编译时被内联的情况。

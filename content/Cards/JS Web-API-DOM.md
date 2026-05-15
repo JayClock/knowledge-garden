@@ -1,10 +1,13 @@
 ---
 date: 2024-10-12T18:00:52
-updated: 2025-01-02T10:28:32
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807091923
 ---
+JS Web API DOM 的核心 API 和使用场景是什么？
+
+---
+
 # DOM 本质
 DOM 本质是一颗树，首先 [[HTML|HTML]] 本身是一个树形的结构，HTML 是文件或者代码，DOM 是浏览器内存中初始化好的书。DOM 本质是**浏览器从 HTML 语言中解析出来的一颗树**。
 # DOM 节点操作
@@ -25,7 +28,7 @@ console.log('containerList[1]', containerList[1])
 const pList = document.querySelectorAll('p')
 console.log('pList', pList)
 ```
-## property 和 atttribute
+ property 和 atttribute
 - property: 修改对象属性，不会体现到 html 结构中
 - attribute: 修改 html 属性，会改变 html 结构
 - 两者都有可能引起 DOM 重新渲染

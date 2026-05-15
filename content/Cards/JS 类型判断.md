@@ -1,10 +1,13 @@
 ---
 date: 2024-10-25T16:32:14
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807091504
 ---
+JS 类型判断的核心机制是什么？
+
+---
+
 通过 typeof 运算符判断
 
 ```js
@@ -28,4 +31,4 @@ typeof null       // 'object'
 typeof ['a','b']  // 'object'
 typeof { x:100 }  // 'object'
 ```
-	
+

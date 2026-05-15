@@ -1,11 +1,14 @@
 ---
 date: 2024-10-22T09:44:17
-updated: 2025-05-05T16:55:58
+updated: 2026-05-15 09:58:44
 share: true
 source: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
-tags:
-  - review
+noteId: 1778807092314
 ---
+React 组件生命周期的核心作用和使用场景是什么？
+
+---
+
 - **挂载阶段**：组件首次创建并插入到 DOM 中的阶段
 	```ts
 	useEffect(() => {

@@ -1,10 +1,13 @@
 ---
 date: 2024-10-19T18:40:14
-updated: 2025-05-01T20:50:10
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807091414
 ---
+JS 宏任务和微任务的核心机制是什么？
+
+---
+
 - 宏任务和微任务
 	- 宏任务：setTimeout，setInterval，Ajax，[[./JS Web-API-DOM|DOM]] 事件，I / O 操作等
 	- 微任务：[[./JS Promise|Promise]]，[[./JS async&await|async&await]]，node 中的 process.nextTick，对 DOM 变化监听的 MutationObserver

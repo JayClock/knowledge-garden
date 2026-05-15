@@ -1,10 +1,13 @@
 ---
 date: 2024-10-23T09:24:20
-updated: 2025-02-19T10:50:36
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807092290
 ---
+React 异步组件的核心作用和使用场景是什么？
+
+---
+
 ```js
 import React from 'react'
 

@@ -1,10 +1,13 @@
 ---
 date: 2024-03-07T09:58:34
-updated: 2025-05-02T11:33:39
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807086651
 ---
+抽象（Abstraction）的定义和意义是什么？
+
+---
+
 # 定义
 
 # 意义

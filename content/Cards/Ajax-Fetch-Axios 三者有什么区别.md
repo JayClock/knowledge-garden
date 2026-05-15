@@ -1,15 +1,18 @@
 ---
 date: 2024-10-12T15:57:33
-updated: 2025-02-19T10:50:35
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807090315
 ---
+Ajax-Fetch-Axios 三者有哪些关键区别？
+
+---
+
 三者都用于网络请求，但是不同纬度
 - Ajax（Asynchronous Javascript and XML）一种技术统称
 - Fetch 一个具体的 API
 	- 浏览器原生 API，用于网络请求
-	- 和 XMLHttpRequest 都是原生 API 
+	- 和 XMLHttpRequest 都是原生 API
 	- 相比于 XMLHttpRequest，Fetch 语法更加简洁易用、支持 Promise
 - Axios 一个第三方库
 	- 由 Fetch XMLHttpRequest 去实现的 lib

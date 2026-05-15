@@ -1,10 +1,13 @@
 ---
 date: 2024-10-14T15:43:44
-updated: 2025-02-19T10:50:36
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807092575
 ---
+React setState 的核心作用和使用场景是什么？
+
+---
+
 # setState 只能使用不可变值
 ```js
 // 不可变值（函数式编程，纯函数） - 数组

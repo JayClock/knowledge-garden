@@ -1,10 +1,13 @@
 ---
 date: 2024-04-20T13:22:09
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807091997
 ---
+KSA 模型的核心概念和应用要点是什么？
+
+---
+
 一个阐述了知识与技能的区别与联系的模型。分为知识（Knowledge）、技能（Skill）、才华框架（Abilities framework）
 
 学习知识（knowledge），是在不同来源中获取，内化和记忆信息的过程，主要通过理解概念（concept）以及知悉事实（fact），最终达到“我知道了、我记住了（know what）”的效果

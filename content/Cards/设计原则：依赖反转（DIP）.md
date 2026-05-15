@@ -1,11 +1,15 @@
 ---
 date: 2024-03-17T15:49:04
-updated: 2025-02-19T10:50:36
+updated: 2026-05-15 09:58:44
 share: true
 tags:
   - design-principles
-  - review
+noteId: 1778807088623
 ---
+如何理解依赖反转（DIP）？
+
+---
+
 # 如何理解依赖反转原则
 > [!Quote] Dependency Inversion Prin
 > High-level modules shouldn’t depend on low-level modules. Both modules should depend on abstractions. In addition, abstractions shouldn’t depend on details. Details depend on abstractions.

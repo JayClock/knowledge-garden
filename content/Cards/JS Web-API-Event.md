@@ -1,10 +1,13 @@
 ---
 date: 2024-10-12T18:03:05
-updated: 2025-02-19T10:50:35
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807091946
 ---
+JS Web API Event 的核心 API 和使用场景是什么？
+
+---
+
 - 事件模型
 	- 事件捕获阶段：事件 document 一直向下传播到目标元素，一次检查经过的节点是否绑定了事件监听函数，如果有则执行
 	- 事件处理阶段：事件到达目标元素，触发目标元素的监听函数
@@ -55,7 +58,7 @@ tags:
 	    <p id="p6">取消</p>
 	</div>
 	```
-	
+
 	```js
 	const p1 = document.getElementById('p1')
 	bindEvent(p1, 'click', event => {

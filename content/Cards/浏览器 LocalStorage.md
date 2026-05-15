@@ -1,8 +1,13 @@
 ---
 date: 2025-05-20T16:49:44
-updated: 2025-05-20T16:55:35
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807088171
 ---
+浏览器 LocalStorage 的机制和使用要点是什么？
+
+---
+
 LocalStorage是HTML5新引入的特性，由于有的时候我们存储的信息较大，[[./浏览器 Cookie|Cookie]]就不能满足我们的需求，这时候LocalStorage就派上用场了。
 - **LocalStorage的优点：**
 	- 在大小方面，LocalStorage的大小一般为5MB，可以储存更多的信息

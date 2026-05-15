@@ -1,12 +1,15 @@
 ---
 date: 2024-10-21T11:44:18
-updated: 2025-05-19T17:07:06
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807088674
 ---
- instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的[[./JS 原型与原型链|原型链]]上
- 
+如何实现 InstanceOf？
+
+---
+
+instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的[[./JS 原型与原型链|原型链]]上
+
 ```ts
 function myInstanceOf(obj, constructor) {
   let proto = Object.getPrototypeOf(obj); // 获取 obj 的原型

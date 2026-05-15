@@ -1,15 +1,20 @@
 ---
 date: 2025-04-17T16:36:54
-updated: 2026-03-09 15:59:59
+updated: 2026-05-15 10:03:24
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 related:
   - "[[React-Redux|redux]]"
 share: true
+noteId: 1778807092839
 ---
+React useContext 用来解决什么问题，核心用法是什么？
+
+---
+
 `useContext` 是 React 组件通信从局部传值走向跨层共享时的一次增强。当前面的 `props` 和回调函数开始变成机械转发时，就说明你可能该从 [[./React 组件通信方式|React 组件通信方式]] 进入 `Context` 了。
 
-## 它解决什么问题
+ 它解决什么问题
 
 `props` 只能沿着父子链路一层层传递。
 
@@ -21,13 +26,13 @@ share: true
 
 这就是 `useContext` 的使用时机。
 
-## 一句话理解
+ 一句话理解
 
 `Context` 让一棵组件子树共享一份上层提供的值，`useContext` 负责在下游组件中读取这份值。
 
 这里增强的是“传播方式”，不是“状态本身”。
 
-## 典型场景
+ 典型场景
 
 适合：
 
@@ -40,7 +45,7 @@ share: true
 
 不适合直接拿来替代所有状态管理。
 
-## 基本机制
+ 基本机制
 
 1. 用 `createContext` 创建一份上下文
 2. 用 `Provider` 在上层提供值
@@ -95,7 +100,7 @@ function ThemedButton() {
 }
 ```
 
-## 什么时候该用
+ 什么时候该用
 
 可以优先问自己这几个问题：
 
@@ -105,7 +110,7 @@ function ThemedButton() {
 
 如果答案大多是“是”，那 `useContext` 很可能合适。
 
-## 什么时候不该用
+ 什么时候不该用
 
 `useContext` 不天然适合下面这些场景：
 
@@ -117,7 +122,7 @@ function ThemedButton() {
 
 这时通常应该继续进入 [[../Knowledges/React 状态管理|React 状态管理]]，再看 [[./React-Zustand|zustand]]、[[./React-Jotai|jotai]] 或 [[React-Redux|redux]]。
 
-## 一个常见误区
+ 一个常见误区
 
 很多人会把 `Context` 误解成“全局状态管理”。
 
@@ -128,7 +133,7 @@ function ThemedButton() {
 
 所以它们不是简单替代关系，而是复杂度不同阶段的不同解。
 
-## 和其它笔记的关系
+ 和其它笔记的关系
 
 - 在 [[./React 组件通信方式|React 组件通信方式]] 里，它是从 `props` 升级到跨层共享的关键一步
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它是函数组件接入共享能力的入口

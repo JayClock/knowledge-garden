@@ -1,8 +1,13 @@
 ---
 date: 2025-05-14T10:43:43
-updated: 2025-05-14T11:00:41
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807093475
 ---
+TTFB 衡量什么，如何优化？
+
+---
+
 ![TTFB Values](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/TTFB%20Values.svg)
 - **三个阶段**
 	- **HTTPRequestTime**：用户访问前端应用时，他的浏览器会向服务器发送 HTTP 请求。在这个阶段，浏览器需要向服务器发送一次页面请求

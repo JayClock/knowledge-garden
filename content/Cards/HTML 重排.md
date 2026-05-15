@@ -1,8 +1,13 @@
 ---
 date: 2025-05-20T15:27:12
-updated: 2025-05-20T15:38:17
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807090964
 ---
+浏览器重排是什么，哪些操作会触发？
+
+---
+
 ![更新元素的几何属性](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E6%9B%B4%E6%96%B0%E5%85%83%E7%B4%A0%E7%9A%84%E5%87%A0%E4%BD%95%E5%B1%9E%E6%80%A7.png)
 
 如果通过 JavaScript 或者 CSS 修改元素的**几何位置属性**，例如改变元素的宽度、高度等，那么浏览器会触发重新布局，解析之后的一系列子阶段，这个过程就叫**重排**。

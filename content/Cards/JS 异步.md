@@ -1,10 +1,13 @@
 ---
 date: 2024-10-12T17:59:45
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 10:03:23
 share: true
-tags:
-  - review
+noteId: 1778807091624
 ---
+JS 异步的核心机制是什么？
+
+---
+
 - 单线程与异步
 	- JS 是单线程语言，只能同时做一件事
 	- 浏览器和 nodejs 已支持 JS 启动进程，如 Web Worker
@@ -25,7 +28,7 @@ tags:
 	console.log(300)
 	console.log(400)
 	```
-	
+
 	```js
 	// 同步
 	console.log(100)

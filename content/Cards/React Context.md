@@ -1,10 +1,13 @@
 ---
 date: 2024-10-22T10:10:18
-updated: 2025-02-19T10:50:36
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807092394
 ---
+React Context 的核心作用和使用场景是什么？
+
+---
+
 - 公共信息（语言、主题）如何传递给每个组件
 - 用 props 太繁琐
 - 用 redux 小题大做
