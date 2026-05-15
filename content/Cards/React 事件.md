@@ -1,10 +1,13 @@
 ---
 date: 2024-10-14T15:33:55
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807092247
 ---
+React 事件的核心作用和使用场景是什么？
+
+---
+
 # 事件为何绑定 this
 ```jsx
 import React from 'react'
