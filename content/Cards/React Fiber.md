@@ -1,11 +1,16 @@
 ---
 date: 2025-05-05T11:14:49
-updated: 2026-03-09 16:31:49
+updated: 2026-05-15 10:03:24
 share: true
+noteId: 1778807092431
 ---
+React Fiber 的核心作用和使用场景是什么？
+
+---
+
 `React Fiber` 是 React 为了解决“复杂更新会长时间阻塞主线程”而重写出来的协调架构。它不是一个单独可用的 API，而是并发渲染、优先级调度、Suspense、`useTransition` 这些能力的底层前提。
 
-## 它解决什么问题
+ 它解决什么问题
 
 浏览器的主线程既要执行 JavaScript，也要处理输入、布局和绘制。
 
@@ -21,13 +26,13 @@ Fiber 解决的核心问题就是：
 
 **能不能把渲染工作拆小、排序、暂停、恢复，并优先处理更重要的更新。**
 
-## 一句话理解
+ 一句话理解
 
 Fiber 让 React 从“同步一路算到底”的更新模型，升级为“可拆分、可抢占、按优先级调度”的更新模型。
 
 这里增强的是“渲染调度能力”。
 
-## 为什么它重要
+ 为什么它重要
 
 Fiber 不是为了“让所有渲染都异步”，而是为了让 React 有能力区分不同更新的轻重缓急。
 
@@ -46,7 +51,7 @@ Fiber 不是为了“让所有渲染都异步”，而是为了让 React 有能�
 - 流式 SSR
 - 选择性 hydration
 
-## 一个直观例子
+ 一个直观例子
 
 假设页面正在渲染一个很重的列表，这时用户点击了输入框。
 
@@ -62,7 +67,7 @@ Fiber 不是为了“让所有渲染都异步”，而是为了让 React 有能�
 
 这就是 Fiber 想达到的效果。
 
-## Fiber 到底做了什么
+ Fiber 到底做了什么
 
 可以先抓住 4 个关键点：
 
@@ -73,9 +78,9 @@ Fiber 不是为了“让所有渲染都异步”，而是为了让 React 有能�
 
 所以 Fiber 不是单纯的数据结构，而是一整套“可中断协调 + 同步提交”的架构。
 
-## 两个阶段
+ 两个阶段
 
-### 1. Render / Reconciliation 阶段
+ 1. Render / Reconciliation 阶段
 
 这一阶段的目标是：
 
@@ -86,7 +91,7 @@ Fiber 不是为了“让所有渲染都异步”，而是为了让 React 有能�
 
 也正是在这一层，React 才有机会做优先级调度。
 
-### 2. Commit 阶段
+ 2. Commit 阶段
 
 这一阶段的目标是：
 
@@ -100,11 +105,11 @@ Fiber 不是为了“让所有渲染都异步”，而是为了让 React 有能�
 - 计算阶段可调度
 - 提交阶段必须稳定
 
-## 为什么会影响 Hooks
+ 为什么会影响 Hooks
 
 Fiber 不只是影响调度，也反过来影响了 [[../Knowledges/React Hooks|React Hooks]] 的设计和运行方式。
 
-### Hook 为什么强调调用顺序
+ Hook 为什么强调调用顺序
 
 Hooks 依赖稳定的调用顺序，React 才能在 Fiber 对应的组件工作单元上，把每个 Hook 的状态槽位正确对应起来。
 
@@ -114,18 +119,18 @@ Hooks 依赖稳定的调用顺序，React 才能在 Fiber 对应的组件工作�
 - 不能在循环里调用 Hook
 - 必须保证顺序稳定
 
-### 为什么副作用分成不同阶段
+ 为什么副作用分成不同阶段
 
 像 [[./React-useEffect|useEffect]] 和 [[./React-useLayoutEffect|useLayoutEffect]] 的差异，本质上也和 Fiber 的提交顺序有关：
 
 - `useEffect` 更偏向提交后的异步副作用
 - [[./React-useLayoutEffect|useLayoutEffect]] 更靠近 DOM 变更后的同步布局阶段
 
-### 为什么会有并发相关 Hook
+ 为什么会有并发相关 Hook
 
 [[./React-useTransition|useTransition]]、[[./React-useDeferredValue|useDeferredValue]] 这些能力，本质上是在利用 Fiber 的调度系统，让不同更新进入不同优先级通道。
 
-## 和优先级的关系
+ 和优先级的关系
 
 可以粗略把 Fiber 的调度理解成：
 
@@ -141,7 +146,7 @@ Hooks 依赖稳定的调用顺序，React 才能在 Fiber 对应的组件工作�
 - 输入响应必须足够快
 - [[./React-useTransition|useTransition]] 适合把“能晚一点”的 UI 放后面
 
-## Fiber 节点可以怎么理解
+ Fiber 节点可以怎么理解
 
 如果不深究实现细节，可以把一个 Fiber 节点理解成：
 
@@ -151,7 +156,7 @@ Hooks 依赖稳定的调用顺序，React 才能在 Fiber 对应的组件工作�
 
 它让 React 不只是“知道 UI 长什么样”，还“知道这份工作该怎么被调度”。
 
-## 一个常见误区
+ 一个常见误区
 
 很多人会把 Fiber 理解成“React 变成了多线程”。
 
@@ -163,7 +168,7 @@ Hooks 依赖稳定的调用顺序，React 才能在 Fiber 对应的组件工作�
 - Fiber 做的是更细粒度的任务拆分与调度
 - 它让主线程上的工作更容易被安排，而不是平白多出线程
 
-## 和其它笔记的关系
+ 和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，Fiber 是并发渲染和 Hook 调度的底层背景
 - 在 [[./React-useEffect|useEffect]] 里，可以继续连接到副作用提交时机
