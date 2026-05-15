@@ -1,11 +1,15 @@
 ---
 date: 2024-03-08T07:22:14
-updated: 2025-02-19T10:50:36
+updated: 2026-05-15 09:58:44
 share: true
 tags:
   - design-principles
-  - review
+noteId: 1778807088572
 ---
+如何理解开闭原则（OCP）？
+
+---
+
 # 如何理解开闭原则
 Open Closed Principle —— software entities (modules, classes, functions, etc) should be open for extension, but closed for modification.
 
