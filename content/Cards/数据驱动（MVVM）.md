@@ -1,10 +1,13 @@
 ---
 date: 2024-10-14T14:38:51
-updated: 2025-01-02T10:28:32
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807089047
 ---
+数据驱动（MVVM） 中“如何理解数据驱动（MVVM）”的关键方法是什么？
+
+---
+
 传统软件开发，都是静态渲染，更新还要操作 DOM。通过 MVVM 可以让开发人员专注于业务数据本身，而不是如何操作 DOM 上。
 # 如何理解数据驱动（MVVM）
 MVVM 表示的是 Model - View - ViewModel
