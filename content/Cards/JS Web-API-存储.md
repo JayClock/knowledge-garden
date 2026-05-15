@@ -1,18 +1,21 @@
 ---
 date: 2024-10-16T09:55:21
-updated: 2025-02-19T10:50:36
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807091840
 ---
+JS Web API 存储的核心 API 和使用场景是什么？
+
+---
+
 # cookie
 
-## 定义
+ 定义
 
 - 本身用于浏览器和 server 通讯
 - 被“借用”到本地存储来
 - 可用 document.cookie = '...' 来修改
-## 缺点
+ 缺点
 
 - 存储大小，最大 4KB
 - http 请求时需要发送到服务端，增加请求量
