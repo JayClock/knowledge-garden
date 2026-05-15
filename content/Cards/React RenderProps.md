@@ -1,9 +1,11 @@
 ---
 date: 2024-10-23T18:12:09
-updated: 2025-02-19T10:50:35
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807092491
+---
+React RenderProps 的核心作用和使用场景是什么？
+
 ---
 
 ```js
