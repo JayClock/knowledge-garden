@@ -1,13 +1,18 @@
 ---
 date: 2026-03-09T16:20:01
-updated: 2026-03-09 16:27:18
+updated: 2026-05-15 10:03:24
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 share: true
+noteId: 1778807092990
 ---
+React useOptimistic 用来解决什么问题，核心用法是什么？
+
+---
+
 `useOptimistic` 解决的不是“性能”问题，而是“反馈节奏”问题。它让用户操作发生后，界面先按成功路径乐观更新，再等待服务端真正确认。
 
-## 它解决什么问题
+ 它解决什么问题
 
 很多交互如果等服务端成功后再更新 UI，用户会感觉迟钝。
 
@@ -25,13 +30,13 @@ share: true
 - 先给用户一个成功后的临时界面
 - 再等真实结果回来
 
-## 一句话理解
+ 一句话理解
 
 `useOptimistic` 让 UI 先按“操作会成功”来更新，从而把反馈提前到服务端确认之前。
 
 这里增强的是“交互反馈节奏”的能力。
 
-## 一个典型例子
+ 一个典型例子
 
 ```tsx
 import { useOptimistic, useState } from 'react'
@@ -73,7 +78,7 @@ function CommentForm({ comments, submitComment }) {
 
 这里用户会先看到评论出现在列表里，而不是等请求结束后才出现。
 
-## 什么时候该用
+ 什么时候该用
 
 适合：
 
@@ -81,7 +86,7 @@ function CommentForm({ comments, submitComment }) {
 - 成功概率高、失败可恢复的场景
 - 你愿意设计失败回滚或重试策略
 
-## 什么时候不该用
+ 什么时候不该用
 
 不适合：
 
@@ -91,7 +96,7 @@ function CommentForm({ comments, submitComment }) {
 
 乐观更新不是“假装成功”，而是“先反馈，再校正”。
 
-## 一个常见误区
+ 一个常见误区
 
 很多人会把 `useOptimistic` 理解成“让请求更快”。
 
@@ -106,7 +111,7 @@ function CommentForm({ comments, submitComment }) {
 
 而不是服务端响应速度。
 
-## 和并发能力的关系
+ 和并发能力的关系
 
 `useOptimistic` 虽然不像 [[./React-useTransition|useTransition]] 那样直接表现为优先级调度，但它同样属于 React 在更现代交互体验下提供的增强能力。
 
@@ -119,7 +124,7 @@ function CommentForm({ comments, submitComment }) {
 
 - `useOptimistic` 解决“用户该先看到什么反馈”
 
-## 和其它笔记的关系
+ 和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于“并发渲染时代的调度增强”
 - 在 [[./React Fiber|React Fiber]] 的语境里，可以把它放进更广义的体验调度与渐进反馈体系中理解
