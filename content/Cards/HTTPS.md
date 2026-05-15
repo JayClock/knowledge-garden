@@ -1,8 +1,13 @@
 ---
 date: 2025-05-10T22:45:27
-updated: 2025-05-20T18:40:19
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807091206
 ---
+HTTPS 如何保证传输安全？
+
+---
+
 - HTTP协议采用**明文传输**信息，存在**信息窃听**、**信息篡改**和**信息劫持**的风险，而协议TLS/SSL具有**身份验证**、**信息加密**和**完整性校验**的功能，可以避免此类问题发生。
 	![HTTP VS HTTPS](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/HTTP%20VS%20HTTPS.png)
 - 如何加解密：
