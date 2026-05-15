@@ -1,9 +1,7 @@
 ---
 date: 2024-03-07T22:08:11
-updated: 2026-05-15 09:58:44
+updated: 2026-05-15 12:16:33
 share: true
-tags:
-  - design-principles
 noteId: 1778807088546
 ---
 如何理解单一职责（SRP）？
