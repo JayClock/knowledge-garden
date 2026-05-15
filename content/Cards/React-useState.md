@@ -1,15 +1,20 @@
 ---
 date: 2025-04-16T13:38:56
-updated: 2026-03-09 16:08:48
+updated: 2026-05-15 10:03:24
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 related:
   - "[[React-Redux]]"
 share: true
+noteId: 1778807093074
 ---
+React useState 用来解决什么问题，核心用法是什么？
+
+---
+
 `useState` 是函数组件获得状态能力的起点。只要一个组件需要“记住某个值，并在它变化时重新渲染”，就进入了 `useState` 的适用范围。
 
-## 它解决什么问题
+ 它解决什么问题
 
 函数组件每次渲染都会重新执行，所以普通局部变量无法在多次渲染之间保留。
 
@@ -20,13 +25,13 @@ share: true
 
 这是 [[../Knowledges/React Hooks|React Hooks]] 体系里最基础的一层能力，也是 [[../Knowledges/React 状态管理|React 状态管理]] 的起点。
 
-## 一句话理解
+ 一句话理解
 
 `useState` 让函数组件从“只会根据输入返回 UI”升级为“能记住局部状态并响应交互”。
 
 这里增强的是“记住值并驱动渲染”的能力。
 
-## 一个最小例子
+ 一个最小例子
 
 ```tsx
 import React, { useState } from 'react'
@@ -43,7 +48,7 @@ function Example() {
 }
 ```
 
-## 什么时候该用
+ 什么时候该用
 
 适合：
 
@@ -60,7 +65,7 @@ function Example() {
 - 结构简单
 - 更新逻辑直接
 
-## 什么时候不该用
+ 什么时候不该用
 
 并不是所有值都应该进 state。
 
@@ -80,7 +85,7 @@ function Example() {
 
 如果一个值本身不是“源状态”，就不要把它再复制成另一份 state。
 
-## 什么时候该升级
+ 什么时候该升级
 
 当下面这些问题开始出现时，说明你可能要从 `useState` 往上升级了：
 
@@ -92,7 +97,7 @@ function Example() {
 
 如果共享范围继续扩大，再进入 [[./React-useContext|React-useContext]] 或更上层的 [[../Knowledges/React 状态管理|React 状态管理]]。
 
-## 一个常见误区
+ 一个常见误区
 
 很多人会把“所有会变化的值”都塞进 `useState`。
 
@@ -108,7 +113,7 @@ function Example() {
 
 只有前者才适合放进 `useState`。
 
-## 和其它笔记的关系
+ 和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它是函数组件有状态的起点
 - 在 [[../Knowledges/React 状态管理|React 状态管理]] 里，它是最小、最局部的状态管理方案
