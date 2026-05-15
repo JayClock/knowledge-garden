@@ -1,19 +1,19 @@
 ---
 date: 2025-09-30 20:00:35
-updated: 2026-03-09 15:44:04
+updated: 2026-05-15 10:03:23
 share: true
 ---
 React 状态管理不适合被理解成“在几个库之间做静态选型”，更适合放进 [[./渐进增强|渐进增强]] 的视角里看：先用最小成本解决当前问题，再随着状态范围、复杂度和协作成本的上升，逐层增强。
 
-## 一条渐进增强的主线
+ 一条渐进增强的主线
 
-[[../Cards/React 组件通信方式|React 组件通信方式]] -> [[../Cards/React-useState|useState]] -> [[React-useReducer|useReducer]] -> [[../Cards/React-useContext|useContext]] -> [[../Cards/React-Zustand|zustand]] / [[../Cards/React-Jotai|jotai]] / [[React-Redux|redux]] -> [[../Cards/微前端的渐进式集成|微前端的渐进式集成]]
+[[./React 组件通信方式|React 组件通信方式]] -> [[../Cards/React-useState|useState]] -> [[React-useReducer|useReducer]] -> [[./React-useContext|useContext]] -> [[../Cards/React-Zustand|zustand]] / [[../Cards/React-Jotai|jotai]] / [[React-Redux|redux]] -> [[./微前端的渐进式集成|微前端的渐进式集成]]
 
 这条线对应的不是“谁替代谁”，而是“问题什么时候升级了”。
 
-## 第一层：先解决组件通信
+ 第一层：先解决组件通信
 
-在状态管理之前，先看 [[../Cards/React 组件通信方式|React 组件通信方式]]：
+在状态管理之前，先看 [[./React 组件通信方式|React 组件通信方式]]：
 
 - 父传子：`props`
 - 子传父：回调函数
@@ -22,9 +22,9 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 如果问题还停留在组件之间的数据传递，通常还没有真正进入“状态管理”阶段。
 
-## 第二层：局部状态，先用最小解
+ 第二层：局部状态，先用最小解
 
-### [[../Cards/React-useState|useState]]
+ [[../Cards/React-useState|useState]]
 
 适合：
 
@@ -39,9 +39,9 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 这是最基础、最符合渐进增强思想的起点。
 
-## 第三层：逻辑复杂了，但作用域还没变大
+ 第三层：逻辑复杂了，但作用域还没变大
 
-### [[React-useReducer|useReducer]]
+ [[React-useReducer|useReducer]]
 
 适合：
 
@@ -56,9 +56,9 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 这里增强的是“状态更新逻辑”，不是“状态共享范围”。
 
-## 第四层：状态开始跨层共享
+ 第四层：状态开始跨层共享
 
-### [[../Cards/React-useContext|useContext]]
+ [[./React-useContext|useContext]]
 
 适合：
 
@@ -75,11 +75,11 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 但要注意：`Context` 更适合解决共享问题，不天然擅长解决高频更新、复杂调试和大规模拆分问题。
 
-## 第五层：共享范围和工程复杂度继续上升
+ 第五层：共享范围和工程复杂度继续上升
 
 当 `Context` 已经不够时，就进入外部 store 阶段。这个阶段不是只有一个答案，而是不同方向的增强。
 
-### [[../Cards/React-Zustand|zustand]]
+ [[../Cards/React-Zustand|zustand]]
 
 适合：
 
@@ -89,7 +89,7 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 可以理解成对“全局共享状态”的轻量增强。
 
-### [[../Cards/React-Jotai|jotai]]
+ [[../Cards/React-Jotai|jotai]]
 
 适合：
 
@@ -99,7 +99,7 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 可以理解成对“状态建模粒度”的增强。
 
-### [[React-Redux|redux]]
+ [[React-Redux|redux]]
 
 适合：
 
@@ -109,9 +109,9 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 可以理解成对“工程治理能力”的增强。
 
-## 第六层：状态不再只是单应用问题
+ 第六层：状态不再只是单应用问题
 
-当应用走向更大的系统边界时，状态管理会继续升级为集成问题。这时可以参考 [[../Cards/微前端的渐进式集成|微前端的渐进式集成]]。
+当应用走向更大的系统边界时，状态管理会继续升级为集成问题。这时可以参考 [[./微前端的渐进式集成|微前端的渐进式集成]]。
 
 此时要考虑的已经不只是：
 
@@ -125,17 +125,17 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 这对应了 [[../Express/渐进式集成：从浏览器渲染到框架设计的统一哲学|渐进式集成：从浏览器渲染到框架设计的统一哲学]] 中的那条主线：先保证核心能力，再做按需增强。
 
-## 如何判断该不该升级
+ 如何判断该不该升级
 
 可以按下面的顺序判断：
 
 1. 只是组件内部状态？先用 [[../Cards/React-useState|useState]]
 2. 更新逻辑复杂，但不需要共享？用 [[React-useReducer|useReducer]]
-3. 需要跨层共享？用 [[../Cards/React-useContext|useContext]]
+3. 需要跨层共享？用 [[./React-useContext|useContext]]
 4. 共享范围扩大，且更新/拆分/调试变复杂？考虑 [[../Cards/React-Zustand|zustand]]、[[../Cards/React-Jotai|jotai]]、[[React-Redux|redux]]
-5. 状态跨应用、跨团队、跨边界？进入 [[../Cards/微前端的渐进式集成|微前端的渐进式集成]]
+5. 状态跨应用、跨团队、跨边界？进入 [[./微前端的渐进式集成|微前端的渐进式集成]]
 
-## 一个更准确的理解
+ 一个更准确的理解
 
 React 状态管理的核心问题不是“该选哪个库”，而是：
 
@@ -146,9 +146,9 @@ React 状态管理的核心问题不是“该选哪个库”，而是：
 
 状态管理方案的演进，本质上是一个渐进增强过程：问题没有升级，就不要过度增强；问题一旦升级，就要顺着复杂度自然上移。
 
-## 相关笔记
+ 相关笔记
 
 - [[./渐进增强|渐进增强]]
 - [[../Express/渐进式集成：从浏览器渲染到框架设计的统一哲学|渐进式集成：从浏览器渲染到框架设计的统一哲学]]
-- [[../Cards/React 组件通信方式|React 组件通信方式]]
+- [[./React 组件通信方式|React 组件通信方式]]
 - [[./React Hooks|React Hooks]]
