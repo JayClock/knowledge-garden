@@ -1,6 +1,6 @@
 ---
 date: 2026-03-09T16:20:01
-updated: 2026-05-15 10:03:24
+updated: 2026-05-15 12:16:33
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 share: true
@@ -127,5 +127,5 @@ function CommentForm({ comments, submitComment }) {
  和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于“并发渲染时代的调度增强”
-- 在 [[./React Fiber|React Fiber]] 的语境里，可以把它放进更广义的体验调度与渐进反馈体系中理解
+- 在 [[../Knowledges/React Fiber|React Fiber]] 的语境里，可以把它放进更广义的体验调度与渐进反馈体系中理解
 - 和 [[./React-useTransition|useTransition]]、[[./React-useDeferredValue|useDeferredValue]] 一起看，更容易建立“优先级、节奏、反馈”这三个维度的区别

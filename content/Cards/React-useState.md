@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16T13:38:56
-updated: 2026-05-15 10:03:24
+updated: 2026-05-15 12:16:33
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 related:
@@ -95,7 +95,7 @@ function Example() {
 
 这时通常该进入 [[React-useReducer|useReducer]]。
 
-如果共享范围继续扩大，再进入 [[./React-useContext|React-useContext]] 或更上层的 [[../Knowledges/React 状态管理|React 状态管理]]。
+如果共享范围继续扩大，再进入 [[../Knowledges/React-useContext|React-useContext]] 或更上层的 [[../Knowledges/React 状态管理|React 状态管理]]。
 
  一个常见误区
 

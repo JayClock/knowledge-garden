@@ -1,6 +1,6 @@
 ---
 date: 2024-10-14T14:38:51
-updated: 2026-05-15 09:58:44
+updated: 2026-05-15 12:16:33
 share: true
 noteId: 1778807089047
 ---
@@ -14,7 +14,7 @@ MVVM 表示的是 Model - View - ViewModel
 - Model：模型层，负责处理业务逻辑以及和服务端的交互
 - View：视图层，负责将数据模型转化为 UI 展示出来，可以简单理解为 [[HTML|HTML]] 页面
 - ViewModel: 视图模型层，用来连接 Model 和 View，是 Model 和 View 之间的桥梁
-## 理解 ViewModel
+ 理解 ViewModel
 数据变化后更新视图、视图变化后更新数据
 - 监听器（Observer）：对所有数据的属性进行监听
 - 解析器（Compiler）：对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定响应的更新数据

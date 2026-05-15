@@ -1,6 +1,6 @@
 ---
 date: 2025-04-10T22:01:23
-updated: 2025-05-18T21:45:34
+updated: 2026-05-15 10:03:23
 share: true
 ---
 首先，我们构造一个最简单的测试用例，仅仅是请求 `/users`，并返回 'user list'
@@ -75,7 +75,7 @@ class UserResource {
 }
 ```
 
-添加 dispatch 
+添加 dispatch
 ```ts
 import express, { Express, Request, Response } from 'express';
 import { Server } from 'node:http';

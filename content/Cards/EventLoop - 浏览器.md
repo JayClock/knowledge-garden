@@ -1,6 +1,6 @@
 ---
 date: 2024-10-19T11:00:11
-updated: 2026-05-15 10:03:24
+updated: 2026-05-15 12:16:33
 share: true
 noteId: 1778807090722
 ---
@@ -18,7 +18,7 @@ Event Loop（事件循环）是 JavaScript 处理 **异步操作** 的核心�
 2. **处理[[./JS 宏任务和微任务|微任务]]**
 	- 检查 微任务队列（MicroTask Queue） 是否有任务（如 Promise.then()、queueMicrotask()）。
 	- 依次执行所有微任务，直到微任务队列清空。
-3. **尝试触发 [[./JS Web-API-DOM|DOM]] 渲染**
+3. **尝试触发 [[../Knowledges/JS Web-API-DOM|DOM]] 渲染**
 	- DOM 结构如果有改变则重新渲染
 4. **执行[[./JS 宏任务和微任务|宏任务]]**
 	- 从 宏任务队列（MacroTask Queue） 取出 一个 任务（如 setTimeout 回调、I/O 任务），放入调用栈执行。

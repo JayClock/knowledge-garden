@@ -1,6 +1,6 @@
 ---
 date: 2025-04-17T10:21:36
-updated: 2026-05-15 10:03:24
+updated: 2026-05-15 12:16:33
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 share: true
@@ -99,4 +99,4 @@ function Counter() {
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于“稳定引用和派生能力”这一层
 - 在 [[./React-useMemo|useMemo]] 里，可以看到它们的角色分工
-- 在 [[./React-useEffect|useEffect]] 里，它经常用于稳定 effect 依赖中的函数引用
+- 在 [[../Knowledges/React-useEffect|useEffect]] 里，它经常用于稳定 effect 依赖中的函数引用

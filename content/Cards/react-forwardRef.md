@@ -1,6 +1,6 @@
 ---
 date: 2025-10-09 10:03:29
-updated: 2026-05-15 10:03:23
+updated: 2026-05-15 12:16:33
 share: true
 noteId: 1778807092639
 ---
@@ -59,7 +59,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 - 只是想跨组件共享状态
 - 没有任何 ref 透传需求的普通业务组件
 
-如果只是传数据或事件，优先回到 [[./React 组件通信方式|React 组件通信方式]] 里的 `props` 和回调。
+如果只是传数据或事件，优先回到 [[../Knowledges/React 组件通信方式|React 组件通信方式]] 里的 `props` 和回调。
 
  和 `useImperativeHandle` 的关系
 
@@ -100,6 +100,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 
  和其它笔记的关系
 
-- 在 [[./React-useRef|useRef]] 里，它和 ref 的命令式能力直接相关
+- 在 [[../Knowledges/React-useRef|useRef]] 里，它和 ref 的命令式能力直接相关
 - 在 [[./React-useImperativeHandle|useImperativeHandle]] 里，可以继续看到“透传 ref 之后怎么裁剪暴露面”
-- 在 [[./React 组件通信方式|React 组件通信方式]] 里，它对应“`ref` 暴露实例能力”那条路线
+- 在 [[../Knowledges/React 组件通信方式|React 组件通信方式]] 里，它对应“`ref` 暴露实例能力”那条路线

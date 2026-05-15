@@ -1,14 +1,17 @@
 ---
 date: 2024-10-21T13:05:30
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 12:16:33
 share: true
-tags:
-  - review
+noteId: 1778807090589
 ---
+CSS 元素单位的规则和常见用法是什么？
+
+---
+
 # px
 像素，基本单位
 # %
-相对于父元素的尺寸。比如[[./CSS 对齐|CSS 对齐]]中，根据 `position: absolute` 居中显示时，需要设置 `left: 50%`
+相对于父元素的尺寸。比如[[../Knowledges/CSS 对齐|CSS 对齐]]中，根据 `position: absolute` 居中显示时，需要设置 `left: 50%`
 
 ```css
 .container {
@@ -26,7 +29,7 @@ tags:
     margin-left: -50px;
 }
 ```
-# em 
+# em
 相当于当前元素的 `font-size`。首行锁进可以使用 `text-indent: 2em`
 # rem
 rem = root em

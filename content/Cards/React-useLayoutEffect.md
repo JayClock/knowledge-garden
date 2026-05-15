@@ -1,6 +1,6 @@
 ---
 date: 2026-03-09T16:29:31
-updated: 2026-05-15 10:03:24
+updated: 2026-05-15 12:16:33
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 share: true
@@ -10,11 +10,11 @@ React useLayoutEffect 用来解决什么问题，核心用法是什么？
 
 ---
 
-`useLayoutEffect` 和 [[./React-useEffect|useEffect]] 很像，但它解决的是“时机更靠前的副作用”问题。它适合那些必须在浏览器绘制之前同步完成的 DOM 读写，而不是普通的数据请求或订阅。
+`useLayoutEffect` 和 [[../Knowledges/React-useEffect|useEffect]] 很像，但它解决的是“时机更靠前的副作用”问题。它适合那些必须在浏览器绘制之前同步完成的 DOM 读写，而不是普通的数据请求或订阅。
 
  它解决什么问题
 
-大部分副作用放在 [[./React-useEffect|useEffect]] 里就够了，因为它发生在提交之后，不会阻塞浏览器绘制。
+大部分副作用放在 [[../Knowledges/React-useEffect|useEffect]] 里就够了，因为它发生在提交之后，不会阻塞浏览器绘制。
 
 但有一类场景不一样：
 
@@ -70,7 +70,7 @@ function Tooltip() {
 - 日志上报
 - 不依赖布局时机的副作用
 
-如果没有“必须在绘制前完成”的理由，优先使用 [[./React-useEffect|useEffect]]。
+如果没有“必须在绘制前完成”的理由，优先使用 [[../Knowledges/React-useEffect|useEffect]]。
 
  一个常见误区
 
@@ -80,10 +80,10 @@ function Tooltip() {
 
 它不是更高级，而是时机更靠前、代价也更高，因为它会阻塞浏览器绘制。
 
-所以默认选择应该仍然是 [[./React-useEffect|useEffect]]，只有在布局同步场景下才升级到 `useLayoutEffect`。
+所以默认选择应该仍然是 [[../Knowledges/React-useEffect|useEffect]]，只有在布局同步场景下才升级到 `useLayoutEffect`。
 
  和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于副作用能力的细分节点
-- 在 [[./React-useEffect|useEffect]] 里，它是更靠前的布局副作用版本
-- 在 [[./React Fiber|React Fiber]] 里，它可以连接到提交阶段中更靠近 layout 的执行时机
+- 在 [[../Knowledges/React-useEffect|useEffect]] 里，它是更靠前的布局副作用版本
+- 在 [[../Knowledges/React Fiber|React Fiber]] 里，它可以连接到提交阶段中更靠近 layout 的执行时机

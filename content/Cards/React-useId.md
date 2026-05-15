@@ -1,6 +1,6 @@
 ---
 date: 2026-03-09T16:36:31
-updated: 2026-05-15 10:03:23
+updated: 2026-05-15 12:16:33
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 share: true
@@ -83,4 +83,4 @@ function NameField() {
  和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于偏工具型的能力补充
-- 和 [[./React-useRef|useRef]]、[[./React-useLayoutEffect|useLayoutEffect]] 不同，它不处理 DOM 引用或布局，而是处理结构标识与可访问性关联
+- 和 [[../Knowledges/React-useRef|useRef]]、[[./React-useLayoutEffect|useLayoutEffect]] 不同，它不处理 DOM 引用或布局，而是处理结构标识与可访问性关联
