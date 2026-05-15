@@ -1,6 +1,6 @@
 ---
 date: 2024-09-24T22:00:31
-updated: 2026-05-15 09:58:44
+updated: 2026-05-15 12:16:33
 share: true
 noteId: 1778807089644
 ---
@@ -18,4 +18,4 @@ noteId: 1778807089644
 	![虚拟 DOM 执行流程](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E8%99%9A%E6%8B%9F%20DOM%20%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.png)
 	- **创建阶段**。首先依据 [[./JSX|JSX]] 和基础数据创建出来虚拟 DOM，它反映了真实的 DOM 树的结构。然后由虚拟 DOM 树创建出真实 DOM 树，真实的 DOM 树生成完后，再触发渲染流水线往屏幕输出页面
 	- **更新阶段**。如果数据发生了改变，那么就需要根据新的数据创建一个新的虚拟 DOM 树；然后 React 比较两个树，找出变化的地方，并把变化的地方一次性更新到真实的 DOM 树上；最后渲染引擎更新渲染流水线，并生成新的页面。
-	- 由于虚拟 DOM 比较用的是[[./Diff 算法|两颗树递归对比]]，在大型项目中依旧有效率问题，React 16+ 使用 [[./React Fiber|React Fiber]] 进行更高性能的更新
+	- 由于虚拟 DOM 比较用的是[[./Diff 算法|两颗树递归对比]]，在大型项目中依旧有效率问题，React 16+ 使用 [[../Knowledges/React Fiber|React Fiber]] 进行更高性能的更新
