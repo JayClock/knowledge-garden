@@ -1,8 +1,13 @@
 ---
 date: 2025-10-09 16:46:26
-updated: 2025-10-09 16:46:46
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807092665
 ---
+React Jotai 的核心作用和使用场景是什么？
+
+---
+
 ```tsx
 import { useAtomValue, useSetAtom } from "jotai";
 import { ageAtom } from "../../atom/AgeAtom";
