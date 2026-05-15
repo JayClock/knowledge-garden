@@ -1,8 +1,13 @@
 ---
 date: 2025-05-14T18:34:48
-updated: 2025-05-16T18:38:30
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807092021
 ---
+LCP 衡量什么，如何优化？
+
+---
+
 ![LCP Values](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/LCP%20Values.svg)
 - **概念**：[最大内容绘制（Largest Contentful Paint）](https://web.dev/articles/lcp)指的是加载页面最大视觉部分所需的时间。这个时间对应的是最大资源或文本块呈现在用户可见视口区域时的时间点。**最大资源一般是指图片资源，如果可视区内没有图片，LCP 记录的就是最后一次显示内容的区域，比如文本块区域**。也就是“准备好”给用户使用
 - **特点**：
