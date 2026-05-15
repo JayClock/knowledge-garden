@@ -1,6 +1,6 @@
 ---
 date: 2026-03-09T16:20:01
-updated: 2026-05-15 10:03:23
+updated: 2026-05-15 12:16:33
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 share: true
@@ -97,5 +97,5 @@ function SearchPage() {
  和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于“并发渲染时代的调度增强”
-- 在 [[./React Fiber|React Fiber]] 里，可以看到它背后的优先级调度基础
+- 在 [[../Knowledges/React Fiber|React Fiber]] 里，可以看到它背后的优先级调度基础
 - 和 [[./React-useTransition|useTransition]] 一起理解，会更容易把握“动作延后”和“值延后”的区别
