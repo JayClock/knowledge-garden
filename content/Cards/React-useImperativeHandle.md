@@ -1,6 +1,6 @@
 ---
 date: 2026-03-09T16:36:31
-updated: 2026-05-15 10:03:23
+updated: 2026-05-15 12:16:33
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 share: true
@@ -105,5 +105,5 @@ const SearchInput = forwardRef((props, ref) => {
  和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于 ref 能力向组件边界外延伸的一部分
-- 在 [[./React-useRef|useRef]] 里，它延伸了 ref 的命令式使用方式
-- 在 [[./React 组件通信方式|React 组件通信方式]] 里，它对应 `ref` 路线下的实例能力暴露
+- 在 [[../Knowledges/React-useRef|useRef]] 里，它延伸了 ref 的命令式使用方式
+- 在 [[../Knowledges/React 组件通信方式|React 组件通信方式]] 里，它对应 `ref` 路线下的实例能力暴露
