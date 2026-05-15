@@ -1,10 +1,13 @@
 ---
 date: 2024-10-25T16:12:55
-updated: 2025-02-19T10:50:36
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807090568
 ---
+CSS margin 的规则和常见用法是什么？
+
+---
+
 - margin 纵向重叠问题
 	- 相邻元素的 margin-top 和 margin-bottom 会发生重叠
 	- 空白内容的 `<p></p>` 也会重叠
@@ -39,7 +42,7 @@ tags:
 	- margin-top 和 margin-left 负值、元素向上、向左移动
 	- margin-right 负值，右侧元素左移，自身不受影响
 	- margin-bottom 负值，下方元素上移，自身不受影响
-	
+
 	```html
 	<!DOCTYPE html>
 	<html>
