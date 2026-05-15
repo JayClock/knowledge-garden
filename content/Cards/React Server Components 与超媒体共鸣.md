@@ -1,15 +1,20 @@
 ---
 date: 2025-11-01 17:16:41
-updated: 2025-11-01 17:17:03
+updated: 2026-05-15 10:03:24
 share: true
+noteId: 1778807092550
 ---
-## 核心理念：服务端驱动的渐进式能力交付
+React Server Components 与超媒体共鸣的核心作用和使用场景是什么？
+
+---
+
+ 核心理念：服务端驱动的渐进式能力交付
 
 React Server Components (RSC) 不仅仅是技术架构的革新，更是对 Web 渐进式哲学和超媒体思想的现代化诠释。它重新定义了"组件"的边界，让服务端能够按需向客户端交付不同能力级别的组件。
 
-## 技术架构对比
+ 技术架构对比
 
-### 传统组件模型
+ 传统组件模型
 ```jsx
 // Client Component - 所有代码都发送到客户端
 function ProductPage({ productId }) {
@@ -38,7 +43,7 @@ function ProductPage({ productId }) {
 }
 ```
 
-### Server Components 模型
+ Server Components 模型
 
 ```jsx
 // Server Component - 在服务端执行
@@ -78,9 +83,9 @@ function ClientCartButton({ product }) {
 }
 ```
 
-## 与超媒体的深度共鸣
+ 与超媒体的深度共鸣
 
-### 1. 动态能力发现
+ 1. 动态能力发现
 
 **传统 REST API + 客户端路由**：
 ```javascript
@@ -149,7 +154,7 @@ async function RelatedServices({ product }) {
 }
 ```
 
-### 2. 渐进式能力交付
+ 2. 渐进式能力交付
 
 ```jsx
 // 服务端根据客户端能力交付不同级别的组件
@@ -183,7 +188,7 @@ async function AdaptiveProductView({ productId, clientCapabilities }) {
 }
 ```
 
-### 3. 资源链接的声明式管理
+ 3. 资源链接的声明式管理
 
 ```jsx
 // 类似 HATEOAS 的链接关系管理
@@ -241,9 +246,9 @@ function ResourceLinks({ resources }) {
 }
 ```
 
-## 实际应用场景
+ 实际应用场景
 
-### 权限驱动的 UI 生成
+ 权限驱动的 UI 生成
 ```jsx
 async function AdminDashboard({ userId }) {
   // 服务端计算权限，动态决定返回哪些组件
@@ -285,7 +290,7 @@ async function AdminDashboard({ userId }) {
 }
 ```
 
-### 个性化内容交付
+ 个性化内容交付
 ```jsx
 async function PersonalizedFeed({ userId, clientContext }) {
   // 基于用户画像和设备能力个性化内容
@@ -339,14 +344,14 @@ function getInteractionComponent(type, capabilities) {
 }
 ```
 
-## 架构优势
+ 架构优势
 
-### 1. 真正的渐进增强
+ 1. 真正的渐进增强
 - **基础内容**: Server Components 确保核心内容可访问
 - **增强交互**: Client Components 提供丰富交互
 - **条件功能**: 基于能力和权限的动态功能交付
 
-### 2. 解耦的前后端协作
+ 2. 解耦的前后端协作
 ```jsx
 // 后端定义能力边界
 async function ProductPage({ productId }) {
@@ -374,7 +379,7 @@ function PurchaseSection({ product }) {
 }
 ```
 
-### 3. 自动的优化与降级
+ 3. 自动的优化与降级
 ```jsx
 // 框架自动处理能力检测和降级
 async function SmartMediaGallery({ mediaItems }) {
@@ -397,7 +402,7 @@ async function SmartMediaGallery({ mediaItems }) {
 }
 ```
 
-## 总结
+ 总结
 
 React Server Components 与超媒体的共鸣体现在：
 
