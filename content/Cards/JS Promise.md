@@ -1,10 +1,13 @@
 ---
 date: 2024-10-19T14:19:16
-updated: 2025-05-13T20:00:27
+updated: 2026-05-15 09:58:44
 share: true
-tags:
-  - review
+noteId: 1778807091798
 ---
+JS Promise 的核心机制是什么？
+
+---
+
 **1. 什么是 Promise？**
 
 > **Promise 是 JavaScript 处理异步操作的一种方式**，用于解决回调地狱（Callback Hell）问题。
