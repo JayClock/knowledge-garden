@@ -1,15 +1,18 @@
 ---
 date: 2024-10-12T16:45:03
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807090475
 ---
+CSS 对齐的规则和常见用法是什么？
+
+---
+
 - 水平居中
 	- inline 元素：`text-align: center`
 	- block 元素：`margin: auto`
 	- absolute 元素：`left: 50% + margin-left 负值`
-	
+
 	```html
 	<!DOCTYPE html>
 	<html>
@@ -70,7 +73,7 @@ tags:
 	- absolute 元素：top: 50% + margin-top 负值
 	- absolute 元素：`transform: translate(-50%,-50%)`
 	- absolute 元素：top,left,bottom,right = 0 + margin: auto
-	
+
 	```html
 	<!DOCTYPE html>
 	<html>
