@@ -1,8 +1,13 @@
 ---
 date: 2025-05-11T14:23:48
-updated: 2025-05-11T14:28:04
+updated: 2026-05-15 09:35:34
 share: true
+noteId: 1778807090990
 ---
+HTTP 0.9 的关键特性是什么？
+
+---
+
 ![HTTP 0.9 请求流程](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/HTTP%200.9%20%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B.png)
 
 - 客户端先要根据 IP 地址、端口和服务器建立 [[./TCP|TCP]] 三次握手
