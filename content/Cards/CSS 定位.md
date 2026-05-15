@@ -1,14 +1,17 @@
 ---
 date: 2024-10-25T16:16:45
-updated: 2025-02-19T10:50:37
+updated: 2026-05-15 10:03:24
 share: true
-tags:
-  - review
+noteId: 1778807090447
 ---
+CSS 定位的规则和常见用法是什么？
+
+---
+
 - absolute 和 relateive 分别依据什么定位
 	- relative 依据自身定位
 	- absolute 依据最近一层的 positive / relative 定位
-	
+
 	```html
 	<!DOCTYPE html>
 	<html>
