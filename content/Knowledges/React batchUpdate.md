@@ -1,6 +1,6 @@
 ---
 date: 2025-05-13T22:19:30
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:23:34
 share: true
 noteId: 1778807092373
 ---
@@ -87,6 +87,6 @@ React 的批处理机制通过合并更新减少了渲染次数，但在需要�
 
 ## 拆分卡片
 
-- [[../Cards/React 批处理更新把同一上下文中的多次状态更新合并渲染|React 批处理更新把同一上下文中的多次状态更新合并渲染]]
-- [[../Cards/React 18 扩大了自动批处理的触发范围|React 18 扩大了自动批处理的触发范围]]
-- [[../Cards/flushSync 可以强制 React 立即同步提交更新|flushSync 可以强制 React 立即同步提交更新]]
+- [[../Cards/React 批处理更新的核心机制的定义|React 批处理更新的核心机制的定义]]
+- [[../Cards/React 18 的自动批处理增强的内容|React 18 的自动批处理增强的内容]]
+- [[../Cards/React 中 flushSync 的作用的定义|React 中 flushSync 的作用的定义]]
