@@ -1,12 +1,12 @@
 ---
 date: 2026-03-09T16:29:31
-updated: 2026-05-16 19:23:34
+updated: 2026-05-16 20:19:50
 up:
   - "[[./React Hooks|React Hooks]]"
 share: true
 noteId: 1778807092775
 ---
-React useActionState 用来解决什么问题，核心用法是什么？
+React useActionState 的问题解决
 
 ---
 
