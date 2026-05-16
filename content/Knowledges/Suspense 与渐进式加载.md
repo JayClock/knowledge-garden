@@ -1,6 +1,6 @@
 ---
 date: 2025-11-01 21:20:08
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:27:33
 share: true
 noteId: 1778807093373
 ---
@@ -396,7 +396,7 @@ Suspense 将渐进式加载从技术实现提升到了声明式设计的层面�
 
 ## 拆分卡片
 
-- [[../Cards/Suspense 用 fallback 声明异步依赖的等待状态|Suspense 用 fallback 声明异步依赖的等待状态]]
-- [[../Cards/Suspense 的挂起恢复流程让渐进式加载可声明|Suspense 的挂起恢复流程让渐进式加载可声明]]
-- [[../Cards/嵌套 Suspense 可以实现内容逐步揭示|嵌套 Suspense 可以实现内容逐步揭示]]
-- [[../Cards/Suspense 需要错误边界配合处理加载失败|Suspense 需要错误边界配合处理加载失败]]
+- [[../Cards/Suspense 的 fallback 的表达含义|Suspense 的 fallback 的表达含义]]
+- [[../Cards/Suspense 的挂起和恢复流程的定义|Suspense 的挂起和恢复流程的定义]]
+- [[../Cards/嵌套 Suspense 如何实现内容逐步揭示？|嵌套 Suspense 如何实现内容逐步揭示？]]
+- [[../Cards/Suspense 需要错误边界配合的原因|Suspense 需要错误边界配合的原因]]
