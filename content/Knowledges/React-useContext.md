@@ -1,10 +1,10 @@
 ---
 date: 2025-04-17T16:36:54
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:27:37
 up:
   - "[[./React Hooks|React Hooks]]"
 related:
-  - "[[React-Redux|redux]]"
+  - "[[React Redux 的核心作用和使用场景|redux]]"
 share: true
 noteId: 1778807092839
 ---
@@ -120,7 +120,7 @@ function ThemedButton() {
 
 因为 `Context` 更擅长“提供共享入口”，不擅长“承担复杂状态治理”。
 
-这时通常应该继续进入 [[./React 状态管理|React 状态管理]]，再看 [[../Cards/React-Zustand|zustand]]、[[../Cards/React-Jotai|jotai]] 或 [[React-Redux|redux]]。
+这时通常应该继续进入 [[./React 状态管理|React 状态管理]]，再看 [[../Cards/React Zustand 的核心作用和使用场景|zustand]]、[[../Cards/React Jotai 的核心作用和使用场景|jotai]] 或 [[React Redux 的核心作用和使用场景|redux]]。
 
  一个常见误区
 
@@ -141,6 +141,6 @@ function ThemedButton() {
 
 ## 拆分卡片
 
-- [[../Cards/useContext 解决跨层级共享数据的 props 透传问题|useContext 解决跨层级共享数据的 props 透传问题]]
-- [[../Cards/useContext 增强的是数据传播方式而不是状态本身|useContext 增强的是数据传播方式而不是状态本身]]
-- [[../Cards/useContext 适合主题用户语言权限等轻量共享数据|useContext 适合主题用户语言权限等轻量共享数据]]
+- [[../Cards/React useContext 的问题解决|React useContext 的问题解决]]
+- [[../Cards/为什么说 useContext 增强的是传播方式而不是状态本身？|为什么说 useContext 增强的是传播方式而不是状态本身？]]
+- [[../Cards/useContext 适合的数据|useContext 适合的数据]]
