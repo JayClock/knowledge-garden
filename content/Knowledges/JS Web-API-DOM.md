@@ -1,6 +1,6 @@
 ---
 date: 2024-10-12T18:00:52
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:27:53
 share: true
 noteId: 1778807091923
 ---
@@ -135,7 +135,7 @@ document.body.appendChild(node);
 
 ## 拆分卡片
 
-- [[../Cards/DOM 是浏览器从 HTML 解析出的内存树|DOM 是浏览器从 HTML 解析出的内存树]]
-- [[../Cards/DOM 查询 API 按 id 标签类名或选择器获取节点|DOM 查询 API 按 id 标签类名或选择器获取节点]]
-- [[../Cards/DOM property 修改对象属性 attribute 修改 HTML 属性|DOM property 修改对象属性 attribute 修改 HTML 属性]]
-- [[../Cards/DOM 结构操作可以创建插入移动和删除节点|DOM 结构操作可以创建插入移动和删除节点]]
+- [[../Cards/DOM 的本质是什么？|DOM 的本质是什么？]]
+- [[../Cards/DOM 查询 API 常见方式有哪些？|DOM 查询 API 常见方式有哪些？]]
+- [[../Cards/DOM 中 property 和 attribute 有什么区别？|DOM 中 property 和 attribute 有什么区别？]]
+- [[../Cards/DOM 结构操作主要包括哪些能力？|DOM 结构操作主要包括哪些能力？]]
