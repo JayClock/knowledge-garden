@@ -1,13 +1,13 @@
 ---
 date: 2025-09-30 20:00:35
-updated: 2026-05-15 10:03:23
+updated: 2026-05-16 19:23:34
 share: true
 ---
 React 状态管理不适合被理解成“在几个库之间做静态选型”，更适合放进 [[./渐进增强|渐进增强]] 的视角里看：先用最小成本解决当前问题，再随着状态范围、复杂度和协作成本的上升，逐层增强。
 
  一条渐进增强的主线
 
-[[./React 组件通信方式|React 组件通信方式]] -> [[../Cards/React-useState|useState]] -> [[React-useReducer|useReducer]] -> [[./React-useContext|useContext]] -> [[../Cards/React-Zustand|zustand]] / [[../Cards/React-Jotai|jotai]] / [[React-Redux|redux]] -> [[./微前端的渐进式集成|微前端的渐进式集成]]
+[[./React 组件通信方式|React 组件通信方式]] -> [[../Cards/React useState 的问题解决和核心用法|useState]] -> [[React useReducer 的问题解决和核心用法|useReducer]] -> [[./React-useContext|useContext]] -> [[../Cards/React Zustand 的核心作用和使用场景|zustand]] / [[../Cards/React Jotai 的核心作用和使用场景|jotai]] / [[React Redux 的核心作用和使用场景|redux]] -> [[./微前端的渐进式集成|微前端的渐进式集成]]
 
 这条线对应的不是“谁替代谁”，而是“问题什么时候升级了”。
 
@@ -24,7 +24,7 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
  第二层：局部状态，先用最小解
 
- [[../Cards/React-useState|useState]]
+ [[../Cards/React useState 的问题解决和核心用法|useState]]
 
 适合：
 
@@ -41,7 +41,7 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
  第三层：逻辑复杂了，但作用域还没变大
 
- [[React-useReducer|useReducer]]
+ [[React useReducer 的问题解决和核心用法|useReducer]]
 
 适合：
 
@@ -79,7 +79,7 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 当 `Context` 已经不够时，就进入外部 store 阶段。这个阶段不是只有一个答案，而是不同方向的增强。
 
- [[../Cards/React-Zustand|zustand]]
+ [[../Cards/React Zustand 的核心作用和使用场景|zustand]]
 
 适合：
 
@@ -89,7 +89,7 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 可以理解成对“全局共享状态”的轻量增强。
 
- [[../Cards/React-Jotai|jotai]]
+ [[../Cards/React Jotai 的核心作用和使用场景|jotai]]
 
 适合：
 
@@ -99,7 +99,7 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 可以理解成对“状态建模粒度”的增强。
 
- [[React-Redux|redux]]
+ [[React Redux 的核心作用和使用场景|redux]]
 
 适合：
 
@@ -129,10 +129,10 @@ React 状态管理不适合被理解成“在几个库之间做静态选型”�
 
 可以按下面的顺序判断：
 
-1. 只是组件内部状态？先用 [[../Cards/React-useState|useState]]
-2. 更新逻辑复杂，但不需要共享？用 [[React-useReducer|useReducer]]
+1. 只是组件内部状态？先用 [[../Cards/React useState 的问题解决和核心用法|useState]]
+2. 更新逻辑复杂，但不需要共享？用 [[React useReducer 的问题解决和核心用法|useReducer]]
 3. 需要跨层共享？用 [[./React-useContext|useContext]]
-4. 共享范围扩大，且更新/拆分/调试变复杂？考虑 [[../Cards/React-Zustand|zustand]]、[[../Cards/React-Jotai|jotai]]、[[React-Redux|redux]]
+4. 共享范围扩大，且更新/拆分/调试变复杂？考虑 [[../Cards/React Zustand 的核心作用和使用场景|zustand]]、[[../Cards/React Jotai 的核心作用和使用场景|jotai]]、[[React Redux 的核心作用和使用场景|redux]]
 5. 状态跨应用、跨团队、跨边界？进入 [[./微前端的渐进式集成|微前端的渐进式集成]]
 
  一个更准确的理解
