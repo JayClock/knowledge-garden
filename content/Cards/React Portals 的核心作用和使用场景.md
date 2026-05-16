@@ -1,6 +1,6 @@
 ---
 date: 2024-10-22T10:00:50
-updated: 2026-05-16 19:29:22
+updated: 2026-05-16 20:19:50
 share: true
 noteId: 1778930949340
 ---
@@ -11,7 +11,7 @@ React Portals 的核心作用和使用场景是什么？
 - 组件默认会按照既定层次嵌套渲染
 - 如何让组件渲染到父组件以外？
 - 一些 portals 使用场景，多数处理 css 兼容性问题：
-	1. 父组件 `overflow-hidden`，构造了[[./CSS BFC 的规则和常见用法是什么？|CSS BFC 的规则和常见用法是什么？]]
+	1. 父组件 `overflow-hidden`，构造了[[./CSS BFC 的规则和常见用法|CSS BFC 的规则和常见用法]]
 	2. 父组件 `z-index` 值太小
 	3. fixed 需要放在 body 第一层级
 

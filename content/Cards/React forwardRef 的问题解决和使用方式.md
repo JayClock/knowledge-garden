@@ -1,10 +1,10 @@
 ---
 date: 2025-10-09 10:03:29
-updated: 2026-05-16 19:29:22
+updated: 2026-05-16 20:19:50
 share: true
 noteId: 1778930949269
 ---
-React forwardRef 用来解决什么问题，如何使用？
+React forwardRef 的问题解决和使用方式
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 date: 2025-10-09T17:30:00
-updated: 2026-05-16 19:23:34
+updated: 2026-05-16 20:19:50
 up:
   - "[[./React Hooks|React Hooks]]"
 share: true
 noteId: 1778807093093
 ---
-React useSyncExternalStore 用来解决什么问题，核心用法是什么？
+React useSyncExternalStore 的问题解决
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 date: 2026-03-09T16:36:31
-updated: 2026-05-16 19:29:23
+updated: 2026-05-16 20:19:50
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 share: true
 noteId: 1778930949738
 ---
-React useImperativeHandle 用来解决什么问题，核心用法是什么？
+React useImperativeHandle 的问题解决和核心用法
 
 ---
 

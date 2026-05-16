@@ -1,6 +1,6 @@
 ---
 date: 2024-10-12T18:00:52
-updated: 2026-05-16 19:27:53
+updated: 2026-05-16 20:16:40
 share: true
 noteId: 1778807091923
 ---
@@ -135,7 +135,7 @@ document.body.appendChild(node);
 
 ## 拆分卡片
 
-- [[../Cards/DOM 的本质是什么？|DOM 的本质是什么？]]
-- [[../Cards/DOM 查询 API 常见方式有哪些？|DOM 查询 API 常见方式有哪些？]]
-- [[../Cards/DOM 中 property 和 attribute 有什么区别？|DOM 中 property 和 attribute 有什么区别？]]
-- [[../Cards/DOM 结构操作主要包括哪些能力？|DOM 结构操作主要包括哪些能力？]]
+- [[../Cards/DOM 的本质|DOM 的本质]]
+- [[../Cards/DOM 查询 API 的常见方式|DOM 查询 API 的常见方式]]
+- [[../Cards/DOM 中 property 和 attribute 的区别|DOM 中 property 和 attribute 的区别]]
+- [[../Cards/DOM 结构操作的主要能力|DOM 结构操作的主要能力]]

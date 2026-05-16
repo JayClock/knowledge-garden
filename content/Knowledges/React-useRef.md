@@ -1,12 +1,12 @@
 ---
 date: 2025-04-17T16:31:32
-updated: 2026-05-16 19:23:34
+updated: 2026-05-16 20:19:50
 up:
   - "[[./React Hooks|React Hooks]]"
 share: true
 noteId: 1778807093039
 ---
-React useRef 用来解决什么问题，核心用法是什么？
+React useRef 的问题解决
 
 ---
 

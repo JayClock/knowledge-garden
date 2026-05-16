@@ -1,6 +1,6 @@
 ---
 date: 2025-04-17T16:36:54
-updated: 2026-05-16 19:27:37
+updated: 2026-05-16 20:19:50
 up:
   - "[[./React Hooks|React Hooks]]"
 related:
@@ -8,7 +8,7 @@ related:
 share: true
 noteId: 1778807092839
 ---
-React useContext 用来解决什么问题，核心用法是什么？
+React useContext 的问题解决
 
 ---
 
@@ -142,5 +142,5 @@ function ThemedButton() {
 ## 拆分卡片
 
 - [[../Cards/React useContext 的问题解决|React useContext 的问题解决]]
-- [[../Cards/为什么说 useContext 增强的是传播方式而不是状态本身？|为什么说 useContext 增强的是传播方式而不是状态本身？]]
+- [[../Cards/说 useContext 增强的是传播方式而不是状态本身的原因|说 useContext 增强的是传播方式而不是状态本身的原因]]
 - [[../Cards/useContext 适合的数据|useContext 适合的数据]]
