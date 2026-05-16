@@ -1,6 +1,6 @@
 ---
 date: 2025-04-17T16:31:32
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:23:34
 up:
   - "[[./React Hooks|React Hooks]]"
 share: true
@@ -104,13 +104,13 @@ function TextInputWithFocusButton() {
 - 改变后必须触发重新渲染的值
 - 试图用它绕过 React 的状态流
 
-如果值变化后 UI 需要更新，优先考虑 `useState` 或 [[React-useReducer|useReducer]]。
+如果值变化后 UI 需要更新，优先考虑 `useState` 或 [[React useReducer 的问题解决和核心用法|useReducer]]。
 
  和通信的关系
 
 `useRef` 不只是一个“存值工具”，它还连接了组件通信中的命令式能力暴露。
 
-当你配合 [[../Cards/react-forwardRef|forwardRef]] 与 [[../Cards/React-useImperativeHandle|useImperativeHandle]] 使用时，父组件可以调用子组件暴露的方法。这对应 [[./React 组件通信方式|React 组件通信方式]] 中的那条“`ref` 暴露实例能力”路线。
+当你配合 [[../Cards/React forwardRef 的问题解决和使用方式|forwardRef]] 与 [[../Cards/React useImperativeHandle 的问题解决和核心用法|useImperativeHandle]] 使用时，父组件可以调用子组件暴露的方法。这对应 [[./React 组件通信方式|React 组件通信方式]] 中的那条“`ref` 暴露实例能力”路线。
 
  一个常见误区
 
@@ -133,7 +133,7 @@ function TextInputWithFocusButton() {
 
 ## 拆分卡片
 
-- [[../Cards/useRef 保存跨渲染存在但不触发渲染的可变值|useRef 保存跨渲染存在但不触发渲染的可变值]]
-- [[../Cards/useRef 适合保存定时器请求句柄和外部实例|useRef 适合保存定时器请求句柄和外部实例]]
-- [[../Cards/useRef 可以获取 DOM 元素引用以执行命令式操作|useRef 可以获取 DOM 元素引用以执行命令式操作]]
-- [[../Cards/useRef 不适合保存需要驱动界面刷新的数据|useRef 不适合保存需要驱动界面刷新的数据]]
+- [[../Cards/React useRef 的问题解决|React useRef 的问题解决]]
+- [[../Cards/useRef 适合保存的不参与渲染的值|useRef 适合保存的不参与渲染的值]]
+- [[../Cards/useRef 用于 DOM 操作|useRef 用于 DOM 操作]]
+- [[../Cards/useRef 不适合保存的数据|useRef 不适合保存的数据]]
