@@ -1,6 +1,6 @@
 ---
 date: 2025-05-05T08:14:11
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:23:34
 share: true
 noteId: 1778807092340
 ---
@@ -102,7 +102,7 @@ function Parent() {
 
 这是一种命令式通信，应该谨慎使用。只有在声明式数据流不自然时，再把它作为增强手段。
 
-它和 [[./React Hooks|React Hooks]] 中的 [[./React-useRef|useRef]]、[[../Cards/React-useImperativeHandle|useImperativeHandle]]、[[../Cards/react-forwardRef|forwardRef]] 是同一条线。
+它和 [[./React Hooks|React Hooks]] 中的 [[./React-useRef|useRef]]、[[../Cards/React useImperativeHandle 的问题解决和核心用法|useImperativeHandle]]、[[../Cards/React forwardRef 的问题解决和使用方式|forwardRef]] 是同一条线。
 
  第三层：跨层级传递，避免 props drilling
 
@@ -163,9 +163,9 @@ function ChildB() {
 
 典型方向：
 
-- 轻量全局共享：[[../Cards/React-Zustand|zustand]]
-- 细粒度原子化状态：[[../Cards/React-Jotai|jotai]]
-- 强约束与工程治理：[[React-Redux|redux]]
+- 轻量全局共享：[[../Cards/React Zustand 的核心作用和使用场景|zustand]]
+- 细粒度原子化状态：[[../Cards/React Jotai 的核心作用和使用场景|jotai]]
+- 强约束与工程治理：[[React Redux 的核心作用和使用场景|redux]]
 
 这时组件之间已经不是单纯“通信”，而是在围绕同一个状态源协作。
 
@@ -221,7 +221,7 @@ React 组件通信方式的演进，本质上也是一个渐进增强过程：
 
 ## 拆分卡片
 
-- [[../Cards/React 组件通信应从局部直连逐步升级|React 组件通信应从局部直连逐步升级]]
-- [[../Cards/Props 适合父组件向子组件传递展示数据|Props 适合父组件向子组件传递展示数据]]
-- [[../Cards/回调函数让子组件把事件反馈给父组件|回调函数让子组件把事件反馈给父组件]]
-- [[../Cards/Ref 暴露实例能力适合命令式组件通信|Ref 暴露实例能力适合命令式组件通信]]
+- [[../Cards/React 组件通信应从局部直连逐步升级的原因|React 组件通信应从局部直连逐步升级的原因]]
+- [[../Cards/Props 适合的组件通信场景|Props 适合的组件通信场景]]
+- [[../Cards/React 中回调函数实现子组件向父组件反馈|React 中回调函数实现子组件向父组件反馈]]
+- [[../Cards/Ref 暴露实例能力适合的组件通信场景|Ref 暴露实例能力适合的组件通信场景]]

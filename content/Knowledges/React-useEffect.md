@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16T13:48:17
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:23:34
 up:
   - "[[./React Hooks|React Hooks]]"
 share: true
@@ -161,7 +161,7 @@ useEffect(() => {
 
  相关延伸
 
-- [[../Cards/React-useLayoutEffect|useLayoutEffect]]：适合布局测量和同步 DOM 读写，比 `useEffect` 更早执行
+- [[../Cards/React useLayoutEffect 的问题解决和核心用法|useLayoutEffect]]：适合布局测量和同步 DOM 读写，比 `useEffect` 更早执行
 - [[useEffect 的底层是如何实现的|useEffect 的底层是如何实现的]]：可以继续看调度细节
 - [[./React-useRef|useRef]]：常用来保存订阅句柄、定时器、外部实例
 
@@ -173,7 +173,7 @@ useEffect(() => {
 
 ## 拆分卡片
 
-- [[../Cards/useEffect 用于渲染后同步外部世界|useEffect 用于渲染后同步外部世界]]
-- [[../Cards/useEffect 的依赖数组声明 effect 依赖哪些值|useEffect 的依赖数组声明 effect 依赖哪些值]]
-- [[../Cards/useEffect 注册外部资源时必须提供清理函数|useEffect 注册外部资源时必须提供清理函数]]
-- [[../Cards/useEffect 不应该用来派生可由渲染计算得到的状态|useEffect 不应该用来派生可由渲染计算得到的状态]]
+- [[../Cards/React useEffect 的问题解决|React useEffect 的问题解决]]
+- [[../Cards/useEffect 的依赖数组应该的理解|useEffect 的依赖数组应该的理解]]
+- [[../Cards/useEffect 注册外部资源时必须提供清理函数的原因|useEffect 注册外部资源时必须提供清理函数的原因]]
+- [[../Cards/useEffect 不适合处理的状态|useEffect 不适合处理的状态]]

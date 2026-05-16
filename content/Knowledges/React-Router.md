@@ -1,6 +1,6 @@
 ---
 date: 2026-03-12 16:40:25
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:27:36
 share: true
 aliases:
   - React-Router
@@ -407,7 +407,7 @@ React Router 的核心学习路径是：先理解 URL 如何映射视图，再�
 
 ## 拆分卡片
 
-- [[../Cards/React Router 把 URL 当成应用状态|React Router 把 URL 当成应用状态]]
+- [[../Cards/为什么说 React Router 把 URL 当成应用状态？|为什么说 React Router 把 URL 当成应用状态？]]
 - [[../Cards/React Router 的路由树对应 UI 布局树|React Router 的路由树对应 UI 布局树]]
-- [[../Cards/React Router 数据路由把导航和数据读写放进同一模型|React Router 数据路由把导航和数据读写放进同一模型]]
-- [[../Cards/React Router 中路径参数查询参数和导航状态用途不同|React Router 中路径参数查询参数和导航状态用途不同]]
+- [[../Cards/React Router 数据路由的问题解决|React Router 数据路由的问题解决]]
+- [[../Cards/React Router 中路径参数、查询参数和导航状态分别适合表达|React Router 中路径参数、查询参数和导航状态分别适合表达]]

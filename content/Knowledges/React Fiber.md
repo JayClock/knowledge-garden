@@ -1,6 +1,6 @@
 ---
 date: 2025-05-05T11:14:49
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:27:55
 share: true
 noteId: 1778807092431
 ---
@@ -45,8 +45,8 @@ Fiber 不是为了“让所有渲染都异步”，而是为了让 React 有能�
 
 这也是为什么后来的这些能力都和 Fiber 强相关：
 
-- [[../Cards/React-useTransition|useTransition]]
-- [[../Cards/React-useDeferredValue|useDeferredValue]]
+- [[../Cards/React useTransition 的问题解决和核心用法|useTransition]]
+- [[../Cards/React useDeferredValue 的问题解决和核心用法|useDeferredValue]]
 - Suspense
 - 流式 SSR
 - 选择性 hydration
@@ -121,14 +121,14 @@ Hooks 依赖稳定的调用顺序，React 才能在 Fiber 对应的组件工作�
 
  为什么副作用分成不同阶段
 
-像 [[./React-useEffect|useEffect]] 和 [[../Cards/React-useLayoutEffect|useLayoutEffect]] 的差异，本质上也和 Fiber 的提交顺序有关：
+像 [[./React-useEffect|useEffect]] 和 [[../Cards/React useLayoutEffect 的问题解决和核心用法|useLayoutEffect]] 的差异，本质上也和 Fiber 的提交顺序有关：
 
 - `useEffect` 更偏向提交后的异步副作用
-- [[../Cards/React-useLayoutEffect|useLayoutEffect]] 更靠近 DOM 变更后的同步布局阶段
+- [[../Cards/React useLayoutEffect 的问题解决和核心用法|useLayoutEffect]] 更靠近 DOM 变更后的同步布局阶段
 
  为什么会有并发相关 Hook
 
-[[../Cards/React-useTransition|useTransition]]、[[../Cards/React-useDeferredValue|useDeferredValue]] 这些能力，本质上是在利用 Fiber 的调度系统，让不同更新进入不同优先级通道。
+[[../Cards/React useTransition 的问题解决和核心用法|useTransition]]、[[../Cards/React useDeferredValue 的问题解决和核心用法|useDeferredValue]] 这些能力，本质上是在利用 Fiber 的调度系统，让不同更新进入不同优先级通道。
 
  和优先级的关系
 
@@ -144,7 +144,7 @@ Hooks 依赖稳定的调用顺序，React 才能在 Fiber 对应的组件工作�
 
 - `flushSync` 很重，但有时必须同步
 - 输入响应必须足够快
-- [[../Cards/React-useTransition|useTransition]] 适合把“能晚一点”的 UI 放后面
+- [[../Cards/React useTransition 的问题解决和核心用法|useTransition]] 适合把“能晚一点”的 UI 放后面
 
  Fiber 节点可以怎么理解
 
@@ -173,11 +173,11 @@ Hooks 依赖稳定的调用顺序，React 才能在 Fiber 对应的组件工作�
 - 在 [[./React Hooks|React Hooks]] 里，Fiber 是并发渲染和 Hook 调度的底层背景
 - 在 [[./React-useEffect|useEffect]] 里，可以继续连接到副作用提交时机
 - 在 [[../Express/渐进式集成：从浏览器渲染到框架设计的统一哲学|渐进式集成：从浏览器渲染到框架设计的统一哲学]] 里，它对应“按优先级渐进渲染”的框架实现
-- 在 [[./React-useSyncExternalStore|useSyncExternalStore]]、[[../Cards/React-useTransition|useTransition]]、[[../Cards/React-useDeferredValue|useDeferredValue]] 这些能力里，可以继续看到 Fiber 的调度影响
+- 在 [[./React-useSyncExternalStore|useSyncExternalStore]]、[[../Cards/React useTransition 的问题解决和核心用法|useTransition]]、[[../Cards/React useDeferredValue 的问题解决和核心用法|useDeferredValue]] 这些能力里，可以继续看到 Fiber 的调度影响
 
 ## 拆分卡片
 
-- [[../Cards/React Fiber 把同步协调升级为可中断调度|React Fiber 把同步协调升级为可中断调度]]
-- [[../Cards/Fiber 让高优先级更新可以打断低优先级渲染|Fiber 让高优先级更新可以打断低优先级渲染]]
-- [[../Cards/Fiber 的提交阶段仍然必须保持同步一致|Fiber 的提交阶段仍然必须保持同步一致]]
-- [[../Cards/Fiber 是 Suspense 和并发特性的基础|Fiber 是 Suspense 和并发特性的基础]]
+- [[../Cards/React Fiber 解决的核心问题的定义|React Fiber 解决的核心问题的定义]]
+- [[../Cards/Fiber 为什么需要支持高优先级更新打断低优先级渲染？|Fiber 为什么需要支持高优先级更新打断低优先级渲染？]]
+- [[../Cards/为什么 Fiber 的提交阶段仍然必须保持同步一致？|为什么 Fiber 的提交阶段仍然必须保持同步一致？]]
+- [[../Cards/为什么 Fiber 是 Suspense 和并发特性的基础？|为什么 Fiber 是 Suspense 和并发特性的基础？]]

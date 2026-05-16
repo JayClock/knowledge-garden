@@ -1,6 +1,6 @@
 ---
 date: 2026-03-09T16:29:31
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:23:34
 up:
   - "[[./React Hooks|React Hooks]]"
 share: true
@@ -95,7 +95,7 @@ function ProfileForm() {
 
 - 普通局部 UI 状态
 - 和表单动作无关的状态
-- 只是想用一个新 Hook 替代简单的 [[../Cards/React-useState|useState]]
+- 只是想用一个新 Hook 替代简单的 [[../Cards/React useState 的问题解决和核心用法|useState]]
 
 如果状态本身不是围绕某个 action 的返回结果组织，就没必要上 `useActionState`。
 
@@ -103,11 +103,11 @@ function ProfileForm() {
 
 它和下面这些能力经常一起出现，但职责不同：
 
-- [[../Cards/React-useState|useState]]
+- [[../Cards/React useState 的问题解决和核心用法|useState]]
  负责一般局部状态
-- [[../Cards/React-useOptimistic|useOptimistic]]
+- [[../Cards/React useOptimistic 的问题解决和核心用法|useOptimistic]]
  负责先给用户乐观反馈
-- [[../Cards/React-useTransition|useTransition]]
+- [[../Cards/React useTransition 的问题解决和核心用法|useTransition]]
  负责把某些更新放到更低优先级
 
 而 `useActionState` 更关注：
@@ -125,11 +125,11 @@ function ProfileForm() {
  和其它笔记的关系
 
 - 在 [[./React Hooks|React Hooks]] 里，它属于并发时代和表单动作语义增强的一部分
-- 和 [[../Cards/React-useOptimistic|useOptimistic]] 一起看，可以区分“先反馈”与“结果落地”的不同层次
-- 和 [[../Cards/React-useState|useState]] 对比，可以更清楚什么时候该从普通局部状态升级到 action 驱动状态
+- 和 [[../Cards/React useOptimistic 的问题解决和核心用法|useOptimistic]] 一起看，可以区分“先反馈”与“结果落地”的不同层次
+- 和 [[../Cards/React useState 的问题解决和核心用法|useState]] 对比，可以更清楚什么时候该从普通局部状态升级到 action 驱动状态
 
 ## 拆分卡片
 
-- [[../Cards/useActionState 以 action 执行结果为中心组织表单状态|useActionState 以 action 执行结果为中心组织表单状态]]
-- [[../Cards/useActionState 返回 state formAction 和 isPending|useActionState 返回 state formAction 和 isPending]]
-- [[../Cards/useActionState 适合成功失败状态与动作强绑定的交互|useActionState 适合成功失败状态与动作强绑定的交互]]
+- [[../Cards/React useActionState 的问题解决|React useActionState 的问题解决]]
+- [[../Cards/useActionState 返回的三个核心值|useActionState 返回的三个核心值]]
+- [[../Cards/useActionState 的适用场景|useActionState 的适用场景]]

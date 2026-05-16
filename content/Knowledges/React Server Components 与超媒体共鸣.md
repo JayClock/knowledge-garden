@@ -1,6 +1,6 @@
 ---
 date: 2025-11-01 17:16:41
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:23:34
 share: true
 noteId: 1778807092550
 ---
@@ -416,7 +416,7 @@ React Server Components 与超媒体的共鸣体现在：
 
 ## 拆分卡片
 
-- [[../Cards/RSC 将组件边界从客户端扩展到服务端|RSC 将组件边界从客户端扩展到服务端]]
+- [[../Cards/React Server Components 改变组件边界|React Server Components 改变组件边界]]
 - [[../Cards/RSC 让服务端声明式交付客户端可用能力|RSC 让服务端声明式交付客户端可用能力]]
-- [[../Cards/RSC 与超媒体都强调动态能力发现|RSC 与超媒体都强调动态能力发现]]
-- [[../Cards/RSC 可以按用户和环境渐进式交付组件|RSC 可以按用户和环境渐进式交付组件]]
+- [[../Cards/RSC 与超媒体都强调动态能力发现的原因|RSC 与超媒体都强调动态能力发现的原因]]
+- [[../Cards/RSC 支持渐进式组件交付|RSC 支持渐进式组件交付]]

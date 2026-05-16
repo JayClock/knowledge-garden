@@ -1,6 +1,6 @@
 ---
 date: 2025-10-09T17:30:00
-updated: 2026-05-15 12:17:48
+updated: 2026-05-16 19:23:34
 up:
   - "[[./React Hooks|React Hooks]]"
 share: true
@@ -16,8 +16,8 @@ React useSyncExternalStore 用来解决什么问题，核心用法是什么？
 
 在前面的几层里：
 
-- [[../Cards/React-useState|useState]] 管组件局部状态
-- [[React-useReducer|useReducer]] 管复杂局部逻辑
+- [[../Cards/React useState 的问题解决和核心用法|useState]] 管组件局部状态
+- [[React useReducer 的问题解决和核心用法|useReducer]] 管复杂局部逻辑
 - [[./React-useContext|useContext]] 管跨层共享
 
 但当状态已经放到 React 外部时，例如：
@@ -136,7 +136,7 @@ function useCounterStore(store) {
 - 它不负责设计状态结构
 - 它只是 React 和外部 store 之间的桥
 
-状态管理方案本身仍然要看 [[../Cards/React-Zustand|zustand]]、[[../Cards/React-Jotai|jotai]]、[[React-Redux|redux]] 或你的自定义设计。
+状态管理方案本身仍然要看 [[../Cards/React Zustand 的核心作用和使用场景|zustand]]、[[../Cards/React Jotai 的核心作用和使用场景|jotai]]、[[React Redux 的核心作用和使用场景|redux]] 或你的自定义设计。
 
  和并发渲染的关系
 
@@ -157,7 +157,7 @@ function useCounterStore(store) {
 
 ## 拆分卡片
 
-- [[../Cards/useSyncExternalStore 用于安全订阅 React 外部状态|useSyncExternalStore 用于安全订阅 React 外部状态]]
-- [[../Cards/useSyncExternalStore 的 subscribe 负责通知快照可能变化|useSyncExternalStore 的 subscribe 负责通知快照可能变化]]
-- [[../Cards/useSyncExternalStore 的 getSnapshot 必须返回稳定快照|useSyncExternalStore 的 getSnapshot 必须返回稳定快照]]
-- [[../Cards/useSyncExternalStore 适合状态库与浏览器外部源适配|useSyncExternalStore 适合状态库与浏览器外部源适配]]
+- [[../Cards/React useSyncExternalStore 的问题解决|React useSyncExternalStore 的问题解决]]
+- [[../Cards/useSyncExternalStore 中 subscribe 的职责|useSyncExternalStore 中 subscribe 的职责]]
+- [[../Cards/useSyncExternalStore 中 getSnapshot 必须返回稳定快照的原因|useSyncExternalStore 中 getSnapshot 必须返回稳定快照的原因]]
+- [[../Cards/useSyncExternalStore 的适用场景|useSyncExternalStore 的适用场景]]

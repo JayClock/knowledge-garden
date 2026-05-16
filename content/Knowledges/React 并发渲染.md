@@ -1,6 +1,6 @@
 ---
 date: 2026-03-09T16:50:55
-updated: 2026-05-15 10:03:23
+updated: 2026-05-16 19:23:34
 share: true
 in:
   - "[[Maps]]"
@@ -9,7 +9,7 @@ React 并发渲染不适合被理解成“React 终于异步了”，更适合�
 
  一条主线
 
-[[./React Fiber|React Fiber]] -> [[../Cards/React-useTransition|useTransition]] / [[../Cards/React-useDeferredValue|useDeferredValue]] / [[../Cards/React-useOptimistic|useOptimistic]] / [[./React-useActionState|useActionState]]
+[[./React Fiber|React Fiber]] -> [[../Cards/React useTransition 的问题解决和核心用法|useTransition]] / [[../Cards/React useDeferredValue 的问题解决和核心用法|useDeferredValue]] / [[../Cards/React useOptimistic 的问题解决和核心用法|useOptimistic]] / [[./React-useActionState|useActionState]]
 
 如果说 [[./React Hooks|React Hooks]] 讲的是函数组件能力如何升级，那么这张图讲的是：当 React 进入并发语义后，交互体验是如何被重新组织的。
 
@@ -30,7 +30,7 @@ React 并发渲染不适合被理解成“React 终于异步了”，更适合�
 
  第二层：调度哪些更新该先发生
 
- [[../Cards/React-useTransition|useTransition]]
+ [[../Cards/React useTransition 的问题解决和核心用法|useTransition]]
 
 适合：
 
@@ -41,7 +41,7 @@ React 并发渲染不适合被理解成“React 终于异步了”，更适合�
 
 - 哪批更新应该后让一步
 
- [[../Cards/React-useDeferredValue|useDeferredValue]]
+ [[../Cards/React useDeferredValue 的问题解决和核心用法|useDeferredValue]]
 
 适合：
 
@@ -54,7 +54,7 @@ React 并发渲染不适合被理解成“React 终于异步了”，更适合�
 
  第三层：不只调度优先级，还调度反馈节奏
 
- [[../Cards/React-useOptimistic|useOptimistic]]
+ [[../Cards/React useOptimistic 的问题解决和核心用法|useOptimistic]]
 
 适合：
 
@@ -81,11 +81,11 @@ React 并发渲染不适合被理解成“React 终于异步了”，更适合�
 
 可以这样区分这几个 Hook：
 
-- [[../Cards/React-useTransition|useTransition]]
+- [[../Cards/React useTransition 的问题解决和核心用法|useTransition]]
  解决“哪些更新该先发生”
-- [[../Cards/React-useDeferredValue|useDeferredValue]]
+- [[../Cards/React useDeferredValue 的问题解决和核心用法|useDeferredValue]]
  解决“哪些值可以晚一点传播”
-- [[../Cards/React-useOptimistic|useOptimistic]]
+- [[../Cards/React useOptimistic 的问题解决和核心用法|useOptimistic]]
  解决“用户应该先看到什么反馈”
 - [[./React-useActionState|useActionState]]
  解决“动作执行后的结果状态怎么组织”
