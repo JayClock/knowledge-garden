@@ -1,12 +1,12 @@
 ---
 date: 2025-04-16T13:48:17
-updated: 2026-05-16 19:23:34
+updated: 2026-05-16 20:19:50
 up:
   - "[[./React Hooks|React Hooks]]"
 share: true
 noteId: 1778807092872
 ---
-React useEffect 用来解决什么问题，核心用法是什么？
+React useEffect 的问题解决
 
 ---
 
