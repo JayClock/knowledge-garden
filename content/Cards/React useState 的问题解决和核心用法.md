@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16T13:38:56
-updated: 2026-05-16 19:29:23
+updated: 2026-05-16 20:19:50
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
 related:
@@ -8,7 +8,7 @@ related:
 share: true
 noteId: 1778930949918
 ---
-React useState 用来解决什么问题，核心用法是什么？
+React useState 的问题解决和核心用法
 
 ---
 
