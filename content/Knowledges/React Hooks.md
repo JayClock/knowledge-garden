@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16T13:14:31
-updated: 2026-05-15 10:03:23
+updated: 2026-05-16 19:23:34
 share: true
 in:
   - "[[Maps]]"
@@ -9,7 +9,7 @@ React Hooks 不适合只按“API 清单”去记，更适合按 [[./渐进增�
 
  一条渐进增强的主线
 
-[[../Cards/React-useState|useState]] -> [[React-useReducer|useReducer]] -> [[./React-useRef|useRef]] -> [[./React-useEffect|useEffect]] -> [[./React-useContext|useContext]] -> [[./React-useSyncExternalStore|useSyncExternalStore]] -> [[../Cards/React-useTransition|useTransition]] / [[../Cards/React-useDeferredValue|useDeferredValue]] / [[../Cards/React-useOptimistic|useOptimistic]] -> 自定义 Hooks
+[[../Cards/React useState 的问题解决和核心用法|useState]] -> [[React useReducer 的问题解决和核心用法|useReducer]] -> [[./React-useRef|useRef]] -> [[./React-useEffect|useEffect]] -> [[./React-useContext|useContext]] -> [[./React-useSyncExternalStore|useSyncExternalStore]] -> [[../Cards/React useTransition 的问题解决和核心用法|useTransition]] / [[../Cards/React useDeferredValue 的问题解决和核心用法|useDeferredValue]] / [[../Cards/React useOptimistic 的问题解决和核心用法|useOptimistic]] -> 自定义 Hooks
 
 如果把 [[./React 状态管理|React 状态管理]] 看成“状态如何升级”，那么 React Hooks 可以看成“函数组件的能力如何升级”。
 
@@ -27,7 +27,7 @@ Hooks 的出现，本质上是为了让函数组件逐步具备过去类组件�
 
  第一层：先让函数组件有状态
 
- [[../Cards/React-useState|useState]]
+ [[../Cards/React useState 的问题解决和核心用法|useState]]
 
 这是 Hook 体系的起点。
 
@@ -39,7 +39,7 @@ Hooks 的出现，本质上是为了让函数组件逐步具备过去类组件�
 
 这里增强的是“记住值”的能力。
 
- [[React-useReducer|useReducer]]
+ [[React useReducer 的问题解决和核心用法|useReducer]]
 
 当状态逻辑变复杂时，从 `useState` 进一步升级到 `useReducer`。
 
@@ -63,9 +63,9 @@ Hooks 的出现，本质上是为了让函数组件逐步具备过去类组件�
 
 这里增强的是“跨渲染保持引用”的能力。
 
-和它相关的还有 [[../Cards/react-forwardRef|forwardRef]] 与 [[../Cards/React-useImperativeHandle|useImperativeHandle]]，主要用于 [[./React 组件通信方式|父子组件传递]] 中的实例暴露。
+和它相关的还有 [[../Cards/React forwardRef 的问题解决和使用方式|forwardRef]] 与 [[../Cards/React useImperativeHandle 的问题解决和核心用法|useImperativeHandle]]，主要用于 [[./React 组件通信方式|父子组件传递]] 中的实例暴露。
 
- [[../Cards/React-useMemo|useMemo]]
+ [[../Cards/React useMemo 的问题解决和核心用法|useMemo]]
 
 适合：
 
@@ -75,7 +75,7 @@ Hooks 的出现，本质上是为了让函数组件逐步具备过去类组件�
 
 这里增强的是“派生结果复用”的能力。
 
- [[../Cards/React-useCallback|useCallback]]
+ [[../Cards/React useCallback 的问题解决和核心用法|useCallback]]
 
 适合：
 
@@ -89,7 +89,7 @@ Hooks 的出现，本质上是为了让函数组件逐步具备过去类组件�
 
 相关补充：
 
-- [[../Cards/React-useId|useId]]：用于生成稳定且适合无障碍关联的唯一 ID
+- [[../Cards/React useId 的问题解决和核心用法|useId]]：用于生成稳定且适合无障碍关联的唯一 ID
 
  第三层：组件开始和外部世界同步
 
@@ -108,7 +108,7 @@ Hooks 的出现，本质上是为了让函数组件逐步具备过去类组件�
 
 相关延伸：
 
-- [[../Cards/React-useLayoutEffect|useLayoutEffect]]：在 DOM 更新后、浏览器绘制前同步执行，适合布局测量和同步 DOM 操作
+- [[../Cards/React useLayoutEffect 的问题解决和核心用法|useLayoutEffect]]：在 DOM 更新后、浏览器绘制前同步执行，适合布局测量和同步 DOM 操作
 - [[useEffect 的底层是如何实现的|useEffect 的底层是如何实现的]]：理解副作用调度机制
 
  第四层：状态和能力开始跨组件共享
@@ -141,21 +141,21 @@ Hooks 的出现，本质上是为了让函数组件逐步具备过去类组件�
 
 React 进入并发能力之后，Hook 不只是负责“拿状态”，还开始参与“调度体验”。
 
- [[../Cards/React-useTransition|useTransition]]
+ [[../Cards/React useTransition 的问题解决和核心用法|useTransition]]
 
 适合：
 
 - 区分紧急更新和非紧急更新
 - 在切换 tab、筛选列表、跳转界面时维持交互流畅性
 
- [[../Cards/React-useDeferredValue|useDeferredValue]]
+ [[../Cards/React useDeferredValue 的问题解决和核心用法|useDeferredValue]]
 
 适合：
 
 - 输入要立即响应，但某些下游 UI 可以稍后更新
 - 搜索联想、过滤列表、复杂渲染场景
 
- [[../Cards/React-useOptimistic|useOptimistic]]
+ [[../Cards/React useOptimistic 的问题解决和核心用法|useOptimistic]]
 
 适合：
 
@@ -176,8 +176,8 @@ React 进入并发能力之后，Hook 不只是负责“拿状态”，还开始
 
 例如：
 
-- [[../Cards/React useTimer|useCount]]
-- [[react useRequest|useRequest]]
+- [[../Cards/React useTimer 的问题解决和核心用法|useCount]]
+- [[React useRequest 封装的请求状态和使用方式|useRequest]]
 
 适合：
 
@@ -204,7 +204,7 @@ React Hooks 的核心价值不是“提供很多 API”，而是把函数组件�
 - `useRef` / `useMemo` / `useCallback`：让函数组件有稳定引用和派生能力
 - `useEffect`：让函数组件和外部世界同步
 - `useContext` / `useSyncExternalStore`：让函数组件接入共享状态和外部系统
-- [[../Cards/React-useTransition|useTransition]] / [[../Cards/React-useDeferredValue|useDeferredValue]] / [[../Cards/React-useOptimistic|useOptimistic]]：让函数组件参与并发调度和体验优化
+- [[../Cards/React useTransition 的问题解决和核心用法|useTransition]] / [[../Cards/React useDeferredValue 的问题解决和核心用法|useDeferredValue]] / [[../Cards/React useOptimistic 的问题解决和核心用法|useOptimistic]]：让函数组件参与并发调度和体验优化
 - 自定义 Hook：让这些能力可以沉淀成可复用抽象
 
 所以，学习 Hooks 最好的方式不是背列表，而是理解：当组件复杂度上升时，React 给了你哪些渐进增强的能力。
