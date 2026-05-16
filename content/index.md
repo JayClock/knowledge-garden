@@ -1,12 +1,12 @@
 ---
 share: true
 date: 2024-02-06T11:14:12
-updated: 2026-03-28 20:55:39
+updated: 2026-05-16 19:27:59
 title: 终结者的数字花园
 ---
 hello 👋，我是 JayClock，一个默默无闻，努力想办法提升自己的前端工程师，目前在用 angular 做低代码行业相关的工作。
 
-这里是借助 PARA 和 [[./Cards/INKP|INKP]] ，在 obsidian 的帮助下，打造的个人项目及知识管理的综合性数字花园，由原子化的卡片笔记编制而成。
+这里是借助 PARA 和 [[./Cards/INKP 衡量什么，如何优化？|INKP 衡量什么，如何优化？]] ，在 obsidian 的帮助下，打造的个人项目及知识管理的综合性数字花园，由原子化的卡片笔记编制而成。
 
 关于 PARA，可以看[《打造第二大脑》](https://book.douban.com/subject/36636224/)，PARA 侧重于个人项目管理；
 关于 INKP，可以看[《打开心智》](https://book.douban.com/subject/36089614//)，INKP 侧重于个人知识管理；
