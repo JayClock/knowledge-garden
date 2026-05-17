@@ -1,6 +1,6 @@
 ---
 date: 2026-04-07 20:23:26
-updated: 2026-05-15 10:03:23
+updated: 2026-05-17 19:08:49
 share: true
 ---
 
@@ -55,7 +55,6 @@ Entrix 最稳妥的讲法，不是一个让 AI 写更多代码的工具，而是
  关联
 
 - [[./平时是如何使用 AI 的|平时是如何使用 AI 的]]
-- [[./面试官追问 Team AI 时怎么答|面试官追问 Team AI 时怎么答]]
 - [[从 Rule、Spec 到 Harness：AI Coding 的渐进式建设路径|从 Rule、Spec 到 Harness：AI Coding 的渐进式建设路径]]
 
 
