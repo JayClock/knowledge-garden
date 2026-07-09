@@ -1,8 +1,8 @@
 ---
 date: 2025-05-14T10:32:15
-updated: 2026-05-16 20:16:42
-share: true
 noteId: 1778930947769
+share: true
+updated: 2026-07-09 11:00:29
 ---
 INP（Interaction to Next Paint） 衡量什么，如何优化？
 
