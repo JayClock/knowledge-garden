@@ -1,7 +1,7 @@
 ---
 date: 2024-09-14T09:25:38
-updated: 2025-02-19T10:50:35
 share: true
+updated: 2026-07-09 11:00:29
 ---
 # 如何低成本发布至线上
 使用 [quartz](https://quartz.jzhao.xyz/) + [enveloppe](https://enveloppe.github.io/) 进行发布
