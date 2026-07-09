@@ -1,8 +1,8 @@
 ---
 date: 2024-03-07T09:58:34
-updated: 2026-05-16 20:17:14
-share: true
 noteId: 1778930942239
+share: true
+updated: 2026-07-09 11:00:29
 ---
 抽象（Abstraction）的定义和意义是什么？
 
