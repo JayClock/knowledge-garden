@@ -1,8 +1,8 @@
 ---
 date: 2025-10-09 16:46:26
-updated: 2026-05-16 20:19:50
-share: true
 noteId: 1778930949315
+share: true
+updated: 2026-07-09 11:00:29
 ---
 React Jotai 的核心作用和使用场景是什么？
 
