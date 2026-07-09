@@ -1,8 +1,8 @@
 ---
 date: 2024-10-12T18:01:23
-updated: 2026-05-16 19:29:22
-share: true
 noteId: 1778930948416
+share: true
+updated: 2026-07-09 11:00:29
 ---
 JS Web API BOM 的核心 API 和使用场景是什么？
 

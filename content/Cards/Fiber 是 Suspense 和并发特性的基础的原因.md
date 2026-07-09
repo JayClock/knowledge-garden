@@ -1,8 +1,8 @@
 ---
 date: 2026-05-15 12:30:00
-updated: 2026-05-16 19:29:20
-share: true
 noteId: 1778930945239
+share: true
+updated: 2026-07-09 11:00:29
 ---
 为什么 Fiber 是 Suspense 和并发特性的基础？
 

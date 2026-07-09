@@ -1,10 +1,10 @@
 ---
 date: 2025-10-09T17:30:00
-updated: 2026-05-16 20:19:50
+noteId: 1778807093093
+share: true
 up:
   - "[[./React Hooks|React Hooks]]"
-share: true
-noteId: 1778807093093
+updated: 2026-07-09 11:00:29
 ---
 React useSyncExternalStore 的问题解决
 
@@ -140,7 +140,7 @@ function useCounterStore(store) {
 
  和并发渲染的关系
 
-这也是为什么它会和 [[./React Fiber|React Fiber]] 联系起来。
+这也是为什么它会和 [[../Express/React Fiber|React Fiber]] 联系起来。
 
 一旦 React 的更新不再只是单纯同步一路跑到底，就更需要确保：
 
@@ -153,7 +153,7 @@ function useCounterStore(store) {
 
 - 在 [[./React Hooks|React Hooks]] 里，它对应“接入外部状态系统”这一层
 - 在 [[./React 状态管理|React 状态管理]] 里，它是从 `Context` 走向外部 store 的关键接口
-- 在 [[./React Fiber|React Fiber]] 里，可以理解它为什么和并发渲染语义相关
+- 在 [[../Express/React Fiber|React Fiber]] 里，可以理解它为什么和并发渲染语义相关
 
 ## 拆分卡片
 

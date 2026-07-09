@@ -1,9 +1,9 @@
 ---
 date: 2024-09-24T17:02:14
-updated: 2026-05-16 19:29:22
+noteId: 1778930948467
 share: true
 source: https://facebook.github.io/jsx/
-noteId: 1778930948467
+updated: 2026-07-09 11:00:29
 ---
 JSX 的核心概念和应用要点是什么？
 

@@ -1,10 +1,10 @@
 ---
 date: 2026-03-09T16:20:01
-updated: 2026-05-16 20:19:50
+noteId: 1778930949667
+share: true
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
-share: true
-noteId: 1778930949667
+updated: 2026-07-09 11:00:29
 ---
 React useDeferredValue 的问题解决和核心用法
 
@@ -97,5 +97,5 @@ function SearchPage() {
  和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于“并发渲染时代的调度增强”
-- 在 [[../Knowledges/React Fiber|React Fiber]] 里，可以看到它背后的优先级调度基础
+- 在 [[../Express/React Fiber|React Fiber]] 里，可以看到它背后的优先级调度基础
 - 和 [[./React useTransition 的问题解决和核心用法|useTransition]] 一起理解，会更容易把握“动作延后”和“值延后”的区别

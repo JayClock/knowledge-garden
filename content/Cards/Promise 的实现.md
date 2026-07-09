@@ -1,8 +1,8 @@
 ---
 date: 2024-10-21T10:53:57
-updated: 2026-05-16 19:29:22
-share: true
 noteId: 1778930948769
+share: true
+updated: 2026-07-09 11:00:29
 ---
 如何实现 Promise？
 

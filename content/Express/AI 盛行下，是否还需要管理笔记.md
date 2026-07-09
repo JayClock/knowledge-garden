@@ -1,6 +1,6 @@
 ---
 date: 2024-03-04T22:33:16
-updated: 2026-05-15 10:03:23
+updated: 2026-07-09 10:45:13
 share: true
 title: AI 盛行下，是否还需要管理笔记
 cover: https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/202409162144760.png

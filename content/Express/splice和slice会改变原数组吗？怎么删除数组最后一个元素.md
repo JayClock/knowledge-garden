@@ -1,6 +1,6 @@
 ---
 date: 2025-05-03T22:54:31
-updated: 2025-05-03T22:54:52
+updated: 2026-07-09 10:45:13
 share: true
 ---
 splice() 和 slice() 是 JavaScript 数组的方法，两者作用不同。

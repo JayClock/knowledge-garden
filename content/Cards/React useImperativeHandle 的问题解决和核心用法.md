@@ -1,10 +1,10 @@
 ---
 date: 2026-03-09T16:36:31
-updated: 2026-05-16 20:19:50
+noteId: 1778930949738
+share: true
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
-share: true
-noteId: 1778930949738
+updated: 2026-07-09 11:00:29
 ---
 React useImperativeHandle 的问题解决和核心用法
 
@@ -106,4 +106,4 @@ const SearchInput = forwardRef((props, ref) => {
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于 ref 能力向组件边界外延伸的一部分
 - 在 [[../Knowledges/React-useRef|useRef]] 里，它延伸了 ref 的命令式使用方式
-- 在 [[../Knowledges/React 组件通信方式|React 组件通信方式]] 里，它对应 `ref` 路线下的实例能力暴露
+- 在 [[../Express/从渐进增强角度理解 react 组件通信方式|从渐进增强角度理解 react 组件通信方式]] 里，它对应 `ref` 路线下的实例能力暴露

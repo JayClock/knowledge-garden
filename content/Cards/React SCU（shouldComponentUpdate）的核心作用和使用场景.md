@@ -1,8 +1,8 @@
 ---
 date: 2024-10-23T09:35:47
-updated: 2026-05-16 20:19:50
-share: true
 noteId: 1778930949491
+share: true
+updated: 2026-07-09 11:00:29
 ---
 React SCU（shouldComponentUpdate）的核心作用和使用场景是什么？
 

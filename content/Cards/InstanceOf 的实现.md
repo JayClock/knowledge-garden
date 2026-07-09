@@ -1,8 +1,8 @@
 ---
 date: 2024-10-21T11:44:18
-updated: 2026-05-16 20:16:52
-share: true
 noteId: 1778930944589
+share: true
+updated: 2026-07-09 11:00:29
 ---
 如何实现 InstanceOf？
 

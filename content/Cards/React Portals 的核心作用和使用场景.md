@@ -1,8 +1,8 @@
 ---
 date: 2024-10-22T10:00:50
-updated: 2026-05-16 20:19:50
-share: true
 noteId: 1778930949340
+share: true
+updated: 2026-07-09 11:00:29
 ---
 React Portals 的核心作用和使用场景是什么？
 

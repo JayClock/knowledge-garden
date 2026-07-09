@@ -1,8 +1,8 @@
 ---
 date: 2024-10-16T09:55:21
-updated: 2026-05-16 19:29:22
-share: true
 noteId: 1778930948367
+share: true
+updated: 2026-07-09 11:00:29
 ---
 JS Web API 存储的核心 API 和使用场景是什么？
 

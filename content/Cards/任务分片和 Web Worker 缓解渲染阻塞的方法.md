@@ -1,8 +1,8 @@
 ---
 date: 2026-05-15 12:00:00
-updated: 2026-05-16 19:29:19
-share: true
 noteId: 1778930944441
+share: true
+updated: 2026-07-09 11:00:29
 ---
 任务分片和 Web Worker 如何缓解渲染阻塞？
 

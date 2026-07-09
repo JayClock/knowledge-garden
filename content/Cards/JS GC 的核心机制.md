@@ -1,8 +1,8 @@
 ---
 date: 2024-10-16T13:20:49
-updated: 2026-05-16 19:29:22
-share: true
 noteId: 1778930948292
+share: true
+updated: 2026-07-09 11:00:29
 ---
 JS GC 的核心机制是什么？
 

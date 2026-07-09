@@ -1,8 +1,8 @@
 ---
 date: 2025-05-20T16:53:10
-updated: 2026-05-16 20:18:05
-share: true
 noteId: 1778930943713
+share: true
+updated: 2026-07-09 11:00:29
 ---
 浏览器 SessionStorage 的机制和使用要点是什么？
 

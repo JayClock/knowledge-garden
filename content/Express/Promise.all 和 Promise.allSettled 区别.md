@@ -1,6 +1,6 @@
 ---
 date: 2025-05-03T17:49:24
-updated: 2026-05-15 10:03:23
+updated: 2026-07-09 10:45:13
 share: true
 ---
 - 总览：Promise.all 在需要所有 Promise 都成功的情况下使用，而 Promise.allSettled 则适用于知道每个 Promise 的执行结果的情况下使用。

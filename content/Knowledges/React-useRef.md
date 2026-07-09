@@ -1,10 +1,10 @@
 ---
 date: 2025-04-17T16:31:32
-updated: 2026-05-20 08:14:02
+noteId: 1778807093039
+share: true
 up:
   - "[[./React Hooks|React Hooks]]"
-share: true
-noteId: 1778807093039
+updated: 2026-07-09 11:00:29
 ---
 React useRef 的问题解决
 
@@ -110,7 +110,7 @@ function TextInputWithFocusButton() {
 
 `useRef` 不只是一个“存值工具”，它还连接了组件通信中的命令式能力暴露。
 
-当你配合 [[../Cards/React forwardRef 的问题解决和使用方式|forwardRef]] 与 [[../Cards/React useImperativeHandle 的问题解决和核心用法|useImperativeHandle]] 使用时，父组件可以调用子组件暴露的方法。这对应 [[./React 组件通信方式|React 组件通信方式]] 中的那条“`ref` 暴露实例能力”路线。
+当你配合 [[../Cards/React forwardRef 的问题解决和使用方式|forwardRef]] 与 [[../Cards/React useImperativeHandle 的问题解决和核心用法|useImperativeHandle]] 使用时，父组件可以调用子组件暴露的方法。这对应 [[../Express/从渐进增强角度理解 react 组件通信方式|从渐进增强角度理解 react 组件通信方式]] 中的那条“`ref` 暴露实例能力”路线。
 
  一个常见误区
 
@@ -128,7 +128,7 @@ function TextInputWithFocusButton() {
  和其它笔记的关系
 
 - 在 [[./React Hooks|React Hooks]] 里，它属于“稳定引用和派生能力”这一层
-- 在 [[./React 组件通信方式|React 组件通信方式]] 里，它是父组件触发子组件命令式能力的桥梁
+- 在 [[../Express/从渐进增强角度理解 react 组件通信方式|从渐进增强角度理解 react 组件通信方式]] 里，它是父组件触发子组件命令式能力的桥梁
 - 在 [[./React-useEffect|useEffect]] 里，它经常用来保存 effect 相关的外部句柄
 
 ## 拆分卡片

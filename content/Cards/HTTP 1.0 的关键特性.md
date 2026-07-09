@@ -1,8 +1,8 @@
 ---
 date: 2025-05-11T14:33:08
-updated: 2026-05-16 19:29:21
-share: true
 noteId: 1778930947443
+share: true
+updated: 2026-07-09 11:00:29
 ---
 HTTP 1.0 的关键特性是什么？
 

@@ -1,8 +1,8 @@
 ---
 date: 2026-05-15 12:00:00
-updated: 2026-05-16 19:29:20
-share: true
 noteId: 1778930945567
+share: true
+updated: 2026-07-09 11:00:29
 ---
 为什么说 SPA 把 JavaScript 从增强层变成必要条件？
 

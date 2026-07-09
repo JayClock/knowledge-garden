@@ -1,6 +1,6 @@
 ---
 date: 2025-09-22 09:25:10
-updated: 2026-05-15 10:03:23
+updated: 2026-07-09 10:45:13
 share: true
 ---
  Restful：学习抽象 web

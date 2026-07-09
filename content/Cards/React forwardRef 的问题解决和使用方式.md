@@ -1,8 +1,8 @@
 ---
 date: 2025-10-09 10:03:29
-updated: 2026-05-16 20:19:50
-share: true
 noteId: 1778930949269
+share: true
+updated: 2026-07-09 11:00:29
 ---
 React forwardRef 的问题解决和使用方式
 
@@ -59,7 +59,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 - 只是想跨组件共享状态
 - 没有任何 ref 透传需求的普通业务组件
 
-如果只是传数据或事件，优先回到 [[../Knowledges/React 组件通信方式|React 组件通信方式]] 里的 `props` 和回调。
+如果只是传数据或事件，优先回到 [[../Express/从渐进增强角度理解 react 组件通信方式|从渐进增强角度理解 react 组件通信方式]] 里的 `props` 和回调。
 
  和 `useImperativeHandle` 的关系
 
@@ -102,4 +102,4 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 
 - 在 [[../Knowledges/React-useRef|useRef]] 里，它和 ref 的命令式能力直接相关
 - 在 [[./React useImperativeHandle 的问题解决和核心用法|useImperativeHandle]] 里，可以继续看到“透传 ref 之后怎么裁剪暴露面”
-- 在 [[../Knowledges/React 组件通信方式|React 组件通信方式]] 里，它对应“`ref` 暴露实例能力”那条路线
+- 在 [[../Express/从渐进增强角度理解 react 组件通信方式|从渐进增强角度理解 react 组件通信方式]] 里，它对应“`ref` 暴露实例能力”那条路线

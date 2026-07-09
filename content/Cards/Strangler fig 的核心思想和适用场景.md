@@ -1,9 +1,9 @@
 ---
 date: 2025-01-02T16:16:07
-updated: 2026-05-16 19:29:23
+noteId: 1778930950367
 share: true
 source: https://martinfowler.com/bliki/StranglerFigApplication.html
-noteId: 1778930950367
+updated: 2026-07-09 11:00:29
 ---
 Strangler fig 的核心思想和适用场景是什么？
 

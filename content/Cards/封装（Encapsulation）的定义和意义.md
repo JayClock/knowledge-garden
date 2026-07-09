@@ -1,8 +1,8 @@
 ---
 date: 2024-03-07T09:51:45
-updated: 2026-05-16 19:29:18
-share: true
 noteId: 1778930942742
+share: true
+updated: 2026-07-09 11:00:29
 ---
 封装（Encapsulation）的定义和意义是什么？
 

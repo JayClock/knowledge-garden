@@ -1,6 +1,6 @@
 ---
 date: 2026-04-07 20:23:26
-updated: 2026-05-17 19:08:49
+updated: 2026-07-09 10:45:13
 share: true
 ---
 
@@ -54,8 +54,8 @@ Entrix 最稳妥的讲法，不是一个让 AI 写更多代码的工具，而是
 
  关联
 
-- [[./平时是如何使用 AI 的|平时是如何使用 AI 的]]
-- [[从 Rule、Spec 到 Harness：AI Coding 的渐进式建设路径|从 Rule、Spec 到 Harness：AI Coding 的渐进式建设路径]]
+- 平时是如何使用 AI 的
+- 从 Rule、Spec 到 Harness：AI Coding 的渐进式建设路径
 
 
  如果岗位更偏 AI 平台 / 工程效率

@@ -1,8 +1,8 @@
 ---
 date: 2024-03-07T09:58:43
-updated: 2026-05-16 19:29:18
-share: true
 noteId: 1778930943141
+share: true
+updated: 2026-07-09 11:00:29
 ---
 继承（Inheritance）的定义是什么？
 

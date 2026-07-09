@@ -1,8 +1,8 @@
 ---
 date: 2026-05-15 12:30:00
-updated: 2026-05-16 19:29:23
-share: true
 noteId: 1778930950242
+share: true
+updated: 2026-07-09 11:00:29
 ---
 Smart UI 为什么会把领域事件降级为 UI 事件？
 
