@@ -1,10 +1,10 @@
 ---
 date: 2026-03-09T16:29:31
-updated: 2026-05-16 20:19:50
+noteId: 1778930949765
+share: true
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
-share: true
-noteId: 1778930949765
+updated: 2026-07-09 11:00:29
 ---
 React useLayoutEffect 的问题解决和核心用法
 
@@ -86,4 +86,4 @@ function Tooltip() {
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于副作用能力的细分节点
 - 在 [[../Knowledges/React-useEffect|useEffect]] 里，它是更靠前的布局副作用版本
-- 在 [[../Knowledges/React Fiber|React Fiber]] 里，它可以连接到提交阶段中更靠近 layout 的执行时机
+- 在 [[../Express/React Fiber|React Fiber]] 里，它可以连接到提交阶段中更靠近 layout 的执行时机
