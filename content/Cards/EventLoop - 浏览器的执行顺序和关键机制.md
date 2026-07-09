@@ -1,8 +1,8 @@
 ---
 date: 2024-10-19T11:00:11
-updated: 2026-05-16 20:16:52
-share: true
 noteId: 1778930947163
+share: true
+updated: 2026-07-09 11:00:29
 ---
 EventLoop - 浏览器的执行顺序和关键机制是什么？
 
