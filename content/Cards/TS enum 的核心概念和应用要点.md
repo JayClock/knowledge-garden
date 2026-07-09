@@ -1,8 +1,8 @@
 ---
 date: 2024-10-17T14:28:42
-updated: 2026-05-16 19:29:23
-share: true
 noteId: 1778930950567
+share: true
+updated: 2026-07-09 11:00:29
 ---
 TS enum 的核心概念和应用要点是什么？
 
