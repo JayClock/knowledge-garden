@@ -1,10 +1,10 @@
 ---
 date: 2026-03-09T16:29:31
-updated: 2026-05-20 09:05:16
+noteId: 1778807092775
+share: true
 up:
   - "[[./React Hooks|React Hooks]]"
-share: true
-noteId: 1778807092775
+updated: 2026-07-09 11:00:29
 ---
 `useActionState` 这个主题讨论的是：**如何围绕某个 action 的执行结果来组织状态**。它尤其适合表单提交、服务端 action 和结果导向的交互，因为这些场景的状态天然不是“零散 UI 状态”，而是围绕“一次动作的结果”展开。
 
