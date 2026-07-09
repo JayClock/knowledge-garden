@@ -1,18 +1,18 @@
 ---
 date: 2025-04-17T16:36:54
-updated: 2026-05-16 20:19:50
+noteId: 1778807092839
+related:
+share: true
 up:
   - "[[./React Hooks|React Hooks]]"
-related:
   - "[[React Redux 的核心作用和使用场景|redux]]"
-share: true
-noteId: 1778807092839
+updated: 2026-07-09 11:00:29
 ---
 React useContext 的问题解决
 
 ---
 
-`useContext` 是 React 组件通信从局部传值走向跨层共享时的一次增强。当前面的 `props` 和回调函数开始变成机械转发时，就说明你可能该从 [[./React 组件通信方式|React 组件通信方式]] 进入 `Context` 了。
+`useContext` 是 React 组件通信从局部传值走向跨层共享时的一次增强。当前面的 `props` 和回调函数开始变成机械转发时，就说明你可能该从 [[../Express/从渐进增强角度理解 react 组件通信方式|从渐进增强角度理解 react 组件通信方式]] 进入 `Context` 了。
 
  它解决什么问题
 
@@ -104,7 +104,7 @@ function ThemedButton() {
 
 可以优先问自己这几个问题：
 
-1. 这份数据是不是被多个深层组件共享
+1. 这份数据是不是被多个深层x组件共享
 2. 中间层是不是只是在帮忙传 `props`
 3. 这份共享是否局限在某一棵组件树里
 
@@ -135,12 +135,6 @@ function ThemedButton() {
 
  和其它笔记的关系
 
-- 在 [[./React 组件通信方式|React 组件通信方式]] 里，它是从 `props` 升级到跨层共享的关键一步
+- 在 [[../Express/从渐进增强角度理解 react 组件通信方式|从渐进增强角度理解 react 组件通信方式]] 里，它是从 `props` 升级到跨层共享的关键一步
 - 在 [[./React Hooks|React Hooks]] 里，它是函数组件接入共享能力的入口
 - 在 [[./React 状态管理|React 状态管理]] 里，它是进入外部 store 之前的一层过渡
-
-## 拆分卡片
-
-- [[../Cards/React useContext 的问题解决|React useContext 的问题解决]]
-- [[../Cards/说 useContext 增强的是传播方式而不是状态本身的原因|说 useContext 增强的是传播方式而不是状态本身的原因]]
-- [[../Cards/useContext 适合的数据|useContext 适合的数据]]
