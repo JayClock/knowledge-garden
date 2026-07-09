@@ -1,8 +1,8 @@
 ---
 date: 2024-05-23T13:14:12
-updated: 2026-05-15 10:03:23
 share: true
 source: https://time.geekbang.org/column/article/144204
+updated: 2026-07-09 11:00:29
 ---
 > **DevOps 是通过平台（Platform）、流程（Process）和人（People）的有机整合，以 C（协作）A（自动化）L（精益）M（度量）S（共享）文化为指引，旨在建立一种可以快速交付价值并且具有持续改进能力的现代化 IT 组织。**
 
