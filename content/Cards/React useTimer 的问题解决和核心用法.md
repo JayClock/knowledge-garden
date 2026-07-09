@@ -1,8 +1,8 @@
 ---
 date: 2025-05-19T08:30:17
-updated: 2026-05-16 20:19:50
-share: true
 noteId: 1778930949967
+share: true
+updated: 2026-07-09 11:00:29
 ---
 React useTimer 用来解决什么问题，核心用法是什么？
 
