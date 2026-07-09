@@ -1,8 +1,8 @@
 ---
 date: 2024-10-12T15:57:33
-updated: 2026-05-16 19:29:21
-share: true
 noteId: 1778930946541
+share: true
+updated: 2026-07-09 11:00:29
 ---
 Ajax-Fetch-Axios 三者有哪些关键区别？
 
