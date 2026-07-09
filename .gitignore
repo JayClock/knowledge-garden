@@ -12,3 +12,17 @@ replit.nix
 .quartz/
 quartz/cli/tui/dist/
 .turbo/
+
+# Ignore all content by default
+/content/*
+
+# Keep only published content areas
+!/content/index.md
+!/content/Knowledge/
+/content/Knowledge/*
+!/content/Knowledge/Maps/
+!/content/Knowledge/Maps/**
+!/content/Knowledge/Notes/
+!/content/Knowledge/Notes/**
+!/content/Knowledge/Outputs/
+!/content/Knowledge/Outputs/**

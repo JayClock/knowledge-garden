@@ -1,0 +1,34 @@
+---
+date: 2024-10-23T09:24:20
+noteId: 1778930949042
+updated: 2026-07-09 20:21:41
+---
+React 异步组件的核心作用和使用场景是什么？
+
+---
+
+```js
+import React from 'react'
+
+const ContextDemo = React.lazy(() => import('./ContextDemo'))
+
+class App extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {
+        return <div>
+            <p>引入一个动态组件</p>
+            <hr />
+            <React.Suspense fallback={<div>Loading...</div>}>
+                <ContextDemo/>
+            </React.Suspense>
+        </div>
+
+        // 1. 强制刷新，可看到 Loading...（看不到就限制一下 chrome 网速）
+        // 2. 看 network 的 js 加载
+    }
+}
+
+export default App
+```
