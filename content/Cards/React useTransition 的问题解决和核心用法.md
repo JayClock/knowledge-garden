@@ -1,10 +1,10 @@
 ---
 date: 2026-03-09T16:20:01
-updated: 2026-05-16 20:19:50
+noteId: 1778930949989
+share: true
 up:
   - "[[../Knowledges/React Hooks|React Hooks]]"
-share: true
-noteId: 1778930949989
+updated: 2026-07-09 11:00:29
 ---
 React useTransition 的问题解决和核心用法
 
@@ -115,5 +115,5 @@ function SearchPage() {
  和其它笔记的关系
 
 - 在 [[../Knowledges/React Hooks|React Hooks]] 里，它属于“并发渲染时代的调度增强”
-- 在 [[../Knowledges/React Fiber|React Fiber]] 里，可以理解它为什么建立在调度系统之上
+- 在 [[../Express/React Fiber|React Fiber]] 里，可以理解它为什么建立在调度系统之上
 - 和 [[./React useDeferredValue 的问题解决和核心用法|useDeferredValue]] 一样，它们都在解决“哪些更新该先发生”这个问题
