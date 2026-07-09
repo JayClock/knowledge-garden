@@ -1,8 +1,8 @@
 ---
 date: 2025-05-11T16:32:04
-updated: 2026-05-16 20:16:44
-share: true
 noteId: 1778930947543
+share: true
+updated: 2026-07-09 11:00:29
 ---
 HTTP 2.0 的关键特性是什么？
 

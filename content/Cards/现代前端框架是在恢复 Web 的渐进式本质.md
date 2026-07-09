@@ -1,10 +1,9 @@
 ---
-share: true
 date: 2026-05-20 11:10:19
-updated: 2026-05-20 11:48:33
 noteId: 1779248910210
+share: true
+updated: 2026-07-09 11:00:29
 ---
-
 # 现代前端框架是在恢复 Web 的渐进式本质
 
 SSR、SSG、流式 SSR、选择性注水和 React Server Components 并不是对 SPA 的简单性能优化，而是在把内容优先、按需交互、服务端协作这些 Web 原生渐进原则重新引入框架设计。

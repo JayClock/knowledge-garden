@@ -1,8 +1,8 @@
 ---
 date: 2025-05-20T16:49:44
-updated: 2026-05-16 20:17:08
-share: true
 noteId: 1778930943693
+share: true
+updated: 2026-07-09 11:00:29
 ---
 浏览器 LocalStorage 的机制和使用要点是什么？
 

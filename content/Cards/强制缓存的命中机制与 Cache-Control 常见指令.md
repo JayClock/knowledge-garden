@@ -1,8 +1,8 @@
 ---
 date: 2025-05-10T20:30:23
-updated: 2026-05-16 19:29:19
-share: true
 noteId: 1778930944292
+share: true
+updated: 2026-07-09 11:00:29
 ---
 强制缓存如何命中，Cache-Control 常见指令有哪些？
 

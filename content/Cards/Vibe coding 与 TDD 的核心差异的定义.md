@@ -1,8 +1,8 @@
 ---
 date: 2026-05-15 12:30:00
-updated: 2026-05-16 19:29:24
-share: true
 noteId: 1778930950992
+share: true
+updated: 2026-07-09 11:00:29
 ---
 Vibe coding 与 TDD 的核心差异是什么？
 

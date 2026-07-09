@@ -1,10 +1,8 @@
 ---
 date: 2025-04-16T13:48:17
-updated: 2026-05-16 20:19:50
-up:
-  - "[[./React Hooks|React Hooks]]"
-share: true
 noteId: 1778807092872
+share: true
+updated: 2026-07-09 11:00:29
 ---
 React useEffect 的问题解决
 
@@ -169,7 +167,7 @@ useEffect(() => {
 
 - 在 [[./React Hooks|React Hooks]] 里，它对应“组件开始和外部世界同步”这一层
 - 在 [[./React 状态管理|React 状态管理]] 里，它经常和状态更新联动，但本身不是状态管理工具
-- 在 [[./React Fiber|React Fiber]] 和 [[../Express/渐进式集成：从浏览器渲染到框架设计的统一哲学|渐进式集成：从浏览器渲染到框架设计的统一哲学]] 的语境里，它可以继续连接到渲染调度与副作用提交阶段
+- 在 [[../Express/React Fiber|React Fiber]] 和 [[../Express/渐进式集成：从浏览器渲染到框架设计的统一哲学|渐进式集成：从浏览器渲染到框架设计的统一哲学]] 的语境里，它可以继续连接到渲染调度与副作用提交阶段
 
 ## 拆分卡片
 

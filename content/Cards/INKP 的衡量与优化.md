@@ -1,9 +1,9 @@
 ---
-share: true
-updated: 2026-05-16 20:17:15
 date: 2024-02-06T22:01:19
-source: https://book.douban.com/subject/36089614
 noteId: 1778930947742
+share: true
+source: https://book.douban.com/subject/36089614
+updated: 2026-07-09 11:00:29
 ---
 INKP 衡量什么，如何优化？
 

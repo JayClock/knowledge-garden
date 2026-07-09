@@ -1,8 +1,8 @@
 ---
 date: 2024-09-26T17:43:49
-updated: 2026-05-16 19:29:18
-share: true
 noteId: 1778930942264
+share: true
+updated: 2026-07-09 11:00:29
 ---
 纯函数（Pure Function）的定义和意义是什么？
 

@@ -1,8 +1,8 @@
 ---
 date: 2025-05-03T10:02:39
-updated: 2026-05-16 19:29:22
-share: true
 noteId: 1778930948340
+share: true
+updated: 2026-07-09 11:00:29
 ---
 JS Symbol 的核心机制是什么？
 

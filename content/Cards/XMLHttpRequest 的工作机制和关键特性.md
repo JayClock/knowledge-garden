@@ -1,8 +1,8 @@
 ---
 date: 2025-05-13T20:16:38
-updated: 2026-05-16 19:29:24
-share: true
 noteId: 1778930951192
+share: true
+updated: 2026-07-09 11:00:29
 ---
 XMLHttpRequest 的工作机制和关键特性是什么？
 

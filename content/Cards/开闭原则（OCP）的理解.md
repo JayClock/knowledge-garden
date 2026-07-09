@@ -1,8 +1,8 @@
 ---
 date: 2024-03-08T07:22:14
-updated: 2026-05-16 20:18:15
-share: true
 noteId: 1778930944491
+share: true
+updated: 2026-07-09 11:00:29
 ---
 如何理解开闭原则（OCP）？
 

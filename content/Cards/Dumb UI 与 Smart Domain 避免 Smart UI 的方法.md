@@ -1,8 +1,8 @@
 ---
 date: 2026-05-15 12:30:00
-updated: 2026-05-16 19:29:21
-share: true
 noteId: 1778930947140
+share: true
+updated: 2026-07-09 11:00:29
 ---
 Dumb UI 与 Smart Domain 如何避免 Smart UI？
 

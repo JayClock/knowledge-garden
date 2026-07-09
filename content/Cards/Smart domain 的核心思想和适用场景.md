@@ -1,8 +1,8 @@
 ---
 date: 2025-07-11 23:29:39
-updated: 2026-05-16 19:29:23
-share: true
 noteId: 1778930950141
+share: true
+updated: 2026-07-09 11:00:29
 ---
 Smart domain 的核心思想和适用场景是什么？
 

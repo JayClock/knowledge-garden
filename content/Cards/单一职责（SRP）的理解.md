@@ -1,8 +1,8 @@
 ---
 date: 2024-03-07T22:08:11
-updated: 2026-05-16 19:29:19
-share: true
 noteId: 1778930944465
+share: true
+updated: 2026-07-09 11:00:29
 ---
 如何理解单一职责（SRP）？
 

@@ -1,8 +1,8 @@
 ---
 date: 2025-01-22T14:59:18
-updated: 2026-05-16 19:29:19
-share: true
 noteId: 1778930943414
+share: true
+updated: 2026-07-09 11:00:29
 ---
 角色 - 目标 - 实体法（Role - Goal - Entity）的核心流程和适用场景是什么？
 

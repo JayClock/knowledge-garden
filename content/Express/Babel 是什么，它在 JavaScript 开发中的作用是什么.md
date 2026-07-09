@@ -1,6 +1,6 @@
 ---
 date: 2025-10-11 18:09:59
-updated: 2025-10-11 18:29:31
+updated: 2026-07-09 10:45:13
 share: true
 ---
 Babel 是一个 JavaScript 编译器，主要用于现代 JavaScript 代码（包括 ES6 及更高版本的语法）转换为向后兼容的 JavaScript 代码，以确保在旧版本浏览器或环境中也能运行。

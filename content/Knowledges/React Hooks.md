@@ -1,9 +1,9 @@
 ---
 date: 2025-04-16T13:14:31
-updated: 2026-05-20 15:17:19
 share: true
+updated: 2026-07-09 11:00:29
 ---
-React Hooks 不适合只按“API 清单”去记，更适合按 [[./渐进增强|渐进增强]] 的方式理解：函数组件先获得最基础的状态能力，再逐步获得派生能力、引用能力、副作用能力、共享能力、并发调度能力和抽象复用能力。
+React Hooks 不适合只按“API 清单”去记，更适合按 [[渐进增强|渐进增强]] 的方式理解：函数组件先获得最基础的状态能力，再逐步获得派生能力、引用能力、副作用能力、共享能力、并发调度能力和抽象复用能力。
 
 ## 核心判断
 
@@ -72,7 +72,7 @@ Hooks 的出现，不是为了给函数组件补一组零散 API，而是为了�
 - [[../Cards/React forwardRef 的问题解决和使用方式|forwardRef]]
 - [[../Cards/React useImperativeHandle 的问题解决和核心用法|useImperativeHandle]]
 
-相关入口：[[./React 组件通信方式|React 组件通信方式]]
+相关入口：[[../Express/从渐进增强角度理解 react 组件通信方式|从渐进增强角度理解 react 组件通信方式]]
 
 ### 第三层：组件开始和外部世界同步
 
@@ -107,7 +107,7 @@ Hooks 的出现，不是为了给函数组件补一组零散 API，而是为了�
 - [[../Cards/React useOptimistic 的问题解决和核心用法|useOptimistic]]
 - [[./React-useActionState|useActionState]]
 
-相关入口：[[./React Fiber|React Fiber]]、[[../Express/渐进式集成：从浏览器渲染到框架设计的统一哲学|渐进式集成：从浏览器渲染到框架设计的统一哲学]]
+相关入口：[[../Express/React Fiber|React Fiber]]、[[../Express/渐进式集成：从浏览器渲染到框架设计的统一哲学|渐进式集成：从浏览器渲染到框架设计的统一哲学]]
 
 ### 第六层：抽象复用能力上升为自定义 Hook
 
@@ -156,7 +156,7 @@ Hooks 的出现，不是为了给函数组件补一组零散 API，而是为了�
 ## 相关入口
 
 - [[./React 状态管理|React 状态管理]]
-- [[./React 组件通信方式|React 组件通信方式]]
-- [[./React Fiber|React Fiber]]
-- [[./渐进增强|渐进增强]]
+- [[../Express/从渐进增强角度理解 react 组件通信方式|从渐进增强角度理解 react 组件通信方式]]
+- [[../Express/React Fiber|React Fiber]]
+- [[渐进增强|渐进增强]]
 - [[../Express/渐进式集成：从浏览器渲染到框架设计的统一哲学|渐进式集成：从浏览器渲染到框架设计的统一哲学]]
