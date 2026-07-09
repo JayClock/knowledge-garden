@@ -9,9 +9,13 @@ configuration:
   locale: en-US
   baseUrl: www.jayclock-garden.top
   ignorePatterns:
+    # Publish whitelist: only index + selected Knowledge folders
     - private
     - templates
     - .obsidian
+    - "!(index.md|Knowledge/**)"
+    - "Knowledge/!(Maps|Notes|Outputs)"
+    - "Knowledge/!(Maps|Notes|Outputs)/**"
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
