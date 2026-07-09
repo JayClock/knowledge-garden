@@ -1,8 +1,8 @@
 ---
 date: 2024-10-19T18:40:14
-updated: 2026-05-16 20:16:49
-share: true
 noteId: 1778930947868
+share: true
+updated: 2026-07-09 11:00:29
 ---
 JS 宏任务和微任务的核心机制是什么？
 
@@ -10,7 +10,7 @@ JS 宏任务和微任务的核心机制是什么？
 
 - 宏任务和微任务
 	- 宏任务：setTimeout，setInterval，Ajax，[[../Knowledges/JS Web-API-DOM|DOM]] 事件，I / O 操作等
-	- 微任务：[[./JS Promise 的核心机制|Promise]]，[[./JS async await 的执行机制|async&await]]，node 中的 process.nextTick，对 DOM 变化监听的 MutationObserver
+	- 微任务：[[./JS Promise 使用|Promise]]，[[./async、await 使用|async&await]]，node 中的 process.nextTick，对 DOM 变化监听的 MutationObserver
 - 为什么微任务比宏任务执行要早
 	- 微任务：ES 语法标准之内，JS 引擎来统一处理。即，不用浏览器有任何干预，即可一次性处理完，更快更及时。在 DOM 渲染之前触发。
 	- 宏任务：ES 语法没有，JS 引擎不处理，浏览器（或 nodejs）干预处理。在 DOM 渲染之后触发。
