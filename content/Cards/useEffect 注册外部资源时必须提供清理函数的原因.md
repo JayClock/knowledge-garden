@@ -1,8 +1,8 @@
 ---
 date: 2026-05-15 12:30:00
-updated: 2026-05-16 19:29:23
-share: true
 noteId: 1778930950817
+share: true
+updated: 2026-07-09 11:00:29
 ---
 为什么 useEffect 注册外部资源时必须提供清理函数？
 
