@@ -1,7 +1,7 @@
 ---
 date: 2025-05-13T16:59:16
 noteId: 1778930947818
-updated: 2026-07-09 20:21:41
+updated: 2026-07-25 09:00:51
 ---
 JS 调用栈的核心机制是什么？
 
@@ -30,4 +30,4 @@ function addAll(b,c){
 addAll(3,6)
 ```
 
-![[JavaScript 函数执行上下文与调用栈.png]]
+![JavaScript 函数执行上下文与调用栈](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/JavaScript%20%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E8%B0%83%E7%94%A8%E6%A0%88.png)

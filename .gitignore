@@ -1,5 +1,7 @@
 .DS_Store
 .gitignore
+__pycache__/
+*.py[cod]
 node_modules
 public
 prof
@@ -25,3 +27,21 @@ quartz/cli/tui/dist/
 !/content/Knowledge/Notes/**
 !/content/Knowledge/Outputs/
 !/content/Knowledge/Outputs/**
+
+# Publish Excalidraw drawings and their direct image dependencies only
+!/content/Knowledge/Assets/
+/content/Knowledge/Assets/*
+!/content/Knowledge/Assets/Excalidraw/
+/content/Knowledge/Assets/Excalidraw/*
+!/content/Knowledge/Assets/Excalidraw/*.excalidraw.md
+!/content/Knowledge/Assets/Excalidraw/*.excalidraw
+!/content/Knowledge/Assets/Excalidraw/*.png
+!/content/Knowledge/Assets/Excalidraw/*.jpg
+!/content/Knowledge/Assets/Excalidraw/*.jpeg
+!/content/Knowledge/Assets/Excalidraw/*.gif
+!/content/Knowledge/Assets/Excalidraw/*.svg
+!/content/Knowledge/Assets/Excalidraw/*.webp
+!/content/Knowledge/Assets/Excalidraw/*.avif
+!/content/Knowledge/Assets/Excalidraw/*.bmp
+!/content/Knowledge/Assets/Excalidraw/*.ico
+!/content/Knowledge/Assets/Excalidraw/*.jxl

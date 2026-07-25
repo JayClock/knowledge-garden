@@ -1,7 +1,7 @@
 ---
 date: 2024-05-23T13:14:12
 source: https://time.geekbang.org/column/article/144204
-updated: 2026-07-09 20:21:41
+updated: 2026-07-25 09:00:58
 ---
 > **DevOps 是通过平台（Platform）、流程（Process）和人（People）的有机整合，以 C（协作）A（自动化）L（精益）M（度量）S（共享）文化为指引，旨在建立一种可以快速交付价值并且具有持续改进能力的现代化 IT 组织。**
 
@@ -15,5 +15,5 @@ updated: 2026-07-09 20:21:41
 	- **倾向敏捷业务**：找一个需求变更频率比较大的
 	- **改进意愿优先**：绩效已经没啥参考意义了，团队也看不上 DevOps
 - 专职转型小组打造：
- ![[Pasted image 20250102094448.png]]
+ ![Pasted image 20250102094448](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/Pasted%20image%2020250102094448.png)
 
