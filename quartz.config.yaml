@@ -14,8 +14,13 @@ configuration:
     - templates
     - .obsidian
     - "!(index.md|Knowledge/**)"
-    - "Knowledge/!(Maps|Notes|Outputs)"
-    - "Knowledge/!(Maps|Notes|Outputs)/**"
+    - "Knowledge/!(Maps|Notes|Outputs|Assets)"
+    - "Knowledge/!(Maps|Notes|Outputs|Assets)/**"
+    # Assets remain private except publishable Excalidraw drawings and image dependencies
+    - "Knowledge/Assets/!(Excalidraw)"
+    - "Knowledge/Assets/!(Excalidraw)/**"
+    - "Knowledge/Assets/Excalidraw/Scripts"
+    - "Knowledge/Assets/Excalidraw/Scripts/**"
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
