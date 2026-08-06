@@ -1,7 +1,25 @@
 ---
 date: 2025-09-30 20:00:35
-updated: 2026-07-09 20:21:41
+updated: 2026-08-01 09:50:46
 ---
+## 第二章练习：新旧对比
+
+![[Knowledge/Assets/Excalidraw/React 状态管理 - Visual LEGO.excalidraw|1000]]
+
+左侧保留原来的整页线性表达，右侧展示同一内容经过 `Create → Connect → Refine` 后形成的可复用视觉积木；点击新卡片可进入对应原子笔记。
+
+## 第三章练习：Hybrid Notes
+
+![[Knowledge/Assets/Excalidraw/React 状态管理 - Hybrid Notes.excalidraw|1000]]
+
+第二章先把整页主题拆成标准视觉块；第三章再从这些块中选出三个可独立成立的判断，为它们补齐视觉正面和 Markdown 背面：
+
+- [[Knowledge/Assets/Excalidraw/Hybrid Notes/React useState - 只保存源状态.excalidraw|useState · 只保存源状态]]
+- [[Knowledge/Assets/Excalidraw/Hybrid Notes/React useReducer - 增强更新逻辑而不扩大共享范围.excalidraw|useReducer · 集中更新规则]]
+- [[Knowledge/Assets/Excalidraw/Hybrid Notes/React Context - 增强传播方式而不是状态治理.excalidraw|Context · 传播通道不等于状态治理]]
+
+视觉正面用于快速恢复结构和判断；Markdown 背面保留解释、适用边界、原始来源、关系与复用记录。原文字笔记没有被替代，而是继续承担精确内容来源。
+
 ## 核心判断
 
 - React 状态管理不是“在几个库之间做静态选型”，而是围绕状态作用域、更新复杂度、协作治理和系统边界逐层升级的 [[渐进增强]]。

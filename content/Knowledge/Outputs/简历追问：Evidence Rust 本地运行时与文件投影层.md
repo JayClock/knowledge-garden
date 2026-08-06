@@ -1,7 +1,7 @@
 ---
 title: 简历追问：Evidence Rust 本地运行时与文件投影层
 date: 2026-07-03 22:00:00
-updated: 2026-07-09 10:45:13
+updated: 2026-07-27 08:18:19
 tags:
   - interview/follow-up
   - resume/evidence
@@ -11,7 +11,7 @@ tags:
 
 # 简历追问：Evidence Rust 本地运行时与文件投影层
 
-关联：[[全栈工程师简历#Evidence｜本地优先的业务履约建模与 AI 辅助建模平台]]、[[Evidence 项目简历描述与面试话术]]、[[15 分钟：Evidence 面试逐字稿]]。
+关联：[[全栈工程师简历#Evidence｜领域建模、证据映射与 AI 辅助交付平台]]、[[Evidence 项目简历描述与面试话术]]、[[15 分钟：Evidence 面试逐字稿]]。
 
 ## 对应简历描述
 
