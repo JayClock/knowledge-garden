@@ -16,6 +16,8 @@
     "docs": "npx quartz build --serve -d docs",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
+    "palette:check": "bash .agents/skills/concept-visualization-coach/scripts/sync_excalidraw_palette.sh --check",
+    "palette:sync": "bash .agents/skills/concept-visualization-coach/scripts/sync_excalidraw_palette.sh --apply",
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
     "install-plugins": "npx tsx ./quartz/plugins/loader/install-plugins.ts",

@@ -45,3 +45,8 @@ quartz/cli/tui/dist/
 !/content/Knowledge/Assets/Excalidraw/*.bmp
 !/content/Knowledge/Assets/Excalidraw/*.ico
 !/content/Knowledge/Assets/Excalidraw/*.jxl
+
+# Keep the reusable SVG icon library
+!/content/Knowledge/Assets/Icons/
+/content/Knowledge/Assets/Icons/*
+!/content/Knowledge/Assets/Icons/*.svg

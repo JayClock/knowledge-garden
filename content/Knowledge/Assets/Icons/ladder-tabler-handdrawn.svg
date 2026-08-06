@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 140 140" width="140" height="140" fill="none" role="img" aria-labelledby="title desc" data-color-variable="--icon-color" style="color: var(--icon-color, #000000);" class="excalidraw-svg">
+  <metadata>Derived hand-drawn reusable master. Original file: Knowledge/Assets/Icons/ladder-tabler.svg. Title: Ladder. Source: https://tabler.io/icons?icon=ladder and https://github.com/tabler/tabler-icons/blob/main/icons/outline/ladder.svg. Author: Paweł Kuna / Tabler Icons. License: MIT License, https://github.com/tabler/tabler-icons/blob/main/LICENSE. Geometry: the two rails and four rungs retain the six official Tabler centerline segments and their relative spacing. Hand-drawn treatment: each source segment was recreated as one Excalidraw line element at roughness 2; the exported path retains Excalidraw's natural two-pass jitter without adding semantic parts. Optical alignment: visible paths use the library-standard 1.8 non-scaling stroke with round caps and joins. Attribution index: Knowledge/Maps/Icon 索引.md. Usage: Knowledge/Notes/现代架构下的全栈边界.md.</metadata>
+  <title id="title">Ladder</title>
+  <desc id="desc">A hand-drawn ladder with two rails and four rungs.</desc>
+  <!-- svg-source:excalidraw -->
+  <g stroke-linecap="round" transform="translate(0 0) rotate(0 70 70)">
+    <path d="M0 0 C53.25 0, 106.5 0, 140 0 M0 0 C54.87 0, 109.73 0, 140 0 M140 0 C140 49.53, 140 99.05, 140 140 M140 0 C140 41.62, 140 83.24, 140 140 M140 140 C98.31 140, 56.61 140, 0 140 M140 140 C101 140, 62 140, 0 140 M0 140 C0 85.41, 0 30.83, 0 0 M0 140 C0 106.5, 0 73, 0 0" stroke="#00000000" stroke-width="2" fill="none"/>
+  </g>
+  <g stroke-linecap="round">
+    <g transform="translate(46.6667 17.5) rotate(0 -0.936736716737645 53.809921354055405)">
+      <path d="M-3.42 -0.68 C-3.65 25.11, -4.32 44.94, 1.69 108.3 M0.58 0.81 C2.64 32.46, 0.62 66.9, -0.83 104.61" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    </g>
+  </g>
+  <g stroke-linecap="round">
+    <g transform="translate(93.3333 17.5) rotate(0 0.09880997262931146 53.25221102591604)">
+      <path d="M0.29 -0.28 C5.74 18.39, 3.4 45.56, -3.13 106.14 M1.25 1.91 C-1.05 24.64, 0.18 46.66, 1.68 106.78" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    </g>
+  </g>
+  <g stroke-linecap="round">
+    <g transform="translate(46.6667 35) rotate(0 23.437688196021316 -0.18786605447530746)">
+      <path d="M1.45 1.54 C16.21 -1.51, 31.85 -0.21, 45.38 -1.91 M0.95 -0.65 C9.77 -1.38, 20.19 -1.18, 45.93 0.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    </g>
+  </g>
+  <g stroke-linecap="round">
+    <g transform="translate(46.6667 58.333299999999994) rotate(0 23.424184626843033 -0.115641413256526)">
+      <path d="M-0.02 0.87 C9.16 -0.66, 21.15 1.35, 46.56 -1.11 M-0.41 -0.64 C16.64 0.24, 32.8 -0.72, 47.25 0.82" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    </g>
+  </g>
+  <g stroke-linecap="round">
+    <g transform="translate(46.6667 81.6667) rotate(0 23.520405742283163 -0.2885559785023446)">
+      <path d="M0.4 0.45 C16.55 -1.13, 32.07 -1.83, 46.19 0.34 M0.45 -0.21 C10.01 -1, 20.28 -0.06, 46.65 -0.89" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    </g>
+  </g>
+  <g stroke-linecap="round">
+    <g transform="translate(46.6667 105) rotate(0 22.692238387595115 -0.18809617217630148)">
+      <path d="M-1.57 -0.36 C10.68 -1.1, 20.6 0.27, 44.67 -1.37 M0.3 0.42 C12.28 -0.68, 22.69 -0.05, 46.95 0.99" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    </g>
+  </g>
+</svg>
