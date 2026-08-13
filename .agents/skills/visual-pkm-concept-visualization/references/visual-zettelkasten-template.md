@@ -64,7 +64,7 @@ AI 必须把“保留／删除／移动／增加”的决定交还用户。
 
 - `existing`：回显第 1 步记录的实际路径，获得授权后直接通过 Excalidraw 插件初始化该卡，不再询问承载方式或更换路径；
 - `new`：请用户确认名词短语标题，搜索同名、aliases 和近义卡；排除重复并获得授权后，使用 `Templates/知识卡.md` 在 `Knowledge/Notes/` 创建只含标题、H1、用户已确认 abstract、空 `up` 与 `sources` 的最小卡片，再通过插件初始化 Drawing；
-- 对用户实际入选的 icon：所有永久 icon 都必须是已描摹为原生元素的纯 JSON `.excalidraw` 组件。本地 `.excalidraw` 通过结构校验后按现有颜色直接复用；入选的 `/tmp/` SVG、PNG/JPG 或其他图像参考不复制、不封装到 Vault，而是按用户确认的外观（包括颜色）通过插件／API 描摹为原生 `.excalidraw` 组件；随后把所有入选组件作为彼此独立的 image reference 松散嵌入目标卡初始视图。新建或首次初始化的 Drawing 可以把画布背景设为 `--concept-color-canvas`，已有 Drawing 保留当前背景；新建永久组件采用 `Icon - 关键词1, 关键词2 - 来源.excalidraw` 文件名，并由 Icon Library 自动发现；外部来源追溯仍需另行授权后登记。
+- 对用户实际入选的 icon：所有永久 icon 都必须是已描摹为原生元素的纯 JSON `.excalidraw` 组件。本地 `.excalidraw` 通过结构校验后按现有颜色直接复用；入选的 `/tmp/` SVG、PNG/JPG 或其他图像参考不复制、不封装到 Vault，而是按用户确认的外观（包括颜色）通过插件／API 描摹为原生 `.excalidraw` 组件；随后把所有入选组件作为彼此独立的 image reference 松散嵌入目标卡初始视图。新建或首次初始化的 Drawing 可以把画布背景设为 `--concept-color-canvas`，已有 Drawing 保留当前背景；新建永久组件采用 `Icon - 关键词1, 关键词2 - 来源.excalidraw` 文件名，并由 Icon Library 自动发现；文件名是唯一索引，不另行登记。
 
 不创建独立 Concept Visual 文件，也不提供纸笔或 Vault 外绘制分支。初始视图只包含无语义的入选素材托盘，不添加 AI 文字、箭头、关系或完整构图。验证知识卡能够以 Excalidraw 视图打开且组件重新加载可见后，用户在该笔记中移动、缩放、组合并补画视觉组件，完成第一张约五分钟的粗草图；用户亲自决定主体、动作、关系，以及是否保留少量具体实例、角色、状态和短标签，AI 不替用户做感性取舍。不能把 HTML 或初始素材托盘直接当成最终构图。探索版本可以暂时并存，但不是多个知识节点，也不需要全部保留到最终卡。
 
