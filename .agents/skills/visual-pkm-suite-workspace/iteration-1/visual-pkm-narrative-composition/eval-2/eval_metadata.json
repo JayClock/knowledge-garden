@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "visual-pkm-narrative-composition-human-first-2",
+  "skill_name": "visual-pkm-narrative-composition",
+  "prompt": "我的立场是‘全流不是扩大职责，而是减少知识交接损失’。我先排了：上下文扩展→但是角色边界仍存在→因此按知识转换协作→最后验证真实问题。请检查十分钟演讲的转折。",
+  "expected_output": "保留用户立场和第一版顺序，检查但是／因此是否成立、证据和节奏缺口，并只建议局部重排。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

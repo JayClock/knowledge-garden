@@ -1,0 +1,10 @@
+{
+  "expectations": [
+    {
+      "text": "把用户检索经历作为 Human First Expression，再用 LATCH 对照实际入口，提出最小可逆修复而不全库重命名。",
+      "passed": true,
+      "evidence": "## 你的首轮探索 已知检索路径： - 尝试按**城市 Basel** - 尝试按**活动类型 workshop** - 尝试按**日期** - 均未找到 - 最后从某天 **Daily Note** 进入 - 预期入口：**地点或活动名称** 为重现失败路径，请补充： 1. 当时具体搜索了哪些词？例如 `Basel`、`workshop` 或活动全名。 2. 大致日期或年份是什么？ 3. 最终是从哪篇 Daily Note 找到的？请提供文件名或路径。 4. 从 Daily Note 点击进入的目标笔记叫什么？ 收到这些信息后，我会搜索 Vault、对照实际入口与预期入口，并用 LATCH 分析后提出最小可逆修复。"
+    }
+  ],
+  "summary": "PASS：输出遵循 Human First Expression，并保持建议／核对角色；未执行文件修改。"
+}

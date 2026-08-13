@@ -1,0 +1,10 @@
+{
+  "eval_id": 1,
+  "eval_name": "visual-pkm-concept-visualization-human-first-1",
+  "skill_name": "visual-pkm-concept-visualization",
+  "prompt": "把‘知识不是收藏，而是持续变化的关系’画成一张概念卡。先给我几个隐喻和完整构图。",
+  "expected_output": "不先生成隐喻或完整构图；要求用户先用自己的话说明真正含义，并给出一个词、动作、空间关系或粗图作为 Human First Expression。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

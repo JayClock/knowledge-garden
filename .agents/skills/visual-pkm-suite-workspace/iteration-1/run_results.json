@@ -1,0 +1,114 @@
+[
+  {
+    "skill_name": "visual-pkm-concept-visualization",
+    "eval_id": 1,
+    "returncode": 0,
+    "output_chars": 332,
+    "duration_seconds": 12.0
+  },
+  {
+    "skill_name": "visual-pkm-concept-visualization",
+    "eval_id": 2,
+    "returncode": 0,
+    "output_chars": 500,
+    "duration_seconds": 15.3
+  },
+  {
+    "skill_name": "visual-pkm-concept-visualization",
+    "eval_id": 3,
+    "returncode": 0,
+    "output_chars": 235,
+    "duration_seconds": 9.7
+  },
+  {
+    "skill_name": "visual-pkm-deep-reading",
+    "eval_id": 1,
+    "returncode": 0,
+    "output_chars": 342,
+    "duration_seconds": 10.8
+  },
+  {
+    "skill_name": "visual-pkm-deep-reading",
+    "eval_id": 2,
+    "returncode": 0,
+    "output_chars": 266,
+    "duration_seconds": 10.1
+  },
+  {
+    "skill_name": "visual-pkm-idea-integration",
+    "eval_id": 1,
+    "returncode": 0,
+    "output_chars": 406,
+    "duration_seconds": 11.0
+  },
+  {
+    "skill_name": "visual-pkm-idea-integration",
+    "eval_id": 2,
+    "returncode": 0,
+    "output_chars": 224,
+    "duration_seconds": 9.2
+  },
+  {
+    "skill_name": "visual-pkm-knowledge-exploration",
+    "eval_id": 1,
+    "returncode": 0,
+    "output_chars": 330,
+    "duration_seconds": 11.0
+  },
+  {
+    "skill_name": "visual-pkm-knowledge-exploration",
+    "eval_id": 2,
+    "returncode": 0,
+    "output_chars": 318,
+    "duration_seconds": 10.8
+  },
+  {
+    "skill_name": "visual-pkm-knowledge-exploration",
+    "eval_id": 3,
+    "returncode": 0,
+    "output_chars": 218,
+    "duration_seconds": 10.4
+  },
+  {
+    "skill_name": "visual-pkm-narrative-composition",
+    "eval_id": 1,
+    "returncode": 0,
+    "output_chars": 331,
+    "duration_seconds": 10.0
+  },
+  {
+    "skill_name": "visual-pkm-narrative-composition",
+    "eval_id": 2,
+    "returncode": 0,
+    "output_chars": 798,
+    "duration_seconds": 20.1
+  },
+  {
+    "skill_name": "visual-pkm-spatial-mapping",
+    "eval_id": 1,
+    "returncode": 0,
+    "output_chars": 587,
+    "duration_seconds": 15.2
+  },
+  {
+    "skill_name": "visual-pkm-spatial-mapping",
+    "eval_id": 2,
+    "returncode": 0,
+    "output_chars": 557,
+    "duration_seconds": 16.2
+  },
+  {
+    "skill_name": "visual-pkm-system-review",
+    "eval_id": 1,
+    "returncode": 0,
+    "output_chars": 272,
+    "duration_seconds": 9.7
+  },
+  {
+    "skill_name": "visual-pkm-system-review",
+    "eval_id": 2,
+    "returncode": 0,
+    "output_chars": 224,
+    "duration_seconds": 9.1
+  }
+]

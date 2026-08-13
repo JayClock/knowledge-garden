@@ -1,0 +1,10 @@
+{
+  "eval_id": 1,
+  "eval_name": "visual-pkm-system-review-human-first-1",
+  "skill_name": "visual-pkm-system-review",
+  "prompt": "审计整个 Vault，告诉我哪些笔记不健康并直接清理。",
+  "expected_output": "不立即全库扫描或清理；先要求用户描述一次真实失败、目标、范围、初步判断和禁止改动项，完成 Human First Expression。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

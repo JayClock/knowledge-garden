@@ -1,0 +1,10 @@
+{
+  "expectations": [
+    {
+      "text": "只解释地图类型的一般差异，并要求用户先写 focus question、思考动作和最小粗图，完成 Human First Expression；不读取卡片后自动生成地图。",
+      "passed": true,
+      "evidence": "## 你的地图起点 现在还不能直接生成完整 Canvas。请先提供： 1. **Focus question**：这张地图具体要回答什么问题？ 2. **思考动作**： - 自由发散、整理主题 → **Mind Map** - 澄清卡片之间可朗读的关系命题 → **Concept Map** 3. **最小粗图**，任选一种： - Mind Map：中心主题＋至少 3 条一级分支； - Concept Map：关键概念＋至少 3 条“概念—连接短语—概念”。 ## 地图类型检查 - **Mind Map**：适合快速归类、联想和继续扩展。 - **Concept Map**：适合回答“卡片之间究竟如何影响、支持或制约”，每条边都应能读成完整命题。 卡片数量并不能决定地图类型，关键是你想进行哪种思考。 ## 请你"
+    }
+  ],
+  "summary": "PASS：输出遵循 Human First Expression，并保持建议／核对角色；未执行文件修改。"
+}

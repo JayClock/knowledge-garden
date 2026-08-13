@@ -1,0 +1,142 @@
+[
+  {
+    "index": 1,
+    "query": "我正在研究一本书，已经选出 PDF、三个播客和五张章节卡，并粗略放了位置。帮我检查 IIB 的上下文恢复能力。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 2,
+    "query": "为这个持续三个月的产品研究建立 Idea Integration Board；中心问题和第一批材料由我先决定。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 3,
+    "query": "我的项目白板混合了目标、来源、草图和未决问题，每次打开都恢复不了上下文，想做 IIB 复查。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 4,
+    "query": "我把书放中央、反例放左侧、实验放右侧，右边太拥挤。请建议一个局部 IIB 重排测试。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 5,
+    "query": "把散落的访谈、研究笔记、视频和视觉卡放进一个长期思考总部，但不要直接当稳定 Knowledge Map。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 6,
+    "query": "我已经有一个书籍 Idea Atlas，现在想把它和来源、章节笔记、个人问题一起放进 IIB。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 7,
+    "query": "现有 IIB 两百个元素，当前焦点被淹没。我先标出了必须保留和可以移出的区域，请帮助复查。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 8,
+    "query": "为‘12 个持续问题’建立多个可恢复上下文的视觉工作区，先从我选定的一个问题开始。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 9,
+    "query": "我的研究资料不缺，但彼此看不见。我想通过空间邻近和引用形成一个活的项目房间。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 10,
+    "query": "我想定期复查一个项目 IIB，判断哪些聚类应晋升为知识卡或稳定地图。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 11,
+    "query": "把单张命题卡做成 Visual Main Note，并测试一个桥梁隐喻。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 12,
+    "query": "围绕一个 focus question 建立严格的 Concept Map，边需要 linking phrases。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 13,
+    "query": "核对我读完一本书后的章节复述和原文证据。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 14,
+    "query": "把同一个桥图标在不同卡片里的实例放进临时 Idea Mixer。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 15,
+    "query": "用现成卡片构建一张有立场的 BoaP。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 16,
+    "query": "审计整个 Vault 的孤立卡、失效链接和知识应用。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 17,
+    "query": "创建一个 Kanban 项目板，只有待办、进行中和完成三列。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 18,
+    "query": "设计一个稳定 MOC，只保留十张核心卡和阅读顺序，不需要工作材料。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 19,
+    "query": "把附件目录中的 PDF 按年份移动到子目录。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 20,
+    "query": "在 Miro 里为一次两小时会议创建临时便利贴板，会后直接删除。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  }
+]

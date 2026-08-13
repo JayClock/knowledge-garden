@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "visual-pkm-knowledge-exploration-human-first-2",
+  "skill_name": "visual-pkm-knowledge-exploration",
+  "prompt": "我按城市、workshop 和日期都没找到 Basel 工作坊笔记，最后从某天 Daily Note 才进入。我的预期入口是地点或活动名称。请做 Navigation AAR。",
+  "expected_output": "把用户检索经历作为 Human First Expression，再用 LATCH 对照实际入口，提出最小可逆修复而不全库重命名。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "visual-pkm-concept-visualization-human-first-2",
+  "skill_name": "visual-pkm-concept-visualization",
+  "prompt": "我的核心命题是‘过滤不是删除，而是暂时降低噪声’。我先画了一个筛网，关键颗粒留在上面，其他颗粒落入下方的可恢复托盘。请检查歧义。",
+  "expected_output": "保留用户命题和首图，指出局部歧义、误读风险与一个可测试变体，标记为 AI 建议，不替用户换掉隐喻。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

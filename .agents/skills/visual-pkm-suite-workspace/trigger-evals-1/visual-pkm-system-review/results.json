@@ -1,0 +1,142 @@
+[
+  {
+    "index": 1,
+    "query": "最近三次我都记得有卡却找不到，最后从 Daily Note 进入。请从这个失败开始只读审计活跃主题。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 2,
+    "query": "我的知识库有很多图但写不出完整论证，想检查 Thinking in Stereo 是否失衡。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 3,
+    "query": "请用 1D–4D 检查这一组卡停在哪个层次，但不要把 4D 当成熟度排行榜。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 4,
+    "query": "我不知道下一步该深读、画图、建 IIB 还是形成 Output，请根据我最近的应用失败帮助路由。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 5,
+    "query": "现有 IIB 长期没打开，地图也没有进入任何项目，请帮我制定最小复查方案。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 6,
+    "query": "只读检查这个软件工程主题的原子性、链接质量、地图路径和实际应用，不要自动补链接。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 7,
+    "query": "我想设计每周复查，但不做字段清洁，重点是检索失败、理解缺口和知识应用。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 8,
+    "query": "最近写文章时发现几十张卡无法组合，请审计是命题、关系、地图还是叙事入口出了问题。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 9,
+    "query": "检查 Visual Main Note 的正面、背面是否失衡，以及哪些卡长期只有视觉没有证据。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 10,
+    "query": "我先说明目标和禁止改动项，请给一份基于实际采样的 PKM 健康报告和可逆行动。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 11,
+    "query": "把单张文字卡改成视觉卡，我已经画好粗图。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 12,
+    "query": "核对我对一本书第 6 章的理解是否符合原文。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 13,
+    "query": "改进一张现有 Concept Map 的 linking phrases。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 14,
+    "query": "建立书籍 IIB，把来源和草图聚集在一起。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 15,
+    "query": "做 Idea Compass，寻找某张卡的反例和应用。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 16,
+    "query": "把卡片组成 Book-on-a-Page。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 17,
+    "query": "批量给 Markdown 文件补 updated 字段并统一 frontmatter 顺序。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 18,
+    "query": "运行脚本检查所有 wikilink 是否存在，只输出 broken link 列表。",
+    "expected": false,
+    "actual": true,
+    "passed": false
+  },
+  {
+    "index": 19,
+    "query": "清理 Git 工作区中的未跟踪临时文件。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 20,
+    "query": "修复 Obsidian 插件的 JavaScript 异常和控制台错误。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  }
+]

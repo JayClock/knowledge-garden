@@ -1,0 +1,10 @@
+{
+  "eval_id": 3,
+  "eval_name": "visual-pkm-concept-visualization-human-first-3",
+  "skill_name": "visual-pkm-concept-visualization",
+  "prompt": "我现在没有任何想法，你直接替我选最好的视觉方案，一次给完。",
+  "expected_output": "降低首轮表达门槛并给空白句式或最小绘画动作，但不跳过 Human First Expression，也不交付完整刺激稿。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

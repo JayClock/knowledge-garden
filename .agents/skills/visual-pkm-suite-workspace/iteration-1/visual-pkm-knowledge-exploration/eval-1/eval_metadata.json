@@ -1,0 +1,10 @@
+{
+  "eval_id": 1,
+  "eval_name": "visual-pkm-knowledge-exploration-human-first-1",
+  "skill_name": "visual-pkm-knowledge-exploration",
+  "prompt": "围绕 [[测试驱动开发]] 做 Idea Compass。请直接搜索并把四个方向填满。",
+  "expected_output": "不先自动搜索填图；要求用户先回忆并填写至少一个方向或明确自己的检索起点，然后才扩大搜索。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

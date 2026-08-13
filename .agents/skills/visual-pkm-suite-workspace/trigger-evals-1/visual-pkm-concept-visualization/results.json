@@ -1,0 +1,142 @@
+[
+  {
+    "index": 1,
+    "query": "把 [[测试证明开发者理解了需求]] 更新成 Visual Main Note。我自己的核心命题是测试暴露理解偏差，第一稿画了两个人对着不同蓝图。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 2,
+    "query": "这句话我理解成‘过滤不是删除，而是降低当前噪声’，我想用筛网和可恢复托盘表达。帮我检查这个视觉隐喻。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 3,
+    "query": "我在 Excalidraw 里画了一张关于认知负荷的概念卡，但别人第一眼以为是内存不足，帮我做 ETC 反馈。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 4,
+    "query": "请把这张已有文字卡发展成一张可复用 LEGO 视觉卡；我先画了主体和动作，不要替我换核心观点。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 5,
+    "query": "我想表达‘交接损失来自上下文压缩’，第一个视觉是漏水管道。请比较这个隐喻的两种局部构图。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 6,
+    "query": "给 [[业务问题边界的冻结]] 增加视觉正面。我认为冻结的是当前承诺范围，不是永久拒绝变化。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 7,
+    "query": "我的草图只有一座桥和两岸，想表达跨领域翻译。请指出哪里可能被误读，不要直接重画。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 8,
+    "query": "把我写的单一命题转成一个 2×3 概念视觉，我已经列了三个联想词和一个空间关系。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 9,
+    "query": "我有两个关于‘知识流动’的视觉解释，水流和接力棒，想通过草图测试哪一个更符合我的命题。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 10,
+    "query": "请陪我完成一张概念卡的核心信息、联想、缩略草图、ETC 和反馈校准；第一句由我自己写。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 11,
+    "query": "把这 24 张软件工程卡整理成一张 Concept Map，重点检查 linking phrases。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 12,
+    "query": "为一本书建立长期研究总部，把 PDF、播客、章节笔记和问题放在同一个工作区。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 13,
+    "query": "我刚拿到一本 300 页 PDF，直接帮我总结中心论点和十张卡。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 14,
+    "query": "用已有 18 张 Visual Main Notes 做一个 Book-on-a-Page，突出我的个人立场。",
+    "expected": false,
+    "actual": true,
+    "passed": false
+  },
+  {
+    "index": 15,
+    "query": "围绕 [[TDD]] 搜索 Vault 中的反例和竞争观点，先做 Idea Compass。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 16,
+    "query": "只读审计整个知识库，看看为什么最近总是找不到旧笔记。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 17,
+    "query": "把这张人物照片修成水彩风，调整背景光线和肤色。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 18,
+    "query": "帮我画一个没有概念推演要求的下载按钮 SVG 图标。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 19,
+    "query": "Excalidraw 插件加载时报 TypeError，帮我检查控制台和 DOM。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 20,
+    "query": "把英文视频字幕翻译成简体中文 WebVTT。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  }
+]
