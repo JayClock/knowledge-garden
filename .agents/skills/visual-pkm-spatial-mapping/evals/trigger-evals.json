@@ -1,0 +1,22 @@
+[
+  {"query":"我先写了 focus question 和五个概念，想把它们做成 Concept Map，请检查层级和 linking phrase。","should_trigger":true},
+  {"query":"我在听播客时铺了六块 Brick Road，现在想检查哪些砖包含两个独立意思。","should_trigger":true},
+  {"query":"这个主题应该用 Mind Map 还是 Idea Atlas？我的目标是先发散，粗图中心和三条分支已经画好。","should_trigger":true},
+  {"query":"我给一本书画了 Idea Atlas 骨架，每读一章就重排。请检查整体—部分—整体是否真的发生。","should_trigger":true},
+  {"query":"把这个列表转换为空间结构之前，先根据我的粗图判断适合概念图还是思维导图。","should_trigger":true},
+  {"query":"现有 Obsidian Canvas 概念图有很多只有‘相关’的边，请检查哪些连接不能读成完整命题。","should_trigger":true},
+  {"query":"我画了一张团队计划 Mind Map，分支越来越像固定目录，想恢复自由发散。","should_trigger":true},
+  {"query":"课程笔记的 Brick Road 已经完成，我想把三个稳定模块拆成子图并保留原子砖。","should_trigger":true},
+  {"query":"这张地图看起来很整齐但我说不清位置含义，请从我的 focus question 开始检查布局。","should_trigger":true},
+  {"query":"我已经列出 12 个概念和三条命题关系，请帮助我找 Concept Map 的 cross-link 缺口。","should_trigger":true},
+  {"query":"把一个抽象命题画成单张 Visual Main Note，我有第一个隐喻草图。","should_trigger":false},
+  {"query":"建立一个长期书籍 IIB，容纳 PDF、访谈、章节卡和未决问题。","should_trigger":false},
+  {"query":"我读完论文后想核对自己的章节复述和原文证据。","should_trigger":false},
+  {"query":"围绕某张卡做 Idea Compass，搜索父级、应用和反例。","should_trigger":false},
+  {"query":"用 20 张视觉卡排成 Book-on-a-Page，并检查但是／因此的故事张力。","should_trigger":false},
+  {"query":"只读审计全库，判断哪些地图已经失活。","should_trigger":false},
+  {"query":"创建一个普通项目流程图，节点和边已经由产品经理完全指定，只需生成 Mermaid。","should_trigger":false},
+  {"query":"修复现有 .canvas 文件中的无效 JSON 和重复 node id，不讨论地图意义。","should_trigger":false},
+  {"query":"给地理路线图添加比例尺和经纬度标记。","should_trigger":false},
+  {"query":"将 Excel 组织架构表转换成公司 org chart，不涉及个人知识管理。","should_trigger":false}
+]

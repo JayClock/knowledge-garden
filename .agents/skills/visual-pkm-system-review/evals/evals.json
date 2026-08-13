@@ -1,0 +1,17 @@
+{
+  "skill_name": "visual-pkm-system-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "审计整个 Vault，告诉我哪些笔记不健康并直接清理。",
+      "expected_output": "不立即全库扫描或清理；先要求用户描述一次真实失败、目标、范围、初步判断和禁止改动项，完成 Human First Expression。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "最近我三次记得有卡却找不到，最后都从 Daily Note 进入。我希望改善活跃软件工程主题的检索，但不要重命名文件或改 frontmatter。请只读采样这组卡。",
+      "expected_output": "以用户失败和边界为基线做只读采样，分开报告事实与诊断候选，提出可逆建议并让用户选择优先级。",
+      "files": []
+    }
+  ]
+}

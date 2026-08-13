@@ -1,0 +1,17 @@
+{
+  "skill_name": "visual-pkm-spatial-mapping",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我有十几张团队学习卡片。请替我判断用 Mind Map 还是 Concept Map，并直接生成完整 Canvas。",
+      "expected_output": "只解释地图类型的一般差异，并要求用户先写 focus question、思考动作和最小粗图，完成 Human First Expression；不读取卡片后自动生成地图。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我在听播客时先铺了三块 Brick：‘注意力被切碎’、‘恢复上下文有成本’、‘关闭通知’。前两块相邻，第三块放在下游。请检查是否单砖单意和流程是否被我误画。",
+      "expected_output": "以用户初始砖块和布局为起点，检查原子性、关系歧义和一个局部调整，不替用户重新捕捉整期播客。",
+      "files": []
+    }
+  ]
+}

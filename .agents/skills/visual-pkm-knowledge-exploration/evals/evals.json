@@ -1,0 +1,23 @@
+{
+  "skill_name": "visual-pkm-knowledge-exploration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "围绕 [[测试驱动开发]] 做 Idea Compass。请直接搜索并把四个方向填满。",
+      "expected_output": "不先自动搜索填图；要求用户先回忆并填写至少一个方向或明确自己的检索起点，然后才扩大搜索。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我按城市、workshop 和日期都没找到 Basel 工作坊笔记，最后从某天 Daily Note 才进入。我的预期入口是地点或活动名称。请做 Navigation AAR。",
+      "expected_output": "把用户检索经历作为 Human First Expression，再用 LATCH 对照实际入口，提出最小可逆修复而不全库重命名。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "找出 Vault 中所有使用‘桥’视觉的卡片，直接建立 Idea Mixer 并告诉我共同机制。",
+      "expected_output": "先要求用户选定该视觉并回忆至少两个已知实例、说出第一印象；之后 AI 才搜索，且共同机制仍由用户命名。",
+      "files": []
+    }
+  ]
+}
