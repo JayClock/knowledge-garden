@@ -1,0 +1,252 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin",
+  "elements": [
+    {
+      "id": "dFBTDmx8",
+      "x": 40,
+      "y": 40,
+      "strokeColor": "#001219",
+      "backgroundColor": "#FFD164",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 1
+      },
+      "roughness": 0,
+      "opacity": 100,
+      "width": 240.00000000000003,
+      "height": 240.00000000000003,
+      "angle": 0,
+      "seed": 522809773,
+      "version": 4,
+      "versionNonce": 43238618,
+      "isDeleted": false,
+      "groupIds": [
+        "W7v4iUlV"
+      ],
+      "type": "rectangle",
+      "updated": 1786279704164,
+      "frameId": null,
+      "index": "b1e",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false
+    },
+    {
+      "id": "luwj9VHz",
+      "x": 40,
+      "y": 40,
+      "strokeColor": "#001219",
+      "backgroundColor": "#FFE17D",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 1
+      },
+      "roughness": 0,
+      "opacity": 100,
+      "width": 240.00000000000003,
+      "height": 49.65517241379311,
+      "angle": 0,
+      "seed": 1470204835,
+      "version": 4,
+      "versionNonce": 1964707270,
+      "isDeleted": false,
+      "groupIds": [
+        "W7v4iUlV"
+      ],
+      "type": "rectangle",
+      "updated": 1786279704164,
+      "frameId": null,
+      "index": "b1f",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false
+    },
+    {
+      "id": "b2VjHh11",
+      "x": 135.1724137931035,
+      "y": 40,
+      "strokeColor": "#001219",
+      "backgroundColor": "#F87980",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 51.724137931034484,
+      "height": 240.00000000000003,
+      "angle": 0,
+      "seed": 365474829,
+      "version": 4,
+      "versionNonce": 1211767194,
+      "isDeleted": false,
+      "groupIds": [
+        "W7v4iUlV"
+      ],
+      "type": "rectangle",
+      "updated": 1786279704164,
+      "frameId": null,
+      "index": "b1g",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false
+    },
+    {
+      "id": "iPrmnlEB",
+      "x": 66.89655172413791,
+      "y": 184.8275862068965,
+      "strokeColor": "#001219",
+      "backgroundColor": "#FFC350",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 1
+      },
+      "roughness": 0,
+      "opacity": 100,
+      "width": 70.3448275862069,
+      "height": 51.724137931034484,
+      "angle": 0,
+      "seed": 257302339,
+      "version": 4,
+      "versionNonce": 54617350,
+      "isDeleted": false,
+      "groupIds": [
+        "W7v4iUlV"
+      ],
+      "type": "rectangle",
+      "updated": 1786279704164,
+      "frameId": null,
+      "index": "b1h",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false
+    },
+    {
+      "id": "80Cthrqz",
+      "x": 79.31034482758628,
+      "y": 201.37931034482756,
+      "strokeColor": "#001219",
+      "backgroundColor": "black",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 41.37931034482759,
+      "height": 0,
+      "angle": 0,
+      "seed": 1343269485,
+      "version": 4,
+      "versionNonce": 1471665754,
+      "isDeleted": false,
+      "groupIds": [
+        "W7v4iUlV"
+      ],
+      "type": "line",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          41.37931034482759,
+          0
+        ]
+      ],
+      "updated": 1786279704164,
+      "frameId": null,
+      "index": "b1i",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "polygon": false
+    },
+    {
+      "id": "HXBX1y1V",
+      "x": 79.31034482758628,
+      "y": 217.9310344827586,
+      "strokeColor": "#001219",
+      "backgroundColor": "black",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 26.896551724137932,
+      "height": 0,
+      "angle": 0,
+      "seed": 1987526371,
+      "version": 4,
+      "versionNonce": 18535494,
+      "isDeleted": false,
+      "groupIds": [
+        "W7v4iUlV"
+      ],
+      "type": "line",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          26.896551724137932,
+          0
+        ]
+      ],
+      "updated": 1786279704164,
+      "frameId": null,
+      "index": "b1j",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "polygon": false
+    }
+  ],
+  "appState": {
+    "theme": "light",
+    "viewBackgroundColor": "#FFFFFF",
+    "currentItemStrokeColor": "#000000",
+    "currentItemBackgroundColor": "transparent",
+    "currentItemFillStyle": "hachure",
+    "currentItemStrokeWidthKey": "medium",
+    "currentItemStrokeStyle": "solid",
+    "currentItemRoughness": 1,
+    "currentItemOpacity": 100,
+    "currentItemFontFamily": 1,
+    "currentItemFontSize": 20,
+    "currentItemTextAlign": "left",
+    "currentItemStartArrowhead": null,
+    "currentItemEndArrowhead": "arrow",
+    "currentItemRoundness": "sharp",
+    "gridSize": 0,
+    "selectedElementIds": {},
+    "selectedGroupIds": {},
+    "editingGroupId": null,
+    "editingElement": null
+  },
+  "files": {}
+}

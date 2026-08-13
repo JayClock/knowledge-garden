@@ -6,731 +6,315 @@ aliases:
   - 图标库
 tags:
   - icon
-  - 视觉思考
-  - assets
 type: 资源索引
-icon-count: 31
-preferred-format: svg
-visual-style: handdrawn-master-variable
-master-suffix: -handdrawn
-master-roughness: 2
-master-stroke-width: 1.8
-master-linecap: round
-master-linejoin: round
-master-vector-effect: non-scaling-stroke
-master-optical-stroke-policy: scale-invariant
-color-variable: --icon-color
-color-fallback: "#000000"
-palette-variable-prefix: --concept-color-
-palette-css: Knowledge/Assets/Styles/concept-visualization-palette.css
-active-palette: Teal–Paper Semantic 8
-palette-reference: https://coolors.co/001219-005f73-009999-99dede-f3e9e0-ee9b00-ca6702-bb3e03-fff6f0
-palette-inspiration: https://www.visual-thinking-workshop.com/
-palette-trends-source: https://coolors.co/palettes/trending
-palette-variables:
-  ink: --concept-color-ink
-  deep-structure: --concept-color-deep-structure
-  positive-flow: --concept-color-positive-flow
-  cool-fill: --concept-color-cool-fill
-  warm-fill: --concept-color-warm-fill
-  attention: --concept-color-attention
-  friction: --concept-color-friction
-  conflict: --concept-color-conflict
-  canvas: --concept-color-canvas
-allowed-external-sources:
-  - Flaticon
-  - Noun Project
-  - Google Images
-  - Google Material Symbols
-  - Tabler Icons
 date: 2026-08-02
-updated: 2026-08-06 15:31:35
+updated: 2026-08-07 10:02:28
 ---
 # Icon 索引
 
 > [!info] 视觉词汇表
-> 所有概念视觉使用的 SVG 统一存放于 `Knowledge/Assets/Icons/`。带 `-handdrawn.svg` 后缀的文件是知识卡直接引用的规范手绘母版；无该后缀的同名文件保留原始来源几何与许可信息。外部视觉元素可以从 [Flaticon](https://www.flaticon.com/)、[Noun Project](https://thenounproject.com/)、[Google Images](https://images.google.com/)、[Google Material Symbols](https://fonts.google.com/icons) 和 [Tabler Icons](https://tabler.io/icons) 寻找；来源、作者、许可和使用位置统一记录在这里。Google Images 只作为发现入口，实际采用素材时应记录原始页面，而不是搜索结果或缩略图链接。
-
-> [!tip] 可变配色 SVG
-> 全局语义颜色集中定义在 `Knowledge/Assets/Styles/concept-visualization-palette.css`，变量前缀为 `--concept-color-`；替换色板时只修改该文件的九个基础变量。规范手绘母版与原始 SVG 都保留许可元数据，单色入口统一使用 `--icon-color` 并默认回退为 `#000000`；CSS 中的 `--icon-color` 已指向 `--concept-color-icon-default`。知识卡通过 Excalidraw color map 引用同一手绘母版：修改母版会同步所有引用位置，卡片语义色不会写回母版。
-> 规范手绘母版的语义路径统一使用 `1.8` 线宽、圆角端点与圆角连接，并通过 `vector-effect="non-scaling-stroke"` 保持缩放前后的光学线宽；透明边界路径不计入线条规范。统一的是线条渲染规则，原始 SVG 的来源几何、构图与许可信息保持不变。
-> 单体 icon 默认只使用一种语义色；多色 icon 拆为可独立着色的组件，默认限制为主色加一个强调色，品牌色作为登记例外。Excalidraw 保存解析后的 HEX；修改 CSS 后在仓库根目录先运行 `npm run palette:check`，确认后运行 `npm run palette:sync`，通过插件同步全部登记画布。
-> 可视化博客以暖纸色 `--concept-color-warm-fill` 作为页面底板、`--concept-color-canvas` 作为知识卡画布；链接和可读按钮使用深结构色，品牌青绿主要用于图形、粗线与大号标记。
-
-> [!example] Teal–Paper Semantic 8 配色实例
-> - [[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]：八个技术示例 SVG 统一收敛为深冷结构／正向流动色，三个交付孤岛使用冷色边界；人物保持主墨色，思考气泡、三把局部梯子、右侧拼接长梯与 AI 助推使用暖色族，问号使用冲突色。
-> - [[全栈程序员的生效前提|全栈程序员的生效前提]]：分仓交接路径／门禁使用暖色族，唯一共享房屋／电梯使用冷色族；两个主墨色工程符号放在手绘开发者伸出的双手之间，人物不再使用 UI 式徽标框。
-> - [[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]：页面绑定路径以暖色和低透明度退居背景，业务能力边界使用深冷轮廓与冷色排线，API／有效连接使用正向流动色，独立发布和断开的 App 线缆分别使用注意色与冲突色。
-> - 知识卡统一引用 `-handdrawn.svg` 规范母版并通过 Excalidraw color map 配色；原始 SVG 与手绘母版都保留 `--icon-color`，未固化卡片色值。
-> - [[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]：关系树与过滤器表示地图对关系的提纯；书桌、打开的书、便签、书签与相机共同保留 IIB 中材料的位置、未定问题和恢复点。
+> 37 个 Excalidraw icon 组件统一存放于 `Knowledge/Assets/Excalidraw/`，文件名以 `.excalidraw` 结尾。本索引通过嵌入组件文件提供预览，并保留复用所需的检索关键词。
 
 > [!important] 标签是检索把手，不是意义定义
-> `关键词` 用于找到素材，不规定图标只能表达什么。使用图标时，应先明确核心信息、发散联想并选择视觉框架，再回到本索引寻找可重组的零件；不要从抽象词直接跳到第一个同名图标。
-
-## 字段说明
-
-- **文件**：知识卡直接引用的 `-handdrawn.svg` 规范母版；修改后同步所有引用位置。
-- **原始文件**：保留外部来源几何、作者与许可的无后缀 SVG，不直接作为知识卡实例。
-- **素材／对象**：来源名称及常用对象名称，便于按“它通常叫什么”检索。
-- **去标签观察**：暂时不使用对象名称，只记录可见的形状、方向、距离与结构。
-- **动作／关系**：图形能够支持的动作、变化或空间关系。
-- **可能读法**：可被激活的解释，不是图标的固定含义。
-- **关键词**：兼容全文搜索的检索词汇总，不等同于概念定义。
-- **联想／语境**：本项目中已经采用的具体解释；相同图标可以在其他语境中产生新含义。
-- **同步引用**：直接链接规范手绘母版的知识卡；这些位置会随母版更新。
+> `关键词` 只用于找到可重组的视觉零件，不规定图标的固定含义。
 
 <!-- icon-index:start -->
 
-<!-- icon-entry:building-blocks-handdrawn.svg:start -->
+<!-- icon-entry:Icon - building Blocks.excalidraw:start -->
 ## building Blocks
 
-![[building-blocks-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - building Blocks.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/building-blocks-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/building-blocks.svg`
-- **素材／对象**：`积木`, `手`, `building blocks`, `LEGO bricks`
-- **去标签观察**：左上方的弧线轮廓把一个带凸点的长方块移向下方两块
-- **动作／关系**：`放置`, `堆叠`, `对齐接口`, `拆分`, `重新组合`
-- **可能读法**：`模块化`, `有目的的约束`, `逐步构建`, `重混`
-- **关键词**：`积木`, `手`, `乐高`, `模块化`, `约束`, `组合`, `重混`, `building blocks`, `LEGO`, `modularity`
-- **联想／语境**：[[Knowledge/Notes/乐高式思考|乐高式思考]] · 有目的的约束让想法自由组合
-- **来源**：[building Blocks](https://thenounproject.com/icon/building-blocks-7669575/)
-- **作者**：ProSymbols · Noun Project
-- **许可**：[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
-- **使用**：[[Knowledge/Notes/乐高式思考|乐高式思考]]
-- **同步引用**：[[Knowledge/Notes/乐高式思考|乐高式思考]]；[[Knowledge/Notes/软件交付中的知识流|软件交付中的知识流]]
-<!-- icon-entry:building-blocks-handdrawn.svg:end -->
+- **关键词**：`积木`, `木块`, `乐高`, `模块化`, `约束`, `组合`, `重混`, `building blocks`
+<!-- icon-entry:Icon - building Blocks.excalidraw:end -->
 
-<!-- icon-entry:curtain-handdrawn.svg:start -->
-## Curtain
+<!-- icon-entry:Icon - Business role.excalidraw:start -->
+## Business role
 
-![[curtain-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Business role.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/curtain-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/curtain.svg`
-- **素材／对象**：`窗帘`, `帘布`, `curtain`, `drapery`
-- **去标签观察**：左右成对的垂落曲线在中间形成开口，下端分别向两侧收束
-- **动作／关系**：`遮挡`, `拉开`, `露出`, `分隔内外`, `框定未知区域`
-- **可能读法**：`隐藏`, `未知`, `边界`, `揭示`, `舞台`
-- **关键词**：`窗帘`, `帘布`, `遮挡`, `隐藏`, `未知`, `边界`, `揭示`, `curtain`, `drapery`, `window`, `concealment`, `unknown`
-- **联想／语境**：[[Knowledge/Notes/归纳推理|归纳推理]] · `A05` · 帘后的重复花纹
-- **来源**：[Curtain](https://thenounproject.com/icon/curtain-8430562/)
-- **作者**：naomi argi · Noun Project
-- **许可**：[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
-- **处理**：保留原始图形路径；移除下载文件底部署名文字，署名保留于本索引与使用笔记
-- **使用**：[[Knowledge/Notes/归纳推理|归纳推理]]（方案 B「预测下一格」）
-- **同步引用**：[[Knowledge/Notes/归纳推理|归纳推理]]
-<!-- icon-entry:curtain-handdrawn.svg:end -->
+- **关键词**：`业务`, `商业`, `公文包`, `角色`, `参与方`, `business`, `briefcase`, `role`
+<!-- icon-entry:Icon - Business role.excalidraw:end -->
 
-<!-- icon-entry:wallpaper-pattern-handdrawn.svg:start -->
-## wallpaper pattern
+<!-- icon-entry:Icon - Product role.excalidraw:start -->
+## Product role
 
-![[wallpaper-pattern-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Product role.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/wallpaper-pattern-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/wallpaper-pattern.svg`
-- **素材／对象**：`墙纸`, `花纹`, `wallpaper pattern`, `seamless pattern`
-- **去标签观察**：同一组圆弧单元按行列连续铺开，边缘仍像可以向外延伸
-- **动作／关系**：`重复`, `平铺`, `连续`, `裁切`, `延伸下一格`
-- **可能读法**：`规律`, `模式`, `证据`, `外推`, `可预测性`
-- **关键词**：`墙纸`, `花纹`, `重复`, `规律`, `模式`, `连续`, `外推`, `wallpaper pattern`, `seamless pattern`, `repeat`, `pattern`
-- **联想／语境**：[[Knowledge/Notes/归纳推理|归纳推理]] · `A05` · 帘后的重复花纹
-- **来源**：[wallpaper pattern](https://thenounproject.com/icon/wallpaper-pattern-2516034/)
-- **作者**：Kristina Margaryan · Noun Project
-- **许可**：[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
-- **处理**：保留原始图形路径；移除下载文件底部署名文字，署名保留于本索引与使用笔记
-- **使用**：[[Knowledge/Notes/归纳推理|归纳推理]]（方案 B「预测下一格」）
-- **同步引用**：[[Knowledge/Notes/归纳推理|归纳推理]]
-<!-- icon-entry:wallpaper-pattern-handdrawn.svg:end -->
+- **关键词**：`产品`, `设计`, `工具`, `尺子`, `笔`, `角色`, `参与方`, `product`
+<!-- icon-entry:Icon - Product role.excalidraw:end -->
 
-<!-- icon-entry:role-business-material-symbol-handdrawn.svg:start -->
-## Business role · Material Symbol
+<!-- icon-entry:Icon - Engineering role.excalidraw:start -->
+## Engineering role
 
-![[role-business-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Engineering role.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/role-business-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/role-business-material-symbol.svg`
-- **素材／对象**：`公文包`, `business_center`, `briefcase`
-- **去标签观察**：上方短弧连接一个封闭矩形，内部由横线分隔，中央有小方块
-- **动作／关系**：`携带`, `容纳`, `承担`, `标记参与身份`
-- **可能读法**：`工作`, `业务`, `商业`, `职责`, `参与方`
-- **关键词**：`业务`, `商业`, `公文包`, `角色`, `参与方`, `business`, `briefcase`, `role`, `stakeholder`
-- **联想／语境**：[[Knowledge/Notes/统一语言|统一语言]] · `A21` · 业务参与方的工具徽标
-- **来源**：[business_center · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/business_center/materialsymbolsoutlined/business_center_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `28×28`
-- **使用**：[[Knowledge/Notes/统一语言|统一语言]]（概念视觉「参与方逐次套准」）
-- **同步引用**：[[Knowledge/Notes/全栈能力的知识边界|全栈能力的知识边界]]；[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]；[[Knowledge/Notes/统一语言|统一语言]]；[[Knowledge/Notes/软件交付中的知识流|软件交付中的知识流]]
-<!-- icon-entry:role-business-material-symbol-handdrawn.svg:end -->
+- **关键词**：`工程`, `开发`, `代码`, `电脑`, `编程`, `角色`, `参与方`, `engineering`
+<!-- icon-entry:Icon - Engineering role.excalidraw:end -->
 
-<!-- icon-entry:role-product-material-symbol-handdrawn.svg:start -->
-## Product role · Material Symbol
+<!-- icon-entry:Icon - AI role.excalidraw:start -->
+## AI role
 
-![[role-product-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - AI role.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/role-product-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/role-product-material-symbol.svg`
-- **素材／对象**：`尺子与笔`, `design_services`, `crossed tools`
-- **去标签观察**：两根端头不同的细长形以 X 形交叉，在中心形成连接点
-- **动作／关系**：`测量`, `绘制`, `交叉`, `协调工具`
-- **可能读法**：`设计`, `产品`, `制作`, `工具`, `参与方`
-- **关键词**：`产品`, `设计`, `工具`, `尺子`, `笔`, `角色`, `参与方`, `product`, `design services`, `role`, `stakeholder`
-- **联想／语境**：[[Knowledge/Notes/统一语言|统一语言]] · `A21` · 产品参与方的工具徽标
-- **来源**：[design_services · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/design_services/materialsymbolsoutlined/design_services_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `28×28`
-- **使用**：[[Knowledge/Notes/统一语言|统一语言]]（概念视觉「参与方逐次套准」）
-- **同步引用**：[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]；[[Knowledge/Notes/统一语言|统一语言]]
-<!-- icon-entry:role-product-material-symbol-handdrawn.svg:end -->
+- **关键词**：`AI`, `人工智能`, `机器人`, `智能体`, `自动化`, `角色`, `参与方`, `smart toy`
+<!-- icon-entry:Icon - AI role.excalidraw:end -->
 
-<!-- icon-entry:role-engineering-material-symbol-handdrawn.svg:start -->
-## Engineering role · Material Symbol
+<!-- icon-entry:Icon - UI layer.excalidraw:start -->
+## UI layer
 
-![[role-engineering-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - UI layer.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/role-engineering-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/role-engineering-material-symbol.svg`
-- **素材／对象**：`尖括号`, `code symbol`, `angle brackets`
-- **去标签观察**：一对尖角从左右朝向中间，中央保留一段空白
-- **动作／关系**：`成对`, `包围`, `指向内部`, `标记代码`
-- **可能读法**：`工程`, `开发`, `实现`, `代码`, `参与方`
-- **关键词**：`工程`, `开发`, `代码`, `尖括号`, `角色`, `参与方`, `engineering`, `development`, `code`, `role`, `stakeholder`
-- **联想／语境**：[[Knowledge/Notes/统一语言|统一语言]] · `A21` · 工程参与方的工具徽标；[[全栈程序员的生效前提|全栈程序员的协同前提]] · `A22` · 两名都能修改三层的开发者徽标
-- **来源**：[code · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/code/materialsymbolsoutlined/code_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；按角色徽标需要在 Excalidraw 中等比缩放为 `24×24` 或 `28×28`
-- **使用**：[[Knowledge/Notes/统一语言|统一语言]]（概念视觉「参与方逐次套准」）；[[全栈程序员的生效前提|全栈程序员的协同前提]]（概念视觉「Monorepo 共同所有」）
-- **同步引用**：[[Knowledge/Notes/全栈程序员的生效前提|全栈程序员的生效前提]]；[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]；[[Knowledge/Notes/统一语言|统一语言]]；[[Knowledge/Notes/软件交付中的知识流|软件交付中的知识流]]
-<!-- icon-entry:role-engineering-material-symbol-handdrawn.svg:end -->
+- **关键词**：`界面`, `前端`, `网页`, `浏览器`, `笔记本`, `技术层`, `模块`, `UI`
+<!-- icon-entry:Icon - UI layer.excalidraw:end -->
 
-<!-- icon-entry:role-ai-material-symbol-handdrawn.svg:start -->
-## AI role · Material Symbol
+<!-- icon-entry:Icon - API layer.excalidraw:start -->
+## API layer
 
-![[role-ai-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - API layer.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/role-ai-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/role-ai-material-symbol.svg`
-- **素材／对象**：`机器人脸`, `smart_toy`, `robot face`
-- **去标签观察**：圆角方形中央排列两点和一横，顶部有短线，左右各有圆形突出
-- **动作／关系**：`面对`, `回应`, `作为非人参与者进入场景`
-- **可能读法**：`AI`, `机器人`, `智能体`, `自动化`, `参与方`
-- **关键词**：`AI`, `人工智能`, `机器人`, `智能体`, `自动化`, `角色`, `参与方`, `smart toy`, `agent`, `role`, `stakeholder`
-- **联想／语境**：[[Knowledge/Notes/统一语言|统一语言]] · `A21` · AI 参与方的工具徽标；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]] · `A19` · Agent 消费入口
-- **来源**：[smart_toy · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/smart_toy/materialsymbolsoutlined/smart_toy_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `28×28`
-- **使用**：[[Knowledge/Notes/统一语言|统一语言]]（概念视觉「参与方逐次套准」）；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]（最终概念视觉「按页面切的端到端 vs 微服务能力边界」）
-- **同步引用**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]；[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]；[[Knowledge/Notes/统一语言|统一语言]]；[[Knowledge/Notes/软件交付中的知识流|软件交付中的知识流]]
-<!-- icon-entry:role-ai-material-symbol-handdrawn.svg:end -->
+- **关键词**：`接口`, `连接`, `交换`, `后端`, `服务`, `齿轮`, `技术层`, `API`
+<!-- icon-entry:Icon - API layer.excalidraw:end -->
 
-<!-- icon-entry:layer-ui-web-material-symbol-handdrawn.svg:start -->
-## UI layer · Material Symbol
+<!-- icon-entry:Icon - Database layer.excalidraw:start -->
+## Database layer
 
-![[layer-ui-web-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Database layer.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/layer-ui-web-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/layer-ui-web-material-symbol.svg`
-- **素材／对象**：`网页框架`, `web`, `browser layout`
-- **去标签观察**：横向矩形被一条横线和一条短竖线分成大小不同的区域
-- **动作／关系**：`分区`, `展示`, `面向外部`, `作为一层排列`
-- **可能读法**：`界面`, `网页`, `前端`, `技术层`, `模块`
-- **关键词**：`界面`, `前端`, `网页`, `技术层`, `模块`, `UI`, `frontend`, `web`, `layer`, `module`
-- **联想／语境**：[[全栈程序员的生效前提|全栈程序员的协同前提]] · `A02` · 多层建筑中的 UI 层；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]] · `A17` · 页面端到端切片中的 UI 层；`A19` · Web 消费入口
-- **来源**：[web · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/web/materialsymbolsoutlined/web_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `24×24` 或 `28×28`
-- **使用**：[[全栈程序员的生效前提|全栈程序员的协同前提]]（概念视觉「Monorepo 共同所有」）；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]（最终概念视觉「按页面切的端到端 vs 微服务能力边界」）
-- **同步引用**：[[Knowledge/Notes/LCP 的衡量与优化|LCP 的衡量与优化]]；[[Knowledge/Notes/全栈程序员的生效前提|全栈程序员的生效前提]]；[[Knowledge/Notes/全栈能力的知识边界|全栈能力的知识边界]]；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]；[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]
-<!-- icon-entry:layer-ui-web-material-symbol-handdrawn.svg:end -->
+- **关键词**：`数据库`, `数据`, `存储`, `服务器`, `机柜`, `技术层`, `database`, `data`
+<!-- icon-entry:Icon - Database layer.excalidraw:end -->
 
-<!-- icon-entry:layer-api-material-symbol-handdrawn.svg:start -->
-## API layer · Material Symbol
+<!-- icon-entry:Icon - Access lock.excalidraw:start -->
+## Access lock
 
-![[layer-api-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Access lock.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/layer-api-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/layer-api-material-symbol.svg`
-- **素材／对象**：`接口符号`, `api`, `four-way interface`
-- **去标签观察**：四组折角围绕中心排列，相邻形状彼此咬合并朝向不同方向
-- **动作／关系**：`连接`, `交换`, `路由`, `居中协调`, `作为一层排列`
-- **可能读法**：`接口`, `API`, `服务`, `后端`, `技术层`, `模块`
-- **关键词**：`接口`, `连接`, `交换`, `后端`, `服务`, `技术层`, `模块`, `API`, `backend`, `service`, `layer`, `module`
-- **联想／语境**：[[全栈程序员的生效前提|全栈程序员的协同前提]] · `A02` · 多层建筑中的 API 层；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]] · `A17` · 页面端到端切片中的 API 层；`A08` · 微服务边界标识
-- **来源**：[api · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/api/materialsymbolsoutlined/api_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `24×24` 或 `28×28`
-- **使用**：[[全栈程序员的生效前提|全栈程序员的协同前提]]（概念视觉「Monorepo 共同所有」）；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]（最终概念视觉「按页面切的端到端 vs 微服务能力边界」）
-- **同步引用**：[[Knowledge/Notes/全栈程序员的生效前提|全栈程序员的生效前提]]；[[Knowledge/Notes/全栈能力的知识边界|全栈能力的知识边界]]；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]；[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]
-<!-- icon-entry:layer-api-material-symbol-handdrawn.svg:end -->
+- **关键词**：`门禁`, `锁`, `访问控制`, `等待`, `阻塞`, `交接`, `边界`, `access`
+<!-- icon-entry:Icon - Access lock.excalidraw:end -->
 
-<!-- icon-entry:layer-database-material-symbol-handdrawn.svg:start -->
-## Database layer · Material Symbol
+<!-- icon-entry:Icon - Monorepo folder.excalidraw:start -->
+## Monorepo folder
 
-![[layer-database-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Monorepo folder.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/layer-database-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/layer-database-material-symbol.svg`
-- **素材／对象**：`圆柱堆叠`, `database`, `storage cylinder`
-- **去标签观察**：三个扁椭圆轮廓上下堆叠，外侧竖线把各层连接成整体
-- **动作／关系**：`堆叠`, `容纳`, `存取`, `作为底层承托`
-- **可能读法**：`数据库`, `数据`, `存储`, `技术层`, `模块`
-- **关键词**：`数据库`, `数据`, `存储`, `堆叠`, `技术层`, `模块`, `database`, `data`, `storage`, `layer`, `module`
-- **联想／语境**：[[全栈程序员的生效前提|全栈程序员的协同前提]] · `A02` · 多层建筑中的数据层；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]] · `A17` · 页面端到端切片中的数据层
-- **来源**：[database · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/database/materialsymbolsoutlined/database_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `24×24` 或 `28×28`
-- **使用**：[[全栈程序员的生效前提|全栈程序员的协同前提]]（概念视觉「Monorepo 共同所有」）；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]（最终概念视觉「按页面切的端到端 vs 微服务能力边界」）
-- **同步引用**：[[Knowledge/Notes/全栈程序员的生效前提|全栈程序员的生效前提]]；[[Knowledge/Notes/全栈能力的知识边界|全栈能力的知识边界]]；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]；[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]
-<!-- icon-entry:layer-database-material-symbol-handdrawn.svg:end -->
+- **关键词**：`单体仓库`, `代码仓库`, `文件夹`, `共同所有`, `共享代码`, `跨层`, `monorepo`, `repository`
+<!-- icon-entry:Icon - Monorepo folder.excalidraw:end -->
 
-<!-- icon-entry:access-lock-material-symbol-handdrawn.svg:start -->
-## Access lock · Material Symbol
+<!-- icon-entry:Icon - Elevator.excalidraw:start -->
+## Elevator
 
-![[access-lock-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Elevator.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/access-lock-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/access-lock-material-symbol.svg`
-- **素材／对象**：`锁`, `门禁`, `lock`, `access control`
-- **去标签观察**：上方拱形连接下方封闭方块，方块中央有一个圆点
-- **动作／关系**：`关闭`, `打开`, `阻挡`, `放行`, `划分边界`
-- **可能读法**：`访问控制`, `等待`, `阻塞`, `交接`, `权限`
-- **关键词**：`门禁`, `锁`, `访问控制`, `等待`, `阻塞`, `交接`, `边界`, `access`, `lock`, `waiting`, `blockage`, `handoff`
-- **联想／语境**：[[全栈程序员的生效前提|全栈程序员的协同前提]] · `A04` · 跨角色交接处的门禁
-- **来源**：[lock · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/lock/materialsymbolsoutlined/lock_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `26×26`
-- **使用**：[[全栈程序员的生效前提|全栈程序员的协同前提]]（概念视觉「Monorepo 共同所有」）
-- **同步引用**：[[Knowledge/Notes/全栈程序员的生效前提|全栈程序员的生效前提]]
-<!-- icon-entry:access-lock-material-symbol-handdrawn.svg:end -->
+- **关键词**：`电梯`, `升降`, `贯通`, `跨层`, `端到端`, `上下移动`, `elevator`, `lift`
+<!-- icon-entry:Icon - Elevator.excalidraw:end -->
 
-<!-- icon-entry:monorepo-folder-code-material-symbol-handdrawn.svg:start -->
-## Monorepo folder · Material Symbol
+<!-- icon-entry:Icon - Finish flag.excalidraw:start -->
+## Finish flag
 
-![[monorepo-folder-code-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Finish flag.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/monorepo-folder-code-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/monorepo-folder-code-material-symbol.svg`
-- **素材／对象**：`代码文件夹`, `folder_code`, `repository folder`
-- **去标签观察**：带折角的开放容器轮廓旁放置一对相向的尖括形
-- **动作／关系**：`收纳`, `汇集`, `共享`, `把多层放入同一边界`
-- **可能读法**：`代码仓库`, `单体仓库`, `共同所有`, `共享代码`, `跨层`
-- **关键词**：`单体仓库`, `代码仓库`, `文件夹`, `共同所有`, `共享代码`, `跨层`, `monorepo`, `repository`, `folder code`, `collective ownership`, `shared code`
-- **联想／语境**：[[全栈程序员的生效前提|全栈程序员的协同前提]] · `A21` · 单仓共享代码面
-- **来源**：[folder_code · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/folder_code/materialsymbolsoutlined/folder_code_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `38×38`
-- **使用**：[[全栈程序员的生效前提|全栈程序员的协同前提]]（概念视觉「Monorepo 共同所有」）
-- **同步引用**：[[Knowledge/Notes/全栈程序员的生效前提|全栈程序员的生效前提]]
-<!-- icon-entry:monorepo-folder-code-material-symbol-handdrawn.svg:end -->
+- **关键词**：`终点`, `目标杆`, `旗帜`, `方格旗`, `计时`, `测量点`, `LCP`, `Goal Pole`
+<!-- icon-entry:Icon - Finish flag.excalidraw:end -->
 
-<!-- icon-entry:elevator-material-symbol-handdrawn.svg:start -->
-## Elevator · Material Symbol
+<!-- icon-entry:Icon - Image candidate.excalidraw:start -->
+## Image candidate
 
-![[elevator-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Image candidate.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/elevator-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/elevator-material-symbol.svg`
-- **素材／对象**：`电梯`, `升降厢`, `elevator`, `lift`
-- **去标签观察**：竖向圆角矩形内左侧站立一个人形，右侧上下排列两个三角形
-- **动作／关系**：`上移`, `下移`, `穿过楼层`, `运送`, `贯通上下`
-- **可能读法**：`跨层`, `端到端`, `垂直通道`, `层间协作`
-- **关键词**：`电梯`, `升降`, `贯通`, `跨层`, `端到端`, `上下移动`, `elevator`, `cross-layer`, `end-to-end`, `vertical movement`
-- **联想／语境**：[[全栈程序员的生效前提|全栈程序员的协同前提]] · `A03` · 贯通电梯
-- **来源**：[elevator · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/elevator/materialsymbolsoutlined/elevator_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `58×58`
-- **使用**：[[全栈程序员的生效前提|全栈程序员的协同前提]]（概念视觉「Monorepo 共同所有」）
-- **同步引用**：[[Knowledge/Notes/全栈程序员的生效前提|全栈程序员的生效前提]]；[[Knowledge/Notes/全栈能力的知识边界|全栈能力的知识边界]]
-<!-- icon-entry:elevator-material-symbol-handdrawn.svg:end -->
+- **关键词**：`图片`, `图像`, `媒体`, `候选内容`, `视口`, `LCP`, `image`, `picture`
+<!-- icon-entry:Icon - Image candidate.excalidraw:end -->
 
-<!-- icon-entry:lcp-finish-flag-material-symbol-handdrawn.svg:start -->
-## Finish flag · Material Symbol
+<!-- icon-entry:Icon - Text candidate.excalidraw:start -->
+## Text candidate
 
-![[lcp-finish-flag-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Text candidate.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/lcp-finish-flag-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/lcp-finish-flag-material-symbol.svg`
-- **素材／对象**：`方格旗`, `终点旗`, `sports_score`, `finish flag`
-- **去标签观察**：一根竖杆旁连接多行交错方块，方块沿横向展开并形成清楚的停止标记
-- **动作／关系**：`标记时刻`, `穿过界线`, `抵达节点`, `设定测量点`
-- **可能读法**：`终点`, `里程碑`, `计时点`, `性能指标时刻`
-- **关键词**：`终点`, `旗帜`, `方格旗`, `计时`, `测量点`, `LCP`, `finish`, `flag`, `sports score`, `milestone`
-- **联想／语境**：[[Knowledge/Notes/LCP 的衡量与优化|LCP 的衡量与优化]] · `A01` · 最大可见内容抵达 LCP 测量点
-- **来源**：[sports_score · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/sports_score/materialsymbolsoutlined/sports_score_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；补充来源元数据；在 Excalidraw 中等比缩放为 `29×29`
-- **使用**：[[Knowledge/Notes/LCP 的衡量与优化|LCP 的衡量与优化]]（最终概念视觉「视口内最大内容呈现」）
-- **同步引用**：[[Knowledge/Notes/LCP 的衡量与优化|LCP 的衡量与优化]]
-<!-- icon-entry:lcp-finish-flag-material-symbol-handdrawn.svg:end -->
+- **关键词**：`文本`, `文字`, `标题`, `字母`, `字体`, `排版`, `文本块`, `候选内容`
+<!-- icon-entry:Icon - Text candidate.excalidraw:end -->
 
-<!-- icon-entry:lcp-image-material-symbol-handdrawn.svg:start -->
-## Image candidate · Material Symbol
+<!-- icon-entry:Icon - Electrical services.excalidraw:start -->
+## Electrical services
 
-![[lcp-image-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Electrical services.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/lcp-image-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/lcp-image-material-symbol.svg`
-- **素材／对象**：`图片框`, `山景占位符`, `image`, `image placeholder`
-- **去标签观察**：封闭矩形内有两段高低不同的折线，折线共同指向矩形底边
-- **动作／关系**：`框定画面`, `占据区域`, `标记图像内容`, `作为候选进入视口`
-- **可能读法**：`图片`, `视觉内容`, `媒体块`, `可见内容候选`
-- **关键词**：`图片`, `图像`, `媒体`, `候选内容`, `视口`, `LCP`, `image`, `picture`, `media`, `candidate`
-- **联想／语境**：[[Knowledge/Notes/LCP 的衡量与优化|LCP 的衡量与优化]] · `A10` · 图像可以成为最大可见内容，也可以只是后续出现的小内容块
-- **来源**：[image · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/image/materialsymbolsoutlined/image_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；补充来源元数据；在 Excalidraw 中等比缩放为 `25×25` 或 `18×18`
-- **使用**：[[Knowledge/Notes/LCP 的衡量与优化|LCP 的衡量与优化]]（最终概念视觉「视口内最大内容呈现」）
-- **同步引用**：[[Knowledge/Notes/LCP 的衡量与优化|LCP 的衡量与优化]]
-<!-- icon-entry:lcp-image-material-symbol-handdrawn.svg:end -->
+- **关键词**：`插头`, `电源线`, `连接`, `接口`, `接点`, `API`, `plug`, `power cable`
+<!-- icon-entry:Icon - Electrical services.excalidraw:end -->
 
-<!-- icon-entry:lcp-text-material-symbol-handdrawn.svg:start -->
-## Text candidate · Material Symbol
+<!-- icon-entry:Icon - Product inventory.excalidraw:start -->
+## Product inventory
 
-![[lcp-text-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Product inventory.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/lcp-text-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/lcp-text-material-symbol.svg`
-- **素材／对象**：`大小写字形`, `文本字段`, `text_fields`, `text symbol`
-- **去标签观察**：一大一小两组横竖笔画并排，每组都由横线支撑中央竖线
-- **动作／关系**：`标记文字`, `占据区域`, `形成文本块`, `作为候选进入视口`
-- **可能读法**：`文本`, `标题`, `文字内容`, `可见内容候选`
-- **关键词**：`文本`, `文字`, `标题`, `文本块`, `候选内容`, `视口`, `LCP`, `text`, `text fields`, `typography`, `candidate`
-- **联想／语境**：[[Knowledge/Notes/LCP 的衡量与优化|LCP 的衡量与优化]] · `A10` · 文本同样可以成为最大可见内容
-- **来源**：[text_fields · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/text_fields/materialsymbolsoutlined/text_fields_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；补充来源元数据；在 Excalidraw 中等比缩放为 `25×25`
-- **使用**：[[Knowledge/Notes/LCP 的衡量与优化|LCP 的衡量与优化]]（最终概念视觉「视口内最大内容呈现」）
-- **同步引用**：[[Knowledge/Notes/LCP 的衡量与优化|LCP 的衡量与优化]]
-<!-- icon-entry:lcp-text-material-symbol-handdrawn.svg:end -->
+- **关键词**：`商品`, `库存`, `货品`, `封装`, `业务能力`, `微服务`, `product`, `inventory`
+<!-- icon-entry:Icon - Product inventory.excalidraw:end -->
 
+<!-- icon-entry:Icon - Price tag.excalidraw:start -->
+## Price tag
 
-<!-- icon-entry:electrical-services-material-symbol-handdrawn.svg:start -->
-## Electrical services · Material Symbol
+![[Knowledge/Assets/Excalidraw/Icon - Price tag.excalidraw|180]]
 
-![[electrical-services-material-symbol-handdrawn.svg|180]]
+- **关键词**：`价格`, `售价`, `标签`, `标价`, `业务能力`, `price`, `sell`, `tag`
+<!-- icon-entry:Icon - Price tag.excalidraw:end -->
 
-- **文件**：`Knowledge/Assets/Icons/electrical-services-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/electrical-services-material-symbol.svg`
-- **素材／对象**：`电源插头`, `electrical_services`, `plug and cable`
-- **去标签观察**：一条弯曲线从左侧延伸到右侧方块，方块一端伸出两根平行短条
-- **动作／关系**：`连接`, `插入`, `拔出`, `接通`, `通过标准接点交换`
-- **可能读法**：`插头`, `接口`, `稳定接点`, `可替换连接`, `API`
-- **关键词**：`插头`, `电源线`, `连接`, `接口`, `接点`, `API`, `plug`, `electrical services`, `connection`, `interface`
-- **联想／语境**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]] · `A01` · 微服务 API 的稳定接点；`A20` · 拔掉一个消费入口后，能力边界仍保持连接与发布
-- **来源**：[electrical_services · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/electrical_services/materialsymbolsoutlined/electrical_services_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `38×38` 或 `42×42`
-- **使用**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]（最终概念视觉「按页面切的端到端 vs 微服务能力边界」）
-- **同步引用**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]；[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]
-<!-- icon-entry:electrical-services-material-symbol-handdrawn.svg:end -->
+<!-- icon-entry:Icon - Availability check.excalidraw:start -->
+## Availability check
 
-<!-- icon-entry:product-inventory-material-symbol-handdrawn.svg:start -->
-## Product inventory · Material Symbol
+![[Knowledge/Assets/Excalidraw/Icon - Availability check.excalidraw|180]]
 
-![[product-inventory-material-symbol-handdrawn.svg|180]]
+- **关键词**：`可售`, `库存状态`, `校验`, `确认`, `便笺`, `勾选标记`, `业务规则`, `availability`
+<!-- icon-entry:Icon - Availability check.excalidraw:end -->
 
-- **文件**：`Knowledge/Assets/Icons/product-inventory-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/product-inventory-material-symbol.svg`
-- **素材／对象**：`商品箱`, `库存箱`, `inventory_2`, `inventory container`
-- **去标签观察**：一个竖向封闭矩形被顶部横条分区，中间另有一条短横线
-- **动作／关系**：`容纳`, `封装`, `归档`, `标记商品单元`, `作为能力块排列`
-- **可能读法**：`商品`, `库存`, `封装单元`, `业务能力`, `服务模块`
-- **关键词**：`商品`, `库存`, `货品`, `封装`, `业务能力`, `微服务`, `product`, `inventory`, `container`, `capability`
-- **联想／语境**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]] · `A16` · 商品业务能力单元
-- **来源**：[inventory_2 · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/inventory_2/materialsymbolsoutlined/inventory_2_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `25×25`
-- **使用**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]（最终概念视觉「按页面切的端到端 vs 微服务能力边界」）
-- **同步引用**：[[Knowledge/Notes/全栈能力的知识边界|全栈能力的知识边界]]；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]
-<!-- icon-entry:product-inventory-material-symbol-handdrawn.svg:end -->
+<!-- icon-entry:Icon - Smartphone.excalidraw:start -->
+## Smartphone
 
-<!-- icon-entry:price-sell-material-symbol-handdrawn.svg:start -->
-## Price tag · Material Symbol
+![[Knowledge/Assets/Excalidraw/Icon - Smartphone.excalidraw|180]]
 
-![[price-sell-material-symbol-handdrawn.svg|180]]
+- **关键词**：`手机`, `移动端`, `App`, `应用`, `渠道`, `消费者`, `smartphone`, `mobile`
+<!-- icon-entry:Icon - Smartphone.excalidraw:end -->
 
-- **文件**：`Knowledge/Assets/Icons/price-sell-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/price-sell-material-symbol.svg`
-- **素材／对象**：`价格标签`, `sell`, `price tag`
-- **去标签观察**：一个斜放的五边形轮廓在尖端附近留有圆孔，整体朝右下方延伸
-- **动作／关系**：`附着`, `标价`, `关联数值`, `跟随对象移动`
-- **可能读法**：`价格`, `售价`, `标签`, `商业属性`, `业务能力`
-- **关键词**：`价格`, `售价`, `标签`, `标价`, `业务能力`, `price`, `sell`, `tag`, `pricing`, `capability`
-- **联想／语境**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]] · `A16` · 价格业务能力单元
-- **来源**：[sell · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/sell/materialsymbolsoutlined/sell_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `25×25`
-- **使用**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]（最终概念视觉「按页面切的端到端 vs 微服务能力边界」）
-- **同步引用**：[[Knowledge/Notes/全栈能力的知识边界|全栈能力的知识边界]]；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]
-<!-- icon-entry:price-sell-material-symbol-handdrawn.svg:end -->
-
-<!-- icon-entry:availability-fact-check-material-symbol-handdrawn.svg:start -->
-## Availability check · Material Symbol
-
-![[availability-fact-check-material-symbol-handdrawn.svg|180]]
-
-- **文件**：`Knowledge/Assets/Icons/availability-fact-check-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/availability-fact-check-material-symbol.svg`
-- **素材／对象**：`核对清单`, `fact_check`, `checklist with check mark`
-- **去标签观察**：封闭矩形左侧排列三条短横线，右侧由两段折线组成一个勾形
-- **动作／关系**：`核对`, `确认`, `列举条件`, `标记通过状态`
-- **可能读法**：`可售`, `校验`, `事实核查`, `状态确认`, `业务规则`
-- **关键词**：`可售`, `库存状态`, `校验`, `确认`, `清单`, `业务规则`, `availability`, `fact check`, `checklist`, `validation`
-- **联想／语境**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]] · `A16` · 可售状态业务能力单元
-- **来源**：[fact_check · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/fact_check/materialsymbolsoutlined/fact_check_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `25×25`
-- **使用**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]（最终概念视觉「按页面切的端到端 vs 微服务能力边界」）
-- **同步引用**：[[Knowledge/Notes/全栈能力的知识边界|全栈能力的知识边界]]；[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]；[[Knowledge/Notes/软件交付中的知识流|软件交付中的知识流]]
-<!-- icon-entry:availability-fact-check-material-symbol-handdrawn.svg:end -->
-
-<!-- icon-entry:smartphone-material-symbol-handdrawn.svg:start -->
-## Smartphone · Material Symbol
-
-![[smartphone-material-symbol-handdrawn.svg|180]]
-
-- **文件**：`Knowledge/Assets/Icons/smartphone-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/smartphone-material-symbol.svg`
-- **素材／对象**：`智能手机`, `smartphone`, `mobile device`
-- **去标签观察**：一个高而窄的圆角矩形由顶部、中央和底部三个横向区域组成
-- **动作／关系**：`承载界面`, `作为入口`, `移动使用`, `连接服务`
-- **可能读法**：`App`, `移动端`, `渠道`, `消费者`, `用户入口`
-- **关键词**：`手机`, `移动端`, `App`, `应用`, `渠道`, `消费者`, `smartphone`, `mobile`, `application`, `consumer`
-- **联想／语境**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]] · `A19` · 可替换的 App 消费入口；`A20` · 被主动拔开、用来测试能力独立性的前台
-- **来源**：[smartphone · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/smartphone/materialsymbolsoutlined/smartphone_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留原始 SVG 路径与视觉风格；在 Excalidraw 中等比缩放为 `20×20`
-- **使用**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]（最终概念视觉「按页面切的端到端 vs 微服务能力边界」）
-- **同步引用**：[[Knowledge/Notes/微服务的独立交付边界|微服务的独立交付边界]]
-<!-- icon-entry:smartphone-material-symbol-handdrawn.svg:end -->
-
-<!-- icon-entry:confused-programmer-shrug-nounproject-handdrawn.svg:start -->
+<!-- icon-entry:Icon - Shrug person.excalidraw:start -->
 ## Shrug person
 
-![[confused-programmer-shrug-nounproject-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Shrug person.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/confused-programmer-shrug-nounproject-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/confused-programmer-shrug-nounproject.svg`
-- **素材／对象**：`摊手人物`, `摊手的人`, `shrug`, `shrugging person`
-- **去标签观察**：空白圆形头部连接开放的躯干线条，两侧手臂弯曲并向外抬起，手掌朝上，头部与手腕附近保留短虚线细节
-- **动作／关系**：`摊手`, `左右权衡`, `面对多个选择`, `停在决定之前`
-- **可能读法**：`不知道`, `无可奈何`, `不确定`, `左右为难`, `开放问题`
-- **关键词**：`摊手`, `人物`, `双手`, `无奈`, `不知道`, `选择`, `权衡`, `shrug`, `person`, `uncertain`, `choice`
-- **联想／语境**：[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]] · `A22` · 摊手动作承载“范围没有自然落点”；`DEV` 徽标与困惑表情均在知识卡画布中作为独立元素组合
-- **来源**：[Shrug #1763239](https://thenounproject.com/icon/shrug-1763239/) · Noun Project
-- **作者**：Sarah Rudkin
-- **许可**：[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
-- **处理**：原始文件由来源页官方 `512 px` PNG 预览使用 VTracer 0.6.15 描摹为 SVG，并裁切到可见边界；规范手绘母版再从该轮廓自动提取中心线，经 Excalidraw `roughness: 2` 转为统一单线手绘笔触，保留原图姿势与比例，同时避免把原来的粗线描成双重边界。颜色由 `--icon-color` 控制，不在母版中拼入其他图标
-- **使用**：[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]（作为摊手人物，与困惑表情在画布内组合）
-- **同步引用**：[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]
-<!-- icon-entry:confused-programmer-shrug-nounproject-handdrawn.svg:end -->
+- **关键词**：`摊手`, `人物`, `双手`, `无奈`, `不知道`, `选择`, `权衡`, `shrug`
+<!-- icon-entry:Icon - Shrug person.excalidraw:end -->
 
-<!-- icon-entry:confused-face-mood-puzzled-tabler-handdrawn.svg:start -->
-## Mood Puzzled
+<!-- icon-entry:Icon - Curiosity reaction.excalidraw:start -->
+## Curiosity reaction
 
-![[confused-face-mood-puzzled-tabler-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Curiosity reaction.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/confused-face-mood-puzzled-tabler-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/confused-face-mood-puzzled-tabler.svg`
-- **素材／对象**：`困惑表情`, `疑惑头像`, `puzzled face`, `confused expression`
-- **去标签观察**：近乎闭合的圆形头像在右上留出缺口，两只点状眼睛高低不一，嘴线向一侧倾斜，缺口外接一个问号形短线
-- **动作／关系**：`提出疑问`, `犹豫`, `无法判断`, `停在答案之前`
-- **可能读法**：`困惑`, `想不通`, `不确定`, `对边界产生疑问`
-- **关键词**：`头像`, `表情`, `困惑`, `疑惑`, `问号`, `斜嘴`, `不确定`, `face`, `expression`, `puzzled`, `confused`, `question`, `uncertain`, `mood`
-- **联想／语境**：[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]] · `A24` · 在知识卡画布中与摊手人物叠加，激活对“全栈”边界的疑问
-- **来源**：[Mood Puzzled · Tabler Icons](https://tabler.io/icons?icon=mood-puzzled) · [官方 SVG](https://github.com/tabler/tabler-icons/blob/main/icons/outline/mood-puzzled.svg)
-- **作者**：Paweł Kuna／Tabler Icons
-- **许可**：[MIT License](https://github.com/tabler/tabler-icons/blob/main/LICENSE)
-- **处理**：保留 Tabler 官方 SVG 的原始中心线路径，规范母版使用单层普通线条，不叠加、偏移或组合第二笔触；在词库 `140` 单元预览下，以 `2.3` 非缩放线宽对齐 22 号图标的实际视觉粗细，并保留圆角端点与圆角连接。素材文件保留完整 MIT 许可与来源元数据，线条颜色由 `--icon-color` 控制；与其他图标的组合只发生在使用它的知识卡画布中
-- **使用**：[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]（与摊手人物在画布内组合成困惑角色）
-- **同步引用**：[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]
-<!-- icon-entry:confused-face-mood-puzzled-tabler-handdrawn.svg:end -->
+- **关键词**：`困惑`, `疑惑`, `问号`, `气泡`, `反应`, `好奇`, `不确定`, `Curiosity`
+<!-- icon-entry:Icon - Curiosity reaction.excalidraw:end -->
 
-<!-- icon-entry:account-tree-material-symbol-handdrawn.svg:start -->
-## Relationship tree · Material Symbol
+<!-- icon-entry:Icon - Relationship tree.excalidraw:start -->
+## Relationship tree
 
-![[account-tree-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Relationship tree.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/account-tree-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/account-tree-material-symbol.svg`
-- **素材／对象**：`关系树`, `层级图`, `account_tree`, `hierarchy diagram`
-- **去标签观察**：三个空心方块由水平与垂直折线连接，中央主干向上下两个端点分叉
-- **动作／关系**：`连接`, `分叉`, `建立层级`, `显示路径`, `压缩为少量节点`
-- **可能读法**：`关系地图`, `目录`, `层级`, `拓扑`, `稳定结构`
-- **关键词**：`关系树`, `层级图`, `目录`, `节点`, `分支`, `知识地图`, `account tree`, `hierarchy`, `relationship map`, `structure`
-- **联想／语境**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]] · `A04` · 提纯后的关系目录
-- **来源**：[account_tree · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/account_tree/materialsymbolsoutlined/account_tree_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留官方 SVG 路径与视觉风格；颜色由 `--icon-color` 控制；在 Excalidraw 中等比缩放为 `88×88`
-- **使用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]（最终概念视觉「一桌，两种保存」）
-- **同步引用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]
-<!-- icon-entry:account-tree-material-symbol-handdrawn.svg:end -->
+- **关键词**：`关系树`, `层级图`, `目录`, `节点`, `分支`, `知识地图`, `hierarchy`, `relationship tree`
+<!-- icon-entry:Icon - Relationship tree.excalidraw:end -->
 
-<!-- icon-entry:filter-alt-material-symbol-handdrawn.svg:start -->
-## Filter · Material Symbol
+<!-- icon-entry:Icon - Filter.excalidraw:start -->
+## Filter
 
-![[filter-alt-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Filter.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/filter-alt-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/filter-alt-material-symbol.svg`
-- **素材／对象**：`漏斗`, `过滤器`, `filter_alt`, `filter funnel`
-- **去标签观察**：宽阔的上边缘向中央逐步收窄，底部延伸出一段短而窄的出口
-- **动作／关系**：`筛选`, `收窄`, `去除噪声`, `让少量内容通过`, `从多到少`
-- **可能读法**：`过滤`, `提纯`, `选择`, `降噪`, `形成稳定结构`
-- **关键词**：`漏斗`, `过滤器`, `筛选`, `提纯`, `选择`, `降噪`, `filter`, `funnel`, `distill`, `selection`, `noise reduction`
-- **联想／语境**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]] · `A15` · 从散落材料中筛出少量稳定关系
-- **来源**：[filter_alt · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/filter_alt/materialsymbolsoutlined/filter_alt_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留官方 SVG 路径与视觉风格；颜色由 `--icon-color` 控制；在 Excalidraw 中等比缩放为 `60×60`
-- **使用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]（最终概念视觉「一桌，两种保存」）
-- **同步引用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]
-<!-- icon-entry:filter-alt-material-symbol-handdrawn.svg:end -->
+- **关键词**：`漏斗`, `过滤器`, `筛选`, `提纯`, `选择`, `降噪`, `已应用`, `filter`
+<!-- icon-entry:Icon - Filter.excalidraw:end -->
 
-<!-- icon-entry:desk-material-symbol-handdrawn.svg:start -->
-## Desk · Material Symbol
+<!-- icon-entry:Icon - Desk.excalidraw:start -->
+## Desk
 
-![[desk-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Desk.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/desk-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/desk-material-symbol.svg`
-- **素材／对象**：`书桌`, `工作台`, `desk`, `work table`
-- **去标签观察**：宽矩形台面由两侧竖线支撑，右侧被两条横线切分为上下收纳区
-- **动作／关系**：`承托`, `摊开材料`, `保留位置`, `形成工作表面`, `容纳进行中的组合`
-- **可能读法**：`研究现场`, `工作台`, `当前任务`, `尚未收拾的上下文`
-- **关键词**：`书桌`, `工作台`, `研究桌`, `工作现场`, `材料位置`, `上下文`, `desk`, `work table`, `workspace`, `research desk`
-- **联想／语境**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]] · `A04` · 尚未收桌的研究现场
-- **来源**：[desk · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/desk/materialsymbolsoutlined/desk_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留官方 SVG 路径与视觉风格；颜色由 `--icon-color` 控制；在 Excalidraw 中等比缩放为 `42×42` 或 `70×70`
-- **使用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]（最终概念视觉「一桌，两种保存」）
-- **同步引用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]
-<!-- icon-entry:desk-material-symbol-handdrawn.svg:end -->
+- **关键词**：`书桌`, `工作台`, `研究桌`, `工作现场`, `材料位置`, `上下文`, `desk`, `work table`
+<!-- icon-entry:Icon - Desk.excalidraw:end -->
 
-<!-- icon-entry:menu-book-material-symbol-handdrawn.svg:start -->
-## Open book · Material Symbol
+<!-- icon-entry:Icon - Open book.excalidraw:start -->
+## Open book
 
-![[menu-book-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Open book.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/menu-book-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/menu-book-material-symbol.svg`
-- **素材／对象**：`打开的书`, `阅读材料`, `menu_book`, `open book`
-- **去标签观察**：左右两组弧形页面围绕中央书脊展开，页面内排列多条短横线
-- **动作／关系**：`打开`, `阅读`, `并置来源`, `停留在当前页`, `继续查阅`
-- **可能读法**：`来源`, `正在阅读`, `工作材料`, `未完成的研究上下文`
-- **关键词**：`打开的书`, `阅读`, `来源`, `当前页`, `研究材料`, `书本`, `menu book`, `open book`, `source`, `reading context`
-- **联想／语境**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]] · `A04` · 研究桌上仍打开的来源
-- **来源**：[menu_book · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/menu_book/materialsymbolsoutlined/menu_book_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留官方 SVG 路径与视觉风格；颜色由 `--icon-color` 控制；在 Excalidraw 中等比缩放为 `88×88`
-- **使用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]（最终概念视觉「一桌，两种保存」）
-- **同步引用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]
-<!-- icon-entry:menu-book-material-symbol-handdrawn.svg:end -->
+- **关键词**：`打开的书`, `阅读`, `来源`, `当前页`, `研究材料`, `书本`, `menu book`, `open book`
+<!-- icon-entry:Icon - Open book.excalidraw:end -->
 
-<!-- icon-entry:sticky-note-material-symbol-handdrawn.svg:start -->
-## Sticky note · Material Symbol
+<!-- icon-entry:Icon - Sticky note.excalidraw:start -->
+## Sticky note
 
-![[sticky-note-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Sticky note.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/sticky-note-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/sticky-note-material-symbol.svg`
-- **素材／对象**：`便签`, `折角纸片`, `sticky_note_2`, `sticky note`
-- **去标签观察**：一个方形轮廓在右下角向内折起，内部保留两条长短不同的横线
-- **动作／关系**：`记录`, `移动`, `重新摆放`, `贴近其他材料`, `保留临时状态`
-- **可能读法**：`问题`, `假设`, `线索`, `下一步`, `尚未稳定的想法`
-- **关键词**：`便签`, `折角纸`, `问题`, `假设`, `线索`, `下一步`, `临时材料`, `sticky note`, `note`, `question`, `hypothesis`, `clue`
-- **联想／语境**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]] · `A04` · 散落在研究桌上的临时材料
-- **来源**：[sticky_note_2 · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/sticky_note_2/materialsymbolsoutlined/sticky_note_2_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留官方 SVG 路径与视觉风格；颜色由 `--icon-color` 控制；在 Excalidraw 中等比缩放为 `52×52` 至 `60×60`，以轻微角度差保留散落感
-- **使用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]（最终概念视觉「一桌，两种保存」）
-- **同步引用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]；[[Knowledge/Notes/软件交付中的知识流|软件交付中的知识流]]
-<!-- icon-entry:sticky-note-material-symbol-handdrawn.svg:end -->
+- **关键词**：`便签`, `折角纸`, `问题`, `假设`, `线索`, `下一步`, `临时材料`, `sticky note`
+<!-- icon-entry:Icon - Sticky note.excalidraw:end -->
 
-<!-- icon-entry:bookmark-material-symbol-handdrawn.svg:start -->
-## Bookmark · Material Symbol
+<!-- icon-entry:Icon - Bookmark.excalidraw:start -->
+## Bookmark
 
-![[bookmark-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Bookmark.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/bookmark-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/bookmark-material-symbol.svg`
-- **素材／对象**：`书签`, `页签`, `bookmark`, `page marker`
-- **去标签观察**：竖向长方形向下延伸，底边由两条斜线向中央汇成内凹尖口
-- **动作／关系**：`标记位置`, `暂停`, `返回`, `从原处继续`, `保存断点`
-- **可能读法**：`保存点`, `恢复点`, `当前页`, `中断位置`, `继续思考`
-- **关键词**：`书签`, `页签`, `保存点`, `恢复点`, `断点`, `继续`, `bookmark`, `page marker`, `save point`, `resume`, `checkpoint`
-- **联想／语境**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]] · `A18` · 从中断位置重新进入思考
-- **来源**：[bookmark · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/bookmark/materialsymbolsoutlined/bookmark_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留官方 SVG 路径与视觉风格；颜色由 `--icon-color` 控制；在 Excalidraw 中等比缩放为 `36×36`
-- **使用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]（最终概念视觉「一桌，两种保存」）
-- **同步引用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]
-<!-- icon-entry:bookmark-material-symbol-handdrawn.svg:end -->
+- **关键词**：`书签`, `页签`, `保存点`, `恢复点`, `断点`, `继续`, `bookmark`, `page marker`
+<!-- icon-entry:Icon - Bookmark.excalidraw:end -->
 
-<!-- icon-entry:photo-camera-material-symbol-handdrawn.svg:start -->
-## Camera · Material Symbol
+<!-- icon-entry:Icon - Camera.excalidraw:start -->
+## Camera
 
-![[photo-camera-material-symbol-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Camera.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/photo-camera-material-symbol-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/photo-camera-material-symbol.svg`
-- **素材／对象**：`相机`, `镜头`, `photo_camera`, `camera`
-- **去标签观察**：横向机身中央嵌入同心圆，顶部凸起的小矩形与机身相连
-- **动作／关系**：`拍摄`, `冻结瞬间`, `记录布局`, `保存状态`, `生成快照`
-- **可能读法**：`现场快照`, `状态保存`, `连续记录`, `可恢复的工作语境`
-- **关键词**：`相机`, `快照`, `拍摄`, `状态保存`, `布局`, `现场`, `photo camera`, `snapshot`, `capture`, `state`, `context preservation`
-- **联想／语境**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]] · `A15` · 连续快照保留变化中的思考现场
-- **来源**：[photo_camera · Google Material Symbols](https://github.com/google/material-design-icons/blob/master/symbols/web/photo_camera/materialsymbolsoutlined/photo_camera_24px.svg)
-- **作者**：Google · Material Symbols
-- **许可**：[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- **处理**：保留官方 SVG 路径与视觉风格；颜色由 `--icon-color` 控制；在 Excalidraw 中等比缩放为 `32×32`
-- **使用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]（最终概念视觉「一桌，两种保存」）
-- **同步引用**：[[Knowledge/Notes/地图与 IIB 的职责边界|地图与 IIB 的职责边界]]；[[Knowledge/Notes/软件交付中的知识流|软件交付中的知识流]]
-<!-- icon-entry:photo-camera-material-symbol-handdrawn.svg:end -->
+- **关键词**：`相机`, `快照`, `拍摄`, `状态保存`, `布局`, `现场`, `photo camera`, `snapshot`
+<!-- icon-entry:Icon - Camera.excalidraw:end -->
 
-<!-- icon-entry:ladder-tabler-handdrawn.svg:start -->
+<!-- icon-entry:Icon - Ladder.excalidraw:start -->
 ## Ladder
 
-![[ladder-tabler-handdrawn.svg|180]]
+![[Knowledge/Assets/Excalidraw/Icon - Ladder.excalidraw|180]]
 
-- **文件**：`Knowledge/Assets/Icons/ladder-tabler-handdrawn.svg`
-- **原始文件**：`Knowledge/Assets/Icons/ladder-tabler.svg`
-- **素材／对象**：`梯子`, `竖梯`, `ladder`, `climbing equipment`
-- **去标签观察**：两条平行竖线由四条等距横档连接，顶部与底部均保持开放
-- **动作／关系**：`攀爬`, `逐级上移`, `跨越高度`, `分段重复`, `上下拼接`
-- **可能读法**：`技术栈`, `能力层级`, `可达范围`, `局部全栈`, `贯穿范围`
-- **关键词**：`梯子`, `竖梯`, `横档`, `攀登`, `层级`, `技术栈`, `局部范围`, `拼接`, `可达范围`, `ladder`, `climb`, `stack`, `tier`, `range`
-- **联想／语境**：[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]] · `A25` · 三把独立短梯表示各交付边界内的局部“全栈”，右侧由相同小梯上下拼接出的长梯表示贯穿整条系统链路的另一种尺度
-- **来源**：[Ladder · Tabler Icons](https://tabler.io/icons?icon=ladder) · [官方 SVG](https://github.com/tabler/tabler-icons/blob/main/icons/outline/ladder.svg)
-- **作者**：Paweł Kuna／Tabler Icons
-- **许可**：[MIT License](https://github.com/tabler/tabler-icons/blob/main/LICENSE)
-- **处理**：保留 Tabler 官方 SVG 的两条竖轨与四条横档及其相对间距，每条来源中心线各转换为一个 Excalidraw `roughness: 2` 线元素；导出的路径保留自然双笔触抖动，不增加新的语义零件。可见路径统一使用词库标准 `1.8` 非缩放线宽、圆角端点与圆角连接，颜色由 `--icon-color` 控制；卡片中的长梯只由多个相同母版实例上下拼接，不改写母版几何
-- **使用**：[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]（三把局部短梯与一把模块化长梯）
-- **同步引用**：[[Knowledge/Notes/现代架构下的全栈边界|现代架构下的全栈边界]]
-<!-- icon-entry:ladder-tabler-handdrawn.svg:end -->
+- **关键词**：`梯子`, `竖梯`, `横档`, `攀登`, `层级`, `技术栈`, `局部范围`, `拼接`
+<!-- icon-entry:Icon - Ladder.excalidraw:end -->
+
+<!-- icon-entry:Icon - User story card.excalidraw:start -->
+## User story card
+
+![[Knowledge/Assets/Excalidraw/Icon - User story card.excalidraw|180]]
+
+- **关键词**：`用户故事`, `卡片`, `占位符`, `角色`, `功能`, `价值`, `需求`, `user story`
+<!-- icon-entry:Icon - User story card.excalidraw:end -->
+
+<!-- icon-entry:Icon - Conversation.excalidraw:start -->
+## Conversation
+
+![[Knowledge/Assets/Excalidraw/Icon - Conversation.excalidraw|180]]
+
+- **关键词**：`对话`, `沟通`, `协商`, `参与方`, `客户`, `交付团队`, `功能方案`, `conversation`
+<!-- icon-entry:Icon - Conversation.excalidraw:end -->
+
+<!-- icon-entry:Icon - Confirmation.excalidraw:start -->
+## Confirmation
+
+![[Knowledge/Assets/Excalidraw/Icon - Confirmation.excalidraw|180]]
+
+- **关键词**：`验收`, `确认`, `批准`, `清单`, `勾选`, `条件`, `范围`, `confirmation`
+<!-- icon-entry:Icon - Confirmation.excalidraw:end -->
+
+<!-- icon-entry:Icon - Questioning person.excalidraw:start -->
+## Questioning person
+
+![[Knowledge/Assets/Excalidraw/Icon - Questioning person.excalidraw|180]]
+
+- **关键词**：`人物`, `问题`, `提问`, `选择`, `疑问`, `分诊`, `human`, `question`
+<!-- icon-entry:Icon - Questioning person.excalidraw:end -->
+
+<!-- icon-entry:Icon - Checklist clipboard.excalidraw:start -->
+## Checklist clipboard
+
+![[Knowledge/Assets/Excalidraw/Icon - Checklist clipboard.excalidraw|180]]
+
+- **关键词**：`清单`, `问题清单`, `工单`, `记录`, `待办`, `勾选`, `clipboard`, `checklist`
+<!-- icon-entry:Icon - Checklist clipboard.excalidraw:end -->
+
+<!-- icon-entry:Icon - Four-quadrant grid.excalidraw:start -->
+## Four-quadrant grid
+
+![[Knowledge/Assets/Excalidraw/Icon - Four-quadrant grid.excalidraw|180]]
+
+- **关键词**：`四象限`, `网格`, `二维`, `双条件`, `分类`, `矩阵`, `quadrant`, `grid`
+<!-- icon-entry:Icon - Four-quadrant grid.excalidraw:end -->
+
+<!-- icon-entry:Icon - Four-way routing.excalidraw:start -->
+## Four-way routing
+
+![[Knowledge/Assets/Excalidraw/Icon - Four-way routing.excalidraw|180]]
+
+- **关键词**：`四路`, `分支`, `路由`, `选择`, `方向`, `出口`, `four-way`, `routing`
+<!-- icon-entry:Icon - Four-way routing.excalidraw:end -->
+
+<!-- icon-entry:Icon - Upward evidence flow.excalidraw:start -->
+## Upward evidence flow
+
+![[Knowledge/Assets/Excalidraw/Icon - Upward evidence flow.excalidraw|180]]
+
+- **关键词**：`向上`, `支撑`, `依赖`, `证据`, `节点`, `方向`, `upward`, `support`
+<!-- icon-entry:Icon - Upward evidence flow.excalidraw:end -->
 
 <!-- icon-index:end -->
 
@@ -745,664 +329,656 @@ building Blocks ^o3WkwQ8o
 
 模块化 · 约束 · 重混 ^rq7bLKDl
 
-Noun Project · #7669575 ^AaTrUT8s
-
-02 ^ykwI3Poy
-
-Curtain ^ail4Z1w2
-
-遮挡 · 未知 · 揭示 ^vR4PL4f2
-
-Noun Project · #8430562 ^meCD5tKo
-
-03 ^B1WUyKKb
-
-wallpaper pattern ^dqXstFxV
-
-重复 · 规律 · 外推 ^t3AKxc1H
-
-Noun Project · #2516034 ^tMSKSTkJ
-
-04 ^xTX7GQOK
+02 ^xTX7GQOK
 
 Business role ^JGEJsB4Q
 
 业务 · 决策 · 参与方 ^B9CBflXs
 
-Google · Material Symbols ^0Fc2qiVT
-
-05 ^EQgdrOKZ
+03 ^EQgdrOKZ
 
 Product role ^gjc852cC
 
 产品 · 设计 · 参与方 ^FYgQrEAS
 
-Google · Material Symbols ^j2NSSQhz
-
-06 ^wcCA8a1s
+04 ^wcCA8a1s
 
 Engineering role ^HoeEHMff
 
 工程 · 代码 · 参与方 ^CeLOX01k
 
-Google · Material Symbols ^EqxuLq8F
-
-07 ^cEMBq7Q0
+05 ^cEMBq7Q0
 
 AI role ^koA9e3pc
 
 AI · 智能体 · 参与方 ^wAvpxAm4
 
-Google · Material Symbols ^bynIhjUa
-
-08 ^zzEFrEwk
+06 ^zzEFrEwk
 
 UI layer ^cMcNBWb4
 
 界面 · 前端 · 技术层 ^X81wOoso
 
-Google · Material Symbols ^rbIGfIsN
-
-09 ^f3MAMSEs
+07 ^f3MAMSEs
 
 API layer ^Op0Q9TOR
 
 接口 · 后端 · 技术层 ^sX9vgRIP
 
-Google · Material Symbols ^sBUDDxaU
-
-10 ^4uvU4r9v
+08 ^4uvU4r9v
 
 Database layer ^CgZ1LDne
 
 数据库 · 数据 · 技术层 ^mtVsceT5
 
-Google · Material Symbols ^vNMHE30b
-
-11 ^24uYUnkw
+09 ^24uYUnkw
 
 Access lock ^GxuPyuJn
 
 门禁 · 等待 · 阻塞 ^1PFm6XY2
 
-Google · Material Symbols ^HWx941KL
-
-12 ^z6S3ad6J
+10 ^z6S3ad6J
 
 Monorepo ^tpUkUpyb
 
 单仓 · 共享 · 跨层 ^34pQ8VCZ
 
-Google · Material Symbols ^bkoKQhAH
-
-13 ^Iqq680gt
+11 ^Iqq680gt
 
 Elevator ^ai4B0JoJ
 
 贯通 · 跨层 · 端到端 ^gmbTdfi8
 
-Google · Material Symbols ^PqiVRjd1
-
-14 ^h3SkKptJ
+12 ^h3SkKptJ
 
 Finish flag ^dwOAa4IE
 
 终点 · 计时 · 测量点 ^pmhDfDsX
 
-Google · Material Symbols ^frmySfPI
-
-15 ^82Ti0pr6
+13 ^82Ti0pr6
 
 Image candidate ^HFYNFBsH
 
 图片 · 视口 · 候选内容 ^yYK7oozF
 
-Google · Material Symbols ^QD1CpZFI
-
-16 ^mVTkzpNd
+14 ^mVTkzpNd
 
 Text candidate ^e4RMKSjR
 
 文本 · 视口 · 候选内容 ^MgBn2gov
 
-Google · Material Symbols ^rNVE4apN
-
-17 ^ZV3QeqD8
+15 ^ZV3QeqD8
 
 Electrical services ^ivHvvyae
 
 连接 · 插接 · 稳定接口 ^P2juxbYd
 
-Google · Material Symbols ^XsPb7Lb4
-
-18 ^4sUcLIGO
+16 ^4sUcLIGO
 
 Product inventory ^xafD5aEl
 
 商品 · 库存 · 业务能力 ^JkSINqGu
 
-Google · Material Symbols ^2rzy0RR8
-
-19 ^hN93XilP
+17 ^hN93XilP
 
 Price tag ^sblj2NCZ
 
 价格 · 标签 · 业务能力 ^iUAe7H1e
 
-Google · Material Symbols ^0o8UrhMY
-
-20 ^PA2o72xT
+18 ^PA2o72xT
 
 Availability check ^AB4bJnpv
 
 可售 · 校验 · 状态确认 ^74Ulff0a
 
-Google · Material Symbols ^4nTUzlfk
-
-21 ^Wem5MlZM
+19 ^Wem5MlZM
 
 Smartphone ^nNnYafPD
 
 移动端 · App · 消费入口 ^oRtRxKgv
 
-Google · Material Symbols ^fe4JxsID
-
-22 ^qI3QZfAB
+20 ^qI3QZfAB
 
 Shrug person ^QKllD18v
 
 摊手 · 人物 · 权衡 ^XjcazQw5
 
-Sarah Rudkin · Noun Project ^keNHooaC
+21 ^Utzq08P2
 
-23 ^Utzq08P2
-
-Mood Puzzled ^lQ19bQbV
+Curiosity reaction ^lQ19bQbV
 
 困惑 · 斜嘴 · 问号 ^9aaIws8a
 
-Paweł Kuna · Tabler Icons ^SZeiF8KR
-
-24 ^nlGrNmsN
+22 ^nlGrNmsN
 
 Relationship tree ^Zgxy9B41
 
 关系 · 层级 · 稳定结构 ^haBMQbsH
 
-Google · Material Symbols ^bFVMN1Yq
-
-25 ^j47UzUfe
+23 ^j47UzUfe
 
 Filter ^RwN9mnjF
 
 筛选 · 提纯 · 降噪 ^56ghqcS3
 
-Google · Material Symbols ^hc0LsRgG
-
-26 ^116qwuWC
+24 ^116qwuWC
 
 Desk ^8gU3398V
 
 书桌 · 工作台 · 现场 ^pDI62gaT
 
-Google · Material Symbols ^hJU6po7w
-
-27 ^jMsKhEEw
+25 ^jMsKhEEw
 
 Open book ^72ti8nTx
 
 书本 · 来源 · 当前页 ^atp6wNbE
 
-Google · Material Symbols ^kBvmrzKd
-
-28 ^AaMXpJDO
+26 ^AaMXpJDO
 
 Sticky note ^k1Pm9Mkt
 
 便签 · 问题 · 临时材料 ^pHcrhLqq
 
-Google · Material Symbols ^s683Z3iw
-
-29 ^aAGnvC7g
+27 ^aAGnvC7g
 
 Bookmark ^3oiCTeY0
 
 书签 · 保存点 · 继续 ^TdlQbDdz
 
-Google · Material Symbols ^kEVFFaf6
-
-30 ^s9i1nxVT
+28 ^s9i1nxVT
 
 Camera ^4OFcIYIQ
 
 相机 · 快照 · 状态保存 ^fcAOxOiz
 
-Google · Material Symbols ^kpYArBjE
-
-31 ^Ld31NumA
+29 ^Ld31NumA
 
 Ladder ^Ld31Name
 
 梯子 · 技术栈 · 可达范围 ^Ld31Keys
 
-Paweł Kuna · Tabler Icons ^Ld31SrcA
+37 个已登记图标 · 一 icon 一文件 ^LibCnt31
 
-31 个可复用 SVG · 来源与许可见文本索引 ^LibCnt31
+30 ^hjSCm1MU
+
+User story card ^NEKYauif
+
+用户故事 · Card · 价值占位 ^zdHjurj9
+
+31 ^6oIPHa09
+
+Conversation ^rzJXG9em
+
+对话 · 协商 · 共同理解 ^PJK2kiQv
+
+32 ^G8vciMQS
+
+Confirmation ^Tgu20lHm
+
+验收 · 条件 · 范围确认 ^wRhg6pu3
+
+33 ^F2Uvz2VA
+
+Questioning person ^XgWDvziF
+
+人物 · 问题 · 分诊 ^V9yb3dOt
+
+34 ^AEu9mcHX
+
+Checklist clipboard ^Fv8CCl7n
+
+问题清单 · 工单 · 勾选 ^dnw1x3uz
+
+35 ^pXEQqEnx
+
+Four-quadrant grid ^SdNkg9mY
+
+四象限 · 双条件 · 矩阵 ^VT9NTRYG
+
+36 ^p8dWQxkf
+
+Four-way routing ^jJWFtrS9
+
+四路 · 分支 · 路由 ^lzbp2fk4
+
+37 ^8QaPuObi
+
+Upward evidence flow ^lcouVjKN
+
+向上 · 支撑 · 证据 ^3i6dfVDm
 
 ## Embedded Files
-649b4209e11d06793c7282c0ddd0238e23cd1712: [[confused-face-mood-puzzled-tabler-handdrawn.svg]] {"currentcolor":"#001219"}
+3313f807a9ac206f9d36daa658c543cafaf4d9e5: [[Icon - User story card.excalidraw]]
 
-35d16bbcb3c535e0b4836feda06e9931445595d6: [[building-blocks-handdrawn.svg]] {"currentcolor":"#001219"}
+2bf81e21806cddc35caaf0bd4fcdcb925b901660: [[Icon - Conversation.excalidraw]]
 
-36abc29441e56c46412c28e20dbdb4e80feafc83: [[curtain-handdrawn.svg]] {"currentcolor":"#001219"}
+103b1a228d4e998bd6372779135a5f303bc50471: [[Icon - Confirmation.excalidraw]]
 
-56a81038093a8e8882ea537f00c5bde06558033c: [[wallpaper-pattern-handdrawn.svg]] {"currentcolor":"#001219"}
+bbf9d323a545b6e278c9eafa1a93b28e8f69aefc: [[Icon - Ladder.excalidraw]]
 
-4b1c53a456ffbc72ae3d28a7fe935e0cebd376e1: [[role-business-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+8fff208909926613b1549aa070b37a18df30e04e: [[Icon - Curiosity reaction.excalidraw]]
 
-f62b42cdb4448b9f084f93339dda77b53a87c2e5: [[role-product-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+c6061ea80deecb6856d8141ae14987fb77d1925b: [[Icon - Shrug person.excalidraw]]
 
-4821b26942349f283cd3ac863b1532d9ed7c31f5: [[role-engineering-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+0b7f4a38a579587efb61e2e5aab71f4a0b1fb0ed: [[Icon - building Blocks.excalidraw]]
 
-a16a067e17e70dcc7db1ce19d187e046dec4af4c: [[role-ai-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+f1d0bdc1874c3729a9d967bb24663c363291378d: [[Icon - Business role.excalidraw]]
 
-4d09c8c537a9b0086bfcd3ff3c5ebfedf0df4844: [[layer-ui-web-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+b3fdd3d97105eae45b17b7836dd36333a984cb6c: [[Icon - Product role.excalidraw]]
 
-f31166db8b3f6f84d67d8cf8a3c93f7f12b59b69: [[layer-api-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+7bda7004b8dc0ceafd0c296bbe2b7c3a51f34f13: [[Icon - Engineering role.excalidraw]]
 
-ac516d00057eaf3bd5a6d7a3d3e807ebad3cb2e4: [[layer-database-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+65248fd8d8ce113eaceb8639f2b4260c5a6c27cc: [[Icon - AI role.excalidraw]]
 
-4af24f845baf0a3c3d3b1390d6d3fbdfad086d37: [[access-lock-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+607362234feae3546d0de927bd90bf819f4aa626: [[Icon - UI layer.excalidraw]]
 
-3a227290881802f678f16ef014fd622197f94d60: [[monorepo-folder-code-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+16017616cffe77cdbb80ca7f18a10e8de225035d: [[Icon - API layer.excalidraw]]
 
-4a362e9eb6315d3953ffc10b991bb1da624784c9: [[elevator-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+b9151a16af7f326a12b246334e55f35110e50cb5: [[Icon - Database layer.excalidraw]]
 
-f61a82358ddfdda8aa64c5bcd4af08f093335e75: [[lcp-finish-flag-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+6965b2dfd633dc0e8f63e7972c12b509ca9184c4: [[Icon - Access lock.excalidraw]]
 
-6fb4f0b61985d062d1fc3c5326a1545c8837e8cf: [[lcp-image-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+3d2ffe2b537405d730d3c2081e76de3d73cc8b0c: [[Icon - Monorepo folder.excalidraw]]
 
-fa29c270dc5d399037daff9c10c3d7767e391ab0: [[lcp-text-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+6b219f14170d11a88a133944a8632c069c5b51fe: [[Icon - Elevator.excalidraw]]
 
-06cb8e5e91f1aae20fb7360355a7466338606139: [[electrical-services-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+039a0aac3f781c914fa94feac6c996e6e10c94f4: [[Icon - Finish flag.excalidraw]]
 
-ac8772443891444d2bcb5c0881997357d8d31fc5: [[product-inventory-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+9b6eb55b939afc57e94cd63add1120a630769ccb: [[Icon - Image candidate.excalidraw]]
 
-cac2b13777934be7a58249f31a627914acf606f1: [[price-sell-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+87860b56b901ecfd794799ee875f925c4dbedcce: [[Icon - Text candidate.excalidraw]]
 
-12e11d83991fbd3356b3a718f3672782e783397c: [[availability-fact-check-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+1d0ccb0cd24f0205001a175efc40bef4cdc3856e: [[Icon - Electrical services.excalidraw]]
 
-ebf3abe52a703bd8fb3f134dcd35e121de97d808: [[smartphone-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+b07eabf1669bf09c564d271aa296e2b47158d5a5: [[Icon - Product inventory.excalidraw]]
 
-d72c0c0b07ab8d39f0e031285258933a9286188c: [[account-tree-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+6c743c3d760511e09b6089dec17a3c6522458166: [[Icon - Price tag.excalidraw]]
 
-75b5c7cf22e542a9442fb50215a923cbcc69de0f: [[filter-alt-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+4e85ba901c7fae68dfde04d63171417bcecbba79: [[Icon - Availability check.excalidraw]]
 
-36026e017cbc8faca9f9259d07893c2489325aff: [[desk-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+e487aefc795ee90ed90f40157206141a6de8cc60: [[Icon - Smartphone.excalidraw]]
 
-9cee780237c80a9efc5a40b8517893fab075132c: [[menu-book-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+cc31f2c0d353c3e39527c9b597203d91f46d6847: [[Icon - Relationship tree.excalidraw]]
 
-4c8040de3c103453b9692bc526bc8b4f8ce94102: [[sticky-note-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+9eef991b1c8280a394d926e900f7ed5a195b6b39: [[Icon - Filter.excalidraw]]
 
-d9b65dcfd0890e8c35b454271380280eff660b0c: [[bookmark-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+9ab5fb8dc60aaa8d7aa8e013a3f176130086dffe: [[Icon - Desk.excalidraw]]
 
-318f94923bfe1c57a3d66bf236f20b204f08d5fd: [[photo-camera-material-symbol-handdrawn.svg]] {"currentcolor":"#001219"}
+dda9c97808a0c626cc1d50ac35c6a01acd3282cd: [[Icon - Open book.excalidraw]]
 
-caa6db59b750ab746bc9a79ddc576d0b917607b1: [[confused-programmer-shrug-nounproject-handdrawn.svg]] {"currentcolor":"#001219"}
+1bbb0be5a8ab4436b2e18c209d611b5f262a3be7: [[Icon - Sticky note.excalidraw]]
 
-7062e048ebc4be6dcfbe724d1d25e7400c136ad4: [[ladder-tabler-handdrawn.svg]] {"currentcolor":"#001219"}
+a671d34e19d7038abd106a826edd2ee04a84ec7f: [[Icon - Bookmark.excalidraw]]
+
+291a6e1b4ab5afede914b68e885c2d187d52581e: [[Icon - Camera.excalidraw]]
+
+40f64731b945b22b87e8923b8c6a63348d434c62: [[Icon - Questioning person.excalidraw]]
+
+d0f1367f457beb3b6d32b2c87791ddb4f71b344f: [[Icon - Checklist clipboard.excalidraw]]
+
+3ad7ad357d7cbc81f9b08fdfa683fbe2830bbcf0: [[Icon - Four-quadrant grid.excalidraw]]
+
+6eb9a0a5021d19351cb49b9f4f5e2b9f4b5ef0d4: [[Icon - Four-way routing.excalidraw]]
+
+30168ca522ec8fbbbb6cfb201d4bb9ba2338b98a: [[Icon - Upward evidence flow.excalidraw]]
 
 %%
 ## Drawing
 ```compressed-json
-N4KAkARALgngDgUwgLgAQQQDwMYEMA2AlgCYBOuA7hADTgQBuCpAzoQPYB2KqATLZMzYBXUtiRoIACyhQ4zZAHoFAc0JRJQgEYA6bGwC2CgF7N6hbEcK4OCtptbErHALRY8RMpWdx8Q1TdIEfARcZgRmBShcZQUebR4ANm0AFho6IIR9BA4oZm4AbXAwUDBS6CwobggAZgBGVEAqOUB75UBYTUAKV1QAZQA1AHFUAHbUQFNzQAS7QDg5QA7opsBB
+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
 
-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
+EnUxnmXZqQRCZWkx6ZXIa0HxVAAGE4hmKFI2AGsEAGE2fDZSSoBiAE5fgAiAFFgcNIJpcNhHsoHkIOMQ3h8vhJvgAxdEJVGXMEQABmhGaAGVYEMJIIPDi7g9ngB1daSbhVG5Up4IYkwUnockVG6wg4ccJ5NDXHZsOCQtTzNBVS4ijoQWHwgXMIWoEryroXcazAC+zIQCGI3AArL9jYkbowWOwuGhxpamKxOAA5ThiE0JcaLCaXBI3IRwYi4KCGxm
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+VlLBkzJHEPAc7hOnSpM2ibb8iwofb12TBb8qkfshzW9ortlGxFwcSyzw8ci6DfLKxqopM4w4hCUKFfCweVFJHAybgcnC8NBL4OynK3O8PLufpdL4Qy0p6dSBkcipxk4nykjOdwHFihKsB2RxokN51i76p5LsQdB8pWiF3CZYPjo2mFEVwQkizGjKvwyv6gbBp5VThpGDtpYs8Y3EmKbBElc35WUhUFkWBSlQq5VMJVv07HVrbtk1XYjjuHWoBNPV
 
-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
+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
 
-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
+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
 
-wNAaLUiEtzjoRlrA+WaSEFQCQbCm+kBKJRG0nRJFSz9qkDYhwDiAS1ESUoNJbi6jwLaT0hHOMxkJSmQslZbRaBbKYuNjIlyhA9bjyNqYpEgVNY6g0TkLRa8CkXCgAYu45YcmvA+F8RxfwCTMVsaCfADioTOPVn5CAiJ3G1HHNLXxuIhUJW4ME2ezF0rJGqH9SAAc+kQ2yY8JqbC2TJN7GkoqhlInMtjvkgZdT+oGhSkydqmcur2jDegV0jSPRenV
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-pWFMkDkUS+maYiUyR5STqhcl3GVPkoHtyKslMG6LQW5oufKfZqpG6Y21Jsy6NzyaWmoK8xm4Zvnpc9IC5sgQwXvNFt12UbMkXdodymV3eLzdzpRcka2A+GylM5cHJ2jVWW8vChNB6jKQ7d5XPK0fcdVWSuY0vhAubHznzNaXa1ld7W34iM3aC3r/8RH833Sto99W4VbDPfilbeEr1KwG3esoD7cXLY7mt9i+BjvoEBxQEHYOIdQ5h3DhHSOjvoZb
+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
 
-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
+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
 
-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
+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
 
-3I3OaNA2uEAwZbXHzCubAsZMta3WLe/Huc3GtBZUgoecg+6Z3PyVkT2EQzLRgtAegk43LVebgZIG4g0EOE8Yda5TJYowQxJZKY442adcQmPW+JrRdbQweOQhQpQ1Q9dVmEFTQ8FXQsw6FY9EbH4wvcbYvcw69Kw+EgvURBbGvZE4sevElRvdDVwrMSlQkhXKfOlZo0UefSUSDaDDwuDF7LlDWWwuRLgb7YocnKoTYOhC8TQM2HSSMdI02Z2ZQV2Z
+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
 
-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
+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
 
-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
+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
 
-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
+FLq7FhhXRrxEQpb1mnFS5VaXGnKO43FMFdmsGQDJDNgvBAj5KkJcFNiDnvqG6fESHCETnnr/HOaAmLGSGgkLbgntmvncaoifmJhWKvirjMA8D4CYAITAXlBATKC44mkjxUSpYJBx7YLMQTDMUzG1neyzzwWIXIXqZMVURukJB0RehH5FVukelYUMwcQ1FXCv7kU5ICQhlkXQ7hko6Rlo7Rk0W5wrjY4iDRUMUDEtJE7JkwHjE9qqjMUDIRa045n8
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+l5WYyD9nHkheLznWVjlyx58y2VcXL8V1xzjTx8r5V2ryCxrwNuCxJ2blC8Cd2wb0Bj1+14O513CvIZb/t+O0RgHyeEdqMtY3Sc/0H3u67we+78e0y0vT8bGgagfvGxoAHqLQAAraqqQAAFGgAenNAAEBaqpAA98qAA++MSbB9jUqrMPuqwj4yldWItSfDHyvr4DAeFTdACD2jC2IEAMAPIND1SKw8BcmfSzlgWPy58fMcFB0o6WdLjNS+5Ve/Hj0
 
-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
+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
 
-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
+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
 
-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
+IkSRNAVWiSVVEuUDKZhZ1gZCD8GRPavgs1J5DDyeWDZvp0Wp49F2+SHBQV3yZ6h1e+5DfvuoMH4CUCOwlbUBsLEq9xYKew5OmgBVYGDJ+i/FNKaD+xnDOGuXZfjL1X62CzqivB4U8JeFvDRObbRuh4N+Gn9vB1wgEkb117Aih2UGC3iEN16P8O80I+3rbzvZKMXG1LLIfSxyE+MveQAoCqzWFRkCIApCCgDUCEAAgWgtiINnFgtbGc+qkAPWA7Ft
 
-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
+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
 
-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
+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
 
-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
+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
 
-+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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-ygZRoYASnZDcpAWBLDgSmOcPlBHEwLXl7E95dOI1GxL2B93XgSgrjnQlAV30zBZJOwVgrI5Zs9stxHYQEJ2QNxWoAgHBiEJ9MKUbAPlDnKTlNAxAbsggGIG6TcAmwbAEuEslpgom+nGyXE0ckSIpJLkg8u5OPJeTnkPkvyTeUZJBSclLSwpBFPirZAkpsUgflUFRAiAcU34vRO4T85FVOZIQ+niF2iFDz+ZlSqIY4hKmLtJQdwZIM5FyU8sZZ/iG
+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
 
-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
+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
 
-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
+UA8UJ8JA+2PAEYDqAUAXoISt+gWK8RhpIlRWGCp2pdaoKmhTFHOSM24EFzeBzY/gWyI6F5LgOU6knmILnXUrBx3nCpTIKRmMrgujcyUcoLoWR05RO61UKws6UqilinkFKnPx1F2Qhl0oA0SmjXiRgpVkiuec+tkV2Dbhb6yAB+pVXLKNVqy43DvP0XAbDFB8g1WFog3iyMWRyojORqo20bFUjGs5RAFy2KoaN9Gpja/JnospcN3je5UAOhhEb2Nd
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+WdaUpM2Ci4OdK0cRpHl0t6JRdcjdeyvZ4tKdhL2nlcuNLJMRs6XmrnMbrojxg4KAOd9tl2NEscZVZouVe2Sh0WUYdd4yFusqd2L7Deru/Ve7rC3/VKgYeSYPdFwBehEaN6nyLamG6e4eAz0XAOpMmBVBZDYebQ5oFgnt8kJ3q1CWqugz+rMJ38j8CGvwk01w1aoSNSNPQCxqWaRMyaQmvBhOJ8AzNVAOJgBS0D5EB9TwkHp62R98B0UkMK/3D06s
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
++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
 
-+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
+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
 
-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
+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
 
-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
+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
 
-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
+dFfTn6LJb4xzs6U5VWVyLNscoc87fduBQvbgYC47rcd4u3/gA0HCSI/9u7nl+txx4Q8dADsTHb9AIAFPdQANBeqqQqYAEAPW50q7LsqukRfuvrRO40sQBYjSYl4AgE3CvhtOVQNnWrZTm3TvQVDqiFa+3fguN0hTjiPQ7trOux7rrie+CBDbVOWqM9jF/66xcL2eH176UZuo6PtOX3Ij411vcoOQQsI6FmSoWwPtjyk0ZoJPCm/A9puZFajzNzB5
 
-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
+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
 
-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
+cxh9bdvkuAzHiAFsjWsYOK7qrquztbUt7XJ3Yn7V0mOwBAgagyiyYHUFg6RnQlC22nCOvelZ6fpXXuJagr6+oVgGg9nTyU500cjV1AbSpyi+ZOmfPX0g+9x33m93v6ntn+Yd3q6Mb3RHYViNxFa1EIRf3nODOcbqTT5I0op9075M9Y4qP1TNw6Dzclu/3fHvz3hD7eKQ9w6abqHn7yY7+97PmbBztL1IbE0kfj9pvxt7R9K9sYGPb5CBUD+/D5hi
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-XBBEaF5ShU/iRFcBZETwE6+8DnDaUG1Ea24A6mCJDqpeYOvRJJIpUILjCBc4a7oAh9QUCHLhxNtVZiWfEX8oCRO4YJ7e+8Ic6H8cjqhIBEItQIpwqGb0DpIUIo5DwC4ACANUC0IftNoaGSBWDghiAgauL59kphkWy2Slhk5JSS+nhm5eGtnMZ4lqMUnpFLBPgplDvQpkeAZgW+znZ5dgW8vyGXsgoa5HCh7kWh5GyFwfur3aOBp2FLOGQaREUW8o
+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
 
-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
+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
 
-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
+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
 
-nQGgaNm+qsWSUcRwHs+scf4ZRRsSuEtB5oRCEAxeUUDG3+1qo6GDBCIQU7Ox6ALgAto+kjKR9kxwAwiTk2AKORBqlUX2SMgIUDyA4ISmJrCEI4askBshj0LHGxqRMRuHbkQ0cnFTWuRhTHeGxaolQ0xhIT2pGA+gPgCSA+gCoan4zfgY4cxlHgphjkiFu57wGKFtEF0uKBjorxBTZntH9QTjsd7su3Rv5FyxgUedF9xjbgPHXRyobdGpsPYKUEve
+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
 
-SUOziaYooh94b6NQRxHyBhsUV4/ImAMJikAqIHvh6QGbivGU224TJZaBjXpvEOxfzveIR6gpLC7JEEwWi7Rmpfttbph2LjG4s+2YfSFVAMFP+CXAqbhQBN+xcQhFze8YkglrIG3jXHe2aFrL5/2Dcft4zOEsW2FSxHYTLEnRnAT3FyhFCcR65BpHsK6RRAZJgg4c4rhqGMRMoh5Yr6nBNb7cWHCfOFpRi4XPE8J4pPwmCJwiblFiJNsRIlCRhri1
+UCEgQIEa5TRJrsjHJ4jUS+Yk+A9uHGfmKfufEMmtPs+F/WF7u8E5+GAW6Gkxj8eTHPxgVtTHCO63vgH5xM0abCygHniL4sxUEUQSkyM6IUat+tAe34L620VkEwJcCQglIJduqgnD+6zhgn4RIhlLFdxIIhW5XRFjv3H+6xCWb6eJs8XrHzxZXroyDWVAA74r4SsVrErSgMZtYFqwnt77hEJUYpESAr4HACXAdQL8Crgr4G0Dh+QcVBDmW67mjH6R
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+WUnFEZCWSRkjpzqWOlUxaWUonUZYpuS49KbGbln8wQuZuIbIUVloaMy66elZbRAOdumQAQOSDlg5EOVhEiuXAegncpjWbynSul0dJnuJf9v7o4ZKmTxaG5PVlb76Z/3meBFY2ad+A8RgoBrG/oESQJ5fJzsVjklpzmbjlBmlQPESYAQgCvgwAQgDESYapOWnpw8a7lBSlk+SdtmoZGMYimdph2mUkvB8cTXLIBN2agEPx7OU/ENJBLtzmTppLqom
 
-ng+3mcLm+ZNGXOnX6h4ZNjsOm2J+E7pz7nrkbpxTFXnfh66ZFkuBIYVe7NabkHpEWw6wdgCIgtMHBHFx8CcXq2ekmTOqoJbnm+noJTWfyngEP6azF/p/1vgnJBhCR3HbJvWWBlSpOmYrF6Zw2fDYBOXYrhz0R44UhmTmtBiKDRRYSmUDVBC2QbGc5WeYTCPAiIJV7YAA6nnke+fQftnCRlqSekR6mcaAnkaEgAeAkpnSWxlphvSbMFm5UOckBCA9
+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
 
-AGbDJApALDlspJes+nSZdWbJn16+abjmFp4sX7mtxROYHkk5FaV4nAZdbn2GDZfASrFkee+ShF1AY8Z8FTZ84DKRJRdybl4PJiSf2n8GXOZIQP5T+S/mGpnmVXbv5heQdkl5R2UiFBZKIQAUbBTpEp6/IUhQ9naeT2biHf5wJgoh1J7ghIAeSMOKEDSed2fCnkh61imERugEeDngF48txnxCqIMoADqiIBeB5giBSQEVxRErVn2RfIdL4YFWCQ0a
+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
 
-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
+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
 
-ead4kJWmcQW9hvZmQWURUeeR5Pqr0KlGTZaXokXM5mNu9HzZRVjfmZ5KSbfA5FeRa/kTpBecUV/JpRWLmN2hSeIXFJVQP0VDFQwCMWOpQOT/7FM8JcMV9FoxQekgB0Wc9kfmwJshhqFYJg3kqRe6W+5rWOIqDll+JhcBFmF5uQaj0A44DIQ6Q/4D4yF6yOQ/Zt+HKS7ncpmOWLhT5XuWUiMBxxftHma/hWWkEFa+WTngZPibpmHJysZHm75asUCw
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+sma1XtViqF1U9VqxbDWZlNsR1XdV2ZXpm5lASbgkfpH5HwXoAQIPWGfRPAC0BvCmoSZx/+UwA9ZF6tsFYGwGKGbYGtRf2BeEuBl4QoUZmj4agYqFzlUzkWln4UEEQlo5UOW1FgBfdlXVxLnHSeQ/0m9Kj6kEYkFaiSwLMiFUq5RxnS4KITLkJVv1SaRNxIsUDVzJvhVxX+F5BX9SkREAO2rHQfSZHi0hgeEfg1BJ4HHhFhJRu7gMQzEckAaGkYHd
 
-jWWQsHIJVwmg2lRkW6V01S1Rw5jIDITdAjwKRoFFb+YJEf5eSVZUEyEevaJ3Vm2MuR/hHGm9UJVPSdMWm5dJVDlGACQJ0AqG5kjmbA1zUruUHgb0OrWLUTIFrU6lqBUeX61HhTVVKZnkaJUI1jVbbXNVNbtpnVp6NbKkKlXVVQUvQ7BOXFahQ4Mfn0SS5GTUMCjZRTV6lWGTqkvJQdcoAh1YdRHV9lNoaZVM1G8cIXrV86WIVbVEhegAp1HpX9jH
+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
 
-1QtY9keVotR4ZPiEtWCbpUWlIEBwAy2gbkGFExbOXGFn1Zxk519FQmhwAZsCqAWwMAOyUO5hVc1KQGkaCmJvQVdc2iC42tfB5uFDdSeXFuQlYA5rJHWSKmI1TIpKUo1jpGjV3FnVVRE41cqiEoIZIOuPUeMjBWt6HaftZNUB1NNWUBL1K9eHUM1guStVglIuazVdWSFStgV5ClJwDXkT9aVr31Ajc/UjWiflFmXVreW4HKOeQLC6AAqsqAAy3LKQ
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-4pgAAxKeKVq36N7GTSVf17bZPLKAguvhDEAvoOUn9tFKoO2OFoylXGjtbjQ63+WVVWS2TtO0XVU4Fbde3F7N2DS1XSVRzb3V+J/dWc3stxyI8ixFo9fEVHOGHA6itomNvuCHtgIa2UntorWe2ptOTfK15NmbTvXKt5RfvUlN21WB0QdQwNB2wd8kcp1VNhKZB0wdP7armtNEeg8Ca526cC215iAUbk6tFKXq1tt/7qM3/YV9t0DmQtMCFBspuHWD
+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
 
-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
+2UN9Wch2g1sxeDUtZl6TGXXpCsegB5IwlQJ06Zz6fxZ1VONYjmr0QPhJIcASYJIADQ30Y5K2Zh9MJ1vlgRHf6lq4MXD4e5gmMQA+x34LgDJA+YMi6zVYFfdYmVocXCl6lmMaK2KF9lYCV7Nunc+1VtiHCc3l1Y5RdWmdvlQRWGF8JbdUgyTEcXmsxd0ldAjONFSVmMp31VumJV7nXB1edPhcQUodRtRDXUlNVsF1xlEgIl3JdqXdEBFa+3cwApd5
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-FBwDngI/FbbRA5Fc22JV0btSkjNdKcQBMp08skAvgxtesXblhRnY0toGObxW7M0NZrwoNHkRUMKDLY/KNtjuyRn2dj6g3KnUJzQ0pXgwGGYONi9TwDuAp5IfLiPsRk44MPmDM43OOWji415nPdkww6M5tEKsU2bj21aePnjuME0lcUJ9ZtjUTzABeN0TenR0UGdIUqfBQBgABN+gAJ0OykAG6AAb6bKQgANK2gAPOJvE3B2UV2Y9Z25jAyaM1wA+
+HADOgEZqBValaQxBWEmR4cSaeRanfBVo9oDYKPv4n+SaVOV8Y4OWvD7lYZ0ftfXV8PcDT2cN0ttI/IVQIGfqXZ3iqlFQSriDuo5WOK81Y7WPJApowh0WtvPZaOn9C7Xk31DUNeiNFVEgFuOrFRE8V5zxAw2+mGDQRV+pa9lrBIAYI3Q+0MZdilcgPX+qA67l2DpaRDFg9dIS0A1AtiE96ZJBlbibKeJlYAHde3Iw+Mo9b1o10CjoQzkjhDH45n5R
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+znDrgVQhSmw5G5TL0GvSlSIS5WB5IPTTeB1AAEHRByQcY7wNc3Pr7lB5vsLbIe1SvLFgdeVX0H8e+bncFQRTLZP7RkECAwAlwGrCQwj7KuFahyMWMzHtcQBGM7hyPbswSzdpIhAvbh7QIelbGG1Kspzhu0nnYbJu/LCZzSYzIf/jQO3nNT9b2rFQzw6h7JR2dLsIm7et3m3PsI7mC3XH6H+B4QfEHq+9jtiZuOyREfi35PNxFN20LkiE7mYPHpQS
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+aAlG90MmjTAvoAzAg0KLRdAmqsHF2EzzAkbONAD8x4ZmEASx4mu87KjfzvxbiakBBGIcAJICcAA7q76Zd1g6cfpTxaxgNHWoUHSMh4K+N8pPnt0vkgr9i1Z/NIb38+nVKIza6Ic4xXx/+dpzne5Cu3uKq0Cf2L6Y4H28Dzi0ngoKyC5RtTAk89fgDbHzdLnx9W/bgdmXK5xZczbVl+sbzbZprSVEYhIIleyAKV/BmrFq12nDrXqV04chTiezPlyu
 
-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
++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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-+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
+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
 
-52VyswojtKiKMPPVD5Qetv1B5Kc6Xu9z/PavcX208/P+r8EmAKSJxZdb+hgyHBLg6bDp+9n2H9C+5fRnwV/4fxJ4R+Tnot9r0Q9KhsQhsgmMbvKBqRL6pI+DpIGQjuI9CJGiawPYOb1KJ4Yzau+zdq/7MG3TH6I3XDrq9v2wunQM7AhEcAFeR2F1tzk9DNj55geiaByGcvhq/2MHNSv5iW4fDUpjp4frRhZztuATZ6yCflnEX1bvOPnPRHcwfOr4
+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
 
-fd6v0ebdHnOvQ1u3LfyGcezkub0M2gTvenzl95fxn6Z/xPNox5eIvC7yk+lfJH1LvbVoP56CyAkP1zYyF4v+D9S/uh/Es7PsD4yPi1lx5tiAA356AAFUr/Z7wOyPKQgABG2gAJyxgAKaKOhw58d7yZ/bepnwWz2pQYcInwm9dI+7W9g0/541NY5wp0WcnroH+J+qvWl5WdSnk39mstPM3989wT837RGRO594uAjj/Uu1ey9OldKsVWBn3t88/0z+
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+HAAEgBQBnQJoBKus9k5qkZUdFpo9NaPEB4gcIDJQWID3/uSY1NJM8DXs3tefnDcMXgjcLNkjcbHsUCdQba8ygfa8Z0hKpR9gM5qgTpcpSGjwXWHPpfgRYDO/v487QcCDQQcg9dlhFt0fs6DMfqQthgR1lowaqgEwcmC0wUVodwXGDEwYqgUwemD0vlx9Zgfyg0sJoFVdvRAeAKiB4iLT9yzk9NaljpF05LDRr7qLMeRsi8/5o2dTPpal0Xm/dMXo
 
-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
+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
 
-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
+J8IeWBnQERCSId0CzDrc8I3uF8NwZSstwbbwGVmMCXuAysgwSdMMvleCXVJzRLppcAV8D+QOAISBirnT883vVEixJtBjgX/s1blfdRVkT5STLWIlmhlDPIte0n7mVty3mqDoGjK1a3sOV8NmL8IuP/d1Ljh9DVoA0NWk7EKXsVgZ0DL8oHiWMq2EUQzQNhC5wa0DL4DZDCIcRDHQbNtIQbPdoQaF0GwvoZGwqGtE5KxFroA60aIhdBheMkVBcCb9
 
-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
+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
 
-bbGgvzqhfOpaCQ0C7b3cC6dvQcGAQ1UYRQ4UAW6Jb6ugk5CI0TU5KQzq5fXF5L/Q1KGaQ/Lp3/LCFFfUkHZ/UGEnZYpiowjGHYwoYD4w0rQ6woYBYw3GEEw495gBY8Hd8NZCZTcj4Hg1OoFg0iGzQoV6YPfEySACciIgZgDmQZQA3uPz6QGGxYFDWAzNg0qBUgNsHJEDsE+dRV7aLZ56h3He4CwkKHGAwoHvcPsaybVEEH/eiQoOOJCJAWcGvbLL
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+5WQ9eGbw+xFkIiiHHwh574AumGHrTJFPAbJFFaXZGPAfZEXg4n7UHa8GXgIHwb/MWGAAXfkv1i91FUIABzv0AAt36Xw7b7Xwx6FgbF5STVY6SaAAEDEAKpY8QyFKDPLAjGw8RGkmD/7jPK2HtIn/4lbV/LP3Mz4XAz74sDHF6DwyCHoyOz7IwpBEBhEeBukJmJCDHraygNLCNEN5p4w2iq4IhZEMvXz7/MOxEkIhxGnlfeHOI1B5rg6mEug7fbbI
 
-/TT5ecoPQO9yPmhrsL3wZsASAT9WOAnX2/eFYwqRwoEf4W8iDhrYN9gYcI+uEcKBRxc19+FoJyBQUPoONN0Xhw4KkhqyA7SL0JZuxrwCeRWDego8VRRCbXRRZiO2y7l1VhbgOFuRHzmRFJ2We24LrhLKMo+tcOo+9cJG2TCP06H+lbhpdlshEAEjA9AFlAn2AQAxYXvBytSSgmV0SBNxEQBRoOJa48LseMiIcews1/BpP3FmN0PEhd0PtBR9yIBT
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-47bEW4+66CBdg5RtPx5qVdkDkuSdDXo+P6zTIhEVWOAAcAVED/VL2GDE6xHWEvCEMonn6bE9ADTWc34coomFR4kmFiAvrHvAXoCrnVEDHAeu5jY3Hbp48JCFErnCVEdixe7KkAhaKsyAow/Hcw/yFk4vsEGAyvHzwjf6ZoySFJw4JLdgSwF3410HScNhAn/UEmkOcUmSkjZDSkyEm6QtcH6QnLGC4x7F0Iw4a/olUnmQ2G5S4wHH3wqbZq7d4Bmw
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-BejGTH7krAmLAnAmpqZTH4Ei8k5qPqHXkhlFEk8KS6Y4H7rzVEDSwcgCmYz8kvw4t7yU5974mZIBEsC+wvgZIQvgSvap4rSaCEqCkdSUoyGgT1AIUn1CNI0EGXUzwqyE9pFOkhQkuk22lU4uok048LEBkNfwc0rsmtE5PLkuWMjDUn5Du3IGn+00WmRk5jF6Q1jE5/PFHMUv7AN0rIBN0+SL30pgD95c8RDrFaktw4DHdUWFyAAD7dAAFzmykEAA
+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
 
-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
+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
 
-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
+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
 
-x2wIQAvEAMzOmUMzumdMy1QN0BPQFYAvXkQA4sD9xFQNYBU0LUyVmZMy1mY2SigMcyumZkBzIME1LmaszMgIVkSynczTmZkBOPtq04jM8yoAMMy3mbe9KShcyOmVcz9ANJA+NJDD/mRMyvmWcyJfjozlQBQB+QIFBdyJ8zhmcT5iANCztKHCyDUJ6AYWcszAWaiypIFkJs4Niz7mSMyEUDcy0wMlgjhstZrbMNQtMGONIsdhxY/oUzlipSz0UsHB
+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
 
-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
+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
 
-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
+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
 
-KbZVQAfoTMANgHRnf2k3BSZHkCAAA===
+PCJyJVkbQ4FmqsqpnX4rplB1RtmUglJFHQuULgAGqC0sG67EgXoYb2aACkQLIB6IDNArABgCEABAAUAcTD4k1EDjAV+q3TYYBB1Q7BNQDYKZAYkCvjZoLufSjmwwajk5AWjn6AYjkus1I5Uc9ODsch950MzVmscqADsc+jnN6KgSwQMTyGgQgAQ8ZjkiAXjkhgfQCic54CQwNOBWARk5TUFyYYwcpQ8cmjkKcpTnnYvDksc+TmZAFoCfDHTlschT
+
+lJJBtrmc4TkKcks63Qn2A2cvjlivC0iGcuTm6czIAYIGExNQFWJOcvTlRAIxDfgQ7AZSUiDXsCQh+czIBduYgBBch4AUAULlWINOCxc2TlCc9jkxcjKSrgZpiiQZLnGc/QCVRabCmczkBM4RCRdWC6we2B0i72JYDHqJWrVQ4rnvAfAD36O0DbwFIAIUFFT+RA6gcMooBlRSyTJEHnwMAAgBsIRuBIQDZkukP+QRc/QCmcwbpl+Sjmjk8/x4cmbk
+
+hgMYKOc0cn7FE8BduEKTW6JtgkAUzACITJFeGHoDKACEAAACj+wfAAp6QUA/hLECuA3sAAAlDiBGEA/RvolkhSAAdzcAMdzCaZ4RfIIcJPuVaRjQLdzRuUZymoPpykkgI9wuRfxGEJwhKPPjBeudkB1uf1Bl/nUShHqKjIACoRsOe5jRQHQgSEEjyxPGnBngNHYU+Gjz5QNkib4CoQNJHDznyKNy7AArAahMwBCQCoRTtrxJ53CTzbJBxxaWOrJG
+
+AKuBLJNiZeuZGYwgDvNlpHI0MuSdhkqSCgDAISAMgAbJ+YAbxvoncAbcqLB2eZzzfkKNzHAMwB1uY4QuYDUBsgMvFRGPyhjwHjBrHLagmAF/SVIDDzSeZRykwOJhdeQMA1uabyCedYIagCQBjijuBqYHTy4AHjBreczzbeS+hHvOLzd6CtyVIBbwrwGjBp3k5odQCAAdQEAA
 ```
 %%
