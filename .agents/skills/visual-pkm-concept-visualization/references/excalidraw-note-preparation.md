@@ -103,7 +103,7 @@ python3 "$SCRIPT" \
 若入选项含 `/tmp/` SVG、PNG/JPG 或其他本地图像参考，dry-run 会返回 `status: needs_materialization` 并拒绝 `--apply`。先按本节后文规则把每项忠实描摹为 Vault 内原生 `.excalidraw` 组件，再显式提供映射：
 
 ```bash
---icon-map "/tmp/.../selected.svg=Knowledge/Assets/Excalidraw/Icon - Stable name.excalidraw"
+--icon-map "/tmp/.../selected.svg=Knowledge/Assets/Excalidraw/Icon - 关键词1, 关键词2 - Own.excalidraw"
 ```
 
 脚本提供以下保护：
@@ -134,16 +134,16 @@ bash "$PALETTE_SCRIPT" --apply --path="$NOTE" --register
 bash "$PALETTE_SCRIPT" --check --path="$NOTE"
 ```
 
-登记知识卡只是用户选择的色板维护，不等于把卡中组件自动登记到 Icon 索引。没有选择项目色板管理时，不运行这些命令，也不因未登记而阻止报告完成。
+登记知识卡只是用户选择的色板维护，与组件是否出现在 Icon Library 无关。没有选择项目色板管理时，不运行这些命令。
 
 ## 入选 icon 落地与嵌入
 
 知识卡 Drawing 可打开后，读取第 4 步 `step-4-preview.json`，按用户贴回的候选编号展开其中 `icons`，去重后只处理实际入选项：
 
-1. **统一原生格式**：所有进入知识卡或 Icon 索引的 icon 都必须是只含原生元素的纯 JSON `.excalidraw` 组件；SVG、PNG/JPG、WebP 等图像只能作为临时描摹参考，不得直接成为永久 icon。
+1. **统一原生格式**：所有进入知识卡或 Icon Library 的 icon 都必须是只含原生元素的纯 JSON `.excalidraw` 组件；SVG、PNG/JPG、WebP 等图像只能作为临时描摹参考，不得直接成为永久 icon。
 2. **复用本地组件**：`src` 已指向 `Knowledge/Assets/Excalidraw/Icon - *.excalidraw` 时，验证场景可解析、内部没有 image 嵌套、存在单一公共 group，并按现有颜色直接复用；它被视为已经完成描摹。不要复制出第二份，也不要因配色不属于项目色板而拒绝。
-3. **描摹临时参考**：`src` 指向本轮 `/tmp/` SVG、PNG/JPG 或其他图像参考时，不把源图复制到 Vault，也不把它作为 image 封装。以用户已经确认的预览外观（包括颜色）为唯一机械目标，通过 Excalidraw 插件／API 用原生元素描摹为一个结构完整、可识别、单一公共 group 的纯 JSON `.excalidraw` 文件，保存为 `Knowledge/Assets/Excalidraw/Icon - <稳定名称>.excalidraw`。创建前搜索同名与近似组件，能够忠实复用时不重复创建。
-4. **不自动登记词库**：落地组件不自动修改 `Icon 索引.md` 或 `icon-index-registry.json`；只有用户另行明确要求扩充视觉词库时才登记。
+3. **描摹临时参考**：`src` 指向本轮 `/tmp/` SVG、PNG/JPG 或其他图像参考时，不把源图复制到 Vault，也不把它作为 image 封装。以用户已经确认的预览外观（包括颜色）为唯一机械目标，通过 Excalidraw 插件／API 用原生元素描摹为一个结构完整、可识别、单一公共 group 的纯 JSON `.excalidraw` 文件，保存为 `Knowledge/Assets/Excalidraw/Icon - 关键词1, 关键词2 - 来源.excalidraw`；完全自制时来源写 `Own`。创建前先在 Icon Library 搜索同义关键词并打开近似组件，能够忠实复用时不重复创建。
+4. **文件名检索接口**：永久组件统一命名为 `Icon - 关键词1, 关键词2 - 来源.excalidraw`，保存后由 Icon Library 自动发现。逗号分隔的关键词用于搜索，末尾来源用于标明出处；文件名就是唯一索引，不另建 Markdown 清单、JSON 注册表或逐项元数据表。
 5. **嵌入知识卡**：通过 Excalidraw 插件／API 把每个入选 `.excalidraw` 文件作为 image reference 加入目标 Drawing。每个 icon 保持独立可移动与原始纵横比，只按编号做无语义的松散横排或素材托盘并留出间距；不添加标签、容器、箭头或关系，不组合成最终画面。
 6. **设置视口**：让初始视图能同时看到全部入选组件。若目标已有 Drawing，不移动、缩放、删除或覆盖用户原有元素；把素材托盘放到现有内容边界之外的空白区域。
 

@@ -97,7 +97,7 @@ AI 输出中的解释、候选和诊断应标记为 `AI 建议，待确认`。�
 |---|---|---|
 | 读完材料后核对理解 | `visual-pkm-deep-reading` | 阅读复述、疑问、粗略结构或候选命题 |
 | 把一个抽象概念、句子或现存卡中的单一观点发展为带 Excalidraw 视觉正面的 Visual Main Note | `visual-pkm-concept-visualization` | 自己提出或现存卡中已有的明确核心观点，以及自己先列的 3–5 个关键词 |
-| 把已确认的 `.excalidraw` icon 组件登记进 Icon 索引／视觉词库 | `visual-pkm-concept-visualization` | 已确认组件与关键词 |
+| 把已确认的 `.excalidraw` icon 组件加入 Icon Library／视觉词库 | `visual-pkm-concept-visualization` | 已确认组件、关键词与来源 |
 | 改进思维导图、概念图、Brick Road 或 Idea Atlas | `visual-pkm-spatial-mapping` | focus question、思考动作和最小粗图 |
 | 建立或维护项目／书籍思考总部 | `visual-pkm-idea-integration` | 中心问题、第一批材料和初步摆放 |
 | 找关系、反例、比较项或修复检索 | `visual-pkm-knowledge-exploration` | 首轮回忆、比较或检索失败路径 |
@@ -146,7 +146,7 @@ AI 输出中的解释、候选和诊断应标记为 `AI 建议，待确认`。�
 4. AI 基于这些词扩展符号、隐喻、类比和视觉参考；
 5. 第 3 步由 AI 逐一解释五种视觉框架的基本逻辑、用于当前信息时怎样组织以及最突出什么，再由人类选择；本步不要求构图、icon 或草图；
 6. 第 4 步按框架寻找实际 icon／视觉组件，固定生成并打开系统临时目录中的 HTML，供用户预览、选择和重组；用户复制入选编号贴回对话，HTML 不生成最终构图，第 4 步也不写入 Vault；
-7. 第 5 步回显第 1 步记录的卡片路径；先运行 `scripts/prepare_visual_main_note.py` dry-run，核对目标、编号、组件与待描摹项。获得“初始化并嵌入”授权后才加 `--apply`，通过 Excalidraw 插件初始化该卡的 Drawing，保留 frontmatter、正文、`sources`、`up`、有效链接和原场景；所有永久 icon 都必须是已描摹为原生元素的纯 JSON `.excalidraw` 组件。本地 `.excalidraw` 通过结构校验后直接复用，入选 SVG、PNG/JPG 或其他图像参考按确认外观描摹成 Vault 内原生 `.excalidraw` 组件并用 `--icon-map` 传给脚本，不复制、封装或直接嵌入源图且不自动登记 Icon 索引；
+7. 第 5 步回显第 1 步记录的卡片路径；先运行 `scripts/prepare_visual_main_note.py` dry-run，核对目标、编号、组件与待描摹项。获得“初始化并嵌入”授权后才加 `--apply`，通过 Excalidraw 插件初始化该卡的 Drawing，保留 frontmatter、正文、`sources`、`up`、有效链接和原场景；所有永久 icon 都必须是已描摹为原生元素的纯 JSON `.excalidraw` 组件。本地 `.excalidraw` 通过结构校验后直接复用，入选 SVG、PNG/JPG 或其他图像参考按确认外观描摹成 Vault 内原生 `.excalidraw` 组件并用 `--icon-map` 传给脚本，不复制、封装或直接嵌入源图，并统一按 `Icon - 关键词1, 关键词2 - 来源.excalidraw` 命名，由 Icon Library 自动发现；文件名是唯一索引，不另建 Markdown 清单、JSON 注册表或逐项元数据；
 8. 把所有入选组件作为彼此独立的 image reference 松散放入初始素材托盘；新建或首次初始化的 Drawing 可以使用项目 `--concept-color-canvas` 作为默认背景，已有 Drawing 保留当前背景。知识卡自身不添加可见的满幅背景或外框；需要固定导出边界时使用描边与填充都为 `transparent` 的尺寸矩形，由父级地图／大卡决定可见外壳。验证重新打开可见后，由人类在该知识卡中移动、缩放、组合和补画，完成第一张约五分钟的粗草图；用户可以保留让核心机制可见的少量具体实例、状态和短标签；
 9. AI 只描述元素功能、可观察歧义、差异和可能读法；人类判断感染力、代表性、记忆点、细节取舍、正反面分配与最终配色，并选择最终视觉；
 10. 项目语义色板是可选的统一方案，不是定稿 Gate。已描摹 icon 的内部颜色始终排除在色板审计和迁移之外；只有用户明确要求统一视觉语言或登记受管文件时，才对画布背景与本卡非 image 原生元素通过 Excalidraw 插件完成语义映射并运行逐卡配色命令。

@@ -55,11 +55,11 @@ excalidraw-plugin: parsed
 改进后重新运行 ^M5O2vyXj
 
 ## Embedded Files
-960c313d4c49cc264d7959c6bb8d1e051d3586c4: [[Icon - Checklist clipboard.excalidraw]]
+960c313d4c49cc264d7959c6bb8d1e051d3586c4: [[Icon - 清单, 问题清单, 工单, 记录, 待办, 勾选, clipboard, checklist - Flaticon.excalidraw]]
 
-36443dd730c6f269c2cfa402a21199549c66c17c: [[Icon - Smartphone.excalidraw]]
+36443dd730c6f269c2cfa402a21199549c66c17c: [[Icon - 手机, 移动端, App, 应用, 渠道, 消费者, smartphone, mobile - Flaticon.excalidraw]]
 
-fa9cee902ae41e5595bf893e123c44725e2223b5: [[Icon - Upward evidence flow.excalidraw]]
+fa9cee902ae41e5595bf893e123c44725e2223b5: [[Icon - 向上, 支撑, 依赖, 证据, 节点, 方向, upward, support - Flaticon.excalidraw]]
 
 %%
 ## Drawing

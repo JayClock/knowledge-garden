@@ -47,13 +47,13 @@ LCP｜视口内最大内容呈现 ^7GctAHe0
 > 4.0s ^bDjlnFkY
 
 ## Embedded Files
-5c9202804565413ab3f4cc6c915f61aeabc79f62: [[Icon - UI layer.excalidraw]]
+5c9202804565413ab3f4cc6c915f61aeabc79f62: [[Icon - 界面, 前端, 网页, 浏览器, 笔记本, 技术层, 模块, UI - ACNH.excalidraw]]
 
-96d7958e8835a119ff26a7627c12709a34de7c27: [[Icon - Finish flag.excalidraw]]
+96d7958e8835a119ff26a7627c12709a34de7c27: [[Icon - 终点, 目标杆, 旗帜, 方格旗, 计时, 测量点, LCP, Goal Pole - ACNH.excalidraw]]
 
-a9ba53b2eab75b7fc79e1bd9fe8269e09d1c49e6: [[Icon - Image candidate.excalidraw]]
+a9ba53b2eab75b7fc79e1bd9fe8269e09d1c49e6: [[Icon - 图片, 图像, 媒体, 候选内容, 视口, LCP, image, picture - ACNH.excalidraw]]
 
-ea8a7a692d29e2c01bdd13647e957f59f1113181: [[Icon - Text candidate.excalidraw]]
+ea8a7a692d29e2c01bdd13647e957f59f1113181: [[Icon - 文本, 文字, 标题, 字母, 字体, 排版, 文本块, 候选内容 - Flaticon.excalidraw]]
 
 %%
 ## Drawing

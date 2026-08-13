@@ -63,19 +63,19 @@ H9UuRyen: [[Knowledge/Sources/Sketch_Your_Mind_-_Zsolt_Viczian.pdf#page=115]]
 FvP3NEpF: [[Knowledge/Sources/Sketch_Your_Mind_-_Zsolt_Viczian.pdf#page=115]]
 
 ## Embedded Files
-fe434a10ed880a4f05f6332449dafe0f386fdaa4: [[Icon - Relationship tree.excalidraw]]
+fe434a10ed880a4f05f6332449dafe0f386fdaa4: [[Icon - 关系树, 层级图, 目录, 节点, 分支, 知识地图, hierarchy, relationship tree - Flaticon.excalidraw]]
 
-bcd97e552cc1ea7ad219245f64f824039d42f75c: [[Icon - Filter.excalidraw]]
+bcd97e552cc1ea7ad219245f64f824039d42f75c: [[Icon - 漏斗, 过滤器, 筛选, 提纯, 选择, 降噪, 已应用, filter - ACNH.excalidraw]]
 
-be1e06d5318b73de47e64a4806430b8d8825903c: [[Icon - Desk.excalidraw]]
+be1e06d5318b73de47e64a4806430b8d8825903c: [[Icon - 书桌, 工作台, 研究桌, 工作现场, 材料位置, 上下文, desk, work table - ACNH.excalidraw]]
 
-fc46d147cb8f6c1e921b08b5e5d707393be0c1d9: [[Icon - Camera.excalidraw]]
+fc46d147cb8f6c1e921b08b5e5d707393be0c1d9: [[Icon - 相机, 快照, 拍摄, 状态保存, 布局, 现场, photo camera, snapshot - ACNH.excalidraw]]
 
-2127c6c7af9b0d18e277c3dd30ee214cb3540194: [[Icon - Open book.excalidraw]]
+2127c6c7af9b0d18e277c3dd30ee214cb3540194: [[Icon - 打开的书, 阅读, 来源, 当前页, 研究材料, 书本, menu book, open book - ACNH.excalidraw]]
 
-dc892b778ee9ce05195963ae11b058f91981025b: [[Icon - Bookmark.excalidraw]]
+dc892b778ee9ce05195963ae11b058f91981025b: [[Icon - 书签, 页签, 保存点, 恢复点, 断点, 继续, bookmark, page marker - Flaticon.excalidraw]]
 
-385ef0cecfed44872a8dc5343931d5fd5273163d: [[Icon - Sticky note.excalidraw]]
+385ef0cecfed44872a8dc5343931d5fd5273163d: [[Icon - 便签, 折角纸, 问题, 假设, 线索, 下一步, 临时材料, sticky note - ACNH.excalidraw]]
 
 %%
 ## Drawing

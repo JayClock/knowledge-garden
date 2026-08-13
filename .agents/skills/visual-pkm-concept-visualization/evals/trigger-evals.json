@@ -11,7 +11,7 @@
   {"query":"我有一句抽象命题想画出来，但还没列关键词；请按核心信息、3–5 个关键词、AI 扩展、逐一解释五种视觉框架后由我选择、第四步固定 HTML 图像预览、第五步把入选 icon 落地并嵌入知识卡初始视图后首次草图、ETC 和反馈的顺序陪我做。","should_trigger":true},
   {"query":"先把 @Knowledge/Notes/用户故事.md 转成 Excalidraw 可读的空白视觉卡容器，我要自己画，别替我加元素。","should_trigger":true},
   {"query":"我没有现成知识卡，但核心信息和 HTML 参考已经选好；请在第五步创建 Visual Main Note，把我选中的 icon 落地为 Excalidraw 组件并嵌入初始视图，再让我自己组合。","should_trigger":true},
-  {"query":"这张最终采用的 Excalidraw icon 组件已经确认，请登记到 Knowledge/Maps/Icon 索引并同步固定注册表。","should_trigger":true},
+  {"query":"这张最终采用的 Excalidraw icon 组件已经确认，请按规定文件名加入 Icon Library，不要建立额外索引或注册表。","should_trigger":true},
   {"query":"把这 24 张软件工程卡整理成一张 Concept Map，重点检查 linking phrases。","should_trigger":false},
   {"query":"为一本书建立长期研究总部，把 PDF、播客、章节笔记和问题放在同一个工作区。","should_trigger":false},
   {"query":"我刚拿到一本 300 页 PDF，直接帮我总结中心论点和十张卡。","should_trigger":false},

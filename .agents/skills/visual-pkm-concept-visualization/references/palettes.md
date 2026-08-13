@@ -184,6 +184,6 @@ bash "$SCRIPT" --check --path="$TARGET"
 
 ## SVG 配色模式
 
-Icon 索引现在只使用 `Knowledge/Assets/Excalidraw/Icon - *.excalidraw` 组件；每个 icon 都由 SVG、PNG/JPG 等参考描摹为原生元素，并保存自身已确认的配色，Vault 不保留图像母版。知识卡通过 Excalidraw image reference 嵌入这些组件，并始终保留组件内部颜色；即使知识卡加入项目色板管理，icon 也不进入色板 Gate。项目色板只应用于画布背景、本卡非 image 原生元素，或用户另行授权创建的 icon 配色变体。
+Icon Library 只使用 `Knowledge/Assets/Excalidraw/Icon - *.excalidraw` 组件；每个 icon 都由 SVG、PNG/JPG 等参考描摹为原生元素，并保存自身已确认的配色，Vault 不保留图像母版。知识卡通过 Excalidraw image reference 嵌入这些组件，并始终保留组件内部颜色；即使知识卡加入项目色板管理，icon 也不进入色板 Gate。项目色板只应用于画布背景、本卡非 image 原生元素，或用户另行授权创建的 icon 配色变体。
 
 `svg_palette.py` 只保留给系统 `/tmp/visual-pkm-concept-visualization/` 中临时自制的 SVG 参考；不得用它生成新的 Vault icon 副本。某张卡需要同一图标承担不同颜色语义时，先复用已有变体；没有合适变体且获得授权后，再创建新的单 icon 原生 `.excalidraw` 文件，不覆盖或在使用位置重染既有组件。新变体可以采用项目色板，也可以采用用户确认的其他颜色。
