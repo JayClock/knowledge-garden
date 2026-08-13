@@ -1,0 +1,129 @@
+{
+	"type": "excalidraw",
+	"version": 2,
+	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.26.4",
+	"elements": [
+		{
+			"id": "H_9E4qZTsiKt_ojyAaZIk",
+			"x": 58,
+			"y": 58,
+			"strokeColor": "#001219",
+			"backgroundColor": "#99DEDE",
+			"fillStyle": "solid",
+			"strokeWidth": 12,
+			"strokeStyle": "solid",
+			"roundness": {
+				"type": 1
+			},
+			"roughness": 0,
+			"opacity": 100,
+			"width": 204,
+			"height": 204,
+			"angle": 0,
+			"seed": 1652473215,
+			"version": 1,
+			"versionNonce": 187872953,
+			"isDeleted": false,
+			"groupIds": [
+				"2M2aWq1G"
+			],
+			"boundElementIds": null,
+			"type": "rectangle",
+			"updated": 1786325746604,
+			"frameId": null,
+			"link": null,
+			"locked": false
+		},
+		{
+			"id": "57yomjhJPnkYxNDe2xTmK",
+			"x": 102,
+			"y": 163,
+			"strokeColor": "#009999",
+			"backgroundColor": "none",
+			"fillStyle": "solid",
+			"strokeWidth": 24,
+			"strokeStyle": "solid",
+			"roundness": null,
+			"roughness": 0,
+			"opacity": 100,
+			"width": 122,
+			"height": 95,
+			"angle": 0,
+			"seed": 401939953,
+			"version": 1,
+			"versionNonce": 668724180,
+			"isDeleted": false,
+			"groupIds": [
+				"2M2aWq1G"
+			],
+			"boundElementIds": null,
+			"type": "line",
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					43,
+					44
+				],
+				[
+					122,
+					-51
+				]
+			],
+			"updated": 1786325746604,
+			"frameId": null,
+			"link": null,
+			"locked": false
+		},
+		{
+			"id": "PPNXsY_FdmFIAYnwKwq2I",
+			"x": 102,
+			"y": 163,
+			"strokeColor": "#001219",
+			"backgroundColor": "none",
+			"fillStyle": "solid",
+			"strokeWidth": 10,
+			"strokeStyle": "solid",
+			"roundness": null,
+			"roughness": 0,
+			"opacity": 100,
+			"width": 122,
+			"height": 95,
+			"angle": 0,
+			"seed": 1676195231,
+			"version": 1,
+			"versionNonce": 46165835,
+			"isDeleted": false,
+			"groupIds": [
+				"2M2aWq1G"
+			],
+			"boundElementIds": null,
+			"type": "line",
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					43,
+					44
+				],
+				[
+					122,
+					-51
+				]
+			],
+			"updated": 1786325746604,
+			"frameId": null,
+			"link": null,
+			"locked": false
+		}
+	],
+	"appState": {
+		"gridSize": null,
+		"viewBackgroundColor": "#ffffff"
+	},
+	"files": {}
+}

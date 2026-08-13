@@ -1,0 +1,366 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin",
+  "elements": [
+    {
+      "id": "6rHwTB5j",
+      "x": 40,
+      "y": 66.95652173913044,
+      "strokeColor": "#001219",
+      "backgroundColor": "#00D7C6",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 240,
+      "height": 172.17391304347825,
+      "angle": 0,
+      "seed": 1436497891,
+      "version": 4,
+      "versionNonce": 1707147398,
+      "isDeleted": false,
+      "groupIds": [
+        "kLZhE4Xw"
+      ],
+      "type": "line",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          83.47826086956522,
+          0
+        ],
+        [
+          107.82608695652173,
+          27.82608695652174
+        ],
+        [
+          240,
+          27.82608695652174
+        ],
+        [
+          240,
+          172.17391304347825
+        ],
+        [
+          0,
+          172.17391304347825
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "updated": 1786279703821,
+      "frameId": null,
+      "index": "b0r",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "polygon": false
+    },
+    {
+      "id": "q5VAjdfy",
+      "x": 62.60869565217399,
+      "y": 94.78260869565219,
+      "strokeColor": "#001219",
+      "backgroundColor": "#0AAAE8",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 217.3913043478261,
+      "height": 158.26086956521738,
+      "angle": 0,
+      "seed": 1090186189,
+      "version": 4,
+      "versionNonce": 322024154,
+      "isDeleted": false,
+      "groupIds": [
+        "kLZhE4Xw"
+      ],
+      "type": "line",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          76.52173913043478,
+          0
+        ],
+        [
+          99.13043478260869,
+          26.08695652173913
+        ],
+        [
+          217.3913043478261,
+          26.08695652173913
+        ],
+        [
+          217.3913043478261,
+          158.26086956521738
+        ],
+        [
+          0,
+          158.26086956521738
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "updated": 1786279703821,
+      "frameId": null,
+      "index": "b0s",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "polygon": false
+    },
+    {
+      "id": "KxWeJfTU",
+      "x": 62.60869565217399,
+      "y": 120.86956521739125,
+      "strokeColor": "#001219",
+      "backgroundColor": "#13B5EA",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 217.3913043478261,
+      "height": 132.17391304347825,
+      "angle": 0,
+      "seed": 290734979,
+      "version": 4,
+      "versionNonce": 941293510,
+      "isDeleted": false,
+      "groupIds": [
+        "kLZhE4Xw"
+      ],
+      "type": "line",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          217.3913043478261,
+          0
+        ],
+        [
+          217.3913043478261,
+          132.17391304347825
+        ],
+        [
+          0,
+          132.17391304347825
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "updated": 1786279703821,
+      "frameId": null,
+      "index": "b0t",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "polygon": false
+    },
+    {
+      "id": "5hYk149t",
+      "x": 140.86956521739125,
+      "y": 159.13043478260875,
+      "strokeColor": "#064B78",
+      "backgroundColor": "black",
+      "fillStyle": "solid",
+      "strokeWidth": 9,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 27.82608695652174,
+      "height": 52.17391304347826,
+      "angle": 0,
+      "seed": 262531629,
+      "version": 4,
+      "versionNonce": 719996826,
+      "isDeleted": false,
+      "groupIds": [
+        "kLZhE4Xw"
+      ],
+      "type": "line",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -27.82608695652174,
+          26.08695652173913
+        ],
+        [
+          0,
+          52.17391304347826
+        ]
+      ],
+      "updated": 1786279703821,
+      "frameId": null,
+      "index": "b0u",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "polygon": false
+    },
+    {
+      "id": "wodLd52w",
+      "x": 205.21739130434776,
+      "y": 159.13043478260875,
+      "strokeColor": "#064B78",
+      "backgroundColor": "black",
+      "fillStyle": "solid",
+      "strokeWidth": 9,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 27.82608695652174,
+      "height": 52.17391304347826,
+      "angle": 0,
+      "seed": 363256611,
+      "version": 4,
+      "versionNonce": 91428614,
+      "isDeleted": false,
+      "groupIds": [
+        "kLZhE4Xw"
+      ],
+      "type": "line",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          27.82608695652174,
+          26.08695652173913
+        ],
+        [
+          0,
+          52.17391304347826
+        ]
+      ],
+      "updated": 1786279703821,
+      "frameId": null,
+      "index": "b0v",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "polygon": false
+    },
+    {
+      "id": "Jg141Rc5",
+      "x": 182.608695652174,
+      "y": 146.9565217391305,
+      "strokeColor": "#064B78",
+      "backgroundColor": "black",
+      "fillStyle": "solid",
+      "strokeWidth": 9,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 20.869565217391305,
+      "height": 76.52173913043478,
+      "angle": 0,
+      "seed": 555883661,
+      "version": 4,
+      "versionNonce": 271729754,
+      "isDeleted": false,
+      "groupIds": [
+        "kLZhE4Xw"
+      ],
+      "type": "line",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -20.869565217391305,
+          76.52173913043478
+        ]
+      ],
+      "updated": 1786279703821,
+      "frameId": null,
+      "index": "b0w",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "polygon": false
+    }
+  ],
+  "appState": {
+    "theme": "light",
+    "viewBackgroundColor": "#FFFFFF",
+    "currentItemStrokeColor": "#000000",
+    "currentItemBackgroundColor": "transparent",
+    "currentItemFillStyle": "hachure",
+    "currentItemStrokeWidthKey": "medium",
+    "currentItemStrokeStyle": "solid",
+    "currentItemRoughness": 1,
+    "currentItemOpacity": 100,
+    "currentItemFontFamily": 1,
+    "currentItemFontSize": 20,
+    "currentItemTextAlign": "left",
+    "currentItemStartArrowhead": null,
+    "currentItemEndArrowhead": "arrow",
+    "currentItemRoundness": "sharp",
+    "gridSize": 0,
+    "selectedElementIds": {},
+    "selectedGroupIds": {},
+    "editingGroupId": null,
+    "editingElement": null
+  },
+  "files": {}
+}

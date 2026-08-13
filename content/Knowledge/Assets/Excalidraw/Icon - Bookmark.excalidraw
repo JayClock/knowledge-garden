@@ -1,0 +1,214 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin",
+  "elements": [
+    {
+      "id": "bBXa6vea",
+      "x": 118.38709677419354,
+      "y": 40,
+      "strokeColor": "#001219",
+      "backgroundColor": "black",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 147.09677419354838,
+      "height": 210.96774193548387,
+      "angle": 0,
+      "seed": 1131236525,
+      "version": 4,
+      "versionNonce": 1489345542,
+      "isDeleted": false,
+      "groupIds": [
+        "0UofbbYL"
+      ],
+      "type": "line",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          120,
+          0
+        ],
+        [
+          120,
+          0
+        ],
+        [
+          125.60987903225806,
+          0.529233870967742
+        ],
+        [
+          130.76612903225808,
+          2.056451612903226
+        ],
+        [
+          135.37802419354838,
+          4.490927419354839
+        ],
+        [
+          139.35483870967744,
+          7.741935483870968
+        ],
+        [
+          142.60584677419357,
+          11.71875
+        ],
+        [
+          145.04032258064515,
+          16.330645161290324
+        ],
+        [
+          146.56754032258064,
+          21.486895161290324
+        ],
+        [
+          147.09677419354838,
+          27.096774193548388
+        ],
+        [
+          147.09677419354838,
+          210.96774193548387
+        ]
+      ],
+      "updated": 1786279704814,
+      "frameId": null,
+      "index": "b49",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "polygon": false
+    },
+    {
+      "id": "02ONqxer",
+      "x": 54.51612903225805,
+      "y": 92.25806451612902,
+      "strokeColor": "#001219",
+      "backgroundColor": "#FFF3F1",
+      "fillStyle": "solid",
+      "strokeWidth": 2.4,
+      "strokeStyle": "solid",
+      "roundness": null,
+      "roughness": 0,
+      "opacity": 100,
+      "width": 147.09677419354838,
+      "height": 187.74193548387098,
+      "angle": 0,
+      "seed": 1851580579,
+      "version": 4,
+      "versionNonce": 888573786,
+      "isDeleted": false,
+      "groupIds": [
+        "0UofbbYL"
+      ],
+      "type": "line",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          120,
+          0
+        ],
+        [
+          120,
+          0
+        ],
+        [
+          125.60987903225806,
+          0.529233870967742
+        ],
+        [
+          130.76612903225808,
+          2.056451612903226
+        ],
+        [
+          135.37802419354838,
+          4.490927419354839
+        ],
+        [
+          139.35483870967744,
+          7.741935483870968
+        ],
+        [
+          142.60584677419357,
+          11.71875
+        ],
+        [
+          145.04032258064515,
+          16.330645161290324
+        ],
+        [
+          146.56754032258064,
+          21.486895161290324
+        ],
+        [
+          147.09677419354838,
+          27.096774193548388
+        ],
+        [
+          147.09677419354838,
+          187.74193548387098
+        ],
+        [
+          73.54838709677419,
+          129.67741935483872
+        ],
+        [
+          0,
+          187.74193548387098
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "updated": 1786279704814,
+      "frameId": null,
+      "index": "b4A",
+      "boundElements": [],
+      "link": null,
+      "hasTextLink": false,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "polygon": false
+    }
+  ],
+  "appState": {
+    "theme": "light",
+    "viewBackgroundColor": "#FFFFFF",
+    "currentItemStrokeColor": "#000000",
+    "currentItemBackgroundColor": "transparent",
+    "currentItemFillStyle": "hachure",
+    "currentItemStrokeWidthKey": "medium",
+    "currentItemStrokeStyle": "solid",
+    "currentItemRoughness": 1,
+    "currentItemOpacity": 100,
+    "currentItemFontFamily": 1,
+    "currentItemFontSize": 20,
+    "currentItemTextAlign": "left",
+    "currentItemStartArrowhead": null,
+    "currentItemEndArrowhead": "arrow",
+    "currentItemRoundness": "sharp",
+    "gridSize": 0,
+    "selectedElementIds": {},
+    "selectedGroupIds": {},
+    "editingGroupId": null,
+    "editingElement": null
+  },
+  "files": {}
+}
