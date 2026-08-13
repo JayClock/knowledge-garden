@@ -1,6 +1,6 @@
 ---
 date: 2024-02-06T11:14:12
-updated: 2026-08-05 09:42:03
+updated: 2026-08-13 08:43:05
 title: 终结者的数字花园
 ---
 hello 👋，我是 JayClock，一个默默无闻，努力想办法提升自己的前端工程师，目前在用 angular 做低代码行业相关的工作。
@@ -10,7 +10,7 @@ hello 👋，我是 JayClock，一个默默无闻，努力想办法提升自己�
 关于 PARA，可以看[《打造第二大脑》](https://book.douban.com/subject/36636224/)，PARA 侧重于个人项目管理；
 关于 INKP，可以看[《打开心智》](https://book.douban.com/subject/36089614//)，INKP 侧重于个人知识管理；
 
-我是谁：一个关注[[Knowledge/Notes/软件交付中的知识流|软件交付知识流]]的知识工程师。
+我是谁：一个关注[[知识工程师|软件交付知识流]]的知识工程师。
 
 这并不是真正的博客，只是我的素材聚集地，所谓数字花园，并不是让我去发表自身的观点，而是记录平时的所思所想，将其作为未来输出的孵化地。`Knowledge/Outputs/` 目录下的内容，会自动同步至我的博客 [JayClock - 以我所主，为我所用](https://blog.jayclock-garden.top/)
 
