@@ -1,6 +1,6 @@
 # ACNH Pocket Guide 素材来源与使用规则
 
-本文件规定用户明确选择《集合啦！动物森友会》视觉语言后，如何从 ACNH Pocket Guide 选择、下载、追溯和使用素材。ACNH 不是默认素材层，也不在快速联想阶段检索；只有最终方向确实需要这类人物、物体或场景时才完整读取本文件。
+本文件规定用户明确选择《集合啦！动物森友会》视觉语言后，如何从 ACNH Pocket Guide 选择、下载、核对来源和使用素材。ACNH 不是默认素材层，也不在快速联想阶段检索；只有最终方向确实需要这类人物、物体或场景时才完整读取本文件。
 
 一般外部素材边界以[入选素材的生产检查](material-source-order.md)为准。
 
@@ -11,9 +11,9 @@
 - Raw 基址：`https://raw.githubusercontent.com/jameskokoska/ACNH-Pocket-Guide/{ref}/`
 - 应用素材根目录：`animal_crossing_app/assets/`
 
-`main` 会变化。每次实际采用素材时，先用 `git ls-remote https://github.com/jameskokoska/ACNH-Pocket-Guide.git refs/heads/main` 或 GitHub API 解析并记录当时的 commit SHA；最终追溯优先使用带 SHA 的 GitHub 或 Raw URL，而不是只记录 `main`。
+`main` 会变化。每次实际采用素材时，先用 `git ls-remote https://github.com/jameskokoska/ACNH-Pocket-Guide.git refs/heads/main` 或 GitHub API 解析并核对当时的 commit SHA；需要打开原始文件时优先使用带 SHA 的 GitHub 或 Raw URL，而不是只依赖 `main`。这些信息只服务于当前生产检查，不写入 Icon Library 注册表。
 
-如果用户提供了本地 clone 或素材目录，优先使用该位置，但仍记录其 remote 与 commit。不要假设本机存在固定 clone 路径，也不要把 Obsidian vault 中的临时目录当成素材事实来源。
+如果用户提供了本地 clone 或素材目录，优先使用该位置，并在当前任务中核对其 remote 与 commit。不要假设本机存在固定 clone 路径，也不要把 Obsidian vault 中的临时目录当成素材事实来源。
 
 ## 2. 可用素材层
 
@@ -55,11 +55,11 @@
 - `animal_crossing_app/assets/data/Generated/translationsAppGenerated.json`
 - `animal_crossing_app/assets/data/TranslationsStrings/`
 
-基础记录通常以英文名为键。为中文卡片选择素材时，用生成的翻译表辅助检索与显示，但追溯表同时保留英文 `Name`、`Internal ID` 或其他稳定标识，不能只记录中文译名。
+基础记录通常以英文名为键。为中文卡片选择素材时，用生成的翻译表辅助检索与显示；当前任务核对候选时同时查看英文 `Name`、`Internal ID` 或其他稳定标识，不能只凭中文译名判断。
 
 ### 2.3 Amiibo 数据
 
-`animal_crossing_app/assets/data/Amiibo Data/` 包含 Series 1–5、Welcome amiibo、Sanrio 和 Promos。记录可能引用 `dodo.ac` 等站点的图片。使用时同时记录 JSON 文件、卡号、角色名、图片字段和最终 URL。
+`animal_crossing_app/assets/data/Amiibo Data/` 包含 Series 1–5、Welcome amiibo、Sanrio 和 Promos。记录可能引用 `dodo.ac` 等站点的图片。使用时在当前任务中同时核对 JSON 文件、卡号、角色名、图片字段和最终 URL。
 
 ### 2.4 仓库内视觉文件
 
@@ -137,7 +137,7 @@ git sparse-checkout set \
 
 ## 5. 组合与配色
 
-- ACNH 的 PNG/JPG 保留原始宽高比与原色，只作为临时描摹参考；不要把它们当作 `--icon-color` 单色 SVG，也不要直接复制、封装或嵌入知识卡与 Icon 索引。
+- ACNH 的 PNG/JPG 保留原始宽高比与原色，只作为临时描摹参考；不要把它们当作 `--icon-color` 单色 SVG，也不要直接复制、封装或嵌入知识卡与 Icon Library。
 - 用户明确要求把候选重绘为扁平 SVG 时，可以保留来源色彩关系并标记 `data-color-mode="source-palette"`；该 SVG 仍只是临时参考。入选后必须通过 Excalidraw 插件描摹为只含原生元素的纯 JSON `.excalidraw` 组件，并保留用户确认的颜色，除非用户另行要求创建项目语义色板变体。
 - `concept-visualization-palette.css` 是可选的统一视觉语言，不控制所有最终卡片、自制组件或永久 icon。已描摹 icon 的内部颜色不进入项目色板 Gate；游戏原色在权利允许且用户确认时可以保留在原生组件中。
 - 统一画面时优先用裁切、留白、尺度、扁平轮廓、背景和关系线建立层级；不得不可逆地改写原始素材，需要不同配色时创建单独的原生 Excalidraw 变体。
@@ -145,33 +145,18 @@ git sparse-checkout set \
 - 一个游戏对象只有在其动作、功能、处境或文化联想能推进核心信息时才进入画面。例如桥可以承担“过渡”，网可以承担“捕获／筛选”，化石可以承担“由残片重建”；仅仅同名不构成语义匹配。
 - 不默认使用游戏 Logo、品牌字样或角色肖像替代概念论证。
 
-## 6. 追溯格式
+## 6. 写入 Icon Library
 
-每个承担概念含义的 ACNH 素材至少记录：
+每个最终采用的 ACNH 候选只在当前任务中核对数据集／目录、英文记录标识、图片字段、固定版本、原始 URL 与权利状态；这些信息不自动保存为视觉词库元数据。
 
-| 字段 | 要求 |
-|---|---|
-| 草图／组件 | 说明它位于哪个最终视觉或承担什么组件；只有确实使用候选编号时才记录编号 |
-| 数据集／目录 | 例如 `DataCreated/Fish.json` 或 `assets/icons/shadowsAligned/` |
-| 记录标识 | 英文 `Name`，并尽量补充 `Internal ID`、Amiibo 卡号或文件名 |
-| 中文显示名 | 来自已核对的翻译表；没有可靠翻译时留空 |
-| 图片字段 | 例如 `Icon Image`、`Image` 或本地文件路径 |
-| 固定版本 | commit SHA 与访问日期 |
-| 原始 URL | 带 SHA 的仓库 URL，以及记录实际引用的图片 URL |
-| 概念作用 | 它表达哪个动作、关系或对比 |
-| 使用位置 | 目标卡片／画布与方案编号 |
-| 权利状态 | 已确认、待确认，或仅作构图灵感 |
-
-这张表是最终采用素材的生产审计，不是 Icon 索引 schema。只有用户明确要求把已确认组件提升为长期复用图标时，才把必要信息写入 `references/icon-index-registry.json`：标题、完整 SVG 路径、最多 8 个关键词、固定版本的来源链接、来源方及必要的改编／核对状态。随后使用 `scripts/sync_icon_index.py` 同步索引；不要把概念作用、使用位置或处理日志重新塞回索引。
-
-来源追溯默认留在答复或用户指定记录文件，不自动写进知识卡正文。
+用户明确要求把已确认组件提升为长期复用图标时，统一命名为 `Icon - 关键词1, 关键词2 - ACNH.excalidraw`。逗号分隔的关键词用于搜索，末尾 `ACNH` 标明来源；文件名就是唯一索引，不另建 Markdown 清单、JSON 注册表或逐项元数据。随后可运行 `scripts/validate_icon_library.py --check` 只读检查命名与原生组件结构。
 
 ## 7. 来源与权利边界
 
 - 编写本规则时，ACNH Pocket Guide 仓库未提供明确的顶层 `LICENSE`；每次公开使用前重新检查，公开可访问不等于可任意再授权。
 - `DataCreated/Read Me.json` 指向 ACNH Item Spreadsheet，并要求使用其数据的应用或网站回链该表格、联系维护者登记合作项目。
 - 游戏图片、角色、音乐、商标和其他内容还可能受任天堂及各素材提供方的权利约束；仓库代码、社区数据与游戏素材不是同一个许可层。
-- 对私人研究或本地草图，仍然保留完整追溯。目标位于发布目录、演示文稿、公开网站或商业交付时，在嵌入素材前单独确认权利；无法确认时，只把候选作为构图灵感，改用用户拥有权利的自制表达，并把状态写为“待确认”。
+- 对私人研究或本地草图，仍在当前任务中核对原始来源。目标位于发布目录、演示文稿、公开网站或商业交付时，在嵌入素材前单独确认权利；无法确认时，只把候选作为构图灵感，改用用户拥有权利的自制表达。Icon Library 不为此建立额外追溯注册表。
 - 不声称素材是自制、CC、公共领域或“官方可自由使用”，除非有对应证据。
 
 ## 8. 未命中

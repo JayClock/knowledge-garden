@@ -1,6 +1,6 @@
 ---
 name: visual-pkm-concept-visualization
-description: "以 Human First Expression 驱动单一概念可视化：人类先用自己的话提出或确认核心信息，再亲自列出 3–5 个与信息相关的词，不必分类，也不必每类都有；这些词可以混合名词、动词、形容词、感受或视觉碎片。AI 随后用近义、反义、隐喻、习语、视觉双关和常见符号扩大联想范围。凡是用户要求把抽象概念、词语、句子、引文或单一观点画出来，寻找视觉隐喻，改进单张概念插图，制作 LEGO 卡／Visual Main Note，建立 Excalidraw／演示视觉 brief，准备 Excalidraw 容器，或维护已确认的 Icon 索引／视觉词库时，都应使用本 skill。第 3 步由 AI 逐一解释五种视觉框架怎样组织当前信息、各自突出什么，再由人类选择；第 4 步固定生成包含实际图像的临时 HTML 预览；第 5 步经授权把入选 icon 确保落地为 Vault 内 `.excalidraw` 组件并嵌入 `Knowledge/Notes/` 目标卡的初始 Excalidraw 视图，再由人类移动、缩放、组合和补画后亲自完成第一张草图。默认交付是一个带视觉正面的 Visual Main Note，但视觉仍只压缩一个核心信息，不图解整张卡的正文、来源和连接。项目语义色板保留为可选的统一风格工具；icon 与最终知识卡可以保留经用户确认的其他颜色，不把色板检查或受管登记作为完成 Gate。所有进入知识卡或 Icon 索引的 icon 都必须是已描摹为原生元素的纯 JSON `.excalidraw` 组件；本地图像、SVG、PNG/JPG 与其他来源文件只能作为临时描摹参考。不用于把多张卡组织成 Map、IIB、Book-on-a-Page 或 Storyboard。最终意义、框架、Express、反馈解释，以及哪些具体实例、标签和细节应进入视觉正面，都属于人类；AI 不自行衡量感染力、代表性、记忆点或取舍，明确授权后只机械数字化已确认内容。"
+description: "以 Human First Expression 驱动单一概念可视化：人类先用自己的话提出或确认核心信息，再亲自列出 3–5 个与信息相关的词，不必分类，也不必每类都有；这些词可以混合名词、动词、形容词、感受或视觉碎片。AI 随后用近义、反义、隐喻、习语、视觉双关和常见符号扩大联想范围。凡是用户要求把抽象概念、词语、句子、引文或单一观点画出来，寻找视觉隐喻，改进单张概念插图，制作 LEGO 卡／Visual Main Note，建立 Excalidraw／演示视觉 brief，准备 Excalidraw 容器，或维护已确认的 Icon Library／视觉词库时，都应使用本 skill。第 3 步由 AI 逐一解释五种视觉框架怎样组织当前信息、各自突出什么，再由人类选择；第 4 步固定生成包含实际图像的临时 HTML 预览；第 5 步经授权把入选 icon 确保落地为 Vault 内 `.excalidraw` 组件并嵌入 `Knowledge/Notes/` 目标卡的初始 Excalidraw 视图，再由人类移动、缩放、组合和补画后亲自完成第一张草图。默认交付是一个带视觉正面的 Visual Main Note，但视觉仍只压缩一个核心信息，不图解整张卡的正文、来源和连接。项目语义色板保留为可选的统一风格工具；icon 与最终知识卡可以保留经用户确认的其他颜色，不把色板检查或受管登记作为完成 Gate。所有进入知识卡或 Icon Library 的 icon 都必须是已描摹为原生元素的纯 JSON `.excalidraw` 组件；本地图像、SVG、PNG/JPG 与其他来源文件只能作为临时描摹参考。不用于把多张卡组织成 Map、IIB、Book-on-a-Page 或 Storyboard。最终意义、框架、Express、反馈解释，以及哪些具体实例、标签和细节应进入视觉正面，都属于人类；AI 不自行衡量感染力、代表性、记忆点或取舍，明确授权后只机械数字化已确认内容。"
 compatibility: "第 4 步固定 HTML 预览需要 Python 3 和浏览器；本地视觉词库不足后检索 Flaticon 需要网络，但只观察并在系统临时目录重绘结构完整、可识别的临时视觉参考，不下载或嵌入 Flaticon 原素材。第 5 步初始化知识卡、把所有尚非原生 Excalidraw 的入选图像参考描摹为 Vault 内纯 JSON `.excalidraw` 组件、并将入选组件嵌入初始视图，需要 Obsidian 正在运行、Obsidian CLI 可用且 Excalidraw 插件已启用。通过插件／API 创建和更新绘图，不手工改写 compressed-json。"
 ---
 
@@ -144,17 +144,17 @@ Human First 保护 message 的意义归属，也确保首批联想由人发起�
 
 完整读取并执行[第 4 步固定视觉参考 HTML](references/association-pool-html.md)。根据第 3 步选定的框架，列出画面真正需要的主体、动作、关系和辅助组件，找到实际可见的参考，并固定生成浏览器 HTML，供用户选择将在第 5 步落地、嵌入和亲自重组的 icon。本步不要求用户绘制，也不生成可直接充当最终视觉的精炼构图。
 
-1. 先看自己的旧草图、图标库和 `Knowledge/Maps/Icon 索引.md`。
-2. 在索引中按条目标题和 `关键词` 检索，再打开完整路径嵌入的实际 `.excalidraw` icon 组件；不要凭名称或关键词决定含义。
+1. 先看自己的旧草图，并在 Excalidraw 中运行 `Downloaded/Icon Library` 搜索个人视觉词库。
+2. Icon Library 从 `Icon - 关键词1, 关键词2 - 来源.excalidraw` 文件名提取检索词；选中候选后打开实际 `.excalidraw` 组件观察，不凭关键词决定含义。
 3. 根据框架把本地已有的主体、动作和关系组件组织成若干可模仿候选。
 4. 只有本地视觉词库没有合适组件时，才到 [Flaticon](https://www.flaticon.com/) 检索对应主体、动作或关系。把网站当作观察轮廓、结构和动作的视觉字典，不下载、转换、截图、描摹路径或嵌入 Flaticon 的 PNG／SVG。
 5. 观察后在系统临时目录重绘一个**结构完整、可识别、可分层重组**的 SVG 视觉组件。可以使用基础形状和自制路径，但基础形状只是绘制手段；结果应保留主体的关键轮廓、动作、部件关系和必要细节，不能退化成几个几何形状组成的占位符，也不复制原图路径或精炼成最终构图。临时组件可以使用项目语义色板，也可以采用与本轮视觉意图一致的其他配色；第 5 步应保留用户确认的外观，不因落地而自动换色。
-6. 不要保存 Flaticon 详情页、作者、素材 ID、权利说明或其他来源记录，也不要把这些信息写入 JSON、HTML、Vault、Icon 索引或来源注册表。
+6. 不要保存 Flaticon 详情页、作者、素材 ID、权利说明或其他逐项来源记录，也不要把这些信息写入 JSON、HTML 或 Vault；永久组件只在规定文件名末尾保留来源名称。
 7. 每个候选使用 1–3 个实际可见图像，可以来自本地已有 `.excalidraw` icon 组件或本轮临时重绘的 SVG／其他本地图像参考；说明怎样画、由哪些层组成以及突出什么，不附加素材追溯字段。渲染脚本只在内存中把本地 `.excalidraw` 组件转换成 HTML 可显示的 SVG data URI，不在 Vault 生成 SVG。本地 `.excalidraw` 组件已满足原生描摹要求，可按现有外观复用；其他格式仅供预览，入选后必须先描摹为原生 `.excalidraw`，不得直接嵌入知识卡。
 8. 将 JSON、HTML 和必要的临时重绘 SVG 写入 `/tmp/visual-pkm-concept-visualization/<concept-slug>/`，运行 `scripts/render_association_pool.py --open` 生成并打开预览。
 9. 返回完整 HTML 路径，请用户预览并选择或重组 1–3 个参考方向，使用页面按钮复制入选编号并贴回对话；用户确认参考后才进入第 5 步。第 4 步仍不写 Vault；真正入选的 icon 在第 5 步获得写入授权后才落地并嵌入知识卡初始视图。
 
-第 4 步的 HTML 是固定交付，不需要用户另行提出“生成 HTML”。它提供可识别、可复用的视觉零件，而不是低完成度占位草图；这些组件本身可以相对完整，但不组成最终画面。**粗糙、快速、不润色描述的是第 5 步首次 Express 的整体构图，不是第 4 步 icon 的质量标准。**HTML 不写入知识卡、Vault 或 Icon 索引，也不替人类完成 Express。Flaticon 在本步只用于观察，不构成最终方案采用的外部素材；若用户另行明确要求直接采用其他外部素材，再进入对应的可选生产检查。
+第 4 步的 HTML 是固定交付，不需要用户另行提出“生成 HTML”。它提供可识别、可复用的视觉零件，而不是低完成度占位草图；这些组件本身可以相对完整，但不组成最终画面。**粗糙、快速、不润色描述的是第 5 步首次 Express 的整体构图，不是第 4 步 icon 的质量标准。**HTML 不写入知识卡、Vault 或 Icon Library，也不替人类完成 Express。Flaticon 在本步只用于观察，不构成最终方案采用的外部素材；若用户另行明确要求直接采用其他外部素材，再进入对应的可选生产检查。
 
 ### 第 5 步：初始化知识卡、首次草图、精炼与 ETC
 
@@ -162,7 +162,7 @@ Human First 保护 message 的意义归属，也确保首批联想由人发起�
 
 1. **现有知识卡**：若第 1 步记录了 `target_note_mode: existing`，直接回显该 `target_note_path`；取得写入授权后，通过 Excalidraw 插件初始化 Drawing，不再询问承载方式或改换文件。
 2. **新知识卡**：若第 1 步记录了 `target_note_mode: new`，请用户确认名词短语标题，搜索同名、aliases 与近义卡；没有重复且获得授权后，使用 `Templates/知识卡.md` 在 `Knowledge/Notes/` 建立只含已确认标题、核心观点及最小 frontmatter 的卡片，再通过插件初始化 Drawing。
-3. **入选 icon 落地**：解析用户贴回的编号并只处理其中实际入选的 icon。所有 icon 在使用前都必须落为原生、单组、纯 JSON `.excalidraw` 组件：本地已有 `.excalidraw` 通过结构校验后按现有颜色直接复用；`/tmp/` SVG、PNG/JPG 或其他图像参考不复制进 Vault，也不作为 image 封装，而是按用户已确认的外观（包括颜色）通过 Excalidraw 插件／API 描摹为 `Knowledge/Assets/Excalidraw/Icon - <稳定名称>.excalidraw`。先搜索同名与近似组件，能复用时不重复创建；本步不自动登记 `Icon 索引.md`。
+3. **入选 icon 落地**：解析用户贴回的编号并只处理其中实际入选的 icon。所有 icon 在使用前都必须落为原生、单组、纯 JSON `.excalidraw` 组件：本地已有 `.excalidraw` 通过结构校验后按现有颜色直接复用；`/tmp/` SVG、PNG/JPG 或其他图像参考不复制进 Vault，也不作为 image 封装，而是按用户已确认的外观（包括颜色）通过 Excalidraw 插件／API 描摹为 `Knowledge/Assets/Excalidraw/Icon - 关键词1, 关键词2 - 来源.excalidraw`；完全自制时来源写 `Own`。先在 Icon Library 搜索同义关键词并打开近似组件，能复用时不重复创建。永久组件只用规定文件名保存关键词与来源，保存后自动可搜索；不另建注册表。
 4. **嵌入初始视图**：通过 Excalidraw 插件把所有入选组件作为 image reference 嵌入目标知识卡。每个 icon 保持独立可移动，只做无语义的松散横排或素材托盘，不添加箭头、关系、标签或完整构图，并让初始视口能看到这些组件。
 5. **建立可选配色起点**：新建或首次初始化的 Drawing 可以把画布背景设为 `--concept-color-canvas`；已有 Drawing 保留当前背景。不得因组件包含项目色板之外的颜色而拒绝嵌入或自动换色。
 6. **不在知识卡内绘制外壳**：Visual Main Note 自身不得添加可见的满幅背景矩形或外边框；外壳、卡片表面和边界由嵌入它的地图／大卡决定。若需要固定导出边界，可以保留尺寸矩形，但其 `strokeColor` 与 `backgroundColor` 都必须是 `transparent`。
@@ -225,7 +225,7 @@ Human First 保护 message 的意义归属，也确保首批联想由人发起�
 
 七步默认产出一个带 Excalidraw 视觉正面的 Visual Main Note。处理单位仍是一个核心信息：它是一个原子命题，不是整张知识卡的中性摘要。用户指向现有知识卡时，先选择其中一个核心观点；若正文包含多个独立主张，应请用户选定一个或先拆卡，不把正文、来源、`up` 和知识连接压进同一画面。视觉正面可以包含由用户判断为有助于呈现机制的少量具体实例、角色、动作、状态和短标签。
 
-第 5 步只建立最小知识卡接口、视觉正面容器和可选的项目画布背景起点；第 6 步根据反馈校准视觉与核心措辞。七步完成后再确认 `sources`、`up` 和语义关系。稳定组件仍可在用户另行授权后登记进视觉词库；知识卡只有在用户明确要求统一色板时才登记为色板受管文件，这不等于把其内部 icon 自动登记进视觉词库。
+第 5 步只建立最小知识卡接口、视觉正面容器和可选的项目画布背景起点；第 6 步根据反馈校准视觉与核心措辞。七步完成后再确认 `sources`、`up` 和语义关系。永久组件按规定文件名保存后会自动出现在 Icon Library；关键词与来源只保留在文件名，不建立额外注册表。知识卡只有在用户明确要求统一色板时才登记为色板受管文件，这与 Icon Library 无关。
 
 ## 固定规则与按需分支
 
@@ -240,7 +240,7 @@ Human First 保护 message 的意义归属，也确保首批联想由人发起�
 |---|---|
 | 接入 `up`、持续问题和 typed links | [知识卡语义连接规则](references/card-connections.md) |
 | 最终成品采用外部素材或准备发布 | [入选素材的生产检查](references/material-source-order.md) |
-| 明确要求扩充或修正 Icon 索引／视觉词库 | [入选素材的生产检查](references/material-source-order.md) |
+| 明确要求扩充或修正 Icon Library／视觉词库 | [入选素材的生产检查](references/material-source-order.md) |
 | 明确要求 ACNH 视觉语言 | [ACNH 素材规则](references/acnh-material-source.md) |
 | 明确要求统一到项目语义色板或登记受管文件 | [项目配色参考](references/palettes.md) |
 
@@ -254,8 +254,8 @@ Human First 保护 message 的意义归属，也确保首批联想由人发起�
 - 核心观点、自己的解释、来源、`up` 和有理由的语义链接属于知识内容。
 - PDF、图片和音视频不承载绘图数据；使用用户指定的关联 Markdown。
 - 通过 Excalidraw 插件维护绘图和 Embedded Files，不手工改写 compressed-json。
-- 只有用户明确要求扩充或修正视觉词库时，才更新注册表并运行 Icon 索引同步脚本；脚本重建的普通 Markdown 只保留预览和关键词，不输出来源／权利信息，视觉画廊仍通过 Excalidraw 插件更新。
-- 只有用户明确要求统一到项目语义色板或加入受管集合时，才把知识卡登记到 `palette-sync-state.json`；这属于配色维护，不是扩充视觉词库，也不需要额外的 Icon 索引授权。
+- Icon Library 直接从 `Icon - 关键词1, 关键词2 - 来源.excalidraw` 文件名建立可搜索列表。文件名是唯一索引：不维护 Markdown 清单、JSON 注册表或逐项元数据；可以运行 `scripts/validate_icon_library.py --check` 只读检查文件名与原生组件结构。
+- 只有用户明确要求统一到项目语义色板或加入受管集合时，才把知识卡登记到 `palette-sync-state.json`；这属于配色维护，不是扩充视觉词库，也不需要额外的 Icon Library 授权。
 - `date` 与 `updated` 由 update-time-on-edit 插件维护。
 
 ## 默认对话输出
@@ -326,7 +326,7 @@ AI 建议，待确认：
 - 第 5 步是否先用 `prepare_visual_main_note.py` dry-run 核对目标、编号、组件和待原生化项，并且只在获得写入授权后用同一计划 `--apply`？
 - 第 5 步是否直接初始化第 1 步选定的现有知识卡，或确认标题、排除重复后创建 `Knowledge/Notes/` 新卡？
 - 初始化与嵌入是否只使用 Excalidraw 插件／API，保留原有正文、frontmatter 与链接，没有创建独立 Concept Visual 文件？
-- 是否只把用户实际入选的 icon 落地为原生 `.excalidraw` 组件并作为 image reference 嵌入；所有非 `.excalidraw` 图像参考是否已完成描摹，而没有直接复制、封装或嵌入；是否未自动登记 Icon 索引、未加入文字、连接或完整构图？
+- 是否只把用户实际入选的 icon 落地为原生 `.excalidraw` 组件并作为 image reference 嵌入；所有非 `.excalidraw` 图像参考是否已完成描摹，而没有直接复制、封装或嵌入；新建组件是否采用规定的可搜索文件名，且没有加入文字、连接或完整构图？
 - 第一张必需草图是否在第 5 步由用户移动、缩放、组合或补画初始组件后完成，而不是把 AI 的素材托盘当成 Express？
 - 是否在第 5 步尝试至少两个真正不同的视觉解释？
 - 是否执行 ETC、第一眼、延迟和去文字测试？
@@ -336,4 +336,4 @@ AI 建议，待确认：
 - 是否使用标准比例和 3–4 色，同时避免 UI 化？
 - 最终知识卡的颜色是否服务于用户确认的视觉意图，并避免未经授权自动重染本地、外部或 `source-palette` 组件？
 - 若用户明确要求统一项目色板或登记受管文件，是否才运行逐卡 `--check --path` 与必要的 `--apply --path --register`，并确保该检查跳过已描摹 icon 组件的内部颜色？
-- 若更新视觉词库，是否只修改固定注册表、确认每个 icon 都是无嵌套 image／frame 的原生单组 `.excalidraw` 组件、确保 Icon 索引不输出来源／权利信息并通过同步检查，同时保持 Excalidraw Data 不变；是否没有对 icon 执行项目色板 Gate？
+- 若更新视觉词库，是否使用 `Icon - 关键词1, 关键词2 - 来源.excalidraw` 文件名、确认每个 icon 都是无嵌套 image／frame 的原生单组组件，并通过 `validate_icon_library.py --check`；是否没有另建 Markdown 清单、JSON 注册表或逐项元数据，且没有对 icon 执行项目色板 Gate？

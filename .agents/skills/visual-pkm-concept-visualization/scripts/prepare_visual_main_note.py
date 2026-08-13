@@ -7,7 +7,7 @@ The script is intentionally split at the Obsidian boundary:
   inside the running Obsidian/Excalidraw plugin context.
 
 It never edits Excalidraw compressed-json directly. Temporary image references must
-be traced as native .excalidraw components before --apply and supplied with
+be materialized as native .excalidraw components before --apply and supplied with
 --icon-map SRC=VAULT_PATH.
 """
 
@@ -31,6 +31,7 @@ from urllib.parse import unquote, urlparse
 ID_PATTERN = re.compile(r"^A\d{2,}$")
 ICON_PREFIX = "Knowledge/Assets/Excalidraw/Icon - "
 ICON_SUFFIX = ".excalidraw"
+ICON_NAME_PATTERN = re.compile(r"^Icon - (.+) - (.+)\.excalidraw$")
 NOTES_PREFIX = "Knowledge/Notes/"
 PREVIEW_IMAGE_SUFFIXES = {".svg", ".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp"}
 FORBIDDEN_TRACE_FIELDS = {
@@ -126,8 +127,25 @@ def vault_relative_component(path_text: str, vault_root: Path) -> str:
     if not relative.startswith(ICON_PREFIX) or not relative.endswith(ICON_SUFFIX):
         raise PreparationError(
             "组件必须直接位于 Knowledge/Assets/Excalidraw/，"
-            f"并命名为 Icon - <名称>.excalidraw：{relative}"
+            f"并采用规定的 Icon 文件名：{relative}"
         )
+    match = ICON_NAME_PATTERN.fullmatch(Path(relative).name)
+    if not match:
+        raise PreparationError(
+            f"组件必须命名为 Icon - 关键词1, 关键词2 - 来源.excalidraw：{relative}"
+        )
+    keywords = [item.strip() for item in match.group(1).split(",")]
+    if not keywords or not all(keywords):
+        raise PreparationError(f"组件文件名必须包含逗号分隔的非空检索关键词：{relative}")
+    if len({keyword.casefold() for keyword in keywords}) != len(keywords):
+        raise PreparationError(f"组件文件名中的检索关键词不能重复：{relative}")
+    if any(" - " in keyword for keyword in keywords):
+        raise PreparationError(f"检索关键词不能包含保留分隔符 ` - `：{relative}")
+    source = match.group(2).strip()
+    if not source:
+        raise PreparationError(f"组件文件名必须在末尾标明来源：{relative}")
+    if "," in source or " - " in source:
+        raise PreparationError(f"来源不能包含逗号或保留分隔符 ` - `：{relative}")
     return relative
 
 
@@ -475,7 +493,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--icon-map",
         action="append",
         default=[],
-        help="把临时 src 映射到已原生化组件：SRC=Knowledge/.../Icon - X.excalidraw。",
+        help="把临时 src 映射到已原生化组件：SRC=Knowledge/.../Icon - 关键词1, 关键词2 - 来源.excalidraw。",
     )
     parser.add_argument("--vault-root", type=Path, default=Path.cwd())
     parser.add_argument("--vault-name", default="content")
@@ -551,7 +569,7 @@ def main() -> int:
                     "src": icon.preview_src,
                     "required_map": (
                         f"{icon.preview_src}=Knowledge/Assets/Excalidraw/"
-                        f"Icon - <稳定名称>.excalidraw"
+                        f"Icon - 关键词1, 关键词2 - Own.excalidraw"
                     ),
                 }
                 for icon in pending

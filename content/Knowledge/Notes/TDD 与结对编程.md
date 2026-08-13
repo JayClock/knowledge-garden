@@ -64,11 +64,11 @@ Red → Green → Refactor ^TQrsIhtC
 选择下一行为，开始新一轮 ^8hODVjF6
 
 ## Embedded Files
-5baf58656ed1d13988d78558ecc32f4041152a72: [[Icon - Pair programming roles.excalidraw]]
+5baf58656ed1d13988d78558ecc32f4041152a72: [[Icon - 结对编程, 驾驶员, 导航员, 协作, pair programming - Own.excalidraw]]
 
-05f4e3b649b167cb280463c52fc6a3be18ef3b52: [[Icon - Test spotlight.excalidraw]]
+05f4e3b649b167cb280463c52fc6a3be18ef3b52: [[Icon - 测试, 聚光灯, 验证, 检查, test spotlight - Own.excalidraw]]
 
-e035291a41ac49e40af95c090d579318947253a5: [[Icon - Task list.excalidraw]]
+e035291a41ac49e40af95c090d579318947253a5: [[Icon - 任务清单, 待办, 分解, 步骤, task list - Own.excalidraw]]
 
 %%
 ## Drawing

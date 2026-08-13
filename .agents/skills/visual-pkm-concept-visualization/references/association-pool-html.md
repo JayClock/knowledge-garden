@@ -20,7 +20,7 @@ HTML 是临时视觉参考，不是知识卡正面、最终构图或 AI Express�
 - 本地视觉词库没有合适组件时，才到 [Flaticon](https://www.flaticon.com/) 检索主体、动作或关系，把候选当作观察轮廓与结构的视觉字典；
 - 不下载、转换、截图、描摹路径或嵌入 Flaticon 的 PNG／SVG；观察后在系统临时目录重新绘制 SVG 视觉组件；
 - 临时重绘组件必须保留可识别轮廓、关键动作、部件关系和必要细节，并适合分层、替换和重组。可以用基础形状和自制路径完成，但不能只是几个几何形状组成的低完成度占位符，也不能成为精炼的最终构图；其颜色可以取自项目语义色板，也可以采用与本轮视觉意图一致的其他配色，第 5 步应保留用户在预览中确认的颜色；
-- 不保留 Flaticon 的详情页、作者、素材 ID、权利说明或其他来源记录；本轮第 4 步不得把这些字段新增到 JSON、HTML、Vault、Icon 索引或来源注册表中；
+- 不保留 Flaticon 的详情页、作者、素材 ID、权利说明或其他逐项来源记录；本轮第 4 步不得把这些字段新增到 JSON、HTML 或 Vault，永久组件只在规定文件名末尾保留来源名称；
 - 每项使用 1–3 个本地已有 Excalidraw icon 组件或本轮临时重绘的 SVG／其他本地图像参考，并只说明名称、类型、怎样画、分层方式和突出什么，不附加素材追溯、误读或风险；所有非 `.excalidraw` 项都只是预览参考，入选后必须先描摹为原生 Excalidraw 组件；
 - 预览只帮助人类模仿和重组视觉零件，不能做成可直接充当最终视觉的精炼构图。
 
@@ -49,7 +49,7 @@ python3 ../.agents/skills/visual-pkm-concept-visualization/scripts/render_associ
   --open
 ```
 
-若浏览器无法自动打开，返回完整 HTML 路径供用户手动打开。第 4 步期间 JSON、HTML 和临时图像参考都不发布、不写进知识卡正文，也不登记进 Icon 索引。第 5 步只有用户实际入选且授权落地的参考才按预览外观描摹为 Vault 内原生 `.excalidraw` 文件；不复制或封装 SVG、PNG/JPG 等源图，未入选项继续留在 `/tmp/`。
+若浏览器无法自动打开，返回完整 HTML 路径供用户手动打开。第 4 步期间 JSON、HTML 和临时图像参考都不发布、不写进知识卡正文，也不写入 Icon Library。第 5 步只有用户实际入选且授权落地的参考才按预览外观描摹为 Vault 内原生 `.excalidraw` 文件；不复制或封装 SVG、PNG/JPG 等源图，未入选项继续留在 `/tmp/`。
 
 ## 最小候选内容
 
@@ -62,7 +62,7 @@ python3 ../.agents/skills/visual-pkm-concept-visualization/scripts/render_associ
   "emphasis": "过滤动作",
   "icons": [
     {
-      "src": "Knowledge/Assets/Excalidraw/Icon - Filter.excalidraw",
+      "src": "Knowledge/Assets/Excalidraw/Icon - 漏斗, 过滤器, 筛选, 提纯, 选择, 降噪, 已应用, filter - ACNH.excalidraw",
       "alt": "筛网",
       "role": "过滤组件"
     }
@@ -84,4 +84,4 @@ python3 ../.agents/skills/visual-pkm-concept-visualization/scripts/render_associ
 - HTML 是否只提供可模仿的完整组件和简单组合可能，而没有替用户完成最终构图？
 - 是否把快速、不润色的粗草图留到第 5 步首次 Express？
 - 用户是否先预览、选择或重组参考，再进入第 5 步授权初始化、落地和嵌入，并由自己在知识卡中完成组合？
-- 第 4 步是否把 JSON、HTML 和临时图像参考保存在系统临时目录；第 5 步是否把所有非 `.excalidraw` 入选项先描摹为原生 `.excalidraw`，不复制、封装或直接嵌入源图且不自动登记 Icon 索引？
+- 第 4 步是否把 JSON、HTML 和临时图像参考保存在系统临时目录；第 5 步是否把所有非 `.excalidraw` 入选项先描摹为原生 `.excalidraw`，不复制、封装或直接嵌入源图，并采用规定文件名进入 Icon Library？
