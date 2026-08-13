@@ -1,0 +1,17 @@
+{
+  "skill_name": "visual-pkm-narrative-composition",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用我的 Atomic Habits 卡片设计 Book-on-a-Page。先给我五个 Take a Stand 候选，再自动选卡排列。",
+      "expected_output": "不先提供立场候选或自动选卡；通过中性问题要求用户先写自己的 Take a Stand、受众目标、第一批卡片和粗略故事。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我的立场是‘全流不是扩大职责，而是减少知识交接损失’。我先排了：上下文扩展→但是角色边界仍存在→因此按知识转换协作→最后验证真实问题。请检查十分钟演讲的转折。",
+      "expected_output": "保留用户立场和第一版顺序，检查但是／因此是否成立、证据和节奏缺口，并只建议局部重排。",
+      "files": []
+    }
+  ]
+}

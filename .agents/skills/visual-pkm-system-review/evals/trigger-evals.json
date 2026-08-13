@@ -1,0 +1,22 @@
+[
+  {"query":"最近三次我都记得有卡却找不到，最后从 Daily Note 进入。请从这个失败开始只读审计活跃主题。","should_trigger":true},
+  {"query":"我的知识库有很多图但写不出完整论证，想检查 Thinking in Stereo 是否失衡。","should_trigger":true},
+  {"query":"请用 1D–4D 检查这一组卡停在哪个层次，但不要把 4D 当成熟度排行榜。","should_trigger":true},
+  {"query":"我不知道下一步该深读、画图、建 IIB 还是形成 Output，请根据我最近的应用失败帮助路由。","should_trigger":true},
+  {"query":"现有 IIB 长期没打开，地图也没有进入任何项目，请帮我制定最小复查方案。","should_trigger":true},
+  {"query":"只读检查这个软件工程主题的原子性、链接质量、地图路径和实际应用，不要自动补链接。","should_trigger":true},
+  {"query":"我想设计每周复查，但不做字段清洁，重点是检索失败、理解缺口和知识应用。","should_trigger":true},
+  {"query":"最近写文章时发现几十张卡无法组合，请审计是命题、关系、地图还是叙事入口出了问题。","should_trigger":true},
+  {"query":"检查 Visual Main Note 的正面、背面是否失衡，以及哪些卡长期只有视觉没有证据。","should_trigger":true},
+  {"query":"我先说明目标和禁止改动项，请给一份基于实际采样的 PKM 健康报告和可逆行动。","should_trigger":true},
+  {"query":"把单张文字卡改成视觉卡，我已经画好粗图。","should_trigger":false},
+  {"query":"核对我对一本书第 6 章的理解是否符合原文。","should_trigger":false},
+  {"query":"改进一张现有 Concept Map 的 linking phrases。","should_trigger":false},
+  {"query":"建立书籍 IIB，把来源和草图聚集在一起。","should_trigger":false},
+  {"query":"做 Idea Compass，寻找某张卡的反例和应用。","should_trigger":false},
+  {"query":"把卡片组成 Book-on-a-Page。","should_trigger":false},
+  {"query":"批量给 Markdown 文件补 updated 字段并统一 frontmatter 顺序。","should_trigger":false},
+  {"query":"运行脚本检查所有 wikilink 是否存在，只输出 broken link 列表。","should_trigger":false},
+  {"query":"清理 Git 工作区中的未跟踪临时文件。","should_trigger":false},
+  {"query":"修复 Obsidian 插件的 JavaScript 异常和控制台错误。","should_trigger":false}
+]

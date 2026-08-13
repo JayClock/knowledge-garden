@@ -1,0 +1,22 @@
+[
+  {"query":"我已经写好 Take a Stand，并选了 12 张 Visual Main Notes，请检查 BoaP 的但是／因此故事链。","should_trigger":true},
+  {"query":"把我的原子卡组织成十分钟演讲；受众、立场和第一版开始—转折—落点已经写好。","should_trigger":true},
+  {"query":"这个 Storyboard 每一格都用‘然后’连接，我先标了两个应该出现冲突的位置，请帮助测试。","should_trigger":true},
+  {"query":"我的 Book-on-a-Page 只是章节目录，请围绕我自己的主张检查哪些 tile 应删除或重排。","should_trigger":true},
+  {"query":"我想把六张卡组合成一个视觉故事，但不能为了故事顺畅改写原卡命题。","should_trigger":true},
+  {"query":"我已经口头讲了一遍，第三个转折解释太久、结尾没有兑现开头，请建议局部重排。","should_trigger":true},
+  {"query":"用 Brick Road Narrative 组织这组成熟视觉砖；第一版路径和立场由我提供。","should_trigger":true},
+  {"query":"为文章设计 Storyboard，检查每个节拍的信息增量和反例位置。","should_trigger":true},
+  {"query":"把一本书的 Visual Zettelkasten cards 组合成有个人立场的单页总结。","should_trigger":true},
+  {"query":"我有明确受众和主张，想测试故事里的 because、however 和 therefore 是否真实成立。","should_trigger":true},
+  {"query":"把一张现存知识卡增加视觉正面。","should_trigger":false},
+  {"query":"从长 PDF 核对作者中心主张和章节证据。","should_trigger":false},
+  {"query":"为主题建立 Concept Map，重点是概念层级和 linking phrase。","should_trigger":false},
+  {"query":"建立长期 IIB 保存项目上下文。","should_trigger":false},
+  {"query":"围绕中心卡搜索反例和相似卡。","should_trigger":false},
+  {"query":"审计为什么知识库只有收藏没有输出。","should_trigger":false},
+  {"query":"把已经完成的演讲稿转换成 PPTX 文件，不调整叙事。","should_trigger":false},
+  {"query":"对视频分镜文件做颜色校正和图片裁切。","should_trigger":false},
+  {"query":"按时间顺序列出项目发生的所有事件，不需要立场或故事结构。","should_trigger":false},
+  {"query":"给博客文章检查错别字、标点和 Markdown 格式。","should_trigger":false}
+]

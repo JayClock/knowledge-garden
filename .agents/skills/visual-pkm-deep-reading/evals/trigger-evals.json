@@ -1,0 +1,22 @@
+[
+  {"query":"我读完这本书的前言和目录，认为作者在回答‘怎样让视觉成为思考结构’，但第三部分的作用没看懂。请对照 PDF 指出我该重读哪里。","should_trigger":true},
+  {"query":"请深读这个 PDF 并直接给我完整摘要；如果这会替代我的阅读，请先阻止我并给结构阅读提示。","should_trigger":true},
+  {"query":"我读完第 4 章后合上书写了五点复述，请核对哪些是作者明说、哪些是我自己的推断。","should_trigger":true},
+  {"query":"这门课程有 20 讲。我已经逐讲写了自己的总结，想检查候选原子观点有没有脱离来源。","should_trigger":true},
+  {"query":"我画了一个书籍 Idea Atlas 骨架，中心是注意力，四个分区来自我的结构阅读。请检查它是否只是目录。","should_trigger":true},
+  {"query":"我不同意作者对工具决定论的解释，这是我的反驳。请定位支持作者的原文和我可能漏掉的限定条件。","should_trigger":true},
+  {"query":"从这组三篇来源形成知识卡之前，我先写了自己的共同命题。请核对证据和适用边界，不要替我重写。","should_trigger":true},
+  {"query":"我读书时总直接高亮却无法复述，请用 Human First Expression 带我做一轮章节阅读和回忆。","should_trigger":true},
+  {"query":"下面是我对论文方法和结论的复述，请逐项找原文位置并指出混淆相关与因果的地方。","should_trigger":true},
+  {"query":"我已经读完整本书并选出六个洞见，想确认哪些值得成为原子 Main Note，而不是章节摘录。","should_trigger":true},
+  {"query":"把我已经确认的单张知识卡画成视觉正面，我有一个漏斗草图。","should_trigger":false},
+  {"query":"把这组成熟概念排成 Concept Map，不需要回到任何来源核对。","should_trigger":false},
+  {"query":"建立一个项目 IIB 来汇总会议、代码、访谈和设计材料。","should_trigger":false},
+  {"query":"围绕这张卡找相似、反例和下游应用，先让我回忆再搜索 Vault。","should_trigger":false},
+  {"query":"把已有卡片编排成十分钟演讲，我已经写好立场和初始顺序。","should_trigger":false},
+  {"query":"审计 Knowledge/Notes 的链接质量和检索失败，不涉及某一本来源。","should_trigger":false},
+  {"query":"从网页提取干净 Markdown，去掉导航和广告。","should_trigger":false},
+  {"query":"只查 PDF 第 37 页出现的日期和人名，不需要理解论证。","should_trigger":false},
+  {"query":"润色我已经完成的中文文章，改善病句但不要研究来源。","should_trigger":false},
+  {"query":"把课程视频的英文 VTT 翻译成中文字幕。","should_trigger":false}
+]
