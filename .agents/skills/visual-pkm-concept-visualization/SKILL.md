@@ -1,7 +1,7 @@
 ---
 name: visual-pkm-concept-visualization
 description: "以 Human First Expression 驱动单一概念可视化：人类先用自己的话提出或确认核心信息，再亲自列出 3–5 个与信息相关的词，不必分类，也不必每类都有；这些词可以混合名词、动词、形容词、感受或视觉碎片。AI 随后用近义、反义、隐喻、习语、视觉双关和常见符号扩大联想范围。凡是用户要求把抽象概念、词语、句子、引文或单一观点画出来，寻找视觉隐喻，改进单张概念插图，制作 LEGO 卡／Visual Main Note，建立 Excalidraw／演示视觉 brief，准备 Excalidraw 容器，或维护已确认的 Icon Library／视觉词库时，都应使用本 skill。第 3 步由 AI 逐一解释五种视觉框架怎样组织当前信息、各自突出什么，再由人类选择；第 4 步固定生成包含实际图像的临时 HTML 预览；第 5 步经授权把入选 icon 确保落地为 Vault 内 `.excalidraw` 组件并嵌入 `Knowledge/Notes/` 目标卡的初始 Excalidraw 视图，再由人类移动、缩放、组合和补画后亲自完成第一张草图。默认交付是一个带视觉正面的 Visual Main Note，但视觉仍只压缩一个核心信息，不图解整张卡的正文、来源和连接。项目语义色板保留为可选的统一风格工具；icon 与最终知识卡可以保留经用户确认的其他颜色，不把色板检查或受管登记作为完成 Gate。所有进入知识卡或 Icon Library 的 icon 都必须是已描摹为原生元素的纯 JSON `.excalidraw` 组件；本地图像、SVG、PNG/JPG 与其他来源文件只能作为临时描摹参考。不用于把多张卡组织成 Map、IIB、Book-on-a-Page 或 Storyboard。最终意义、框架、Express、反馈解释，以及哪些具体实例、标签和细节应进入视觉正面，都属于人类；AI 不自行衡量感染力、代表性、记忆点或取舍，明确授权后只机械数字化已确认内容。"
-compatibility: "第 4 步固定 HTML 预览需要 Python 3 和浏览器；本地视觉词库不足后检索 Flaticon 需要网络，但只观察并在系统临时目录重绘结构完整、可识别的临时视觉参考，不下载或嵌入 Flaticon 原素材。第 5 步初始化知识卡、把所有尚非原生 Excalidraw 的入选图像参考描摹为 Vault 内纯 JSON `.excalidraw` 组件、并将入选组件嵌入初始视图，需要 Obsidian 正在运行、Obsidian CLI 可用且 Excalidraw 插件已启用。通过插件／API 创建和更新绘图，不手工改写 compressed-json。"
+compatibility: "第 4 步固定 HTML 预览需要 Python 3 和浏览器；本地 Icon Library 不足后检索 Flaticon、The Noun Project 和 Google Images 需要网络，但只观察并在系统临时目录重绘结构完整、可识别的临时视觉参考，不下载或嵌入外部原素材。第 5 步初始化知识卡、把所有尚非原生 Excalidraw 的入选图像参考描摹为 Vault 内纯 JSON `.excalidraw` 组件、并将入选组件嵌入初始视图，需要 Obsidian 正在运行、Obsidian CLI 可用且 Excalidraw 插件已启用。通过插件／API 创建和更新绘图，不手工改写 compressed-json。"
 ---
 
 # 概念可视化教练
@@ -147,14 +147,14 @@ Human First 保护 message 的意义归属，也确保首批联想由人发起�
 1. 先看自己的旧草图，并在 Excalidraw 中运行 `Downloaded/Icon Library` 搜索个人视觉词库。
 2. Icon Library 从 `Icon - 关键词1, 关键词2 - 来源.excalidraw` 文件名提取检索词；选中候选后打开实际 `.excalidraw` 组件观察，不凭关键词决定含义。
 3. 根据框架把本地已有的主体、动作和关系组件组织成若干可模仿候选。
-4. 只有本地视觉词库没有合适组件时，才到 [Flaticon](https://www.flaticon.com/) 检索对应主体、动作或关系。把网站当作观察轮廓、结构和动作的视觉字典，不下载、转换、截图、描摹路径或嵌入 Flaticon 的 PNG／SVG。
+4. 只有本地 Icon Library 没有合适组件时，才依次到 [Flaticon](https://www.flaticon.com/)、[The Noun Project](https://thenounproject.com/) 和 [Google Images](https://images.google.com/) 检索对应主体、动作或关系；不使用其他外部来源。把它们当作观察轮廓、结构和动作的视觉字典，不下载、转换、截图、描摹路径或嵌入外部 PNG／SVG。
 5. 观察后在系统临时目录重绘一个**结构完整、可识别、可分层重组**的 SVG 视觉组件。可以使用基础形状和自制路径，但基础形状只是绘制手段；结果应保留主体的关键轮廓、动作、部件关系和必要细节，不能退化成几个几何形状组成的占位符，也不复制原图路径或精炼成最终构图。临时组件可以使用项目语义色板，也可以采用与本轮视觉意图一致的其他配色；第 5 步应保留用户确认的外观，不因落地而自动换色。
-6. 不要保存 Flaticon 详情页、作者、素材 ID、权利说明或其他逐项来源记录，也不要把这些信息写入 JSON、HTML 或 Vault；永久组件只在规定文件名末尾保留来源名称。
+6. 不要保存外部候选的详情页、作者、素材 ID、权利说明或其他逐项来源记录，也不要把这些信息写入 JSON、HTML 或 Vault；永久组件只在规定文件名末尾保留来源名称。
 7. 每个候选使用 1–3 个实际可见图像，可以来自本地已有 `.excalidraw` icon 组件或本轮临时重绘的 SVG／其他本地图像参考；说明怎样画、由哪些层组成以及突出什么，不附加素材追溯字段。渲染脚本只在内存中把本地 `.excalidraw` 组件转换成 HTML 可显示的 SVG data URI，不在 Vault 生成 SVG。本地 `.excalidraw` 组件已满足原生描摹要求，可按现有外观复用；其他格式仅供预览，入选后必须先描摹为原生 `.excalidraw`，不得直接嵌入知识卡。
 8. 将 JSON、HTML 和必要的临时重绘 SVG 写入 `/tmp/visual-pkm-concept-visualization/<concept-slug>/`，运行 `scripts/render_association_pool.py --open` 生成并打开预览。
 9. 返回完整 HTML 路径，请用户预览并选择或重组 1–3 个参考方向，使用页面按钮复制入选编号并贴回对话；用户确认参考后才进入第 5 步。第 4 步仍不写 Vault；真正入选的 icon 在第 5 步获得写入授权后才落地并嵌入知识卡初始视图。
 
-第 4 步的 HTML 是固定交付，不需要用户另行提出“生成 HTML”。它提供可识别、可复用的视觉零件，而不是低完成度占位草图；这些组件本身可以相对完整，但不组成最终画面。**粗糙、快速、不润色描述的是第 5 步首次 Express 的整体构图，不是第 4 步 icon 的质量标准。**HTML 不写入知识卡、Vault 或 Icon Library，也不替人类完成 Express。Flaticon 在本步只用于观察，不构成最终方案采用的外部素材；若用户另行明确要求直接采用其他外部素材，再进入对应的可选生产检查。
+第 4 步的 HTML 是固定交付，不需要用户另行提出“生成 HTML”。它提供可识别、可复用的视觉零件，而不是低完成度占位草图；这些组件本身可以相对完整，但不组成最终画面。**粗糙、快速、不润色描述的是第 5 步首次 Express 的整体构图，不是第 4 步 icon 的质量标准。**HTML 不写入知识卡、Vault 或 Icon Library，也不替人类完成 Express。Flaticon、The Noun Project 和 Google Images 在本步只用于观察，不构成最终方案采用的外部素材；若最终直接采用外部素材，再进入对应的可选生产检查。
 
 ### 第 5 步：初始化知识卡、首次草图、精炼与 ETC
 
@@ -241,7 +241,6 @@ Human First 保护 message 的意义归属，也确保首批联想由人发起�
 | 接入 `up`、持续问题和 typed links | [知识卡语义连接规则](references/card-connections.md) |
 | 最终成品采用外部素材或准备发布 | [入选素材的生产检查](references/material-source-order.md) |
 | 明确要求扩充或修正 Icon Library／视觉词库 | [入选素材的生产检查](references/material-source-order.md) |
-| 明确要求 ACNH 视觉语言 | [ACNH 素材规则](references/acnh-material-source.md) |
 | 明确要求统一到项目语义色板或登记受管文件 | [项目配色参考](references/palettes.md) |
 
 这些分支不能反过来成为开始草图的前置条件。
@@ -249,7 +248,7 @@ Human First 保护 message 的意义归属，也确保首批联想由人发起�
 ## 写入与文件安全
 
 - 第 5 步初始化现有或新建知识卡并落地、嵌入入选 icon 是格式与素材准备，不是内容建议；用户明确授权后才执行。默认先运行 `scripts/prepare_visual_main_note.py` dry-run，核对目标、编号、组件和待原生化项；只有授权后才加 `--apply`。只能嵌入用户实际入选的组件并松散摆成素材托盘，不得顺便加入未入选图形、文字元素、连接、完整构图或新的意义。具体流程见[第 5 步知识卡与 Excalidraw 初始化](references/excalidraw-note-preparation.md)。
-- 第 4 步固定预览的 JSON、HTML 和临时图像参考只写入系统 `/tmp/visual-pkm-concept-visualization/`；第 5 步只有用户入选且授权落地的图像参考才描摹为 Vault 内原生 `.excalidraw` 文件，未入选项仍留在 `/tmp/`。任何 SVG、PNG/JPG 或其他图像都不得作为最终 icon 直接复制或嵌入。Flaticon 原素材不下载、不嵌入，详情页、作者和权利说明也不保存为参考记录。
+- 第 4 步固定预览的 JSON、HTML 和临时图像参考只写入系统 `/tmp/visual-pkm-concept-visualization/`；第 5 步只有用户入选且授权落地的图像参考才描摹为 Vault 内原生 `.excalidraw` 文件，未入选项仍留在 `/tmp/`。任何 SVG、PNG/JPG 或其他图像都不得作为最终 icon 直接复制或嵌入。Flaticon、The Noun Project 和 Google Images 的原素材不下载、不嵌入，详情页、作者和权利说明也不保存为参考记录。
 - 联想、方向比较、素材搜索、LEGO 规格、配色和 ETC 日志不写入知识卡正文。
 - 核心观点、自己的解释、来源、`up` 和有理由的语义链接属于知识内容。
 - PDF、图片和音视频不承载绘图数据；使用用户指定的关联 Markdown。
@@ -316,8 +315,8 @@ AI 建议，待确认：
 - AI 扩展的候选是否只说明可以怎样画和突出什么，并保持为联想原料而非最终决定？
 - 用户是否选择、拒绝或重组了参考，而不是由 AI 宣布最终方向？
 - 第 3 步是否逐一解释了五种视觉框架的基本逻辑、用于当前信息时怎样组织以及最突出什么，并把最终选择留给用户？
-- 第 3 步是否只确认视觉框架，没有给完整构图、找 icon 或要求草图；第 4 步是否先检索本地实际 `.excalidraw` icon 组件，仅在不足时检索 Flaticon，并生成打开了包含实际图像的临时 HTML，而没有要求人类绘制？
-- Flaticon 是否只用于观察后临时重绘，没有下载、转换、截图、描摹路径或嵌入原素材，也没有保留详情页、作者和权利说明？
+- 第 3 步是否只确认视觉框架，没有给完整构图、找 icon 或要求草图；第 4 步是否先检索本地实际 `.excalidraw` icon 组件，仅在不足时检索 Flaticon、The Noun Project 和 Google Images，并生成打开了包含实际图像的临时 HTML，而没有要求人类绘制？
+- 外部搜索是否只使用 Flaticon、The Noun Project 和 Google Images，并只在观察后临时重绘，没有下载、转换、截图、描摹路径或嵌入原素材，也没有保留详情页、作者和权利说明？
 - 临时重绘组件是否保留了可识别轮廓、关键动作、部件关系和必要细节，能够被分层重组，而不是低完成度几何占位符；其颜色是否在第 5 步按用户确认外观保留？
 - HTML 是否只提供本地或临时重绘的完整视觉组件，没有素材追溯字段、最终构图或 Vault 写入？
 - 是否把“快速、粗糙、不润色”留给第 5 步首次 Express，而没有把它误作第 4 步 icon 的质量标准？
