@@ -8,6 +8,8 @@ VAULT_NAME="${OBSIDIAN_VAULT:-content}"
 MODE="check"
 TIMEOUT=600
 JSON_OUTPUT=false
+REGISTER=false
+TARGET_PATHS=()
 
 usage() {
   cat <<'EOF'
@@ -18,7 +20,12 @@ Usage:
 
 Modes:
   --check          Dry-run and audit only (default). Exits 2 when changes are pending.
-  --apply          Apply changed CSS values through the Excalidraw plugin and update sync state.
+  --apply          Apply known semantic migrations through the Excalidraw plugin.
+
+Scope:
+  (default)        Audit or sync every file already listed in palette-sync-state.json.
+  --path=PATH      Audit one Knowledge/Notes/*.md or Knowledge/Maps/*.md drawing; repeat for multiple targets.
+  --register       With targeted --apply, register passing targets with their semantic background role.
 
 Options:
   --vault=NAME     Obsidian vault name (default: content or $OBSIDIAN_VAULT).
@@ -27,8 +34,9 @@ Options:
   --json           Print the full JSON report.
   -h, --help       Show this help.
 
-Authoritative palette:
+Authoritative palette for managed canvas backgrounds and non-image note elements:
   content/Knowledge/Assets/Styles/concept-visualization-palette.css
+  Traced .excalidraw icon components, embedded Knowledge drawings, and image color maps are excluded.
 EOF
 }
 
@@ -38,6 +46,8 @@ for arg in "$@"; do
     --apply) MODE="apply" ;;
     --vault=*) VAULT_NAME="${arg#*=}" ;;
     --config=*) CONFIG_PATH="${arg#*=}" ;;
+    --path=*) TARGET_PATHS+=("${arg#*=}") ;;
+    --register) REGISTER=true ;;
     --timeout=*) TIMEOUT="${arg#*=}" ;;
     --json) JSON_OUTPUT=true ;;
     -h|--help) usage; exit 0 ;;
@@ -50,6 +60,17 @@ command -v obsidian >/dev/null 2>&1 || { echo "obsidian CLI is not installed or 
 [[ -f "$CONFIG_PATH" ]] || { echo "Missing sync state: $CONFIG_PATH" >&2; exit 66; }
 CONFIG_PATH="$(cd "$(dirname "$CONFIG_PATH")" && pwd)/$(basename "$CONFIG_PATH")"
 [[ "$TIMEOUT" =~ ^[0-9]+$ ]] || { echo "--timeout must be an integer" >&2; exit 64; }
+if [[ "$REGISTER" == true && "$MODE" != "apply" ]]; then
+  echo "--register requires --apply" >&2
+  exit 64
+fi
+if [[ "$REGISTER" == true && ${#TARGET_PATHS[@]} -eq 0 ]]; then
+  echo "--register requires at least one Knowledge/Notes/*.md or Knowledge/Maps/*.md --path" >&2
+  exit 64
+fi
+for path in "${TARGET_PATHS[@]}"; do
+  [[ -n "$path" ]] || { echo "--path cannot be empty" >&2; exit 64; }
+done
 
 STAMP="$(date +%s)-$$-$RANDOM"
 REPORT_PATH="/tmp/excalidraw-palette-sync-${STAMP}.json"
@@ -57,10 +78,17 @@ ERROR_PATH="/tmp/excalidraw-palette-sync-${STAMP}.error"
 LAUNCH_LOG="/tmp/excalidraw-palette-sync-${STAMP}.launch.log"
 rm -f "$REPORT_PATH" "$ERROR_PATH" "$LAUNCH_LOG"
 
-LAUNCHER="$(python3 - "$CORE_SCRIPT" "$CONFIG_PATH" "$REPORT_PATH" "$ERROR_PATH" "$MODE" <<'PY'
+TARGET_PATHS_JSON="$(printf '%s\n' "${TARGET_PATHS[@]}" | python3 -c 'import json,sys; print(json.dumps([line.rstrip("\n") for line in sys.stdin if line.rstrip("\n")], ensure_ascii=False))')"
+LAUNCHER="$(python3 - "$CORE_SCRIPT" "$CONFIG_PATH" "$REPORT_PATH" "$ERROR_PATH" "$MODE" "$TARGET_PATHS_JSON" "$REGISTER" <<'PY'
 import json,sys
-core,config,report,error,mode=sys.argv[1:]
-options={"configPath":config,"reportPath":report,"apply":mode=="apply"}
+core,config,report,error,mode,paths_json,register=sys.argv[1:]
+options={
+    "configPath":config,
+    "reportPath":report,
+    "apply":mode=="apply",
+    "paths":json.loads(paths_json),
+    "register":register.lower()=="true",
+}
 print("(async()=>{try{globalThis.PALETTE_SYNC_OPTIONS="+json.dumps(options,ensure_ascii=False)+";await eval(require('fs').readFileSync("+json.dumps(core)+",'utf8'));}catch(e){require('fs').writeFileSync("+json.dumps(error)+",String(e&&e.stack||e));}finally{delete globalThis.PALETTE_SYNC_OPTIONS;}})()")
 PY
 )"
@@ -94,16 +122,29 @@ else
 import json,sys
 r=json.load(open(sys.argv[1]))
 print(f"mode: {r['mode']}")
-print(f"managed files: {r['managedFiles']}")
+print(f"scope: {r.get('scope', 'managed')}")
+print(f"audited files: {r['managedFiles']}")
 print(f"palette roles changed: {len(r['roleChanges'])}")
 for x in r['roleChanges']:
     print(f"  {x['role']}: {x['from']} -> {x['to']}")
 print(f"files needing write: {r['filesNeedingWrite']}")
 print(f"element color fields: {r['plannedElementFields']}")
-print(f"SVG image instances: {r['plannedImageInstances']}")
+print(f"icon image color mappings (excluded): {r['plannedImageInstances']}")
 print(f"scene backgrounds: {r['plannedBackgrounds']}")
 print(f"applied: {r['applied']}")
 print(f"sync state updated: {r['stateUpdated']}")
+if r.get('registeredFiles'):
+    print("registered files:")
+    for path in r['registeredFiles']:
+        print(f"  {path}")
+if r.get('updatedRegisteredFiles'):
+    print("updated registrations:")
+    for path in r['updatedRegisteredFiles']:
+        print(f"  {path}")
+if r.get('alreadyRegisteredFiles'):
+    print("already registered:")
+    for path in r['alreadyRegisteredFiles']:
+        print(f"  {path}")
 print(f"report: {sys.argv[1]}")
 PY
 fi
