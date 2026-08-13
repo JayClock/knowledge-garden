@@ -1,0 +1,123 @@
+{
+  "suite": "visual-pkm-human-first-behavior",
+  "model": "gpt-5.6-sol",
+  "total": 16,
+  "passed": 16,
+  "pass_rate": 1.0,
+  "mean_duration_seconds": 11.919,
+  "results": [
+    {
+      "skill_name": "visual-pkm-concept-visualization",
+      "eval_id": 1,
+      "passed": true,
+      "duration_seconds": 12.026,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-concept-visualization/eval-1/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-concept-visualization",
+      "eval_id": 2,
+      "passed": true,
+      "duration_seconds": 15.308,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-concept-visualization/eval-2/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-concept-visualization",
+      "eval_id": 3,
+      "passed": true,
+      "duration_seconds": 9.691,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-concept-visualization/eval-3/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-deep-reading",
+      "eval_id": 1,
+      "passed": true,
+      "duration_seconds": 10.844,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-deep-reading/eval-1/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-deep-reading",
+      "eval_id": 2,
+      "passed": true,
+      "duration_seconds": 10.144,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-deep-reading/eval-2/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-idea-integration",
+      "eval_id": 1,
+      "passed": true,
+      "duration_seconds": 10.991,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-idea-integration/eval-1/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-idea-integration",
+      "eval_id": 2,
+      "passed": true,
+      "duration_seconds": 9.221,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-idea-integration/eval-2/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-knowledge-exploration",
+      "eval_id": 1,
+      "passed": true,
+      "duration_seconds": 10.971,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-knowledge-exploration/eval-1/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-knowledge-exploration",
+      "eval_id": 2,
+      "passed": true,
+      "duration_seconds": 10.802,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-knowledge-exploration/eval-2/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-knowledge-exploration",
+      "eval_id": 3,
+      "passed": true,
+      "duration_seconds": 10.363,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-knowledge-exploration/eval-3/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-narrative-composition",
+      "eval_id": 1,
+      "passed": true,
+      "duration_seconds": 10.015,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-narrative-composition/eval-1/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-narrative-composition",
+      "eval_id": 2,
+      "passed": true,
+      "duration_seconds": 20.129,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-narrative-composition/eval-2/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-spatial-mapping",
+      "eval_id": 1,
+      "passed": true,
+      "duration_seconds": 15.156,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-spatial-mapping/eval-1/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-spatial-mapping",
+      "eval_id": 2,
+      "passed": true,
+      "duration_seconds": 16.217,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-spatial-mapping/eval-2/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-system-review",
+      "eval_id": 1,
+      "passed": true,
+      "duration_seconds": 9.691,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-system-review/eval-1/with_skill/output.txt"
+    },
+    {
+      "skill_name": "visual-pkm-system-review",
+      "eval_id": 2,
+      "passed": true,
+      "duration_seconds": 9.131,
+      "output": "../.agents/skills/visual-pkm-suite-workspace/iteration-1/visual-pkm-system-review/eval-2/with_skill/output.txt"
+    }
+  ],
+  "note": "Single-configuration end-to-end behavior validation; no baseline comparison."
+}

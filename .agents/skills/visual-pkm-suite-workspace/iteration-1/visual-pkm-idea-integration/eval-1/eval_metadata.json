@@ -1,0 +1,10 @@
+{
+  "eval_id": 1,
+  "eval_name": "visual-pkm-idea-integration-human-first-1",
+  "skill_name": "visual-pkm-idea-integration",
+  "prompt": "我要研究一本关于认知的书。请搜索 Vault 中全部相关材料，替我分类并设计完整 IIB。",
+  "expected_output": "不先搜索、分类或设计完整布局；要求用户先确认中心问题、选出第一批材料并做一次带理由的初步摆放。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

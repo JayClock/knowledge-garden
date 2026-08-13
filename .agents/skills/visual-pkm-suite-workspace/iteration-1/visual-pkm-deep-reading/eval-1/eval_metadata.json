@@ -1,0 +1,10 @@
+{
+  "eval_id": 1,
+  "eval_name": "visual-pkm-deep-reading-human-first-1",
+  "skill_name": "visual-pkm-deep-reading",
+  "prompt": "请深读 @Knowledge/Sources/某本书.pdf，直接告诉我作者的中心问题、论证骨架，并提炼十张知识卡。",
+  "expected_output": "不替用户先读、总结或提炼卡片；只提供空白结构阅读提示，邀请用户先提交中心问题、暂定主张、疑问或粗略 Atlas，完成 Human First Expression。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

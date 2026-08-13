@@ -1,0 +1,142 @@
+[
+  {
+    "index": 1,
+    "query": "围绕 [[测试驱动开发]] 做 Idea Compass。我先想到一个前提和一个反例，请再搜索遗漏。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 2,
+    "query": "我想比较 Mind Map 和 Concept Map，已经写了一个共同点和两个差异，请做 Double-Bubble 检查。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 3,
+    "query": "找出重复使用‘桥’视觉的卡片。我先列了两个实例，想建立临时 Idea Mixer。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 4,
+    "query": "我记得有 Basel 工作坊笔记却找不到，最后从 Daily Note 进入，请做 Navigation AAR。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 5,
+    "query": "这张卡的 Competitors 方向一直为空，我先写了自己的一个反对意见，请搜索真正的挑战观点。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 6,
+    "query": "我已经回忆了三张可能相关的卡，请阅读正文并测试它们是建立在、对照还是只是关键词相同。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 7,
+    "query": "用 LATCH 分析为什么我按地点和时间都找不到一张明明存在的笔记。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 8,
+    "query": "把两个容易混淆的概念并排比较，重点找会改变行动的差异而不是表面不同。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 9,
+    "query": "我想让不同项目中的同一图标发生意外碰撞，但不要自动写正式链接。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 10,
+    "query": "从这张中心卡向来源、应用、相似和挑战四个方向探索，第一轮关系由我先回忆。",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "index": 11,
+    "query": "把一个抽象观点画成单张概念视觉。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 12,
+    "query": "为一本书创建 Idea Atlas，展示整体—部分—整体。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 13,
+    "query": "建立长期项目 IIB，聚集所有多模态材料。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 14,
+    "query": "对照 PDF 核验我自己的章节摘要。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 15,
+    "query": "把确认的卡片排成 Storyboard 并形成个人立场。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 16,
+    "query": "审计 Vault 的整体健康和复查节奏。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 17,
+    "query": "用 rg 搜索正文中所有出现‘bridge’的文件并输出路径，不解释语义。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 18,
+    "query": "修复一个确定的悬空 wikilink，目标文件名已经给出。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 19,
+    "query": "给通讯录增加城市、类别和字母排序字段。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "index": 20,
+    "query": "比较两个 Git 分支的代码差异并生成 patch。",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  }
+]

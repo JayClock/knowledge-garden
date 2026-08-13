@@ -1,0 +1,59 @@
+{
+  "suite": "visual-pkm-trigger-classification",
+  "model": "gpt-5.6-sol",
+  "total": 140,
+  "passed": 140,
+  "pass_rate": 1.0,
+  "results": [
+    {
+      "skill_name": "visual-pkm-concept-visualization",
+      "passed": 20,
+      "total": 20,
+      "result_path": "../.agents/skills/visual-pkm-suite-workspace/trigger-evals-2/visual-pkm-concept-visualization/results.json",
+      "iteration": "trigger-evals-2"
+    },
+    {
+      "skill_name": "visual-pkm-deep-reading",
+      "passed": 20,
+      "total": 20,
+      "result_path": "../.agents/skills/visual-pkm-suite-workspace/trigger-evals-1/visual-pkm-deep-reading/results.json",
+      "iteration": "trigger-evals-1"
+    },
+    {
+      "skill_name": "visual-pkm-idea-integration",
+      "passed": 20,
+      "total": 20,
+      "result_path": "../.agents/skills/visual-pkm-suite-workspace/trigger-evals-1/visual-pkm-idea-integration/results.json",
+      "iteration": "trigger-evals-1"
+    },
+    {
+      "skill_name": "visual-pkm-knowledge-exploration",
+      "passed": 20,
+      "total": 20,
+      "result_path": "../.agents/skills/visual-pkm-suite-workspace/trigger-evals-1/visual-pkm-knowledge-exploration/results.json",
+      "iteration": "trigger-evals-1"
+    },
+    {
+      "skill_name": "visual-pkm-narrative-composition",
+      "passed": 20,
+      "total": 20,
+      "result_path": "../.agents/skills/visual-pkm-suite-workspace/trigger-evals-1/visual-pkm-narrative-composition/results.json",
+      "iteration": "trigger-evals-1"
+    },
+    {
+      "skill_name": "visual-pkm-spatial-mapping",
+      "passed": 20,
+      "total": 20,
+      "result_path": "../.agents/skills/visual-pkm-suite-workspace/trigger-evals-1/visual-pkm-spatial-mapping/results.json",
+      "iteration": "trigger-evals-1"
+    },
+    {
+      "skill_name": "visual-pkm-system-review",
+      "passed": 20,
+      "total": 20,
+      "result_path": "../.agents/skills/visual-pkm-suite-workspace/trigger-evals-2/visual-pkm-system-review/results.json",
+      "iteration": "trigger-evals-2"
+    }
+  ],
+  "note": "Description-only batch classification. Two initial near-miss failures were corrected by tightening concept-visualization and system-review descriptions, then rerun."
+}

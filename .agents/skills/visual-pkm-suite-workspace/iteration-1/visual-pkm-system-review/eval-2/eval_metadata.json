@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "visual-pkm-system-review-human-first-2",
+  "skill_name": "visual-pkm-system-review",
+  "prompt": "最近我三次记得有卡却找不到，最后都从 Daily Note 进入。我希望改善活跃软件工程主题的检索，但不要重命名文件或改 frontmatter。请只读采样这组卡。",
+  "expected_output": "以用户失败和边界为基线做只读采样，分开报告事实与诊断候选，提出可逆建议并让用户选择优先级。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

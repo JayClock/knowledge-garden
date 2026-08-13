@@ -1,0 +1,10 @@
+{
+  "eval_id": 3,
+  "eval_name": "visual-pkm-knowledge-exploration-human-first-3",
+  "skill_name": "visual-pkm-knowledge-exploration",
+  "prompt": "找出 Vault 中所有使用‘桥’视觉的卡片，直接建立 Idea Mixer 并告诉我共同机制。",
+  "expected_output": "先要求用户选定该视觉并回忆至少两个已知实例、说出第一印象；之后 AI 才搜索，且共同机制仍由用户命名。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "visual-pkm-idea-integration-human-first-2",
+  "skill_name": "visual-pkm-idea-integration",
+  "prompt": "我的 IIB 中心是‘注意力如何被环境塑造’。我把书放中央、个人实验放右边、反例放左边，但现在右边塞得太满，我怀疑实验和结论混在一起。请只读检查。",
+  "expected_output": "保留用户空间解释，读取指定范围后提出一个局部聚类、遗漏或混乱风险，并让用户亲自移动元素。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

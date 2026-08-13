@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "visual-pkm-spatial-mapping-human-first-2",
+  "skill_name": "visual-pkm-spatial-mapping",
+  "prompt": "我在听播客时先铺了三块 Brick：‘注意力被切碎’、‘恢复上下文有成本’、‘关闭通知’。前两块相邻，第三块放在下游。请检查是否单砖单意和流程是否被我误画。",
+  "expected_output": "以用户初始砖块和布局为起点，检查原子性、关系歧义和一个局部调整，不替用户重新捕捉整期播客。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}

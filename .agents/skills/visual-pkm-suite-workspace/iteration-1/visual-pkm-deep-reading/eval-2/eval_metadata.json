@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "visual-pkm-deep-reading-human-first-2",
+  "skill_name": "visual-pkm-deep-reading",
+  "prompt": "我读完第 3 章后合上书写了这段：作者认为注意力下降主要来自工具本身，但我不确定有没有忽略个人习惯。请对照原文核验，告诉我该重读哪里；不要替我重写摘要。",
+  "expected_output": "原样保留人类表达，定位可回查证据，区分作者原话与用户解释，提出可能误读和一个返回原文的问题。",
+  "mode": "with_skill",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex"
+}
