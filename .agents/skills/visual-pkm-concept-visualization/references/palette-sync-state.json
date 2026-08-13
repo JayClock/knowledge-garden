@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "note": "Optional palette management state. The CSS file is authoritative only for managed canvas backgrounds and non-image native note elements; traced .excalidraw icon components and image color maps are excluded. lastApplied records the managed HEX values, and managedFiles tracks drawings that users explicitly chose to register.",
+  "paletteCss": "Knowledge/Assets/Styles/concept-visualization-palette.css",
+  "strict": true,
+  "lastApplied": {
+    "--concept-color-ink": "#001219",
+    "--concept-color-deep-structure": "#005F73",
+    "--concept-color-positive-flow": "#009999",
+    "--concept-color-cool-fill": "#99DEDE",
+    "--concept-color-warm-fill": "#F3E9E0",
+    "--concept-color-attention": "#EE9B00",
+    "--concept-color-friction": "#CA6702",
+    "--concept-color-conflict": "#BB3E03",
+    "--concept-color-canvas": "#FFF6F0"
+  },
+  "managedFiles": [
+    {
+      "path": "Knowledge/Assets/Excalidraw/Icon - AI role - deep structure.excalidraw",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Assets/Excalidraw/Icon - API layer - conflict.excalidraw",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Assets/Excalidraw/Icon - Availability check - positive flow.excalidraw",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Assets/Excalidraw/Icon - Database layer - conflict.excalidraw",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Assets/Excalidraw/Icon - Electrical services - positive flow.excalidraw",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Assets/Excalidraw/Icon - Price tag - attention.excalidraw",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Assets/Excalidraw/Icon - Product inventory - deep structure.excalidraw",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Assets/Excalidraw/Icon - Smartphone - deep structure.excalidraw",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Assets/Excalidraw/Icon - UI layer - deep structure.excalidraw",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Maps/Icon 索引.md",
+      "backgroundRole": "--concept-color-warm-fill"
+    },
+    {
+      "path": "Knowledge/Maps/Sketch My Mind.md",
+      "backgroundRole": "--concept-color-warm-fill"
+    },
+    {
+      "path": "Knowledge/Maps/全流程序员.md",
+      "backgroundRole": "--concept-color-warm-fill"
+    },
+    {
+      "path": "Knowledge/Notes/DevOps 与运营反馈.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/LCP 的衡量与优化.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/TDD 与结对编程.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/乐高式思考.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/全栈程序员的生效前提.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/业务建模.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/产品验收.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/架构与任务分解.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/用户故事.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/地图与 IIB 的职责边界.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/归纳推理.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/测试四象限.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/微服务的独立交付边界.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/现代架构下的全栈边界.md",
+      "backgroundRole": "--concept-color-canvas"
+    },
+    {
+      "path": "Knowledge/Notes/统一语言.md",
+      "backgroundRole": "--concept-color-canvas"
+    }
+  ],
+  "lastAppliedAt": "2026-08-06T09:32:57+08:00"
+}

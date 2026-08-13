@@ -1,0 +1,945 @@
+{
+  "schema_version": 1,
+  "index_path": "Knowledge/Maps/Icon 索引.md",
+  "metadata": {
+    "title": "Icon 索引",
+    "aliases": [
+      "Icon Library",
+      "图标库"
+    ],
+    "tags": [
+      "icon"
+    ],
+    "type": "资源索引"
+  },
+  "asset_root": "Knowledge/Assets/Excalidraw",
+  "master_suffix": ".excalidraw",
+  "source_groups": [
+    {
+      "id": "acnh",
+      "label": "ACNH Pocket Guide",
+      "statement": "来源链接固定到 commit `826ba171552e2fe1a8e5f06996cd5ae7e724bf16`；本索引中的相关 Excalidraw icon 组件 基于登记图像重构。仓库未见明确顶层许可证，游戏图像相关权利可能包括 Nintendo，公开或商业使用前需重新核对。",
+      "required_url_fragment": "826ba171552e2fe1a8e5f06996cd5ae7e724bf16"
+    },
+    {
+      "id": "flaticon",
+      "label": "Flaticon",
+      "statement": "每项保留详情页和作者；本地文件为改编或独立重绘的 Excalidraw icon 组件。免费方案通常要求署名，部分详情页明确要求署名；持有效 Premium 许可时可能免署名，公开或商业使用前需重新核对当前条款。",
+      "required_entry_fields": [
+        "author"
+      ],
+      "required_url_host": "www.flaticon.com"
+    }
+  ],
+  "notices": [
+    "规范 Excalidraw icon 组件 不保留冗余 metadata，因此来源和权利记录集中保留在本索引。"
+  ],
+  "entries": [
+    {
+      "id": "Icon - building Blocks.excalidraw",
+      "title": "building Blocks",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - building Blocks.excalidraw",
+      "keywords": [
+        "积木",
+        "木块",
+        "乐高",
+        "模块化",
+        "约束",
+        "组合",
+        "重混",
+        "building blocks"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "wooden-block toy · ID 3206",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/data/DataCreated/Miscellaneous.json"
+        },
+        {
+          "label": "实际图片",
+          "url": "https://acnhcdn.com/latest/FtrIcon/FtrBlockBrick_Remake_0_0.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Business role.excalidraw",
+      "title": "Business role",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Business role.excalidraw",
+      "keywords": [
+        "业务",
+        "商业",
+        "公文包",
+        "角色",
+        "参与方",
+        "business",
+        "briefcase",
+        "role"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "aluminum briefcase · ID 7453",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/data/DataCreated/Miscellaneous.json"
+        },
+        {
+          "label": "实际图片",
+          "url": "https://acnhcdn.com/latest/FtrIcon/FtrDuralumincase_Remake_0_0.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Product role.excalidraw",
+      "title": "Product role",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Product role.excalidraw",
+      "keywords": [
+        "产品",
+        "设计",
+        "工具",
+        "尺子",
+        "笔",
+        "角色",
+        "参与方",
+        "product"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "ruler.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/icons/ruler.png"
+        },
+        {
+          "label": "pencil.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/icons/pencil.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Engineering role.excalidraw",
+      "title": "Engineering role",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Engineering role.excalidraw",
+      "keywords": [
+        "工程",
+        "开发",
+        "代码",
+        "电脑",
+        "编程",
+        "角色",
+        "参与方",
+        "engineering"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "desktop computer · Programming · ID 3590",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/data/DataCreated/Miscellaneous.json"
+        },
+        {
+          "label": "实际图片",
+          "url": "https://acnhcdn.com/latest/FtrIcon/FtrDesktopPC_Remake_0_4.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - AI role.excalidraw",
+      "title": "AI role",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - AI role.excalidraw",
+      "keywords": [
+        "AI",
+        "人工智能",
+        "机器人",
+        "智能体",
+        "自动化",
+        "角色",
+        "参与方",
+        "smart toy"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "robot hero · ID 1509",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/data/DataCreated/Housewares.json"
+        },
+        {
+          "label": "实际图片",
+          "url": "https://acnhcdn.com/latest/FtrIcon/FtrHerorobot_Remake_0_0.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - UI layer.excalidraw",
+      "title": "UI layer",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - UI layer.excalidraw",
+      "keywords": [
+        "界面",
+        "前端",
+        "网页",
+        "浏览器",
+        "笔记本",
+        "技术层",
+        "模块",
+        "UI"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "laptop · Web browsing · ID 1850",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/data/DataCreated/Miscellaneous.json"
+        },
+        {
+          "label": "实际图片",
+          "url": "https://acnhcdn.com/latest/FtrIcon/FtrLaptop_Remake_1_3.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - API layer.excalidraw",
+      "title": "API layer",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - API layer.excalidraw",
+      "keywords": [
+        "接口",
+        "连接",
+        "交换",
+        "后端",
+        "服务",
+        "齿轮",
+        "技术层",
+        "API"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "API · Flaticon #1493169",
+          "url": "https://www.flaticon.com/free-icon/api_1493169"
+        }
+      ],
+      "author": "berkahicon",
+      "treatment": "本地改编矢量"
+    },
+    {
+      "id": "Icon - Database layer.excalidraw",
+      "title": "Database layer",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Database layer.excalidraw",
+      "keywords": [
+        "数据库",
+        "数据",
+        "存储",
+        "服务器",
+        "机柜",
+        "技术层",
+        "database",
+        "data"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "server · ID 1126",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/data/DataCreated/Housewares.json"
+        },
+        {
+          "label": "实际图片",
+          "url": "https://acnhcdn.com/latest/FtrIcon/FtrServer.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Access lock.excalidraw",
+      "title": "Access lock",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Access lock.excalidraw",
+      "keywords": [
+        "门禁",
+        "锁",
+        "访问控制",
+        "等待",
+        "阻塞",
+        "交接",
+        "边界",
+        "access"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "lock.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/icons/lock.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Monorepo folder.excalidraw",
+      "title": "Monorepo folder",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Monorepo folder.excalidraw",
+      "keywords": [
+        "单体仓库",
+        "代码仓库",
+        "文件夹",
+        "共同所有",
+        "共享代码",
+        "跨层",
+        "monorepo",
+        "repository"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Folder code · Flaticon #1090984",
+          "url": "https://www.flaticon.com/free-icon/folder_1090984"
+        }
+      ],
+      "author": "Kiranshastry",
+      "treatment": "本地改编矢量"
+    },
+    {
+      "id": "Icon - Elevator.excalidraw",
+      "title": "Elevator",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Elevator.excalidraw",
+      "keywords": [
+        "电梯",
+        "升降",
+        "贯通",
+        "跨层",
+        "端到端",
+        "上下移动",
+        "elevator",
+        "lift"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Elevator · Flaticon #5453396",
+          "url": "https://www.flaticon.com/free-icon/elevator_5453396"
+        }
+      ],
+      "author": "adriansyah",
+      "treatment": "本地改编矢量"
+    },
+    {
+      "id": "Icon - Finish flag.excalidraw",
+      "title": "Finish flag",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Finish flag.excalidraw",
+      "keywords": [
+        "终点",
+        "目标杆",
+        "旗帜",
+        "方格旗",
+        "计时",
+        "测量点",
+        "LCP",
+        "Goal Pole"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "Goal Pole · ID 13824",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/data/DataCreated/Housewares.json"
+        },
+        {
+          "label": "实际图片",
+          "url": "https://acnhcdn.com/latest/FtrIcon/FtrMarioFablic.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Image candidate.excalidraw",
+      "title": "Image candidate",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Image candidate.excalidraw",
+      "keywords": [
+        "图片",
+        "图像",
+        "媒体",
+        "候选内容",
+        "视口",
+        "LCP",
+        "image",
+        "picture"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "portrait.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/icons/portrait.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Text candidate.excalidraw",
+      "title": "Text candidate",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Text candidate.excalidraw",
+      "keywords": [
+        "文本",
+        "文字",
+        "标题",
+        "字母",
+        "字体",
+        "排版",
+        "文本块",
+        "候选内容"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Text · Flaticon #186302",
+          "url": "https://www.flaticon.com/free-icon/text_186302"
+        }
+      ],
+      "author": "Magnific",
+      "treatment": "本地改编矢量"
+    },
+    {
+      "id": "Icon - Electrical services.excalidraw",
+      "title": "Electrical services",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Electrical services.excalidraw",
+      "keywords": [
+        "插头",
+        "电源线",
+        "连接",
+        "接口",
+        "接点",
+        "API",
+        "plug",
+        "power cable"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Power cable · Flaticon #10513939",
+          "url": "https://www.flaticon.com/free-icon/power-cable_10513939"
+        }
+      ],
+      "author": "Taufik Ramadhan",
+      "treatment": "本地改编矢量"
+    },
+    {
+      "id": "Icon - Product inventory.excalidraw",
+      "title": "Product inventory",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Product inventory.excalidraw",
+      "keywords": [
+        "商品",
+        "库存",
+        "货品",
+        "封装",
+        "业务能力",
+        "微服务",
+        "product",
+        "inventory"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "package.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/icons/package.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Price tag.excalidraw",
+      "title": "Price tag",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Price tag.excalidraw",
+      "keywords": [
+        "价格",
+        "售价",
+        "标签",
+        "标价",
+        "业务能力",
+        "price",
+        "sell",
+        "tag"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "pricetag.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/icons/pricetag.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Availability check.excalidraw",
+      "title": "Availability check",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Availability check.excalidraw",
+      "keywords": [
+        "可售",
+        "库存状态",
+        "校验",
+        "确认",
+        "便笺",
+        "勾选标记",
+        "业务规则",
+        "availability"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "notes.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/icons/notes.png"
+        },
+        {
+          "label": "CheckMarkYes.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/checked/CheckMarkYes.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Smartphone.excalidraw",
+      "title": "Smartphone",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Smartphone.excalidraw",
+      "keywords": [
+        "手机",
+        "移动端",
+        "App",
+        "应用",
+        "渠道",
+        "消费者",
+        "smartphone",
+        "mobile"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Smartphone · Flaticon #186239",
+          "url": "https://www.flaticon.com/free-icon/smartphone_186239"
+        }
+      ],
+      "author": "Magnific",
+      "treatment": "本地改编矢量"
+    },
+    {
+      "id": "Icon - Shrug person.excalidraw",
+      "title": "Shrug person",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Shrug person.excalidraw",
+      "keywords": [
+        "摊手",
+        "人物",
+        "双手",
+        "无奈",
+        "不知道",
+        "选择",
+        "权衡",
+        "shrug"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Shrug · Flaticon #6001218",
+          "url": "https://www.flaticon.com/free-icon/shrug_6001218"
+        }
+      ],
+      "author": "Flat Icons",
+      "treatment": "本地改编矢量"
+    },
+    {
+      "id": "Icon - Curiosity reaction.excalidraw",
+      "title": "Curiosity reaction",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Curiosity reaction.excalidraw",
+      "keywords": [
+        "困惑",
+        "疑惑",
+        "问号",
+        "气泡",
+        "反应",
+        "好奇",
+        "不确定",
+        "Curiosity"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Question · Flaticon #10550884",
+          "url": "https://www.flaticon.com/free-icon/question_10550884"
+        }
+      ],
+      "author": "Flat Icons",
+      "treatment": "本地改编矢量"
+    },
+    {
+      "id": "Icon - Relationship tree.excalidraw",
+      "title": "Relationship tree",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Relationship tree.excalidraw",
+      "keywords": [
+        "关系树",
+        "层级图",
+        "目录",
+        "节点",
+        "分支",
+        "知识地图",
+        "hierarchy",
+        "relationship tree"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Hierarchy · Flaticon #2788115",
+          "url": "https://www.flaticon.com/free-icon/hierarchy_2788115"
+        }
+      ],
+      "author": "vectorsmarket15",
+      "treatment": "本地改编矢量"
+    },
+    {
+      "id": "Icon - Filter.excalidraw",
+      "title": "Filter",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Filter.excalidraw",
+      "keywords": [
+        "漏斗",
+        "过滤器",
+        "筛选",
+        "提纯",
+        "选择",
+        "降噪",
+        "已应用",
+        "filter"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "filterApplied.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/icons/filterApplied.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Desk.excalidraw",
+      "title": "Desk",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Desk.excalidraw",
+      "keywords": [
+        "书桌",
+        "工作台",
+        "研究桌",
+        "工作现场",
+        "材料位置",
+        "上下文",
+        "desk",
+        "work table"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "den desk · ID 3783",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/data/DataCreated/Housewares.json"
+        },
+        {
+          "label": "实际图片",
+          "url": "https://acnhcdn.com/latest/FtrIcon/FtrDrawingTable_Remake_0_0.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Open book.excalidraw",
+      "title": "Open book",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Open book.excalidraw",
+      "keywords": [
+        "打开的书",
+        "阅读",
+        "来源",
+        "当前页",
+        "研究材料",
+        "书本",
+        "menu book",
+        "open book"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "book.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/icons/book.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Sticky note.excalidraw",
+      "title": "Sticky note",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Sticky note.excalidraw",
+      "keywords": [
+        "便签",
+        "折角纸",
+        "问题",
+        "假设",
+        "线索",
+        "下一步",
+        "临时材料",
+        "sticky note"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "notes.png",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/icons/notes.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Bookmark.excalidraw",
+      "title": "Bookmark",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Bookmark.excalidraw",
+      "keywords": [
+        "书签",
+        "页签",
+        "保存点",
+        "恢复点",
+        "断点",
+        "继续",
+        "bookmark",
+        "page marker"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Bookmark · Flaticon #15545857",
+          "url": "https://www.flaticon.com/free-icon/bookmark_15545857"
+        }
+      ],
+      "author": "Icon mania",
+      "treatment": "本地改编矢量"
+    },
+    {
+      "id": "Icon - Camera.excalidraw",
+      "title": "Camera",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Camera.excalidraw",
+      "keywords": [
+        "相机",
+        "快照",
+        "拍摄",
+        "状态保存",
+        "布局",
+        "现场",
+        "photo camera",
+        "snapshot"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "SLR camera · ID 13575",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/data/DataCreated/Miscellaneous.json"
+        },
+        {
+          "label": "实际图片",
+          "url": "https://acnhcdn.com/latest/FtrIcon/FtrDSLRCamera_Remake_0_0.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - Ladder.excalidraw",
+      "title": "Ladder",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Ladder.excalidraw",
+      "keywords": [
+        "梯子",
+        "竖梯",
+        "横档",
+        "攀登",
+        "层级",
+        "技术栈",
+        "局部范围",
+        "拼接"
+      ],
+      "source_group": "acnh",
+      "links": [
+        {
+          "label": "ladder · ID 107",
+          "url": "https://github.com/jameskokoska/ACNH-Pocket-Guide/blob/826ba171552e2fe1a8e5f06996cd5ae7e724bf16/animal_crossing_app/assets/data/DataCreated/Recipes.json"
+        },
+        {
+          "label": "实际图片",
+          "url": "https://acnhcdn.com/latest/DIYRecipeIcon/ToolLadder.png"
+        }
+      ]
+    },
+    {
+      "id": "Icon - User story card.excalidraw",
+      "title": "User story card",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - User story card.excalidraw",
+      "keywords": [
+        "用户故事",
+        "卡片",
+        "占位符",
+        "角色",
+        "功能",
+        "价值",
+        "需求",
+        "user story"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "User Story · Flaticon #15266481",
+          "url": "https://www.flaticon.com/free-icon/user-story_15266481"
+        }
+      ],
+      "author": "Grafixpoint",
+      "treatment": "由登记 PNG 转换为 SVG",
+      "checked_on": "2026-08-08"
+    },
+    {
+      "id": "Icon - Conversation.excalidraw",
+      "title": "Conversation",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Conversation.excalidraw",
+      "keywords": [
+        "对话",
+        "沟通",
+        "协商",
+        "参与方",
+        "客户",
+        "交付团队",
+        "功能方案",
+        "conversation"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Conversation · Flaticon #10117323",
+          "url": "https://www.flaticon.com/free-icon/conversation_10117323"
+        }
+      ],
+      "author": "afif fudin",
+      "treatment": "由登记 PNG 转换为 SVG",
+      "checked_on": "2026-08-08"
+    },
+    {
+      "id": "Icon - Confirmation.excalidraw",
+      "title": "Confirmation",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Confirmation.excalidraw",
+      "keywords": [
+        "验收",
+        "确认",
+        "批准",
+        "清单",
+        "勾选",
+        "条件",
+        "范围",
+        "confirmation"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Approve · Flaticon #6383860",
+          "url": "https://www.flaticon.com/free-icon/approve_6383860"
+        }
+      ],
+      "author": "surang",
+      "treatment": "由登记 PNG 转换为 SVG",
+      "checked_on": "2026-08-08"
+    },
+    {
+      "id": "Icon - Questioning person.excalidraw",
+      "title": "Questioning person",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Questioning person.excalidraw",
+      "keywords": [
+        "人物",
+        "问题",
+        "提问",
+        "选择",
+        "疑问",
+        "分诊",
+        "human",
+        "question"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "User Question · Flaticon #18977091",
+          "url": "https://www.flaticon.com/free-icon/user-question_18977091"
+        }
+      ],
+      "author": "mostafizur22",
+      "treatment": "由登记 PNG 转换为 SVG，并映射为项目语义色块粗糙线稿",
+      "checked_on": "2026-08-09"
+    },
+    {
+      "id": "Icon - Checklist clipboard.excalidraw",
+      "title": "Checklist clipboard",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Checklist clipboard.excalidraw",
+      "keywords": [
+        "清单",
+        "问题清单",
+        "工单",
+        "记录",
+        "待办",
+        "勾选",
+        "clipboard",
+        "checklist"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Clipboard · Flaticon #839860",
+          "url": "https://www.flaticon.com/free-icon/clipboard_839860"
+        }
+      ],
+      "author": "Kiranshastry",
+      "treatment": "由登记 PNG 转换为 SVG，并映射为项目语义色块粗糙线稿",
+      "checked_on": "2026-08-09"
+    },
+    {
+      "id": "Icon - Four-quadrant grid.excalidraw",
+      "title": "Four-quadrant grid",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Four-quadrant grid.excalidraw",
+      "keywords": [
+        "四象限",
+        "网格",
+        "二维",
+        "双条件",
+        "分类",
+        "矩阵",
+        "quadrant",
+        "grid"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Layout · Flaticon #6224869",
+          "url": "https://www.flaticon.com/free-icon/layout_6224869"
+        }
+      ],
+      "author": "Royyan Wijaya",
+      "treatment": "由登记 PNG 转换为 SVG，并映射为项目语义色块粗糙线稿",
+      "checked_on": "2026-08-09"
+    },
+    {
+      "id": "Icon - Four-way routing.excalidraw",
+      "title": "Four-way routing",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Four-way routing.excalidraw",
+      "keywords": [
+        "四路",
+        "分支",
+        "路由",
+        "选择",
+        "方向",
+        "出口",
+        "four-way",
+        "routing"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Four Arrows · Flaticon #10696211",
+          "url": "https://www.flaticon.com/free-icon/four-arrows_10696211"
+        }
+      ],
+      "author": "Laisa Islam Ani",
+      "treatment": "由登记 PNG 转换为 SVG，并映射为项目语义色块粗糙线稿",
+      "checked_on": "2026-08-09"
+    },
+    {
+      "id": "Icon - Upward evidence flow.excalidraw",
+      "title": "Upward evidence flow",
+      "asset": "Knowledge/Assets/Excalidraw/Icon - Upward evidence flow.excalidraw",
+      "keywords": [
+        "向上",
+        "支撑",
+        "依赖",
+        "证据",
+        "节点",
+        "方向",
+        "upward",
+        "support"
+      ],
+      "source_group": "flaticon",
+      "links": [
+        {
+          "label": "Arrow Up From Dotted Line · Flaticon #16777476",
+          "url": "https://www.flaticon.com/free-icon/arrow-up-from-dotted-line_16777476"
+        }
+      ],
+      "author": "syahabudin",
+      "treatment": "由登记 PNG 转换为 SVG，并映射为项目语义色块粗糙线稿",
+      "checked_on": "2026-08-09"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 快照来源：[Coolors · Trending Color Palettes](https://coolors.co/palettes/trending)，查看日期：2026-08-06。
 
-Coolors 的趋势列表会变化。趋势色板是候选颜色集合，不应再机械压缩成“轮廓／强调／辅助／背景”四个色值。项目默认保留 5–8 个源色，并按概念关系分配语义；单张卡只启用有意义的颜色，避免为了“丰富”而平均撒色。
+Coolors 的趋势列表会变化。本文件提供项目推荐的语义色板，适合用户希望跨卡统一视觉语言或主动把 Drawing 加入受管集合时使用；它不是所有 Visual Main Note 或 icon 的颜色白名单。知识卡可以保留用户确认的其他颜色，是否使用 3–4 色、是否统一到 CSS 当前值以及是否登记为受管文件，都由用户按当前视觉目标决定。
 
 ## 项目默认：Teal–Paper Semantic 8
 
@@ -55,7 +55,7 @@ Coolors 的趋势列表会变化。趋势色板是候选颜色集合，不应再
 --concept-color-canvas
 ```
 
-另有 `--concept-color-text-primary`、`--concept-color-icon-default`、`--concept-color-brand-primary`、`--concept-color-link`、`--concept-color-surface-page`、`--concept-color-surface-card` 和 `--concept-color-state-positive` 等用途别名，以及与现有 SVG 约定衔接的 `--icon-color`。替换整套色板时只修改九个基础变量的值，不改变量名或消费方。
+另有 `--concept-color-text-primary`、`--concept-color-icon-default`、`--concept-color-brand-primary`、`--concept-color-link`、`--concept-color-surface-page`、`--concept-color-surface-card` 和 `--concept-color-state-positive` 等用途别名。`--icon-color` 只与可变单色 SVG 及历史无后缀素材衔接，技术上不会覆盖 `source-palette`／`flaticon-source-palette` 内部颜色；这类组件可以保留自身颜色，除非用户明确要求建立项目色板变体。替换项目推荐色板时只修改九个基础变量的值，不改变量名或消费方。
 
 CSS 使用示例：
 
@@ -79,7 +79,9 @@ Excalidraw 场景最终仍保存解析后的 HEX，不会实时读取外部 CSS�
 
 ### Excalidraw 场景一键同步
 
-同步工具读取 CSS 当前值，并以 `references/palette-sync-state.json` 中的上次落盘快照完成旧值到新值的语义迁移。状态文件只是迁移游标，CSS 仍是唯一权威来源。
+同步工具读取 CSS 当前值，并以 `references/palette-sync-state.json` 中的上次落盘快照完成旧值到新值的语义迁移。状态文件保存迁移游标和用户主动加入的受管文件清单；它不定义颜色，CSS 只对这套可选受管色板具有权威性。同步范围只包括画布背景与当前 Drawing 自身的非 image 原生元素；作为 image reference 嵌入的原生 `.excalidraw` icon 组件、其他已解析的 Knowledge Drawing 及其颜色映射始终跳过，不参与色板审计或迁移。
+
+`--concept-color-canvas` 是知识卡独立打开时的画布背景，不代表知识卡需要绘制自己的可见外壳。Visual Main Note 不使用不透明满幅矩形或外框覆盖父级表面；需要稳定导出尺寸时，只保留描边和填充均为 `transparent` 的边界矩形。知识卡嵌入地图或大卡后，由父级 Drawing 决定外壳、表面颜色和边界。
 
 ```bash
 # 从仓库根目录运行；默认只检查，不写文件
@@ -93,9 +95,29 @@ scripts/sync_excalidraw_palette.sh --check
 scripts/sync_excalidraw_palette.sh --apply
 ```
 
-`--check` 在存在待同步内容时退出码为 `2`。`--apply` 只保存确有变化的画布，全部成功后才更新状态；中途失败可直接重跑。脚本同时检查未登记颜色、知识正文、元素数量和 ID。新增采用本色板的画布时，把路径及其 `backgroundRole` 登记到 `references/palette-sync-state.json`，不要靠扫描全库误改无关绘图。
+`--check` 在存在待同步内容时退出码为 `2`。`--apply` 只保存确有变化的画布，全部成功后才更新状态；中途失败可直接重跑。脚本同时检查未登记颜色、知识正文、元素数量和 ID。全局命令只处理 `palette-sync-state.json` 已登记的文件。
 
-## 紧凑备选：Black & Gold Elegance
+用户明确要求把某张知识卡或知识地图加入项目色板管理时，可以使用逐 Drawing 模式，不受其他受管画布问题阻塞：
+
+```bash
+SCRIPT=".agents/skills/visual-pkm-concept-visualization/scripts/sync_excalidraw_palette.sh"
+TARGET="Knowledge/Notes/实际笔记.md" # 也可以是 Knowledge/Maps/*.md
+
+# 先审计目标；该命令只适用于用户选择项目色板管理的 Drawing
+bash "$SCRIPT" --check --path="$TARGET"
+
+# 只在语义颜色已由人确认后执行已知迁移、设置语义背景并登记
+bash "$SCRIPT" --apply --path="$TARGET" --register
+bash "$SCRIPT" --check --path="$TARGET"
+```
+
+逐 Drawing `--apply` 只迁移状态文件已知的旧语义色并设置对应背景：`Knowledge/Notes/` 默认使用 `--concept-color-canvas`，`Knowledge/Maps/` 默认使用 `--concept-color-warm-fill`；已登记 Drawing 继续沿用登记的背景角色。它不会猜测任意颜色应该承担哪个角色，也不会读取、拒绝或修改已描摹 icon 组件或嵌入式 Visual Main Note 的内部颜色。对选择加入受管集合的 Drawing，只有当前画布自身的非 image 原生元素出现 `non-palette color` 时才需要用户确认映射；对未选择加入受管集合的普通 Drawing，这不是错误，也不需要运行本工具。`--register` 只能与逐 Drawing `--apply` 一起使用。不要靠扫描全库误改无关绘图。
+
+## 整套替换候选
+
+以下备选用于未来经明确决策后整体替换 CSS 的九个基础值。未加入受管集合的单张知识卡仍可采用自己的配色；若项目切换推荐色板，应保持语义变量名稳定，并只对受管文件执行统一迁移。
+
+### Black & Gold Elegance
 
 来源：[Coolors palette](https://coolors.co/000000-14213d-fca311-e5e5e5-ffffff)
 
@@ -108,7 +130,7 @@ scripts/sync_excalidraw_palette.sh --apply
 
 轮廓与背景对比度约 `15.97:1`。强调色与背景只有约 `2.02:1`，因此强调色用于面积、标记或粗线，不用于小号正文。该方案适合需要极简、正式或单焦点表达的卡片，不再作为项目默认。
 
-## 备选：Summer Ocean Breeze
+### Summer Ocean Breeze
 
 来源：[Coolors palette](https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557)
 
@@ -122,7 +144,7 @@ scripts/sync_excalidraw_palette.sh --apply
 
 主墨色与背景对比度约 `11.56:1`。适合对比、注意力和变化主题；红色强调不用于小号正文。
 
-## 备选：Neutral Harmony Bliss
+### Neutral Harmony Bliss
 
 来源：[Coolors palette](https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f)
 
@@ -136,7 +158,7 @@ scripts/sync_excalidraw_palette.sh --apply
 
 主墨色与背景对比度约 `8.87:1`。适合温和、反思、学习及人与系统主题。
 
-## 备选：Olive Garden Feast
+### Olive Garden Feast
 
 来源：[Coolors palette](https://coolors.co/606c38-283618-fefae0-dda15e-bc6c25)
 
@@ -152,30 +174,16 @@ scripts/sync_excalidraw_palette.sh --apply
 
 ## 使用规则
 
-1. 一套源色板保留 5–8 个颜色；三个原型共享同一源色板，但可以只启用其中有语义的 5–7 色，不必强制把每个颜色都放进画面。
+1. 源色板可以提供更多候选，但单张卡默认只启用 3–4 色；不同粗稿使用相同的主墨色、强调色和背景，便于比较结构而不是比较配色。
 2. 先建立颜色语义，再上色：例如冷色族表示结构／共享／正向流动，暖色族表示注意／动作／冲突。相同含义跨卡保持同色。
 3. 主墨色承担阅读；正文与背景至少达到 `4.5:1`。不达标的颜色只用于非文字元素，或作为能与主墨色达到 `4.5:1` 的填充。
 4. 颜色数量增加后仍要保持注意力层级：一个主焦点、一个次焦点，其余颜色服务于分类和关系，不把每个对象都涂成不同颜色。
 5. 同一卡中复用同一对象时保持颜色稳定；只有语义发生变化时才换色。装饰性变化不能成为新增颜色的理由。
 6. 先在粗糙原型中执行去文字测试、灰度测试和对比度检查，再沉淀为常用色板。
+7. `source-palette` 或外部素材的原色可以在许可允许且用户确认时保留到最终知识卡；若用户希望统一视觉语言，再另行创建项目语义色板版本，不自动覆盖原组件。
 
-## SVG 配色变量
+## SVG 配色模式
 
-所有索引 SVG 使用单色入口：
+Icon 索引现在只使用 `Knowledge/Assets/Excalidraw/Icon - *.excalidraw` 组件；每个 icon 都由 SVG、PNG/JPG 等参考描摹为原生元素，并保存自身已确认的配色，Vault 不保留图像母版。知识卡通过 Excalidraw image reference 嵌入这些组件，并始终保留组件内部颜色；即使知识卡加入项目色板管理，icon 也不进入色板 Gate。项目色板只应用于画布背景、本卡非 image 原生元素，或用户另行授权创建的 icon 配色变体。
 
-```css
---icon-color
-```
-
-源文件默认回退到黑色。为卡片生成配色副本时优先解析语义变量：
-
-```bash
-python scripts/svg_palette.py variant \
-  Knowledge/Assets/Icons/building-blocks.svg \
-  /tmp/building-blocks-accent.svg \
-  --color-var=--concept-color-positive-flow
-```
-
-脚本仍接受 `--color '#RRGGBB'` 作为临时兼容入口，但项目内固定工作流不要复制 HEX。
-
-同一个 SVG 可以生成主墨色、结构色、正向色、动作色或冲突色实例。不要为了多色效果随意拆改图标内部路径；优先通过多个可复用图标实例、Excalidraw color map、容器填充和关系线形成层级。
+`svg_palette.py` 只保留给系统 `/tmp/visual-pkm-concept-visualization/` 中临时自制的 SVG 参考；不得用它生成新的 Vault icon 副本。某张卡需要同一图标承担不同颜色语义时，先复用已有变体；没有合适变体且获得授权后，再创建新的单 icon 原生 `.excalidraw` 文件，不覆盖或在使用位置重染既有组件。新变体可以采用项目色板，也可以采用用户确认的其他颜色。

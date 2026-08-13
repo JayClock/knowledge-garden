@@ -7,13 +7,40 @@
     return /^#[0-9a-f]{6}$/i.test(text) ? text.toUpperCase() : text.toUpperCase();
   };
   const isHex = (value) => /^#[0-9A-F]{6}$/.test(value);
-  const isIgnoredColor = (value) => !value || value === "TRANSPARENT";
+  const isIgnoredColor = (value) =>
+    !value || value === "TRANSPARENT" || value === "NONE" || /^#[0-9A-F]{6}00$/.test(value);
   const configPath = options.configPath;
   if (!configPath) throw new Error("PALETTE_SYNC_OPTIONS.configPath is required");
 
   const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
   if (config.schemaVersion !== 1) throw new Error(`Unsupported sync-state schema: ${config.schemaVersion}`);
-  if (!Array.isArray(config.managedFiles) || !config.managedFiles.length) throw new Error("No managedFiles configured");
+  if (!Array.isArray(config.managedFiles)) throw new Error("managedFiles must be an array");
+  const requestedPaths = [
+    ...new Set((Array.isArray(options.paths) ? options.paths : []).map((path) => String(path || "").trim()).filter(Boolean)),
+  ];
+  const targeted = requestedPaths.length > 0;
+  if (!targeted && !config.managedFiles.length) throw new Error("No managedFiles configured");
+  const isPaletteDrawingPath = (path) =>
+    (path.startsWith("Knowledge/Notes/") || path.startsWith("Knowledge/Maps/")) &&
+    path.endsWith(".md");
+  for (const path of requestedPaths) {
+    if (!isPaletteDrawingPath(path)) {
+      throw new Error(
+        `Targeted palette audit only accepts Knowledge/Notes/*.md or Knowledge/Maps/*.md: ${path}`,
+      );
+    }
+  }
+  const configuredByPath = new Map(config.managedFiles.map((item) => [item.path, item]));
+  const defaultBackgroundRole = (path) =>
+    path.startsWith("Knowledge/Maps/")
+      ? "--concept-color-warm-fill"
+      : "--concept-color-canvas";
+  const managedItems = targeted
+    ? requestedPaths.map((path) => ({
+        path,
+        backgroundRole: configuredByPath.get(path)?.backgroundRole || defaultBackgroundRole(path),
+      }))
+    : config.managedFiles;
 
   const plugin = app.plugins.plugins["obsidian-excalidraw-plugin"];
   if (!plugin?.ea) throw new Error("Obsidian Excalidraw plugin is not available");
@@ -67,7 +94,7 @@
 
   const parseEmbeddedFiles = (text) => {
     const result = {};
-    const regex = /^([a-f0-9]+): \[\[([^\]|]+\.svg)(?:\|[^\]]+)?\]\](?:\s+(\{.*\}))?$/gm;
+    const regex = /^([a-f0-9]+): \[\[([^\]|]+)(?:\|[^\]]+)?\]\](?:\s+(\{.*\}))?$/gm;
     for (const match of text.matchAll(regex)) {
       let colorMap = {};
       try { colorMap = match[3] ? JSON.parse(match[3]) : {}; } catch (_) {}
@@ -75,27 +102,29 @@
     }
     return result;
   };
-  const mappedColorMap = (colorMap) => {
-    let changed = false;
-    const next = { ...(colorMap || {}) };
-    for (const [key, value] of Object.entries(next)) {
-      const color = normalizeHex(value);
-      if (isHex(color) && oldToNew.has(color) && oldToNew.get(color) !== color) {
-        next[key] = oldToNew.get(color);
-        changed = true;
-      }
-    }
-    return { changed, colorMap: next };
-  };
   const auditColor = (color, context, unknowns) => {
     const normalized = normalizeHex(color);
     if (isIgnoredColor(normalized)) return;
     if (!isHex(normalized) || !allowedDuringMigration.has(normalized)) unknowns.push({ ...context, color: normalized });
   };
 
+  const resolveEmbeddedFile = (linkPath, sourcePath) => {
+    const direct = app.vault.getAbstractFileByPath(linkPath);
+    if (direct) return direct;
+    if (!linkPath.includes("/") && linkPath.endsWith(".excalidraw")) {
+      const icon = app.vault.getAbstractFileByPath(
+        `Knowledge/Assets/Excalidraw/${linkPath}`,
+      );
+      if (icon) return icon;
+    }
+    return app.metadataCache.getFirstLinkpathDest(linkPath, sourcePath);
+  };
+
   const preflight = [];
   const allUnknowns = [];
-  for (const item of config.managedFiles) {
+  const unsupportedImages = [];
+  const componentSceneCache = new Map();
+  for (const item of managedItems) {
     const file = app.vault.getAbstractFileByPath(item.path);
     if (!file) throw new Error(`Managed drawing not found: ${item.path}`);
     if (!newPalette[item.backgroundRole]) throw new Error(`Unknown backgroundRole for ${item.path}: ${item.backgroundRole}`);
@@ -106,6 +135,7 @@
     let changedElements = 0;
     const changedIds = new Set();
     for (const element of scene.elements) {
+      if (element.type === "image") continue;
       for (const field of ["strokeColor", "backgroundColor"]) {
         const color = normalizeHex(element[field]);
         auditColor(color, { path: item.path, kind: "element", id: element.id, type: element.type, field }, allUnknowns);
@@ -116,17 +146,98 @@
       }
     }
     changedElements = changedIds.size;
-    let imageInstances = 0;
-    const changedFileIds = new Set();
+    const imageInstances = 0;
     for (const element of scene.elements.filter((el) => el.type === "image")) {
       const entry = embedded[element.fileId];
-      if (!entry) continue;
-      for (const [field, value] of Object.entries(entry.colorMap || {})) {
-        auditColor(value, { path: item.path, kind: "imageColorMap", id: element.id, fileId: element.fileId, image: entry.path, field }, allUnknowns);
+      if (!entry) {
+        unsupportedImages.push({
+          path: item.path,
+          id: element.id,
+          fileId: element.fileId,
+          image: null,
+          reason: "image reference is not backed by an Embedded Files wikilink",
+        });
+        continue;
       }
-      if (mappedColorMap(entry.colorMap).changed) {
-        imageInstances += 1;
-        changedFileIds.add(element.fileId);
+      const linked = resolveEmbeddedFile(entry.path, item.path);
+      if (!linked) {
+        unsupportedImages.push({
+          path: item.path,
+          id: element.id,
+          fileId: element.fileId,
+          image: entry.path,
+          reason: "embedded image target cannot be resolved",
+        });
+        continue;
+      }
+      if (isPaletteDrawingPath(linked.path)) {
+        const linkedText = await app.vault.read(linked);
+        if (!/^---\n[\s\S]*?^excalidraw-plugin:\s*parsed\s*$[\s\S]*?^---$/m.test(linkedText)) {
+          unsupportedImages.push({
+            path: item.path,
+            id: element.id,
+            fileId: element.fileId,
+            image: linked.path,
+            reason: "embedded Knowledge drawing is not a parsed Excalidraw Markdown file",
+          });
+        }
+        continue;
+      }
+      if (
+        !linked.path.startsWith("Knowledge/Assets/Excalidraw/Icon - ") ||
+        !linked.path.endsWith(".excalidraw")
+      ) {
+        unsupportedImages.push({
+          path: item.path,
+          id: element.id,
+          fileId: element.fileId,
+          image: linked.path,
+          reason: "image references must point to parsed Knowledge drawings or traced native .excalidraw icons",
+        });
+        continue;
+      }
+      let componentScene = componentSceneCache.get(linked.path);
+      if (!componentScene) {
+        componentScene = await ea.getSceneFromFile(linked);
+        componentSceneCache.set(linked.path, componentScene);
+      }
+      const componentElements = (componentScene.elements || []).filter(
+        (nested) => nested && !nested.isDeleted,
+      );
+      if (!componentElements.length) {
+        unsupportedImages.push({
+          path: item.path,
+          id: element.id,
+          fileId: element.fileId,
+          image: linked.path,
+          reason: "traced icon component has no native elements",
+        });
+        continue;
+      }
+      let commonGroups = new Set(componentElements[0].groupIds || []);
+      for (const nested of componentElements.slice(1)) {
+        const groups = new Set(nested.groupIds || []);
+        commonGroups = new Set([...commonGroups].filter((group) => groups.has(group)));
+      }
+      if (commonGroups.size !== 1) {
+        unsupportedImages.push({
+          path: item.path,
+          id: element.id,
+          fileId: element.fileId,
+          image: linked.path,
+          reason: "traced icon component must have one public group",
+        });
+      }
+      for (const nested of componentElements) {
+        if (["image", "frame", "embeddable"].includes(nested.type) || nested.frameId != null) {
+          unsupportedImages.push({
+            path: item.path,
+            id: element.id,
+            fileId: element.fileId,
+            image: linked.path,
+            reason: `nested ${nested.type || "framed element"} is not a native flat icon component`,
+          });
+        }
       }
     }
     const expectedBackground = newPalette[item.backgroundRole];
@@ -142,7 +253,7 @@
       changedElements,
       elementFields,
       imageInstances,
-      imageMappings: changedFileIds.size,
+      imageMappings: 0,
       backgroundFrom: currentBackground,
       backgroundTo: expectedBackground,
       backgroundChanged: currentBackground !== expectedBackground,
@@ -150,8 +261,18 @@
     });
   }
 
+  if (unsupportedImages.length) {
+    const sample = unsupportedImages
+      .slice(0, 12)
+      .map((x) => `${x.path}: image ${x.id} (${x.image || x.fileId}): ${x.reason}`)
+      .join("\n");
+    throw new Error(`Icon structure check stopped: ${unsupportedImages.length} non-native image references found.\n${sample}`);
+  }
   if (config.strict !== false && allUnknowns.length) {
-    const sample = allUnknowns.slice(0, 12).map((x) => `${x.path}: ${x.kind}.${x.field}=${x.color}`).join("\n");
+    const sample = allUnknowns.slice(0, 12).map((x) => {
+      const owner = x.component ? ` ${x.component}:${x.componentElement || "appState"}` : "";
+      return `${x.path}: ${x.kind}.${x.field}${owner}=${x.color}`;
+    }).join("\n");
     throw new Error(`Palette sync stopped: ${allUnknowns.length} non-palette color fields found.\n${sample}`);
   }
 
@@ -159,18 +280,25 @@
   const report = {
     schemaVersion: 1,
     mode,
+    scope: targeted ? "targeted" : "managed",
     paletteCss: config.paletteCss,
     roleChanges,
     managedFiles: preflight.length,
     filesNeedingWrite: preflight.filter((x) => x.needsWrite).length,
-    changesPending: roleChanges.length > 0 || preflight.some((x) => x.needsWrite),
+    changesPending: targeted
+      ? preflight.some((x) => x.needsWrite)
+      : roleChanges.length > 0 || preflight.some((x) => x.needsWrite),
     plannedElementFields: preflight.reduce((sum, x) => sum + x.elementFields, 0),
     plannedImageInstances: preflight.reduce((sum, x) => sum + x.imageInstances, 0),
     plannedBackgrounds: preflight.filter((x) => x.backgroundChanged).length,
     unknownColors: allUnknowns,
+    unsupportedImages,
     files: preflight.map(({ file, text, knowledge, elementIds, ...x }) => x),
     applied: false,
     stateUpdated: false,
+    registeredFiles: [],
+    updatedRegisteredFiles: [],
+    alreadyRegisteredFiles: [],
   };
 
   const waitForView = async (path) => {
@@ -196,6 +324,7 @@
         const current = view.excalidrawAPI.getSceneElements();
         const beforeIds = new Set(current.map((el) => el.id));
         const updated = current.map((element) => {
+          if (element.type === "image") return element;
           let next = element;
           let changed = false;
           for (const field of ["strokeColor", "backgroundColor"]) {
@@ -220,24 +349,6 @@
         });
         await sleep(150);
 
-        const latestText = await app.vault.read(plan.file);
-        const latestEmbedded = parseEmbeddedFiles(latestText);
-        const live = view.excalidrawAPI.getSceneElements();
-        const imageTargets = [];
-        const imageMaps = [];
-        for (const element of live.filter((el) => el.type === "image")) {
-          const entry = latestEmbedded[element.fileId];
-          if (!entry) continue;
-          const mapped = mappedColorMap(entry.colorMap);
-          if (mapped.changed) {
-            imageTargets.push(element);
-            imageMaps.push(mapped.colorMap);
-          }
-        }
-        if (imageTargets.length) {
-          await ea.updateViewSVGImageColorMap(imageTargets, imageMaps);
-          await sleep(250);
-        }
         await view.forceSave(true);
         await sleep(450);
 
@@ -249,19 +360,11 @@
         if ([...beforeIds].some((id) => !afterIds.has(id))) throw new Error(`Element IDs changed: ${plan.path}`);
         if (normalizeHex(after.appState?.viewBackgroundColor) !== plan.backgroundTo) throw new Error(`Background sync failed: ${plan.path}`);
         for (const element of after.elements) {
+          if (element.type === "image") continue;
           for (const field of ["strokeColor", "backgroundColor"]) {
             const color = normalizeHex(element[field]);
             if (!isIgnoredColor(color) && (!isHex(color) || !allowedAfterApply.has(color))) {
               throw new Error(`Post-sync non-palette color: ${plan.path} ${element.id}.${field}=${color}`);
-            }
-          }
-        }
-        const afterEmbedded = parseEmbeddedFiles(afterText);
-        for (const entry of Object.values(afterEmbedded)) {
-          for (const [field, value] of Object.entries(entry.colorMap || {})) {
-            const color = normalizeHex(value);
-            if (!isIgnoredColor(color) && (!isHex(color) || !allowedAfterApply.has(color))) {
-              throw new Error(`Post-sync image color: ${plan.path} ${entry.path}.${field}=${color}`);
             }
           }
         }
@@ -274,11 +377,38 @@
       }
     }
 
-    config.lastApplied = Object.fromEntries(roles.map((role) => [role, newPalette[role]]));
-    config.lastAppliedAt = new Date().toISOString();
-    fs.writeFileSync(configPath, `${JSON.stringify(config, null, 2)}\n`);
+    if (!targeted) {
+      config.lastApplied = Object.fromEntries(roles.map((role) => [role, newPalette[role]]));
+      config.lastAppliedAt = new Date().toISOString();
+      fs.writeFileSync(configPath, `${JSON.stringify(config, null, 2)}\n`);
+      report.stateUpdated = true;
+    }
     report.applied = true;
-    report.stateUpdated = true;
+  }
+
+  if (targeted && options.register) {
+    for (const item of managedItems) {
+      const existing = configuredByPath.get(item.path);
+      if (existing) {
+        if (existing.backgroundRole !== item.backgroundRole) {
+          existing.backgroundRole = item.backgroundRole;
+          report.updatedRegisteredFiles.push(item.path);
+        } else {
+          report.alreadyRegisteredFiles.push(item.path);
+        }
+        continue;
+      }
+      config.managedFiles.push({
+        path: item.path,
+        backgroundRole: "--concept-color-canvas",
+      });
+      configuredByPath.set(item.path, item);
+      report.registeredFiles.push(item.path);
+    }
+    if (report.registeredFiles.length || report.updatedRegisteredFiles.length) {
+      fs.writeFileSync(configPath, `${JSON.stringify(config, null, 2)}\n`);
+      report.stateUpdated = true;
+    }
   }
 
   report.noOp = !report.changesPending;
