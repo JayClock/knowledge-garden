@@ -2,7 +2,7 @@
 
 ## 固定使用时机
 
-用户完成第 4 步 HTML 预览并贴回入选编号后，第 5 步初始化承载本轮视觉正面的知识卡，把入选 icon 确保落地为 Vault 内 `.excalidraw` 组件并嵌入初始视图，再由用户亲自绘制第一张草图。默认流程不再创建独立 Concept Visual 文件，也不提供纸笔或 Vault 外绘制分支。
+用户完成第 4 步 HTML 预览并贴回入选编号后，第 5 步初始化承载本轮视觉正面的知识卡，把入选 icon 确保落地为 Vault 内 `.excalidraw` 组件并嵌入初始视图，再由用户亲自绘制第一张草图。第 4 步一个编号只对应一个可独立取舍的 icon，入选数量不设硬上限；HTML 中知识卡层级的框架草图＋文字注释提示与 icon 分离，不写入知识卡，也不构成待执行布局。默认流程不再创建独立 Concept Visual 文件，也不提供纸笔或 Vault 外绘制分支。
 
 初始化与素材准备不解释概念，也不生成完整构图。它只建立知识卡与 Drawing、处理用户实际入选的 icon，并把这些组件彼此独立地松散摆成素材托盘；不得顺便添加未入选图形、标题以外的文本元素、箭头、关系、AI 选择的新隐喻、HTML 记录或过程日志。
 
@@ -108,6 +108,7 @@ python3 "$SCRIPT" \
 
 脚本提供以下保护：
 
+- 验证 `selected_frameworks` 与知识卡层级的 `layout_hints` 按顺序一一对应，每项包含可加载的本地框架草图与文字注释，并拒绝把草图或注释放进单个 icon 候选；这些提示只被校验，不进入执行计划；
 - `--apply` 前验证所有组件都是单一公共 group、没有嵌套 image／frame 的原生 `.excalidraw`；
 - 现有卡写入前在 `/tmp/visual-pkm-concept-visualization/backups/` 建立副本，并用文件大小与修改时间防止 dry-run 后并发覆盖；
 - 已有 Drawing 不重复转换，已有同一路径 image reference 不重复嵌入；
@@ -138,13 +139,13 @@ bash "$PALETTE_SCRIPT" --check --path="$NOTE"
 
 ## 入选 icon 落地与嵌入
 
-知识卡 Drawing 可打开后，读取第 4 步 `step-4-preview.json`，按用户贴回的候选编号展开其中 `icons`，去重后只处理实际入选项：
+知识卡 Drawing 可打开后，读取第 4 步 `step-4-preview.json`。每个候选编号必须只含一个 icon；按用户贴回的全部编号解析并去重后，只处理实际入选项。选择数量不设硬上限，脚本不得因超过三个而拒绝：
 
 1. **统一原生格式**：所有进入知识卡或 Icon Library 的 icon 都必须是只含原生元素的纯 JSON `.excalidraw` 组件；SVG、PNG/JPG、WebP 等图像只能作为临时描摹参考，不得直接成为永久 icon。
 2. **复用本地组件**：`src` 已指向 `Knowledge/Assets/Excalidraw/Icon - *.excalidraw` 时，验证场景可解析、内部没有 image 嵌套、存在单一公共 group，并按现有颜色直接复用；它被视为已经完成描摹。不要复制出第二份，也不要因配色不属于项目色板而拒绝。
 3. **描摹临时参考**：`src` 指向本轮 `/tmp/` SVG、PNG/JPG 或其他图像参考时，不把源图复制到 Vault，也不把它作为 image 封装。以用户已经确认的预览外观（包括颜色）为唯一机械目标，通过 Excalidraw 插件／API 用原生元素描摹为一个结构完整、可识别、单一公共 group 的纯 JSON `.excalidraw` 文件，保存为 `Knowledge/Assets/Excalidraw/Icon - 关键词1, 关键词2 - 来源.excalidraw`；完全自制时来源写 `Own`。创建前先在 Icon Library 搜索同义关键词并打开近似组件，能够忠实复用时不重复创建。
 4. **文件名检索接口**：永久组件统一命名为 `Icon - 关键词1, 关键词2 - 来源.excalidraw`，保存后由 Icon Library 自动发现。逗号分隔的关键词用于搜索，末尾来源用于标明出处；文件名就是唯一索引，不另建 Markdown 清单、JSON 注册表或逐项元数据表。
-5. **嵌入知识卡**：通过 Excalidraw 插件／API 把每个入选 `.excalidraw` 文件作为 image reference 加入目标 Drawing。每个 icon 保持独立可移动与原始纵横比，只按编号做无语义的松散横排或素材托盘并留出间距；不添加标签、容器、箭头或关系，不组合成最终画面。
+5. **嵌入知识卡**：通过 Excalidraw 插件／API 把每个入选 `.excalidraw` 文件作为 image reference 加入目标 Drawing。每个 icon 保持独立可移动与原始纵横比，只按编号做无语义的松散横排或素材托盘并留出间距；HTML 的框架草图与文字注释只供用户参考，不绑定组件，也不转换成位置、标签、容器、箭头或关系，不组合成最终画面。
 6. **设置视口**：让初始视图能同时看到全部入选组件。若目标已有 Drawing，不移动、缩放、删除或覆盖用户原有元素；把素材托盘放到现有内容边界之外的空白区域。
 
 不得手工改写目标知识卡的 `compressed-json`。组件创建、image reference、Embedded Files 与场景保存都通过 Excalidraw 插件／API 完成。
@@ -175,7 +176,7 @@ obsidian vault="content" command \
 4. frontmatter 包含 `excalidraw-plugin: parsed`；
 5. 文件包含由插件生成且闭合的 `## Drawing` 与 `compressed-json` 数据；
 6. 初始化没有新增 `## Text Elements`、箭头、连接、标签或完整构图；场景新增项只包含用户实际入选的 icon image references；
-7. 每个入选 icon 都解析到真实 Vault `.excalidraw` 文件；所有 SVG、PNG/JPG 或其他图像参考都已描摹为原生元素，没有被复制、封装或直接嵌入，未入选项没有落地；
+7. 每个入选编号都只对应一个 icon，并解析到真实 Vault `.excalidraw` 文件；四个或更多入选编号不会被任意截断；所有 SVG、PNG/JPG 或其他图像参考都已描摹为原生元素，没有被复制、封装或直接嵌入，未入选项没有落地；
 8. 每个新落地组件是单一公共 group 的原生元素，不含嵌套 image；目标 Drawing 的 Embedded Files 指向这些 `.excalidraw` 文件且重新打开后可见，且组件颜色没有被初始化流程自动替换；
 9. 当前目标能够切换到 `viewType: excalidraw`，视口能看到入选素材托盘；
 10. 没有仅为流程新增 `视觉思考`、`概念视觉` 或 `excalidraw` 标签；

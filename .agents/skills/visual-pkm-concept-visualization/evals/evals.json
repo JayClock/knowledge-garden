@@ -60,7 +60,7 @@
     {
       "id": 10,
       "prompt": "核心信息和关键词已经确认，AI 也扩展了联想。我在第 3 步选定‘过程式’框架，但还没有找 icon，也没有画草图。下一步做什么？",
-      "expected_output": "识别用户已经完成第 3 步，不要求马上画。进入第 4 步：根据过程式框架列出必要的主体、动作、关系和辅助组件，先查用户自己的旧草图、Icon Library 和实际 `.excalidraw` icon 组件，优先分层、叠加和选择性复用本地组件。只有本地不足时才依次到 Flaticon、The Noun Project 和 Google Images 检索，把它们作为观察轮廓、结构和动作的视觉字典，不使用其他外部来源；不下载、转换、截图、描摹路径或嵌入外部原素材，而是在系统 /tmp/visual-pkm-concept-visualization/<slug>/ 重绘结构完整、可识别、可分层重组的 SVG 组件。基础形状只是绘制手段，结果不能是低完成度几何占位符，也不组成最终构图。创建只含本地或临时重绘组件、怎样画、分层方式和突出什么、不含详情页、作者、素材 ID、权利说明或其他来源字段的 step-4-preview.json，运行 render_association_pool.py 生成并打开 step-4-preview.html，返回完整路径供用户选择或重组 1–3 个参考，并请用户复制入选编号贴回对话；第 4 步不写 Vault，也不生成最终构图。用户预览确认后进入第 5 步：读取第 1 步记录的目标状态；现有卡则回显固定路径并等待或使用已有明确初始化与嵌入授权，新卡则确认名词短语标题、搜索重复并等待创建授权。授权后通过 Excalidraw 插件初始化 Drawing；所有 icon 使用前都必须是只含原生元素的纯 JSON `.excalidraw` 组件：本地 `.excalidraw` 通过结构校验后直接复用，入选 SVG、PNG/JPG 或其他图像参考按确认外观描摹成 Vault 内原生 `.excalidraw` 组件，再将它们作为独立 image reference 松散嵌入初始素材托盘；不复制、封装或直接嵌入源图，新组件采用规定文件名由 Icon Library 自动发现，不添加文字、关系或完整构图。验证后邀请用户移动、缩放、组合和补画这些素材，用约五分钟亲自完成第一张粗草图并开始 ETC；快速、粗糙、不润色描述的是这次首次 Express，而不是第 4 步 icon 的质量。",
+      "expected_output": "识别用户已经完成第 3 步，不要求马上画。进入第 4 步：根据过程式框架列出必要的主体、动作、关系和辅助组件，先查用户自己的旧草图、Icon Library 和实际 `.excalidraw` icon 组件，优先分层、叠加和选择性复用本地组件。只有本地不足时才依次到 Flaticon、The Noun Project 和 Google Images 检索，把它们作为观察轮廓、结构和动作的视觉字典，不使用其他外部来源；不下载、转换、截图、描摹路径或嵌入外部原素材，而是在系统 /tmp/visual-pkm-concept-visualization/<slug>/ 重绘结构完整、可识别、可分层重组的 SVG 组件。基础形状只是绘制手段，结果不能是低完成度几何占位符，也不组成最终构图。创建 step-4-preview.json：用 `selected_frameworks: [\"过程式\"]` 记录用户所选框架，并让 `layout_hints` 按顺序一一对应，同时与 `items` 分开；过程式框架只生成一张知识卡层级的抽象空间骨架草图及其文字注释：草图使用占位形状、区域、方向或层级，注释说明整体空间语法、布局动作和强调重点；两者不复刻或绑定具体 icon、不指定精确坐标，也不固定完整主体—动作—关系；每个 items 编号只对应一个语义原子的本地或临时重绘 icon，并填写 `atomic_unit` 明确唯一可选择单位、填写 `assembly_later` 说明留给画布完成的重复、连接、并置或组合；同时只包含怎样画、角色与突出什么，不包含知识卡布局、详情页、作者、素材 ID、权利说明或其他来源字段。运行 render_association_pool.py 生成并打开 step-4-preview.html，上方展示框架草图与文字注释提示，下方供用户逐项选择或重组 icon；icon 选择数量不设硬上限，并请用户复制全部入选编号贴回对话。第 4 步不写 Vault，不预制完整知识卡视觉，也不生成最终构图。用户预览确认后进入第 5 步：读取第 1 步记录的目标状态；现有卡则回显固定路径并等待或使用已有明确初始化与嵌入授权，新卡则确认名词短语标题、搜索重复并等待创建授权。授权后通过 Excalidraw 插件初始化 Drawing；所有 icon 使用前都必须是只含原生元素的纯 JSON `.excalidraw` 组件：本地 `.excalidraw` 通过结构校验后直接复用，入选 SVG、PNG/JPG 或其他图像参考按确认外观描摹成 Vault 内原生 `.excalidraw` 组件，再将它们作为独立 image reference 松散嵌入初始素材托盘；不复制、封装或直接嵌入源图，新组件采用规定文件名由 Icon Library 自动发现，不添加文字、关系或完整构图。验证后邀请用户移动、缩放、组合和补画这些素材，用约五分钟亲自完成第一张粗草图并开始 ETC；快速、粗糙、不润色描述的是这次首次 Express，而不是第 4 步 icon 的质量。",
       "files": []
     },
     {
@@ -117,8 +117,8 @@
     },
     {
       "id": 19,
-      "prompt": "我在第四步选了 A03，其中一个是本地已有 Excalidraw icon，另一个是本轮临时重绘的 SVG。请初始化目标卡，把选中的 icon 落到 Vault 并嵌入初始知识视图，但不要替我排成最终画面。",
-      "expected_output": "把请求识别为初始化、落地和嵌入的明确授权。解析 A03 而不是凭描述猜测：所有 icon 使用前都必须是只含原生元素的纯 JSON `.excalidraw` 组件；本地 `.excalidraw` 组件验证后直接复用，临时 SVG 或其他图像参考不复制、不封装为 image，而是按用户已确认预览外观通过 Excalidraw 插件／API 描摹为结构完整、可识别、单一公共 group、无嵌套 image 的纯 JSON `.excalidraw` 文件，按 `Icon - 关键词1, 关键词2 - Own.excalidraw` 保存到 Knowledge/Assets/Excalidraw/，并先在 Icon Library 搜索同义关键词以避免重复。通过插件把两个组件作为彼此独立的 image reference 松散放入目标卡边界外素材托盘，保留原始纵横比，不添加文字、容器、箭头、关系或完整构图；验证 Embedded Files、组件链接、重新打开显示、原正文与原场景后，请用户亲自移动、缩放、组合和补画完成 Express。不得手工修改 compressed-json。",
+      "prompt": "我在第四步选了 A03 和 A06：A03 是本地已有 Excalidraw icon，A06 是本轮临时重绘的 SVG。请初始化目标卡，把选中的 icon 落到 Vault 并嵌入初始知识视图，但不要替我排成最终画面。",
+      "expected_output": "把请求识别为初始化、落地和嵌入的明确授权。分别解析只对应一个 icon 的 A03 和 A06，而不是凭描述猜测：所有 icon 使用前都必须是只含原生元素的纯 JSON `.excalidraw` 组件；本地 `.excalidraw` 组件验证后直接复用，临时 SVG 或其他图像参考不复制、不封装为 image，而是按用户已确认预览外观通过 Excalidraw 插件／API 描摹为结构完整、可识别、单一公共 group、无嵌套 image 的纯 JSON `.excalidraw` 文件，按 `Icon - 关键词1, 关键词2 - Own.excalidraw` 保存到 Knowledge/Assets/Excalidraw/，并先在 Icon Library 搜索同义关键词以避免重复。通过插件把两个组件作为彼此独立的 image reference 松散放入目标卡边界外素材托盘，保留原始纵横比；HTML 中独立展示的框架草图与文字注释不绑定 icon，也不转换成位置、文字、容器、箭头、关系或完整构图。验证 Embedded Files、组件链接、重新打开显示、原正文与原场景后，请用户亲自移动、缩放、组合和补画完成 Express。不得手工修改 compressed-json。",
       "files": []
     },
     {
@@ -157,6 +157,18 @@
       "id": 25,
       "prompt": "这张卡已经加入项目色板管理，但嵌入的原生 Excalidraw icon 使用紫色和亮绿色。运行逐卡检查时不要改 icon。",
       "expected_output": "确认项目色板检查只处理画布背景和知识卡自身的非 image 原生元素。先验证每个 image reference 都指向已描摹、无嵌套 image 的纯 JSON `.excalidraw` icon 组件；随后完全跳过 icon 组件内部颜色、image 元素颜色和 Embedded Files colorMap，不把紫色或亮绿色报告为 non-palette，也不迁移或重染 icon。只有卡片自身非 image 元素和背景参与可选色板检查。",
+      "files": []
+    },
+    {
+      "id": 26,
+      "prompt": "第四步 HTML 里筛网、颗粒、托盘、回流箭头和时钟这五个 icon 都有用，我选择 A01、A02、A03、A04、A05。请保留页面上过程式的框架草图和文字注释提示，然后把这些编号交给第五步；不要替我排完整构图。",
+      "expected_output": "接受五个入选编号，不以最多三个为由拒绝、截断或要求取消。第 4 步 JSON 用 selected_frameworks 记录过程式，并让知识卡层级的 layout_hints 与其一一对应、与 icon items 分开：过程式只对应一张抽象空间骨架草图及其文字注释，不把草图或注释重复附着到五个 icon；一个编号只对应一个可独立取舍的 icon。HTML 上方展示过程式框架草图与文字注释，下方展示 icon 选择；复制全部五个 icon 编号进入第 5 步。获得写入授权后，dry-run 应解析全部五项，只落地用户实际入选的 icon，并把它们作为独立 image reference 松散放入素材托盘。框架草图与文字注释不进入编号、不写入知识卡，也不转换为位置、文字、箭头、关系或完整构图，最终 Express 仍由用户完成。",
+      "files": []
+    },
+    {
+      "id": 27,
+      "prompt": "第三步我想分别尝试对比式和场景式，不要混成一种。第四步 HTML 应该给几张框架草图和几组文字注释？",
+      "expected_output": "按用户顺序记录 `selected_frameworks: [\"对比／对立\", \"场景式\"]`，并生成两张与之逐项对应的知识卡层级框架草图及两组文字注释：一张用抽象占位形状呈现对比／对立的并置或极性空间骨架，一张呈现场景式的角色—环境—动作空间骨架；文字分别注释布局动作和强调重点。两组提示是两个分开的整体草图实验，不自动融合，不固定补足为三组，也不附着到每个 icon。HTML 另设独立 icon 选择区；用户可从同一视觉词汇中逐项选择必要 icon。框架草图与文字注释不进入第 5 步执行计划，最终由用户分别完成或选择草图。",
       "files": []
     }
   ]

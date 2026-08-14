@@ -238,6 +238,43 @@ def validate_pool(
         raise PoolError("缺少 title。")
     if not text(data.get("core_message")):
         raise PoolError("缺少 core_message。")
+    selected_frameworks = data.get("selected_frameworks")
+    if not isinstance(selected_frameworks, list) or not selected_frameworks:
+        raise PoolError("selected_frameworks 必须是非空数组。")
+    normalized_frameworks = [text(framework) for framework in selected_frameworks]
+    if not all(normalized_frameworks):
+        raise PoolError("selected_frameworks 不能包含空值。")
+    if len(set(normalized_frameworks)) != len(normalized_frameworks):
+        raise PoolError("selected_frameworks 不能包含重复框架。")
+
+    layout_hints = data.get("layout_hints")
+    if not isinstance(layout_hints, list) or not layout_hints:
+        raise PoolError("layout_hints 必须是非空数组。")
+    seen_frameworks: set[str] = set()
+    hint_frameworks: list[str] = []
+    for index, hint in enumerate(layout_hints, start=1):
+        if not isinstance(hint, dict):
+            raise PoolError(f"第 {index} 条知识卡布局提示必须是对象。")
+        for field in ("framework", "spatial_grammar", "layout_hint", "emphasis"):
+            if not text(hint.get(field)):
+                raise PoolError(f"第 {index} 条框架草图提示缺少 {field}。")
+        sketch = hint.get("sketch")
+        if not isinstance(sketch, dict):
+            raise PoolError(f"第 {index} 条框架草图提示缺少 sketch 对象。")
+        for field in ("src", "alt"):
+            if not text(sketch.get(field)):
+                raise PoolError(f"第 {index} 条框架草图提示的 sketch 缺少 {field}。")
+        framework = text(hint["framework"])
+        if framework in seen_frameworks:
+            raise PoolError(f"知识卡布局提示的视觉框架重复：{framework}")
+        seen_frameworks.add(framework)
+        hint_frameworks.append(framework)
+    if hint_frameworks != normalized_frameworks:
+        raise PoolError(
+            "layout_hints 必须按 selected_frameworks 的顺序一一对应；"
+            f"已选：{normalized_frameworks}；提示：{hint_frameworks}"
+        )
+
     items = data.get("items")
     if not isinstance(items, list):
         raise PoolError("items 必须是数组。")
@@ -248,13 +285,26 @@ def validate_pool(
 
     seen: set[str] = set()
     normalized: list[dict[str, Any]] = []
-    required_fields = ("id", "type", "label", "visualization", "emphasis")
+    required_fields = (
+        "id",
+        "type",
+        "label",
+        "atomic_unit",
+        "assembly_later",
+        "visualization",
+        "emphasis",
+    )
     for index, raw_item in enumerate(items, start=1):
         if not isinstance(raw_item, dict):
             raise PoolError(f"第 {index} 个候选必须是对象。")
         for field in required_fields:
             if not text(raw_item.get(field)):
                 raise PoolError(f"第 {index} 个候选缺少 {field}。")
+        if "combination_hint" in raw_item or "layout_hint" in raw_item:
+            raise PoolError(
+                f"第 {index} 个 icon 候选不应承载知识卡布局提示；"
+                "请改用顶层 layout_hints。"
+            )
         item_id = text(raw_item["id"])
         if not ID_PATTERN.fullmatch(item_id):
             raise PoolError(f"无效联想编号：{item_id}；应类似 A01。")
@@ -263,10 +313,11 @@ def validate_pool(
         seen.add(item_id)
 
         icons = raw_item.get("icons")
-        if not isinstance(icons, list) or not icons:
-            raise PoolError(f"{item_id} 至少需要一个真实 icon 素材。")
-        if len(icons) > 3:
-            raise PoolError(f"{item_id} 最多使用 3 个 icon，避免预览失焦。")
+        if not isinstance(icons, list) or len(icons) != 1:
+            raise PoolError(
+                f"{item_id} 必须有且只有一个真实 icon 素材；"
+                "多个视觉零件应拆成独立编号供用户逐项选择。"
+            )
         for icon_index, icon in enumerate(icons, start=1):
             if not isinstance(icon, dict):
                 raise PoolError(f"{item_id} 的第 {icon_index} 个 icon 必须是对象。")
@@ -318,6 +369,8 @@ def render_card(item: dict[str, Any], asset_root: Path) -> str:
             item_id,
             item_type,
             label,
+            text(item["atomic_unit"]),
+            text(item["assembly_later"]),
             text(item["visualization"]),
             text(item["emphasis"]),
             keywords,
@@ -334,10 +387,32 @@ def render_card(item: dict[str, Any], asset_root: Path) -> str:
   <h2>{html_text(label)}</h2>
   <div class="icon-stage" aria-label="{html_text(label)}的图标预览">{icons}</div>
   <dl class="meaning">
+    <div><dt>原子单位</dt><dd>{html_text(item['atomic_unit'])}</dd></div>
+    <div><dt>留给画布组合</dt><dd>{html_text(item['assembly_later'])}</dd></div>
     <div><dt>怎样画</dt><dd>{html_text(item['visualization'])}</dd></div>
     <div><dt>突出什么</dt><dd>{html_text(item['emphasis'])}</dd></div>
   </dl>
   <button class="select-card" type="button" aria-pressed="false">选择 {html_text(item_id)}</button>
+</article>"""
+
+
+def render_layout_hint(hint: dict[str, Any], asset_root: Path) -> str:
+    sketch = hint["sketch"]
+    sketch_src = html.escape(
+        icon_src_to_html(text(sketch["src"]), asset_root), quote=True
+    )
+    return f"""
+<article class="layout-hint-card">
+  <h3>{html_text(hint['framework'])}</h3>
+  <figure class="layout-sketch">
+    <img src="{sketch_src}" alt="{html_text(sketch['alt'])}" loading="eager" decoding="async">
+    <figcaption>框架草图：只提示空间骨架，不绑定下方 icon。</figcaption>
+  </figure>
+  <dl class="meaning">
+    <div><dt>空间语法</dt><dd>{html_text(hint['spatial_grammar'])}</dd></div>
+    <div><dt>文字注释提示</dt><dd>{html_text(hint['layout_hint'])}</dd></div>
+    <div><dt>突出什么</dt><dd>{html_text(hint['emphasis'])}</dd></div>
+  </dl>
 </article>"""
 
 
@@ -353,6 +428,9 @@ def render_html(
         for item_type in types
     )
     cards = "".join(render_card(item, asset_root) for item in items)
+    layout_cards = "".join(
+        render_layout_hint(hint, asset_root) for hint in data["layout_hints"]
+    )
     css_vars = "\n".join(
         f"    --concept-color-{key}: {value};" for key, value in palette.items()
     )
@@ -386,6 +464,18 @@ def render_html(
   .eyebrow {{ color: var(--muted); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }}
   h1 {{ margin: 6px 0 10px; font-size: clamp(1.8rem, 4vw, 3.3rem); line-height: 1.12; }}
   .core-message {{ margin: 0; font-size: 1.1rem; max-width: 70ch; }}
+  .layout-section {{
+    margin: 24px 0; padding: 18px; border: 2px solid var(--ink); border-radius: 22px;
+    background: color-mix(in srgb, var(--concept-color-cool-fill) 62%, white);
+  }}
+  .layout-section > h2 {{ margin: 0 0 6px; font-size: 1.45rem; }}
+  .layout-intro {{ margin: 0 0 14px; color: var(--muted); font-weight: 700; }}
+  .layout-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }}
+  .layout-hint-card {{ padding: 15px; border: 2px dashed var(--muted); border-radius: 16px; background: var(--card); }}
+  .layout-hint-card h3 {{ margin: 0 0 10px; color: var(--muted); font-size: 1.08rem; }}
+  .layout-sketch {{ margin: 0 0 14px; padding: 10px; border: 1px dashed var(--muted); border-radius: 14px; background: white; }}
+  .layout-sketch img {{ display: block; width: 100%; height: 210px; object-fit: contain; }}
+  .layout-sketch figcaption {{ margin-top: 6px; color: var(--muted); font-size: .76rem; font-weight: 750; text-align: center; }}
   .toolbar {{
     position: sticky; top: 0; z-index: 10; display: grid; gap: 12px;
     margin: 24px 0; padding: 14px; border: 2px solid var(--ink); border-radius: 18px;
@@ -452,24 +542,29 @@ def render_html(
 <body>
 <main class="page">
   <header class="hero">
-    <div class="eyebrow">Step 4 visual references · {len(items)} candidates</div>
+    <div class="eyebrow">Step 4 layout + icon references · {len(items)} icons</div>
     <h1>{title}</h1>
     <p class="core-message"><strong>本轮核心信息：</strong>{core_message}</p>
   </header>
-  <section class="toolbar" aria-label="联想池筛选与选择">
+  <section class="layout-section" aria-label="框架草图与文字注释提示">
+    <h2>框架草图 + 文字注释提示</h2>
+    <p class="layout-intro">每张草图对应第 3 步选定的一种视觉框架，只画抽象空间骨架，并用文字说明可能的布局动作和强调重点。它不绑定下方 icon，也不是待照抄的完整构图；多个框架仍是分开的草图实验。</p>
+    <div class="layout-grid">{layout_cards}</div>
+  </section>
+  <section class="toolbar" aria-label="icon 筛选与选择">
     <div class="toolbar-row">
-      <input id="search" type="search" placeholder="搜索编号、联想、动作或强调…" aria-label="搜索联想">
+      <input id="search" type="search" placeholder="搜索编号、icon、角色或动作…" aria-label="搜索 icon">
       <button class="filter-chip" type="button" data-filter="all" aria-pressed="true">全部</button>
       {type_buttons}
     </div>
     <div class="toolbar-row">
-      <span class="selection-status" aria-live="polite">已选 0/3：尚未选择</span>
+      <span class="selection-status" aria-live="polite">已选 0 个 icon：尚未选择</span>
       <button class="copy-button" type="button">复制编号，继续落地</button>
       <span class="asset-warning" role="status" aria-live="polite"></span>
     </div>
-    <p class="selection-next-step">把入选编号贴回对话并授权“初始化并嵌入”后：本地原生 Excalidraw 组件会直接复用；其他入选图像参考会先描摹为 Vault 内原生 Excalidraw icon，不复制或嵌入源图；随后只把这些 icon 松散放入知识卡初始视图，由你亲自组合。</p>
+    <p class="selection-next-step">逐项选择当前视觉结构需要的 icon，数量不设硬上限。上方的框架草图与文字注释只提供整体空间骨架，不绑定具体 icon，也不构成完整画面。把入选编号贴回对话并授权“初始化并嵌入”后：本地原生 Excalidraw 组件会直接复用；其他入选图像参考会先描摹为 Vault 内原生 Excalidraw icon，不复制或嵌入源图；随后只把这些 icon 松散放入知识卡初始视图，由你亲自组合。</p>
   </section>
-  <section class="grid" aria-label="视觉联想候选">{cards}</section>
+  <section class="grid" aria-label="可选 icon">{cards}</section>
   <p class="empty" hidden>没有符合当前筛选条件的候选。</p>
 </main>
 <script>
@@ -485,7 +580,7 @@ def render_html(
   let activeType = 'all';
   let selected = [];
   try {{ selected = JSON.parse(localStorage.getItem(storageKey) || '[]'); }} catch (_) {{ selected = []; }}
-  selected = selected.filter(id => cards.some(card => card.dataset.id === id)).slice(0, 3);
+  selected = selected.filter(id => cards.some(card => card.dataset.id === id));
 
   function updateSelection() {{
     cards.forEach(card => {{
@@ -495,7 +590,7 @@ def render_html(
       button.setAttribute('aria-pressed', String(on));
       button.textContent = on ? `取消 ${{card.dataset.id}}` : `选择 ${{card.dataset.id}}`;
     }});
-    status.textContent = `已选 ${{selected.length}}/3：${{selected.join('、') || '尚未选择'}}`;
+    status.textContent = `已选 ${{selected.length}} 个 icon：${{selected.join('、') || '尚未选择'}}`;
     localStorage.setItem(storageKey, JSON.stringify(selected));
   }}
 
@@ -515,8 +610,7 @@ def render_html(
     card.querySelector('.select-card').addEventListener('click', () => {{
       const id = card.dataset.id;
       if (selected.includes(id)) selected = selected.filter(value => value !== id);
-      else if (selected.length < 3) selected.push(id);
-      else {{ status.textContent = '最多选择 3 个；请先取消一个。'; return; }}
+      else selected.push(id);
       updateSelection();
     }});
   }});
@@ -530,7 +624,7 @@ def render_html(
 
   copyButton.addEventListener('click', async () => {{
     const value = selected.join(', ');
-    if (!value) {{ status.textContent = '请先选择 1–3 个联想。'; return; }}
+    if (!value) {{ status.textContent = '请先选择至少一个 icon。'; return; }}
     try {{
       await navigator.clipboard.writeText(value);
     }} catch (_) {{
@@ -560,7 +654,7 @@ def render_html(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="把第 4 步视觉参考 JSON 渲染为供人类选择入选 icon 的独立 HTML。"
+        description="把第 4 步视觉参考 JSON 渲染为包含框架草图、文字注释提示与独立 icon 选择区的 HTML。"
     )
     parser.add_argument("input_json", type=Path)
     parser.add_argument("output_html", type=Path)
