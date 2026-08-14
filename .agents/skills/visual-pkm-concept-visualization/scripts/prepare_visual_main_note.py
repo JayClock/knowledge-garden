@@ -71,6 +71,52 @@ def read_json(path: Path) -> dict[str, Any]:
     return data
 
 
+def validate_preview_structure(data: dict[str, Any]) -> None:
+    selected_frameworks = data.get("selected_frameworks")
+    if not isinstance(selected_frameworks, list) or not selected_frameworks:
+        raise PreparationError("Step 4 JSON 的 selected_frameworks 必须是非空数组。")
+    frameworks = [str(value).strip() for value in selected_frameworks]
+    if not all(frameworks) or len(set(frameworks)) != len(frameworks):
+        raise PreparationError("Step 4 JSON 的 selected_frameworks 不能留空或重复。")
+
+    layout_hints = data.get("layout_hints")
+    if not isinstance(layout_hints, list) or not layout_hints:
+        raise PreparationError("Step 4 JSON 的 layout_hints 必须是非空数组。")
+    hint_frameworks: list[str] = []
+    for index, hint in enumerate(layout_hints, start=1):
+        if not isinstance(hint, dict):
+            raise PreparationError(f"第 {index} 条知识卡布局提示必须是对象。")
+        for field in ("framework", "spatial_grammar", "layout_hint", "emphasis"):
+            if not str(hint.get(field, "")).strip():
+                raise PreparationError(f"第 {index} 条框架草图提示缺少 {field}。")
+        sketch = hint.get("sketch")
+        if not isinstance(sketch, dict):
+            raise PreparationError(f"第 {index} 条框架草图提示缺少 sketch 对象。")
+        for field in ("src", "alt"):
+            if not str(sketch.get(field, "")).strip():
+                raise PreparationError(
+                    f"第 {index} 条框架草图提示的 sketch 缺少 {field}。"
+                )
+        hint_frameworks.append(str(hint["framework"]).strip())
+    if hint_frameworks != frameworks:
+        raise PreparationError(
+            "layout_hints 必须按 selected_frameworks 的顺序一一对应；"
+            f"已选：{frameworks}；提示：{hint_frameworks}"
+        )
+
+    items = data.get("items")
+    if not isinstance(items, list):
+        raise PreparationError("Step 4 JSON 缺少 items 数组。")
+    for index, item in enumerate(items, start=1):
+        if isinstance(item, dict) and (
+            "combination_hint" in item or "layout_hint" in item
+        ):
+            raise PreparationError(
+                f"第 {index} 个 icon 候选不应承载知识卡布局提示；"
+                "请改用顶层 layout_hints。"
+            )
+
+
 def parse_selected(raw_values: list[str]) -> list[str]:
     selected: list[str] = []
     for raw in raw_values:
@@ -84,8 +130,6 @@ def parse_selected(raw_values: list[str]) -> list[str]:
                 selected.append(candidate_id)
     if not selected:
         raise PreparationError("至少需要一个入选编号。")
-    if len(selected) > 3:
-        raise PreparationError("最多选择 3 个候选。")
     return selected
 
 
@@ -228,8 +272,11 @@ def resolve_icons(
     for item_id in selected:
         item = by_id[item_id]
         icons = item.get("icons")
-        if not isinstance(icons, list) or not icons:
-            raise PreparationError(f"{item_id} 没有 icon。")
+        if not isinstance(icons, list) or len(icons) != 1:
+            raise PreparationError(
+                f"{item_id} 必须有且只有一个 icon；"
+                "多个视觉零件应拆成独立编号供用户逐项选择。"
+            )
         for icon in icons:
             if not isinstance(icon, dict):
                 raise PreparationError(f"{item_id} 包含无效 icon。")
@@ -397,9 +444,9 @@ def parse_eval_value(stdout: str) -> Any:
         parsed = json.loads(raw)
         if isinstance(parsed, str):
             try:
-                parsed = json.loads(parsed)
+                return json.loads(parsed)
             except json.JSONDecodeError:
-                pass
+                return parsed
         return parsed
     except json.JSONDecodeError as exc:
         raise PreparationError(f"无法解析 Obsidian eval 结果：{raw[:300]}") from exc
@@ -478,7 +525,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--selected",
         required=True,
         action="append",
-        help="入选编号；可重复或使用逗号分隔，例如 A02,A05。",
+        help="入选 icon 编号；数量不设硬上限，可重复参数或使用逗号分隔，例如 A02,A05,A07,A09。",
     )
     target = parser.add_mutually_exclusive_group(required=True)
     target.add_argument("--existing", help="现有 Knowledge/Notes/*.md 路径。")
@@ -519,6 +566,7 @@ def main() -> int:
         selected = parse_selected(args.selected)
         icon_maps = parse_icon_maps(args.icon_map)
         data = read_json(preview_json)
+        validate_preview_structure(data)
         icons, component_reports = resolve_icons(
             data, selected, icon_maps, vault_root
         )
