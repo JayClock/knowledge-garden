@@ -46,3 +46,4 @@ quartz/cli/tui/dist/
 !/content/Knowledge/Assets/Excalidraw/*.ico
 !/content/Knowledge/Assets/Excalidraw/*.jxl
 
+.turbo/
