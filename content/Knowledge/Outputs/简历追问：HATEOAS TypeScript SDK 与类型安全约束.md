@@ -1,7 +1,7 @@
 ---
 title: 简历追问：HATEOAS TypeScript SDK 与类型安全约束
 date: 2026-07-03 22:00:00
-updated: 2026-07-09 10:45:13
+updated: 2026-08-23 08:49:44
 tags:
   - interview/follow-up
   - resume/hateoas
@@ -10,7 +10,7 @@ tags:
 
 # 简历追问：HATEOAS TypeScript SDK 与类型安全约束
 
-关联：[[全栈工程师简历#HATEOAS 资源契约架构]]、[[15分钟：HATEOAS 资源契约架构]]。
+关联：[[职业经历]]、[[15分钟：HATEOAS 资源契约架构]]。
 
 ## 对应简历描述
 
@@ -25,6 +25,8 @@ tags:
 ### 1. SDK 边界
 
 - SDK 为什么要单独做？直接用 Axios + React Query 不够吗？
+- 为什么 relation 的类型稳定性依赖资源边界、生命周期和 RESTful API 语义？
+- SDK 落地怎样推动你从多端消费继续理解业务／领域建模，而不是单纯扩大后端技术栈？
 - `core` 包和 `react` 适配包怎么拆？哪些能力必须框架无关？
 - `Resource`、`State`、`Action`、`Fetcher`、`Cache` 之间的调用链是什么？
 
@@ -66,3 +68,4 @@ tags:
 - “后端动态返回的东西不需要类型。”
 - “zod 只是用来校验表单。”
 - “SDK 就是把 URL 和 Method 封装一下。”
+- “只要 TypeScript 类型写得完整，服务端资源怎么建模都无所谓。”

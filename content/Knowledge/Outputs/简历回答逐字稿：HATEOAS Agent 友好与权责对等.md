@@ -1,7 +1,7 @@
 ---
 title: 简历回答逐字稿：HATEOAS Agent 友好与权责对等
 date: 2026-07-03 22:30:00
-updated: 2026-07-09 10:45:13
+updated: 2026-08-23 08:49:25
 tags:
   - interview/script
   - resume/hateoas
@@ -10,13 +10,19 @@ tags:
 
 # 简历回答逐字稿：HATEOAS Agent 友好与权责对等
 
-关联：[[简历追问：HATEOAS Agent 友好与权责对等]]、[[HATEOAS 如何用于 Agent 身份治理：以数据分析任务为例]]。
+关联：[[职业经历]]、[[全栈工程师简历]]、[[简历追问：HATEOAS Agent 友好与权责对等]]、[[HATEOAS 如何用于 Agent 身份治理：以数据分析任务为例]]。
+
+> [!warning] 回答边界
+>
+> - 生产成果是 HATEOAS 资源契约、TypeScript SDK 及 PC Web / 移动 Web 消费。
+> - 将 `_templates` 动态注册为 Agent tools 是基于现有 SDK 的架构延展，没有上线，不能用“我实现了”来回答。
+> - `reject`、`approve` 和订单状态只是机制示例，不是该项目的真实业务证明。
 
 ## 30 秒开场
 
-我说 HATEOAS 对 Agent 友好，核心不是“让 AI 调接口更方便”，而是让 Agent 的可调用动作天然受当前用户和当前资源状态约束。
+这部分是我沿着“多端统一消费资源契约”的既有主线做的架构延展，不是生产交付。HATEOAS 最初服务 PC Web 与移动 Web；如果以后增加 Agent 这个新客户端，也不应该把全量接口交给模型，再靠 prompt 限制权限，而应根据当前资源返回的 `_links` 和 `_templates`，只暴露当前用户、当前状态下合法的动作。
 
-传统做法是把一堆 OpenAPI 接口注册给 Agent，再靠 prompt 告诉它哪些能调，这个边界很弱。HATEOAS 下，Agent 只看当前资源返回的 `_links` 和 `_templates`。当前用户没有权限、当前状态不可执行的动作，根本不会注册成工具。即使模型尝试越权，服务端也会二次鉴权。
+模型只负责意图识别和参数生成，服务端仍负责最终鉴权与状态校验。因此这套思路讨论的是 Agent 的能力边界怎样与已有资源契约对齐。
 
 ## 如果面试官问：template 怎么变成 Agent tool？
 
@@ -59,9 +65,7 @@ self-heal 主要针对 payload 形状错误，不是让模型无限试接口。�
 ```json
 {
   "type": "validation_error",
-  "fields": [
-    { "path": "reason", "code": "required", "message": "请填写驳回原因" }
-  ]
+  "fields": [{ "path": "reason", "code": "required", "message": "请填写驳回原因" }]
 }
 ```
 
@@ -83,4 +87,4 @@ Agent 需要的不是全量能力列表，而是当前上下文里的合法下�
 
 ## 收尾句
 
-所以我讲 Agent 友好，不是说 AI 可以随便调系统，而是 HATEOAS 把“可用动作”限制在当前资源状态里，让 Agent 的能力边界和用户权限边界天然对齐。
+所以这段只能作为架构讨论：HATEOAS 有条件把“可用动作”限制在当前资源状态里，让 Agent 的能力边界与用户权限边界对齐；但动态工具注册、自动修复、人工确认和审计链路都不能说成这个项目已经上线的成果。

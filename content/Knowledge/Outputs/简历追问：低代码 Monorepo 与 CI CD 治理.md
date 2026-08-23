@@ -1,7 +1,7 @@
 ---
 title: 简历追问：低代码 Monorepo 与 CI CD 治理
 date: 2026-07-03 22:00:00
-updated: 2026-07-09 10:45:13
+updated: 2026-08-20 09:08:34
 tags:
   - interview/follow-up
   - resume/lowcode
@@ -10,7 +10,7 @@ tags:
 
 # 简历追问：低代码 Monorepo 与 CI CD 治理
 
-关联：[[全栈工程师简历#低代码工作流引擎]]、[[15分钟：低代码平台]]、[[Nx Monorepo 改造中如何治理依赖版本冲突]]。
+关联：[[职业经历]]、[[15分钟：低代码平台]]、[[Nx Monorepo 改造中如何治理依赖版本冲突]]。
 
 ## 对应简历描述
 
