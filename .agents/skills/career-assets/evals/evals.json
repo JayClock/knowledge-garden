@@ -1,0 +1,52 @@
+{
+  "skill_name": "career-assets",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把 Knowledge/Sources/某项目/ 整个目录录入职业事实账本，素材就是事实。目录里有源码、课程式项目文稿和简历示例百分比；配套仓库只是代表性重实现。",
+      "expected_output": "路由到 career-evidence；将用户对项目范围的确认记录为 claim evidence，分别判断个人职责、完成状态和边界，不采用示例百分比；更新 claims 并运行影响扫描。",
+      "files": [],
+      "assertions": [
+        "不会把课程简历示例数字自动写成个人成果",
+        "不会因重实现代码缺失反向收缩用户确认的项目范围",
+        "会区分项目范围确认与个人职责、事故、客户、规模确认",
+        "会更新或提出更新 claims 和受影响 manifests"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "这是目标公司的高级前端平台岗位 JD，帮我生成两页 DOCX 简历和 90 到 120 秒自我介绍。我同时还在投另一家公司，不要覆盖那一版。",
+      "expected_output": "建立独立 opportunity，先完成 JD 与 confirmed claims 映射；生成该 opportunity 的 resume、自我介绍和 manifests；使用 resume-package 模板与 OfficeCLI，不覆盖全局自我介绍或其他岗位包。",
+      "files": [],
+      "assertions": [
+        "岗位产物绑定独立 opportunity_id",
+        "简历与自我介绍使用同一组 confirmed claim IDs",
+        "不会覆盖全局自我介绍或其他岗位版本",
+        "DOCX 使用只读模板和 OfficeCLI 并执行占位符与布局检查"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "昨天技术面试没过。我讲监控 SDK 时卡住了，面试官说我只讲了采集 API，没有讲这些数据给谁用。帮我复盘并更新后续材料。",
+      "expected_output": "路由到 career-retro，绑定真实 opportunity 和使用的 artifact，将观察与原因判断分开，优先分类为 expression/selection/evidence gap；不会直接篡改 confirmed facts，再路由到相应子 skill。",
+      "files": [],
+      "assertions": [
+        "反馈绑定真实机会和使用版本",
+        "区分招聘方原话、原因解释和下一步行动",
+        "不会因为一次面试失败直接修改职业事实",
+        "会给出明确 next_skill 和需要标记 stale 的产物"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "只把这句话改顺一点：负责 React 页面开发和接口联调。不要整理我的长期职业事实，也不用保存。",
+      "expected_output": "识别为轻量一次性措辞任务，不初始化 Career Harness、不创建 opportunity、不修改 claims 或文件。",
+      "files": [],
+      "assertions": [
+        "不会启动完整职业资产工作流",
+        "不会创建状态文件或修改 claims",
+        "只完成用户要求的轻量措辞调整"
+      ]
+    }
+  ]
+}

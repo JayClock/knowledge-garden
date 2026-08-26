@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/简历回答逐字稿：监控 SaaS 大盘与 ClickHouse 可视化.md",
+  "artifact_type": "interview_dossier",
+  "opportunity_id": null,
+  "generated_by": "interview-package",
+  "claim_ids": [
+    "monitoring-sdk.project.scope",
+    "monitoring-sdk.platform-boundary",
+    "monitoring-sdk.downstream-driven-design",
+    "monitoring-sdk.architecture",
+    "monitoring-sdk.collection",
+    "monitoring-sdk.queue-retry",
+    "monitoring-sdk.sourcemap",
+    "monitoring-sdk.platform-coverage",
+    "monitoring-sdk.reimplementation-boundary",
+    "aiflow.telemetry.execution-correlation"
+  ],
+  "status": "current"
+}

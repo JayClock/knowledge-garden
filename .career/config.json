@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "paths": {
+    "base_introduction": "content/Knowledge/Outputs/自我介绍.md",
+    "source_roots": [
+      "content/Knowledge/Sources"
+    ],
+    "project_output_root": "content/Knowledge/Outputs"
+  }
+}

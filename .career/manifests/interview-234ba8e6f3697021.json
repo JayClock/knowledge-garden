@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/简历回答逐字稿：低代码变量编辑器与数据总线.md",
+  "artifact_type": "interview_dossier",
+  "opportunity_id": null,
+  "generated_by": "interview-package",
+  "claim_ids": [
+    "aiflow.project.scope",
+    "aiflow.data-and-backend-boundary",
+    "aiflow.telemetry.execution-correlation",
+    "aiflow.business-scope",
+    "aiflow.engine-core",
+    "aiflow.dynamic-branching",
+    "aiflow.node-plugin-system",
+    "aiflow.variable-editor",
+    "aiflow.execution-feedback",
+    "aiflow.failure-trace-order",
+    "aiflow.reimplementation-boundary",
+    "aiflow.result-boundary",
+    "aiflow.visual-editor"
+  ],
+  "status": "current"
+}

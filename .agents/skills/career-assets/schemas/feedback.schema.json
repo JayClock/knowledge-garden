@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "career-feedback.schema.json",
+  "type": "object",
+  "required": ["id", "opportunity_id", "stage", "signal", "classification", "affected_claim_ids", "affected_artifacts", "next_skill"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "opportunity_id": {"type": "string", "minLength": 1},
+    "stage": {"type": "string", "minLength": 1},
+    "signal": {"type": "string", "minLength": 1},
+    "classification": {"enum": ["fact_gap", "evidence_gap", "positioning_gap", "selection_gap", "expression_gap", "delivery_error", "market_mismatch", "harness_gap"]},
+    "affected_claim_ids": {"type": "array", "items": {"type": "string"}},
+    "affected_artifacts": {"type": "array", "items": {"type": "string"}},
+    "next_skill": {"enum": ["career-evidence", "career-positioning", "resume-package", "interview-package", "career-retro", "career-assets"]}
+  }
+}

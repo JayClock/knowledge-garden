@@ -1,116 +1,150 @@
 <p align="center">
-  <img src="./assets/readme/hero.svg" width="100%" alt="职业资产：从经历深访到职业主档、岗位简历和反馈迭代的长期工作流">
+  <img src="./assets/readme/hero.svg" width="100%" alt="Career Harness：用双层循环管理职业事实、岗位交付和真实反馈">
 </p>
 
 <p align="center">
-  <strong>别急着润色简历。先把真正值得写的经历挖出来。</strong>
+  <strong>不要让一堆简历文件管理你的职业事实。</strong>
 </p>
 
 <p align="center">
-  一个通过材料阅读与顾问式访谈，持续沉淀职业主档、派生岗位简历并吸收真实反馈的 Agent Skill。
+  一个以外层 PDCA 和内层操控循环组织事实、定位、岗位交付、面试准备与反馈回流的 Career Harness。
 </p>
+
+## 核心变化
+
+`career-assets` 不再是包办所有写作的大 Skill，而是外层控制器：
+
+```text
+来源与用户确认
+→ claims 唯一事实账本
+→ opportunity 岗位映射
+→ 简历／自我介绍／面试包
+→ 投递与面试反馈
+→ 下一轮调整
+```
+
+具体子任务由五个 sibling Skill 完成：
+
+| Skill | 职责 |
+| --- | --- |
+| `career-evidence` | 来源、访谈、claim、证据与冲突 |
+| `career-positioning` | 长期定位、JD 映射、项目选择与 gap |
+| `resume-package` | 岗位简历、自我介绍与 DOCX |
+| `interview-package` | 项目讲法、具体回答、追问与口语化 |
+| `career-retro` | 投递／面试反馈分类与下一轮动作 |
+
+## 双层循环
+
+外层 PDCA 管理一次求职机会的完整阶段：
+
+```text
+capture → verify → position → package → practice → apply → retro
+```
+
+每个子 Skill 再运行自己的内层循环：
+
+```text
+前馈 Guides → 行动 → Sensors → 调整 Steer
+```
+
+失败时只回到对应环节：缺证据不靠润色解决，岗位不匹配不靠堆关键词解决，口语超时也不反向删除事实。
+
+## 状态不是笔记
+
+Career Harness 默认在 Git 根目录使用 `.career/`：
+
+```text
+.career/
+├── config.json
+├── claims.json
+├── positioning.json
+├── feedback.jsonl
+├── manifests/
+└── opportunities/<opportunity_id>/
+    ├── opportunity.json
+    ├── outputs/
+    └── manifests/
+```
+
+- `claims.json` 是唯一职业事实源，不再维护平行的长期 Markdown 主档。
+- `positioning.json` 保存基于 claims 的定位与待补问题。
+- 每个岗位产物用 manifest 记录 claim IDs。
+- 每个岗位拥有独立自我介绍，不覆盖全局基础版。
+- 真实反馈可以改变定位、选择和表达，但不能直接篡改事实。
+
+初始化：
+
+```bash
+python career-assets/scripts/init_state.py --root <git-root>
+```
+
+验证：
+
+```bash
+python career-assets/scripts/state_lint.py --state-dir <git-root>/.career --repo-root <git-root>
+```
+
+影响扫描：
+
+```bash
+python career-assets/scripts/impact_scan.py \
+  --state-dir <git-root>/.career \
+  --claim-id <claim-id>
+```
+
+机会状态：
+
+```bash
+python career-assets/scripts/opportunity_status.py \
+  --state-dir <git-root>/.career \
+  --opportunity-id <opportunity-id>
+```
 
 ## 从一句人话开始
 
-你不需要先理解工作流，也不用填一张很长的表。直接说：
-
 ```text
 帮我梳理经历
-帮我出一版简历
+帮我按这个岗位出一版
+帮我准备面试
 继续补充
 复盘投递/面试
 ```
 
-Skill 会根据你的材料多少和求职紧急程度，自动决定先读材料、拉时间线、深挖关键经历，还是优先服务眼前的岗位。
+用户不需要理解 claim、manifest 或状态机。外层 Skill 会确定阶段并路由正确的子 Skill。
 
-## 最终留下的不是“一版简历”
+## 事实边界
 
-一次普通的简历修改，交付的是一份很快过期的文档。`职业资产` 默认维护两类长期成果：
+- 只有 confirmed claim 可以进入保真简历和面试回答。
+- 课程、旧简历和旧讲稿只能提供线索或参考框架。
+- 用户明确确认整组项目文稿为事实时，记录这项确认；个人职责、事故、客户和数字仍分别判断。
+- 面试简历示例数字、客户目标和理论能力不会自动成为个人成果。
+- 岗位文案和市场反馈不能反向升级为事实。
 
-- **`职业经历.md`**：持续补充的职业主档，保存经历、成绩、证据、个人贡献与成长故事。
-- **岗位定制简历**：从主档中选择与目标岗位最相关的内容，生成当前可投递版本。
+## 岗位交付
 
-投递与面试结果还会回到主档：哪种表达拿到约面、哪段项目讲不清、哪些证据仍然不足，都会成为下一轮优化的依据。
-
-## 它怎么工作
-
-1. **先分诊**：判断求职是否紧急、现有材料是否充足。
-2. **先读再问**：把旧简历、项目集、个人网站等既当作事实线索，也当作需要重新审视的旧表达。
-3. **混合深访**：沿时间线、成绩证据和成长故事追问，每个问题都服务于事实、证据或岗位表达。
-4. **每 4 问整理一次**：边聊边给出可见进展，不让访谈变成没有尽头的问卷。
-5. **先主档，后派生**：从同一份长期主档生成岗位简历、面试表达和后续版本。
-6. **反馈回流**：把投递和面试中的真实结果写回，下一版因此更准。
-
-## 和普通简历润色有什么不同
-
-| 普通简历润色 | 职业资产 |
-| --- | --- |
-| 从现有措辞开始 | 从真实经历与证据开始 |
-| 目标是今天改出一版 | 目标是建立可长期复用的主档 |
-| 不同岗位重复从头写 | 从主档按岗位持续派生 |
-| 修改结束后信息不再更新 | 投递与面试反馈继续回流 |
-
-## 真实性是硬边界
-
-生成简历时，内容会被明确拆成两层：
-
-- **保真底稿**：只写你明确讲过、能被追问验证的事实；可以重组和提炼，但不编造数据、角色或结果。
-- **强化建议**：把可能更有竞争力的表达单独列出，由你确认后再采用，不把猜测混进正文。
-
-如果材料前后冲突，Skill 会先温和确认并保留待核实项，而不是擅自挑一个版本写进简历。
-
-## 适合谁
-
-- 不想只改措辞，想真正讲清职业经历的人。
-- 正在转型，需要重新组织能力叙事的人。
-- 同时投递多个公司、多个岗位，需要多版本简历的人。
-- 希望每次投递和面试都能反哺下一版的人。
-
-## 什么时候别用
-
-这些任务更适合轻量简历工具：
-
-- 只润色一页已有简历。
-- 只缩短一段项目描述。
-- 材料已经完整，只需一次性快速出稿。
-- 站在招聘方视角筛选或推荐候选人。
-
-## 安装
-
-把仓库放进你的 Agent skills 目录，目录内保留 [`SKILL.md`](./SKILL.md)：
-
-```bash
-git clone https://github.com/Ivor-NCUT/career-assets-skill.git
-```
-
-如果你的 Agent 使用固定的 skills 根目录，把克隆后的目录移动或重命名到对应位置即可。
-
-## 第一次使用
-
-有材料时，可以这样开始：
+每次岗位机会使用独立目录：
 
 ```text
-我不想只润色简历。我把旧简历和项目材料发给你，先帮我梳理经历。
+.career/opportunities/<opportunity_id>/outputs/
+├── resume.md
+├── resume.docx              # 用户明确要求时
+├── self-introduction.md
+└── interview-plan.md
 ```
 
-材料很少也没关系：
-
-```text
-我想重新找工作，但现在没有一份像样的简历。先帮我把经历拉一条时间线。
-```
-
-有紧急岗位时，直接给目标：
-
-```text
-我明天要投 AI 产品经理。先用现有材料出一版，再告诉我最值得补什么。
-```
+DOCX 模板和 OfficeCLI 规则位于 `resume-package`；技术面试口语化规则位于 `interview-package`。
 
 ## 仓库内容
 
-- [`SKILL.md`](./SKILL.md)：触发边界、访谈节奏、产物结构、真实性规则和反馈闭环。
-- [`README.md`](./README.md)：面向使用者的项目介绍与上手入口。
-- [`assets/readme/hero.svg`](./assets/readme/hero.svg)：README 的项目原生视觉说明。
+```text
+career-assets/          外层控制器、状态规范和计算型 Sensors
+career-evidence/        事实采集与验证
+career-positioning/     定位和岗位映射
+resume-package/         岗位简历与 DOCX
+interview-package/      面试材料与口语化
+career-retro/           反馈回流
+```
 
 ---
 
-<p align="center"><strong>先把经历讲清楚，再让每一次投递都站在更完整的自己上。</strong></p>
+<p align="center"><strong>先让事实可追踪，再让每次求职都成为下一轮的输入。</strong></p>

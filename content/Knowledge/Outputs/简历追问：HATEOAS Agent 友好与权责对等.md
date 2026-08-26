@@ -1,7 +1,7 @@
 ---
 title: 简历追问：HATEOAS Agent 友好与权责对等
 date: 2026-07-03 22:00:00
-updated: 2026-08-23 08:49:44
+updated: 2026-08-26 08:30:30
 tags:
   - interview/follow-up
   - resume/hateoas
@@ -10,7 +10,7 @@ tags:
 
 # 简历追问：HATEOAS Agent 友好与权责对等
 
-关联：[[职业经历]]、[[HATEOAS 如何用于 Agent 身份治理：以数据分析任务为例]]。
+关联：[[15分钟：HATEOAS 资源契约架构]]。
 
 ## 对应简历描述
 

@@ -1,7 +1,7 @@
 ---
 title: 简历追问：HATEOAS 资源动作契约消费层设计
 date: 2026-07-03 22:00:00
-updated: 2026-08-23 08:49:44
+updated: 2026-08-26 08:30:30
 tags:
   - interview/follow-up
   - resume/hateoas
@@ -9,7 +9,7 @@ tags:
 
 # 简历追问：HATEOAS 资源动作契约消费层设计
 
-关联：[[职业经历]]、[[15分钟：HATEOAS 资源契约架构]]、[[HATEOAS 接口在后端的性能组装与状态机校验]]、[[HATEOAS架构下的多级缓存设计与一致性保证]]。
+关联：[[15分钟：HATEOAS 资源契约架构]]、[[简历回答逐字稿：HATEOAS 资源动作契约消费层设计]]。
 
 ## 对应简历描述
 

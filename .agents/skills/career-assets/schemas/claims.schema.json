@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "career-claims.schema.json",
+  "type": "object",
+  "required": ["schema_version", "claims"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "statement", "kind", "ownership", "completion", "status", "evidence", "metrics", "constraints", "tags"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "statement": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["timeline", "positioning", "project_scope", "project_contribution", "result", "boundary", "failure", "reflection"]},
+          "project_id": {"type": "string"},
+          "ownership": {"enum": ["direct", "collaborative", "team", "not_applicable"]},
+          "completion": {"enum": ["implemented", "validated", "ongoing", "design_only", "planned", "unknown"]},
+          "status": {"enum": ["candidate", "confirmed", "contested", "deprecated", "reference_only"]},
+          "evidence": {"type": "array", "items": {"type": "object"}},
+          "metrics": {"type": "array", "items": {"type": "object"}},
+          "constraints": {"type": "array", "items": {"type": "string"}},
+          "tags": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

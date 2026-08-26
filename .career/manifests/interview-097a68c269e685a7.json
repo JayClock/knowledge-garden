@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/15分钟：公式编辑器.md",
+  "artifact_type": "interview_dossier",
+  "opportunity_id": null,
+  "generated_by": "interview-package",
+  "claim_ids": [
+    "early-frontend.formula-editor"
+  ],
+  "status": "current"
+}

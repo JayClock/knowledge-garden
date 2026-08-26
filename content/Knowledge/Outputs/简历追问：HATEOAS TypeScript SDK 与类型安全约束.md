@@ -1,7 +1,7 @@
 ---
 title: 简历追问：HATEOAS TypeScript SDK 与类型安全约束
 date: 2026-07-03 22:00:00
-updated: 2026-08-23 08:49:44
+updated: 2026-08-26 08:30:30
 tags:
   - interview/follow-up
   - resume/hateoas
@@ -10,7 +10,7 @@ tags:
 
 # 简历追问：HATEOAS TypeScript SDK 与类型安全约束
 
-关联：[[职业经历]]、[[15分钟：HATEOAS 资源契约架构]]。
+关联：[[15分钟：HATEOAS 资源契约架构]]。
 
 ## 对应简历描述
 

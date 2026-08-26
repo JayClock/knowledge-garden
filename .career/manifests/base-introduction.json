@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/自我介绍.md",
+  "artifact_type": "base_self_introduction",
+  "opportunity_id": null,
+  "generated_by": "interview-package",
+  "claim_ids": [
+    "career.experience.platform-engineering",
+    "career.positioning.market-title",
+    "career.positioning.full-flow-axis",
+    "hateoas.project.sdk",
+    "hateoas.project.model-and-api",
+    "aiflow.project.scope",
+    "aiflow.data-and-backend-boundary",
+    "aiflow.telemetry.execution-correlation",
+    "domain-modeling.project.scope",
+    "domain-modeling.collaboration.direct",
+    "domain-modeling.validation"
+  ],
+  "status": "current"
+}

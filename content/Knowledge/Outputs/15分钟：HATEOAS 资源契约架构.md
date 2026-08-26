@@ -1,7 +1,7 @@
 ---
 title: 15分钟：HATEOAS 资源契约架构
 date: 2026-04-21 15:58:29
-updated: 2026-08-23 08:55:08
+updated: 2026-08-24 16:57:29
 tags:
   - interview
   - architecture
@@ -18,286 +18,66 @@ tags:
 > - 本人负责业务／领域模型、RESTful / HATEOAS 契约、TypeScript SDK 和 React 消费层；服务端代码由后端同事实现。
 > - 动态 Agent 工具、离线 mutation 队列、disabled reason 和后端性能优化方案属于架构延展，不说成已上线成果。
 
-**一句话总结**：这个项目从复杂前端和多端一致性问题出发。我把 PC Web 与移动 Web 重复维护的状态、权限和动作规则收敛为 HATEOAS 资源契约，再用 TypeScript SDK 和 React Hooks 统一消费。落地过程中进一步发现，稳定 relation 的前提是清晰的资源边界、生命周期和接口语义，因此能力继续延伸到业务／领域建模与 RESTful API；这不是转向纯后端，而是从上游控制复杂前端所消费的业务知识。
+> [!tip] 使用方式
+> 默认先说 2 分钟版。面试官继续追问时，再从 5 分钟主讲法或文末具体回答中选择一条展开；不要连续背满 15 分钟。
 
-## 1. 问题背景：按钮权限不是前端小问题
+## 30 秒开场
 
-在多租户管理场景里，一个资源并不是只有静态数据。它还隐含了很多和上下文相关的业务规则：
+这个项目最早解决的是 PC Web 和移动 Web 重复维护状态、角色和权限规则的问题。我把“当前资源能访问什么、能执行什么动作”收敛到服务端返回的 `_links` 和 `_templates`，再用 TypeScript SDK 统一消费。做下去以后我发现，稳定的 relation 依赖清楚的资源边界和生命周期，所以又继续参与了业务建模和 RESTful API 设计。
 
-- 当前用户是什么角色；
-- 当前租户有什么权限；
-- 当前资源处于什么状态；
-- 当前客户端能展示哪些动作；
-- 当前动作需要提交哪些字段。
+## 2 分钟项目介绍
 
-如果只从前端角度看，这个问题很容易被理解成按钮权限控制，或者 API Service 封装。但放到整个业务维护角度里看，它真正影响的是 **多端业务规则一致性**。
+低代码平台里的应用、表单、工作流和工作区导航同时服务 PC Web 与移动 Web。过去后端返回 `status`，各端再根据角色和权限判断按钮、导航和提交字段。规则一变，几个端都要修改，很容易出现一边有动作、另一边没有的情况。
 
-PC Web 与移动 Web 都要表现出同一套业务规则。只要有一个端漏掉某个状态判断，用户看到的动作就会不一致，测试也要重新回归。
+我先推动 HATEOAS 资源动作契约。服务端在资源里返回 `_links` 和 `_templates`：relation 表达当前可以导航到哪里或执行什么动作，template 描述提交方式和字段约束。前端只消费 `publish`、`revoke` 这类业务 relation，不再复制一份状态机。
 
-## 2. 常规做法的问题：前端复制了一份后端状态机
+为了让几个端稳定使用这套契约，我设计并实现了 TypeScript SDK。`Client` 管理入口和中间件，`Resource` 表示 URI 级资源，`follow()` 沿 relation 导航，`action()` 按 HAL-FORMS 模板提交；资源缓存和更新事件再驱动 React Hooks。稳定 relation 在 TypeScript 中建模，运行时数据仍通过 Standard Schema 和 Zod 校验。
 
-常规做法是，后端返回一个代表业务状态的 `status` 字段，前端再根据 `status`、`role`、`permission` 写大量判断：
+SDK 落地后也暴露出上游问题：如果资源边界和动作语义本身混乱，SDK 只能统一调用方式。所以我继续从应用、表单和工作流的生命周期出发参与四色建模、RESTful URI 和动作契约设计，再与后端共同落到 API 表达层。服务端代码由后端同事实现。
 
-```ts
-if (status === "pending" && role === "admin") {
-  showApproveButton()
-}
+生产阶段的通用能力后来被我拆成 `@hateoas-ts/resource` 和 `@hateoas-ts/resource-react` 两个公开 npm 包。当前可以确认的是多端消费、SDK、测试和公开发布，不补写下载量或效率比例。
 
-if (status === "rejected" && canEdit) {
-  showResubmitButton()
-}
-```
+## 5 分钟主讲法
 
-这种方式一开始能跑通，但业务复杂后，成本会快速放大：
+### 1. 多端规则为什么会漂移
 
-- 后端修改状态机流转规则，或者增加一种角色，前端就要跟着改判断并重新发版；
-- 后端重构接口，比如从 `/v1/` 升到 `/v2/`，或者调整路径规范，前端硬编码 URL 都要排查；
-- PC Web 与移动 Web 各写一套判断，经常出现某一端漏改；
-- Payload 字段要求散落在前端，必填、枚举、格式校验一旦和后端不一致，就会产生很多可以提前避免的 400 错误。
+当时 PC Web 和移动 Web 都要根据 `status`、`role`、`permission` 判断导航、按钮和表单动作。后端调整状态流转或权限规则以后，多个前端要分别修改和回归。继续封装 API Service 只能整理代码，解决不了业务规则在几个端重复解释的问题。
 
-在多次测试成本复盘中，我们经常看到同一类问题：同一个角色，在不同客户端的按钮显隐不一致；接口路径或字段变动带来大量联动改动。
+我希望把业务合法性的权威来源放回服务端资源表达，让前端专注交互呈现。
 
-本质原因是：**业务规则的权威来源在后端，但执行判断却散落在多个前端。**
+### 2. 为什么选择 HATEOAS
 
-继续叠加 Redux、封装更多 API Service，最多只能让代码看起来整齐一点，依旧解决不了规则在沟通中漂移的问题。
+我考虑过把判断收敛成前端配置表，也考虑过单独增加权限接口。前者仍然由前端解释后端状态，后者又把权限、URL、Method 和 payload 规则拆散了。
 
-## 3. 方案选择：把“能做什么”放回资源表达本身
+最后采用 HATEOAS：`_links` 表达资源导航和动作入口，`_templates` 表达动作的 Method、Content-Type 和字段约束。当前资源没有返回 `publish`，前端就不开放发布；返回以后，SDK 按模板提交。relation 是业务语义，不是按钮名称，因此 PC 和移动端可以采用不同交互，但消费同一动作事实。
 
-早期我也探索过几种方案。
+### 3. 契约为什么会倒逼模型和 API
 
-第一种是前端维护一份状态机配置，把 `if-else` 收敛成配置表。它可以减少一些重复代码，但本质上还是让前端解释后端规则。
+刚开始我关注的是多端怎么消费。真正设计 relation 时，必须先回答资源是什么、生命周期怎样、当前角色在哪个状态下可以做什么。如果这些问题不清楚，`_links` 最后还是会退化成按钮数组。
 
-第二种是单独做一个权限接口，前端先请求“当前数据有哪些操作可用”。这个比硬编码好，但权限、URL、Method、Payload Schema 还是分散的。
+所以我从应用、表单、工作流和工作区导航的业务事件出发，参与四色建模，识别资源和聚合边界，再设计 RESTful URI、relation 与动作契约。服务端 API 表达由我和后端共同落地，后端代码不算个人实现。
 
-最终我选择 HATEOAS。核心思想是：
+### 4. SDK 怎样把契约交给前端
 
-> 当前资源在当前上下文下能做什么，应该和资源状态一起返回。
+SDK 不是 Axios 的再封装。`Client` 负责入口和中间件，`Resource` 按绝对 URI 复用实例，`StateFactory` 把 HAL、HAL-FORMS 等响应解析成统一 State，`Cache` 与事件通知负责状态更新。
 
-所以后端在返回资源数据时，除了业务字段，还要返回：
+业务代码通过 `follow()` 沿 relation 导航，通过 `action()` 提交动作，不需要到处拼 URL。稳定 relation 可以进入 TypeScript 类型；但后端是否在当前状态返回 relation 仍是运行时事实，所以 SDK 还要检查 `hasLink()`，并用 Standard Schema 或 Zod 校验 payload。React Hooks 只订阅资源状态，不重新判断业务合法性。
 
-- `_links`：当前资源可以继续导航到哪些资源；
-- `_templates`：当前用户、当前状态下可以执行哪些动作，以及动作对应的 URL、Method、Payload 字段要求。
+### 5. 结果和边界
 
-例如审批单资源可以长这样：
+生产阶段，应用、表单、工作流和导航由 PC 与移动端消费同一资源动作契约。后端调整可访问页面或合法动作后，前端不再分别维护对应判断。测试重点也可以从多个端重复回归按钮规则，收敛到契约矩阵和消费层行为。
 
-```json
-{
-  "id": "order-1",
-  "status": "pending",
-  "amount": 1000,
-  "_links": {
-    "self": { "href": "/orders/order-1" },
-    "approve": { "href": "/orders/order-1/approve", "method": "POST" }
-  },
-  "_templates": {
-    "approve": {
-      "method": "POST",
-      "properties": [{ "name": "comment", "required": false, "type": "text" }]
-    }
-  }
-}
-```
+后来我把通用消费模型独立成两个 npm 包并持续维护。它们可以证明 SDK、测试和发布能力，但不能反推生产项目规模，也不能派生外部采用和商业收益。
 
-这样前端不需要关心抽象的 `status=pending` 到底意味着什么，也不需要自己解释“审批中、已驳回、已撤回”分别能点什么。前端只需要看当前资源里有没有 `approve` 这个动作。
+动态 Agent 工具、完整离线队列、disabled reason 和服务端 N+1 优化都属于后续讨论。当前项目可以确认的是模型、契约、SDK、React 消费和多端落地。
 
-如果后端没有返回这个动作，按钮就不展示；如果返回了，前端就按模板提交。
+## 深挖入口
 
-## 4. 从多端消费倒推模型与 RESTful API
+- 契约如何从多端问题走向模型与 API：[[简历回答逐字稿：HATEOAS 资源动作契约消费层设计]]
+- SDK、类型与运行时校验：[[简历回答逐字稿：HATEOAS TypeScript SDK 与类型安全约束]]
+- 缓存、错误和弱网边界：[[简历回答逐字稿：HATEOAS 兜底状态与错误标准化处理]]
+- Agent 作为新客户端的架构延展：[[简历回答逐字稿：HATEOAS Agent 友好与权责对等]]
 
-HATEOAS 最初解决的是前端重复解释状态的问题，但只做 SDK 还不够。如果服务端沿用行为式接口、资源边界混乱，或者把 `_links` 设计成按钮数组，客户端只是从一套不稳定的判断切换到另一套不稳定的字典。
+## 收尾句
 
-在 relation 和 action 设计过程中，我开始反向追问三个问题：资源到底是什么，它的生命周期如何变化，当前角色在什么状态下可以执行什么动作。随后从应用、表单、工作流和工作区导航的业务事件出发，使用四色建模识别实体、角色和关系，再根据聚合与生命周期边界设计 RESTful URI、relation 和动作契约，最后与后端共同落到 HAL / HAL-FORMS 表达层。
-
-所以这段经历的能力演进不是“前端做完了又去写后端”，而是：
-
-```text
-多端状态与权限漂移
-→ HATEOAS 统一消费
-→ relation 稳定性问题
-→ 资源边界与生命周期
-→ 业务／领域建模
-→ RESTful API 与 HAL / HAL-FORMS
-→ TypeScript SDK 和多端 UI
-```
-
-API 和模型是控制客户端复杂度的上游手段；服务端实现由后端同事完成，我负责模型、契约、SDK 与前端消费层。
-
-## 5. SDK 落地：不是 request 封装，而是资源状态机客户端
-
-为了让这套契约在前端真正可用，我设计了一套 TypeScript SDK。它不是简单的 request 封装，而是一个 HATEOAS 资源状态机客户端。
-
-工程上我把它拆成两个包：
-
-| 包                           | 职责                                                                                            |
-| ---------------------------- | ----------------------------------------------------------------------------------------------- |
-| `@hateoas-ts/resource`       | 框架无关核心包，负责 `Client`、`Resource`、`StateFactory`、`Fetcher`、`Cache`、`Action/Form`    |
-| `@hateoas-ts/resource-react` | React 薄适配层，提供 `ResourceProvider`、`useResource`、`useInfiniteCollection`、Suspense Hooks |
-
-核心能力主要有两个：
-
-1. `follow()`：沿着 relation 导航，避免前端硬编码 URL；
-2. `action()`：根据后端下发的表单契约执行动作，避免前端手写 Method、URL 和 Payload Schema。
-
-```ts
-// 1. 通过泛型严格约束可跟进的 relation，减少硬编码 URL
-const postsResource = user.follow("posts", { page: 1 })
-
-// 2. 获取状态，如果当前状态允许创建，就根据 action 表单契约提交
-const postsState = await postsResource.get()
-
-if (postsState.hasLink("create-post")) {
-  await postsState.action("create-post").submit({
-    title: "新文章",
-  })
-}
-```
-
-SDK 内部会自动读取后端下发的 `_links` 或 `_templates` 里的 `href`、`method` 和字段约束，再在底层组装请求。这样前端代码不再依赖具体 URL，而是依赖稳定、具有业务语义的 Relation Name。
-
-后端以后改路径、升版本，只要资源关系不变，前端大部分代码就不需要改。
-
-## 6. 核心调用链：Client → Resource → Fetcher → StateFactory → Cache
-
-这套 SDK 的内部调用链大概是：
-
-```text
-createClient({ baseURL })
-  -> 初始化 ClientInstance、内容类型解析器和中间件
-
-client.go<User>('/users/123')
-  -> 解析 URI，按绝对 URI 复用 Resource 实例
-
-resource.get()
-  -> 先读缓存
-  -> 如果没有完整缓存，则通过 Fetcher 发送请求
-  -> Fetcher 执行认证、Accept、缓存失效等中间件
-  -> 响应回来后，根据 Content-Type 选择 StateFactory
-  -> StateFactory 把 HAL / HAL-Forms / Siren / Collection+JSON 解析成统一 State
-  -> 写入 Cache，并通过 update / stale / delete 事件通知上层
-```
-
-这里有几个关键设计点。
-
-### 6.1 Entity 把数据和链接都编码进类型系统
-
-`Entity<TData, TLinks>` 同时表达资源数据和可导航链接：
-
-- `state.data` 有业务字段类型；
-- `state.follow('posts')` 的返回类型由 `TLinks['posts']` 推导；
-- 不存在的 relation 在 TypeScript 层就会报错。
-
-这样 HATEOAS 不是“运行时才知道有什么链接”，而是通过类型把稳定的业务 relation 显式建模出来。
-
-### 6.2 Resource 按 URI 复用，统一缓存和事件源
-
-`ClientInstance` 内部用绝对 URI 作为 key 缓存 `Resource` 实例。这样同一个资源在客户端只有一个事件源，可以统一处理：
-
-- 请求去重；
-- 缓存读写；
-- `update` / `stale` / `delete` 事件；
-- React Hooks 的订阅刷新。
-
-### 6.3 StateFactory 处理内容协商
-
-后端可能返回 HAL、HAL-Forms、Siren、Collection+JSON，甚至自定义媒体类型。SDK 通过 `StateFactory` 把不同响应格式解析成统一的 `State`。
-
-这使业务层只面向统一接口：
-
-```ts
-state.data
-state.links
-state.hasLink("approve")
-state.action("approve").submit(payload)
-```
-
-不需要业务组件关心具体媒体类型差异。
-
-### 6.4 Action/Form 把超媒体表单变成可执行状态迁移
-
-`_templates`、Siren actions、Collection+JSON queries 这类动作契约会被归一成 `Form` / `Action`。
-
-`action.submit()` 做三件事：
-
-1. 根据表单契约校验 payload；
-2. 根据 method 和 content type 序列化请求；
-3. 把响应重新解析成新的资源 State。
-
-这就把“按钮点击之后调用哪个接口、传哪些字段”从组件里抽掉了。
-
-## 7. UI 层：React 只响应资源状态，不解释业务规则
-
-到了 UI 渲染层，原来几十行按钮控制逻辑，可以变成：
-
-```tsx
-{
-  state.hasLink("approve") && (
-    <Button onClick={() => state.action("approve").submit(formData)}>审批</Button>
-  )
-}
-```
-
-如果当前用户没权限，或者当前状态不允许审批，后端直接不返回 `approve`。前端对应按钮自然不会出现。
-
-这其实和 React 的理念是一致的：UI 完全由 state 决定。区别是过去我们在前端维护一套和后端同步的业务状态机，再让 UI 响应这套前端状态机；而在 HATEOAS 下，接口返回本身就是当前上下文下的可操作状态。
-
-在 React 适配层，我刻意没有让 Hooks 承担业务判断。`useResource()` 主要做三件事：
-
-1. 解析 Resource 或 ResourceRelation；
-2. 读取缓存或触发请求；
-3. 监听 Resource 的 `update` / `stale` 事件并刷新组件。
-
-分页也是同样的思路。`useInfiniteCollection()` 不自己拼 `page=2`，而是沿着服务端返回的 `next` relation 继续 follow。这样分页、按钮、表单提交都遵循同一套超媒体契约。
-
-## 8. 带来的收益：一致性、可演进、可测试
-
-一旦协作边界锁死在 API 层状态机作为唯一事实来源，就会带来几个明显收益。
-
-### 8.1 多端一致性
-
-PC Web 与移动 Web 消费同一份 `_links` / `_templates` 契约。权限按钮是否出现，由后端动作字典决定，而不是每个端各写一份判断。
-
-### 8.2 接口路径可演进
-
-前端不硬编码具体 URL，只依赖稳定的 Relation Name。后端做路径重构、版本升级，只要 relation 不变，前端不需要大规模联动。
-
-### 8.3 测试范围收敛
-
-过去测试要反复验证每个端的按钮判断。现在重点可以收敛到两层：
-
-- 后端是否在不同角色、状态、租户下返回正确动作契约；
-- 前端 SDK 是否正确解析 `_links` / `_templates` 并渲染 UI。
-
-### 8.4 架构延展：Agent 友好
-
-这套形式对 AI Agent 也有进一步延展空间，但动态注册 Agent 工具没有在该生产项目中上线，下面只作为架构讨论。
-
-Agent 本质上是在代替用户查询数据、分析并执行下一步操作。它不能超出当前用户权限。传统 Agent 可能需要读取 Swagger、API 文档，并在知识库里记录大量规则运算。
-
-但在 HATEOAS 架构下，Agent 只需要读取当前资源状态下的 `_links` 和 `_templates`，就能知道：
-
-- 当前用户有哪些可执行动作；
-- 每个动作需要传什么参数；
-- 下一步可以导航到哪些资源。
-
-也就是说，后端返回的超媒体契约天然可以转换成 Agent 工具定义或 action schema。
-
-## 9. 总结收束
-
-HATEOAS 解决的不是“前端少写几个 URL”的问题，而是 **业务规则在多端复制和漂移的问题**。这条能力主线从复杂前端和多端一致性出发，再因为契约稳定性继续走向资源建模与 RESTful API，而不是从前端切换成纯后端方向。
-
-过去前端通过 `status`、`role`、`permission` 自己解释业务状态，本质上是把后端状态机知识复制到多个端里。状态机一变，PC Web、移动 Web、测试用例和接口文档都可能漂移。
-
-改成 `_links` 和 `_templates` 后，当前资源能做什么、动作怎么提交、字段有什么约束，都跟资源状态一起返回。前端 UI、自动化测试、端侧 SDK，甚至后续 AI Agent，都可以消费同一份动作契约。
-
-而 `hateoas-ts` 的工程化价值，是把这套契约真正落到代码里：用 `Entity` 做类型安全导航，用 `Resource` 管理 URI 级资源实例，用 `StateFactory` 做内容协商，用 `Fetcher` 承载横切中间件，用 `Cache + EventEmitter` 驱动 React 更新，最后让业务组件只关心“当前 state 允许什么动作”。
-
----
-
-## 追问防线
-
-- 🛡️ **架构解耦防线（前端）**：前端如何处理兜底状态或无网环境 _(如果后端接口挂了或者没有返回 \_links，前端页面是不是就彻底白屏不能用了？)_
-- 🛡️ **状态流转防线（前端）**：链式 Follow 中间环节报错时前端如何捕获 _(client.follow().follow()，这中间异步如果断掉了，UI 交互怎么反馈给用户？)_
-- 🛡️ **类型安全与契约防线（前端）**：动态链接如何保证 TypeScript 类型推导和代码提示 _(既然所有接口 URL 和 Payload 都是动态从 \_links 读取的，前端如何保证调用时的类型安全和智能提示？)_
-- 🛡️ **SDK 代码设计防线（前端）**：hateoas-ts 项目代码设计面试题 _(如果面试官追问这个 HATEOAS TS SDK 具体是怎么设计的，如何处理 Resource、StateFactory、Fetcher、Cache、React Hooks？)_
-- 🛡️ **领域模型与超媒体组装防线（后端）**：后端如何高性能组装超媒体动作并校验状态机 _(后端在返回每一条资源时都需要实时计算当前用户和状态下的所有合法 \_links，这会不会带来严重的 N+1 查询与鉴权性能瓶颈？)_
-- 🛡️ **多级缓存与一致性防线（全栈）**：资源打散后如何设计多级缓存并保证一致性 _(资源被高度打散后请求量增加，你们的前后端多级缓存是如何设计并保证一致性的？)_
+这段经历让我从前端多端一致性出发，先做统一消费，再继续追到资源模型和 API 契约。HATEOAS 让几个客户端消费同一份“当前资源能做什么”的业务事实，少写 URL 只是随之带来的结果。
