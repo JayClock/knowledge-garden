@@ -1,0 +1,145 @@
+{
+  "project_id": "agent-harness-engineering",
+  "derived_from_seq": 3,
+  "status": "active",
+  "cursor": {
+    "unit_id": "lesson-00"
+  },
+  "units": [
+    {
+      "id": "lesson-00",
+      "title": "00｜驾驭⼯程：Agent 时代必修课-Agent 驾驭工程之美-极客时间",
+      "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/00｜驾驭⼯程：Agent 时代必修课-Agent 驾驭工程之美-极客时间.md",
+      "locator": null,
+      "coverage": "unread",
+      "expression_status": "not_requested",
+      "expression_refs": [],
+      "evidence_status": "not_requested",
+      "evidence_refs": [],
+      "open_questions": [],
+      "updated_at": null
+    },
+    {
+      "id": "lesson-01",
+      "title": "01｜操控循环：驾驭工程的核心框架-Agent 驾驭工程之美-极客时间",
+      "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/01｜操控循环：驾驭工程的核心框架-Agent 驾驭工程之美-极客时间.md",
+      "locator": null,
+      "coverage": "unread",
+      "expression_status": "not_requested",
+      "expression_refs": [],
+      "evidence_status": "not_requested",
+      "evidence_refs": [],
+      "open_questions": [],
+      "updated_at": null
+    },
+    {
+      "id": "lesson-02",
+      "title": "02｜四个子系统：构成框架与内置 Harness 拆解-Agent 驾驭工程之美-极客时间",
+      "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/02｜四个子系统：构成框架与内置 Harness 拆解-Agent 驾驭工程之美-极客时间.md",
+      "locator": null,
+      "coverage": "unread",
+      "expression_status": "not_requested",
+      "expression_refs": [],
+      "evidence_status": "not_requested",
+      "evidence_refs": [],
+      "open_questions": [],
+      "updated_at": null
+    },
+    {
+      "id": "lesson-03",
+      "title": "03｜一个例子：从零搭建背单词 Harness-Agent 驾驭工程之美-极客时间",
+      "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/03｜一个例子：从零搭建背单词 Harness-Agent 驾驭工程之美-极客时间.md",
+      "locator": null,
+      "coverage": "unread",
+      "expression_status": "not_requested",
+      "expression_refs": [],
+      "evidence_status": "not_requested",
+      "evidence_refs": [],
+      "open_questions": [],
+      "updated_at": null
+    },
+    {
+      "id": "lesson-04",
+      "title": "04｜封装技能：把操控循环装进 SKILL-Agent 驾驭工程之美-极客时间",
+      "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/04｜封装技能：把操控循环装进 SKILL-Agent 驾驭工程之美-极客时间.md",
+      "locator": null,
+      "coverage": "unread",
+      "expression_status": "not_requested",
+      "expression_refs": [],
+      "evidence_status": "not_requested",
+      "evidence_refs": [],
+      "open_questions": [],
+      "updated_at": null
+    },
+    {
+      "id": "lesson-05",
+      "title": "05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间",
+      "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间.md",
+      "locator": null,
+      "coverage": "unread",
+      "expression_status": "not_requested",
+      "expression_refs": [],
+      "evidence_status": "not_requested",
+      "evidence_refs": [],
+      "open_questions": [],
+      "updated_at": null
+    }
+  ],
+  "claims": [],
+  "attempts": [
+    {
+      "id": "attempt-00000002",
+      "scope": "project",
+      "scope_id": "agent-harness-engineering",
+      "kind": "application",
+      "result": "success",
+      "performer": "joint",
+      "gaps": [],
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": ".agents/skills/learning-harness/SKILL.md",
+          "locator": null
+        },
+        {
+          "type": "file",
+          "path": ".agents/skills/learning-harness/tests/test_scripts.py",
+          "locator": null
+        },
+        {
+          "type": "file",
+          "path": ".agents/skills/visual-pkm/SKILL.md",
+          "locator": null
+        }
+      ],
+      "at": "2026-08-28T01:42:09Z"
+    }
+  ],
+  "blockers": [],
+  "workflows": [],
+  "last_session_at": "2026-08-28T01:42:09Z",
+  "completion": {
+    "unit_ready": 0,
+    "unit_total": 6,
+    "claim_ready": 0,
+    "claim_total": 0,
+    "project_evidence": {
+      "source_grounding": false,
+      "retrieval": false,
+      "application": true
+    },
+    "complete_by_policy": false
+  },
+  "last_event_at": "2026-08-28T01:53:20Z",
+  "generated_at": "2026-08-28T02:03:35Z",
+  "next_action": {
+    "skill": "visual-pkm",
+    "mode": "deep-reading",
+    "action": "亲自阅读当前单元并记录阅读范围；只有准备核验意义时才留下复述、疑问或候选命题",
+    "reason": "当前来源单元尚未完成阅读覆盖",
+    "subject": {
+      "kind": "unit",
+      "id": "lesson-00"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "active_project_id": "agent-harness-engineering",
+  "paths": {
+    "vault_root": "content",
+    "source_roots": [
+      "content/Knowledge/Sources"
+    ],
+    "note_root": "content/Knowledge/Notes",
+    "map_root": "content/Knowledge/Maps",
+    "output_root": "content/Knowledge/Outputs",
+    "task_root": "content/TaskNotes/Tasks",
+    "task_view": "content/TaskNotes/Views/learning-progress.base"
+  },
+  "state_policy": {
+    "fact_source": "events.jsonl",
+    "snapshot_is_derived": true,
+    "vault_writes_require_separate_authorization": true,
+    "tasknote_projection_is_derived": true
+  }
+}
