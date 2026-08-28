@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-garden.local/learning/snapshot.schema.json",
+  "title": "Derived Learning Harness Snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "derived_from_seq", "status", "cursor", "units", "claims", "attempts", "blockers", "workflows", "last_session_at", "completion", "last_event_at", "generated_at", "next_action"],
+  "properties": {
+    "project_id": { "type": "string" },
+    "derived_from_seq": { "type": "integer", "minimum": 0 },
+    "status": { "enum": ["draft", "active", "paused", "complete", "archived"] },
+    "cursor": { "type": "object" },
+    "units": { "type": "array" },
+    "claims": { "type": "array" },
+    "attempts": { "type": "array" },
+    "blockers": { "type": "array" },
+    "workflows": { "type": "array" },
+    "last_session_at": { "type": ["string", "null"] },
+    "completion": { "type": "object" },
+    "last_event_at": { "type": ["string", "null"] },
+    "generated_at": { "type": "string" },
+    "next_action": { "type": ["object", "null"] }
+  }
+}

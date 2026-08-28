@@ -1,0 +1,22 @@
+[
+  {"query":"我准备系统学习 content/Knowledge/Sources/Agent 驾驭工程之美，想跨几周记录每讲的复述、证据核对、知识卡和实际应用。","should_trigger":true},
+  {"query":"继续上次的 DDD 课程学习，直接从唯一下一步开始，不要重新问背景。","should_trigger":true},
+  {"query":"记录学习进度：02 已读，但我还没用自己的话复述。","should_trigger":true},
+  {"query":"这本书现在学到哪里了？给我当前章节、学习信号、阻塞和下一步。","should_trigger":true},
+  {"query":"把这门课的阅读、原子卡、闭卷检索和最终应用串成可恢复的长期循环。","should_trigger":true},
+  {"query":"上次 visual-pkm 概念可视化停在 HTML 预览，按学习项目状态继续。","should_trigger":true},
+  {"query":"记录本周 React 学习结果：文章都看完也做了卡，但面试时还是讲不出来。","should_trigger":true},
+  {"query":"给正在跟踪的学习项目生成 TaskNotes 进度卡和 Bases 视图。","should_trigger":true},
+  {"query":"我有三本相关书，想围绕一个持续问题统一管理阅读单元和应用反馈。","should_trigger":true},
+  {"query":"暂停当前学习项目，下个月恢复时必须知道停在哪个来源和哪次测试失败。","should_trigger":true},
+  {"query":"Feedforward 和 Feedback 有什么区别？两句话解释，不要保存。","should_trigger":false},
+  {"query":"直接把这篇英文文章翻译成中文。","should_trigger":false},
+  {"query":"我已有核心命题和五个关键词，想做一个 Excalidraw Visual Main Note。","should_trigger":false},
+  {"query":"围绕测试驱动开发做 Idea Compass，我已经写了 North 和 East。","should_trigger":false},
+  {"query":"帮我修复 Knowledge/Notes 里所有 broken links。","should_trigger":false},
+  {"query":"我写了演讲立场和第一版卡片顺序，请检查但是/因此。","should_trigger":false},
+  {"query":"给明确岗位按 confirmed claims 生成一份 DOCX 简历。","should_trigger":false},
+  {"query":"打开 Obsidian 今天的任务列表，把到期事项按优先级排序。","should_trigger":false},
+  {"query":"我最近三次都从 Daily Note 才找到 Basel 工作坊记录，请做 Navigation AAR。","should_trigger":false},
+  {"query":"给 Knowledge/Notes/缓存.md 补一个 sources wikilink。","should_trigger":false}
+]

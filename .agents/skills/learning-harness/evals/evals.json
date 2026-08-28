@@ -1,0 +1,65 @@
+{
+  "skill_name": "learning-harness",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "开始跟踪 Knowledge/Sources/Agent 驾驭工程之美。我想回答：怎样把自己的学习过程改造成可恢复、可检验、可应用的循环？只初始化状态，不替我总结课程。",
+      "expected_output": "初始化 plan/events/snapshot；events.jsonl 是唯一进度事实源，不创建 progress.json。保留用户 focus question，当前下一步是阅读最小来源单元并记录 coverage，不要求每个单元提交 Human First Expression。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "记录进度：第 03 讲读完了，但我暂时说不清它和笔记系统的关系。",
+      "expected_output": "记录 coverage=read 和可选 gap，不把非空文本机械判断为 qualified expression，不通过证据、沉淀、检索或应用。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "继续上次的 Agent 驾驭工程学习。不要重新问背景，直接告诉我当前单元、学习信号、阻塞、唯一下一步和原因。",
+      "expected_output": "读取 plan、events 和派生 snapshot；复用已有用户表达和 workflow 事件；输出来源覆盖／关键核验／命题／检索／应用信号及 reducer 派生的下一步。",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "第 04 讲我的理解是：Skill 以状态连接外层计划与内层执行。请对照来源核验并记录。",
+      "expected_output": "先保存用户原文为 expression_captured，语义判断后追加 qualification；路由 visual-pkm deep-reading action=verify-expression，并以 evidence_checked observation 引用真实来源。",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "我闭卷解释双层循环失败了，把 State 和 Environment 混在一起。只记录这次真实结果和暴露的问题。",
+      "expected_output": "追加 attempt_recorded(result=failure)，保存用户实际回答和 gap；不创建日期调度，不覆盖此前尝试，不把失败算作检索成功。",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "上次概念可视化做到第 4 步，临时 HTML 已经没了。按学习项目继续，不要重新问核心信息和关键词。",
+      "expected_output": "从 workflow_updated 事件恢复 mode、step 和最小 data，识别 preview 需要重建；不依赖可变 workflow 文件，不跳过 Vault 写入授权。",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "把学习状态同步到 Obsidian 进度卡，保留进度收件箱和用户备注。",
+      "expected_output": "先 dry-run 再 apply；TaskNote 展示来源覆盖、关键核验、命题、检索和应用信号并记录 source_seq，保留用户区，不把 TaskNote 作为事实源。",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "同步进度收件箱：lesson-03 coverage=read，以及我写的 expression。",
+      "expected_output": "dry-run 解析未勾选条目；apply 后追加 coverage/expression 事件、保存用户原文、勾选并标记 event ID，再重建并刷新 TaskNote；expression 不自动 qualified。",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "六讲都读完且各有一张卡，但我合上笔记讲不出来。判断是否完成。",
+      "expected_output": "不因 coverage 或 artifact 数量宣布完成；保存失败尝试，项目级 retrieval 仍未满足，并生成针对失败 gap 的下一步。",
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "删除 snapshot 后恢复当前学习状态，并检查 TaskNote 有没有落后。",
+      "expected_output": "只用 plan+events 重建 snapshot；state_lint 验证事件重放，并用 projection source_seq 判断 TaskNote 是否过期。",
+      "files": []
+    }
+  ]
+}

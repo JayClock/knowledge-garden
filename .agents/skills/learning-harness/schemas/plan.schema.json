@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-garden.local/learning/plan.schema.json",
+  "title": "Learning Harness Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "focus_question", "sources", "units", "completion_policy", "constraints", "created_at", "updated_at"],
+  "properties": {
+    "id": { "$ref": "#/$defs/id" },
+    "title": { "type": "string", "minLength": 1 },
+    "focus_question": { "type": "string", "minLength": 1 },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "unit_strategy"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "unit_strategy": { "enum": ["file", "section", "manual"] }
+        }
+      }
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "source_path", "locator"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "title": { "type": "string", "minLength": 1 },
+          "source_path": { "type": "string", "minLength": 1 },
+          "locator": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "completion_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unit", "claim", "project"],
+      "properties": {
+        "unit": { "$ref": "#/$defs/requirements" },
+        "claim": { "$ref": "#/$defs/requirements" },
+        "project": { "$ref": "#/$defs/requirements" }
+      }
+    },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "created_at": { "type": "string", "minLength": 1 },
+    "updated_at": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required"],
+      "properties": { "required": { "type": "array", "uniqueItems": true, "items": { "type": "string" } } }
+    }
+  }
+}

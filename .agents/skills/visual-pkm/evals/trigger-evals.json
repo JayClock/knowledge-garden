@@ -1,0 +1,162 @@
+[
+  {
+    "query": "我读完《驾驭工程》第 04 讲后写了自己的复述，请对照原文检查我有没有误解，并指出要重读的位置。",
+    "should_trigger": true,
+    "mode": "deep-reading"
+  },
+  {
+    "query": "我已经亲自读完这篇长文章，并写了中心问题、三个主张和一个反对意见，帮我核验证据，不要替我重写摘要。",
+    "should_trigger": true,
+    "mode": "deep-reading"
+  },
+  {
+    "query": "这张卡的核心命题是‘缓存提高速度也会留下过期状态’，我先想到快照、加速、滞后、刷新，请继续做概念可视化。",
+    "should_trigger": true,
+    "mode": "concept-visualization"
+  },
+  {
+    "query": "我想把 Knowledge/Notes/反馈循环.md 做成 Visual Main Note，卡里已有我的核心观点；先读取它，再让我给第一批关键词。",
+    "should_trigger": true,
+    "mode": "concept-visualization"
+  },
+  {
+    "query": "我画了一个中心加三条分支的粗图，问题是‘Harness 为什么需要状态’，请检查它更适合 Mind Map 还是 Concept Map。",
+    "should_trigger": true,
+    "mode": "spatial-mapping"
+  },
+  {
+    "query": "这张 Concept Map 已经有三条概念—连接短语—概念，请检查哪些边无法读成完整命题。",
+    "should_trigger": true,
+    "mode": "spatial-mapping"
+  },
+  {
+    "query": "我为这本书建了一个 IIB，已经选了六份材料并粗略摆好；帮我检查上下文恢复入口和一处可能的混乱。",
+    "should_trigger": true,
+    "mode": "idea-integration"
+  },
+  {
+    "query": "项目白板围绕 Agent 工程交付，我把目标放中央、失败案例放右边并解释了原因，请帮我做第二遍 IIB 检查。",
+    "should_trigger": true,
+    "mode": "idea-integration"
+  },
+  {
+    "query": "围绕 [[测试驱动开发]] 做 Idea Compass。我先想到 North 是快速反馈，East 是大规模重构成本，请搜索空白方向。",
+    "should_trigger": true,
+    "mode": "knowledge-exploration"
+  },
+  {
+    "query": "我按城市和 workshop 都没找到 Basel 工作坊笔记，最后从 Daily Note 进入；请做 Navigation AAR。",
+    "should_trigger": true,
+    "mode": "knowledge-exploration"
+  },
+  {
+    "query": "我的立场是‘全流不是扩大职责，而是减少知识交接损失’，已经选卡并排了但是／因此，请检查十分钟演讲结构。",
+    "should_trigger": true,
+    "mode": "narrative-composition"
+  },
+  {
+    "query": "我已经写了受众、Take a Stand 和第一版 story tiles，想把它做成 Book-on-a-Page，先检查转折而不是替我重排。",
+    "should_trigger": true,
+    "mode": "narrative-composition"
+  },
+  {
+    "query": "最近三次都记得有卡但找不到，我希望系统支持软件工程主题检索；只读 Knowledge/Notes，不改 frontmatter，做 PKM 审计。",
+    "should_trigger": true,
+    "mode": "system-review"
+  },
+  {
+    "query": "我的 IIB 每次打开都恢复不了当前问题，最近一次真实失败已经写在下面；请用 1D–4D 做只读诊断。",
+    "should_trigger": true,
+    "mode": "system-review"
+  },
+  {
+    "query": "请比较 Idea Atlas、Brick Road、Concept Map 和 IIB；我的 focus question 和最小粗图已经给出，帮我决定本轮空间动作。",
+    "should_trigger": true,
+    "mode": "spatial-mapping"
+  },
+  {
+    "query": "我画完第一版概念视觉后，真人第一眼把筛选理解成删除；请帮助我做 ETC 和歧义检查。",
+    "should_trigger": true,
+    "mode": "concept-visualization"
+  },
+  {
+    "query": "继续上次的《驾驭工程》学习，读取进度告诉我当前章节和唯一下一步。",
+    "should_trigger": false,
+    "reason": "cross-session progress belongs to learning-harness"
+  },
+  {
+    "query": "开始跟踪这门 DDD 课程，按章节保存复述、证据核对、知识卡和应用测试。",
+    "should_trigger": false,
+    "reason": "tracking initialization belongs to learning-harness"
+  },
+  {
+    "query": "记录进度：第 03 讲已读但还不能复述。",
+    "should_trigger": false,
+    "reason": "progress recording belongs to learning-harness"
+  },
+  {
+    "query": "这本书现在学到哪里了？显示所有 Gate 和下次复查日期。",
+    "should_trigger": false,
+    "reason": "status belongs to learning-harness"
+  },
+  {
+    "query": "修复 Knowledge/Notes 里的所有 broken links，并输出确定性报告。",
+    "should_trigger": false,
+    "reason": "deterministic cleanup is not a Visual PKM semantic mode"
+  },
+  {
+    "query": "把这个已经确认的 Markdown 文件标题从 A 改成 B，并同步一个 wikilink。",
+    "should_trigger": false,
+    "reason": "mechanical Obsidian Markdown edit"
+  },
+  {
+    "query": "创建一个 JSON Canvas，节点和边的数据我已经完整给出，不需要讨论意义。",
+    "should_trigger": false,
+    "reason": "mechanical json-canvas task"
+  },
+  {
+    "query": "给 TaskNotes 做一个过滤 status=open 的表格 Base。",
+    "should_trigger": false,
+    "reason": "obsidian-bases task"
+  },
+  {
+    "query": "把这个英语 VTT 翻译成简体中文字幕并接入 Media Extended。",
+    "should_trigger": false,
+    "reason": "subtitle skill"
+  },
+  {
+    "query": "按这个 JD 和 confirmed claims 生成岗位简历和 DOCX。",
+    "should_trigger": false,
+    "reason": "career harness"
+  },
+  {
+    "query": "解释一下 Feedforward 和 Feedback 的区别，两句话即可，不要保存。",
+    "should_trigger": false,
+    "reason": "simple explanation does not need Visual PKM workflow"
+  },
+  {
+    "query": "帮我搜索网页上最新的 Agent Harness 新闻并列出来源。",
+    "should_trigger": false,
+    "reason": "web research only"
+  },
+  {
+    "query": "检查这个 Python 文件的类型错误并运行单元测试。",
+    "should_trigger": false,
+    "reason": "coding diagnostics"
+  },
+  {
+    "query": "把我给出的节点数据原样写进现有 Excalidraw，不增加任何语义判断。",
+    "should_trigger": false,
+    "reason": "mechanical Excalidraw operation"
+  },
+  {
+    "query": "把这段文字润色得更简洁，不需要进入知识库。",
+    "should_trigger": false,
+    "reason": "one-off editing"
+  },
+  {
+    "query": "帮我给 Knowledge/Notes/缓存.md 设置 sources 属性，目标链接已经确认。",
+    "should_trigger": false,
+    "reason": "mechanical property edit"
+  }
+]

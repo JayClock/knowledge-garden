@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-garden.local/learning/event.schema.json",
+  "title": "Learning Harness Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["seq", "id", "at", "actor", "type", "project_id", "subject", "payload", "evidence_refs", "caused_by"],
+  "properties": {
+    "seq": { "type": "integer", "minimum": 1 },
+    "id": { "type": "string", "pattern": "^evt-[0-9]{8}$" },
+    "at": { "type": "string", "minLength": 1 },
+    "actor": { "enum": ["user", "agent", "tool"] },
+    "type": {
+      "enum": [
+        "project_initialized", "project_status_changed", "unit_added", "coverage_recorded",
+        "expression_captured", "expression_qualified", "evidence_checked", "claim_registered",
+        "distillation_decided", "attempt_recorded", "blocker_added", "blocker_resolved",
+        "workflow_updated", "plan_adjusted"
+      ]
+    },
+    "project_id": { "$ref": "#/$defs/id" },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": { "enum": ["project", "unit", "claim", "attempt", "blocker", "workflow"] },
+        "id": { "$ref": "#/$defs/id" }
+      }
+    },
+    "payload": { "type": "object" },
+    "evidence_refs": { "type": "array", "items": { "$ref": "#/$defs/fileRef" } },
+    "caused_by": { "type": "array", "items": { "type": "string", "pattern": "^evt-[0-9]{8}$" } }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "fileRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "path", "locator"],
+      "properties": {
+        "type": { "const": "file" },
+        "path": { "type": "string", "minLength": 1 },
+        "locator": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

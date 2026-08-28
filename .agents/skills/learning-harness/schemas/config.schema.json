@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-garden.local/learning/config.schema.json",
+  "title": "Learning Harness Config",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["active_project_id", "paths", "state_policy"],
+  "properties": {
+    "active_project_id": { "type": ["string", "null"] },
+    "paths": {
+      "type": "object",
+      "required": ["vault_root", "source_roots", "note_root", "map_root", "output_root", "task_root", "task_view"],
+      "additionalProperties": false,
+      "properties": {
+        "vault_root": { "type": "string" },
+        "source_roots": { "type": "array", "items": { "type": "string" } },
+        "note_root": { "type": "string" },
+        "map_root": { "type": "string" },
+        "output_root": { "type": "string" },
+        "task_root": { "type": "string" },
+        "task_view": { "type": "string" }
+      }
+    },
+    "state_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fact_source", "snapshot_is_derived", "vault_writes_require_separate_authorization", "tasknote_projection_is_derived"],
+      "properties": {
+        "fact_source": { "const": "events.jsonl" },
+        "snapshot_is_derived": { "const": true },
+        "vault_writes_require_separate_authorization": { "const": true },
+        "tasknote_projection_is_derived": { "const": true }
+      }
+    }
+  }
+}
