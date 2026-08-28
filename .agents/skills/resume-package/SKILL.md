@@ -31,19 +31,20 @@ description: 为一个明确 opportunity 生成岗位简历、岗位自我介绍
 
 ### 行动
 
-1. 用同一 claim 集生成书面简历和岗位自我介绍。
-2. 简历优先呈现“岗位问题 → 个人动作 → 工程结果／验证”，不堆技术名词。
-3. 岗位自我介绍保存到：
+1. 生成书面简历前读取 `references/source-grounded-project-writing.md`，检索项目原始文稿、实战复盘、“中级／高级简历描述”和“项目重难点”；从中提取业务问题、系统边界、架构决策、复杂机制、故障处理和验证线索，再逐条映射到 selected confirmed claims。素材中的简历示例只是信息入口，不作为段落格式。
+2. 用同一 claim 集生成书面简历和岗位自我介绍。
+3. 项目经历由素材中的强证据自然组织，不强制统一的“技术栈／项目简介／工作内容与成果”结构、分类标签、条目数或先后顺序；技术名词必须进入具体动作、机制或验证语境。
+4. 岗位自我介绍保存到：
 
 ```text
 .career/opportunities/<opportunity_id>/outputs/self-introduction.md
 ```
 
-4. 默认自我介绍 90～120 秒，读取 `../interview-package/references/interview-oralization.md`。
-5. 简历 Markdown 保存到同一 opportunity 的 `outputs/resume.md`；只有用户明确要求时才生成 DOCX。
-6. DOCX 交付读取 `references/resume-docx-delivery.md`，模板原件位于 `assets/templates/钟杰-岗位定制简历模板.docx`。
-7. 为每个产物写 manifest，记录 `opportunity_id`、`generated_by: resume-package`、`claim_ids` 和 `status: current`。
-8. 更新 opportunity 的 artifacts；全部 Gate 通过后将 stage 设为 `packaged`。
+5. 默认自我介绍 90～120 秒，读取 `../interview-package/references/interview-oralization.md`；用一条能力主线串起岗位简历中的全部主项目，将存在 confirmed 实际接入点的支撑项目嵌入对应主项目，并在完整口述版本前写入独立的 `提取词`。
+6. 简历 Markdown 保存到同一 opportunity 的 `outputs/resume.md`；只有用户明确要求时才生成 DOCX。
+7. DOCX 交付读取 `references/resume-docx-delivery.md`，模板原件位于 `assets/templates/钟杰-岗位定制简历模板.docx`。
+8. 为每个产物写 manifest，记录 `opportunity_id`、`generated_by: resume-package`、`claim_ids` 和 `status: current`。
+9. 更新 opportunity 的 artifacts；全部 Gate 通过后将 stage 设为 `packaged`。
 
 ### Sensors
 
@@ -59,11 +60,12 @@ description: 为一个明确 opportunity 生成岗位简历、岗位自我介绍
 口语时长：
 
 ```bash
-python ../interview-package/scripts/oral_time.py <self-introduction.md> --min-seconds 90 --max-seconds 120
+python ../interview-package/scripts/oral_time.py <self-introduction.md> --section "90～120 秒版本" --min-seconds 90 --max-seconds 120
 ```
 
 推断型检查：
 
+- 每个主项目的内容顺序是否来自该项目最强素材，而不是被统一小节、标签和条目数强行塑形；
 - 项目选择是否回应 JD 的核心工作；
 - 简历和自我介绍是否表达同一事实但适配不同媒介；
 - 是否扩大个人职责、完成状态、客户、数字或业务结果；
@@ -88,8 +90,9 @@ python ../interview-package/scripts/oral_time.py <self-introduction.md> --min-se
 ## 完成 Gate
 
 - opportunity 已映射且只使用 confirmed claims；
+- 主项目符合 `references/source-grounded-project-writing.md`：模板只提供视觉样式，项目内容由素材和 selected confirmed claims 决定；
 - 简历与自我介绍的事实、职责、完成状态和限制一致；
-- 自我介绍通过时长和口语化检查；
+- 自我介绍用能力主线串起岗位简历中的全部主项目，包含独立提取词，并通过正文时长和口语化检查；
 - DOCX（如有）通过 OfficeCLI 与视觉验证；
 - manifests、opportunity artifacts 和 stage 已更新；
 - state lint 通过。

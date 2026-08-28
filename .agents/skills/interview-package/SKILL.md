@@ -39,6 +39,7 @@ description: 从 confirmed claims 和岗位要求生成项目整体讲法、具�
 ```
 
 - 项目整体讲法：业务问题 → 个人职责 → 架构方案 → 一两个难点与取舍 → 结果、验证与边界。
+- 自我介绍及其练习稿：必须用一条能力主线串起本轮 selected 的全部对外项目；存在岗位简历时，不得省略其中任一主项目。每个项目至少说明它承接的问题、个人动作或能力角色之一，不能只报名词。支撑项目若在主项目中有 confirmed 的实际接入点，应嵌入对应项目说明作用和个人／团队边界，不为凑数量另起项目段。完整口述版本前提供独立的 `提取词`，按“定位与主线 → 每个项目 → 收束”成组，用 `｜` 分隔事实锚点。提取词只能压缩同一组 confirmed claims，不能新增事实，也不能写成第二份逐字稿；超时时先压缩各项目细节，不直接删除项目。
 - 具体回答：一份只解决一个技术主题或简历描述。
 - 追问训练：问题来源、替代方案、失败场景、验证证据、缺失数据、个人／团队边界。
 - 岗位专项计划保存到 `.career/opportunities/<id>/outputs/interview-plan.md`。
@@ -57,7 +58,7 @@ description: 从 confirmed claims 和岗位要求生成项目整体讲法、具�
 使用：
 
 ```bash
-python scripts/oral_time.py <file> --min-seconds <min> --max-seconds <max>
+python scripts/oral_time.py <file> --section "<完整口述版本标题>" --min-seconds <min> --max-seconds <max>
 python ../career-assets/scripts/state_lint.py --state-dir <state-dir> --repo-root <git-root>
 ```
 
@@ -91,6 +92,7 @@ python ../career-assets/scripts/state_lint.py --state-dir <state-dir> --repo-roo
 ## 完成 Gate
 
 - 每个回答有明确 claim 依赖；
+- 自我介绍以能力主线串起全部对外项目，包含可独立查看的提取词，隐藏完整稿后仍可据此复述；
 - 个人职责、协作边界和完成状态与 claims 一致；
 - 时长检查通过或已说明偏差；
 - 高频追问能够回答到证据和边界；

@@ -7,6 +7,8 @@
     "schema_version": {"const": 1},
     "id": {"type": "string", "minLength": 1},
     "stage": {"enum": ["intake", "mapped", "packaged", "practicing", "submitted", "interviewed", "closed"]},
+    "purpose": {"enum": ["application", "interview_practice"]},
+    "application_status": {"enum": ["not_planned", "planned", "submitted", "withdrawn"]},
     "target": {
       "type": "object",
       "required": ["company", "role", "jd_source", "deadline"],
@@ -14,7 +16,8 @@
         "company": {"type": "string"},
         "role": {"type": "string", "minLength": 1},
         "jd_source": {"type": "string"},
-        "deadline": {"type": ["string", "null"]}
+        "deadline": {"type": ["string", "null"]},
+        "planned_submission_date": {"type": ["string", "null"], "format": "date"}
       }
     },
     "requirements": {

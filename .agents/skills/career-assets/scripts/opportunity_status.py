@@ -20,6 +20,14 @@ NEXT_ROUTES = {
 }
 
 
+def recommended_next_skill(opportunity: dict[str, Any], non_confirmed: list[str]) -> str:
+    if non_confirmed:
+        return "career-evidence"
+    if opportunity.get("stage") == "mapped" and opportunity.get("purpose") == "interview_practice":
+        return "interview-package"
+    return NEXT_ROUTES.get(str(opportunity.get("stage")), "career-assets")
+
+
 def read_object(path: Path) -> dict[str, Any]:
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
@@ -119,6 +127,8 @@ def build_status(state_dir: Path, path: Path, claims: dict[str, str]) -> dict[st
     return {
         "id": opportunity_id,
         "stage": stage,
+        "purpose": opportunity.get("purpose"),
+        "application_status": opportunity.get("application_status"),
         "target": opportunity.get("target"),
         "requirements": {
             "total": len(requirements),
@@ -129,7 +139,7 @@ def build_status(state_dir: Path, path: Path, claims: dict[str, str]) -> dict[st
         "artifacts": manifests,
         "feedback_records": feedback_count(state_dir, str(opportunity_id)),
         "blockers": blockers,
-        "recommended_next_skill": "career-evidence" if non_confirmed else NEXT_ROUTES.get(str(stage), "career-assets"),
+        "recommended_next_skill": recommended_next_skill(opportunity, non_confirmed),
     }
 
 

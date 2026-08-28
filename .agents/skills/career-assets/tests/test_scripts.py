@@ -161,6 +161,69 @@ class CareerHarnessScriptsTest(unittest.TestCase):
             self.assertNotEqual(stale_status.returncode, 0)
             self.assertIn("artifacts are stale or invalid", stale_status.stdout)
 
+    def test_practice_only_mapped_opportunity_routes_to_interview_package(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            state = self.initialize(root)
+            claims_path = state / "claims.json"
+            claims = json.loads(claims_path.read_text(encoding="utf-8"))
+            claims["claims"].append(
+                {
+                    "id": "career.example",
+                    "statement": "已确认的练习事实",
+                    "kind": "timeline",
+                    "ownership": "not_applicable",
+                    "completion": "validated",
+                    "status": "confirmed",
+                    "evidence": [{"type": "user_confirmation", "locator": "用户确认"}],
+                    "metrics": [],
+                    "constraints": [],
+                    "tags": [],
+                }
+            )
+            claims_path.write_text(json.dumps(claims, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+            opportunity_dir = state / "opportunities" / "2026-practice-role"
+            opportunity_dir.mkdir(parents=True)
+            (opportunity_dir / "opportunity.json").write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "id": "2026-practice-role",
+                        "stage": "mapped",
+                        "purpose": "interview_practice",
+                        "target": {"company": "示例公司", "role": "工程师", "jd_source": "user", "deadline": None},
+                        "requirements": [
+                            {
+                                "id": "req-1",
+                                "text": "练习要求",
+                                "priority": "must",
+                                "claim_ids": ["career.example"],
+                                "gap": False,
+                            }
+                        ],
+                        "selected_claim_ids": ["career.example"],
+                        "artifacts": [],
+                        "feedback_ids": [],
+                        "decisions": [],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+
+            status = self.run_script(
+                STATUS,
+                "--state-dir",
+                str(state),
+                "--opportunity-id",
+                "2026-practice-role",
+            )
+            self.assertEqual(status.returncode, 0, status.stdout + status.stderr)
+            self.assertIn('"recommended_next_skill": "interview-package"', status.stdout)
+
     def test_confirmed_claim_without_evidence_fails(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

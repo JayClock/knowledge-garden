@@ -108,11 +108,14 @@
   "schema_version": 1,
   "id": "2026-company-role",
   "stage": "intake",
+  "purpose": "application",
+  "application_status": "planned",
   "target": {
     "company": "公司名",
     "role": "岗位名",
     "jd_source": "用户粘贴或文件路径",
-    "deadline": null
+    "deadline": null,
+    "planned_submission_date": "2026-08-31"
   },
   "requirements": [
     {
@@ -131,6 +134,10 @@
 ```
 
 `stage` 允许值：`intake`、`mapped`、`packaged`、`practicing`、`submitted`、`interviewed`、`closed`。
+
+`purpose` 可选值：`application`、`interview_practice`。面试练习机会在 `mapped` 后直接路由到 `interview-package`，不要求进入 `resume-package` 或 `apply`。
+
+`application_status` 可选值：`not_planned`、`planned`、`submitted`、`withdrawn`。`target.deadline` 只记录招聘方截止时间；用户自己的计划投递日期记录在 `target.planned_submission_date`，不要混为同一事实。
 
 ## artifact manifest
 
