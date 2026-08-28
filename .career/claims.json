@@ -27,6 +27,117 @@
       ]
     },
     {
+      "id": "career.identity.full-name",
+      "statement": "姓名为钟杰",
+      "kind": "timeline",
+      "ownership": "not_applicable",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认用于岗位投递材料的姓名"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "个人身份信息只用于用户授权的求职材料，不写入公开 Vault 内容"
+      ],
+      "tags": [
+        "identity",
+        "private"
+      ]
+    },
+    {
+      "id": "career.contact.phone",
+      "statement": "求职联系电话为 15000248245",
+      "kind": "timeline",
+      "ownership": "not_applicable",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认用于岗位投递材料的手机号"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "手机号只用于用户授权的岗位投递材料，不写入公开 Vault 内容"
+      ],
+      "tags": [
+        "contact",
+        "private"
+      ]
+    },
+    {
+      "id": "career.contact.email",
+      "statement": "求职联系邮箱为 z891853602@gmail.com",
+      "kind": "timeline",
+      "ownership": "not_applicable",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认用于岗位投递材料的邮箱"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "邮箱只用于用户授权的岗位投递材料，不写入公开 Vault 内容"
+      ],
+      "tags": [
+        "contact",
+        "private"
+      ]
+    },
+    {
+      "id": "career.location.current",
+      "statement": "当前居住地为上海",
+      "kind": "timeline",
+      "ownership": "not_applicable",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认用于岗位投递材料的现居地"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "只表达城市，不补写未经确认的详细住址"
+      ],
+      "tags": [
+        "location",
+        "shanghai"
+      ]
+    },
+    {
+      "id": "career.education.bachelor-computing",
+      "statement": "2020 年 6 月毕业于上海海事大学计算机科学与技术专业，本科学历，学士学位",
+      "kind": "timeline",
+      "ownership": "not_applicable",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认学校、毕业时间、学历、学位及专业正式全称"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "未确认入学时间、学位类别和本科批次，不在对外材料中补写"
+      ],
+      "tags": [
+        "education",
+        "bachelor",
+        "computing"
+      ]
+    },
+    {
       "id": "career.positioning.market-title",
       "statement": "当前对外求职定位为全栈偏前端的平台工程师",
       "kind": "positioning",
