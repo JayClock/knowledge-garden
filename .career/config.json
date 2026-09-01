@@ -6,5 +6,22 @@
       "content/Knowledge/Sources"
     ],
     "project_output_root": "content/Knowledge/Outputs"
+  },
+  "resume_policy": {
+    "required_claim_ids": [
+      "career.capability.agent-harness-efficiency"
+    ],
+    "required_artifact_types": [
+      "resume",
+      "resume_docx",
+      "self_introduction"
+    ],
+    "content_check_artifact_types": [
+      "resume",
+      "self_introduction"
+    ],
+    "content_markers_any": [
+      "Agent Harness"
+    ]
   }
 }

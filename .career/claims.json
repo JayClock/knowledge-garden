@@ -2570,6 +2570,369 @@
         "editor",
         "condition"
       ]
+    },
+    {
+      "id": "company-harness.plan-context-selection",
+      "statement": "在公司项目的代码仓库 Harness 中，于外层 Plan 阶段将长 PRD 建模为经人工审核的业务模型，并审核测试工序生成的任务清单，再将两者作为当前工作的前馈上下文",
+      "kind": "project_contribution",
+      "project_id": "company-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认；事实范围：公司项目／代码仓库 Harness 的 Plan 与前馈控制"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "公司和项目名称保持匿名",
+        "人工审核发生在 Harness 双层循环的 Plan 阶段",
+        "不表述为把完整 PRD 直接交给模型"
+      ],
+      "tags": [
+        "harness",
+        "context-control",
+        "business-modeling",
+        "feedforward"
+      ]
+    },
+    {
+      "id": "company-harness.instruction-control",
+      "statement": "将经人工审核的业务模型和任务清单写入代码仓库 Harness 的指令系统作为前馈控制，并将测试与问题定位结果作为反馈控制",
+      "kind": "project_contribution",
+      "project_id": "company-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认；事实范围：公司项目／Harness 指令系统"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不扩展为未经确认的工具、状态或环境子系统实现"
+      ],
+      "tags": [
+        "harness",
+        "instruction-system",
+        "feedforward",
+        "feedback"
+      ]
+    },
+    {
+      "id": "company-harness.feedback-compaction",
+      "statement": "在反馈控制中让模型按需生成提取脚本，由脚本确定性处理过长测试报告并保留后续修正所需的问题定位段落",
+      "kind": "project_contribution",
+      "project_id": "company-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认；事实范围：公司项目／测试报告压缩"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "模型可以生成脚本，但报告提取由脚本确定性执行",
+        "不补写未经确认的提取字段、算法或持久化方案"
+      ],
+      "tags": [
+        "harness",
+        "testing",
+        "feedback",
+        "computational-control",
+        "compaction"
+      ]
+    },
+    {
+      "id": "company-harness.qualitative-result",
+      "statement": "在该代码仓库 Harness 实践中观察到模型输出稳定性改善，并减少了反复输入完整 PRD 和测试报告产生的 Token 消耗",
+      "kind": "result",
+      "project_id": "company-harness",
+      "ownership": "direct",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认；事实范围：公司项目／Harness 定性结果"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "结果只有定性观察，没有可核验的稳定性或 Token 节省比例",
+        "不得派生具体成本、时长或效率数字"
+      ],
+      "tags": [
+        "harness",
+        "stability",
+        "token-cost",
+        "qualitative-result"
+      ]
+    },
+    {
+      "id": "evidence.project.scope",
+      "statement": "设计并实现开源 Evidence 领域建模与证据映射平台，覆盖 React Web、Java Server、Electron Desktop、内嵌 Pi SDK Agent，以及从 Intake、Understand、Tasking、Pair、Showcase 到 Respond 的项目交付链路",
+      "kind": "project_scope",
+      "project_id": "evidence",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认 Evidence 是本人项目；公开仓库 https://github.com/JayClock/Evidence，核对提交 b4b9ace5badf7e4c37b13bd1e19f3499073bfff6 的 README.md、AGENTS.md、apps/desktop/src/loops/ 与 libs/server-java/domain/"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不补写未经确认的生产用户、业务规模、运行次数或效率指标",
+        "当前公开仓库证明机制已经实现，不等同于已在生产环境规模化运行",
+        "提交 b4b9ace5badf7e4c37b13bd1e19f3499073bfff6 对应的最新公开 CI 因 @evidence/web:test 失败而未全绿，不表述为当前 main 全部质量门禁通过"
+      ],
+      "tags": [
+        "evidence",
+        "domain-modeling",
+        "agent-harness",
+        "react",
+        "java",
+        "electron",
+        "pi-sdk"
+      ]
+    },
+    {
+      "id": "evidence.outer-loop.authority",
+      "statement": "将项目外层循环实现为 Server 权威状态机：以精确 Inbox Revision 和 Frozen Intake 固化输入，经人工 Kickoff、Scenario 确认和 Desk Check 形成不可变 Story Revision 与 Approved Tasking Plan，再推进 Pair、Showcase 和 Respond",
+      "kind": "project_contribution",
+      "project_id": "evidence",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence 为本人项目；仓库提交 b4b9ace5：docs/architecture/inbox-kickoff-lifecycle.md、understand-tqa-lifecycle.md、tasking-desk-check-lifecycle.md、pair-lifecycle.md、showcase-respond-lifecycle.md"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "外层状态由 Server 与 PostgreSQL 保存，Desktop 只执行本地能力",
+        "不把尚未经过人工决定的 Agent Proposal 表述为权威事实"
+      ],
+      "tags": [
+        "outer-loop",
+        "state-machine",
+        "frozen-intake",
+        "story-revision",
+        "approved-plan"
+      ]
+    },
+    {
+      "id": "evidence.human-agent-boundary",
+      "statement": "将 Agent 限定为提出 Candidate、Scenario、Tasking 和 Respond Proposal，并执行 Server 发布的唯一 nextAction；人类负责 Candidate selection、Kickoff、Scenario 确认、Desk Check、完整代码差异验收、Showcase 价值判断和 Respond 批准",
+      "kind": "project_contribution",
+      "project_id": "evidence",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence 为本人项目；仓库提交 b4b9ace5：README.md 核心规则、AGENTS.md 核心领域聚合与 Electron 规范、libs/server-java/domain/model/{Pair,Showcase,Respond}.java"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "Agent 不能代行人工决定、自动 merge 或 push",
+        "本地完整源码、diff、stdout、Prompt 和 Pi 消息不上传 Server"
+      ],
+      "tags": [
+        "human-in-the-loop",
+        "authority",
+        "next-action",
+        "least-privilege"
+      ]
+    },
+    {
+      "id": "evidence.inner-loop.pair",
+      "statement": "以人工批准的 Tasking Plan 驱动 Pair 内层循环，编排短生命周期 Test、Production、Refactor Pi Driver、锁定的 Red／Green 命令、独立 Red Reviewer 和最终质量门，并在完整 diff hash 复核及人工批准后创建本地提交",
+      "kind": "project_contribution",
+      "project_id": "evidence",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence 为本人项目；仓库提交 b4b9ace5：docs/architecture/pair-lifecycle.md、apps/desktop/src/loops/pair/controller.ts、libs/server-java/domain/src/main/java/reengineering/ddd/evidence/domain/model/Pair.java 及对应测试"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "Pair 创建的是本地 Conventional Commit，不自动 merge 或 push",
+        "不把测试文件存在扩展为当前 main 全部 CI 通过"
+      ],
+      "tags": [
+        "inner-loop",
+        "pair",
+        "tdd",
+        "red-green-refactor",
+        "quality-gates"
+      ]
+    },
+    {
+      "id": "evidence.failure-routing",
+      "statement": "对 Unexpected Green、Pseudo Red、实现／重构／质量门失败、路径越界、Git HEAD 变化和证据不一致进行分类，并由 Server 只开放 back_test、back_implementation、retry_quality、back_tasking 或 cancel 等允许路由；预算耗尽和边界违规先持久化再 fail closed",
+      "kind": "project_contribution",
+      "project_id": "evidence",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence 为本人项目；仓库提交 b4b9ace5：libs/server-java/domain/src/main/java/reengineering/ddd/evidence/domain/model/Pair.java 的 exception normalization、allowedExceptionRoutes 与 nextAction；apps/desktop/src/loops/pair/controller.ts"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "允许路由由失败类型和当前 checkpoint 决定，不表示 Agent 可以自行修改外层计划",
+        "跨层返回 Tasking 后旧 Plan、PairRun 与执行事实保持不可变"
+      ],
+      "tags": [
+        "feedback-routing",
+        "fail-closed",
+        "budget",
+        "checkpoint",
+        "self-correction"
+      ]
+    },
+    {
+      "id": "evidence.showcase-learning-loop",
+      "statement": "在编码批准后由 Showcase 基于 approved commit 重新执行 Q2，记录人工产品观察、Q3／Q4 风险评价和独立只读 Review；Revise 按知识缺口返回 Kickoff、TQA、Modeling、Tasking 或新 Showcase，人工批准 Respond Candidate 后完成本轮边界",
+      "kind": "project_contribution",
+      "project_id": "evidence",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence 为本人项目；仓库提交 b4b9ace5：docs/architecture/showcase-respond-lifecycle.md、apps/desktop/src/loops/showcase/controller.ts、apps/desktop/src/loops/respond/controller.ts、libs/server-java/domain/model/{Showcase,Respond}.java"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "质量门全绿不自动等同于产品价值成立，Showcase accept 仍由领域专家决定",
+        "不补写未经确认的端到端 Iteration 完成次数或知识提升结果"
+      ],
+      "tags": [
+        "showcase",
+        "respond",
+        "q2",
+        "human-review",
+        "learning-loop"
+      ]
+    },
+    {
+      "id": "evidence.model-guidance-boundary",
+      "statement": "Evidence 当前通过精确 Story Revision、confirmed Scenario、No Model Impact Decision、Approved Tasking Plan、Git baseline、项目目录和工序哈希把上游判断固化为 Pair Guides；完整 Modeling Profile 与有模型影响的 modelRefs 路径尚未实现",
+      "kind": "boundary",
+      "project_id": "evidence",
+      "ownership": "direct",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence 为本人项目；仓库提交 b4b9ace5：docs/architecture/tasking-desk-check-lifecycle.md 与 test-strategy.md"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不得把当前 no_model_required 路径表述为已经完成模型变更到代码的全链路",
+        "当前 Tasking 中 TEST／TASK 的 modelRefs 必须为空"
+      ],
+      "tags": [
+        "model",
+        "traceability",
+        "tasking",
+        "boundary"
+      ]
+    },
+    {
+      "id": "evidence.ci-validation-boundary",
+      "statement": "Evidence 在 CI 中配置格式、OpenAPI 漂移、受影响项目 lint／test／build／typecheck、黑盒 API contract 和 Desktop package smoke；commit b4b9ace 的 Desktop 37 个测试文件共 143 项测试及 Java Server build 通过，但整条 CI 因一个 Web UI 测试失败而未通过",
+      "kind": "boundary",
+      "project_id": "evidence",
+      "ownership": "direct",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence 为本人项目；GitHub Actions run 32615734612 与 commit b4b9ace5badf7e4c37b13bd1e19f3499073bfff6，.github/workflows/ci.yml"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "desktop_test_files_passed",
+          "value": 37,
+          "scope": "github_actions_run_32615734612"
+        },
+        {
+          "name": "desktop_tests_passed",
+          "value": 143,
+          "scope": "github_actions_run_32615734612"
+        },
+        {
+          "name": "web_tests_failed",
+          "value": 1,
+          "scope": "github_actions_run_32615734612"
+        }
+      ],
+      "constraints": [
+        "不得表述为最新提交整条 CI 已通过",
+        "测试数字只对应 GitHub Actions run 32615734612"
+      ],
+      "tags": [
+        "ci",
+        "testing",
+        "contracts",
+        "validation-boundary"
+      ]
+    },
+    {
+      "id": "career.capability.agent-harness-efficiency",
+      "statement": "能够把经人工审核的业务模型与任务计划、受限 Agent、状态、测试与日志反馈、失败路由和人工 Gate 组织成项目外层与 Agent 内层双层循环，用于研发提效和可控交付",
+      "kind": "positioning",
+      "ownership": "direct",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认 Agent Harness 属于研发提效能力，任意岗位简历都应涉及；事实基础为 company-harness 与 Evidence 项目的 confirmed claims"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "所有岗位简历必须至少简洁呈现一次 Agent Harness 研发提效能力，具体篇幅和证据项目按 JD 调整",
+        "不补写未经确认的提效比例、交付周期、Agent 运行次数或生产规模",
+        "不得把人工业务判断、计划批准、代码验收和价值判断表述为 Agent 自动决定"
+      ],
+      "tags": [
+        "agent-harness",
+        "engineering-productivity",
+        "dual-loop",
+        "delivery"
+      ]
     }
   ]
 }

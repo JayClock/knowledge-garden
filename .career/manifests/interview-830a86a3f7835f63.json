@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/简历回答逐字稿：Agent Harness 双层循环与可控交付.md",
+  "artifact_type": "interview_dossier",
+  "opportunity_id": null,
+  "generated_by": "interview-package",
+  "claim_ids": [
+    "career.capability.agent-harness-efficiency",
+    "career.capability.validation-feedback",
+    "career.capability.ai-determinism",
+    "company-harness.plan-context-selection",
+    "company-harness.instruction-control",
+    "company-harness.feedback-compaction",
+    "company-harness.qualitative-result"
+  ],
+  "status": "current"
+}

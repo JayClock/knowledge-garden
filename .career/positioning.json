@@ -10,13 +10,20 @@
     "career.capability.consumption-paths",
     "career.capability.validation-feedback",
     "career.capability.ai-determinism",
+    "career.capability.agent-harness-efficiency",
     "figma-ai.project.scope",
     "domain-modeling.collaboration.direct",
     "docs-editor.project.scope",
     "hateoas.project.sdk",
     "aiflow.project.scope",
     "aiflow.telemetry.execution-correlation",
-    "monitoring-sdk.project.scope"
+    "monitoring-sdk.project.scope",
+    "evidence.project.scope",
+    "evidence.outer-loop.authority",
+    "evidence.human-agent-boundary",
+    "evidence.inner-loop.pair",
+    "evidence.failure-routing",
+    "evidence.showcase-learning-loop"
   ],
   "target_role_families": [
     "高级前端工程师",
@@ -30,6 +37,7 @@
     "监控 SDK：事件量、上报成功率、采集开销和异常定位效果",
     "Figma AI：内部实际使用人员、生成任务规模、端到端耗时、稳定性和质量改善数据",
     "协同建模平台：实际协作人数、使用频率、模型规模和同步延迟；若恢复客户材料，再补实际模型对象名、OpenAPI 审核项和可脱敏生成结果",
-    "协同文档编辑器：实际文档规模、自动化测试、协同延迟、峰值连接数、断线重连和服务重启恢复验证；若确认公司、业务场景、使用者或生产结果，再归入对应时间线"
+    "协同文档编辑器：实际文档规模、自动化测试、协同延迟、峰值连接数、断线重连和服务重启恢复验证；若确认公司、业务场景、使用者或生产结果，再归入对应时间线",
+    "Evidence：实际完成过的端到端 Iteration 数量、使用者范围、Pair／Showcase 运行记录与当前 main CI 恢复情况"
   ]
 }
