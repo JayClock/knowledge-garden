@@ -1,9 +1,9 @@
 {
   "project_id": "agent-harness-engineering",
-  "derived_from_seq": 3,
+  "derived_from_seq": 61,
   "status": "active",
   "cursor": {
-    "unit_id": "lesson-00"
+    "unit_id": "lesson-01"
   },
   "units": [
     {
@@ -11,81 +11,343 @@
       "title": "00｜驾驭⼯程：Agent 时代必修课-Agent 驾驭工程之美-极客时间",
       "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/00｜驾驭⼯程：Agent 时代必修课-Agent 驾驭工程之美-极客时间.md",
       "locator": null,
-      "coverage": "unread",
-      "expression_status": "not_requested",
-      "expression_refs": [],
-      "evidence_status": "not_requested",
-      "evidence_refs": [],
-      "open_questions": [],
-      "updated_at": null
+      "coverage": "read",
+      "expression_status": "qualified",
+      "expression_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260828085227-lesson-00-expression.md",
+          "locator": null
+        }
+      ],
+      "evidence_status": "supported_with_boundary",
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/00｜驾驭⼯程：Agent 时代必修课-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 如何学习驾驭⼯程"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/00｜驾驭⼯程：Agent 时代必修课-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## Harness 真的有⽤吗？"
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260828085227-lesson-00-expression.md",
+          "locator": "## 用户原始表达"
+        }
+      ],
+      "open_questions": [
+        "“改 Harness 而不是 Prompt”是否主要针对需要重复、稳定执行的工作？一次性任务中 Prompt 调整仍应扮演什么角色？"
+      ],
+      "updated_at": "2026-08-28T08:55:27Z"
     },
     {
       "id": "lesson-01",
       "title": "01｜操控循环：驾驭工程的核心框架-Agent 驾驭工程之美-极客时间",
       "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/01｜操控循环：驾驭工程的核心框架-Agent 驾驭工程之美-极客时间.md",
       "locator": null,
-      "coverage": "unread",
-      "expression_status": "not_requested",
-      "expression_refs": [],
-      "evidence_status": "not_requested",
-      "evidence_refs": [],
-      "open_questions": [],
-      "updated_at": null
+      "coverage": "read",
+      "expression_status": "qualified",
+      "expression_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829142642-lesson-01-expression.md",
+          "locator": null
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829142920-lesson-01-expression.md",
+          "locator": null
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829143521-lesson-01-expression.md",
+          "locator": null
+        }
+      ],
+      "evidence_status": "supported_with_boundary",
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/01｜操控循环：驾驭工程的核心框架-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 操控循环（Steering Loop）"
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829143521-lesson-01-expression.md",
+          "locator": "## 用户原始表达"
+        }
+      ],
+      "open_questions": [
+        "如果反馈只是 Sensors 对结果的观察，真正让 Agent 修正输出的是 Feedback 还是随后的 Steer？自我验证在这两步中分别承担什么角色？"
+      ],
+      "updated_at": "2026-08-29T14:35:34Z"
     },
     {
       "id": "lesson-02",
       "title": "02｜四个子系统：构成框架与内置 Harness 拆解-Agent 驾驭工程之美-极客时间",
       "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/02｜四个子系统：构成框架与内置 Harness 拆解-Agent 驾驭工程之美-极客时间.md",
       "locator": null,
-      "coverage": "unread",
-      "expression_status": "not_requested",
-      "expression_refs": [],
-      "evidence_status": "not_requested",
-      "evidence_refs": [],
-      "open_questions": [],
-      "updated_at": null
+      "coverage": "read",
+      "expression_status": "qualified",
+      "expression_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829144006-lesson-02-expression.md",
+          "locator": null
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829144205-lesson-02-expression.md",
+          "locator": null
+        }
+      ],
+      "evidence_status": "supported_with_boundary",
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/02｜四个子系统：构成框架与内置 Harness 拆解-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## Harness 的四个⼦系统"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/02｜四个子系统：构成框架与内置 Harness 拆解-Agent 驾驭工程之美-极客时间.md",
+          "locator": "### ⼯具与技能（Tools & Skills）"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/02｜四个子系统：构成框架与内置 Harness 拆解-Agent 驾驭工程之美-极客时间.md",
+          "locator": "### 环境（Environment）"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/02｜四个子系统：构成框架与内置 Harness 拆解-Agent 驾驭工程之美-极客时间.md",
+          "locator": "### 状态（State）"
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829144006-lesson-02-expression.md",
+          "locator": "## 用户原始表达"
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829144205-lesson-02-expression.md",
+          "locator": "## 用户原始表达"
+        }
+      ],
+      "open_questions": [
+        "如果只是把多个工具放在一起，却没有指令、验证规则和独立工作流，按原文定义它是否已经构成一个 Skill？"
+      ],
+      "updated_at": "2026-08-29T14:42:23Z"
     },
     {
       "id": "lesson-03",
       "title": "03｜一个例子：从零搭建背单词 Harness-Agent 驾驭工程之美-极客时间",
       "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/03｜一个例子：从零搭建背单词 Harness-Agent 驾驭工程之美-极客时间.md",
       "locator": null,
-      "coverage": "unread",
+      "coverage": "read",
       "expression_status": "not_requested",
       "expression_refs": [],
       "evidence_status": "not_requested",
       "evidence_refs": [],
       "open_questions": [],
-      "updated_at": null
+      "updated_at": "2026-08-29T14:46:02Z"
     },
     {
       "id": "lesson-04",
       "title": "04｜封装技能：把操控循环装进 SKILL-Agent 驾驭工程之美-极客时间",
       "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/04｜封装技能：把操控循环装进 SKILL-Agent 驾驭工程之美-极客时间.md",
       "locator": null,
-      "coverage": "unread",
-      "expression_status": "not_requested",
-      "expression_refs": [],
-      "evidence_status": "not_requested",
-      "evidence_refs": [],
-      "open_questions": [],
-      "updated_at": null
+      "coverage": "read",
+      "expression_status": "qualified",
+      "expression_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829145314-lesson-04-expression.md",
+          "locator": null
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829145513-lesson-04-expression.md",
+          "locator": null
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829145638-lesson-04-expression.md",
+          "locator": null
+        }
+      ],
+      "evidence_status": "supported",
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/03｜一个例子：从零搭建背单词 Harness-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 将外层循环编排为指令"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/04｜封装技能：把操控循环装进 SKILL-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 与状态子系统的整合"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 最小干预原则（Least Intervention）"
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829145638-lesson-04-expression.md",
+          "locator": "## 用户原始表达"
+        }
+      ],
+      "open_questions": [
+        "在原文描述的双向通道中，Skill 是直接改写外层 plan.json，还是读取 Plan、写入 progress.json，再由外层 PDCA 根据进度调整计划？"
+      ],
+      "updated_at": "2026-08-29T14:56:54Z"
     },
     {
       "id": "lesson-05",
       "title": "05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间",
       "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间.md",
       "locator": null,
-      "coverage": "unread",
-      "expression_status": "not_requested",
-      "expression_refs": [],
-      "evidence_status": "not_requested",
-      "evidence_refs": [],
-      "open_questions": [],
-      "updated_at": null
+      "coverage": "read",
+      "expression_status": "qualified",
+      "expression_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260830095353-lesson-05-expression.md",
+          "locator": null
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260830095519-lesson-05-expression.md",
+          "locator": null
+        }
+      ],
+      "evidence_status": "supported_with_boundary",
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 双层循环模型（Dual-Loop Model）"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 仓库即规范（Repository as Spec）"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 渐进式信息披露（Progressive Disclosure）"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 分离计算型与推断型（Computational vs Inferential）"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 最小干预原则（Least Intervention）"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 可复现性优先（Reproducibility First）"
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260830095353-lesson-05-expression.md",
+          "locator": "## 用户原始表达"
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260830095519-lesson-05-expression.md",
+          "locator": "## 用户原始表达"
+        }
+      ],
+      "open_questions": [
+        "如果环境变量完全一致，但依赖库、工具或运行时版本不同，这个 Harness 是否已经满足可复现性？"
+      ],
+      "updated_at": "2026-08-30T09:55:37Z"
+    },
+    {
+      "id": "lesson-06",
+      "title": "06｜知识固化：从头构造一个 Harness-Agent 驾驭工程之美-极客时间",
+      "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/06｜知识固化：从头构造一个 Harness-Agent 驾驭工程之美-极客时间.md",
+      "locator": null,
+      "coverage": "read",
+      "expression_status": "qualified",
+      "expression_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260831053037-lesson-06-expression.md",
+          "locator": null
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260831053236-lesson-06-expression.md",
+          "locator": null
+        }
+      ],
+      "evidence_status": "supported_with_boundary",
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/06｜知识固化：从头构造一个 Harness-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 什么是知识固化"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/06｜知识固化：从头构造一个 Harness-Agent 驾驭工程之美-极客时间.md",
+          "locator": "### 构造仓库"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/Agent 驾驭工程之美/06｜知识固化：从头构造一个 Harness-Agent 驾驭工程之美-极客时间.md",
+          "locator": "## 小结"
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260831053236-lesson-06-expression.md",
+          "locator": "## 用户原始表达"
+        }
+      ],
+      "open_questions": [
+        "为什么作者把逐轮对话中的有效做法写入 AGENTS.md、Skill、工具和状态称为“知识固化”，而不只把本章视为双层循环的实现案例？",
+        "如果不使用 Git，但把确认有效的规则持久写入 AGENTS.md、Skill、工具或状态文件，按作者的定义是否仍属于知识固化？"
+      ],
+      "updated_at": "2026-08-31T05:32:51Z"
     }
   ],
-  "claims": [],
+  "claims": [
+    {
+      "id": "agent-harness-dual-loop",
+      "text": "Agent 驾驭工程的核心机制是双层循环：外层是 Plan–Do–Check–Act 循环；其中 Do 又可分为 Feedforward–Action–Feedback–Steer。外层循环负责围绕任务进行分解与追踪，内层循环负责具体任务的执行与调节。",
+      "unit_ids": [
+        "lesson-01"
+      ],
+      "expression_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260829142642-lesson-01-expression.md",
+          "locator": null
+        }
+      ],
+      "distillation": {
+        "decision": "new",
+        "artifact_paths": [
+          "content/Knowledge/Notes/Agent Harness 的双层循环.md"
+        ],
+        "updated_at": "2026-09-01T00:00:11Z"
+      },
+      "created_at": "2026-08-31T23:57:54Z",
+      "updated_at": "2026-09-01T00:00:11Z"
+    }
+  ],
   "attempts": [
     {
       "id": "attempt-00000002",
@@ -113,33 +375,141 @@
         }
       ],
       "at": "2026-08-28T01:42:09Z"
+    },
+    {
+      "id": "attempt-00000042",
+      "scope": "project",
+      "scope_id": "agent-harness-engineering",
+      "kind": "retrieval",
+      "result": "partial",
+      "performer": "user",
+      "gaps": [
+        "外层与内层的责任边界过于绝对，尚未说明外层规则自动化与人类高层决策的分工",
+        "工程组件不完整，缺少工具与技能、环境、状态等子系统",
+        "Plan 向下、Progress 向上的数据流及由谁更新 Plan 尚不清楚",
+        "格式中的确定性检查与语义判断尚未分开",
+        "最佳实践召回不完整，遗漏渐进式信息披露、最小干预和可复现性优先"
+      ],
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260830100344-attempt-00000042-attempt.md",
+          "locator": null
+        }
+      ],
+      "at": "2026-08-30T10:03:44Z"
+    },
+    {
+      "id": "attempt-00000043",
+      "scope": "project",
+      "scope_id": "agent-harness-engineering",
+      "kind": "retrieval",
+      "result": "partial",
+      "performer": "user",
+      "gaps": [
+        "工具与技能的回答只描述了工具脚本，尚未说明 Skill 封装指令、工具、验证规则和 Steering Loop",
+        "环境只提到 Python，尚未说明运行时、依赖与工具版本锁定",
+        "状态尚未明确保存历史、当前进度和下一步；外层 PDCA 读取 Progress 后更新 Plan 的闭环仍不完整",
+        "六项最佳实践遗漏双层循环模型"
+      ],
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260830101042-attempt-00000043-attempt.md",
+          "locator": null
+        }
+      ],
+      "at": "2026-08-30T10:10:42Z"
+    },
+    {
+      "id": "attempt-00000044",
+      "scope": "project",
+      "scope_id": "agent-harness-engineering",
+      "kind": "comparison",
+      "result": "partial",
+      "performer": "user",
+      "gaps": [
+        "仍把 Skill 限定为多个 Tool 的流程集合；Skill 的核心是封装可复用的 Steering Loop，工具是可选依赖，可以没有工具或只有一个工具"
+      ],
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260830101525-attempt-00000044-attempt.md",
+          "locator": null
+        }
+      ],
+      "at": "2026-08-30T10:15:25Z"
+    },
+    {
+      "id": "attempt-00000045",
+      "scope": "project",
+      "scope_id": "agent-harness-engineering",
+      "kind": "comparison",
+      "result": "success",
+      "performer": "user",
+      "gaps": [],
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/agent-harness-engineering/sessions/20260830101650-attempt-00000045-attempt.md",
+          "locator": null
+        }
+      ],
+      "at": "2026-08-30T10:16:50Z"
     }
   ],
-  "blockers": [],
-  "workflows": [],
-  "last_session_at": "2026-08-28T01:42:09Z",
+  "blockers": [
+    {
+      "id": "awaiting-future-chapters",
+      "status": "resolved",
+      "reason": "课程尚有后续章节，但当前来源目录仅包含 lesson-00 至 lesson-05；等待新增章节后扩展计划并继续学习，不将项目标记为 complete。",
+      "subject": {
+        "kind": "project",
+        "id": "agent-harness-engineering"
+      },
+      "created_at": "2026-08-30T10:17:54Z",
+      "resolved_at": "2026-08-31T05:28:59Z",
+      "resolution": "来源目录已新增 lesson-06，已将其加入学习计划，可以继续按来源单元推进。"
+    }
+  ],
+  "workflows": [
+    {
+      "id": "concept-visualization-agent-harness-dual-loop",
+      "mode": "concept-visualization",
+      "unit_id": "lesson-01",
+      "status": "cancelled",
+      "step": "cancelled",
+      "data": {
+        "reason": "user_cancelled"
+      },
+      "updated_at": "2026-09-01T00:54:08Z"
+    }
+  ],
+  "last_session_at": "2026-08-31T05:32:36Z",
   "completion": {
-    "unit_ready": 0,
-    "unit_total": 6,
-    "claim_ready": 0,
-    "claim_total": 0,
+    "unit_ready": 7,
+    "unit_total": 7,
+    "claim_ready": 1,
+    "claim_total": 1,
     "project_evidence": {
-      "source_grounding": false,
-      "retrieval": false,
+      "source_grounding": true,
+      "retrieval": true,
       "application": true
     },
-    "complete_by_policy": false
+    "complete_by_policy": true
   },
-  "last_event_at": "2026-08-28T01:53:20Z",
-  "generated_at": "2026-08-28T02:03:35Z",
-  "next_action": {
-    "skill": "visual-pkm",
-    "mode": "deep-reading",
-    "action": "亲自阅读当前单元并记录阅读范围；只有准备核验意义时才留下复述、疑问或候选命题",
-    "reason": "当前来源单元尚未完成阅读覆盖",
+  "last_event_at": "2026-09-01T00:54:08Z",
+  "generated_at": "2026-09-01T00:54:08Z",
+  "next_command": {
+    "id": "cmd-00000061",
+    "based_on_seq": 61,
+    "skill": "learning-harness",
+    "action": "confirm-completion",
     "subject": {
-      "kind": "unit",
-      "id": "lesson-00"
-    }
+      "kind": "project",
+      "id": "agent-harness-engineering"
+    },
+    "instruction": "请用户确认是否将项目标记为 complete",
+    "reason": "完成政策已经满足，但项目状态只能由用户确认"
   }
 }

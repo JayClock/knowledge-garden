@@ -1,0 +1,165 @@
+{
+  "id": "business-modeling-for-knowledge-engineer",
+  "title": "如何落地业务建模",
+  "focus_question": "知识工程师如何从具体场景、事件和权责中抽象出可共享、可检验的业务模型，并用它发现变化点、系统边界和后续交付约束？",
+  "sources": [
+    {
+      "path": "content/Knowledge/Sources/如何落地业务建模",
+      "unit_strategy": "file"
+    }
+  ],
+  "units": [
+    {
+      "id": "lesson-00",
+      "title": "00｜为什么你需要学习业务建模？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/00｜为什么你需要学习业务建模？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-01",
+      "title": "01｜领域驱动设计到底在讲什么？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/01｜领域驱动设计到底在讲什么？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-02",
+      "title": "02｜统一语言是必要的吗？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/02｜统一语言是必要的吗？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-03",
+      "title": "03｜我们要怎么理解领域驱动设计？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/03｜我们要怎么理解领域驱动设计？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-04",
+      "title": "04｜跨越现实的障碍（上）：要性能还是要模型？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/04｜跨越现实的障碍（上）：要性能还是要模型？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-05",
+      "title": "05｜跨越现实的障碍（中）：富含知识还是代码坏味道？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/05｜跨越现实的障碍（中）：富含知识还是代码坏味道？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-06",
+      "title": "06｜跨越现实的障碍（下）：架构分层就对了吗？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/06｜跨越现实的障碍（下）：架构分层就对了吗？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-07",
+      "title": "07｜统一语言可以是领域模型本身吗？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/07｜统一语言可以是领域模型本身吗？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-08",
+      "title": "08｜ 什么办法可以在讨论中自然形成统一语言？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/08｜ 什么办法可以在讨论中自然形成统一语言？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-09",
+      "title": "09｜怎么才能更有效地获得事件流？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/09｜怎么才能更有效地获得事件流？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-10",
+      "title": "10｜将模型实现为RESTful API（上）-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/10｜将模型实现为RESTful API（上）-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-11",
+      "title": "11｜将模型实现为RESTful API（下）-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/11｜将模型实现为RESTful API（下）-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-12",
+      "title": "12｜云时代的挑战（上）：弹性边界还是业务边界？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/12｜云时代的挑战（上）：弹性边界还是业务边界？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-13",
+      "title": "13｜云时代的挑战（下）：如何保持弹性边界的独立性？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/13｜云时代的挑战（下）：如何保持弹性边界的独立性？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-14",
+      "title": "14｜8X Flow（上）：何为业务？何为领域？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/14｜8X Flow（上）：何为业务？何为领域？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-15",
+      "title": "15｜8X Flow（中）：如何通过模型发现业务系统的变化点？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/15｜8X Flow（中）：如何通过模型发现业务系统的变化点？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-16",
+      "title": "16｜8X Flow（下）：多于一个例子-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/16｜8X Flow（下）：多于一个例子-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-17",
+      "title": "17｜中台建模（上）：到底什么是中台？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/17｜中台建模（上）：到底什么是中台？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-18",
+      "title": "18｜中台建模（下）：如何寻找可复用的业务模式？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/18｜中台建模（下）：如何寻找可复用的业务模式？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-19",
+      "title": "19｜如何将模型实现为微服务？-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/19｜如何将模型实现为微服务？-如何落地业务建模-极客时间.md",
+      "locator": null
+    },
+    {
+      "id": "lesson-20",
+      "title": "20｜云时代的下一站：SaaS化与魔球建模法-如何落地业务建模-极客时间",
+      "source_path": "content/Knowledge/Sources/如何落地业务建模/20｜云时代的下一站：SaaS化与魔球建模法-如何落地业务建模-极客时间.md",
+      "locator": null
+    }
+  ],
+  "completion_policy": {
+    "unit": {
+      "required": [
+        "coverage"
+      ]
+    },
+    "claim": {
+      "required": [
+        "distillation_decision"
+      ]
+    },
+    "project": {
+      "required": [
+        "source_grounding",
+        "retrieval",
+        "application"
+      ]
+    }
+  },
+  "constraints": [
+    "不把阅读覆盖自动视为理解或掌握",
+    "Human First Expression 必须来自用户自己的复述、问题或命题",
+    "不经单独授权修改 Knowledge/Maps/知识工程师.md 或其他 Vault 知识内容"
+  ],
+  "created_at": "2026-08-30T13:42:31Z",
+  "updated_at": "2026-08-30T13:47:57Z"
+}

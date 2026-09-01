@@ -56,6 +56,8 @@ Pi 的极简不是功能少，而是尽量减少隐藏复杂度。与其把每�
 
 如果工程师知道系统边界，就应该直接告诉 Agent 读哪些文件。如果工程师也不了解代码库，就先让 Agent 做探索分析，而不是直接实现。探索阶段可以用会话树或摘要，把分析结果带入后续实现分支，避免上下文失控。
 
+[[边界判断缺位的资源代价]]进一步说明：如果人没有先定义当前工作的相关性边界，模型只能用更长的 Context 和更高的推理成本代为筛选，原本的设计问题便会转化为持续的资源支出。
+
 ### 7. Vibe Coding 后的重构
 
 [[Vibe Coding 之后如何重构]] 以 Mario 的机器人项目为例：Vibe Coding 很适合快速做原型，但常常产生巨大文件、职责混杂和难以维护的结构。
@@ -139,13 +141,12 @@ AI Coding Agent 的成熟使用方式，不是更激进地追求全自动，而�
 
 真正稀缺的不是代码生成速度，而是上下文组织能力、架构判断能力、验证设计能力和复杂度治理能力。
 
-
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'
-
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'
 
 # Excalidraw Data
 
 ## Text Elements
+
 Member = Human | Agent；同一 Stage Role 可在人与 Agent 之间 handoff / takeover
 Autonomous：Agent 在 Policy / Evidence Gate 内自动处理；Concern / 越界再切换 ^DWQMjzlE
 
@@ -441,6 +442,7 @@ H · Ops · Support ^stg6HuT
 A · Observe · Probe ^stg6AgT
 
 ## Element Links
+
 tcpfZWhJ: [[为什么要成为全流程序员，而非全栈程序员？]]
 
 ztTkapjx: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
@@ -564,7 +566,9 @@ flowDsgT: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
 flowDsgD: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
 
 %%
+
 ## Drawing
+
 ```compressed-json
 N4KAkARALgngDgUwgLgAQQQDwMYEMA2AlgCYBOuA7hADTgQBuCpAzoQPYB2KqATLZMzYBXUtiRoIACyhQ4zZAHoFAc0JRJQgEYA6bGwC2CgF7N6hbEcK4OCtptbErHALRY8RMpWdx8Q1TdIEfARcZgRmBShcZQUebR4ANm0AFho6IIR9BA4oZm4AbXAwUDBSiBJuCAArUns2AFk4AFY00shYRErA7CiOZWDWssxuAGYADgAGCf4ymG4ARnnkppnI
 
@@ -1044,4 +1048,5 @@ Vo532MYp98GclcSl/gHlE0Az2bQAFpK+CRACuzFEFzSNxCDQCmfJztOZkQjECVKjOe1sAoDfALUyYArV
 
 Fza7FEkEqkVzYuf5zwZFBU1OllzqCzgArSHDz6UApzVfEwA5uZ1ztHPuzljFy4ZSAqQzdnCA2ciTweoCAAA=
 ```
+
 %%

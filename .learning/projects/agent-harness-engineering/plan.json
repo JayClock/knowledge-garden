@@ -44,6 +44,12 @@
       "title": "05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间",
       "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/05｜驾驭工程的六个最佳实践-Agent 驾驭工程之美-极客时间.md",
       "locator": null
+    },
+    {
+      "id": "lesson-06",
+      "title": "06｜知识固化：从头构造一个 Harness-Agent 驾驭工程之美-极客时间",
+      "source_path": "content/Knowledge/Sources/Agent 驾驭工程之美/06｜知识固化：从头构造一个 Harness-Agent 驾驭工程之美-极客时间.md",
+      "locator": null
     }
   ],
   "completion_policy": {
@@ -70,5 +76,5 @@
     "Human First Expression 必须来自用户自己的复述、问题或命题"
   ],
   "created_at": "2026-08-28T01:42:09Z",
-  "updated_at": "2026-08-28T01:53:20Z"
+  "updated_at": "2026-08-31T05:28:59Z"
 }
