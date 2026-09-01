@@ -16,11 +16,12 @@
     {
       "id": 2,
       "prompt": "这是目标公司的高级前端平台岗位 JD，帮我生成两页 DOCX 简历和 90 到 120 秒自我介绍。我同时还在投另一家公司，不要覆盖那一版。",
-      "expected_output": "建立独立 opportunity，先完成 JD 与 confirmed claims 映射；生成该 opportunity 的 resume、自我介绍和 manifests；使用 resume-package 模板与 OfficeCLI，不覆盖全局自我介绍或其他岗位包。",
+      "expected_output": "建立独立 opportunity，先完成 JD 与 confirmed claims 映射并加入全局 resume_policy 的 Agent Harness 研发提效 claim；生成该 opportunity 的 resume、自我介绍和 manifests；使用 resume-package 模板与 OfficeCLI，不覆盖全局自我介绍或其他岗位包。",
       "files": [],
       "assertions": [
         "岗位产物绑定独立 opportunity_id",
         "简历与自我介绍使用同一组 confirmed claim IDs",
+        "简历明确涉及 Agent Harness 研发提效且 manifest 包含全局 required claim",
         "不会覆盖全局自我介绍或其他岗位版本",
         "DOCX 使用只读模板和 OfficeCLI 并执行占位符与布局检查"
       ]

@@ -7,6 +7,7 @@
 生成前必须读取：
 
 - `.career/claims.json`；
+- `.career/config.json` 中的 `resume_policy`；
 - `.career/opportunities/<opportunity_id>/opportunity.json`；
 - 同一 opportunity 的 `outputs/resume.md`；
 - selected claim 的 ownership、completion 和 constraints。
@@ -188,5 +189,6 @@ DOCX 内容确定后，使用相同 claim IDs 生成：
 - 用户要求两页时，最终页面数保持为 2，且不存在跨页悬空的项目条目；
 - HTML 或截图无截断、重叠和溢出；
 - DOCX 与岗位自我介绍使用同一 claim 集；
+- DOCX 正文和 manifest 已通过 `resume_policy`：必须主题真实出现，required claims 不得只登记不表达；
 - 两个 manifest 和 opportunity artifacts 已更新；
 - 用户最终用 Word / WPS / Pages 打开确认。

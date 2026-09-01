@@ -58,6 +58,19 @@ def require_string(value: Any, label: str, errors: list[str]) -> None:
         errors.append(f"{label} must be a non-empty string")
 
 
+def require_string_list(value: Any, label: str, errors: list[str]) -> list[str]:
+    if not isinstance(value, list):
+        errors.append(f"{label} must be an array")
+        return []
+    result: list[str] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, str) or not item.strip():
+            errors.append(f"{label}[{index}] must be a non-empty string")
+        else:
+            result.append(item)
+    return result
+
+
 def validate_feedback(state_dir: Path, claims: dict[str, dict[str, Any]], errors: list[str]) -> int:
     path = state_dir / "feedback.jsonl"
     if not path.exists():
@@ -108,6 +121,10 @@ def main() -> int:
     repo_root = args.repo_root.expanduser().resolve()
     errors: list[str] = []
     warnings: list[str] = []
+    resume_required_claim_ids: list[str] = []
+    resume_required_artifact_types: set[str] = set()
+    resume_content_check_artifact_types: set[str] = set()
+    resume_content_markers: list[str] = []
 
     config = load_json(state_dir / "config.json", errors)
     claim_doc = load_json(state_dir / "claims.json", errors)
@@ -121,6 +138,34 @@ def main() -> int:
             for key in ("base_introduction", "source_roots", "project_output_root"):
                 if key not in paths:
                     errors.append(f"config.paths missing {key}")
+        resume_policy = config.get("resume_policy", {})
+        if not isinstance(resume_policy, dict):
+            errors.append("config.resume_policy must be an object")
+        else:
+            resume_required_claim_ids = require_string_list(
+                resume_policy.get("required_claim_ids", []),
+                "config.resume_policy.required_claim_ids",
+                errors,
+            )
+            resume_required_artifact_types = set(
+                require_string_list(
+                    resume_policy.get("required_artifact_types", []),
+                    "config.resume_policy.required_artifact_types",
+                    errors,
+                )
+            )
+            resume_content_check_artifact_types = set(
+                require_string_list(
+                    resume_policy.get("content_check_artifact_types", []),
+                    "config.resume_policy.content_check_artifact_types",
+                    errors,
+                )
+            )
+            resume_content_markers = require_string_list(
+                resume_policy.get("content_markers_any", []),
+                "config.resume_policy.content_markers_any",
+                errors,
+            )
 
     claims: dict[str, dict[str, Any]] = {}
     if isinstance(claim_doc, dict):
@@ -178,6 +223,13 @@ def main() -> int:
                 if not isinstance(claim.get(field), list):
                     errors.append(f"{claim_id}: {field} must be an array")
 
+    for claim_id in resume_required_claim_ids:
+        claim = claims.get(claim_id)
+        if claim is None:
+            errors.append(f"config.resume_policy references unknown claim: {claim_id}")
+        elif claim.get("status") != "confirmed":
+            errors.append(f"config.resume_policy requires non-confirmed claim: {claim_id}")
+
     if isinstance(positioning, dict):
         if positioning.get("status") not in {"candidate", "confirmed", "contested"}:
             errors.append(f"invalid positioning.status: {positioning.get('status')!r}")
@@ -207,6 +259,10 @@ def main() -> int:
                 errors.append(f"{path}: unknown selected claim {claim_id}")
             elif stage in {"packaged", "practicing", "submitted", "interviewed", "closed"} and claim.get("status") != "confirmed":
                 errors.append(f"{path}: outward stage uses non-confirmed claim {claim_id}")
+        if opportunity.get("purpose", "application") == "application" and stage != "intake":
+            for claim_id in resume_required_claim_ids:
+                if claim_id not in selected:
+                    errors.append(f"{path}: missing resume policy claim {claim_id}")
         requirements = opportunity.get("requirements", [])
         if not isinstance(requirements, list):
             errors.append(f"{path}: requirements must be an array")
@@ -228,16 +284,39 @@ def main() -> int:
         status = manifest.get("status")
         if status not in ARTIFACT_STATUSES:
             errors.append(f"{path}: invalid status {status!r}")
+        resolved_artifact_path: Path | None = None
         if isinstance(artifact, str) and artifact:
             artifact_path = Path(artifact)
             if artifact_path.is_absolute():
                 errors.append(f"{path}: artifact must be repository-relative: {artifact}")
-            elif status == "current" and not (repo_root / artifact_path).exists():
-                errors.append(f"{path}: current artifact does not exist: {artifact}")
+            else:
+                candidate_path = repo_root / artifact_path
+                resolved_artifact_path = candidate_path
+                if status == "current" and not candidate_path.exists():
+                    errors.append(f"{path}: current artifact does not exist: {artifact}")
         claim_ids = manifest.get("claim_ids")
         if not isinstance(claim_ids, list):
             errors.append(f"{path}: claim_ids must be an array")
             continue
+        artifact_type = manifest.get("artifact_type")
+        if status == "current" and artifact_type in resume_required_artifact_types:
+            for claim_id in resume_required_claim_ids:
+                if claim_id not in claim_ids:
+                    errors.append(f"{path}: missing resume policy claim {claim_id}")
+        if (
+            status == "current"
+            and artifact_type in resume_content_check_artifact_types
+            and resume_content_markers
+            and resolved_artifact_path is not None
+            and resolved_artifact_path.is_file()
+        ):
+            try:
+                artifact_text = resolved_artifact_path.read_text(encoding="utf-8")
+            except UnicodeDecodeError:
+                errors.append(f"{path}: resume policy content check requires a UTF-8 text artifact")
+            else:
+                if not any(marker in artifact_text for marker in resume_content_markers):
+                    errors.append(f"{path}: artifact must contain one of {resume_content_markers!r}")
         for claim_id in claim_ids:
             claim = claims.get(claim_id)
             if claim is None:

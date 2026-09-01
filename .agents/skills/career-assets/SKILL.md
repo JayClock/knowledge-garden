@@ -109,6 +109,7 @@ python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --o
 - 只有 `confirmed` claim 可以进入保真简历和面试回答。
 - 每个对外 artifact 都要有 manifest，记录 `claim_ids`、`opportunity_id`、生成 Skill 和当前状态。
 - 岗位自我介绍保存在对应 opportunity 包中；全局 `自我介绍.md` 只保留通用基础版，不被不同岗位反复覆盖。
+- `.career/config.json.resume_policy` 保存跨岗位简历基线；正式投递 opportunity、简历包 manifest 和可读文本必须通过 required claims 与 content markers Gate。当前 Agent Harness 统一归类为研发提效能力，所有岗位简历至少涉及一次，展开深度按 JD 调整。
 - 旧简历、逐字稿和岗位文案是线索或派生物，不得反向升级为事实。
 - 真实市场反馈可以改变项目选择、表达和下一轮计划，不能单独证明或否定历史事实。
 

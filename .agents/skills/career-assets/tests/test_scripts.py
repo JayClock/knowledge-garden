@@ -224,6 +224,84 @@ class CareerHarnessScriptsTest(unittest.TestCase):
             self.assertEqual(status.returncode, 0, status.stdout + status.stderr)
             self.assertIn('"recommended_next_skill": "interview-package"', status.stdout)
 
+    def test_resume_policy_requires_claim_and_content_marker(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            state = self.initialize(root)
+            policy_claim = {
+                "id": "career.capability.agent-harness-efficiency",
+                "statement": "使用 Agent Harness 提升研发交付的可控性",
+                "kind": "positioning",
+                "ownership": "direct",
+                "completion": "validated",
+                "status": "confirmed",
+                "evidence": [{"type": "user_confirmation", "locator": "用户确认"}],
+                "metrics": [],
+                "constraints": [],
+                "tags": ["agent-harness"],
+            }
+            claims_path = state / "claims.json"
+            claims = json.loads(claims_path.read_text(encoding="utf-8"))
+            claims["claims"].append(policy_claim)
+            claims_path.write_text(json.dumps(claims, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+            config_path = state / "config.json"
+            config = json.loads(config_path.read_text(encoding="utf-8"))
+            config["resume_policy"] = {
+                "required_claim_ids": [policy_claim["id"]],
+                "required_artifact_types": ["resume"],
+                "content_check_artifact_types": ["resume"],
+                "content_markers_any": ["Agent Harness"],
+            }
+            config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+            opportunity_dir = state / "opportunities" / "2026-policy-role"
+            manifest_dir = opportunity_dir / "manifests"
+            output_dir = opportunity_dir / "outputs"
+            manifest_dir.mkdir(parents=True)
+            output_dir.mkdir()
+            opportunity_path = opportunity_dir / "opportunity.json"
+            opportunity = {
+                "schema_version": 1,
+                "id": "2026-policy-role",
+                "stage": "mapped",
+                "purpose": "application",
+                "target": {"company": "示例公司", "role": "工程师", "jd_source": "user", "deadline": None},
+                "requirements": [],
+                "selected_claim_ids": [],
+                "artifacts": ["outputs/resume.md"],
+                "feedback_ids": [],
+                "decisions": [],
+            }
+            opportunity_path.write_text(json.dumps(opportunity, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            resume_path = output_dir / "resume.md"
+            resume_path.write_text("# Resume\n", encoding="utf-8")
+            manifest_path = manifest_dir / "resume.json"
+            manifest = {
+                "schema_version": 1,
+                "artifact": ".career/opportunities/2026-policy-role/outputs/resume.md",
+                "artifact_type": "resume",
+                "opportunity_id": "2026-policy-role",
+                "generated_by": "resume-package",
+                "claim_ids": [],
+                "status": "current",
+            }
+            manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+            invalid = self.run_script(LINT, "--state-dir", str(state), "--repo-root", str(root))
+            self.assertNotEqual(invalid.returncode, 0)
+            self.assertIn("missing resume policy claim", invalid.stdout)
+            self.assertIn("artifact must contain one of", invalid.stdout)
+
+            opportunity["selected_claim_ids"] = [policy_claim["id"]]
+            opportunity_path.write_text(json.dumps(opportunity, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            manifest["claim_ids"] = [policy_claim["id"]]
+            manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            resume_path.write_text("# Resume\n\n研发提效：Agent Harness\n", encoding="utf-8")
+
+            valid = self.run_script(LINT, "--state-dir", str(state), "--repo-root", str(root))
+            self.assertEqual(valid.returncode, 0, valid.stdout + valid.stderr)
+
     def test_confirmed_claim_without_evidence_fails(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

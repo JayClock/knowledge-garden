@@ -10,7 +10,7 @@ description: 为一个明确 opportunity 生成岗位简历、岗位自我介绍
 ## 前置条件
 
 1. 读取 `../career-assets/references/fact-policy.md` 和 `../career-assets/references/state-schema.md`。
-2. 读取 `.career/claims.json`、`positioning.json` 和目标 opportunity。
+2. 读取 `.career/claims.json`、`positioning.json`、`config.json.resume_policy` 和目标 opportunity。
 3. opportunity 至少处于 `mapped`，包含公司、岗位、核心要求和 selected claim IDs。
 4. 所有 selected claims 必须 confirmed；否则停止并路由 `career-evidence` 或 `career-positioning`。
 5. 读取配置中的通用 `自我介绍.md` 只为理解基础定位，不覆盖它。
@@ -32,7 +32,7 @@ description: 为一个明确 opportunity 生成岗位简历、岗位自我介绍
 ### 行动
 
 1. 生成书面简历前读取 `references/source-grounded-project-writing.md`，检索项目原始文稿、实战复盘、“中级／高级简历描述”和“项目重难点”；从中提取业务问题、系统边界、架构决策、复杂机制、故障处理和验证线索，再逐条映射到 selected confirmed claims。素材中的简历示例只是信息入口，不作为段落格式。
-2. 用同一 claim 集生成书面简历和岗位自我介绍。
+2. 用同一 claim 集生成书面简历和岗位自我介绍，并无条件包含 `config.resume_policy.required_claim_ids`。当前全局基线要求把 Agent Harness 明确归类为研发提效：每份简历至少出现一次 `Agent Harness`，但可按 JD 决定放在个人概述、核心能力、工作经历或项目经历，以及是否展开 Evidence 等证据项目。不得为压缩篇幅删除该主题，应先压缩重复或弱相关证据。
 3. 项目经历由素材中的强证据自然组织，不强制统一的“技术栈／项目简介／工作内容与成果”结构、分类标签、条目数或先后顺序；技术名词必须进入具体动作、机制或验证语境。
 4. 岗位自我介绍保存到：
 
@@ -52,6 +52,7 @@ description: 为一个明确 opportunity 生成岗位简历、岗位自我介绍
 
 - state lint；
 - 简历和自我介绍 manifest 的 claim ID 集是否一致；
+- `resume_policy.required_artifact_types` 的 manifest 是否都包含 required claims，可读文本是否至少命中一个 `content_markers_any`；
 - 是否引用 non-confirmed claim；
 - 自我介绍非空白字符和预计朗读时长；
 - DOCX 占位符、模板基线错误和视觉布局；
@@ -91,7 +92,7 @@ python ../interview-package/scripts/oral_time.py <self-introduction.md> --sectio
 
 - opportunity 已映射且只使用 confirmed claims；
 - 主项目符合 `references/source-grounded-project-writing.md`：模板只提供视觉样式，项目内容由素材和 selected confirmed claims 决定；
-- 简历与自我介绍的事实、职责、完成状态和限制一致；
+- 简历与自我介绍的事实、职责、完成状态和限制一致，并通过全局 `resume_policy` Gate；
 - 自我介绍用能力主线串起岗位简历中的全部主项目，包含独立提取词，并通过正文时长和口语化检查；
 - DOCX（如有）通过 OfficeCLI 与视觉验证；
 - manifests、opportunity artifacts 和 stage 已更新；

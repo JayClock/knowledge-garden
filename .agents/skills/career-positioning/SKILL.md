@@ -10,7 +10,7 @@ description: 基于 confirmed career claims 建立长期职业定位，或把具
 ## 开始前
 
 1. 读取 `../career-assets/references/state-schema.md` 和 `../career-assets/references/fact-policy.md`。
-2. 读取 `.career/claims.json` 和 `positioning.json`；只有账本中的 claims 可以支撑定位判断。
+2. 读取 `.career/claims.json`、`positioning.json` 和 `config.json.resume_policy`；只有账本中的 claims 可以支撑定位判断。
 3. 具体岗位必须取得公司、岗位、JD 或明确能力要求；没有这些信息时只讨论长期定位，不制造岗位契合度。
 4. 检查 Git 状态，未经授权不创建 opportunity 或修改定位。
 
@@ -39,7 +39,8 @@ description: 基于 confirmed career claims 建立长期职业定位，或把具
 2. 将 JD 收敛为 3～5 个核心要求，区分 `must`、`important`、`optional`。
 3. 为每个要求关联 confirmed claim IDs，并记录直接证据、可迁移证据或 gap。
 4. 选择能够形成完整证明链的项目，不以技术关键词数量决定优先级。
-5. 写入 `opportunity.json`；完成映射后将 stage 从 `intake` 更新为 `mapped`。
+5. 正式投递机会无条件把 `config.resume_policy.required_claim_ids` 中的 confirmed claims 加入 `selected_claim_ids`；这是跨岗位简历基线，不因 JD 相关性较弱而删除，具体位置、篇幅和证据项目可以调整。
+6. 写入 `opportunity.json`；完成映射后将 stage 从 `intake` 更新为 `mapped`。
 
 ### Sensors
 
@@ -87,7 +88,7 @@ python ../career-assets/scripts/state_lint.py --state-dir <state-dir> --repo-roo
 
 - positioning 有 confirmed claim 支撑，或明确保持 candidate；
 - opportunity 的核心要求已映射；
-- selected claims 均 confirmed；
+- selected claims 均 confirmed，且正式投递机会包含 `resume_policy.required_claim_ids`；
 - gap 没有被营销措辞掩盖；
 - state lint 通过；
 - 下一阶段和项目优先级明确。
