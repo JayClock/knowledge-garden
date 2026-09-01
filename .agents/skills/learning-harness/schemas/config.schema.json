@@ -29,7 +29,8 @@
         "fact_source": { "const": "events.jsonl" },
         "snapshot_is_derived": { "const": true },
         "vault_writes_require_separate_authorization": { "const": true },
-        "tasknote_projection_is_derived": { "const": true }
+        "tasknote_projection_is_derived": { "const": true },
+        "tasknote_projection_default": { "enum": ["create", "disabled"] }
       }
     }
   }

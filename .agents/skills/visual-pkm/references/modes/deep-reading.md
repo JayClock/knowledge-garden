@@ -1,6 +1,6 @@
 # 人类深读与视觉综合教练
 
-> Mode ID：`deep-reading`。本文件只在 `visual-pkm` 选择该模式后完整加载。通用 Human First、写入授权和 Learning Harness handoff 由 `visual-pkm/SKILL.md` 统一管理。
+> Mode ID：`deep-reading`。本文件只在 `visual-pkm` 选择该模式后完整加载。通用 Human First、写入授权和 Learning Harness action result 由 `visual-pkm/SKILL.md` 统一管理。
 
 ## 目标
 
@@ -119,7 +119,7 @@ AI 建议，待确认：遗漏／替代解释／风险
 - 是否帮助回答一个真实持续问题；
 - 是否值得成为独立卡，而不只是章节摘录。
 
-需要概念视觉时，带着用户命题进入 `visual-pkm` 的 `concept-visualization` 模式；用户先围绕命题列出 3–5 个关键词，AI 再扩展联想，第 3 步由 AI 逐一解释五种框架怎样组织当前信息和各自突出什么，再由用户选择；第 4 步固定生成实际图像 HTML 供用户预览；第 5 步经授权初始化现有或新建知识卡的 Excalidraw Drawing，再由用户在该笔记中模仿、重组并画第一张草图。
+需要概念视觉时，带着用户命题进入 `visual-pkm` 的 `concept-visualization` 模式；用户指定现有知识卡或确认新卡标题，并尽可能用文字描述主体、动作、关系、构图、样式和颜色。AI 说明或选择视觉框架，形成完整 Visual Spec，并在用户要求生成后通过 Excalidraw 插件直接写入 Visual Main Note。用户查看成品后用文字反馈；成品确认后由 AI 自动判断并落库可复用 icon。
 
 ### 6. 写入 Vault
 

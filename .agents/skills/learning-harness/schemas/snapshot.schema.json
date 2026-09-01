@@ -4,7 +4,7 @@
   "title": "Derived Learning Harness Snapshot",
   "type": "object",
   "additionalProperties": false,
-  "required": ["project_id", "derived_from_seq", "status", "cursor", "units", "claims", "attempts", "blockers", "workflows", "last_session_at", "completion", "last_event_at", "generated_at", "next_action"],
+  "required": ["project_id", "derived_from_seq", "status", "cursor", "units", "claims", "attempts", "blockers", "workflows", "last_session_at", "completion", "last_event_at", "generated_at", "next_command"],
   "properties": {
     "project_id": { "type": "string" },
     "derived_from_seq": { "type": "integer", "minimum": 0 },
@@ -19,6 +19,6 @@
     "completion": { "type": "object" },
     "last_event_at": { "type": ["string", "null"] },
     "generated_at": { "type": "string" },
-    "next_action": { "type": ["object", "null"] }
+    "next_command": { "anyOf": [{ "$ref": "command.schema.json" }, { "type": "null" }] }
   }
 }

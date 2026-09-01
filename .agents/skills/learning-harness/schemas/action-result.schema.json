@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-garden.local/learning/action-result.schema.json",
+  "title": "Visual PKM Action Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["command_id", "based_on_seq", "project_id", "skill", "mode", "action", "subject", "status", "observations", "gaps", "artifact_paths", "open_questions", "workflow_checkpoint", "needs_user_decision"],
+  "properties": {
+    "command_id": { "type": "string", "pattern": "^cmd-[0-9]{8}$" },
+    "based_on_seq": { "type": "integer", "minimum": 0 },
+    "project_id": { "$ref": "#/$defs/id" },
+    "skill": { "const": "visual-pkm" },
+    "mode": { "enum": ["deep-reading", "concept-visualization", "spatial-mapping", "idea-integration", "knowledge-exploration", "narrative-composition", "system-review"] },
+    "action": { "$ref": "#/$defs/id" },
+    "subject": { "$ref": "#/$defs/subject" },
+    "status": { "enum": ["passed", "partial", "blocked", "needs_user_decision"] },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "subject", "payload", "evidence_refs", "caused_by"],
+        "properties": {
+          "type": { "enum": ["expression_qualified", "evidence_checked", "attempt_recorded", "blocker_added"] },
+          "subject": { "$ref": "#/$defs/subject" },
+          "payload": { "type": "object" },
+          "evidence_refs": { "type": "array", "items": { "$ref": "#/$defs/fileRef" } },
+          "caused_by": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "gaps": { "type": "array", "items": { "type": "string" } },
+    "artifact_paths": { "type": "array", "items": { "type": "string" } },
+    "open_questions": { "type": "array", "items": { "type": "string" } },
+    "workflow_checkpoint": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["id", "status", "step", "data"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "status": { "enum": ["pending", "in_progress", "blocked", "complete", "cancelled"] },
+        "step": { "type": "string", "minLength": 1 },
+        "data": { "type": "object" }
+      }
+    },
+    "needs_user_decision": { "type": "boolean" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": { "enum": ["project", "unit", "claim", "attempt", "blocker", "workflow"] },
+        "id": { "$ref": "#/$defs/id" }
+      }
+    },
+    "fileRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "path", "locator"],
+      "properties": {
+        "type": { "const": "file" },
+        "path": { "type": "string", "minLength": 1 },
+        "locator": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

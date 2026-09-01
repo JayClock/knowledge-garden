@@ -1,6 +1,6 @@
 # Idea Integration Board 教练
 
-> Mode ID：`idea-integration`。本文件只在 `visual-pkm` 选择该模式后完整加载。通用 Human First、写入授权和 Learning Harness handoff 由 `visual-pkm/SKILL.md` 统一管理。
+> Mode ID：`idea-integration`。本文件只在 `visual-pkm` 选择该模式后完整加载。通用 Human First、写入授权和 Learning Harness action result 由 `visual-pkm/SKILL.md` 统一管理。
 
 ## 目标
 

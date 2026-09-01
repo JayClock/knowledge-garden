@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-garden.local/learning/command.schema.json",
+  "title": "Learning Harness Command",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "based_on_seq", "skill", "action", "subject", "instruction", "reason"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^cmd-[0-9]{8}$" },
+    "based_on_seq": { "type": "integer", "minimum": 0 },
+    "skill": { "enum": ["learning-harness", "visual-pkm"] },
+    "mode": { "enum": ["deep-reading", "concept-visualization", "spatial-mapping", "idea-integration", "knowledge-exploration", "narrative-composition", "system-review"] },
+    "action": { "$ref": "#/$defs/id" },
+    "subject": { "$ref": "#/$defs/subject" },
+    "instruction": { "type": "string", "minLength": 1 },
+    "reason": { "type": "string", "minLength": 1 },
+    "workflow": { "type": "object" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": { "enum": ["project", "unit", "claim", "blocker", "workflow"] },
+        "id": { "$ref": "#/$defs/id" }
+      }
+    }
+  }
+}

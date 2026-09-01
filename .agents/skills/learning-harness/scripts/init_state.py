@@ -40,6 +40,7 @@ def main() -> int:
                 "snapshot_is_derived": True,
                 "vault_writes_require_separate_authorization": True,
                 "tasknote_projection_is_derived": True,
+                "tasknote_projection_default": "create",
             },
         },
     )

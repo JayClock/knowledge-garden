@@ -1,4 +1,4 @@
-# TaskNotes／Bases 进度投影
+# TaskNotes／Bases 学习状态投影
 
 ## 目标
 
@@ -6,39 +6,43 @@ TaskNote 让用户查看和快速记录，但 `.learning/events.jsonl` 始终是
 
 TaskNote 展示：
 
-- 今天的当前来源、唯一下一步及原因；
+- 当前来源、外层生成的当前命令及原因；
 - 全部来源单元的 coverage、expression、evidence；
 - 用户命题和真实产物；
 - 最近检索／应用尝试；
 - 开放 blocker。
 
-## 同步
+## 创建与同步
+
+`record_progress.py init-project` 默认创建 `TaskNotes/Tasks/学习 - <title>.md`；只有用户明确要求不生成时才传 `--no-tasknote`。TaskNote 是可重建投影，不授权修改其他 Vault 内容。
+
+旧项目缺少投影或需要重建时运行：
 
 ```bash
 python <skill>/scripts/sync_tasknote.py --repo-root <git-root> --project-id <id>
 python <skill>/scripts/sync_tasknote.py --repo-root <git-root> --project-id <id> --apply
 ```
 
-首次 apply 属于 Vault 写入，需要明确授权。同步元数据保存在：
+同步元数据位于：
 
 ```text
 .learning/projects/<id>/projections/tasknote.json
 ```
 
-其中 `source_seq` 必须等于 TaskNote 内容对应的最后事件序号。`state_lint.py` 会报告过期投影。
+`source_seq` 必须等于 TaskNote 内容对应的最后事件序号。启用投影后，每次事件成功提交并通过 lint 后刷新同一文件。`state_lint.py` 会报告过期投影。
 
 ## 字段所有权
 
-脚本管理：
+脚本拥有全部 `learning*` 字段，并写入：
 
-- `status`
 - `learningId`
 - `learningStatus`
 - `learningActivity`
 - `learningCurrentUnit`
-- `learningNextSkill`
-- `learningNextMode`
-- `learningNextAction`
+- `learningCommandId`
+- `learningCommandSkill`
+- `learningCommandMode`
+- `learningCommandAction`
 - `learningLastEvent`
 - `learningSourceReady`
 - `learningClaimsReady`
@@ -47,11 +51,11 @@ python <skill>/scripts/sync_tasknote.py --repo-root <git-root> --project-id <id>
 - `learningApplication`
 - `learningStateSeq`
 
-用户／TaskNotes 管理 priority、scheduled、due、pomodoros、时间字段和用户备注。脚本只替换 managed block 和以上字段。
+用户／TaskNotes 管理 priority、scheduled、due、pomodoros、时间字段和用户备注。同步只替换 managed block、`status` 和 `learning*` 字段。
 
 ## 进度收件箱
 
-用户可以在 TaskNote 的用户区追加：
+用户可以在 TaskNote 用户区追加：
 
 ```markdown
 - [ ] lesson-03 | coverage=read

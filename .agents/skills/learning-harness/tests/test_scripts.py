@@ -13,7 +13,7 @@ RECORD = SKILL_DIR / "scripts" / "record_progress.py"
 STATUS = SKILL_DIR / "scripts" / "learning_status.py"
 LINT = SKILL_DIR / "scripts" / "state_lint.py"
 REBUILD = SKILL_DIR / "scripts" / "rebuild_snapshot.py"
-HANDOFF = SKILL_DIR / "scripts" / "apply_handoff.py"
+APPLY_RESULT = SKILL_DIR / "scripts" / "apply_action_result.py"
 SYNC = SKILL_DIR / "scripts" / "sync_tasknote.py"
 INGEST = SKILL_DIR / "scripts" / "ingest_tasknote.py"
 
@@ -63,12 +63,49 @@ class LearningHarnessTest(unittest.TestCase):
             self.assertTrue((project / "snapshot.json").exists())
             self.assertFalse((project / "progress.json").exists())
             self.assertFalse((project / "workflows").exists())
+            projection = json.loads((project / "projections" / "tasknote.json").read_text(encoding="utf-8"))
+            tasknote = root / projection["path"]
+            self.assertTrue(tasknote.exists())
+            self.assertEqual(tasknote.name, "学习 - Course Loop.md")
+            self.assertEqual(projection["source_seq"], 1)
             plan = json.loads((project / "plan.json").read_text(encoding="utf-8"))
             self.assertEqual(plan["completion_policy"]["unit"]["required"], ["coverage"])
             self.assertEqual(
                 plan["completion_policy"]["project"]["required"],
                 ["source_grounding", "retrieval", "application"],
             )
+            snapshot = json.loads((project / "snapshot.json").read_text(encoding="utf-8"))
+            self.assertEqual(snapshot["next_command"]["skill"], "learning-harness")
+            self.assertEqual(snapshot["next_command"]["action"], "record-coverage")
+
+    def test_init_project_can_explicitly_skip_tasknote_projection(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.initialize(root)
+            source = self.create_source(root)
+            result = self.run_script(
+                RECORD,
+                "--repo-root",
+                str(root),
+                "init-project",
+                "--project-id",
+                "course-without-tasknote",
+                "--title",
+                "Course Without TaskNote",
+                "--focus-question",
+                "How can this project avoid a Vault projection?",
+                "--source",
+                str(source.parent),
+                "--unit",
+                f"lesson-01={source}",
+                "--no-tasknote",
+            )
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            payload = json.loads(result.stdout)
+            self.assertEqual(payload["tasknote_projection"]["status"], "disabled")
+            project = root / ".learning" / "projects" / "course-without-tasknote"
+            self.assertFalse((project / "projections" / "tasknote.json").exists())
+            self.assertFalse((root / "content" / "TaskNotes" / "Tasks" / "学习 - Course Without TaskNote.md").exists())
 
     def test_coverage_does_not_imply_expression_or_understanding(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -95,8 +132,8 @@ class LearningHarnessTest(unittest.TestCase):
             self.assertEqual(unit["expression_status"], "not_requested")
             self.assertEqual(unit["evidence_status"], "not_requested")
             self.assertEqual(summary["completion"]["unit_ready"], 1)
-            self.assertEqual(summary["next_action"]["mode"], "deep-reading")
-            self.assertIn("关键", summary["next_action"]["action"])
+            self.assertEqual(summary["next_command"]["skill"], "learning-harness")
+            self.assertEqual(summary["next_command"]["action"], "capture-key-understanding")
 
     def test_evidence_check_only_starts_after_human_expression(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -258,12 +295,12 @@ class LearningHarnessTest(unittest.TestCase):
             lint = self.run_script(LINT, "--repo-root", str(root))
             self.assertEqual(lint.returncode, 0, lint.stdout + lint.stderr)
 
-    def test_handoff_is_atomic_and_suggested_next_is_not_state(self) -> None:
+    def test_action_result_must_match_current_command_and_state_seq(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self.initialize(root)
             source = self.create_source(root)
-            self.init_project(root, source)
+            project = self.init_project(root, source)
             captured = self.run_script(
                 RECORD,
                 "--repo-root",
@@ -275,47 +312,95 @@ class LearningHarnessTest(unittest.TestCase):
                 "lesson-01",
                 "--text",
                 "State may connect the two loops.",
+                "--coverage",
+                "read",
             )
             self.assertEqual(captured.returncode, 0, captured.stdout + captured.stderr)
-            handoff_path = root / "handoff.json"
-            handoff_path.write_text(
-                json.dumps(
+            command = json.loads(self.run_script(STATUS, "--repo-root", str(root)).stdout)["next_command"]
+            self.assertEqual(command["action"], "qualify-expression")
+
+            result_path = root / "action-result.json"
+            qualification = {
+                "command_id": command["id"],
+                "based_on_seq": command["based_on_seq"],
+                "project_id": "course-loop",
+                "skill": command["skill"],
+                "mode": command["mode"],
+                "action": command["action"],
+                "subject": command["subject"],
+                "status": "passed",
+                "observations": [
                     {
-                        "project_id": "course-loop",
-                        "unit_id": "lesson-01",
-                        "skill": "visual-pkm",
-                        "mode": "deep-reading",
-                        "action": "verify-expression",
-                        "observations": [
-                            {
-                                "type": "expression_qualified",
-                                "subject": {"kind": "unit", "id": "lesson-01"},
-                                "payload": {"result": "qualified"},
-                                "evidence_refs": [],
-                                "caused_by": [],
-                            },
-                            {
-                                "type": "evidence_checked",
-                                "subject": {"kind": "unit", "id": "lesson-01"},
-                                "payload": {"result": "partial", "open_questions": ["What is persisted?"]},
-                                "evidence_refs": [{"type": "file", "path": str(source), "locator": None}],
-                                "caused_by": [],
-                            }
-                        ],
-                        "artifact_paths": [],
-                        "open_questions": [],
-                        "workflow": None,
-                        "suggested_next": {"skill": "learning-harness", "action": "ignore me"},
-                        "needs_user_decision": False,
+                        "type": "expression_qualified",
+                        "subject": {"kind": "unit", "id": "lesson-01"},
+                        "payload": {"result": "qualified"},
+                        "evidence_refs": [],
+                        "caused_by": [],
                     }
-                ),
-                encoding="utf-8",
-            )
-            result = self.run_script(HANDOFF, "--repo-root", str(root), "--file", str(handoff_path))
-            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-            payload = json.loads(result.stdout)
-            self.assertTrue(payload["suggested_next_ignored"])
-            self.assertNotEqual(payload["next_action"]["action"], "ignore me")
+                ],
+                "gaps": [],
+                "artifact_paths": [],
+                "open_questions": [],
+                "workflow_checkpoint": None,
+                "needs_user_decision": False,
+            }
+            result_path.write_text(json.dumps(qualification), encoding="utf-8")
+            applied = self.run_script(APPLY_RESULT, "--repo-root", str(root), "--file", str(result_path))
+            self.assertEqual(applied.returncode, 0, applied.stdout + applied.stderr)
+            payload = json.loads(applied.stdout)
+            self.assertEqual(payload["command_id"], command["id"])
+            self.assertEqual(payload["next_command"]["action"], "verify-expression")
+
+            event_count = len((project / "events.jsonl").read_text(encoding="utf-8").splitlines())
+            stale = self.run_script(APPLY_RESULT, "--repo-root", str(root), "--file", str(result_path))
+            self.assertNotEqual(stale.returncode, 0)
+            self.assertIn("does not match current command", stale.stderr)
+            self.assertEqual(len((project / "events.jsonl").read_text(encoding="utf-8").splitlines()), event_count)
+
+            verify = json.loads(self.run_script(STATUS, "--repo-root", str(root)).stdout)["next_command"]
+            unrelated = {
+                **qualification,
+                "command_id": verify["id"],
+                "based_on_seq": verify["based_on_seq"],
+                "action": verify["action"],
+                "subject": verify["subject"],
+                "observations": [
+                    {
+                        "type": "coverage_recorded",
+                        "subject": {"kind": "unit", "id": "lesson-01"},
+                        "payload": {"coverage": "revisited"},
+                        "evidence_refs": [],
+                        "caused_by": [],
+                    }
+                ],
+            }
+            result_path.write_text(json.dumps(unrelated), encoding="utf-8")
+            rejected = self.run_script(APPLY_RESULT, "--repo-root", str(root), "--file", str(result_path))
+            self.assertNotEqual(rejected.returncode, 0)
+            self.assertIn("not allowed for command action", rejected.stderr)
+
+            evidence_result = {
+                **qualification,
+                "command_id": verify["id"],
+                "based_on_seq": verify["based_on_seq"],
+                "action": verify["action"],
+                "subject": verify["subject"],
+                "status": "partial",
+                "observations": [
+                    {
+                        "type": "evidence_checked",
+                        "subject": {"kind": "unit", "id": "lesson-01"},
+                        "payload": {"result": "partial", "open_questions": ["What is persisted?"]},
+                        "evidence_refs": [{"type": "file", "path": str(source), "locator": None}],
+                        "caused_by": [],
+                    }
+                ],
+                "gaps": ["The persistence boundary is unclear."],
+            }
+            result_path.write_text(json.dumps(evidence_result), encoding="utf-8")
+            checked = self.run_script(APPLY_RESULT, "--repo-root", str(root), "--file", str(result_path))
+            self.assertEqual(checked.returncode, 0, checked.stdout + checked.stderr)
+            self.assertEqual(json.loads(checked.stdout)["next_command"]["action"], "verify-expression")
 
     def test_tasknote_projection_and_inbox_preserve_user_content(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -368,13 +453,14 @@ class LearningHarnessTest(unittest.TestCase):
                 "--status",
                 "in_progress",
                 "--step",
-                "step-4-preview",
+                "step-4-generate",
                 "--data",
-                '{"preview_status":"needs_regeneration"}',
+                '{"target_note_mode":"existing","target_note_path":"Knowledge/Notes/示例.md","visual_id":"example-visual","framework":"过程式","style_expression_ref":"evt-00000012"}',
             )
             self.assertEqual(workflow.returncode, 0, workflow.stdout + workflow.stderr)
             status = json.loads(self.run_script(STATUS, "--repo-root", str(root)).stdout)
-            self.assertEqual(status["next_action"]["mode"], "concept-visualization")
+            self.assertEqual(status["next_command"]["mode"], "concept-visualization")
+            self.assertEqual(status["next_command"]["action"], "resume-workflow")
             blocker = self.run_script(
                 RECORD,
                 "--repo-root",
@@ -392,8 +478,9 @@ class LearningHarnessTest(unittest.TestCase):
             self.assertEqual(blocker.returncode, 0, blocker.stdout + blocker.stderr)
             blocker_id = json.loads(blocker.stdout)["blocker_id"]
             blocked = json.loads(self.run_script(STATUS, "--repo-root", str(root)).stdout)
-            self.assertEqual(blocked["next_action"]["skill"], "learning-harness")
-            self.assertIn("解除", blocked["next_action"]["action"])
+            self.assertEqual(blocked["next_command"]["skill"], "learning-harness")
+            self.assertEqual(blocked["next_command"]["action"], "resolve-blocker")
+            self.assertIn("解除", blocked["next_command"]["instruction"])
             resolved = self.run_script(
                 RECORD,
                 "--repo-root",
@@ -408,7 +495,8 @@ class LearningHarnessTest(unittest.TestCase):
             )
             self.assertEqual(resolved.returncode, 0, resolved.stdout + resolved.stderr)
             resumed = json.loads(self.run_script(STATUS, "--repo-root", str(root)).stdout)
-            self.assertEqual(resumed["next_action"]["mode"], "concept-visualization")
+            self.assertEqual(resumed["next_command"]["mode"], "concept-visualization")
+            self.assertEqual(resumed["next_command"]["action"], "resume-workflow")
             self.assertFalse((root / ".learning" / "projects" / "course-loop" / "workflows").exists())
 
     def test_schema_files_are_valid_json(self) -> None:

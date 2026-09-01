@@ -34,6 +34,7 @@ from learning_state_lib import ( # pyright: ignore[reportMissingImports]
     validate_identifier,
     write_json_atomic,
 )
+from sync_tasknote import project_tasknote  # pyright: ignore[reportMissingImports]
 
 
 def parse_unit(value: str, repo_root: Path) -> dict[str, Any]:
@@ -86,8 +87,28 @@ def event_result(records: list[dict[str, Any]], snapshot: dict[str, Any]) -> dic
     return {
         "events": [record["id"] for record in records],
         "state_seq": snapshot["derived_from_seq"],
-        "next_action": snapshot.get("next_action"),
+        "next_command": snapshot.get("next_command"),
     }
+
+
+def create_default_tasknote(
+    repo_root: Path,
+    state_dir: Path,
+    project_id: str,
+    *,
+    disabled: bool,
+) -> dict[str, Any]:
+    config = read_json(state_dir / "config.json")
+    policy = config.get("state_policy", {})
+    default = policy.get("tasknote_projection_default", "create")
+    if disabled or default == "disabled":
+        return {"status": "disabled"}
+    try:
+        projection = project_tasknote(repo_root, state_dir, project_id, apply=True)
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        return {"status": "error", "error": str(exc)}
+    projection["status"] = "created" if projection.get("would_create") else "updated"
+    return projection
 
 
 def initialize_project(args: argparse.Namespace, repo_root: Path, state_dir: Path) -> dict[str, Any]:
@@ -133,7 +154,14 @@ def initialize_project(args: argparse.Namespace, repo_root: Path, state_dir: Pat
         ],
     )
     set_active_project(state_dir, project_id if args.status not in {"complete", "archived"} else None)
-    return {"project_id": project_id, "project_dir": str(directory), **event_result(records, snapshot)}
+    result = {"project_id": project_id, "project_dir": str(directory), **event_result(records, snapshot)}
+    result["tasknote_projection"] = create_default_tasknote(
+        repo_root,
+        state_dir,
+        project_id,
+        disabled=args.no_tasknote,
+    )
+    return result
 
 
 def add_unit(args: argparse.Namespace, repo_root: Path, state_dir: Path) -> dict[str, Any]:
@@ -401,7 +429,10 @@ def update_workflow(args: argparse.Namespace, state_dir: Path) -> dict[str, Any]
     workflow_id = validate_identifier(args.workflow_id, "workflow_id")
     data: dict[str, Any] = {}
     if args.data:
-        parsed = json.loads(args.data)
+        try:
+            parsed = json.loads(args.data)
+        except json.JSONDecodeError as exc:
+            raise ValueError("--data must be valid JSON") from exc
         if not isinstance(parsed, dict):
             raise ValueError("--data must decode to an object")
         data = parsed
@@ -506,6 +537,11 @@ def build_parser() -> argparse.ArgumentParser:
     init.add_argument("--project-requirement", action="append", choices=sorted(PROJECT_REQUIREMENTS))
     init.add_argument("--constraint", action="append", default=[])
     init.add_argument("--status", choices=sorted(PROJECT_STATUSES), default="active")
+    init.add_argument(
+        "--no-tasknote",
+        action="store_true",
+        help="Do not create the default TaskNote projection for this learning project",
+    )
 
     add = commands.add_parser("add-unit")
     add.add_argument("--project-id", required=True)

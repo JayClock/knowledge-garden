@@ -52,6 +52,7 @@ ALLOWED_MODES = {
     "idea-integration",
     "knowledge-exploration",
     "narrative-composition",
+    "system-review",
 }
 UNIT_REQUIREMENTS = {"coverage"}
 CLAIM_REQUIREMENTS = {"distillation_decision"}
@@ -281,25 +282,58 @@ def _project_requirement_satisfied(
     return any(_attempt_satisfies(requirement, attempt) for attempt in attempts)
 
 
-def derive_next_action(plan: dict[str, Any], snapshot: dict[str, Any]) -> dict[str, Any] | None:
+def _command(
+    snapshot: dict[str, Any],
+    *,
+    skill: str,
+    action: str,
+    subject: dict[str, str],
+    instruction: str,
+    reason: str,
+    mode: str | None = None,
+    workflow: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    sequence = int(snapshot.get("derived_from_seq", 0))
+    command: dict[str, Any] = {
+        "id": f"cmd-{sequence:08d}",
+        "based_on_seq": sequence,
+        "skill": skill,
+        "action": action,
+        "subject": subject,
+        "instruction": instruction,
+        "reason": reason,
+    }
+    if mode is not None:
+        command["mode"] = mode
+    if workflow is not None:
+        command["workflow"] = workflow
+    return command
+
+
+def derive_next_command(plan: dict[str, Any], snapshot: dict[str, Any]) -> dict[str, Any] | None:
+    project_subject = {"kind": "project", "id": plan["id"]}
     if snapshot.get("status") in {"complete", "archived"}:
         return None
     if snapshot.get("status") == "paused":
-        return {
-            "skill": "learning-harness",
-            "action": "恢复项目后，从事件派生的当前游标继续",
-            "reason": "项目当前处于 paused 状态",
-            "subject": {"kind": "project", "id": plan["id"]},
-        }
+        return _command(
+            snapshot,
+            skill="learning-harness",
+            action="resume-project",
+            subject=project_subject,
+            instruction="取得用户确认后恢复项目，再从事件派生的当前游标继续",
+            reason="项目当前处于 paused 状态",
+        )
     blockers = [item for item in snapshot.get("blockers", []) if item.get("status") == "open"]
     if blockers:
         blocker = blockers[-1]
-        return {
-            "skill": "learning-harness",
-            "action": f"解除已记录阻塞：{blocker['reason']}",
-            "reason": "继续推进前需要先解决并关闭该阻塞",
-            "subject": blocker.get("subject") or {"kind": "project", "id": plan["id"]},
-        }
+        return _command(
+            snapshot,
+            skill="learning-harness",
+            action="resolve-blocker",
+            subject=blocker.get("subject") or project_subject,
+            instruction=f"解除已记录阻塞：{blocker['reason']}",
+            reason="继续推进前需要先解决并关闭该阻塞",
+        )
 
     active_workflows = [
         workflow
@@ -307,54 +341,69 @@ def derive_next_action(plan: dict[str, Any], snapshot: dict[str, Any]) -> dict[s
         if workflow.get("status") not in {"complete", "cancelled"}
     ]
     if active_workflows:
-        workflow = sorted(active_workflows, key=lambda item: (item.get("updated_at") or "", item.get("id") or ""), reverse=True)[0]
-        return {
-            "skill": "visual-pkm",
-            "mode": workflow["mode"],
-            "action": f"恢复 workflow {workflow['id']}，从 {workflow['step']} 继续",
-            "reason": "存在未完成的可恢复工作流",
-            "subject": {"kind": "workflow", "id": workflow["id"]},
-        }
+        workflow = sorted(
+            active_workflows,
+            key=lambda item: (item.get("updated_at") or "", item.get("id") or ""),
+            reverse=True,
+        )[0]
+        return _command(
+            snapshot,
+            skill="visual-pkm",
+            mode=workflow["mode"],
+            action="resume-workflow",
+            subject={"kind": "workflow", "id": workflow["id"]},
+            instruction=f"恢复 workflow {workflow['id']}，从 {workflow['step']} 执行一个局部动作",
+            reason="存在未完成的可恢复工作流",
+            workflow=workflow,
+        )
 
     unit_required = set(plan.get("completion_policy", {}).get("unit", {}).get("required", UNIT_REQUIREMENTS))
     units = snapshot.get("units", [])
     if not units:
-        return {
-            "skill": "learning-harness",
-            "action": "添加第一个可恢复的来源单元",
-            "reason": "项目计划尚无来源单元",
-            "subject": {"kind": "project", "id": plan["id"]},
-        }
+        return _command(
+            snapshot,
+            skill="learning-harness",
+            action="add-source-unit",
+            subject=project_subject,
+            instruction="请用户添加第一个可恢复的来源单元",
+            reason="项目计划尚无来源单元",
+        )
     current_id = snapshot.get("cursor", {}).get("unit_id")
-    ordered = sorted(units, key=lambda item: (item.get("id") != current_id, [u["id"] for u in units].index(item["id"])))
+    unit_order = [unit["id"] for unit in units]
+    ordered = sorted(units, key=lambda item: (item.get("id") != current_id, unit_order.index(item["id"])))
     claim_required = set(plan.get("completion_policy", {}).get("claim", {}).get("required", CLAIM_REQUIREMENTS))
     for unit in ordered:
         subject = {"kind": "unit", "id": unit["id"]}
         if "coverage" in unit_required and unit.get("coverage") not in {"read", "revisited"}:
-            return {
-                "skill": "visual-pkm",
-                "mode": "deep-reading",
-                "action": "亲自阅读当前单元并记录阅读范围；只有准备核验意义时才留下复述、疑问或候选命题",
-                "reason": "当前来源单元尚未完成阅读覆盖",
-                "subject": subject,
-            }
+            return _command(
+                snapshot,
+                skill="learning-harness",
+                action="record-coverage",
+                subject=subject,
+                instruction="请用户亲自阅读当前单元，再把真实阅读范围记录为 coverage；未进入语义核验时不要求表达",
+                reason="当前来源单元尚未完成阅读覆盖",
+            )
         if unit.get("expression_refs"):
             if unit.get("expression_status") != "qualified":
-                return {
-                    "skill": "visual-pkm",
-                    "mode": "deep-reading",
-                    "action": "判断已记录表达是否构成用户自己的认知起点",
-                    "reason": "该单元已经进入语义核验，但用户表达尚未确认",
-                    "subject": subject,
-                }
+                return _command(
+                    snapshot,
+                    skill="visual-pkm",
+                    mode="deep-reading",
+                    action="qualify-expression",
+                    subject=subject,
+                    instruction="判断已记录表达是否构成用户自己的认知起点并报告结果",
+                    reason="该单元已经进入语义核验，但用户表达尚未确认",
+                )
             if unit.get("evidence_status") not in {"supported", "supported_with_boundary"}:
-                return {
-                    "skill": "visual-pkm",
-                    "mode": "deep-reading",
-                    "action": "对照来源核验用户表达、条件、边界和可能误读",
-                    "reason": f"该语义动作的证据核对状态为 {unit.get('evidence_status')}",
-                    "subject": subject,
-                }
+                return _command(
+                    snapshot,
+                    skill="visual-pkm",
+                    mode="deep-reading",
+                    action="verify-expression",
+                    subject=subject,
+                    instruction="对照来源核验用户表达、条件、边界和可能误读并报告证据",
+                    reason=f"该语义动作的证据核对状态为 {unit.get('evidence_status')}",
+                )
         unresolved = [
             claim
             for claim in snapshot.get("claims", [])
@@ -362,23 +411,25 @@ def derive_next_action(plan: dict[str, Any], snapshot: dict[str, Any]) -> dict[s
         ]
         if unresolved:
             claim = unresolved[0]
-            return {
-                "skill": "visual-pkm",
-                "mode": "deep-reading",
-                "action": "决定该用户命题应新建知识卡、更新已有卡或跳过沉淀",
-                "reason": "该单元产生了尚未处理的用户候选命题",
-                "subject": {"kind": "claim", "id": claim["id"]},
-            }
+            return _command(
+                snapshot,
+                skill="learning-harness",
+                action="record-distillation-decision",
+                subject={"kind": "claim", "id": claim["id"]},
+                instruction="请用户决定该命题应新建知识卡、更新已有卡或跳过沉淀，并记录真实产物",
+                reason="该单元产生了尚未处理的用户候选命题",
+            )
 
     for claim in snapshot.get("claims", []):
         if not _claim_ready(claim, claim_required):
-            return {
-                "skill": "visual-pkm",
-                "mode": "deep-reading",
-                "action": "决定该用户命题应新建知识卡、更新已有卡或跳过沉淀",
-                "reason": "存在尚未处理的用户候选命题",
-                "subject": {"kind": "claim", "id": claim["id"]},
-            }
+            return _command(
+                snapshot,
+                skill="learning-harness",
+                action="record-distillation-decision",
+                subject={"kind": "claim", "id": claim["id"]},
+                instruction="请用户决定该命题应新建知识卡、更新已有卡或跳过沉淀，并记录真实产物",
+                reason="存在尚未处理的用户候选命题",
+            )
 
     required = list(plan.get("completion_policy", {}).get("project", {}).get("required", PROJECT_REQUIREMENTS))
     attempts = snapshot.get("attempts", [])
@@ -386,35 +437,42 @@ def derive_next_action(plan: dict[str, Any], snapshot: dict[str, Any]) -> dict[s
         if _project_requirement_satisfied(requirement, units, attempts):
             continue
         if requirement == "source_grounding":
-            return {
-                "skill": "visual-pkm",
-                "mode": "deep-reading",
-                "action": "从已读来源中选择一个最关键或最不确定的理解，先用自己的话表达，再进行来源核验",
-                "reason": "项目尚无用户主导且经过来源核验的关键理解",
-                "subject": {"kind": "project", "id": plan["id"]},
-            }
+            return _command(
+                snapshot,
+                skill="learning-harness",
+                action="capture-key-understanding",
+                subject=project_subject,
+                instruction="请用户从已读来源中选择一个关键或不确定的理解，指定来源单元并用自己的话表达",
+                reason="项目尚无用户主导且经过来源核验的关键理解",
+            )
         if requirement == "retrieval":
-            return {
-                "skill": "visual-pkm",
-                "mode": "knowledge-exploration",
-                "action": "脱离来源完成一次复述、比较或反例测试，并记录真实结果",
-                "reason": "项目尚无成功的检索证据",
-                "subject": {"kind": "project", "id": plan["id"]},
-            }
+            return _command(
+                snapshot,
+                skill="visual-pkm",
+                mode="knowledge-exploration",
+                action="run-retrieval",
+                subject=project_subject,
+                instruction="请用户脱离来源完成一次复述、比较或反例测试，并报告真实结果",
+                reason="项目尚无成功的检索证据",
+            )
         if requirement == "application":
-            return {
-                "skill": "learning-harness",
-                "action": "在真实任务中应用本项目知识，并记录结果、失败与证据",
-                "reason": "项目尚无成功的真实应用证据",
-                "subject": {"kind": "project", "id": plan["id"]},
-            }
+            return _command(
+                snapshot,
+                skill="learning-harness",
+                action="record-application",
+                subject=project_subject,
+                instruction="请用户在真实任务中应用本项目知识，再记录结果、失败与证据",
+                reason="项目尚无成功的真实应用证据",
+            )
 
-    return {
-        "skill": "learning-harness",
-        "action": "请用户确认是否将项目标记为 complete",
-        "reason": "完成政策已经满足，但项目状态只能由用户确认",
-        "subject": {"kind": "project", "id": plan["id"]},
-    }
+    return _command(
+        snapshot,
+        skill="learning-harness",
+        action="confirm-completion",
+        subject=project_subject,
+        instruction="请用户确认是否将项目标记为 complete",
+        reason="完成政策已经满足，但项目状态只能由用户确认",
+    )
 
 
 def reduce_snapshot(plan: dict[str, Any], events: list[dict[str, Any]]) -> dict[str, Any]:
@@ -591,7 +649,7 @@ def reduce_snapshot(plan: dict[str, Any], events: list[dict[str, Any]]) -> dict[
         "last_event_at": events[-1]["at"] if events else None,
         "generated_at": now_iso(),
     }
-    snapshot["next_action"] = derive_next_action(plan, snapshot)
+    snapshot["next_command"] = derive_next_command(plan, snapshot)
     return snapshot
 
 
@@ -617,6 +675,6 @@ def status_summary(plan: dict[str, Any], snapshot: dict[str, Any]) -> dict[str, 
         "completion": snapshot.get("completion", {}),
         "last_session_at": snapshot.get("last_session_at"),
         "last_event_at": snapshot.get("last_event_at"),
-        "next_action": snapshot.get("next_action"),
+        "next_command": snapshot.get("next_command"),
         "state_seq": snapshot.get("derived_from_seq", 0),
     }

@@ -11,7 +11,7 @@ from learning_state_lib import active_project_id, load_project, resolve_state_di
 def markdown(summary: dict[str, Any]) -> str:
     current = summary.get("current_unit") or {}
     completion = summary.get("completion") or {}
-    next_action = summary.get("next_action") or {}
+    command = summary.get("next_command") or {}
     attempts = summary.get("attempts") or []
     lines = [
         f"# {summary.get('title') or summary.get('project_id')}",
@@ -29,12 +29,14 @@ def markdown(summary: dict[str, Any]) -> str:
         f"- 检索证据：{'已有' if completion.get('project_evidence', {}).get('retrieval') else '尚无'}",
         f"- 应用证据：{'已有' if completion.get('project_evidence', {}).get('application') else '尚无'}",
         "",
-        "## 唯一下一步",
+        "## 当前命令",
         "",
-        f"- Skill：`{next_action.get('skill') or '无'}`",
-        f"- Mode：`{next_action.get('mode') or '—'}`",
-        f"- 动作：{next_action.get('action') or '无'}",
-        f"- 原因：{next_action.get('reason') or '完成政策已满足或项目已结束'}",
+        f"- ID：`{command.get('id') or '无'}`",
+        f"- Skill：`{command.get('skill') or '无'}`",
+        f"- Mode：`{command.get('mode') or '—'}`",
+        f"- Action：`{command.get('action') or '无'}`",
+        f"- 执行说明：{command.get('instruction') or '无'}",
+        f"- 原因：{command.get('reason') or '完成政策已满足或项目已结束'}",
     ]
     blockers = [item for item in summary.get("blockers", []) if item.get("status") == "open"]
     if blockers:

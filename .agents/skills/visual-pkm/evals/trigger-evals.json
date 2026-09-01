@@ -15,7 +15,7 @@
     "mode": "concept-visualization"
   },
   {
-    "query": "我想把 Knowledge/Notes/反馈循环.md 做成 Visual Main Note，卡里已有我的核心观点；先读取它，再让我给第一批关键词。",
+    "query": "我想把 Knowledge/Notes/反馈循环.md 做成 Visual Main Note，卡里已有我的核心观点；读取后让我用文字描述视觉样式。",
     "should_trigger": true,
     "mode": "concept-visualization"
   },
@@ -75,7 +75,7 @@
     "mode": "spatial-mapping"
   },
   {
-    "query": "我画完第一版概念视觉后，真人第一眼把筛选理解成删除；请帮助我做 ETC 和歧义检查。",
+    "query": "AI 生成的概念视觉里，真人第一眼把筛选理解成删除；请根据我的文字反馈修改并检查歧义。",
     "should_trigger": true,
     "mode": "concept-visualization"
   },
