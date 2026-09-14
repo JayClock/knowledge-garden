@@ -5,6 +5,7 @@
   "opportunity_id": null,
   "generated_by": "interview-package",
   "claim_ids": [
+    "career.capability.progressive-architecture",
     "evidence.project.scope",
     "evidence.outer-loop.authority",
     "evidence.human-agent-boundary",
@@ -14,7 +15,8 @@
     "evidence.model-guidance-boundary",
     "evidence.ci-validation-boundary",
     "career.capability.validation-feedback",
-    "career.capability.ai-determinism"
+    "career.capability.ai-determinism",
+    "career.capability.contract-lifecycle"
   ],
   "status": "current"
 }

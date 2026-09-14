@@ -1,8 +1,7 @@
 {
   "schema_version": 1,
-  "artifact": "content/Knowledge/Outputs/简历回答逐字稿：多人实时协同的 AI 辅助领域建模平台.md",
-  "artifact_type": "interview_dossier",
-  "opportunity_id": null,
+  "artifact": "content/Knowledge/Outputs/15分钟：多人实时协同的 AI 辅助领域建模平台.md",
+  "artifact_type": "interview_script",
   "generated_by": "interview-package",
   "claim_ids": [
     "career.capability.progressive-architecture",
@@ -20,7 +19,8 @@
     "domain-modeling.xmlfragment-compatibility",
     "domain-modeling.collaboration-test-boundary",
     "career.capability.contract-lifecycle",
-    "domain-modeling.frontend-backend-contract"
+    "domain-modeling.frontend-backend-contract",
+    "career.positioning.full-flow-axis"
   ],
   "status": "current"
 }

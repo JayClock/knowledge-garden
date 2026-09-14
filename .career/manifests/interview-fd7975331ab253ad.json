@@ -1,11 +1,9 @@
 {
   "schema_version": 1,
-  "artifact": "content/Knowledge/Outputs/简历追问：低代码工作流引擎节点扩展系统.md",
-  "artifact_type": "interview_dossier",
-  "opportunity_id": null,
+  "artifact": "content/Knowledge/Outputs/15分钟：低代码平台.md",
+  "artifact_type": "interview_script",
   "generated_by": "interview-package",
   "claim_ids": [
-    "career.capability.progressive-architecture",
     "aiflow.project.scope",
     "aiflow.data-and-backend-boundary",
     "aiflow.telemetry.execution-correlation",
@@ -19,6 +17,7 @@
     "aiflow.reimplementation-boundary",
     "aiflow.result-boundary",
     "aiflow.visual-editor",
+    "career.positioning.full-flow-axis",
     "career.capability.contract-lifecycle"
   ],
   "status": "current"

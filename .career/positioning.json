@@ -1,17 +1,23 @@
 {
   "schema_version": 1,
   "market_title": "全栈偏前端的平台工程师",
-  "capability_axis": "全流工程师",
+  "capability_axis": "契约驱动的全流交付",
   "status": "confirmed",
   "base_claim_ids": [
     "career.experience.platform-engineering",
+    "career.positioning.full-flow-axis",
+    "career.capability.contract-lifecycle",
     "career.capability.complex-frontend",
     "career.capability.upstream-contracts",
+    "career.capability.association-object-modeling",
+    "career.capability.progressive-architecture",
     "career.capability.consumption-paths",
     "career.capability.validation-feedback",
     "career.capability.ai-determinism",
     "career.capability.agent-harness-efficiency",
     "figma-ai.project.scope",
+    "figma-ai.product-frontend-contract",
+    "domain-modeling.frontend-backend-contract",
     "domain-modeling.collaboration.direct",
     "docs-editor.project.scope",
     "hateoas.project.sdk",
@@ -38,6 +44,8 @@
     "Figma AI：内部实际使用人员、生成任务规模、端到端耗时、稳定性和质量改善数据",
     "协同建模平台：实际协作人数、使用频率、模型规模和同步延迟；若恢复客户材料，再补实际模型对象名、OpenAPI 审核项和可脱敏生成结果",
     "协同文档编辑器：实际文档规模、自动化测试、协同延迟、峰值连接数、断线重连和服务重启恢复验证；若确认公司、业务场景、使用者或生产结果，再归入对应时间线",
-    "Evidence：实际完成过的端到端 Iteration 数量、使用者范围、Pair／Showcase 运行记录与当前 main CI 恢复情况"
+    "Evidence：实际完成过的端到端 Iteration 数量、使用者范围、Pair／Showcase 运行记录与当前 main CI 恢复情况",
+    "渐进式架构：HATEOAS 旧客户端兼容矩阵、AI Flow 未知节点／插件失败降级、监控 SDK capability detection 与 fail-open、协同或 AI 服务不可用时的基础链路验证",
+    "契约主轴：领域模型到正式前后端接口契约的实际审核样本，以及设计 DSL 到前端组件实现的真实交付范围与消费记录"
   ]
 }

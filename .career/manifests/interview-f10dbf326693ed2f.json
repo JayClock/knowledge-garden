@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/简历追问：关联对象与领域模型实现边界.md",
+  "artifact_type": "interview_dossier",
+  "opportunity_id": null,
+  "generated_by": "interview-package",
+  "claim_ids": [
+    "career.capability.association-object-modeling"
+  ],
+  "status": "current"
+}

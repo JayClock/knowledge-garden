@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/简历追问：契约驱动的全流交付.md",
+  "artifact_type": "interview_script",
+  "generated_by": "interview-package",
+  "claim_ids": [
+    "career.positioning.market-title",
+    "career.positioning.full-flow-axis",
+    "career.capability.contract-lifecycle",
+    "career.capability.progressive-architecture",
+    "career.capability.consumption-paths",
+    "career.capability.validation-feedback",
+    "career.capability.ai-determinism",
+    "domain-modeling.project.scope",
+    "domain-modeling.frontend-backend-contract",
+    "domain-modeling.collaboration.direct",
+    "domain-modeling.model-driven-delivery",
+    "hateoas.project.sdk",
+    "hateoas.project.model-and-api",
+    "aiflow.project.scope",
+    "aiflow.engine-core",
+    "aiflow.telemetry.execution-correlation",
+    "figma-ai.project.scope",
+    "figma-ai.product-frontend-contract",
+    "figma-ai.current-output-boundary",
+    "monitoring-sdk.project.scope",
+    "monitoring-sdk.platform-boundary",
+    "evidence.project.scope",
+    "evidence.outer-loop.authority"
+  ],
+  "status": "current"
+}

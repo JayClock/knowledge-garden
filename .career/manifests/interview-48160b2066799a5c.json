@@ -11,6 +11,7 @@
     "timeline.shanghai-dingxin",
     "timeline.shanghai-yixiao",
     "timeline.shanghai-wuwulaike",
+    "career.capability.progressive-architecture",
     "figma-ai.project.scope",
     "figma-ai.runtime.boundary",
     "domain-modeling.project.scope",
@@ -32,6 +33,7 @@
     "career.reflection.ai-low-code-transition",
     "career.capability.complex-frontend",
     "career.capability.upstream-contracts",
+    "career.capability.association-object-modeling",
     "career.capability.consumption-paths",
     "career.capability.validation-feedback",
     "career.capability.ai-determinism",
@@ -98,7 +100,10 @@
     "hateoas.response-formats",
     "hateoas.react-adapter",
     "hateoas.release-pipeline",
-    "aiflow.visual-editor"
+    "aiflow.visual-editor",
+    "career.capability.contract-lifecycle",
+    "domain-modeling.frontend-backend-contract",
+    "figma-ai.product-frontend-contract"
   ],
   "status": "current"
 }

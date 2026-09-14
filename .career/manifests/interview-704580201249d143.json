@@ -1,8 +1,7 @@
 {
   "schema_version": 1,
-  "artifact": "content/Knowledge/Outputs/简历回答逐字稿：监控 SDK 架构与插件化设计.md",
-  "artifact_type": "interview_dossier",
-  "opportunity_id": null,
+  "artifact": "content/Knowledge/Outputs/15分钟：前端埋点与监控 SDK.md",
+  "artifact_type": "interview_script",
   "generated_by": "interview-package",
   "claim_ids": [
     "career.capability.progressive-architecture",
@@ -16,7 +15,8 @@
     "monitoring-sdk.platform-coverage",
     "monitoring-sdk.reimplementation-boundary",
     "aiflow.telemetry.execution-correlation",
-    "career.capability.contract-lifecycle"
+    "career.capability.contract-lifecycle",
+    "career.positioning.full-flow-axis"
   ],
   "status": "current"
 }

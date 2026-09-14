@@ -8,6 +8,7 @@
     "career.experience.platform-engineering",
     "career.positioning.market-title",
     "career.positioning.full-flow-axis",
+    "career.capability.progressive-architecture",
     "hateoas.project.sdk",
     "hateoas.project.model-and-api",
     "aiflow.project.scope",
@@ -15,7 +16,11 @@
     "aiflow.telemetry.execution-correlation",
     "domain-modeling.project.scope",
     "domain-modeling.collaboration.direct",
-    "domain-modeling.validation"
+    "domain-modeling.validation",
+    "domain-modeling.ai-proposal",
+    "career.capability.contract-lifecycle",
+    "domain-modeling.frontend-backend-contract",
+    "figma-ai.product-frontend-contract"
   ],
   "status": "current"
 }

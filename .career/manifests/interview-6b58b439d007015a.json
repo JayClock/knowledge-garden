@@ -1,8 +1,7 @@
 {
   "schema_version": 1,
-  "artifact": "content/Knowledge/Outputs/简历回答逐字稿：HATEOAS 资源动作契约消费层设计.md",
-  "artifact_type": "interview_dossier",
-  "opportunity_id": null,
+  "artifact": "content/Knowledge/Outputs/15分钟：HATEOAS 资源契约架构.md",
+  "artifact_type": "interview_script",
   "generated_by": "interview-package",
   "claim_ids": [
     "career.capability.progressive-architecture",
@@ -24,7 +23,8 @@
     "hateoas.response-formats",
     "hateoas.react-adapter",
     "hateoas.release-pipeline",
-    "career.capability.contract-lifecycle"
+    "career.capability.contract-lifecycle",
+    "career.positioning.full-flow-axis"
   ],
   "status": "current"
 }

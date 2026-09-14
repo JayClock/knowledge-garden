@@ -5,6 +5,7 @@
   "opportunity_id": null,
   "generated_by": "interview-package",
   "claim_ids": [
+    "career.capability.progressive-architecture",
     "hateoas.project.sdk",
     "hateoas.project.model-and-api",
     "hateoas.production-and-public-phases",
@@ -22,7 +23,8 @@
     "hateoas.adoption-boundary",
     "hateoas.response-formats",
     "hateoas.react-adapter",
-    "hateoas.release-pipeline"
+    "hateoas.release-pipeline",
+    "career.capability.contract-lifecycle"
   ],
   "status": "current"
 }

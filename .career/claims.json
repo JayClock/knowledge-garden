@@ -152,7 +152,8 @@
       ],
       "metrics": [],
       "constraints": [
-        "不因全栈定位弱化复杂前端基本盘"
+        "不因全栈定位弱化复杂前端基本盘",
+        "契约驱动是能力主轴，不将对外职位命名为契约工程师"
       ],
       "tags": [
         "positioning",
@@ -162,7 +163,7 @@
     },
     {
       "id": "career.positioning.full-flow-axis",
-      "statement": "以理解上游问题与契约、完成工程实现并为下游验收和运行反馈提供证据作为全流工程能力轴",
+      "statement": "以契约驱动的全流交付作为能力轴：识别跨角色或跨系统重复解释的知识，将其固化为可消费、可执行、可验证的工程契约，再通过实现、测试、日志、版本与人工 Gate 持续校正",
       "kind": "positioning",
       "ownership": "not_applicable",
       "completion": "validated",
@@ -170,15 +171,17 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户确认以全流工程师作为能力轴"
+          "locator": "用户明确确认个人主轴从契约出发；领域建模平台承载前后端契约，Figma AI 承载产品设计与前端实现之间的契约"
         }
       ],
       "metrics": [],
       "constraints": [
-        "全流工程师是能力轴，不替代市场可识别职位名称"
+        "契约驱动的全流交付是能力轴，不替代市场可识别职位名称",
+        "契约不限于接口文档或 TypeScript 类型，也不能脱离业务模型、消费方和验证证据独立成立"
       ],
       "tags": [
         "positioning",
+        "contract-driven",
         "full-flow",
         "delivery"
       ]
@@ -275,6 +278,37 @@
       ]
     },
     {
+      "id": "figma-ai.product-frontend-contract",
+      "statement": "以设计 DSL 将图层、布局、样式、变量和资产关系结构化为产品设计与前端实现之间的设计契约，并由 Agent 生成、Canvas 编辑器、导入链路与只读 MCP 共同消费",
+      "kind": "project_contribution",
+      "project_id": "figma-ai",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/1.D2C!T2UI 全链路拆解、AI 设计生成引擎原理与项目初始化.md",
+          "locator": "设计 DSL 与设计到前端消费链路"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认 Figma AI 的主定位是产品设计与前端实现之间的契约"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "当前已经建立设计契约和消费路径，不表述为已完成产品内完整页面代码生成或 Design ↔ Code 双向同步",
+        "不把 AI 生成本身替代产品设计决定或前端实现验收"
+      ],
+      "tags": [
+        "design-contract",
+        "product-design",
+        "frontend",
+        "dsl"
+      ]
+    },
+    {
       "id": "figma-ai.runtime.boundary",
       "statement": "AI 运行时先通过本地 Codex CLI 验证生成链路，后迁移为桌面端内置 Pi SDK Agent Runtime，并以 Schema、revision、ownership 和人工确认约束生成写入",
       "kind": "project_contribution",
@@ -323,6 +357,32 @@
         "8x-flow",
         "collaboration",
         "ai"
+      ]
+    },
+    {
+      "id": "domain-modeling.frontend-backend-contract",
+      "statement": "将参与方、权责、事件、领域对象和关系沉淀为前端与后端共同审核和消费的业务语义契约，并以发布模型支持 RESTful API、OpenAPI 草稿和测试数据候选",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认领域建模平台的主定位是前端与后端之间的契约"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "正式接口契约必须经过人工审核，不表述为平台确定性生成完整业务系统",
+        "服务端业务实现范围仍以各项目 ownership claim 为准"
+      ],
+      "tags": [
+        "frontend-backend-contract",
+        "domain-modeling",
+        "restful",
+        "openapi"
       ]
     },
     {
@@ -775,6 +835,120 @@
         "domain-modeling",
         "restful",
         "hateoas"
+      ]
+    },
+    {
+      "id": "career.capability.association-object-modeling",
+      "statement": "设计并落地关联对象建模方法，将一对多关系显式建模为领域对象，以稳定接口隔离领域语义和数据访问策略，并在保持聚合边界的同时控制非聚合根 Repository 逻辑泄露与 N+1 风险",
+      "kind": "positioning",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认已将关联对象的通用思想落地为公开实现：https://github.com/JayClock/smart-domain；对外作为通用能力点，不使用项目名，也不绑定特定技术栈"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不表述为关联对象能够自动消除所有 N+1；效果取决于分页、批量或渐进加载的具体实现",
+        "对外简历不使用 smart-domain 名称，也不把能力绑定到 Java、MyBatis、Spring、HATEOAS 等特定技术栈",
+        "公开仓库只作为本人已落地该通用思想的证据，不作为独立项目经历"
+      ],
+      "tags": [
+        "domain-modeling",
+        "association-object",
+        "aggregate-boundary",
+        "persistence",
+        "n-plus-one"
+      ]
+    },
+    {
+      "id": "career.capability.contract-lifecycle",
+      "statement": "能够围绕契约的形成、表达、消费、执行、验证和演进组织平台工程：用领域模型连接前后端，用设计 DSL 连接产品设计与前端，用工作流协议连接编辑器与运行时，再用测试、监控、版本和人工 Gate 验证契约是否兑现",
+      "kind": "positioning",
+      "ownership": "direct",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认个人主轴从契约出发；领域建模平台是前后端契约，Figma AI 是产品设计与前端实现之间的契约"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/README.md",
+          "locator": "资源动作契约与 TypeScript／React 消费层"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/3.AI 工作流引擎编辑器与执行器架构设计与实践.md",
+          "locator": "编辑器与执行引擎共享工作流协议"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级监控平台全栈架构设计/企业级监控平台全栈架构设计与实践面试专项突击.md",
+          "locator": "事件协议、运行证据与框架适配"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "契约不是孤立文档，必须同时说明知识来源、权威边界、消费方和验证方式",
+        "不把协作或团队负责的服务端实现扩大为个人编码成果",
+        "各项目未完成的代码生成、恢复、兼容与量化结果仍以项目 boundary claim 为准"
+      ],
+      "tags": [
+        "contract-driven",
+        "contract-lifecycle",
+        "platform-engineering",
+        "full-flow"
+      ]
+    },
+    {
+      "id": "career.capability.progressive-architecture",
+      "statement": "能够先稳定核心任务、模型或协议，再把 relation／action、框架适配、节点插件与 AI Proposal 等变化能力隔离为可独立消费和演进的增强层，并用运行时检查、迁移退路、状态／版本与人工 Gate 控制失败边界",
+      "kind": "positioning",
+      "ownership": "direct",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/README.md",
+          "locator": "资源 relation、action 与 React 消费层"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/3.AI 工作流引擎编辑器与执行器架构设计与实践.md",
+          "locator": "WorkflowDefinition 与节点插件系统"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级监控平台全栈架构设计/企业级监控平台全栈架构设计与实践面试专项突击.md",
+          "locator": "core、browser、React／Vue 适配与插件架构"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/3.基于 Codex 多智能体引擎、Harness 内核架构与设计产物自验证落地.md",
+          "locator": "DesignPatch、revision、Visual Harness 与人工接管"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "由现有 confirmed 项目事实综合；用户要求把渐进式基线、增强层、失败边界和演进兼容补入全部职业材料"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不把分层、懒加载、骨架屏或分批渲染自动等同于严格的 Progressive Enhancement",
+        "不声称 Canvas、协同编辑器或 SPA 在没有 JavaScript 时仍能完成全部核心任务",
+        "各项目的基础能力、降级路径、完成状态和量化结果仍以对应 confirmed claim 为准"
+      ],
+      "tags": [
+        "progressive-enhancement",
+        "architecture",
+        "resilience",
+        "compatibility"
       ]
     },
     {

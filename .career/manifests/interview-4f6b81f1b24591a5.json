@@ -5,6 +5,7 @@
   "opportunity_id": null,
   "generated_by": "interview-package",
   "claim_ids": [
+    "career.capability.progressive-architecture",
     "aiflow.project.scope",
     "aiflow.data-and-backend-boundary",
     "aiflow.telemetry.execution-correlation",
@@ -17,7 +18,8 @@
     "aiflow.failure-trace-order",
     "aiflow.reimplementation-boundary",
     "aiflow.result-boundary",
-    "aiflow.visual-editor"
+    "aiflow.visual-editor",
+    "career.capability.contract-lifecycle"
   ],
   "status": "current"
 }

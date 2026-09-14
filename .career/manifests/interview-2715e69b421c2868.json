@@ -5,6 +5,7 @@
   "opportunity_id": null,
   "generated_by": "interview-package",
   "claim_ids": [
+    "career.capability.progressive-architecture",
     "domain-modeling.project.scope",
     "domain-modeling.collaboration.direct",
     "domain-modeling.validation",
@@ -17,7 +18,9 @@
     "domain-modeling.failure-stale-page-resource",
     "domain-modeling.failure-wss-deployment",
     "domain-modeling.xmlfragment-compatibility",
-    "domain-modeling.collaboration-test-boundary"
+    "domain-modeling.collaboration-test-boundary",
+    "career.capability.contract-lifecycle",
+    "domain-modeling.frontend-backend-contract"
   ],
   "status": "current"
 }

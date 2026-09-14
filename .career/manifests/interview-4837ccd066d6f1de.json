@@ -5,6 +5,7 @@
   "opportunity_id": null,
   "generated_by": "interview-package",
   "claim_ids": [
+    "career.capability.progressive-architecture",
     "monitoring-sdk.project.scope",
     "monitoring-sdk.platform-boundary",
     "monitoring-sdk.downstream-driven-design",
@@ -14,7 +15,8 @@
     "monitoring-sdk.sourcemap",
     "monitoring-sdk.platform-coverage",
     "monitoring-sdk.reimplementation-boundary",
-    "aiflow.telemetry.execution-correlation"
+    "aiflow.telemetry.execution-correlation",
+    "career.capability.contract-lifecycle"
   ],
   "status": "current"
 }

@@ -5,6 +5,7 @@
   "opportunity_id": null,
   "generated_by": "interview-package",
   "claim_ids": [
+    "career.capability.progressive-architecture",
     "figma-ai.project.scope",
     "figma-ai.runtime.boundary",
     "figma-ai.architecture.dsl",
@@ -18,7 +19,9 @@
     "figma-ai.current-output-boundary",
     "figma-ai.reimplementation-scale",
     "figma-ai.test-execution-boundary",
-    "figma-ai.asset-protocol"
+    "figma-ai.asset-protocol",
+    "career.capability.contract-lifecycle",
+    "figma-ai.product-frontend-contract"
   ],
   "status": "current"
 }
