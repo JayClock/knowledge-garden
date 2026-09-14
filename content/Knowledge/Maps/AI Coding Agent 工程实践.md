@@ -445,125 +445,125 @@ A · Observe · Probe ^stg6AgT
 
 tcpfZWhJ: [[为什么要成为全流程序员，而非全栈程序员？]]
 
-ztTkapjx: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+ztTkapjx: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-vTRkeHWu: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+vTRkeHWu: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-HSIRFLfO: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+HSIRFLfO: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-aIZQFxvW: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+aIZQFxvW: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-IBwto6CT: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+IBwto6CT: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-9EDUaxZK: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+9EDUaxZK: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-xp7VQXht: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+xp7VQXht: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-NaEGkGV6: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+NaEGkGV6: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-rq21Ozgr: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+rq21Ozgr: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-828Fq0kW: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+828Fq0kW: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-L30gbyil: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+L30gbyil: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-LFuJ3cyk: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+LFuJ3cyk: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-1wZD3M6D: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+1wZD3M6D: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-wDNL1L50: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+wDNL1L50: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-DJ9X2I4T: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+DJ9X2I4T: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-luwCzLmt: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+luwCzLmt: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-LMVhXyzc: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+LMVhXyzc: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-Fdd7t8Gi: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+Fdd7t8Gi: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-GADr5cne: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+GADr5cne: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-48GXAa2Q: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+48GXAa2Q: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-igGkTaHf: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+igGkTaHf: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-r45ztUcC: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+r45ztUcC: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-qCGoHBpp: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+qCGoHBpp: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-j8iqyABI: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+j8iqyABI: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-gtMjQZ4z: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+gtMjQZ4z: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-5S1JmLwZ: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+5S1JmLwZ: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-FNmbIvPQ: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+FNmbIvPQ: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-E14V2NiQ: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+E14V2NiQ: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-loRMzdEk: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+loRMzdEk: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-sGW5aX6b: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+sGW5aX6b: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-f55W5WQP: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+f55W5WQP: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-69hqoanA: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+69hqoanA: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-flowDsgR: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+flowDsgR: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-flowDsgA: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+flowDsgA: [[设计流动摩擦：AI 原生团队的核心能力]]
 
 Irdx0IAp: [[知识工程师]]
 
 7szM0utd: [[为什么要成为全流程序员，而非全栈程序员？]]
 
-561gH4it: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+561gH4it: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-l86KUBIE: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+l86KUBIE: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-uRI2rsLT: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+uRI2rsLT: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-C1IDTtud: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+C1IDTtud: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-2ndHpED7: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+2ndHpED7: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-TVZmzjyN: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+TVZmzjyN: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-SsvWCuEz: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+SsvWCuEz: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-Yzo8DAph: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+Yzo8DAph: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-kCzEZTYs: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+kCzEZTYs: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-Ean8bBdN: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+Ean8bBdN: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-IdjLjwpm: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+IdjLjwpm: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-tt4n6J7I: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+tt4n6J7I: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-PoAPZV6c: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+PoAPZV6c: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-RdK1C4GJ: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+RdK1C4GJ: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-vHry7joH: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+vHry7joH: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-ImfIv2hn: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+ImfIv2hn: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-qSK1K2yp: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+qSK1K2yp: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-B8kwcREp: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+B8kwcREp: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-kehhMlcI: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+kehhMlcI: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-jSNRDyfo: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+jSNRDyfo: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-U5Ea8AFo: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+U5Ea8AFo: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-RJRtadhR: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+RJRtadhR: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-flowDsgT: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+flowDsgT: [[设计流动摩擦：AI 原生团队的核心能力]]
 
-flowDsgD: [[Inbox/设计流动摩擦：AI 原生团队的核心能力]]
+flowDsgD: [[设计流动摩擦：AI 原生团队的核心能力]]
 
 %%
 

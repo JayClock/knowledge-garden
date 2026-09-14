@@ -1,6 +1,6 @@
 ---
 date: 2026-08-31 08:26:15
-updated: 2026-08-31 08:27:45
+updated: 2026-09-02 23:36:10
 ---
 
 # Evidence 项目：项目级与 Agent 级双层循环
@@ -14,7 +14,7 @@ updated: 2026-08-31 08:27:45
 
 ## 核心观点
 
-Evidence 不是让一个 Agent 从需求一路自由运行到提交代码，而是把软件交付拆成两个相互连接的循环：项目外层保存业务权威、阶段状态和人工决定，Agent 内层只在当前批准的任务边界内执行、检查和修正。两层通过不可变 Revision、Approved Plan、唯一 `nextAction` 和 append-only Evidence 交换信息。
+Evidence 处理的是人类决策与 Agent 执行之间的权威契约。它不是让一个 Agent 从需求一路自由运行到提交代码，而是把软件交付拆成两个相互连接的循环：项目外层保存业务权威、阶段状态和人工决定，Agent 内层只在当前批准的任务边界内执行、检查和修正。两层通过不可变 Revision、Approved Plan、唯一 `nextAction` 和 append-only Evidence 交换信息。
 
 ```text
 项目外层：Inbox → Kickoff → Understand → Tasking → Pair → Showcase → Respond
@@ -26,7 +26,7 @@ Agent 内层：Guides → Test／Production／Refactor Driver → Sensors → St
 
 ## 30 秒项目表达
 
-我在公开项目 Evidence 中实现了一套项目级与 Agent 级双层循环。外层从 Inbox、需求澄清、任务规划一直管理到编码、价值验收和知识响应，并把关键决定保留给人；内层则由批准后的精确 Tasking Plan 驱动多个短生命周期 Agent，按 Red、Green、Refactor 和质量门执行。Server 每次只发布一个合法的 `nextAction`，失败会按证据返回测试、实现或 Tasking，而不是让 Agent 自己改变范围或直接提交代码。
+我在公开项目 Evidence 中实现了人类决策与 Agent 执行之间的权威契约。外层把来源 Revision、Scenario、Approved Tasking Plan 和关键决定保留给人；内层由批准后的精确计划驱动短生命周期 Agent，按 Red、Green、Refactor 和质量门执行。Server 每次只发布一个合法的 `nextAction`，失败按证据返回测试、实现或 Tasking，而不是让 Agent 自己改变范围或直接提交代码。
 
 ## 2～3 分钟项目介绍
 
@@ -119,6 +119,12 @@ Evidence 当前已经把上游判断逐层压缩为 Story、Scenario 和 Approve
 ```
 
 这一边界反而说明系统没有用空引用或 Agent 推断冒充已经完成的模型驱动交付。后续若实现完整 Modeling Profile，应让模型版本、不变条件和关系引用进入 Tasking，并在模型变化时使下游 Plan 和 Pair authority 失效。
+
+## 渐进式架构视角
+
+Evidence 先用 Server 权威状态机、不可变 Revision、Approved Tasking Plan 和人工决定建立稳定项目基线，再让受限 Agent 执行当前唯一 `nextAction`。Agent 是执行与候选生成的增强层，不拥有业务、计划、代码验收和价值判断的最终权威。
+
+失败也不是统一重试：unexpected Green、pseudo-Red、实现失败和质量门失败留在允许的局部路由；计划、模型或知识边界错误返回外层阶段；预算或路径越界则先保存证据再 fail closed。这里的“渐进式”不是声称没有 Agent 也能完成整条自动化交付，而是让 Agent 能力在稳定权威和可恢复状态上逐步介入，失败时不篡改已经批准的事实。
 
 ## 职业能力表达
 
