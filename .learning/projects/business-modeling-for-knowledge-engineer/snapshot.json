@@ -1,6 +1,6 @@
 {
   "project_id": "business-modeling-for-knowledge-engineer",
-  "derived_from_seq": 8,
+  "derived_from_seq": 16,
   "status": "active",
   "cursor": {
     "unit_id": "lesson-00"
@@ -63,13 +63,60 @@
       "title": "04｜跨越现实的障碍（上）：要性能还是要模型？-如何落地业务建模-极客时间",
       "source_path": "content/Knowledge/Sources/如何落地业务建模/04｜跨越现实的障碍（上）：要性能还是要模型？-如何落地业务建模-极客时间.md",
       "locator": null,
-      "coverage": "unread",
-      "expression_status": "not_requested",
-      "expression_refs": [],
-      "evidence_status": "not_requested",
-      "evidence_refs": [],
+      "coverage": "read",
+      "expression_status": "qualified",
+      "expression_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/business-modeling-for-knowledge-engineer/sessions/20260902000540-lesson-04-expression.md",
+          "locator": null
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/business-modeling-for-knowledge-engineer/sessions/20260902001559-lesson-04-expression.md",
+          "locator": null
+        }
+      ],
+      "evidence_status": "supported_with_boundary",
+      "evidence_refs": [
+        {
+          "type": "file",
+          "path": ".learning/projects/business-modeling-for-knowledge-engineer/sessions/20260902000540-lesson-04-expression.md",
+          "locator": "## 用户原始表达"
+        },
+        {
+          "type": "file",
+          "path": ".learning/projects/business-modeling-for-knowledge-engineer/sessions/20260902001559-lesson-04-expression.md",
+          "locator": "## 用户原始表达"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/如何落地业务建模/04｜跨越现实的障碍（上）：要性能还是要模型？-如何落地业务建模-极客时间.md",
+          "locator": "## 无法封装的数据库开销 > ### 集合遍历与 N+1"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/如何落地业务建模/04｜跨越现实的障碍（上）：要性能还是要模型？-如何落地业务建模-极客时间.md",
+          "locator": "### Smalltalk 中集合与数据库是等价的"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/如何落地业务建模/04｜跨越现实的障碍（上）：要性能还是要模型？-如何落地业务建模-极客时间.md",
+          "locator": "### 多层架构彻底割裂了集合与数据库"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/如何落地业务建模/04｜跨越现实的障碍（上）：要性能还是要模型？-如何落地业务建模-极客时间.md",
+          "locator": "## 关联对象 > ### 使用关联对象实现聚合关系"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/如何落地业务建模/04｜跨越现实的障碍（上）：要性能还是要模型？-如何落地业务建模-极客时间.md",
+          "locator": "## 关联对象 > ### 隔离技术实现细节与领域逻辑"
+        }
+      ],
       "open_questions": [],
-      "updated_at": null
+      "updated_at": "2026-09-02T00:21:43Z"
     },
     {
       "id": "lesson-05",
@@ -284,24 +331,24 @@
   "attempts": [],
   "blockers": [],
   "workflows": [],
-  "last_session_at": null,
+  "last_session_at": "2026-09-02T00:15:59Z",
   "completion": {
-    "unit_ready": 6,
+    "unit_ready": 7,
     "unit_total": 21,
     "claim_ready": 0,
     "claim_total": 0,
     "project_evidence": {
-      "source_grounding": false,
+      "source_grounding": true,
       "retrieval": false,
       "application": false
     },
     "complete_by_policy": false
   },
-  "last_event_at": "2026-08-30T13:47:57Z",
-  "generated_at": "2026-09-01T00:51:07Z",
+  "last_event_at": "2026-09-02T00:21:43Z",
+  "generated_at": "2026-09-02T00:21:43Z",
   "next_command": {
-    "id": "cmd-00000008",
-    "based_on_seq": 8,
+    "id": "cmd-00000016",
+    "based_on_seq": 16,
     "skill": "learning-harness",
     "action": "record-coverage",
     "subject": {
