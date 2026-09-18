@@ -16,7 +16,9 @@
     "evidence.ci-validation-boundary",
     "career.capability.validation-feedback",
     "career.capability.ai-determinism",
-    "career.capability.contract-lifecycle"
+    "career.capability.contract-lifecycle",
+    "evidence-framework.rewrite-relationship",
+    "evidence-framework.public-verifiability"
   ],
   "status": "current"
 }

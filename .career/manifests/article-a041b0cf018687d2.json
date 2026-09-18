@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/信息散落：知识来源不唯一且更新不及时.md",
+  "artifact_type": "public_article",
+  "opportunity_id": null,
+  "generated_by": "career-assets",
+  "claim_ids": [
+    "evidence-framework.project.scope",
+    "evidence-framework.adoption-articles",
+    "evidence-framework.plan-as-machine-state",
+    "evidence-framework.source-authority-routing"
+  ],
+  "status": "current"
+}

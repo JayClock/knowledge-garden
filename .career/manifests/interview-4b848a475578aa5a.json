@@ -45,7 +45,8 @@
     "evidence.showcase-learning-loop",
     "evidence.model-guidance-boundary",
     "evidence.ci-validation-boundary",
-    "career.capability.contract-lifecycle"
+    "career.capability.contract-lifecycle",
+    "evidence-framework.rewrite-relationship"
   ],
   "status": "current"
 }

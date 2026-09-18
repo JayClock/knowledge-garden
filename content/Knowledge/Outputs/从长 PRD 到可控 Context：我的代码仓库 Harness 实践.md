@@ -1,7 +1,7 @@
 ---
 title: 从长 PRD 到可控 Context：我的代码仓库 Harness 实践
 date: 2026-08-30 18:35:49
-updated: 2026-08-31 08:28:28
+updated: 2026-09-18 23:02:50
 ---
 
 # 从长 PRD 到可控 Context：我的代码仓库 Harness 实践
@@ -55,7 +55,7 @@ Steer：模型根据定位结果修正
 
 ## 从 Context 控制走向完整双层循环
 
-公司项目中的实践主要解决“当前任务应该给 Agent 什么 Context”。我在开源项目 [Evidence](https://github.com/JayClock/Evidence) 中进一步把项目外层循环、Agent 内层循环和两者之间的状态接口实现成了显式的产品能力。
+公司项目中的实践主要解决“当前任务应该给 Agent 什么 Context”。我随后在 Evidence 中进一步把项目外层循环、Agent 内层循环和两者之间的状态接口做成了显式的产品能力。这版实现位于私有仓库、现已弃用；2026-09 我把同一方案重写为公开仓库 [Evidence-Framework](https://github.com/JayClock/Evidence-Framework)，把机制收敛到单一机器计划与可核验的检查记录上。
 
 Evidence 的外层不是让 Agent 自行规划整个项目，而是由 Server 保存权威状态，并通过不可变 Revision、内容哈希和人工决定推进交付：
 

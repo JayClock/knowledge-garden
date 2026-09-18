@@ -1,16 +1,17 @@
 ---
 date: 2026-08-31 08:26:15
-updated: 2026-09-02 23:36:10
+updated: 2026-09-18 23:02:50
 ---
 
 # Evidence 项目：项目级与 Agent 级双层循环
 
 > [!warning] 事实边界
 >
-> - [Evidence](https://github.com/JayClock/Evidence) 是本人公开维护的项目；本文核对版本为 `b4b9ace5badf7e4c37b13bd1e19f3499073bfff6`。
-> - Evidence 是独立公开项目，不冒充上海鼎歆内部领域建模平台的公司源码或生产结果。
+> - 本文描述的是本人独立项目的私有实现（仓库不公开、现已弃用），核对版本为 `b4b9ace5badf7e4c37b13bd1e19f3499073bfff6`；该实现不能作为对外可核验材料。
+> - 同一方案已于 2026-09 重写为公开仓库 [Evidence-Framework](https://github.com/JayClock/Evidence-Framework)：保留外层 PDCA 与内层单任务循环，改用单一机器计划 `plan.yaml` 承载任务状态、CHECK 与缺口；对外只按“公开仓库”表述，不称开源项目。
+> - 本文实现不冒充上海鼎歆内部领域建模平台的公司源码或生产结果。
 > - 当前已经实现 Story／Scenario／Tasking／Pair／Showcase／Respond 的权威状态与 Agent 执行循环，但完整 Modeling Profile 和“模型变更直接进入 modelRefs 再指导实现”的路径尚未完成；现有 Tasking 明确采用 `no_model_required`。
-> - GitHub Actions 的最新核对结果不是全绿：Desktop 的 37 个测试文件、143 项测试和 Java Server build 通过，但整条 CI 因一个 Web UI 测试失败而失败。
+> - GitHub Actions 的最新核对结果不是全绿：Desktop 的 37 个测试文件、143 项测试和 Java Server build 通过，但整条 CI 因一个 Web UI 测试失败而失败；该 CI 属于私有仓库，外部不可核验。
 
 ## 核心观点
 
@@ -26,7 +27,7 @@ Agent 内层：Guides → Test／Production／Refactor Driver → Sensors → St
 
 ## 30 秒项目表达
 
-我在公开项目 Evidence 中实现了人类决策与 Agent 执行之间的权威契约。外层把来源 Revision、Scenario、Approved Tasking Plan 和关键决定保留给人；内层由批准后的精确计划驱动短生命周期 Agent，按 Red、Green、Refactor 和质量门执行。Server 每次只发布一个合法的 `nextAction`，失败按证据返回测试、实现或 Tasking，而不是让 Agent 自己改变范围或直接提交代码。
+我在这套（私有、现已弃用的）实现中做出了人类决策与 Agent 执行之间的权威契约。外层把来源 Revision、Scenario、Approved Tasking Plan 和关键决定保留给人；内层由批准后的精确计划驱动短生命周期 Agent，按 Red、Green、Refactor 和质量门执行。Server 每次只发布一个合法的 `nextAction`，失败按证据返回测试、实现或 Tasking，而不是让 Agent 自己改变范围或直接提交代码。
 
 ## 2～3 分钟项目介绍
 
@@ -128,7 +129,7 @@ Evidence 先用 Server 权威状态机、不可变 Revision、Approved Tasking P
 
 ## 职业能力表达
 
-> 公开维护 Evidence 领域建模与证据映射平台，将软件交付建模为项目外层与 Agent 内层双层循环：外层以不可变 Revision、Approved Plan、append-only Decision 和人工 Gate 管理业务权威与阶段回流；内层以受限 Test／Production／Refactor Agent、独立 Red Review、锁定命令、质量门和有限预算完成可恢复的自我纠正，并由 Server 根据证据发布唯一下一步。
+> 独立设计并实现 Evidence 领域建模与证据映射平台（私有实现，现已弃用；公开重写版为 Evidence-Framework），将软件交付建模为项目外层与 Agent 内层双层循环：外层以不可变 Revision、Approved Plan、append-only Decision 和人工 Gate 管理业务权威与阶段回流；内层以受限 Test／Production／Refactor Agent、独立 Red Review、锁定命令、质量门和有限预算完成可恢复的自我纠正，并由 Server 根据证据发布唯一下一步。
 
 这段经历支持的不是“会调用大模型”，而是以下能力组合：
 

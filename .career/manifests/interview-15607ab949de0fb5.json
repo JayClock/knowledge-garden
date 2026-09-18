@@ -26,7 +26,8 @@
     "monitoring-sdk.project.scope",
     "monitoring-sdk.platform-boundary",
     "evidence.project.scope",
-    "evidence.outer-loop.authority"
+    "evidence.outer-loop.authority",
+    "evidence-framework.rewrite-relationship"
   ],
   "status": "current"
 }

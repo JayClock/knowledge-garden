@@ -16,7 +16,8 @@
     "evidence.human-agent-boundary",
     "evidence.inner-loop.pair",
     "evidence.failure-routing",
-    "evidence.showcase-learning-loop"
+    "evidence.showcase-learning-loop",
+    "evidence-framework.rewrite-relationship"
   ],
   "status": "current"
 }

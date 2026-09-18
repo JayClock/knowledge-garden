@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/虚假胜利：Agent 以为自己做完了，其实没有.md",
+  "artifact_type": "public_article",
+  "opportunity_id": null,
+  "generated_by": "career-assets",
+  "claim_ids": [
+    "evidence-framework.project.scope",
+    "evidence-framework.adoption-articles",
+    "evidence-framework.local-quality-gates",
+    "evidence-framework.plan-as-machine-state"
+  ],
+  "status": "current"
+}

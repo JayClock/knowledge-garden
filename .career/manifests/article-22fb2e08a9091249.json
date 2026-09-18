@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/Agent 交付的七个坏味道.md",
+  "artifact_type": "public_article",
+  "opportunity_id": null,
+  "generated_by": "career-assets",
+  "claim_ids": [
+    "evidence-framework.project.scope",
+    "evidence-framework.adoption-articles",
+    "evidence-framework.public-verifiability",
+    "evidence-framework.scope-boundary"
+  ],
+  "status": "current"
+}

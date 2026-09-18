@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/需求模糊：Agent 不知道“好”长什么样.md",
+  "artifact_type": "public_article",
+  "opportunity_id": null,
+  "generated_by": "career-assets",
+  "claim_ids": [
+    "evidence-framework.project.scope",
+    "evidence-framework.adoption-articles",
+    "evidence-framework.source-authority-routing",
+    "evidence-framework.scope-boundary"
+  ],
+  "status": "current"
+}

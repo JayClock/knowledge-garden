@@ -2852,7 +2852,7 @@
     },
     {
       "id": "evidence.project.scope",
-      "statement": "设计并实现开源 Evidence 领域建模与证据映射平台，覆盖 React Web、Java Server、Electron Desktop、内嵌 Pi SDK Agent，以及从 Intake、Understand、Tasking、Pair、Showcase 到 Respond 的项目交付链路",
+      "statement": "设计并实现 Evidence 领域建模与证据映射平台的私有版本，覆盖 React Web、Java Server、Electron Desktop、内嵌 Pi SDK Agent，以及从 Intake、Understand、Tasking、Pair、Showcase 到 Respond 的项目交付链路",
       "kind": "project_scope",
       "project_id": "evidence",
       "ownership": "direct",
@@ -2861,14 +2861,15 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认 Evidence 是本人项目；公开仓库 https://github.com/JayClock/Evidence，核对提交 b4b9ace5badf7e4c37b13bd1e19f3499073bfff6 的 README.md、AGENTS.md、apps/desktop/src/loops/ 与 libs/server-java/domain/"
+          "locator": "用户明确确认 Evidence 是本人项目、现已弃用且不公开；私有仓库 https://github.com/JayClock/Evidence，核对提交 b4b9ace5badf7e4c37b13bd1e19f3499073bfff6 的 README.md、AGENTS.md、apps/desktop/src/loops/ 与 libs/server-java/domain/"
         }
       ],
       "metrics": [],
       "constraints": [
+        "该实现位于私有仓库 JayClock/Evidence，不公开、已弃用，外部无法核验，不得称为开源或公开项目",
+        "公开可核验的是其方案重写 Evidence-Framework，两者不能合并表述为同一个公开项目",
         "不补写未经确认的生产用户、业务规模、运行次数或效率指标",
-        "当前公开仓库证明机制已经实现，不等同于已在生产环境规模化运行",
-        "提交 b4b9ace5badf7e4c37b13bd1e19f3499073bfff6 对应的最新公开 CI 因 @evidence/web:test 失败而未全绿，不表述为当前 main 全部质量门禁通过"
+        "提交 b4b9ace5badf7e4c37b13bd1e19f3499073bfff6 对应的 CI 因 @evidence/web:test 失败而未全绿，不表述为 main 全部质量门禁通过"
       ],
       "tags": [
         "evidence",
@@ -2897,7 +2898,8 @@
       "metrics": [],
       "constraints": [
         "外层状态由 Server 与 PostgreSQL 保存，Desktop 只执行本地能力",
-        "不把尚未经过人工决定的 Agent Proposal 表述为权威事实"
+        "不把尚未经过人工决定的 Agent Proposal 表述为权威事实",
+        "该实现位于已弃用且不公开的私有仓库 Evidence，不得表述为公开可核验或开源"
       ],
       "tags": [
         "outer-loop",
@@ -2924,7 +2926,8 @@
       "metrics": [],
       "constraints": [
         "Agent 不能代行人工决定、自动 merge 或 push",
-        "本地完整源码、diff、stdout、Prompt 和 Pi 消息不上传 Server"
+        "本地完整源码、diff、stdout、Prompt 和 Pi 消息不上传 Server",
+        "该实现位于已弃用且不公开的私有仓库 Evidence，不得表述为公开可核验或开源"
       ],
       "tags": [
         "human-in-the-loop",
@@ -2950,7 +2953,8 @@
       "metrics": [],
       "constraints": [
         "Pair 创建的是本地 Conventional Commit，不自动 merge 或 push",
-        "不把测试文件存在扩展为当前 main 全部 CI 通过"
+        "不把测试文件存在扩展为当前 main 全部 CI 通过",
+        "该实现位于已弃用且不公开的私有仓库 Evidence，不得表述为公开可核验或开源"
       ],
       "tags": [
         "inner-loop",
@@ -2977,7 +2981,8 @@
       "metrics": [],
       "constraints": [
         "允许路由由失败类型和当前 checkpoint 决定，不表示 Agent 可以自行修改外层计划",
-        "跨层返回 Tasking 后旧 Plan、PairRun 与执行事实保持不可变"
+        "跨层返回 Tasking 后旧 Plan、PairRun 与执行事实保持不可变",
+        "该实现位于已弃用且不公开的私有仓库 Evidence，不得表述为公开可核验或开源"
       ],
       "tags": [
         "feedback-routing",
@@ -3004,7 +3009,8 @@
       "metrics": [],
       "constraints": [
         "质量门全绿不自动等同于产品价值成立，Showcase accept 仍由领域专家决定",
-        "不补写未经确认的端到端 Iteration 完成次数或知识提升结果"
+        "不补写未经确认的端到端 Iteration 完成次数或知识提升结果",
+        "该实现位于已弃用且不公开的私有仓库 Evidence，不得表述为公开可核验或开源"
       ],
       "tags": [
         "showcase",
@@ -3031,7 +3037,8 @@
       "metrics": [],
       "constraints": [
         "不得把当前 no_model_required 路径表述为已经完成模型变更到代码的全链路",
-        "当前 Tasking 中 TEST／TASK 的 modelRefs 必须为空"
+        "当前 Tasking 中 TEST／TASK 的 modelRefs 必须为空",
+        "该实现位于已弃用且不公开的私有仓库 Evidence，不得表述为公开可核验或开源"
       ],
       "tags": [
         "model",
@@ -3042,7 +3049,7 @@
     },
     {
       "id": "evidence.ci-validation-boundary",
-      "statement": "Evidence 在 CI 中配置格式、OpenAPI 漂移、受影响项目 lint／test／build／typecheck、黑盒 API contract 和 Desktop package smoke；commit b4b9ace 的 Desktop 37 个测试文件共 143 项测试及 Java Server build 通过，但整条 CI 因一个 Web UI 测试失败而未通过",
+      "statement": "私有仓库 Evidence 在 CI 中配置格式、OpenAPI 漂移、受影响项目 lint／test／build／typecheck、黑盒 API contract 和 Desktop package smoke；commit b4b9ace 的 Desktop 37 个测试文件共 143 项测试及 Java Server build 通过，但整条 CI 因一个 Web UI 测试失败而未通过",
       "kind": "boundary",
       "project_id": "evidence",
       "ownership": "direct",
@@ -3073,7 +3080,8 @@
       ],
       "constraints": [
         "不得表述为最新提交整条 CI 已通过",
-        "测试数字只对应 GitHub Actions run 32615734612"
+        "测试数字只对应 GitHub Actions run 32615734612",
+        "该 CI 属于已弃用且不公开的私有仓库，运行记录不可外部核验；公开重写的 Evidence-Framework 没有 GitHub Actions CI，只有本地质量门"
       ],
       "tags": [
         "ci",
@@ -3106,6 +3114,400 @@
         "engineering-productivity",
         "dual-loop",
         "delivery"
+      ]
+    },
+    {
+      "id": "evidence-framework.project.scope",
+      "kind": "project_scope",
+      "ownership": "direct",
+      "completion": "ongoing",
+      "status": "confirmed",
+      "statement": "以公开仓库 Evidence-Framework 重写 Evidence 方案：在 Nx 单仓库内以 React／TypeScript 前端与 Spring Boot 3.5／Jersey／MyBatis 后端，围绕 CRM 电话销售绩效协议打通业务建模、API 契约、任务计划到 local／test 实现的完整链路",
+      "constraints": [
+        "仓库自述不等于已上线业务系统；前端当前只是用户 API 导航页，不是完整业务 UI",
+        "生产身份权限与生产数据库尚无依据",
+        "公开仓库没有 LICENSE 文件，不得表述为开源项目"
+      ],
+      "tags": [
+        "evidence-framework",
+        "rewrite",
+        "nx",
+        "react",
+        "spring-boot",
+        "mybatis",
+        "domain-modeling"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence-Framework 是本人独立完成、对私有 Evidence 的公开重写；公开仓库 https://github.com/JayClock/Evidence-Framework，核对提交 f04b0bec6eab62d06c5bf1bc9bbd703ffb4f56f9 的 README.md、AGENTS.md、package.json、build.gradle、apps/ 与 libs/"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "id": "evidence-framework.rewrite-relationship",
+      "kind": "boundary",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "statement": "Evidence-Framework 是对私有仓库 Evidence 所用方案的重写；旧仓库已弃用且不公开，两套实现不能合并成同一个公开项目表述",
+      "constraints": [
+        "不得把旧仓库的 Server 权威状态机、Pair／Showcase 循环说成在公开仓库中可查看",
+        "对外需要提及旧实现时必须说明其为私有且已弃用"
+      ],
+      "tags": [
+        "evidence-framework",
+        "evidence",
+        "lineage",
+        "verifiability"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认：Evidence-Framework 是 JayClock/Evidence 的方案重写；JayClock/Evidence 已弃用、不公开，也不打算公开"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "id": "evidence-framework.delivery-loop",
+      "kind": "project_contribution",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "statement": "在 Evidence-Framework 中把交付实现为双层循环：外层 PDCA 从业务建模推进到 API 契约与编译后的任务计划，内层按 Guides → Action → Sensors → Steer 执行单个任务，并在代码修复、计划重编译与业务澄清之间转向",
+      "constraints": [
+        "没有读取的来源不能声称已核对",
+        "用户只要求查看、验证或讨论时保持只读"
+      ],
+      "tags": [
+        "evidence-framework",
+        "dual-loop",
+        "pdca",
+        "guides",
+        "steer"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence-Framework 为本人项目；公开仓库 https://github.com/JayClock/Evidence-Framework 提交 f04b0bec6eab62d06c5bf1bc9bbd703ffb4f56f9 的 .agents/skills/evidence-delivery/SKILL.md、.agents/skills/README.md、docs/guides/index.md"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "id": "evidence-framework.plan-as-machine-state",
+      "kind": "project_contribution",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "statement": "以 schemaVersion 3.0 的单一机器计划 plan.yaml 承载切片、程序计算出的任务 DAG、任务状态、CHECK、observedEvidence 与缺口；源摘要用 digest 固化，来源变化必须重编译计划，而不是信任旧投影",
+      "constraints": [
+        "只读审核投影 review.html 可缺失或过期，不能作为状态来源",
+        "计划不复制第二套审批或进度记录"
+      ],
+      "tags": [
+        "evidence-framework",
+        "plan",
+        "dag",
+        "digest",
+        "state"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence-Framework 为本人项目；公开仓库 https://github.com/JayClock/Evidence-Framework 提交 f04b0bec6eab62d06c5bf1bc9bbd703ffb4f56f9 的 docs/plans/smart-domain/plan.yaml（sourceManifest digest、compiled、status、CHECK）与 evidence-delivery Skill 的 plan_state.py verify"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "id": "evidence-framework.source-authority-routing",
+      "kind": "project_contribution",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "statement": "为每类问题指定唯一权威来源并据此装配前馈：业务事实取 FM 源、接口能力取 api.yaml、软件范围取 scope／stories、执行顺序取 plan.yaml、是否验证取任务 CHECK 的实际结果；来源冲突时停止受影响行动交拥有者确认",
+      "constraints": [
+        "代码、生成报告、README 和聊天记忆不能反向定义业务",
+        "结构自洽、文件写入和命令成功不能替代业务批准"
+      ],
+      "tags": [
+        "evidence-framework",
+        "authority",
+        "feedforward",
+        "conflict"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence-Framework 为本人项目；公开仓库 https://github.com/JayClock/Evidence-Framework 提交 f04b0bec6eab62d06c5bf1bc9bbd703ffb4f56f9 的 docs/guides/index.md 来源与冲突处理表、AGENTS.md"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "id": "evidence-framework.agent-skills",
+      "kind": "project_contribution",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "statement": "把建模到交付的方法拆成 8 个 evidence-* Skill（discovery、modeling、fm、visualization、requirements、api-design、task-planning、delivery），Skill 保存可移植方法，项目文档保存实际范围与工程决定，两者不复制业务知识或状态",
+      "constraints": [
+        "不补写外部采用量、他人使用情况或方法效果"
+      ],
+      "tags": [
+        "evidence-framework",
+        "agent-skills",
+        "portability",
+        "separation"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence-Framework 为本人项目；公开仓库 https://github.com/JayClock/Evidence-Framework 提交 f04b0bec6eab62d06c5bf1bc9bbd703ffb4f56f9 的 .agents/skills/README.md 与 8 个 evidence-* Skill 目录"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "id": "evidence-framework.fm-to-api-traceability",
+      "kind": "project_contribution",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "statement": "以 FM 业务模型作为业务事实唯一来源（CEL 规则语言、contexts／relationships／rule／scenario／validation），据此设计 HTTP 契约与消费者旅程，并用校验脚本和离线可视化审核页检查模型与 API 的一致性",
+      "constraints": [
+        "模型文件不保存审核状态，业务确认依据由发现记录与需求／计划记录承载",
+        "不把模型存在等同于对应软件已交付"
+      ],
+      "tags": [
+        "evidence-framework",
+        "fm",
+        "cel",
+        "api-design",
+        "traceability"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence-Framework 为本人项目；公开仓库 https://github.com/JayClock/Evidence-Framework 提交 f04b0bec6eab62d06c5bf1bc9bbd703ffb4f56f9 的 .evidence/fm/model.yaml（ruleLanguage: CEL）、.evidence/api/api.yaml、docs/requirements/scope.md"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "id": "evidence-framework.pi-extension",
+      "kind": "project_contribution",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "statement": "为编码 Agent 编写本地 Pi 扩展实现建模交互：question UI、命令与 UI 契约基于 pi-coding-agent／pi-server／pi-tui，并配套独立 vitest 配置与类型检查",
+      "constraints": [
+        "扩展是本地交互层，不改变业务模型事实或自动批准"
+      ],
+      "tags": [
+        "evidence-framework",
+        "pi-sdk",
+        "extension",
+        "tui",
+        "agent"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence-Framework 为本人项目；公开仓库 https://github.com/JayClock/Evidence-Framework 提交 f04b0bec6eab62d06c5bf1bc9bbd703ffb4f56f9 的 .pi/extensions/evidence-modeling/（index.ts、question-ui.ts、commands.ts、ui-contracts.ts 与 3 个 spec）及 package.json 的 evidence-modeling:verify 脚本"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "id": "evidence-framework.scope-boundary",
+      "kind": "boundary",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "statement": "Evidence-Framework 当前授权的软件切片是绩效协议主链（登记协议 → 提出月度目标 → 登记联系记录 → 完成规则判断）的 local／test 实现，另有一个本地用户基础切片；移动支付订阅主链已随模型收敛移出当前仓库",
+      "constraints": [
+        "前端页面、生产身份与权限、生产数据库、协议参与方核验与 403、未达标后果、周度进度检查、客户档案生命周期都不属于当前切片",
+        "只按完成与不足两条旅程验收，不表述为完整业务系统或已上线"
+      ],
+      "tags": [
+        "evidence-framework",
+        "scope",
+        "local-test",
+        "boundary"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 Evidence-Framework 为本人项目；公开仓库 https://github.com/JayClock/Evidence-Framework 提交 f04b0bec6eab62d06c5bf1bc9bbd703ffb4f56f9 的 docs/requirements/scope.md 软件职责矩阵与非目标、plan.yaml 的 nonGoals"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "id": "evidence-framework.public-verifiability",
+      "kind": "boundary",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "statement": "Evidence-Framework 是以个人账号公开、并以 MIT License 开源的仓库（2026-09-05 创建，单作者）；公开可核验的是仓库内容本身，仓库没有跑测试的 GitHub Actions CI（仅有一条定时刷新文档的 openwiki 工作流且近期运行失败），也没有外部采用量",
+      "constraints": [
+        "不得表述为社区项目，或已有外部采用、使用量与影响力；MIT 开源许可是事实，可以表述为开源项目",
+        "提交数、行数、star 数只作为仓库规模事实，不进入简历正文"
+      ],
+      "metrics": [
+        {
+          "name": "commits_total",
+          "value": 120,
+          "scope": "git rev-list --count HEAD @ f04b0bec, 2026-09-18"
+        },
+        {
+          "name": "commit_authors",
+          "value": 1,
+          "scope": "git log --format=%an @ f04b0bec, 2026-09-18"
+        },
+        {
+          "name": "stars",
+          "value": 1,
+          "scope": "GitHub API repos/JayClock/Evidence-Framework, 2026-09-18"
+        },
+        {
+          "name": "forks",
+          "value": 0,
+          "scope": "GitHub API repos/JayClock/Evidence-Framework, 2026-09-18"
+        },
+        {
+          "name": "github_actions_ci_workflows",
+          "value": 0,
+          "scope": ".github/workflows @ f04b0bec，仅 openwiki-update.yml 定时工作流"
+        }
+      ],
+      "tags": [
+        "evidence-framework",
+        "public",
+        "verifiability",
+        "no-license"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "公开仓库 https://github.com/JayClock/Evidence-Framework 元数据与 .github/workflows 实际内容（2026-09-18 由 Agent 通过 GitHub API 与本机克隆核对）"
+        }
+      ]
+    },
+    {
+      "id": "evidence-framework.local-quality-gates",
+      "kind": "result",
+      "ownership": "direct",
+      "completion": "validated",
+      "status": "confirmed",
+      "statement": "Evidence-Framework 以本地脚本提供质量门（npm run test 聚合 apps、Pi 扩展、skills、guides 四类，npm run lint、npm run build、guides:verify、./gradlew check）；2026-09-18 在提交 f04b0bec 的工作树上实际重跑通过：Java 23 个测试类 148 项测试 0 失败，Pi 扩展 18 项测试通过，前端 2 项测试通过，guides 8 项测试通过并校验 40 篇文档、390 个本地链接 0 错误",
+      "constraints": [
+        "这些数字来自本机一次实际重跑，不是持续集成结果；仓库没有 GitHub Actions CI",
+        "guides 结构检查通过不等于业务批准或任务就绪"
+      ],
+      "metrics": [
+        {
+          "name": "java_test_classes_passed",
+          "value": 23,
+          "scope": "2026-09-18 ./gradlew test --rerun-tasks @ f04b0bec"
+        },
+        {
+          "name": "java_tests_passed",
+          "value": 148,
+          "scope": "同上，test-results XML 汇总，0 failures / 0 errors / 0 skipped"
+        },
+        {
+          "name": "pi_extension_tests_passed",
+          "value": 18,
+          "scope": "2026-09-18 npm run evidence-modeling:test（3 test files）@ f04b0bec"
+        },
+        {
+          "name": "frontend_tests_passed",
+          "value": 2,
+          "scope": "2026-09-18 npx nx test @evidence-poc/frontend --skip-nx-cache @ f04b0bec"
+        },
+        {
+          "name": "guides_spec_tests_passed",
+          "value": 8,
+          "scope": "2026-09-18 npm run guides:verify（node --test tools/guides/check.spec.mjs）"
+        },
+        {
+          "name": "guides_local_links_checked",
+          "value": 390,
+          "scope": "2026-09-18 npm run guides:check，40 documents，0 errors"
+        }
+      ],
+      "tags": [
+        "evidence-framework",
+        "quality-gates",
+        "testing",
+        "local-verification"
+      ],
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-09-18 由 Agent 在本机 f04b0bec6eab62d06c5bf1bc9bbd703ffb4f56f9 工作树上实际执行并记录：./gradlew test --rerun-tasks（BUILD SUCCESSFUL in 25s）、npm run evidence-modeling:test、npx nx test @evidence-poc/frontend --skip-nx-cache、npm run skills:test、npm run guides:verify"
+        }
+      ]
+    },
+    {
+      "id": "evidence-framework.adoption-articles",
+      "statement": "把项目的 7 篇实践总结改写成面向外部读者的公开文章，加 1 篇系列索引，以《Agent 交付的七个坏味道》发布在本人数字花园；仓库内 docs/adoption/ 与对外版本事实一致、风格不同",
+      "kind": "result",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认把 7 篇实践总结改写成可发布版本；对外文章是 content/Knowledge/Outputs/ 的《Agent 交付的七个坏味道》系列（7 篇 + 1 篇索引），仓库版本见 https://github.com/JayClock/Evidence-Framework/tree/main/docs/adoption"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "published_articles",
+          "value": 8,
+          "scope": "content/Knowledge/Outputs/《Agent 交付的七个坏味道》系列，2026-09-18"
+        }
+      ],
+      "constraints": [
+        "文章是个人项目实践的整理，不构成行业结论、效果数据或采用情况",
+        "不补写阅读量、读者反馈或转载情况",
+        "文中引用的测试与检查数字来自本机单次实际执行，不是持续集成结果"
+      ],
+      "tags": [
+        "evidence-framework",
+        "technical-writing",
+        "public-articles",
+        "open-source"
+      ]
+    },
+    {
+      "id": "career.capability.technical-writing",
+      "statement": "能把工程实践整理成面向外部读者的公开文章：以问题症状、机制、边界和反例组织内容，并与仓库内技术文档保持事实一致",
+      "kind": "positioning",
+      "ownership": "direct",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确要求把项目实践总结改写成可发布版本；对外成果为《Agent 交付的七个坏味道》系列与仓库内同名文档，两者事实一致、读者不同"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不补写阅读量、影响力或他人评价",
+        "文章观点来自本人项目实践，不代表普适结论"
+      ],
+      "tags": [
+        "writing",
+        "communication",
+        "documentation"
       ]
     }
   ]
