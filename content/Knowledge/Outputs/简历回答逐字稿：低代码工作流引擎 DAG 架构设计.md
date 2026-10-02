@@ -5,7 +5,7 @@ sources:
   - "[[3.AI 工作流引擎编辑器与执行器架构设计与实践]]"
   - "[[企业级类扣子、Dify AI 应用引擎架构设计与实践面试专项突击]]"
 date: 2026-07-03 22:30:00
-updated: 2026-08-26 08:30:30
+updated: 2026-10-02 14:23:39
 tags:
   - interview/script
   - resume/lowcode
@@ -20,7 +20,7 @@ tags:
 > - 个人直接实现的是 TypeScript `WorkflowEngine`、`GraphBuilder`、`ExecutionContext`、`VariableResolver`、拓扑调度、环检测和条件分支处理。
 > - 项目能力范围以候选人确认和原始文稿为准；`miaoma-aiflow-v2` 是内部重实现，不要求完整镜像公司项目，局部差异不用于收缩项目事实。
 > - 内部重实现的执行日志排序 Bug 有 Git 修复记录，但不是公司生产事故。
-> - NestJS API 与 SSE 事件推送由后端同事实现；个人负责共同协议与前端接入。
+> - NestJS API、SSE 事件推送与数据持久化由后端同事实现；个人负责共同协议与前端接入。
 > - 监控 SDK 已接入 AI Flow，校验、测试运行和发布自定义事件通过 `executionId` 与执行引擎日志关联。
 > - 并发限流、节点幂等重试、服务重启恢复和 Loop 容器属于延展设计，不能说成已经上线。
 

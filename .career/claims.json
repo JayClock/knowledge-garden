@@ -522,7 +522,7 @@
     },
     {
       "id": "aiflow.data-and-backend-boundary",
-      "statement": "直接实现 AI Flow 的 PostgreSQL／Prisma 数据模型与持久化代码；NestJS API 和 SSE 事件推送由后端同事实现，本人负责共同协议与前端接入",
+      "statement": "AI Flow 的 NestJS API、SSE 事件推送与 PostgreSQL / Prisma 数据持久化由后端同事实现；本人负责共同协议制定、前端接入与端侧执行反馈",
       "kind": "project_contribution",
       "project_id": "aiflow",
       "ownership": "collaborative",
@@ -536,14 +536,13 @@
       ],
       "metrics": [],
       "constraints": [
-        "不能把整个服务端描述为个人交付"
+        "服务端 API 与数据持久化属于后端团队成果，本人负责共同协议制定、前端接入与端侧执行反馈"
       ],
       "tags": [
-        "postgresql",
-        "prisma",
-        "nestjs",
-        "sse",
-        "collaboration"
+        "collaboration",
+        "api-boundary",
+        "protocol",
+        "sse"
       ]
     },
     {
@@ -2093,7 +2092,7 @@
     },
     {
       "id": "aiflow.result-boundary",
-      "statement": "已完成从 WorkflowDefinition、节点 Schema、可视化编排、变量编辑到图校验、拓扑调度、条件分支、持久化和执行反馈的核心链路",
+      "statement": "已完成从 WorkflowDefinition、节点 Schema、可视化编排、变量编辑到图校验、拓扑调度、条件分支和执行反馈的核心链路",
       "kind": "result",
       "ownership": "direct",
       "completion": "implemented",
