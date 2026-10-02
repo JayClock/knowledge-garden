@@ -1371,32 +1371,8 @@
       "project_id": "domain-modeling"
     },
     {
-      "id": "domain-modeling.team-ai-boundary",
-      "statement": "独立公开维护 team-ai 重实现，用代码验证领域模型、HATEOAS、建模画布、AI Proposal、版本和知识图谱等能力",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：领域建模平台／公开重实现与事实边界"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "team-ai 不是公司原始源码，不证明内部平台生产规模，也不证明 Yjs 协同链路源码"
-      ],
-      "tags": [
-        "team-ai",
-        "reimplementation",
-        "open-source"
-      ],
-      "project_id": "domain-modeling"
-    },
-    {
       "id": "domain-modeling.failure-stale-page-resource",
-      "statement": "代表性重实现早期切换页面路由后继续复用旧 Y.Doc／WebsocketProvider，导致页面变化但内容未更新；修复时将数据标识和初始化依赖绑定到 pageId 并补齐 Provider 与 Awareness 生命周期",
+      "statement": "平台开发早期切换页面路由后继续复用旧 Y.Doc／WebsocketProvider，导致页面变化但内容未更新；修复时将数据标识和初始化依赖绑定到 pageId 并补齐 Provider 与 Awareness 生命周期",
       "kind": "failure",
       "ownership": "direct",
       "completion": "implemented",
@@ -1404,12 +1380,12 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：领域建模平台／已确认的开发阶段故障／9de84d5"
+          "locator": "用户明确确认；事实范围：领域建模平台／已确认的开发阶段故障"
         }
       ],
       "metrics": [],
       "constraints": [
-        "这是重实现开发问题，不是上海鼎歆生产事故"
+        "这是开发阶段问题，不是上海鼎歆生产事故"
       ],
       "tags": [
         "yjs",
@@ -1420,7 +1396,7 @@
     },
     {
       "id": "domain-modeling.failure-wss-deployment",
-      "statement": "代表性重实现从本地 HTTP 部署到 HTTPS 与反向代理后 WebSocket 连接失败，先改为 WSS，再修正生产地址与同源代理入口",
+      "statement": "平台从本地 HTTP 部署到 HTTPS 与反向代理后 WebSocket 连接失败，先改为 WSS，再修正生产地址与同源代理入口",
       "kind": "failure",
       "ownership": "direct",
       "completion": "implemented",
@@ -1428,12 +1404,12 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：领域建模平台／已确认的开发阶段故障／0f3110b、d792b6d"
+          "locator": "用户明确确认；事实范围：领域建模平台／已确认的部署阶段故障"
         }
       ],
       "metrics": [],
       "constraints": [
-        "这是重实现开发问题，不是上海鼎歆生产事故"
+        "这是部署联调阶段问题，不是上海鼎歆生产事故"
       ],
       "tags": [
         "wss",
