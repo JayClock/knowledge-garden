@@ -494,7 +494,7 @@
     },
     {
       "id": "aiflow.project.scope",
-      "statement": "在企业级低代码 AI Flow 中直接负责工作流协议、插件化节点、React Flow 编辑器、Tiptap 变量编辑器和相关 TypeScript 执行引擎",
+      "statement": "在企业级低代码 AI Flow 中直接负责工作流协议、插件化节点、React Flow 编辑器、Tiptap 变量编辑器、公式编辑器和相关 TypeScript 执行引擎",
       "kind": "project_scope",
       "project_id": "aiflow",
       "ownership": "direct",
@@ -516,7 +516,8 @@
         "dag",
         "react-flow",
         "tiptap",
-        "typescript"
+        "typescript",
+        "formula-editor"
       ]
     },
     {
@@ -622,31 +623,6 @@
         "monitoring",
         "clickhouse",
         "team-boundary"
-      ]
-    },
-    {
-      "id": "early-frontend.formula-editor",
-      "statement": "初级前端阶段参与公式编辑器和复杂前端交互实现，为后续编辑器与平台工程能力建立基础",
-      "kind": "project_scope",
-      "project_id": "formula-editor",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Outputs/15分钟：公式编辑器.md",
-          "locator": "项目介绍"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "不补写当前材料未确认的业务结果"
-      ],
-      "tags": [
-        "formula-editor",
-        "frontend",
-        "editor"
       ]
     },
     {
@@ -2012,6 +1988,33 @@
         "protocol"
       ],
       "project_id": "aiflow"
+    },
+    {
+      "id": "aiflow.formula-editor",
+      "statement": "在低代码工作流中负责公式编辑器全链路，支持表单字段与函数表达式编辑，自研解析器将表达式解析为记录稳定字段 ID 的 AST 并于保存时校验拦截，在工作流节点执行时通过全局变量获取字段信息完成 AST 公式求值",
+      "kind": "project_contribution",
+      "project_id": "aiflow",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认；事实范围：上海易校低代码平台／AI Flow 公式编辑器、自研 AST 解析器、保存校验拦截与节点执行期求值"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "AST 中以字段 ID 记录字段引用",
+        "公式有错在保存时拦截，求值在工作流节点执行时通过全局变量读取字段信息完成"
+      ],
+      "tags": [
+        "formula-editor",
+        "ast",
+        "parser",
+        "workflow",
+        "evaluation"
+      ]
     },
     {
       "id": "aiflow.execution-feedback",

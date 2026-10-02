@@ -5,7 +5,7 @@
   "opportunity_id": null,
   "generated_by": "interview-package",
   "claim_ids": [
-    "early-frontend.formula-editor"
+    "aiflow.formula-editor"
   ],
   "status": "current"
 }
