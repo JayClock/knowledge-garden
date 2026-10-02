@@ -10,8 +10,9 @@ description: 以双层循环编排长期职业资产、岗位机会和求职反�
 ## 核心模型
 
 ```text
-来源与用户确认
-→ claims 唯一事实账本
+材料阅读与顾问式深访
+→ 分轮确认与 claims 事实账本
+→ Outputs/职业经历.md 长期可读文档
 → opportunity 岗位映射
 → 简历／自我介绍／面试包
 → 投递与面试反馈
@@ -36,17 +37,23 @@ python <career-assets>/scripts/init_state.py --root <git-root>
 
 完整状态约定见 `references/state-schema.md`，真实性规则见 `references/fact-policy.md`。
 
+## 经历发现入口
+
+从上下文判断求职紧急程度与材料充足度，缺失时只问影响下一步的问题：材料多先读出摘要与空白，材料少先拉粗时间线；紧急时围绕当前岗位深挖，长期整理时优先补重要但写浅的经历。交给 `career-evidence` 递进追问，每约四个关键问题提供可纠偏的小结，不机械一次抛出四问。
+
+`config.paths.career_history` 指向长期维护的职业经历，本仓库为 `content/Knowledge/Outputs/职业经历.md`。保存一轮经历时同步 claims、职业经历、manifest 与未解问题；用户只要对话草稿时不落盘。继续补充先读文档与 `positioning.open_questions`，承接上轮而非重新访谈。
+
 ## 外层阶段
 
-| 阶段 | 目标 | 完成条件 | 执行 Skill |
-| --- | --- | --- | --- |
-| `capture` | 收集来源、访谈和旧材料线索 | 候选事实已记录 | `career-evidence` |
-| `verify` | 核对证据、职责、完成状态和冲突 | 对外使用的 claim 为 `confirmed` | `career-evidence` |
-| `position` | 建立定位并映射 JD | 核心要求已有 claim 或明确 gap | `career-positioning` |
-| `package` | 生成岗位简历与岗位自我介绍 | 同一 claim 集通过一致性检查 | `resume-package` |
-| `practice` | 生成项目讲法与追问训练 | 回答可追溯且可口述 | `interview-package` |
-| `apply` | 记录实际投递版本与状态 | 提交记录绑定 artifact manifest | 本 Skill |
-| `retro` | 吸收投递／面试反馈 | 反馈已分类并产生下一步 | `career-retro` |
+| 阶段       | 目标                           | 完成条件                        | 执行 Skill           |
+| ---------- | ------------------------------ | ------------------------------- | -------------------- |
+| `capture`  | 收集来源、访谈和旧材料线索     | 候选事实已记录                  | `career-evidence`    |
+| `verify`   | 核对证据、职责、完成状态和冲突 | 对外使用的 claim 为 `confirmed` | `career-evidence`    |
+| `position` | 建立定位并映射 JD              | 核心要求已有 claim 或明确 gap   | `career-positioning` |
+| `package`  | 生成岗位简历与岗位自我介绍     | 同一 claim 集通过一致性检查     | `resume-package`     |
+| `practice` | 生成项目讲法与追问训练         | 回答可追溯且可口述              | `interview-package`  |
+| `apply`    | 记录实际投递版本与状态         | 提交记录绑定 artifact manifest  | 本 Skill             |
+| `retro`    | 吸收投递／面试反馈             | 反馈已分类并产生下一步          | `career-retro`       |
 
 阶段可以因紧急机会跳转，但不能跳过事实 Gate。紧急只改变顺序，不降低真实性标准。
 
@@ -105,7 +112,7 @@ python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --o
 ## 状态纪律
 
 - `.career/claims.json` 是唯一职业事实源；定位、简历、自我介绍和面试材料都只能消费其中的 claim。
-- 需要人工审阅时按 claim 生成临时或岗位范围内的可读产物。
+- `content/Knowledge/Outputs/职业经历.md` 是长期可读经历文档，confirmed claims 是其已确认正文的事实依据；待补问题单列。写入前核对人工修改，不以旧账本覆盖补充或纠正。未解决事实冲突时保留用户内容并将文档标记 stale。
 - 只有 `confirmed` claim 可以进入保真简历和面试回答。
 - 每个对外 artifact 都要有 manifest，记录 `claim_ids`、`opportunity_id`、生成 Skill 和当前状态。
 - 岗位自我介绍保存在对应 opportunity 包中；全局 `自我介绍.md` 只保留通用基础版，不被不同岗位反复覆盖。
@@ -129,6 +136,7 @@ python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --o
 
 - 状态文件通过 `state_lint.py`。
 - 对外内容只使用 confirmed claim，且职责、完成状态和限制一致。
+- 保存经历时 claims、职业经历文档与 manifest 已同步；人工修改已经核对或保留待确认。
 - claim 变化已运行影响扫描；未同步的派生物已标记 stale。
 - 岗位产物绑定唯一 opportunity，不污染其他岗位和全局基础版。
 - 真实反馈已经分类到事实、定位、表达、交付或 Harness，而不是只留一段复盘文字。

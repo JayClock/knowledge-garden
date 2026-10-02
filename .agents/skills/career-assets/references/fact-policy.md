@@ -69,13 +69,13 @@ Agent 不能自行把 candidate 升级为 confirmed。
 ```text
 证据与用户确认
 → claims
-→ 职业经历可读视图
+→ content/Knowledge/Outputs/职业经历.md（长期可读文档）
 → positioning / opportunity
 → resume / self-introduction / interview package
 → feedback
 ```
 
-下游材料暴露新线索时，将线索作为 candidate 交给 `career-evidence`，不能直接反向改写 confirmed claim。
+职业经历中的人工修改和其他下游材料暴露新线索时，交给 `career-evidence` 核对。用户本轮明确确认的纠正记录为 user_confirmation 后更新 claims；来源不清的线索保持 candidate，冲突保持 contested。写入职业经历前保留用户新增和批注，不能用旧账本覆盖，也不能未经确认反向改写 confirmed claim。确认后同步账本、职业经历和依赖记录。
 
 ## 修改授权
 

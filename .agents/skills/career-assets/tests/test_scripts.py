@@ -37,6 +37,72 @@ class CareerHarnessScriptsTest(unittest.TestCase):
             claims = json.loads((state / "claims.json").read_text(encoding="utf-8"))
             self.assertEqual(claims, {"schema_version": 1, "claims": []})
 
+    def test_history_path_initialization_and_no_overwrite(self) -> None:
+        for with_content in (False, True):
+            with self.subTest(with_content=with_content), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                if with_content:
+                    (root / "content").mkdir()
+                state = self.initialize(root)
+                config_path = state / "config.json"
+                config = json.loads(config_path.read_text(encoding="utf-8"))
+                prefix = "content/" if with_content else ""
+                self.assertEqual(config["paths"]["career_history"], f"{prefix}Knowledge/Outputs/职业经历.md")
+                self.assertFalse((root / config["paths"]["career_history"]).exists())
+                config["paths"]["career_history"] = "custom/经历.md"
+                config_path.write_text(json.dumps(config), encoding="utf-8")
+                self.initialize(root)
+                self.assertEqual(json.loads(config_path.read_text(encoding="utf-8")), config)
+
+    def test_history_path_rejects_missing_and_invalid_values(self) -> None:
+        for value in (None, "", "../outside.md", str(Path.home() / "outside.md"), "history.txt"):
+            with self.subTest(value=value), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                state = self.initialize(root)
+                path = state / "config.json"
+                config = json.loads(path.read_text(encoding="utf-8"))
+                if value is None:
+                    del config["paths"]["career_history"]
+                else:
+                    config["paths"]["career_history"] = value
+                path.write_text(json.dumps(config), encoding="utf-8")
+                lint = self.run_script(LINT, "--state-dir", str(state), "--repo-root", str(root))
+                self.assertNotEqual(lint.returncode, 0, lint.stdout)
+                self.assertIn("career_history", lint.stdout)
+
+    def test_history_requires_matching_manifest_and_preserves_text(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            state = self.initialize(root)
+            config = json.loads((state / "config.json").read_text(encoding="utf-8"))
+            history = root / config["paths"]["career_history"]
+            history.parent.mkdir(parents=True)
+            text = "# 职业经历\n\n用户补充，待确认。\n"
+            history.write_text(text, encoding="utf-8")
+            args = ("--state-dir", str(state), "--repo-root", str(root))
+            missing = self.run_script(LINT, *args)
+            self.assertNotEqual(missing.returncode, 0)
+            self.assertIn("requires manifests/career-history.json", missing.stdout)
+            manifest = {
+                "schema_version": 1,
+                "artifact": config["paths"]["career_history"],
+                "artifact_type": "career_history",
+                "generated_by": "career-evidence",
+                "opportunity_id": None,
+                "claim_ids": [],
+                "status": "stale",
+            }
+            manifest_path = state / "manifests" / "career-history.json"
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            valid = self.run_script(LINT, *args)
+            self.assertEqual(valid.returncode, 0, valid.stdout + valid.stderr)
+            manifest["artifact"] = "wrong.md"
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            invalid = self.run_script(LINT, *args)
+            self.assertNotEqual(invalid.returncode, 0)
+            self.assertIn("must match configured path", invalid.stdout)
+            self.assertEqual(history.read_text(encoding="utf-8"), text)
+
     def test_confirmed_claim_and_manifest_are_valid(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

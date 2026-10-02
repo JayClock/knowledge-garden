@@ -135,9 +135,37 @@ def main() -> int:
         if not isinstance(paths, dict):
             errors.append("config.paths must be an object")
         else:
-            for key in ("base_introduction", "source_roots", "project_output_root"):
+            for key in ("career_history", "base_introduction", "source_roots", "project_output_root"):
                 if key not in paths:
                     errors.append(f"config.paths missing {key}")
+            history = paths.get("career_history")
+            require_string(history, "config.paths.career_history", errors)
+            if isinstance(history, str) and history.strip():
+                history_path = Path(history)
+                resolved_history = (repo_root / history_path).resolve()
+                if (
+                    history_path.is_absolute()
+                    or not resolved_history.is_relative_to(repo_root)
+                    or history_path.suffix != ".md"
+                ):
+                    errors.append("config.paths.career_history must be a repository-relative Markdown path")
+                else:
+                    history_manifest = state_dir / "manifests" / "career-history.json"
+                    if resolved_history.exists() and not resolved_history.is_file():
+                        errors.append("config.paths.career_history must point to a file")
+                    if resolved_history.exists() and not history_manifest.is_file():
+                        errors.append("career history requires manifests/career-history.json")
+                    if history_manifest.is_file():
+                        record = load_json(history_manifest, errors)
+                        if not isinstance(record, dict):
+                            errors.append("career history manifest must be an object")
+                        elif (
+                            record.get("artifact") != history
+                            or record.get("artifact_type") != "career_history"
+                            or record.get("generated_by") != "career-evidence"
+                            or record.get("opportunity_id") is not None
+                        ):
+                            errors.append("career history manifest must match configured path and career-evidence ownership")
         resume_policy = config.get("resume_policy", {})
         if not isinstance(resume_policy, dict):
             errors.append("config.resume_policy must be an object")

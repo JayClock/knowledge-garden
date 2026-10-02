@@ -26,6 +26,7 @@
 {
   "schema_version": 1,
   "paths": {
+    "career_history": "content/Knowledge/Outputs/职业经历.md",
     "base_introduction": "content/Knowledge/Outputs/自我介绍.md",
     "source_roots": ["content/Knowledge/Sources"],
     "project_output_root": "content/Knowledge/Outputs"
@@ -39,7 +40,7 @@
 }
 ```
 
-所有路径相对 Git 根目录。迁移到其他仓库时只改配置，不改 Skill 指令。
+所有路径相对 Git 根目录。`paths.career_history` 为必填的仓库内 Markdown 路径，本仓库使用 `content/Knowledge/Outputs/职业经历.md`；初始化只配置路径，不生成空白经历文件。首次授权保存时创建文档及 `.career/manifests/career-history.json`，已有文档也须先核对再建立 manifest。
 
 `resume_policy` 是跨岗位简历基线：
 
@@ -75,10 +76,7 @@
         }
       ],
       "metrics": [],
-      "constraints": [
-        "不补写具体下游使用方式",
-        "节点状态、耗时和错误仍以执行引擎日志为事实源"
-      ],
+      "constraints": ["不补写具体下游使用方式", "节点状态、耗时和错误仍以执行引擎日志为事实源"],
       "tags": ["monitoring", "workflow", "observability"]
     }
   ]
@@ -114,6 +112,8 @@
 ```
 
 定位是经过事实支持的长期判断，不存放某个 JD 的临时关键词。
+
+`open_questions` 保存跨会话未解问题，使用可读字符串，包含经历、问题、已知内容、关联 claim（如有）、优先原因和下次动作。职业经历中的待补问题是它的可读摘要；解决后同步收束，不重复询问。
 
 ## opportunity.json
 
@@ -171,14 +171,27 @@
 
 `status`：`current`、`stale`、`archived`。
 
-项目长期讲稿可以继续保存在现有 Vault，但必须在 `.career/manifests/` 建立同样的依赖记录。
+职业经历的 manifest 固定为 `.career/manifests/career-history.json`：`artifact` 等于 `config.paths.career_history`，`artifact_type` 为 `career_history`，`generated_by` 为 `career-evidence`，`opportunity_id` 为 null，`claim_ids` 记录已确认正文使用的 claims。它不属于岗位简历包，不应用 resume_policy。
+
+写入前检查人工修改；未解决的事实补充或纠正保留待确认，manifest 设为 stale。正文与 confirmed claims 同步后才设为 current。不存在文档时无需创建 manifest；存在文档必须有此依赖记录。
+
+项目长期讲稿保存在 Vault，并在 `.career/manifests/` 建立依赖记录。
 
 ## feedback.jsonl
 
 每行一个 JSON 对象：
 
 ```json
-{"id":"feedback-001","opportunity_id":"2026-company-role","stage":"interview","signal":"某项目回答讲不清","classification":"expression_gap","affected_claim_ids":[],"affected_artifacts":[".career/opportunities/2026-company-role/outputs/interview-plan.md"],"next_skill":"interview-package"}
+{
+  "id": "feedback-001",
+  "opportunity_id": "2026-company-role",
+  "stage": "interview",
+  "signal": "某项目回答讲不清",
+  "classification": "expression_gap",
+  "affected_claim_ids": [],
+  "affected_artifacts": [".career/opportunities/2026-company-role/outputs/interview-plan.md"],
+  "next_skill": "interview-package"
+}
 ```
 
 `classification`：

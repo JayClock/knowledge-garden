@@ -8,11 +8,12 @@
 证据层：用户确认、源码、项目文稿、交付物
 事实状态层：.career/claims.json
 控制状态层：positioning.json、opportunity.json、manifest
+可读经历层：content/Knowledge/Outputs/职业经历.md
 派生产物层：通用自我介绍、项目 dossier、resume、岗位自我介绍、interview plan
 反馈层：投递、面试、人工评审与 Harness 改进记录
 ```
 
-依赖只能向下。反馈可以触发上游复查，但不能直接成为事实。`.career/claims.json` 是唯一职业事实源，不长期维护另一份与它平行的 Markdown 主档。
+已确认正文由 claims 支撑。职业经历文档的人工补充和市场反馈可以触发上游核对，不能未经确认直接成为事实。claims 保存结构化账本，职业经历保存长期可读叙述，两者不各自维护一套独立事实。
 
 ## 状态不是笔记
 
@@ -24,14 +25,15 @@
 - `manifests/`：产物依赖的 claim IDs；
 - `feedback.jsonl`：真实结果与下一步。
 
-需要人工审阅事实时，可以按项目、公司或 claim kind 临时渲染报告；报告仍是派生物，不能反向成为事实源。
+用户日常审阅和补充入口是 `config.paths.career_history`，本仓库为 `content/Knowledge/Outputs/职业经历.md`。每轮授权保存经历时同步此文档及 `.career/manifests/career-history.json`（`artifact_type: career_history`）。写入前对照全文与 claims，保留人工新增和批注；事实修改先确认再入账，未解决时标记 stale，不覆盖用户文字。具体协议见 `../../career-evidence/references/experience-discovery.md`。
 
 ## 长期保留与按需生成
 
 长期保留：
 
 - 来源与证据；
-- claims 和 positioning；
+- claims 和 positioning（含跨会话未解问题）；
+- `content/Knowledge/Outputs/职业经历.md` 及其 manifest；
 - 通用自我介绍；
 - 高频项目 dossier；
 - manifests 与真实反馈。
@@ -100,7 +102,7 @@
 1. 更新 claim 和必要的 positioning；
 2. 运行 `impact_scan.py`；
 3. 把受影响 manifest 标记为 `stale`；
-4. 只同步用户本轮授权的产物；
+4. 同步用户本轮授权的职业经历与其他产物；核对人工修改后，只有已同步且无未解决事实冲突的 manifest 才设回 current；
 5. 验证链接、格式和事实边界。
 
 ## 删除与归档

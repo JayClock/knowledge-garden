@@ -17,7 +17,6 @@
     "domain-modeling.team-ai-boundary",
     "domain-modeling.failure-stale-page-resource",
     "domain-modeling.failure-wss-deployment",
-    "domain-modeling.xmlfragment-compatibility",
     "domain-modeling.collaboration-test-boundary",
     "career.capability.contract-lifecycle",
     "domain-modeling.frontend-backend-contract"

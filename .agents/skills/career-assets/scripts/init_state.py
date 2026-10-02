@@ -38,6 +38,7 @@ def main() -> int:
         "config.json": {
             "schema_version": 1,
             "paths": {
+                "career_history": f"{content_prefix}Knowledge/Outputs/职业经历.md",
                 "base_introduction": f"{content_prefix}Knowledge/Outputs/自我介绍.md",
                 "source_roots": [f"{content_prefix}Knowledge/Sources"],
                 "project_output_root": f"{content_prefix}Knowledge/Outputs",

@@ -438,65 +438,6 @@
       ]
     },
     {
-      "id": "docs-editor.project.scope",
-      "statement": "独立完成企业级类飞书协同文档编辑器，覆盖 ProseMirror／Tiptap Core SDK、React 适配、UI 套件、Web 应用、NestJS 服务和 Tauri 桌面工程",
-      "kind": "project_scope",
-      "project_id": "docs-editor",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级编辑器类飞书文档架构设计/企业级编辑器类飞书文档架构设计与实践面试专项突击.md",
-          "locator": "项目范围"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户确认整个素材目录为项目事实"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "当前按独立工程项目记录，不擅自归入某家公司",
-        "不采用课程简历示例百分比"
-      ],
-      "tags": [
-        "prosemirror",
-        "tiptap",
-        "react",
-        "nestjs",
-        "tauri"
-      ]
-    },
-    {
-      "id": "docs-editor.collaboration-and-graph",
-      "statement": "完成 Yjs 协同内容、Awareness 状态、NestJS WebSocket、PostgreSQL 持久化，以及 Mention 提取和 React Flow／d3-force 文档关系图链路",
-      "kind": "project_contribution",
-      "project_id": "docs-editor",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级编辑器类飞书文档架构设计/4.协同服务、AI 集成与应用构建部署.md",
-          "locator": "协同、持久化与关系图"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "没有可核验的协同延迟、峰值连接数和自动化恢复测试"
-      ],
-      "tags": [
-        "yjs",
-        "postgresql",
-        "mention",
-        "react-flow",
-        "d3-force"
-      ]
-    },
-    {
       "id": "hateoas.project.sdk",
       "statement": "为解决 PC Web 与移动 Web 重复维护状态、权限和动作规则的问题，设计并实现 HATEOAS TypeScript SDK 与 React Hooks，使多端消费同一套 relation 和 action 契约",
       "kind": "project_contribution",
@@ -795,7 +736,7 @@
     },
     {
       "id": "career.capability.complex-frontend",
-      "statement": "复杂前端能力覆盖 Canvas 和 React Flow 编辑器、ProseMirror／Tiptap 富文本、文档关系图、动态属性面板，以及视口、拖拽、选区、浮动菜单、协同状态和弱网错误处理",
+      "statement": "复杂前端能力覆盖 Canvas 和 React Flow 编辑器、Tiptap 变量编辑器、动态属性面板，以及视口、拖拽、选区、浮动菜单、协同状态和弱网错误处理",
       "kind": "positioning",
       "ownership": "direct",
       "completion": "validated",
@@ -953,7 +894,7 @@
     },
     {
       "id": "career.capability.consumption-paths",
-      "statement": "能够用编辑器 Core SDK、React 适配、TypeScript SDK、HAL／HAL-FORMS、Schema 与 OpenAPI 建立模型和契约的工程消费路径",
+      "statement": "能够用 React 适配、TypeScript SDK、HAL／HAL-FORMS、Schema 与 OpenAPI 建立模型和契约的工程消费路径",
       "kind": "positioning",
       "ownership": "direct",
       "completion": "validated",
@@ -1527,28 +1468,6 @@
       "project_id": "domain-modeling"
     },
     {
-      "id": "domain-modeling.xmlfragment-compatibility",
-      "statement": "原项目材料记录 Yjs ^13.6.15 实际安装 13.6.20 后 getXMLFragment 数据不匹配，随后统一使用 document-store-${pageId} XmlFragment 作为协同内容、持久化与 Mention 解析路径",
-      "kind": "failure",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：领域建模平台／原文稿中的 Yjs 数据处理"
-        }
-      ],
-      "metrics": [],
-      "constraints": [],
-      "tags": [
-        "yjs",
-        "xmlfragment",
-        "version"
-      ],
-      "project_id": "domain-modeling"
-    },
-    {
       "id": "domain-modeling.collaboration-test-boundary",
       "statement": "当前没有可核验的自动化协同 E2E、断线重连和服务重启恢复测试",
       "kind": "boundary",
@@ -1570,239 +1489,6 @@
         "collaboration"
       ],
       "project_id": "domain-modeling"
-    },
-    {
-      "id": "docs-editor.core-sdk",
-      "statement": "在 ProseMirror／Tiptap 上封装 Schema、Block API、Transaction、命令和扩展协议，并由 React 包提供组件、Context 与状态 Hook，UI 包提供工具栏和建议菜单",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级编辑器类飞书文档架构设计/2.富文本编辑器原理与技术方案精析.md",
-          "locator": "Core SDK 与 React 适配"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：协同文档编辑器／编辑器 Core SDK 与 React 适配"
-        }
-      ],
-      "metrics": [],
-      "constraints": [],
-      "tags": [
-        "prosemirror",
-        "tiptap",
-        "sdk",
-        "react"
-      ],
-      "project_id": "docs-editor"
-    },
-    {
-      "id": "docs-editor.ai-assistant",
-      "statement": "在 Slash Menu 增加 AI 入口，通过 PubSub 打开定位到当前编辑位置的 AIChat 面板，调用 Dify chat-messages 后用 replaceBlocks 将结果写回目标段落",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级编辑器类飞书文档架构设计/4.协同服务、AI 集成与应用构建部署.md",
-          "locator": "AI 集成"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：协同文档编辑器／基础 AI 助手"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "只确认基础内容生成与编辑器写回，不把知识库、复杂 Agent 或多场景助手写成已交付"
-      ],
-      "tags": [
-        "dify",
-        "ai",
-        "editor"
-      ],
-      "project_id": "docs-editor"
-    },
-    {
-      "id": "docs-editor.server-auth-deployment",
-      "statement": "完成 NestJS 全局异常处理、API 前缀、Swagger、ConfigModule、TypeORM／PostgreSQL、JWT 注册登录与页面联调，并用 Docker Compose 和 Caddy 配置 HTTPS、API 代理与数据服务",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级编辑器类飞书文档架构设计/4.协同服务、AI 集成与应用构建部署.md",
-          "locator": "服务端、认证与部署"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：协同文档编辑器／服务端、认证与部署"
-        }
-      ],
-      "metrics": [],
-      "constraints": [],
-      "tags": [
-        "nestjs",
-        "jwt",
-        "docker",
-        "caddy"
-      ],
-      "project_id": "docs-editor"
-    },
-    {
-      "id": "docs-editor.failure-stale-page-resource",
-      "statement": "页面切换后曾复用旧 Y.Doc／WebsocketProvider，导致页面变化但编辑内容不刷新；修复时将编辑器数据标识和初始化依赖绑定到 pageId 并释放 Provider 与 Awareness",
-      "kind": "failure",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：协同文档编辑器／已确认的开发阶段问题"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "开发阶段问题，不是公司生产事故"
-      ],
-      "tags": [
-        "yjs",
-        "routing",
-        "lifecycle"
-      ],
-      "project_id": "docs-editor"
-    },
-    {
-      "id": "docs-editor.failure-wss-deployment",
-      "statement": "本地 HTTP WebSocket 正常，但 HTTPS 与反向代理部署后连接失败；先切换 WSS，再修正生产连接地址和同源代理入口",
-      "kind": "failure",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：协同文档编辑器／已确认的开发阶段问题"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "开发阶段问题，不是公司生产事故"
-      ],
-      "tags": [
-        "wss",
-        "deployment",
-        "proxy"
-      ],
-      "project_id": "docs-editor"
-    },
-    {
-      "id": "docs-editor.failure-xmlfragment-path",
-      "statement": "Yjs 版本变化后出现 getXMLFragment 数据不匹配，随后统一前端协同、PostgreSQL 持久化和 Mention 提取使用 document-store-${pageId} XmlFragment 路径",
-      "kind": "failure",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：协同文档编辑器／已确认的开发阶段问题"
-        }
-      ],
-      "metrics": [],
-      "constraints": [],
-      "tags": [
-        "yjs",
-        "xmlfragment",
-        "mention"
-      ],
-      "project_id": "docs-editor"
-    },
-    {
-      "id": "docs-editor.tauri-boundary",
-      "statement": "项目已增加 Tauri 2 桌面工程和打包配置",
-      "kind": "boundary",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级编辑器类飞书文档架构设计/4.协同服务、AI 集成与应用构建部署.md",
-          "locator": "Tauri 桌面端"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：协同文档编辑器／服务端、认证与部署"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "没有可核验的多平台安装包发布、自动更新、签名或生产分发结果"
-      ],
-      "tags": [
-        "tauri",
-        "desktop"
-      ],
-      "project_id": "docs-editor"
-    },
-    {
-      "id": "docs-editor.requirement-boundary",
-      "statement": "需求范围曾包含评论／批注、插件扩展和私有化部署，但只把文稿或仓库有具体实现记录的部分视为已完成",
-      "kind": "boundary",
-      "ownership": "not_applicable",
-      "completion": "unknown",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级编辑器类飞书文档架构设计/1.需求分析、项目架构设计与编辑器核心架构剖析.md",
-          "locator": "需求范围"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：协同文档编辑器／事实边界"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "不把评论批注、动态插件装卸、移动端、高并发、断线恢复、Kubernetes 与高可用写成已完成"
-      ],
-      "tags": [
-        "scope-boundary"
-      ],
-      "project_id": "docs-editor"
-    },
-    {
-      "id": "docs-editor.result-boundary",
-      "statement": "已完成编辑器多包工程、协同与持久化、Mention 关系图、基础 Dify 写回、JWT 基础、Docker／Caddy 配置、WSS 修复和 Tauri 工程接入",
-      "kind": "result",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：协同文档编辑器／当前可确认成果"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "没有用户数量、文档规模、协同延迟、峰值连接数、自动化协同 E2E、编辑效率或业务收益"
-      ],
-      "tags": [
-        "delivery",
-        "boundary"
-      ],
-      "project_id": "docs-editor"
     },
     {
       "id": "hateoas.production-and-public-phases",
