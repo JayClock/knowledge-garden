@@ -295,8 +295,8 @@ class CareerHarnessScriptsTest(unittest.TestCase):
             root = Path(directory)
             state = self.initialize(root)
             policy_claim = {
-                "id": "career.capability.agent-harness-efficiency",
-                "statement": "使用 Agent Harness 提升研发交付的可控性",
+                "id": "test.capability.required-baseline",
+                "statement": "具备受控基线能力",
                 "kind": "positioning",
                 "ownership": "direct",
                 "completion": "validated",
@@ -304,7 +304,7 @@ class CareerHarnessScriptsTest(unittest.TestCase):
                 "evidence": [{"type": "user_confirmation", "locator": "用户确认"}],
                 "metrics": [],
                 "constraints": [],
-                "tags": ["agent-harness"],
+                "tags": ["test"],
             }
             claims_path = state / "claims.json"
             claims = json.loads(claims_path.read_text(encoding="utf-8"))
@@ -317,7 +317,7 @@ class CareerHarnessScriptsTest(unittest.TestCase):
                 "required_claim_ids": [policy_claim["id"]],
                 "required_artifact_types": ["resume"],
                 "content_check_artifact_types": ["resume"],
-                "content_markers_any": ["Agent Harness"],
+                "content_markers_any": ["Required Baseline"],
             }
             config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -363,7 +363,7 @@ class CareerHarnessScriptsTest(unittest.TestCase):
             opportunity_path.write_text(json.dumps(opportunity, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             manifest["claim_ids"] = [policy_claim["id"]]
             manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-            resume_path.write_text("# Resume\n\n研发提效：Agent Harness\n", encoding="utf-8")
+            resume_path.write_text("# Resume\n\n能力基线：Required Baseline\n", encoding="utf-8")
 
             valid = self.run_script(LINT, "--state-dir", str(state), "--repo-root", str(root))
             self.assertEqual(valid.returncode, 0, valid.stdout + valid.stderr)

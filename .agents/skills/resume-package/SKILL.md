@@ -32,7 +32,7 @@ description: 为一个明确 opportunity 生成岗位简历、岗位自我介绍
 ### 行动
 
 1. 生成书面简历前读取 `references/source-grounded-project-writing.md`，检索项目原始文稿、实战复盘、“中级／高级简历描述”和“项目重难点”；从中提取业务问题、系统边界、架构决策、复杂机制、故障处理和验证线索，再逐条映射到 selected confirmed claims。素材中的简历示例只是信息入口，不作为段落格式。
-2. 用同一 claim 集生成书面简历和岗位自我介绍，并无条件包含 `config.resume_policy.required_claim_ids`。当前全局基线要求把 Agent Harness 明确归类为研发提效：每份简历至少出现一次 `Agent Harness`，但可按 JD 决定放在个人概述、核心能力、工作经历或项目经历，以及是否展开 Evidence 等证据项目。不得为压缩篇幅删除该主题，应先压缩重复或弱相关证据。
+2. 用同一 claim 集生成书面简历和岗位自我介绍，并无条件包含 `config.resume_policy.required_claim_ids` 与 content markers 校验。不得为压缩篇幅删除基线主题，应先压缩重复或弱相关证据。
 3. 项目经历由素材中的强证据自然组织，不强制统一的“技术栈／项目简介／工作内容与成果”结构、分类标签、条目数或先后顺序；技术名词必须进入具体动作、机制或验证语境。
 4. 岗位自我介绍保存到：
 

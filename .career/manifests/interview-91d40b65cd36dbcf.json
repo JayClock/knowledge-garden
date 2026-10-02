@@ -31,15 +31,7 @@
     "monitoring-sdk.project.scope",
     "monitoring-sdk.architecture",
     "monitoring-sdk.queue-retry",
-    "monitoring-sdk.platform-boundary",
-    "evidence.project.scope",
-    "evidence.outer-loop.authority",
-    "evidence.human-agent-boundary",
-    "evidence.inner-loop.pair",
-    "evidence.failure-routing",
-    "evidence.showcase-learning-loop",
-    "evidence.model-guidance-boundary",
-    "evidence.ci-validation-boundary"
+    "monitoring-sdk.platform-boundary"
   ],
   "status": "current"
 }

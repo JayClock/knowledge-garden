@@ -32,23 +32,22 @@
     "project_output_root": "content/Knowledge/Outputs"
   },
   "resume_policy": {
-    "required_claim_ids": ["career.capability.agent-harness-efficiency"],
+    "required_claim_ids": [],
     "required_artifact_types": ["resume", "resume_docx", "self_introduction"],
     "content_check_artifact_types": ["resume", "self_introduction"],
-    "content_markers_any": ["Agent Harness"]
+    "content_markers_any": []
   }
 }
 ```
 
-所有路径相对 Git 根目录。`paths.career_history` 为必填的仓库内 Markdown 路径，本仓库使用 `content/Knowledge/Outputs/职业经历.md`；初始化只配置路径，不生成空白经历文件。首次授权保存时创建文档及 `.career/manifests/career-history.json`，已有文档也须先核对再建立 manifest。
+所有路径相对 Git 根目录。`paths.career_history` 为必填的仓库内 Markdown路径，本仓库使用 `content/Knowledge/Outputs/职业经历.md`；初始化只配置路径，不生成空白经历文件。首次授权保存时创建文档及 `.career/manifests/career-history.json`，已有文档也须先核对再建立 manifest。
 
 `resume_policy` 是跨岗位简历基线：
 
 - `required_claim_ids` 必须是 confirmed claims，并进入正式投递 opportunity 与受管简历包 manifest；
 - `required_artifact_types` 指定需要携带这些 claim 的 current 产物；
 - `content_check_artifact_types` 只对可直接读取的文本产物执行内容检查；
-- `content_markers_any` 至少命中一个，确保强制主题真正出现在正文，而不只是 manifest；
-- 当前项目把 Agent Harness 归为研发提效能力，所有岗位简历都必须涉及，但证据项目和展开深度按 JD 调整。
+- `content_markers_any` 至少命中一个，确保强制主题真正出现在正文，而不只是 manifest。
 
 ## claims.json
 
