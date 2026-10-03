@@ -1,7 +1,7 @@
 ---
 title: 简历追问：HATEOAS 兜底状态与错误标准化处理
 date: 2026-07-03 22:00:00
-updated: 2026-10-03 11:17:59
+updated: 2026-10-03 13:11:10
 tags:
   - interview/follow-up
   - resume/hateoas
@@ -9,7 +9,7 @@ tags:
 
 # 简历追问：HATEOAS 兜底状态与错误标准化处理
 
-关联：[[15分钟：HATEOAS 资源契约架构]]。
+关联：[[项目介绍：HATEOAS 资源契约架构]]。
 
 ## 对应回答主题
 

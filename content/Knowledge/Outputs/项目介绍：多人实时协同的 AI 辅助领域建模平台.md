@@ -1,15 +1,15 @@
 ---
-title: 15分钟：多人实时协同的 AI 辅助领域建模平台
+title: 项目介绍：多人实时协同的 AI 辅助领域建模平台
 tags:
   - interview/script
   - resume/fullstack
   - resume/ai
   - collaboration
 date: 2026-08-22 17:33:04
-updated: 2026-10-03 09:44:12
+updated: 2026-10-03 13:09:27
 ---
 
-# 15分钟：多人实时协同的 AI 辅助领域建模平台
+# 项目介绍：多人实时协同的 AI 辅助领域建模平台
 
 > [!tip] 使用方式
 > 默认先说 2 分钟版。面试官继续追问时，再从 5 分钟主讲法中选择协同生命周期、CRDT 边界或 AI Proposal 展开。

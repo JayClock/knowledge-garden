@@ -1,7 +1,7 @@
 ---
-title: 15分钟：HATEOAS 资源契约架构
+title: 项目介绍：HATEOAS 资源契约架构
 date: 2026-04-21 15:58:29
-updated: 2026-10-03 09:43:35
+updated: 2026-10-03 13:09:15
 tags:
   - interview
   - architecture
@@ -10,7 +10,7 @@ tags:
   - typescript
 ---
 
-# 15分钟：HATEOAS 资源契约架构
+# 项目介绍：HATEOAS 资源契约架构
 
 > [!tip] 使用方式
 > 默认先说 2 分钟版。面试官继续追问时，再从 5 分钟主讲法或文末具体回答中选择一条展开；不要连续背满 15 分钟。

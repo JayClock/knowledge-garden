@@ -1,7 +1,7 @@
 ---
 title: 简历追问：监控 SaaS 大盘与 ClickHouse 可视化
 date: 2026-07-03 22:00:00
-updated: 2026-10-03 11:16:48
+updated: 2026-10-03 13:11:10
 tags:
   - interview/follow-up
   - resume/sdk
@@ -10,7 +10,7 @@ tags:
 
 # 简历追问：监控 SaaS 大盘与 ClickHouse 可视化
 
-关联：[[15分钟：前端埋点与监控 SDK]]、[[简历回答逐字稿：监控 SaaS 大盘与 ClickHouse 可视化]]。
+关联：[[项目介绍：前端埋点与监控 SDK]]、[[简历回答逐字稿：监控 SaaS 大盘与 ClickHouse 可视化]]。
 
 ## 面试官真正想确认
 

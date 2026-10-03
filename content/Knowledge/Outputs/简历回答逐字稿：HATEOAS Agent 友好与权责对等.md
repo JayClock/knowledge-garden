@@ -1,7 +1,7 @@
 ---
 title: 简历回答逐字稿：HATEOAS Agent 友好与权责对等
 date: 2026-07-03 22:30:00
-updated: 2026-10-03 09:44:37
+updated: 2026-10-03 13:11:10
 tags:
   - interview/script
   - resume/hateoas
@@ -10,7 +10,7 @@ tags:
 
 # 简历回答逐字稿：HATEOAS Agent 友好与权责对等
 
-关联：[[简历追问：HATEOAS Agent 友好与权责对等]]、[[15分钟：HATEOAS 资源契约架构]]。
+关联：[[简历追问：HATEOAS Agent 友好与权责对等]]、[[项目介绍：HATEOAS 资源契约架构]]。
 
 ## 30 秒开场
 

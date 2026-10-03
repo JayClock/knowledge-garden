@@ -1,7 +1,7 @@
 ---
 title: 简历追问：低代码 Monorepo 与 CI CD 治理
 date: 2026-07-03 22:00:00
-updated: 2026-10-03 09:48:31
+updated: 2026-10-03 13:11:10
 tags:
   - interview/follow-up
   - resume/lowcode
@@ -10,7 +10,7 @@ tags:
 
 # 简历追问：低代码 Monorepo 与 CI CD 治理
 
-关联：[[15分钟：低代码平台]]、[[简历回答逐字稿：低代码 Monorepo 与 CI CD 治理]]。
+关联：[[项目介绍：企业级低代码工作流引擎]]、[[简历回答逐字稿：低代码 Monorepo 与 CI CD 治理]]。
 
 ## 面试官真正想确认
 
