@@ -1,7 +1,7 @@
 ---
 title: 简历追问：HATEOAS TypeScript SDK 与类型安全约束
 date: 2026-07-03 22:00:00
-updated: 2026-08-26 08:30:30
+updated: 2026-10-03 11:17:48
 tags:
   - interview/follow-up
   - resume/hateoas
@@ -62,10 +62,9 @@ tags:
 - 一个 zod 校验失败的错误样例。
 - 一个 action 后缓存失效和 React 组件刷新的流程图。
 
-## 容易露馅的回答
+## 面试注意事项
 
-- “TypeScript 泛型一包就安全了。”
-- “后端动态返回的东西不需要类型。”
-- “zod 只是用来校验表单。”
-- “SDK 就是把 URL 和 Method 封装一下。”
-- “只要 TypeScript 类型写得完整，服务端资源怎么建模都无所谓。”
+- 讲清编译期静态类型推导与运行时 Schema 校验结合的双重防护机制。
+- 解释对后端动态下发 HAL/HAL-FORMS 结构的契约解析与安全兜底。
+- 说明 SDK 封装了资源导航、状态机驱动与联动缓存失效，超越简单的请求封装。
+- 强调类型安全必须建立在上游严谨的 RESTful 资源建模之上。
