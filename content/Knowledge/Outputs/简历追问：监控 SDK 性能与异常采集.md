@@ -1,7 +1,7 @@
 ---
 title: 简历追问：监控 SDK 性能与异常采集
 date: 2026-07-03 22:00:00
-updated: 2026-08-26 08:30:30
+updated: 2026-10-03 09:51:20
 tags:
   - interview/follow-up
   - resume/sdk
@@ -62,12 +62,11 @@ tags:
 
 ## 准备证据
 
-- 项目范围以候选人确认和 [[企业级监控平台全栈架构设计与实践面试专项突击]] 为准，准备 Web Vitals、异常、Fetch／XHR、队列和 Sourcemap 的原文说明。
-- `miaoma-monitor` 作为代表性内部重实现，可辅助展示 PerformanceObserver、全局异常、Promise rejection 和 HTTP Transport 等机制；代码范围不要求与原项目逐项一致。
+- 准备 Web Vitals、异常捕获、Fetch／XHR 代理、本地队列和 Sourcemap 映射的技术实现说明。
+- 可结合代码示例展示 PerformanceObserver、全局异常、Promise rejection 和 HTTP Transport 等机制。
 
-## 容易露馅的回答
+## 面试注意事项
 
-- “监听全局 error 就覆盖所有异常。”
-- “覆写 fetch 后直接读取 response.json()。”
-- “每条事件实时发送最准确。”
-- 把 `sendBeacon`、离线续传和具体故障案例说成已经完成。
+- 清楚阐明 Fetch 代理对 response stream 的保护机制，避免消耗原始数据流。
+- 解释批量上报与弱网重试的权衡策略。
+- 聚焦已实现的采集与上报链路，深入机制细节。

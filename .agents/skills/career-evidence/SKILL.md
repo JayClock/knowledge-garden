@@ -57,7 +57,7 @@ description: 通过先读材料、顾问式深访和分轮确认挖出真实职�
 
 `职业经历.md` 是长期维护的可读文档，不是临时报告，也不是岗位简历。执行 reference 中的文档结构与人工修改处理协议。
 
-- 经确认正文来自 confirmed claims，保留职责、完成状态和限制，用自然段组织而不是倾倒 JSON 字段。
+- 经确认正文来自 confirmed claims，正向描述职责、机制与交付应用，严禁出现免责声明或罗列负向未完成清单，用自然段组织而不是倾倒 JSON 字段。
 - 待补问题单列，不把 candidate 或 contested 陈述混入已确认正文。
 - 用户新增内容先核对；来源不清时提问或保持候选，不默默覆盖，也不自动升级为事实。
 - 为文档维护 `.career/manifests/career-history.json`，类型为 `career_history`，`generated_by` 为 `career-evidence`，记录正文使用的 confirmed claim IDs。

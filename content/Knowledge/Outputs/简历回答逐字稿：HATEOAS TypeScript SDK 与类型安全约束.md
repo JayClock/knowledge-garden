@@ -1,7 +1,7 @@
 ---
 title: 简历回答逐字稿：HATEOAS TypeScript SDK 与类型安全约束
 date: 2026-07-03 22:30:00
-updated: 2026-08-26 08:30:30
+updated: 2026-10-03 09:44:53
 tags:
   - interview/script
   - resume/hateoas
@@ -12,12 +12,6 @@ tags:
 
 关联：[[简历追问：HATEOAS TypeScript SDK 与类型安全约束]]、[[15分钟：HATEOAS 资源契约架构]]。
 
-> [!warning] 回答边界
->
-> - SDK、类型约束、zod 校验、缓存和 React Hooks 属于个人直接实现。
-> - 服务端资源表达由我设计契约并与后端共同落地，服务端代码不是个人实现。
-> - 真实资源是应用、表单、工作流和工作区导航；下文代码只用于解释机制。
-
 ## 30 秒开场
 
 这个 SDK 固化了 HATEOAS 的资源消费方式。`Client` 管理入口和中间件，`Resource` 表示 URI 级资源，`follow()` 沿 relation 导航，`action()` 按服务端模板提交动作。TypeScript 约束稳定的 relation，当前状态是否真的返回动作仍由运行时判断，payload 再通过 Zod 校验。
@@ -26,7 +20,7 @@ tags:
 
 因为 TypeScript 只能约束稳定的业务 relation。如果服务端资源边界和生命周期不清楚，relation 名称就会随着页面和接口路径变化，SDK 再强类型也只是把不稳定结构写进类型系统。
 
-在 SDK 落地过程中，我逐渐把问题从“前端怎样调用接口”向上追到“资源是什么、聚合关系是什么、动作为什么合法”。因此后续参与四色建模和 RESTful API 设计，再把稳定资源关系落实回 SDK 类型、`follow()` 和 `action()`。这条演进仍然以客户端可维护性为目标，不代表服务端实现都由我完成。
+在 SDK 落地过程中，我逐渐把问题从“前端怎样调用接口”向上追到“资源是什么、聚合关系是什么、动作为什么合法”。因此后续参与四色建模和 RESTful API 设计，再把稳定资源关系落实回 SDK 类型、`follow()` 和 `action()`，与后端协同推进接口表达层契约。
 
 ## 如果面试官问：它和 Axios + React Query 有什么区别？
 
@@ -67,7 +61,7 @@ type ApplicationLinks = {
 
 项目里的实际做法是：对稳定的 relation、action 和 payload 显式定义 TypeScript 类型，并用 zod 做运行时校验，再通过契约测试检查前后端对 `_links`、`_templates` 和 payload 的理解是否一致。
 
-从 OpenAPI 或 JSON Schema 自动生成类型是这个 HATEOAS SDK 的可演进方向，但该项目没有完成自动生成，不能把后续协同建模平台中“AI 生成 OpenAPI 草稿”的能力倒算成这里的生产事实。运行时提交时，SDK 仍不能只相信前端类型；校验失败要返回字段路径和错误信息，而不是只抛字符串。
+在提交运行时，SDK 不能只依赖前端编译期类型，必须通过 Standard Schema / Zod 执行运行时校验，校验失败时返回精准的字段路径与错误信息，便于端侧结构化呈现。
 
 ## 如果面试官追：缓存和 React Hook 怎么处理？
 

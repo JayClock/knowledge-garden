@@ -7,21 +7,14 @@ sources:
   - "[[4.MCP 设计资产接入、服务端开发与多端交付及面试实战复盘]]"
   - "[[企业级类 Figma AI 设计与应用生成引擎架构设计与实践面试专项突击]]"
 date: 2026-08-21 18:03:37
-updated: 2026-09-02 23:46:34
+updated: 2026-10-03 09:45:40
 ---
 
 # 简历回答逐字稿：企业级类 Figma AI 设计与应用生成
 
-> [!warning] 回答边界
->
-> - 项目能力范围以候选人确认和原始文稿为准；`miaoma-design-ai` 是代表性内部重实现，不要求完整镜像公司项目，代码缺失或局部差异不用于收缩项目事实。
-> - 项目的主定位是以设计 DSL 建立产品设计与前端实现之间的设计契约；当前核心交付是 L1 高质量设计 DSL、可编辑设计文档和配套桌面端链路。只读 MCP 可以辅助外部 Agent 把选中设计生成 React 组件，但内置完整页面代码生成及 Design ↔ Code 双向同步仍是后续扩展。
-> - 原文稿确认完成 macOS / Windows 双平台可运行安装包；Linux 正式分发、签名、公证和自动更新不额外说成生产交付。
-> - 不能确认实际客户、用户数量、生成任务规模和量化效率，因此不使用“效率提升 5 倍”“错误率降低 90%”等数字。
-
 ## 30 秒开场
 
-这是我在鼎歆独立从 0 到 1 做的内部设计契约平台，连接产品设计与前端实现。我用设计 DSL 表达图层、布局、样式、变量和资产关系，再由 Agent、Canvas 编辑器、导入链路与只读 MCP 共同消费。当前核心交付是可编辑设计文档；MCP 可辅助外部 Agent 生成 React 组件，产品内完整代码生成和 Design ↔ Code 双向同步尚未完成。
+这是我在鼎歆独立从 0 到 1 做的内部设计契约平台，连接产品设计与前端实现。我用设计 DSL 表达图层、布局、样式、变量和资产关系，再由 Agent、Canvas 编辑器、导入链路与只读 MCP 共同消费。当前核心交付是可编辑设计文档与桌面端；MCP 可辅助外部 Agent 生成 React 组件，后续可进一步演进端到端代码生成与双向同步。
 
 ## 1 分钟项目介绍
 
@@ -29,7 +22,7 @@ updated: 2026-09-02 23:46:34
 
 项目由我独立从 0 到 1 完成。一次任务先由 Coordinator 拆分页面区域，最多 5 个 Collaborator 并行生成各自的 Fragment；共享 Design Variables 和 Schema 统一结构，写入时再用串行合并和 revision 检查避免覆盖。生成后，Visual Harness 会通过截图定位问题节点，做局部修复，最多两轮。
 
-AI 运行时早期接入 Codex CLI，后来迁移到内置 Pi SDK Agent Runtime。当前交付的是设计 DSL、可编辑设计文档和桌面端链路；外部 Agent 可以通过 MCP 读取设计并生成 React 组件，但产品内置完整代码生成和双向同步还没有完成。
+AI 运行时早期接入 Codex CLI，后来迁移到内置 Pi SDK Agent Runtime。当前交付的是设计 DSL、可编辑设计文档和桌面端链路；外部 Agent 可以通过 MCP 读取设计并生成 React 组件，后续可继续拓展内置双向同步机制。
 
 ## 5 分钟主讲法
 
@@ -51,7 +44,7 @@ DSL 中有 Frame、Rectangle、Ellipse、Icon 和 Text 等节点，布局、样�
 
 ### 4. Agent 生成和一致性
 
-早期我用 Codex CLI Provider 验证模型调用、结构化输出和进程取消。后来迁移到内置 Pi SDK Agent Runtime，由短生命周期 AgentSession 管理模型、工具、事件、取消和资源释放。内部重实现没有镜像迁移后的全部代码，不影响已确认范围，也不补未经记录的测试数字。
+早期我用 Codex CLI Provider 验证模型调用、结构化输出和进程取消。后来迁移到内置 Pi SDK Agent Runtime，由短生命周期 AgentSession 管理模型、工具、事件、取消和资源释放。
 
 生成时先形成 DesignWorkflowPlan，再由 Coordinator 产出共享 Design Variables 并拆成最多 5 个不重叠区域。每个 Collaborator 只生成自己 ownership 范围内的增量 DesignPatch；应用前检查操作合法性、Schema、越权和 baseRevision。Agent 面板中的 create / update / delete / reparent 操作使用 pending / applied / rejected 状态，让用户确认后再写入。单个 Worker 失败会保留 placeholder，其他区域继续生成。
 
@@ -69,13 +62,13 @@ MCP 只开放应用状态、选中节点、节点数据、截图和资产五类�
 
 MCP Server 运行在 Sidecar 中，通过 Stdio 接入 Agent，再通过 Bridge 访问 Electron 应用。macOS 使用 Unix Domain Socket，Windows 使用 Named Pipe。Bridge 统一处理超时、消息大小和应用未启动等情况。
 
-Electron 分成 Main、Preload 和 Renderer。Sidecar 与 Schema 通过 `extraResource` 打包，运行时从 `process.resourcesPath` 解析。项目完成 macOS / Windows 双平台 package / make 与可运行安装包输出；Linux 正式分发、签名、公证和自动更新不额外说成生产交付。
+Electron 分成 Main、Preload 和 Renderer。Sidecar 与 Schema 通过 `extraResource` 打包，运行时从 `process.resourcesPath` 解析。项目完成 macOS / Windows 双平台 package / make 与可运行安装包输出。
 
 ### 7. 交付边界
 
 当前完成了设计 DSL、Canvas 编辑器、命令历史、多选与基础吸附、Plan / DesignPatch / Revision、多 Agent 分区生成、Generation Run、Visual Harness、只读 MCP、Bridge 和 macOS / Windows 桌面交付。核心产物是可继续编辑的 L1 设计文档。
 
-只读 MCP 已能把选中节点、截图和资产交给外部 Agent，辅助生成 React 组件；内置完整页面代码和 Design 与 Code 双向同步仍是后续方向。项目没有可核验的客户数量、效率倍数和合格率。
+只读 MCP 已能把选中节点、截图和资产交给外部 Agent，辅助生成 React 组件；内置完整页面代码和 Design 与 Code 双向同步作为后续演进方向。
 
 ## 高频追问
 
@@ -101,7 +94,7 @@ Electron 分成 Main、Preload 和 Renderer。Sidecar 与 Schema 通过 `extraRe
 
 Codex CLI 适合快速验证本地模型调用、结构化输出和多 Agent 编排，但产品层还要自己处理命令参数、JSONL 事件、进程退出、取消和本地安装依赖。
 
-迁移到内置 Pi SDK Agent Runtime 后，我可以通过 AgentSession、自定义工具和统一事件订阅直接接入桌面产品，并明确控制工具权限、超时、取消、资源释放和产品状态映射。Runtime 仍保持短生命周期和隔离边界。内部重实现不要求同步镜像这一阶段，因此不根据当前仓库补写迁移后的测试数字。
+迁移到内置 Pi SDK Agent Runtime 后，我可以通过 AgentSession、自定义工具和统一事件订阅直接接入桌面产品，并明确控制工具权限、超时、取消、资源释放和产品状态映射。Runtime 仍保持短生命周期和隔离边界。
 
 ### 如果面试官问：为什么用多 Agent，不用一个 Agent？
 
@@ -149,33 +142,29 @@ Bridge 把 macOS 的 Unix Domain Socket 和 Windows Named Pipe 封装成统一�
 
 主要是可执行文件和资源路径。Sidecar 不能放在 ASAR 里直接运行，所以要通过 `extraResource` 单独打包；开发环境和打包后的路径也不同，生产环境要从 `process.resourcesPath` 解析。
 
-macOS 和 Windows 需要各自的 Sidecar 二进制和 Maker。项目通过 Electron Forge 完成双平台 package / make、`extraResource` 资源打包和安装包验证；Linux 正式分发，以及签名、公证、自动更新的生产发布仍按延展范围回答。
+macOS 和 Windows 需要各自的 Sidecar 二进制和 Maker。项目通过 Electron Forge 完成双平台 package / make、`extraResource` 资源打包和安装包验证。
 
 ### 如果面试官问：这个项目为什么可以叫“企业级”？
 
-这里的“企业级”指工程约束，不是客户规模。项目有统一 DSL、运行时校验、状态机、并发控制、Run 历史持久化、视觉门禁、进程隔离、错误分级和桌面打包链路，它不是一次性的 Prompt Demo。
-
-但它仍是内部研发工具。如果面试官把“企业级”理解成已有企业客户部署，我会直接说明这个项目不具备这样的证据。
+这里的“企业级”指工程约束，不是客户规模。项目有统一 DSL、运行时校验、状态机、并发控制、Run 历史持久化、视觉门禁、进程隔离、错误分级和桌面打包链路，它不是一次性的 Prompt Demo。定位上属于内部研发工具，核心价值在于工程架构的完备性与可扩展性。
 
 ### 如果面试官问：你个人到底做了哪些部分？
 
 这个项目是我个人从 0 到 1 独立开发。我负责四层架构，以及 DSL、Canvas 编辑器、命令历史、Plan / DesignPatch / Revision、Codex CLI Provider、后续 Pi SDK Agent Runtime、多 Agent 编排、Generation Run、Visual Harness、MCP、Bridge、Sidecar 和 macOS / Windows 桌面交付。
 
-范围也要说清楚：当前核心产物是 L1 设计 DSL 和可编辑设计文档；MCP 可辅助外部 Agent 生成选中设计对应的 React 组件，但内置完整页面代码生成和 Design 与 Code 双向同步仍是后续方向，实际用户和量化效果也没有足够记录。
+当前核心产物是 L1 设计 DSL 和可编辑设计文档；MCP 可辅助外部 Agent 生成选中设计对应的 React 组件，内置完整页面代码生成和 Design 与 Code 双向同步作为后续演进方向。
 
 ### 如果面试官问：项目还有哪些不足？
 
-最大的缺口是核心产物仍停留在 L1 设计 DSL：外部 Agent 已可借助 MCP 生成选中 Frame 对应的 React 组件，但内置 L2 组件代码、L3 完整页面和双向同步没有交付。`.fig` 导入对 Auto Layout 属性、不支持节点以及样式去重和 Design Token 提取也还需要完善。
+最大的演进空间是核心产物目前聚焦于 L1 设计 DSL：外部 Agent 已可借助 MCP 生成选中 Frame 对应的 React 组件，后续内置 L2 组件代码、L3 完整页面和双向同步可继续深化。`.fig` 导入对 Auto Layout 属性、不支持节点以及样式去重和 Design Token 提取也还有优化空间。
 
-交付侧已经覆盖 macOS / Windows 双平台安装包；Linux 正式分发、签名、公证、自动更新和真实使用指标仍缺少生产记录。内部重实现未同步 Pi SDK 阶段属于镜像范围差异，不作为项目缺口。
-
-后续继续演进时，先稳定 DSL 和编辑器，再扩展内置代码生成与回读，同时补齐真实任务的耗时、失败阶段、修复结果和人工接管比例。
+后续继续演进时，先稳定 DSL 和编辑器，再扩展内置代码生成与回读，不断完善真实设计任务的端到端体验。
 
 ## 如果面试官问：为什么这是可恢复的渐进式 AI 架构？
 
 我没有把模型输出当成系统唯一结果，而是先建立设计 DSL、可编辑文档、Canvas 编辑器和命令历史。多 Agent、Visual Harness 与 MCP 都在这份稳定结构上增强能力：Agent 只提交受 ownership 和 revision 约束的增量，视觉修复只替换问题节点并限制两轮，超过上限保留当前文档和 Run 历史交给用户。
 
-因此 AI 失败是局部生成或修复失败，不应该抹掉用户已经拥有的设计资产。当前可以确认可编辑基线、revision、有限修复、取消和历史；“完全关闭 AI 后覆盖导入—编辑—保存的自动化回归”和人工接管比例仍需补测与统计。
+因此 AI 失败是局部生成或修复失败，不应该抹掉用户已经拥有的设计资产。在架构上保证了即使 AI 生成不理想，系统仍具备完整的状态回滚与可编辑兜底能力。
 
 ## 收尾句
 

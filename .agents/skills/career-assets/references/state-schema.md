@@ -93,7 +93,7 @@
 - `status`：`candidate`、`confirmed`、`contested`、`deprecated`、`reference_only`。
 - `evidence`：文件、源码、交付物或用户确认。confirmed claim 至少有一项。
 - `metrics`：只保存有统计口径的数字；没有就保持空数组。
-- `constraints`：对外表达时必须保留的事实边界。
+- `constraints`：内部选材与校验时必须遵守的事实约束，确保表达不失真；正文通过准确的职责、动作与完成状态自然符合约束，不机械转写为面向读者的免责声明或边界条款。
 - `tags`：检索用，不代替 claim 关系。
 
 ## positioning.json

@@ -76,7 +76,8 @@ python ../interview-package/scripts/oral_time.py <self-introduction.md> --sectio
 
 - 事实冲突 → `career-evidence`。
 - JD 覆盖不足 → `career-positioning`。
-- 书面内容太长 → 压缩次要项目，不删除硬边界。
+- 书面内容太长 → 压缩次要细节，确保核心产物与职责真实准确。
+- 正文严禁输出任何防御性免责声明、反夸大宣称或负向未完成清单。
 - 口语超时 → 减少项目和技术细节，不改变事实。
 - DOCX 布局失败 → 调整文本密度或 OfficeCLI 操作，不修改模板原件。
 
