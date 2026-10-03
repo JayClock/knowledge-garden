@@ -7,68 +7,58 @@ sources:
   - "[[4.MCP 设计资产接入、服务端开发与多端交付及面试实战复盘]]"
   - "[[企业级类 Figma AI 设计与应用生成引擎架构设计与实践面试专项突击]]"
 date: 2026-08-21 18:03:37
-updated: 2026-10-03 13:09:50
+updated: 2026-10-03 13:37:59
 ---
 
 # 项目介绍：企业级类 Figma AI 设计与应用生成
 
-## 30 秒开场
+## 提取词
 
-这是我在鼎歆独立从 0 到 1 做的内部设计契约平台，连接产品设计与前端实现。我用设计 DSL 表达图层、布局、样式、变量和资产关系，再由 Agent、Canvas 编辑器、导入链路与只读 MCP 共同消费。当前核心交付是可编辑设计文档与桌面端；MCP 可辅助外部 Agent 生成 React 组件，后续可进一步演进端到端代码生成与双向同步。
+设计契约DSL ｜ Canvas命令历史与撤销 ｜ 多Agent分区与revision ｜ Visual Harness视觉门禁 ｜ 只读MCP与桌面交付
 
-## 1 分钟项目介绍
+## 5 分钟主讲
+
+我先介绍一下这个项目的背景。这个项目是我在鼎歆独立从 0 到 1 研发的内部设计契约平台，用来连接产品设计与前端开发。传统的 D2C 最核心的难点在于设计语义的丢失：普通截图或导出的位图只剩下孤立的像素，图层层级、Auto Layout 布局规则、Design Variables 以及资产组件关系全部丢掉了；如果直接让大模型去猜像素生成代码，输出空间太大，生成的代码既无法精准还原设计意图，后续也根本无法在可视化界面中二次编辑和版本化维护。
+
+为了解决这个问题，我确立的核心技术路线是：绝不让大模型一步跳到最终代码，而是先建立受严格约束的设计 DSL，把它作为产品设计与前端实现之间的中间契约。全链路涵盖“自然语言输入或设计资产导入、生成中间设计 DSL、Canvas 可视化编辑、Visual Harness 视觉门禁验证修复，以及下游前端消费”。我独立负责需求分析、系统架构与核心开发，整体划分为设计 DSL 与编辑器、多 Agent 编排与 Visual Harness、MCP 资产接入以及 Electron 桌面交付四层。
+
+在 DSL 与编辑器层面，我设计了涵盖 Frame、Text、Rectangle、Icon 等节点的类型系统，将布局、样式、变换和 Design Variables 分开建模。底层编辑器基于 Canvas 与 React 构建三栏布局，采用纯函数命令模式与不可变数据管理状态，严格实现事务历史栈，把一次连续拖拽合并为单一历史事务，支持精准的撤销重做；同时支持单选、多选、框选、跨容器 reparent、Auto Layout 与批量属性修改，确保即便完全脱离 AI，也是一个功能完备的高性能矢量设计编辑器。
+
+在 Agent 生成与并发一致性上，早期我通过 Codex CLI 验证链路，后来迁移到内置的 Pi SDK Agent Runtime，由短生命周期的 AgentSession 统一管理工具与取消事件。针对复杂多模块页面，单 Agent 生成容易上下文过长并导致整页失败，因此我设计了多 Agent 分区生成架构：由 Coordinator 生成共享全局变量并把页面拆分成最多 5 个互不重叠的区域，各 Collaborator 只在各自 ownership 范围内并行产出增量 DesignPatch。写入时必须严格校验操作类型、Schema、越权与 baseRevision，未通过时坚决拦截，保证了多智能体并行生成时的最终一致性。
+
+但仅仅通过 Schema 校验是不够的。Schema 能检查字段合法，却看不出文本溢出、区域遮挡或对比度不足。为此我设计并实现了 Visual Harness 视觉门禁：在文档组装后调用无头渲染截图，交由多模态大模型进行视觉审查，将问题定位并绑定到具体 nodeId。随后的修复只替换问题节点，节点 ID 保持稳定并重新截图复验；这里我做了一层确定性取舍，**视觉修复严格限制最多两轮**，因为生成式修复并不保证单调收敛，超出上限后系统保留当前成果与问题上下文，主动转由人工接管，避免了死循环消耗。
+
+在桌面交付与下游消费上，为了让外部编码 Agent 能够安全读取设计资产，我实现了只读 MCP Server。MCP Server 运行在独立的 Sidecar 进程中，通过 Unix Domain Socket 或 Windows Named Pipe 与 Electron 主进程通信。我严格将当前 MCP 限制为只读，开放状态、选区、截图和资产提取，辅助外部 Agent 生成 React 组件；写操作必须走编辑器既有的 revision 和历史事务，坚决防止外部 Agent 越权破坏核心设计文档。项目最终通过 Electron Forge 打包为 macOS 和 Windows 双平台原生应用并完成交付。
+
+这个项目让我把复杂前端工程能力延伸到了 AI 生成系统。大模型负责理解需求和生成候选内容，而 DSL、Schema、状态机、revision 和质量门禁负责把结果收住，实现了从设计生成到可编辑 L1 资产的高确定性工程闭环。
+
+## 2 分钟版本
 
 这个项目服务于公司内部的产品设计和前端协作。传统截图或口头交接只保留表面结果，图层、布局、Design Variables、资产和组件关系都会丢失，所以我先把这些意图固化为设计 DSL，作为产品设计与前端共同审核和消费的中间契约，没有让模型直接生成最终代码。
 
 项目由我独立从 0 到 1 完成。一次任务先由 Coordinator 拆分页面区域，最多 5 个 Collaborator 并行生成各自的 Fragment；共享 Design Variables 和 Schema 统一结构，写入时再用串行合并和 revision 检查避免覆盖。生成后，Visual Harness 会通过截图定位问题节点，做局部修复，最多两轮。
 
-AI 运行时早期接入 Codex CLI，后来迁移到内置 Pi SDK Agent Runtime。当前交付的是设计 DSL、可编辑设计文档和桌面端链路；外部 Agent 可以通过 MCP 读取设计并生成 React 组件，后续可继续拓展内置双向同步机制。
+AI 运行时采用内置 Pi SDK Agent Runtime，由短生命周期 AgentSession 管理模型、工具和取消。针对外部 Agent，我封装了只读 MCP Server，通过 Sidecar 与本地 Socket 与 Electron 桌面端通信，提供节点数据、截图和设计资产提取，辅助外部 Agent 生成 React 组件。当前交付的是设计 DSL、可编辑设计文档和桌面端链路，打通了从自然语言到可编辑设计资产的高确定性工程闭环。
 
-## 5 分钟主讲法
+## 30 秒版本
 
-### 1. 为什么先建立设计契约
+这是我在鼎歆独立从 0 到 1 做的内部设计契约平台，连接产品设计与前端实现。我用设计 DSL 表达图层、布局、样式、变量和资产关系，再由 Agent、Canvas 编辑器、导入链路与只读 MCP 共同消费。当前核心交付是可编辑设计文档与桌面端；MCP 可辅助外部 Agent 生成 React 组件，后续可进一步演进端到端代码生成与双向同步。
 
-这个项目服务于公司内部的产品设计和前端协作。我把 D2C 的难点理解成设计语义重建：截图只剩像素，图层、布局规则、设计变量、资产和组件关系已经丢失；模型即使生成了能运行的代码，也未必保留产品设计意图，后续很难编辑和验证。
+## 渐进式架构视角
 
-所以我先建立“自然语言／导入资产 → 设计 DSL → 可视化编辑 → 验证修复 → 前端消费”链路。DSL 是双方可检查的中间契约，模型只生成候选，Schema、revision、Visual Harness 和人工确认共同控制写入；当前先把可编辑的 L1 设计文档和消费接口做稳。
+设计 DSL、可编辑文档、Canvas 编辑器和命令历史构成了系统的绝对稳定基线。多 Agent 分区并行、Visual Harness 多模态视觉门禁以及只读 MCP 则是建立在基线上的渐进增强层：Agent 只能提交受 ownership 和 revision 约束的增量 Patch，视觉修复只针对具体问题节点且严格限制两轮，超限后完整保留文档与上下文退由人工接管。即使 AI 生成不理想，系统仍具备完整的状态回滚与可编辑兜底能力。
 
-### 2. 我的职责和架构
+## 深挖入口
 
-这是我个人从 0 到 1 独立完成的内部研发工具。我负责需求分析、架构和核心实现。系统分成设计 DSL 与编辑器、Agent 生成与 Visual Harness、MCP 接入和 Electron 桌面交付四层，共用同一份设计结构。生成结果必须能继续编辑、验证和保存，失败也要能定位到具体阶段。
-
-### 3. DSL 和编辑器
-
-DSL 中有 Frame、Rectangle、Ellipse、Icon 和 Text 等节点，布局、样式、变换和 Design Variables 分开建模。TypeScript 的可辨识联合负责开发期约束；原生 JSON、Pencil 和 Figma 导入会先规范化，再经过 Zod / Schema 与运行时校验。
-
-编辑器采用 Canvas + React 三栏结构，文档、选择和交互状态由单一数据源与发布订阅同步。命令模式和不可变数据支持历史栈与事务撤销；交互层完成单选、多选、框选、拖拽草稿、Esc 取消、跨容器 reparent、Auto Layout、基础节点吸附，以及图层重命名／隐藏／锁定和多选批量属性编辑。
-
-### 4. Agent 生成和一致性
-
-早期我用 Codex CLI Provider 验证模型调用、结构化输出和进程取消。后来迁移到内置 Pi SDK Agent Runtime，由短生命周期 AgentSession 管理模型、工具、事件、取消和资源释放。
-
-生成时先形成 DesignWorkflowPlan，再由 Coordinator 产出共享 Design Variables 并拆成最多 5 个不重叠区域。每个 Collaborator 只生成自己 ownership 范围内的增量 DesignPatch；应用前检查操作合法性、Schema、越权和 baseRevision。Agent 面板中的 create / update / delete / reparent 操作使用 pending / applied / rejected 状态，让用户确认后再写入。单个 Worker 失败会保留 placeholder，其他区域继续生成。
-
-Generation Run 状态机记录准备、生成、验证、修复和最终结果，Run 与 Thread 历史持久化支持断点恢复和历史回溯，UI 的进度与错误直接来自这些状态。
-
-### 5. Visual Harness
-
-Schema 能判断字段和节点关系是否合法，但看不出文本溢出、区域错位、层级混乱或对比度不足。所以文档组装后，我会截图交给多模态模型检查，并把问题绑定到具体 nodeId。
-
-修复只替换问题节点，节点 ID 保持不变，之后重新截图验证。默认最多两轮，因为生成式修复不保证越改越好。超过上限就保留当前文档和问题，让用户接管。
-
-### 6. MCP 和桌面端
-
-MCP 只开放应用状态、选中节点、节点数据、截图和资产五类读取工具。写入还涉及事务、冲突、撤销和回滚；这些机制没有补齐前，外部 Agent 不能直接改文档。
-
-MCP Server 运行在 Sidecar 中，通过 Stdio 接入 Agent，再通过 Bridge 访问 Electron 应用。macOS 使用 Unix Domain Socket，Windows 使用 Named Pipe。Bridge 统一处理超时、消息大小和应用未启动等情况。
-
-Electron 分成 Main、Preload 和 Renderer。Sidecar 与 Schema 通过 `extraResource` 打包，运行时从 `process.resourcesPath` 解析。项目完成 macOS / Windows 双平台 package / make 与可运行安装包输出。
-
-### 7. 交付边界
-
-当前完成了设计 DSL、Canvas 编辑器、命令历史、多选与基础吸附、Plan / DesignPatch / Revision、多 Agent 分区生成、Generation Run、Visual Harness、只读 MCP、Bridge 和 macOS / Windows 桌面交付。核心产物是可继续编辑的 L1 设计文档。
-
-只读 MCP 已能把选中节点、截图和资产交给外部 Agent，辅助生成 React 组件；内置完整页面代码和 Design 与 Code 双向同步作为后续演进方向。
+| 追问方向 | 核心机制与证据 | 对应问答位置 |
+| --- | --- | --- |
+| **设计契约与 DSL** | 为什么不让大模型直接生成代码？为什么需要中间 DSL？ | [[#如果面试官问：为什么不让大模型直接生成代码？]] |
+| **写入权限与一致性** | 为什么 AI 不能直接修改文档？Plan $	o$ Patch $	o$ Revision 闭环 | [[#如果面试官问：为什么 AI 不能直接修改设计文档？]] |
+| **编辑器内核机制** | Canvas 命令历史、事务合并、多选 Set 与混合属性编辑 | [[#如果面试官问：编辑器的撤销重做和多选怎样实现？]] |
+| **多 Agent 编排调度** | Coordinator 任务拆解、分区 ownership、revision 防覆盖机制 | [[#如果面试官问：为什么用多 Agent，不用一个 Agent？]] |
+| **Visual Harness 门禁** | 无头截图、视觉审查绑定 nodeId、两轮修复上限的设计取舍 | [[#如果面试官问：Visual Harness 和普通 Schema 校验有什么区别？]] |
+| **MCP 与进程间通信** | 为什么当前 MCP 保持只读？Sidecar 与本地 Socket 架构设计 | [[#如果面试官问：为什么 MCP 只读？]] |
+| **桌面端工程化打包** | Electron 主进程/渲染进程分工、extraResource 跨平台构建 | [[#如果面试官问：Electron 打包 Sidecar 有什么坑？]] |
 
 ## 高频追问
 
