@@ -118,7 +118,7 @@ python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --o
 ## 状态纪律
 
 - `.career/claims.json` 是唯一职业事实源；定位、简历、自我介绍和面试材料都只能消费其中的 claim。
-- `content/Knowledge/Outputs/职业经历.md` 是长期可读经历文档，confirmed claims 是其已确认正文的事实依据；待补问题单列。写入前核对人工修改，不以旧账本覆盖补充或纠正。未解决事实冲突时保留用户内容并将文档标记 stale。
+- `content/Knowledge/Outputs/职业经历.md` 是长期可读经历文档，confirmed claims 是其已确认正文的事实依据。待补问题统一保存到 `positioning.open_questions`，默认不写入职业经历文档；仅在用户明确要求时展示摘要。写入前核对人工修改，不以旧账本覆盖补充或纠正。未解决事实冲突时保留用户内容并将文档标记 stale。
 - 只有 `confirmed` claim 可以进入保真简历和面试回答。
 - 每个对外 artifact 都要有 manifest，记录 `claim_ids`、`opportunity_id`、生成 Skill 和当前状态。
 - 岗位自我介绍保存在对应 opportunity 包中；全局 `自我介绍.md` 只保留通用基础版，不被不同岗位反复覆盖。
