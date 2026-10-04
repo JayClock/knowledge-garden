@@ -31,7 +31,7 @@
 | `career-evidence`    | 经历深挖、分轮确认、职业经历文档、claims 与证据 |
 | `career-positioning` | 长期定位、JD 映射、项目选择与 gap               |
 | `resume-package`     | 岗位简历、自我介绍与 DOCX                       |
-| `interview-package`  | 项目讲法、具体回答、追问与口语化                |
+| `interview-package`  | 项目讲法、口语化、实际带练、追问与跨会话复测    |
 | `career-retro`       | 投递／面试反馈分类与下一轮动作                  |
 
 ## 双层循环
@@ -60,6 +60,7 @@ Career Harness 默认在 Git 根目录使用 `.career/`：
 ├── claims.json
 ├── positioning.json
 ├── feedback.jsonl
+├── practice/<project_id>/sessions.jsonl
 ├── manifests/
 └── opportunities/<opportunity_id>/
     ├── opportunity.json
@@ -114,12 +115,37 @@ python career-assets/scripts/opportunity_status.py \
   --opportunity-id <opportunity-id>
 ```
 
+## 项目口语练习
+
+已有项目介绍就能开始，不需要先补 JD 或创建岗位：
+
+> 用《项目介绍：多人实时协同的 AI 辅助领域建模平台》带我练。先做 2 分钟脱稿介绍，不提前给答案；收到我的回答后一次问一个追问，最后只选一个卡点重讲。请保存本轮练习记录。
+
+自行计时与录音，发送原始口述转写和实际用时；没计时就说没计时。AI 只根据实际可用的文字／音频评价，不把字数估算冒充实测，也不据转写推断语气、停顿或紧张程度。
+
+每轮是“实际回答 → 观察 → 一个调整 → 局部重讲 → 唯一下次任务”。经授权记录到 `.career/practice/<project_id>/sessions.jsonl`，不改职业事实或项目介绍。只练不保存也可以；更新 Skill 本身不授权保存练习。
+
+下次说：
+
+> 继续上次协同建模平台的口语练习，先复测上次卡点，不给参考答案。
+
+Agent 可用只读工具恢复；底稿或相关 claims 变化时先核对，不覆盖历史：
+
+```bash
+python career-assets/scripts/practice_log.py status \
+  --state-dir <state-dir> --repo-root <git-root> --project-id <project_id>
+```
+
+有关岗位时另加 `--opportunity-id <id>`，未指定岗位只读取通用记录。完整带练规则见 `../interview-package/references/oral-practice.md`，记录结构见 `references/state-schema.md`。
+
 ## 从一句人话开始
 
 ```text
 帮我梳理经历
 帮我按这个岗位出一版
 帮我准备面试
+开始口语练习，并记录本轮表现
+继续上次口语练习
 继续补充
 复盘投递/面试
 ```

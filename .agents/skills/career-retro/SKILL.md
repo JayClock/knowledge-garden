@@ -14,6 +14,7 @@ description: 将真实投递、招聘沟通、面试和人工评审反馈分类�
 3. 取得真实结果：投递渠道、使用版本、阶段、面试问题、用户主观感受和招聘方原话；缺失时明确标记 unknown。
 4. 读取 `.career/feedback.jsonl`；未经授权不写入。
 5. 不把一次失败自动解释为事实错误或能力不足。
+6. 若反馈仅来自自练、AI 模拟或练习录音，路由 `interview-package` 的 `references/oral-practice.md`，存入 practice 日志而非市场反馈。外部人工评审可按实际评审场景记录，但不能当成真实招聘面试。
 
 ## 内层操控循环
 
@@ -44,7 +45,7 @@ description: 将真实投递、招聘沟通、面试和人工评审反馈分类�
    - 简历／自我介绍 → `resume-package`
    - 项目回答／追问 → `interview-package`
    - 重复性流程缺陷 → 修改相应 Skill 的 Guides、Sensors 或脚本
-6. 更新 opportunity stage：面试后为 `interviewed`，流程结束为 `closed`。
+6. 仅在真实招聘面试发生后将 opportunity stage 更新为 `interviewed`，真实流程结束才为 `closed`；模拟、训练与材料人工评审不触发这两个状态。
 
 ### Sensors
 

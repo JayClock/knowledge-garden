@@ -1,6 +1,6 @@
 ---
 name: career-assets
-description: 以双层循环编排长期职业资产、岗位机会和求职反馈的 Career Harness。凡是用户要梳理或补充经历、整理大量求职材料、长期维护职业事实、按 JD 生成简历与自我介绍、准备项目面试、同步受影响材料、复盘投递或面试，或要求重构职业资产工作流时，都应使用本 skill；具体执行由 career-evidence、career-positioning、resume-package、interview-package 和 career-retro 子 skill 完成。
+description: 以双层循环编排长期职业资产、岗位机会和求职反馈的 Career Harness。凡是用户要梳理或补充经历、整理大量求职材料、长期维护职业事实、按 JD 生成简历与自我介绍、准备项目面试、开始或继续口语练习、记录练习表现、同步受影响材料、复盘投递或面试，或要求重构职业资产工作流时，都应使用本 skill；具体执行由 career-evidence、career-positioning、resume-package、interview-package 和 career-retro 子 skill 完成。
 ---
 
 # Career Harness
@@ -51,7 +51,7 @@ python <career-assets>/scripts/init_state.py --root <git-root>
 | `verify`   | 核对证据、职责、完成状态和冲突 | 对外使用的 claim 为 `confirmed` | `career-evidence`    |
 | `position` | 建立定位并映射 JD              | 核心要求已有 claim 或明确 gap   | `career-positioning` |
 | `package`  | 生成岗位简历与岗位自我介绍     | 同一 claim 集通过一致性检查     | `resume-package`     |
-| `practice` | 生成项目讲法与追问训练         | 回答可追溯且可口述              | `interview-package`  |
+| `practice` | 准备材料并执行口述、追问与复测 | 材料可追溯；实际回答有观察和唯一下一步 | `interview-package`  |
 | `apply`    | 记录实际投递版本与状态         | 提交记录绑定 artifact manifest  | 本 Skill             |
 | `retro`    | 吸收投递／面试反馈             | 反馈已分类并产生下一步          | `career-retro`       |
 
@@ -64,10 +64,18 @@ python <career-assets>/scripts/init_state.py --root <git-root>
 - 材料阅读、事实补充、claims 更新、冲突核对：`../career-evidence/SKILL.md`
 - 职业定位、JD 要求拆解、项目选择和 gap：`../career-positioning/SKILL.md`
 - 岗位简历、自我介绍、DOCX 与交付：`../resume-package/SKILL.md`
-- 项目整体讲法、具体回答、追问和口语化：`../interview-package/SKILL.md`
+- 项目整体讲法、具体回答、口语化、实际练习和跨会话恢复：`../interview-package/SKILL.md`
 - 投递／面试反馈、失败分类和下一轮调整：`../career-retro/SKILL.md`
 
 一次请求跨越多个阶段时，按表中顺序推进；每个阶段通过 Gate 后再进入下一个阶段。
+
+### 口语练习入口
+
+- 有已确认项目底稿时可以直接进入 practice；没有 JD 不要求补 JD、生成简历或虚构 opportunity。
+- “开始练习”先路由 `interview-package`，让用户尝试回答，不先生成标准答案；“继续练习”先读取项目练习记录，恢复唯一下一步。
+- 记录保存在 `<state-dir>/practice/<project_id>/sessions.jsonl`，岗位上下文用可空的 `opportunity_id` 绑定，同一项目的不同岗位练习不得串用。
+- 更新 Skill、请求练习和授权记录是不同动作；未经记录授权只在对话中练习。练习日志不进入 Vault 正文或 `feedback.jsonl`，不将模拟推进为 `interviewed`。
+- 恢复工具：`python <career-assets>/scripts/practice_log.py status --state-dir <state-dir> --repo-root <git-root> --project-id <project_id>`；岗位练习另加 `--opportunity-id <id>`。未指定岗位时只恢复通用练习；多个项目无法确定时只询问项目。底稿或 claims 已变时先核对差异，再复测。
 
 ## 外层 PDCA
 
@@ -80,7 +88,7 @@ python <career-assets>/scripts/init_state.py --root <git-root>
 ### Do
 
 - 只把边界清楚的工作交给对应子 Skill。
-- 子 Skill 的输出必须写回状态或生成带 manifest 的派生产物。
+- 经授权保存的子 Skill 输出写回状态或生成带 manifest 的派生产物；未授权练习只在对话中提供观察和下一步。
 - 未经用户明确授权，不落盘、不批量移动、不覆盖其他岗位包。
 
 ### Check
@@ -93,7 +101,7 @@ python <career-assets>/scripts/impact_scan.py --state-dir <state-dir> --claim-id
 python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --opportunity-id <id>
 ```
 
-- `state_lint.py` 校验 claims、证据、岗位引用、manifest 和 feedback；`claim_lint.py` 是兼容入口。
+- `state_lint.py` 校验 claims、证据、岗位引用、manifest、feedback 和练习 JSONL；旧练习版本变化产生提示，不改写历史。`claim_lint.py` 是兼容入口。
 - `impact_scan.py` 查找依赖变更 claim 的产物，并可用 `--mark-stale` 标记过期。
 - `opportunity_status.py` 汇总阶段、要求覆盖、gap、产物状态、阻塞项和下一路由。
 
@@ -125,6 +133,7 @@ python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --o
 - `.career/config.json.resume_policy` 保存跨岗位简历基线；正式投递 opportunity、简历包 manifest 和可读文本必须通过 required claims 与 content markers Gate。
 - 旧简历、逐字稿和岗位文案是线索或派生物，不得反向升级为事实。
 - 真实市场反馈可以改变项目选择、表达和下一轮计划，不能单独证明或否定历史事实。
+- 练习日志保存实际表现、底稿版本和唯一下一步，是非事实运行记录，不需要对外 artifact manifest；不能把 AI 修订稿当作用户原始回答，也不能用练习次数、字数或流畅度宣称掌握。
 
 ## 用户可见交互
 
@@ -134,7 +143,8 @@ python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --o
 
 - `帮我梳理经历` → capture / verify
 - `帮我按这个岗位出一版` → position → package
-- `帮我准备面试` → position → practice
+- `帮我准备面试` → 有岗位先 position，再 practice；通用项目练习可直接 practice
+- `开始口语练习／记录这轮练习／继续上次练习` → interview-package 的实际练习入口
 - `继续补充` → 回到当前 opportunity 的首个未通过 Gate
 - `复盘投递/面试` → retro
 
@@ -145,4 +155,5 @@ python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --o
 - 保存经历时 claims、职业经历文档与 manifest 已同步；人工修改已经核对或保留待确认。
 - claim 变化已运行影响扫描；未同步的派生物已标记 stale。
 - 岗位产物绑定唯一 opportunity，不污染其他岗位和全局基础版。
+- 实际练习有可观察的回答证据和唯一下一步；经授权保存时可跨会话恢复，未实测的时长与声音表现不冒充实测。
 - 真实反馈已经分类到事实、定位、表达、交付或 Harness，而不是只留一段复盘文字。

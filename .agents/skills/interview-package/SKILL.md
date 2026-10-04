@@ -1,6 +1,6 @@
 ---
 name: interview-package
-description: 从 confirmed claims 和岗位要求生成项目整体讲法、具体回答、追问训练、模拟面试计划与口语化版本。用户说准备面试、15 分钟项目介绍、逐字稿、追问地图、自我介绍口语化、回答不自然或要模拟追问时使用；它只调整选择与表达，不新增事实。
+description: 从 confirmed claims 生成面试材料，并带用户执行项目口语练习、逐题追问、局部重讲与跨会话复测。用户说准备面试、项目介绍、逐字稿、追问地图、自我介绍口语化、脱稿练习、记录练习、继续上次练习或模拟追问时使用；支持无 JD 的项目级练习，只调整选择与表达，不新增职业事实。
 ---
 
 # Interview Package
@@ -11,8 +11,16 @@ description: 从 confirmed claims 和岗位要求生成项目整体讲法、具�
 
 1. 读取 `../career-assets/references/fact-policy.md` 和 `../career-assets/references/state-schema.md`。
 2. 读取 claims；涉及岗位时读取目标 opportunity 的 requirements 与 selected claim IDs。
-3. 读取 `references/interview-oralization.md`。
+3. 生成或润色材料时读取 `references/interview-oralization.md`；执行、记录或恢复练习时完整读取 `references/oral-practice.md`。
 4. 发现新事实线索时停止扩写，交给 `career-evidence` 确认。
+
+## 两个入口
+
+- **材料准备**：用户要求写讲稿、改口语或整理追问时，执行下方材料循环。
+- **实际练习**：用户要求练、模拟、记录表现或继续上次练习时，执行 `references/oral-practice.md`。先让用户回答，不先重写讲稿或展示参考答案；一次只问一题，收到回答后再追问。
+- 没有 JD 或公司时，直接按已有项目练，不强制走岗位映射或创建虚构 opportunity。涉及真实岗位时沿用已有机会。
+- 更新 Skill 不等于授权保存练习。用户说“记录／保存这轮”或明确授权持续记录后，才写入 `<state-dir>/practice/<project_id>/sessions.jsonl`；只练不存则在对话中收束。
+- 练习记录是私有表现观察，不是职业事实或对外 artifact，不写入项目介绍正文，也不升级为真实招聘反馈。
 
 ## 内层操控循环
 
@@ -45,7 +53,7 @@ description: 从 confirmed claims 和岗位要求生成项目整体讲法、具�
 - 回答与讲稿严禁包含 `[!warning]` 或类似免责警示块，正文中不出现“我不能表述为”、“当前材料未证明”、“未计入完成事实”等防穿帮/审稿语言。未做功能不主动列举，若被问及延展方向，按正向技术方案自然回答。
 - 岗位专项计划保存到 `.career/opportunities/<id>/outputs/interview-plan.md`。
 - 已有 Obsidian `15分钟`、逐字稿和追问地图可以继续维护，但必须建立 `.career/manifests/` 依赖记录。
-- 完成后为产物写 manifest；岗位机会进入 `practicing`。
+- 经授权保存材料后为产物写 manifest；关联岗位机会可进入 `practicing`，但材料完成不代表实际练习通过。
 
 ### Sensors
 
@@ -77,8 +85,8 @@ python ../career-assets/scripts/state_lint.py --state-dir <state-dir> --repo-roo
 - 回答缺事实 → `career-evidence`。
 - 项目与岗位不匹配 → `career-positioning`。
 - 结构完整但不自然 → 只按 oralization 调整表达。
-- 追问无法回答 → 缩小简历／讲稿 claim，或标记待补证据；不要编故事。
-- 反复出现同一种回答失败 → 记录为 retro 的 expression 或 harness gap。
+- 追问无法回答 → 先区分提取困难、表达问题、机制理解缺口和事实缺口。前两者用提示与局部重讲修复；事实或证据缺口交给 `career-evidence`。不能因为一次卡住就缩小或否定 confirmed claim。
+- 自练或模拟中重复失败 → 在练习记录中保留证据与调整假设；只有真实招聘／人工评审反馈进入 `career-retro` 的市场反馈流程。
 
 ## 时长默认值
 
@@ -90,7 +98,16 @@ python ../career-assets/scripts/state_lint.py --state-dir <state-dir> --repo-roo
 
 字符只是计算型预警，最终仍需用户实际朗读。
 
-## 完成 Gate
+## 实际练习 Gate
+
+- 已获得用户实际回答或明确标记为自述摘要；没有回答不能宣称完成训练。
+- 观察引用原话、录音位置或用户自评；时长未计时则为 unknown，不用字符估算冒充实测。
+- 本轮只选一个主要调整，尽可能局部重讲；未重讲或中断时如实记录，不声称已经改善。
+- 下一次只有一个任务，包含目标、提示程度及目标时长（事实核对任务可无时长）。
+- 经授权保存时，底稿与 claims 版本、原始回答、观察和下一步已记录，`state_lint.py` 通过；恢复时核对底稿是否变化。
+- 练习不自动修改 claims、讲稿、其他岗位或真实面试阶段。
+
+## 材料完成 Gate
 
 - 每个回答有明确 claim 依赖；
 - 自我介绍以能力主线串起全部对外项目，包含可独立查看的提取词，隐藏完整稿后仍可据此复述；

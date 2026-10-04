@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate Career Harness claims, opportunities, and artifact manifests."""
+"""Validate Career Harness facts, artifacts, feedback, and oral-practice records."""
 
 from __future__ import annotations
 
@@ -7,6 +7,8 @@ import argparse
 import json
 from pathlib import Path
 from typing import Any
+
+from practice_log import load_sessions
 
 CLAIM_STATUSES = {"candidate", "confirmed", "contested", "deprecated", "reference_only"}
 OWNERSHIP = {"direct", "collaborative", "team", "not_applicable"}
@@ -353,6 +355,7 @@ def main() -> int:
                 errors.append(f"{path}: current artifact uses non-confirmed claim {claim_id}")
 
     feedback_count = validate_feedback(state_dir, claims, errors)
+    practice_records = load_sessions(state_dir, repo_root, claims, errors, warnings)
 
     for warning in warnings:
         print(f"WARNING: {warning}")
@@ -360,7 +363,8 @@ def main() -> int:
         print(f"ERROR: {error}")
     print(
         f"Checked {len(claims)} claims, {len(opportunity_files)} opportunities, "
-        f"{len(manifest_files)} manifests, {feedback_count} feedback records"
+        f"{len(manifest_files)} manifests, {feedback_count} feedback records, "
+        f"{len(practice_records)} practice sessions"
     )
     return 1 if errors else 0
 

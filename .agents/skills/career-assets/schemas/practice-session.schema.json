@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "career-practice-session.schema.json",
+  "type": "object",
+  "required": ["schema_version", "id", "recorded_at", "project_id", "opportunity_id", "resumes_session_id", "source", "status", "attempts", "observations", "adjustment", "next_step"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"$ref": "#/$defs/id"},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "project_id": {"$ref": "#/$defs/id"},
+    "opportunity_id": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/id"}]},
+    "resumes_session_id": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/text"}]},
+    "source": {
+      "type": "object",
+      "required": ["manifest", "artifact", "sha256", "claim_ids", "claims_sha256"],
+      "properties": {
+        "manifest": {"$ref": "#/$defs/text"},
+        "artifact": {"$ref": "#/$defs/text"},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "claim_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+        "claims_sha256": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "status": {"enum": ["completed", "interrupted"]},
+    "attempts": {"type": "array", "items": {"$ref": "#/$defs/attempt"}},
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["attempt_id", "observer", "dimension", "evidence", "interpretation"],
+        "properties": {
+          "attempt_id": {"$ref": "#/$defs/text"},
+          "observer": {"enum": ["user", "ai"]},
+          "dimension": {"enum": ["structure", "mechanism", "fact_consistency", "delivery"]},
+          "evidence": {"$ref": "#/$defs/text"},
+          "interpretation": {"$ref": "#/$defs/text"}
+        }
+      }
+    },
+    "adjustment": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/text"}]},
+    "next_step": {
+      "type": "object",
+      "required": ["task", "target_seconds", "cue_level", "next_skill"],
+      "properties": {
+        "task": {"$ref": "#/$defs/text"},
+        "target_seconds": {"anyOf": [{"type": "null"}, {"type": "number", "exclusiveMinimum": 0}]},
+        "cue_level": {"$ref": "#/$defs/cue"},
+        "next_skill": {"enum": ["interview-package", "career-evidence", "career-positioning"]}
+      },
+      "allOf": [{"if": {"properties": {"next_skill": {"const": "interview-package"}}}, "then": {"properties": {"target_seconds": {"type": "number", "exclusiveMinimum": 0}}}}]
+    }
+  },
+  "allOf": [{
+    "if": {"properties": {"status": {"const": "completed"}}},
+    "then": {"properties": {"attempts": {"minItems": 1}, "observations": {"minItems": 1}, "adjustment": {"$ref": "#/$defs/text"}}}
+  }],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "cue": {"enum": ["none", "keywords", "full"]},
+    "attempt": {
+      "type": "object",
+      "required": ["id", "exercise", "question", "target_seconds", "cue_level", "input_kind", "response", "audio_ref", "duration_seconds", "duration_basis", "retry_of"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"},
+        "exercise": {"enum": ["overview", "follow_up", "retry", "retest"]},
+        "question": {"$ref": "#/$defs/text"},
+        "target_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "cue_level": {"$ref": "#/$defs/cue"},
+        "input_kind": {"enum": ["text", "transcript", "self_report", "audio"]},
+        "response": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/text"}]},
+        "audio_ref": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/text"}]},
+        "duration_seconds": {"anyOf": [{"type": "null"}, {"type": "number", "exclusiveMinimum": 0}]},
+        "duration_basis": {"enum": ["unknown", "user_timer", "media_metadata"]},
+        "retry_of": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/text"}]}
+      },
+      "allOf": [
+        {"if": {"properties": {"input_kind": {"const": "audio"}}}, "then": {"properties": {"audio_ref": {"$ref": "#/$defs/text"}}}, "else": {"properties": {"response": {"$ref": "#/$defs/text"}}}},
+        {"if": {"properties": {"duration_basis": {"const": "unknown"}}}, "then": {"properties": {"duration_seconds": {"type": "null"}}}, "else": {"properties": {"duration_seconds": {"type": "number", "exclusiveMinimum": 0}}}},
+        {"if": {"properties": {"duration_basis": {"const": "media_metadata"}}}, "then": {"properties": {"audio_ref": {"$ref": "#/$defs/text"}}}},
+        {"if": {"properties": {"exercise": {"const": "retry"}}}, "then": {"properties": {"retry_of": {"$ref": "#/$defs/text"}}}, "else": {"properties": {"retry_of": {"type": "null"}}}}
+      ]
+    }
+  }
+}
