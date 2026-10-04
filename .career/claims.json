@@ -360,6 +360,31 @@
       ]
     },
     {
+      "id": "domain-modeling.methodology-recording",
+      "statement": "以 Evidence 建模方法论为支撑，将参与方、角色、权责、事件、领域对象、关系及履约凭证等业务分析结果，在平台中结构化落地与记录，供多方协同维护与审核演进",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认；事实范围：Evidence 建模方法论在平台中的结构化落地与记录"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "Evidence-Framework 支撑建模方法论与业务语义，平台本身负责落地和记录方法论结果"
+      ],
+      "tags": [
+        "evidence-framework",
+        "domain-modeling",
+        "methodology",
+        "8x-flow"
+      ]
+    },
+    {
       "id": "domain-modeling.frontend-backend-contract",
       "statement": "将参与方、权责、事件、领域对象和关系沉淀为前端与后端共同审核和消费的业务语义契约，并以发布模型支持 RESTful API、OpenAPI 草稿和测试数据候选",
       "kind": "project_contribution",
@@ -1318,6 +1343,31 @@
         "ai-proposal",
         "human-in-the-loop",
         "versioning"
+      ],
+      "project_id": "domain-modeling"
+    },
+    {
+      "id": "domain-modeling.proposal-concurrency-guard",
+      "statement": "在 AI 提案采纳链路中实现前后端双重并发保存校验，当提案涉及的目标节点或关系已被其他协作者修改或删除时阻止保存，拦截基于过期模型上下文的变更写入",
+      "kind": "project_contribution",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认；事实范围：AI Proposal 前后端并发保存校验与拦截"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "通过前后端双重校验拦截并发冲突保存，CRDT 自身不负责识别过期的 AI 提案依赖上下文"
+      ],
+      "tags": [
+        "ai-proposal",
+        "concurrency",
+        "conflict-guard",
+        "validation"
       ],
       "project_id": "domain-modeling"
     },
