@@ -17,7 +17,7 @@
     "figma-ai.project.scope",
     "figma-ai.product-frontend-contract",
     "domain-modeling.frontend-backend-contract",
-    "domain-modeling.collaboration.direct",
+    "domain-modeling.methodology-recording",
     "hateoas.project.sdk",
     "aiflow.project.scope",
     "aiflow.telemetry.execution-correlation",
@@ -31,8 +31,9 @@
   ],
   "open_questions": [
     "HATEOAS：资源数量、action 数量和回归范围变化",
-    "协同建模平台：实际协作人数、使用频率、模型规模和同步延迟；若恢复客户材料，再补实际模型对象名、OpenAPI 审核项和可脱敏生成结果",
-    "渐进式架构：HATEOAS 旧客户端兼容矩阵、AI Flow 未知节点／插件失败降级、监控 SDK capability detection 与 fail-open、协同或 AI 服务不可用时的基础链路验证",
-    "契约主轴：领域模型到正式前后端接口契约的实际审核样本，以及设计 DSL 到前端组件实现的真实交付范围与消费记录"
+    "领域建模平台：使用频率与模型规模；若恢复客户材料，再补实际模型对象名、OpenAPI 审核项和可脱敏生成结果",
+    "渐进式架构：HATEOAS 旧客户端兼容矩阵、低代码工作流引擎未知节点／插件失败降级、监控 SDK capability detection 与 fail-open、AI 服务不可用时的基础链路验证",
+    "契约主轴：领域模型到正式前后端接口契约的实际审核样本，以及设计 DSL 到前端组件实现的真实交付范围与消费记录",
+    "领域建模 MCP 本地同步｜已确认服务端 FM 快照导出、MCP 工具／资源、本地下载校验与文件更新均已完成｜关联 domain-modeling.mcp-local-sync、domain-modeling.fm-snapshot-export、domain-modeling.mcp-snapshot-access、domain-modeling.local-snapshot-validation、domain-modeling.local-model-publication｜后续补个人实现范围与真实运行、测试验证记录，便于回答职责和验收追问｜下一步核对实际交付材料或由用户补充个人动作与验证方式"
   ]
 }

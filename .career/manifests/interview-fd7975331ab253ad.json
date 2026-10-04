@@ -6,18 +6,14 @@
   "claim_ids": [
     "aiflow.project.scope",
     "aiflow.data-and-backend-boundary",
-    "aiflow.telemetry.execution-correlation",
-    "aiflow.business-scope",
     "aiflow.engine-core",
     "aiflow.dynamic-branching",
     "aiflow.node-plugin-system",
     "aiflow.variable-editor",
     "aiflow.execution-feedback",
     "aiflow.failure-trace-order",
-    "aiflow.reimplementation-boundary",
     "aiflow.result-boundary",
     "aiflow.visual-editor",
-    "career.positioning.full-flow-axis",
     "career.capability.contract-lifecycle"
   ],
   "status": "current"

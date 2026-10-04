@@ -336,7 +336,7 @@
     },
     {
       "id": "domain-modeling.project.scope",
-      "statement": "设计并实现多人实时协同的 AI 辅助领域建模平台，将 8X Flow 模型沉淀为可协作、可审核和可发布的结构化资产",
+      "statement": "设计并实现 AI 辅助领域建模平台，将 8X Flow 模型沉淀为可审核和可发布的结构化资产",
       "kind": "project_scope",
       "project_id": "domain-modeling",
       "ownership": "direct",
@@ -346,22 +346,26 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：多人实时协同的 AI 辅助领域建模平台"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正：建模平台不再是多人协作产品；原来技术的多人协作相关技术和方案，直接删除，并没有用到"
         }
       ],
       "metrics": [],
       "constraints": [
-        "不补写具体协作人数、同步延迟和效率提升"
+        "本项目实际未使用多人在线协同编辑技术与方案，不消费已废弃的协同实现、故障与并发校验陈述",
+        "不补写效率提升"
       ],
       "tags": [
         "domain-modeling",
         "8x-flow",
-        "collaboration",
         "ai"
       ]
     },
     {
       "id": "domain-modeling.methodology-recording",
-      "statement": "以 Evidence 建模方法论为支撑，将参与方、角色、权责、事件、领域对象、关系及履约凭证等业务分析结果，在平台中结构化落地与记录，供多方协同维护与审核演进",
+      "statement": "以 Evidence 建模方法论为支撑，将参与方、角色、权责、事件、领域对象、关系及履约凭证等业务分析结果，在平台中结构化落地与记录，供业务、产品与研发共同讨论、审核与演进",
       "kind": "project_contribution",
       "project_id": "domain-modeling",
       "ownership": "direct",
@@ -371,6 +375,10 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：Evidence 建模方法论在平台中的结构化落地与记录"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正：建模过程需要多人同时参与，但平台实际未使用多人在线协同编辑技术与方案"
         }
       ],
       "metrics": [],
@@ -417,11 +425,15 @@
       "project_id": "domain-modeling",
       "ownership": "direct",
       "completion": "implemented",
-      "status": "confirmed",
+      "status": "deprecated",
       "evidence": [
         {
           "type": "user_confirmation",
           "locator": "用户确认协同前后端和持久化均由本人实现"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正：原来技术的多人协作相关技术和方案，直接删除，并没有用到；本条旧实现陈述废弃，仅保留历史追踪"
         }
       ],
       "metrics": [],
@@ -448,12 +460,16 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：多人实时协同的 AI 辅助领域建模平台／验证与结果"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正：多人协作技术与方案实际未使用，删除相关验证表述；保留其余已确认的建模平台交付验证范围"
         }
       ],
       "metrics": [],
       "constraints": [
         "不把测试覆盖自动推导为业务收益或生产规模",
-        "自动化协同 E2E、断线重连和服务重启恢复测试没有可核验证据"
+        "验证范围不包含未使用的多人在线协同编辑链路"
       ],
       "tags": [
         "unit-test",
@@ -519,7 +535,7 @@
     },
     {
       "id": "aiflow.project.scope",
-      "statement": "在企业级低代码 AI Flow 中直接负责工作流协议、插件化节点、React Flow 编辑器、Tiptap 变量编辑器、公式编辑器和相关 TypeScript 执行引擎",
+      "statement": "在企业级低代码工作流引擎中直接负责工作流协议、插件化节点、React Flow 编辑器、Tiptap 变量编辑器、公式编辑器和相关 TypeScript 执行引擎",
       "kind": "project_scope",
       "project_id": "aiflow",
       "ownership": "direct",
@@ -530,6 +546,10 @@
           "type": "file",
           "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/1.需求分析、项目架构设计与工作流引擎编辑器核心剖析.md",
           "locator": "编辑器与工作流引擎"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户要求将职业经历及相关资料中的项目名称统一改为低代码工作流引擎"
         }
       ],
       "metrics": [],
@@ -547,7 +567,7 @@
     },
     {
       "id": "aiflow.data-and-backend-boundary",
-      "statement": "AI Flow 的 NestJS API、SSE 事件推送与 PostgreSQL / Prisma 数据持久化由后端同事实现；本人负责共同协议制定、前端接入与端侧执行反馈",
+      "statement": "低代码工作流引擎的 NestJS API、SSE 事件推送与 PostgreSQL / Prisma 数据持久化由后端同事实现；本人负责共同协议制定、前端接入与端侧执行反馈",
       "kind": "project_contribution",
       "project_id": "aiflow",
       "ownership": "collaborative",
@@ -572,7 +592,7 @@
     },
     {
       "id": "aiflow.telemetry.execution-correlation",
-      "statement": "将监控 SDK 接入 AI Flow，为工作流校验、测试运行和发布添加自定义事件，并通过 executionId 关联前端操作与执行引擎日志",
+      "statement": "将监控 SDK 接入低代码工作流引擎，为工作流校验、测试运行和发布添加自定义事件，并通过 executionId 关联前端操作与执行引擎日志",
       "kind": "project_contribution",
       "project_id": "aiflow",
       "ownership": "direct",
@@ -736,7 +756,7 @@
     },
     {
       "id": "career.capability.complex-frontend",
-      "statement": "复杂前端能力覆盖 Canvas 和 React Flow 编辑器、Tiptap 变量编辑器、动态属性面板，以及视口、拖拽、选区、浮动菜单、协同状态和弱网错误处理",
+      "statement": "复杂前端能力覆盖 Canvas 和 React Flow 编辑器、Tiptap 变量编辑器、动态属性面板，以及视口、拖拽、选区、浮动菜单和弱网错误处理",
       "kind": "positioning",
       "ownership": "direct",
       "completion": "validated",
@@ -745,6 +765,10 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：当前定位／复杂前端与平台交互"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正建模平台未使用多人协作技术与方案，相应移除由此派生的协同状态能力表述"
         }
       ],
       "metrics": [],
@@ -939,7 +963,7 @@
     },
     {
       "id": "career.capability.ai-determinism",
-      "statement": "能够把适合 LLM 的语义理解和候选生成，与必须由 DSL、Schema、CRDT、版本、人工审核和质量门禁控制的确定性执行分开",
+      "statement": "能够把适合 LLM 的语义理解和候选生成，与必须由 DSL、Schema、版本、人工审核和质量门禁控制的确定性执行分开",
       "kind": "positioning",
       "ownership": "direct",
       "completion": "validated",
@@ -948,6 +972,10 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：当前职业优势 6"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正建模平台未使用多人协作技术与方案，相应移除由此派生的 CRDT 实际应用表述"
         }
       ],
       "metrics": [],
@@ -1305,11 +1333,15 @@
       "kind": "project_contribution",
       "ownership": "direct",
       "completion": "implemented",
-      "status": "confirmed",
+      "status": "deprecated",
       "evidence": [
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：领域建模平台／多人协同链路"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正：原来技术的多人协作相关技术和方案，直接删除，并没有用到；本条旧协同链路陈述废弃，仅保留历史追踪"
         }
       ],
       "metrics": [],
@@ -1352,11 +1384,15 @@
       "kind": "project_contribution",
       "ownership": "direct",
       "completion": "implemented",
-      "status": "confirmed",
+      "status": "deprecated",
       "evidence": [
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：AI Proposal 前后端并发保存校验与拦截"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正：原来技术的多人协作相关技术和方案，直接删除，并没有用到；本条依赖多人协作的并发保存方案废弃，仅保留历史追踪"
         }
       ],
       "metrics": [],
@@ -1426,11 +1462,15 @@
       "kind": "failure",
       "ownership": "direct",
       "completion": "implemented",
-      "status": "confirmed",
+      "status": "deprecated",
       "evidence": [
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：领域建模平台／已确认的开发阶段故障"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正：原来技术的多人协作相关技术和方案，直接删除，并没有用到；本条依赖协同对象的旧故障案例废弃，仅保留历史追踪"
         }
       ],
       "metrics": [],
@@ -1450,11 +1490,15 @@
       "kind": "failure",
       "ownership": "direct",
       "completion": "implemented",
-      "status": "confirmed",
+      "status": "deprecated",
       "evidence": [
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：领域建模平台／已确认的部署阶段故障"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正：原来技术的多人协作相关技术和方案，直接删除，并没有用到；本条依赖协同长连接的旧部署故障案例废弃，仅保留历史追踪"
         }
       ],
       "metrics": [],
@@ -1474,11 +1518,15 @@
       "kind": "boundary",
       "ownership": "not_applicable",
       "completion": "unknown",
-      "status": "confirmed",
+      "status": "deprecated",
       "evidence": [
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：领域建模平台／核心重难点与事实边界"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮纠正：原来技术的多人协作相关技术和方案，直接删除，并没有用到；协同测试问题不再适用，本条旧边界废弃，仅保留历史追踪"
         }
       ],
       "metrics": [],
@@ -1880,7 +1928,7 @@
     },
     {
       "id": "aiflow.business-scope",
-      "statement": "AI Flow 面向公司内部人员、企业客户和研发团队，覆盖多个行业的工作流场景",
+      "statement": "低代码工作流引擎面向公司内部人员、企业客户和研发团队，覆盖多个行业的工作流场景",
       "kind": "project_scope",
       "ownership": "team",
       "completion": "implemented",
@@ -1888,7 +1936,7 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：AI Flow／项目背景"
+          "locator": "用户明确确认；事实范围：低代码工作流引擎／项目背景"
         }
       ],
       "metrics": [],
@@ -1916,7 +1964,7 @@
         },
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：AI Flow／工作流协议与引擎"
+          "locator": "用户明确确认；事实范围：低代码工作流引擎／工作流协议与引擎"
         }
       ],
       "metrics": [],
@@ -1945,7 +1993,7 @@
         },
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：AI Flow／工作流协议与引擎"
+          "locator": "用户明确确认；事实范围：低代码工作流引擎／工作流协议与引擎"
         }
       ],
       "metrics": [],
@@ -1972,7 +2020,7 @@
         },
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：AI Flow／插件化节点体系"
+          "locator": "用户明确确认；事实范围：低代码工作流引擎／插件化节点体系"
         }
       ],
       "metrics": [],
@@ -1999,7 +2047,7 @@
         },
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：AI Flow／变量编辑器"
+          "locator": "用户明确确认；事实范围：低代码工作流引擎／变量编辑器"
         }
       ],
       "metrics": [],
@@ -2025,7 +2073,7 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：上海易校低代码平台／AI Flow 公式编辑器、自研 AST 解析器、保存校验拦截与节点执行期求值"
+          "locator": "用户明确确认；事实范围：上海易校低代码平台／低代码工作流引擎的公式编辑器、自研 AST 解析器、保存校验拦截与节点执行期求值"
         }
       ],
       "metrics": [],
@@ -2056,7 +2104,7 @@
         },
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：AI Flow／发布、验收与执行反馈"
+          "locator": "用户明确确认；事实范围：低代码工作流引擎／发布、验收与执行反馈"
         }
       ],
       "metrics": [],
@@ -2080,7 +2128,7 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：AI Flow／当前可确认成果／334765c"
+          "locator": "用户明确确认；事实范围：低代码工作流引擎／当前可确认成果／334765c"
         }
       ],
       "metrics": [],
@@ -2104,7 +2152,7 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：AI Flow／项目背景"
+          "locator": "用户明确确认；事实范围：低代码工作流引擎／项目背景"
         }
       ],
       "metrics": [],
@@ -2126,7 +2174,7 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：AI Flow／当前可确认成果"
+          "locator": "用户明确确认；事实范围：低代码工作流引擎／当前可确认成果"
         }
       ],
       "metrics": [],
@@ -2280,7 +2328,7 @@
     },
     {
       "id": "monitoring-sdk.platform-coverage",
-      "statement": "统一监控 SDK 覆盖低代码平台全部功能，Vanilla JS、React 与 Vue 功能消费同一监控协议；AI Flow 是已确认的具体接入实例",
+      "statement": "统一监控 SDK 覆盖低代码平台全部功能，Vanilla JS、React 与 Vue 功能消费同一监控协议；低代码工作流引擎是已确认的具体接入实例",
       "kind": "result",
       "ownership": "direct",
       "completion": "implemented",
@@ -2448,7 +2496,7 @@
         },
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：AI Flow／可视化工作流编辑器"
+          "locator": "用户明确确认；事实范围：低代码工作流引擎／可视化工作流编辑器"
         }
       ],
       "metrics": [],
@@ -2457,6 +2505,148 @@
         "react-flow",
         "editor",
         "condition"
+      ]
+    },
+    {
+      "id": "domain-modeling.mcp-local-sync",
+      "statement": "领域建模平台已完成服务端 FM 快照导出、MCP 工具与资源、本地下载校验和文件更新，实现平台模型定义到本地 FM 镜像的单向拉取",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户要求添加基于 MCP 的同步机制，讲建模结果同步至本地的过程，并明确确认：是已经实现的功能"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户提供多表模型定义导出 FM 快照、MCP 获取入口与本地同步程序的方案；在明确询问服务端导出、MCP 工具／资源、本地下载校验、文件更新四段实际完成范围后，用户确认：都完成了"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "当前确认的是项目功能，不据此推定个人实现范围",
+        "Spring Boot、TypeScript、示意表名、示例工具名、版本号与目录路径不自动成为实际技术栈或部署配置",
+        "不补写双向编辑合并、数据库 CDC 或多人在线协同编辑",
+        "实现完成不等于方案中的测试用例已执行通过，不补写性能或业务收益数字",
+        "不将 Figma AI 项目的只读 MCP、Stdio Sidecar 或跨进程 Bridge 实现挪用为本项目事实"
+      ],
+      "tags": [
+        "mcp",
+        "local-sync",
+        "fm-snapshot",
+        "domain-modeling"
+      ]
+    },
+    {
+      "id": "domain-modeling.fm-snapshot-export",
+      "statement": "服务端按固定修订批量读取多表模型定义，将模型元信息、实体及其属性与引用、关系、规则及 bindings 确定性组装为 FM JSON 对象分片快照，并保留稳定 ID、业务顺序和 CEL 表达式",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户提供按固定修订批量读表并确定性导出 FM 对象分片的方案，在明确询问服务端导出等四段实际完成范围后确认：都完成了"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "冻结不可变修订与数据库一致性快照是不同实现路径，未指定时只描述固定修订的一致性导出",
+        "一个完整 FM 对象对应一个分片，不把一张表直接映射为一个文件",
+        "不将示意表结构、示例模型 ID 或 FM 版本号写成真实项目配置",
+        "不据实现完成声称重复导出一致性测试已经通过"
+      ],
+      "tags": [
+        "fm",
+        "snapshot",
+        "deterministic-export",
+        "revision"
+      ]
+    },
+    {
+      "id": "domain-modeling.mcp-snapshot-access",
+      "statement": "通过 MCP 导出工具提供包含修订、Schema 版本、文件路径、摘要和资源 URI 的快照清单，本地 MCP Client 通过 resources/read 获取绑定同一快照的文件内容",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户提供 MCP 导出工具、快照清单与资源读取的方案，在明确询问 MCP 工具／资源等四段实际完成范围后确认：都完成了"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "MCP 提供标准化工具与资源获取入口，快照一致性、文件校验与本地发布由业务程序负责",
+        "示例工具名、资源 URI、structuredContent 响应示例及 outputSchema 声明不据此推定为实际接口配置",
+        "不补写清单分页、资源分块、特定鉴权实现或服务部署方式"
+      ],
+      "tags": [
+        "mcp",
+        "tools",
+        "resources",
+        "snapshot-manifest"
+      ]
+    },
+    {
+      "id": "domain-modeling.local-snapshot-validation",
+      "statement": "本地同步程序内置 MCP Client，将快照文件下载至独立候选目录，按实际输出字节校验文件摘要，并对完整 FM 候选模型执行 Schema、引用完整性与 CEL 校验，再对照上次同步清单检查差异和本地修改",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户提供本地候选目录下载、文件摘要、Schema、引用与 CEL 校验及同步清单差异检查的方案，在明确询问本地下载校验等四段实际完成范围后确认：都完成了"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "文件数据由同步程序处理，不经大模型逐条搬运或改写",
+        "不补写场景验证材料的同步范围、实际下载吞吐量或验证成功率",
+        "校验能力已实现，不把用户提供的测试设计当作已执行的测试结果"
+      ],
+      "tags": [
+        "mcp-client",
+        "local-sync",
+        "validation",
+        "candidate-model"
+      ]
+    },
+    {
+      "id": "domain-modeling.local-model-publication",
+      "statement": "本地同步程序在候选模型校验通过且获授权后，在读写锁下重查本地修改并更新模型文件与同步记录，删除只针对清单托管文件；本地修改冲突或下载校验失败时保留当前有效模型",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户提供授权后锁内重查与发布、托管文件删除及同步记录更新的方案，在明确询问文件更新等四段实际完成范围后确认：都完成了"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不把跨平台替换非空目录说成一次原子 rename",
+        "不补写进程崩溃恢复测试、多消费者锁遵从测试或恶意路径测试已通过",
+        "具体目录名称、发布恢复实现和个人实现范围仍需实际项目材料或用户补充"
+      ],
+      "tags": [
+        "local-sync",
+        "publication",
+        "content-conflict",
+        "sync-record"
       ]
     }
   ]
