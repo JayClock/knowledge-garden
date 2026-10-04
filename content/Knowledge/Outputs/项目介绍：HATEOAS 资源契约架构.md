@@ -1,7 +1,7 @@
 ---
 title: 项目介绍：HATEOAS 资源契约架构
 date: 2026-04-21 15:58:29
-updated: 2026-10-04 10:14:55
+updated: 2026-10-04 17:40:26
 tags:
   - interview
   - architecture
@@ -20,9 +20,9 @@ tags:
 
 当时我们在做低代码平台，里面的应用、表单和工作流同时服务 PC Web 与移动端。过去后端只返回简单的状态码，两端的前端各自写判断代码，根据状态码、角色和权限字典决定按钮和导航。规则一变两端都要修改，很容易出现一端能点、另一端漏改的不一致。
 
-为了解决多端规则漂移，我推动引入了 HATEOAS 超媒体动作契约。服务端在资源中直接返回 `_links` 和 `_templates`：relation 表达当前能跳到哪里或执行什么动作，template 描述提交方式与字段约束。前端只声明式消费 `publish` 这类业务 relation，不再复制一套状态机。
+为了解决多端规则漂移，我推动引入了 HATEOAS 超媒体动作契约。服务端在资源中直接返回 `_links` 和 `_templates`：links 表达当前能跳到哪里或执行什么动作，template 描述提交方式与字段约束。前端只声明式消费 `publish` 这类业务 relation，不再复制一套状态机。
 
-为了让多端稳定消费，我设计并实现了 TypeScript SDK。`Client` 管理入口和中间件，`Resource` 基于绝对 URI 复用实例，`follow()` 沿 relation 导航，`action()` 按模板提交；稳定 relation 在 TypeScript 中建模，运行时数据接入 Standard Schema 和 Zod 校验，再由资源状态驱动 React Hooks。
+为了让多端稳定消费，我设计并实现了 TypeScript SDK。`Client` 管理入口和中间件，`Resource` 基于 URI 复用实例，`follow()` 沿 relation 导航，`action()` 按模板提交；稳定 relation 在 TypeScript 中建模，运行时数据接入 Standard Schema 和 Zod 校验，再由资源状态驱动 React Hooks。
 
 实际推进中我也发现，如果后端资源边界本身混乱，SDK 只能统一调用。所以我继续从应用和工作流的生命周期出发，参与上游四色建模、RESTful URI 和动作契约设计，再与后端协同落地 API 表达层。项目从工作区导航试点切入逐步推广，并将通用消费层独立开源，沉淀了 233 项自动化测试。
 
@@ -160,17 +160,3 @@ SDK 内部基于绝对 URI 实现 `Resource` 实例的单例缓存与复用。�
 如果初次请求资源本身失败，页面进入资源加载失败与网络重试状态。如果本地有缓存数据，但刷新时动作契约未拿到，系统将页面置为“基于缓存快照的只读模式”，暂时禁用关键提交动作，防止客户端在状态未同步时产生不可逆副作用。
 
 同时在错误模型上建立标准化分级：区分 `NetworkError`、`Unauthorized`、`Forbidden`、`ActionMissing`、`PayloadValidationError` 与 `Conflict`，让 UI 呈现、监控报警和自动重试拥有统一清晰的决策依据。
-
-### 如果面试官问：template 怎么变成 Agent tool？和 OpenAPI 相比有什么优势？
-
-OpenAPI 描述的是整个系统静态拥有的全量接口清单，而 HATEOAS 描述的是**当前用户、当前资源在当前状态下合法可执行的动作集合**。
-
-把 OpenAPI 直接给大模型做 Tool Use，很容易让 Agent 在不合法的状态下发起非法调用。而 HATEOAS 的 `_templates` 天然携带了动作名、HTTP 方法、目标 URI 以及 properties 参数约束。
-
-Agent 运行时可以动态将当前资源中下发的 templates 转换为 Tool Definition。Agent 看到的不是几百个接口，而是当前上下文里唯一允许采取的 2~3 个下一步操作。既减少了 Agent 的上下文 token 开销与幻觉空间，又实现了模型行为与服务端状态机的天然受控对齐。
-
-### 如果面试官追：Agent 调用业务动作时怎么做权限控制与审计？
-
-权限绝不交给大模型判断。第一层由服务端在下发资源时计算合法 action；第二层由 Agent Runtime 仅暴露对应 tool；第三层在请求真正到达后端时，服务端依旧执行严格的用户身份鉴权与d状态机前置检查。
-
-在审计层面，结构化记录 Agent 的 `tool_call_id`、操作的资源 URI、动作 relation、提交 payload 摘要与执行结果，确保所有自动化与半自动化操作具备完备的链路可追溯性。
