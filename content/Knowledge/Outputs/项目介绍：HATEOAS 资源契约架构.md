@@ -1,7 +1,7 @@
 ---
 title: 项目介绍：HATEOAS 资源契约架构
 date: 2026-04-21 15:58:29
-updated: 2026-10-04 08:40:19
+updated: 2026-10-04 10:14:55
 tags:
   - interview
   - architecture
@@ -50,11 +50,127 @@ tags:
 
 这段经历让我从前端多端一致性出发，先建立契约消费层，再继续追到上游业务模型与接口契约。HATEOAS 让多个客户端消费同一份“当前资源能做什么”的运行时事实，少写 URL 只是随之带来的结果。
 
-## 深挖入口
+## 高频追问
 
-| 追问方向           | 核心机制与证据                                                  | 对应专题逐字稿                                            |
-| ------------------ | --------------------------------------------------------------- | --------------------------------------------------------- |
-| **契约消费层设计** | 资源抽象、relation 导航、模板提交与 API 倒逼机制                | [[简历回答逐字稿：HATEOAS 资源动作契约消费层设计]]        |
-| **SDK 与类型安全** | TypeScript 静态推导、Standard Schema/Zod 运行时校验、Hooks 订阅 | [[简历回答逐字稿：HATEOAS TypeScript SDK 与类型安全约束]] |
-| **异常与弱网兜底** | 实例缓存、乐观更新、错误标准化与离线断网降级策略                | [[简历回答逐字稿：HATEOAS 兜底状态与错误标准化处理]]      |
-| **架构延展探索**   | Agent 友好接口、工具调用自发现与权责对等治理                    | [[简历回答逐字稿：HATEOAS Agent 友好与权责对等]]          |
+### 如果面试官问：为什么一个前端问题最后会走向建模和 RESTful API？
+
+因为 SDK 只能统一消费方式，不能把一个本身混乱的接口变稳定。真正设计 relation 时，我需要先回答资源是什么、生命周期如何变化、当前角色在什么状态下可以做什么。如果这些问题不清楚，`_links` 最后只会变成给前端画按钮的特定字符串，HATEOAS 也只是换一种形式复制混乱。
+
+所以我的能力是从前端消费层逐步向上游延伸的：先解决 PC Web 与移动 Web 的多端规则漂移，再因为 relation 稳定性问题参与业务与领域建模，从应用、表单、工作流和工作区导航的业务事件中识别资源边界，最后设计 RESTful URI 与动作契约，并和后端共同落实到 API 表达层。
+
+这条能力仍然服务于复杂前端：从上游稳定客户端要消费的业务知识。在具体落地中，我与后端团队分工协作：我主导领域模型、契约定义与客户端 SDK 研发，与后端协同完成 API 表达层对接。
+
+### 如果面试官问：你具体怎么设计 `_links` 和 `_templates`？
+
+`_links` 主要表达资源导航和动作入口，比如 `self`、`workflow`、`publish`、`revoke`；`_templates` 更偏动作提交契约，包含 HTTP Method、Content-Type 和 payload 字段约束。
+
+我没有把它设计成“按钮数组”，因为按钮只是 UI 表现，真正稳定的是业务 relation：同一个 `publish` 可以在 PC Web 渲染为右上角主按钮，在移动端做成底部操作条，但都消费同一份资源动作事实。
+
+服务端返回的结构设计如下：
+
+```json
+{
+  "id": "app-1",
+  "status": "draft",
+  "_links": {
+    "self": { "href": "/applications/app-1" },
+    "workflow": { "href": "/applications/app-1/workflow" }
+  },
+  "_templates": {
+    "publish": {
+      "method": "POST",
+      "properties": [{ "name": "comment", "type": "string", "required": false }]
+    }
+  }
+}
+```
+
+前端看到 `publish` 就知道当前上下文允许发布，但为什么允许仍由后端状态、角色和权限规则决定。业务合法性的事实源收敛回服务端，前端回归到纯粹的交互呈现。
+
+### 如果面试官追：没有返回某个动作，前端是隐藏还是禁用？
+
+这类情况不能让业务页面自己猜，需要由统一策略处理。
+
+动作缺失可能表示当前状态不可执行、当前用户无权限或契约尚未就绪。UI 呈现可以根据产品交互需要决定：
+
+- **非关键动作**：没有 relation 就直接不展示，减少页面视觉噪音。
+- **关键高预期动作**（如审批页里的审批按钮）：展示禁用态，并由后端返回原因提示（如“当前状态不可审批”或“非当前审批人”）。
+
+这里的核心架构原则是：**前端可以决定交互呈现，但绝不重新实现一份业务状态机**去推算为什么不能点。
+
+### 如果面试官追：列表 100 条资源，每条都算动作，会不会很慢？
+
+在与后端团队共同设计契约时，核心原则是避免在接口组装层按资源逐条查询权限，而是将动作计算与资源上下文、批量鉴权深度绑定，从架构层面规避 N+1 查询风险。
+
+### 如果面试官问：SDK 和 Axios 与 React Query 有什么区别？
+
+Axios 解决网络请求发送，React Query 解决服务端状态缓存，但它们都不负责理解“资源关系”。
+
+在 HATEOAS 下，业务代码关心的是：从当前资源能不能 follow 到某个关联资源，当前 action 能不能执行，payload 是否符合当前模板约束。这些能力如果由每个业务页面自己写，多端逻辑又会重新分散。
+
+SDK 提供了面向资源的消费抽象：
+
+```ts
+const application = client.go<ApplicationEntity>("/applications/app-1")
+const state = await application.get()
+
+if (state.hasLink("publish")) {
+  await state.action("publish").submit({ comment: "发布上线" })
+}
+```
+
+这里真正重要的是 `publish` 这个业务 relation，而不是某个写死的发布接口路径。SDK 把“资源定位、关系导航、模板校验、缓存复用”封装为连贯的消费层。
+
+### 如果面试官追：动态 links 怎么做 TypeScript 类型安全？
+
+这里有天然矛盾：HATEOAS 是服务端在运行时动态返回的，而 TypeScript 是编译期静态检查。
+
+我的方案是分层处理：稳定的业务 relation 在 TypeScript 中显式建模为联合类型：
+
+```ts
+type ApplicationLinks = {
+  publish: ActionRelation<PublishPayload, ApplicationState>
+  revoke: ActionRelation<RevokePayload, ApplicationState>
+  workflow: ResourceRelation<WorkflowEntity>
+}
+```
+
+这样业务代码写 `state.follow('not-exist')` 在开发期就能立即获得类型报错和 IDE 代码补全。
+
+到了运行时，SDK 必须做防御性检查：即使类型里声明了 `publish`，但如果当前状态下服务端因为权限或状态机未下发该 link，SDK 强制通过 `hasLink('publish')` 返回 false，并在直接调用不存在的 action 时抛出明确的 `ActionMissingError`。编译期类型保证 relation 名称正确，运行时校验确认当前资源状态可用。
+
+### 如果面试官追：payload 类型从哪里来，运行时如何校验？
+
+对稳定的 relation、action 和 payload，我们在端侧定义明确的 TypeScript Interface 与 Zod Schema。
+
+在执行 `action.submit(payload)` 时，SDK 接入 Standard Schema 规范，在端侧通过 Zod 执行运行时同步校验。如果校验失败，直接在本地拦截请求并返回精准的字段错误（包含 `path`、`code` 和 `message`），直接驱动表单字段高亮报错，避免无效网络请求冲击后端。
+
+### 如果面试官追：资源缓存和 React Hooks 怎么处理？
+
+SDK 内部基于绝对 URI 实现 `Resource` 实例的单例缓存与复用。同一个 URI 在客户端只有一个事件源，天然实现请求去重与并发合并。
+
+`resource.get()` 优先读取内存缓存；若缓存过期或缺失，则走底层 Fetcher 拉取最新数据。响应返回后由 `StateFactory` 统一解析 HAL 与 HAL-FORMS，更新缓存并触发资源变更事件。
+
+在上层 React 封装中，`useResource(uri)` 订阅该资源实例的 update 事件驱动组件重新渲染。动作提交成功后，支持直接用新返回的 State 局部更新当前资源实例，或将相关关联集合标记 stale，兼顾性能与数据最终一致性。
+
+### 如果面试官问：_links 拿不到页面是不是就废了？
+
+页面绝不能简单白屏。
+
+如果初次请求资源本身失败，页面进入资源加载失败与网络重试状态。如果本地有缓存数据，但刷新时动作契约未拿到，系统将页面置为“基于缓存快照的只读模式”，暂时禁用关键提交动作，防止客户端在状态未同步时产生不可逆副作用。
+
+同时在错误模型上建立标准化分级：区分 `NetworkError`、`Unauthorized`、`Forbidden`、`ActionMissing`、`PayloadValidationError` 与 `Conflict`，让 UI 呈现、监控报警和自动重试拥有统一清晰的决策依据。
+
+### 如果面试官问：template 怎么变成 Agent tool？和 OpenAPI 相比有什么优势？
+
+OpenAPI 描述的是整个系统静态拥有的全量接口清单，而 HATEOAS 描述的是**当前用户、当前资源在当前状态下合法可执行的动作集合**。
+
+把 OpenAPI 直接给大模型做 Tool Use，很容易让 Agent 在不合法的状态下发起非法调用。而 HATEOAS 的 `_templates` 天然携带了动作名、HTTP 方法、目标 URI 以及 properties 参数约束。
+
+Agent 运行时可以动态将当前资源中下发的 templates 转换为 Tool Definition。Agent 看到的不是几百个接口，而是当前上下文里唯一允许采取的 2~3 个下一步操作。既减少了 Agent 的上下文 token 开销与幻觉空间，又实现了模型行为与服务端状态机的天然受控对齐。
+
+### 如果面试官追：Agent 调用业务动作时怎么做权限控制与审计？
+
+权限绝不交给大模型判断。第一层由服务端在下发资源时计算合法 action；第二层由 Agent Runtime 仅暴露对应 tool；第三层在请求真正到达后端时，服务端依旧执行严格的用户身份鉴权与d状态机前置检查。
+
+在审计层面，结构化记录 Agent 的 `tool_call_id`、操作的资源 URI、动作 relation、提交 payload 摘要与执行结果，确保所有自动化与半自动化操作具备完备的链路可追溯性。

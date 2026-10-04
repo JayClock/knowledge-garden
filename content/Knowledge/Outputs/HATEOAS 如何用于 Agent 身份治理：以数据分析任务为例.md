@@ -1,13 +1,13 @@
 ---
 date: 2026-05-21 00:00:00
-updated: 2026-08-24 17:04:37
+updated: 2026-10-04 09:49:03
 ---
 
 # AIG 2.0：双重身份 + 动态盲道的 Agent 治理架构
 
 > [!danger] 架构研究，不是生产经历
 >
-> 这是一份 Agent 治理方案设计。动态 HATEOAS 工具、MCP 即时工具箱、Token Exchange、AIG 2.0 数据模型和数据分析案例均未在 HATEOAS 生产项目中上线。面试时只能作为架构延展，正式边界见 [[简历回答逐字稿：HATEOAS Agent 友好与权责对等]]。
+> 这是一份 Agent 治理方案设计。动态 HATEOAS 工具、MCP 即时工具箱、Token Exchange、AIG 2.0 数据模型和数据分析案例均未在 HATEOAS 生产项目中上线。面试时只能作为架构延展，正式边界见 [[项目介绍：HATEOAS 资源契约架构#如果面试官问：template 怎么变成 Agent tool？和 OpenAPI 相比有什么优势？|项目介绍：HATEOAS Agent 友好与权责对等]]。
 
 Agent 进入企业系统后，最大的问题不是它能不能调用工具，而是它以什么身份调用、在谁的授权下调用、能不能被系统约束、能不能在事后被审计。
 
