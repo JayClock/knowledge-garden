@@ -31,6 +31,7 @@
   ],
   "open_questions": [
     "HATEOAS：资源数量、action 数量和回归范围变化",
+    "HATEOAS｜workflow 回归验证补证｜已确认 AI 辅助生成保存／发布端到端测试，前后端实现后重新回归，保存用例以相同输入对比原有原始响应 JSON、保存接口返回未改动｜关联 hateoas.workflow-write-regression、hateoas.incremental-migration-cost-risk｜待补发布用例的具体断言、测试入口／框架与执行记录，便于说明实际覆盖和验收范围｜下一步由用户提供可脱敏测试样本或复述实际运行链路",
     "领域建模平台：使用频率与模型规模；若恢复客户材料，再补实际模型对象名、OpenAPI 审核项和可脱敏生成结果",
     "渐进式架构：HATEOAS 旧客户端兼容矩阵、低代码工作流引擎未知节点／插件失败降级、监控 SDK capability detection 与 fail-open、AI 服务不可用时的基础链路验证",
     "契约主轴：领域模型到正式前后端接口契约的实际审核样本，以及设计 DSL 到前端组件实现的真实交付范围与消费记录",

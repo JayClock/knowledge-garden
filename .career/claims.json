@@ -1620,6 +1620,69 @@
       "project_id": "hateoas"
     },
     {
+      "id": "hateoas.sdk-independent-consumption",
+      "statement": "SDK 是独立的资源消费层，网络请求通过 Fetcher 处理、响应通过 StateFactory 解析、Resource 按绝对 URI 定位与复用；实际实现未使用 Axios 或 React Query",
+      "kind": "project_contribution",
+      "project_id": "hateoas",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户在本轮 HATEOAS 项目口语练习中明确纠正：我的 SDK 中其实并没有使用到 axios 或者 react-query；随后口述确认独立资源消费层及 Fetcher、StateFactory、Resource 的职责，并授权更新项目介绍"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/packages/resource/src/lib/resource/resource.ts",
+          "locator": "Resource.fetch/get/refresh：通过 client.fetcher 请求，再由 getStateForResponse 解析响应"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "Axios 与 React Query 只作为替代方案的职责对比，不表述为 SDK 的实际依赖或已经完成的集成",
+        "Resource 实例复用与响应状态缓存分开描述，缓存身份是目标绝对 URI 而不是 relation 名称"
+      ],
+      "tags": [
+        "sdk",
+        "resource-consumption",
+        "fetcher",
+        "state-factory"
+      ]
+    },
+    {
+      "id": "hateoas.template-driven-business-forms",
+      "statement": "业务页面已接入服务端动作模板驱动的动态表单：根据 _templates.properties 的字段定义生成 Zod 校验与 JSON Schema 表单描述，渲染 Schema 随服务端当前模板变化，而不是前端预定义字段表",
+      "kind": "project_contribution",
+      "project_id": "hateoas",
+      "ownership": "collaborative",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户在本轮口语练习中说明模板字段生成 Zod 校验和 JSON Schema 表单渲染描述，并明确确认：已经接入了业务页面；随后确认渲染 Schema 来自 templates 中的 properties，基于服务端动态调整而非前端预定义；本轮授权保存到项目介绍"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/packages/resource/src/lib/action/zod-action-schema-plugin.ts",
+          "locator": "zodSchemaPlugin.createSchema：根据字段定义生成 Zod 校验；JSON Schema 与业务页面接入以本轮用户确认为依据"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不将这条字段消费链路表述为任意 Zod Schema 与 JSON Schema 均可无损双向转换",
+        "新增字段无需前端发版的判断仅在既有渲染、校验与提交能力覆盖的范围内成立，不推定所有字段类型和交互均已支持",
+        "本轮角色扩展和发布创建新版本的具体场景是原理示例，不升级为真实项目变更或新增交付案例"
+      ],
+      "tags": [
+        "dynamic-form",
+        "hal-forms",
+        "zod",
+        "json-schema"
+      ]
+    },
+    {
       "id": "hateoas.cache-invalidation",
       "statement": "SDK 对相同进行中请求去重，支持普通缓存与 no-cache 刷新，并依据请求 URI、invalidates relation、Location 和 Content-Location 更新或失效资源",
       "kind": "project_contribution",
@@ -1667,6 +1730,198 @@
         "bff"
       ],
       "project_id": "hateoas"
+    },
+    {
+      "id": "hateoas.workspace-navigation-consumption",
+      "statement": "工作区导航试点在工作区资源响应中增加 _links 与 _templates，由服务端按权限提供 workflow 工作流列表入口和工作区基本信息更新模板；PC 与移动端将原 service 调用迁移为 SDK 消费，导航入口依据当前 workflow relation 的存在性渲染",
+      "kind": "project_contribution",
+      "project_id": "hateoas",
+      "ownership": "collaborative",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户在工作区导航试点口述中说明 API 表达层向工作区响应增加 links、templates，提供工作流入口与工作区基本信息更新模板，PC 和移动端从 service 调用改为 SDK 消费；随后确认前端依据 workflow relation 有无渲染入口，并授权更新项目介绍"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "服务端编码归属沿用 hateoas.backend-boundary：本人参与模型与契约设计并与后端协同落地，不把口述中我改两个部分推定为独立实现全部服务端代码",
+        "用户明确表示工作区导航与工作流发布作为试点没有所提比较区别，不补写前者比后者成本更低或风险更小的取舍理由",
+        "不推定具体工作区 URI 路径或更新模板名称；隐藏或禁用属于 UI 策略，不推定后端 disabled reason 已实现"
+      ],
+      "tags": [
+        "workspace",
+        "navigation",
+        "multi-client",
+        "relation"
+      ]
+    },
+    {
+      "id": "hateoas.workspace-navigation-component-tests",
+      "statement": "使用 MSW（Mock Service Worker）模拟包含与不包含 workflow relation 的工作区响应，在 Vitest 中渲染导航组件，通过 DOM 断言检查工作流入口是否符合契约渲染预期",
+      "kind": "project_contribution",
+      "project_id": "hateoas",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确确认 worker 是 MSW、v test／VT 是 Vitest；在核对实际执行范围时说明渲染导航组件，检测 DOM；随后复述模拟有／无 workflow relation 两种响应并断言入口渲染预期，最后授权更新项目介绍"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "本轮这组用例是导航组件／客户端集成测试，不表述为启动真实浏览器操作完整页面流程的 E2E",
+        "描述的是正常工作区响应中 relation 有无的差异，不把无 relation 与 HTTP 请求失败混为一谈",
+        "不补写两端组件分别覆盖、用例数量、通过率、实际执行通过记录或后端权限推导正确性的验证结论",
+        "项目原有 hateoas.quality 的其它测试范围独立保留，不因这组组件测试的层级确认而改写历史 E2E 事实"
+      ],
+      "tags": [
+        "msw",
+        "vitest",
+        "component-test",
+        "dom",
+        "contract-consumption"
+      ]
+    },
+    {
+      "id": "hateoas.state-factory-protocol-adaptation",
+      "statement": "Client 根据响应 Content-Type 选择 StateFactory；HAL／HAL-FORMS 解析器将业务属性、响应头与 _links、_templates 及嵌入资源整理为统一 State，让业务通过 data、follow() 和 action() 消费资源",
+      "kind": "project_contribution",
+      "project_id": "hateoas",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/packages/resource/src/lib/client-instance.ts",
+          "locator": "ClientInstance.getStateForResponse：依据 Content-Type 选择具体 StateFactory"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/packages/resource/src/lib/state/hal-state/hal-state.factory.ts",
+          "locator": "createHalStateFromResource：构造业务数据、Links、Form、collection、嵌入状态及响应上下文"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮复述 Factory 解释具体协议，将业务数据、导航关系和动作模板转成统一 State，页面通过同一套接口消费；随后授权更新全部项目介绍内容并提交相关变更"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "Content-Type 分发发生在 Client 层，不写成每个 Factory 都自行选择协议",
+        "统一 State 接口不等于为缺失的动作生成能力，也不等于对全部响应业务字段执行运行时 Schema 校验",
+        "不推定生产业务实际使用了公开 SDK 支持的所有响应格式"
+      ],
+      "tags": ["state-factory", "content-type", "protocol-adaptation", "hal-forms"]
+    },
+    {
+      "id": "hateoas.cache-response-contracts",
+      "statement": "SDK 缓存中间件在成功的修改响应后按请求 URI、HTTP Link 响应头的 invalidates relation 与 Location 处理缓存失效；响应带 Content-Location 且允许存储时，直接解析本次响应体写入对应资源缓存并发出 update；缓存层还支持 inv-by 依赖登记与失效传播",
+      "kind": "project_contribution",
+      "project_id": "hateoas",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/packages/resource/src/lib/middlewares/cache.ts",
+          "locator": "cacheMiddleware：成功非安全方法响应的失效目标解析与 Content-Location 响应体缓存写回"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/packages/resource/src/lib/client-instance.ts",
+          "locator": "cacheState、clearResourceCache、expandCacheDependencies：inv-by 登记、缓存写入、依赖传播与事件"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮确认 Content-Location 路径按资源 URI 写入解析后的 State 并发出 update，数据来自本次响应；本轮授权将源码核对后的正确讲法更新到项目介绍"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不写成所有 POST 都返回 Content-Location，或该 URI 总等于请求 URI；写回路径使用本次响应体，不为此额外发 GET",
+        "invalidates 在该中间件中来自 HTTP Link 响应头，不把 collection 归属关系等同于自动缓存失效指令",
+        "默认请求 URI 失效受 NO_STALE 标记影响，no-store 跳过 Content-Location 写回；删除事件与 stale 事件分别处理",
+        "源码机制与生产阶段测试范围分开，不据当前源码推定全部策略已以同样配置用于生产"
+      ],
+      "tags": ["cache", "content-location", "invalidates", "inv-by"]
+    },
+    {
+      "id": "hateoas.react-cache-event-policy",
+      "statement": "React 内部读取 Hook 订阅 update 和 stale：update 时使用新 State 更新组件状态，stale 时仅在 refreshOnStale 开启后调用 resource.refresh()；refreshOnStale 默认 false，卸载时清理监听",
+      "kind": "project_contribution",
+      "project_id": "hateoas",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/packages/resource-react/src/lib/hooks/use-read-resource.ts",
+          "locator": "useReadResource：refreshOnStale 默认值、onUpdate、onStale 与 unmount 清理"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户确认 React 监听 update 后更新页面，并授权将本轮基于源码核对的缓存与页面更新讲法保存到项目介绍"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "缓存失效通知不等于默认自动重新请求或所有组件立即显示新数据",
+        "不把这条订阅策略扩展成 Hook 已直接订阅 delete 事件，也不推定业务页面均已开启 refreshOnStale"
+      ],
+      "tags": ["react", "events", "refresh-on-stale", "subscription"]
+    },
+    {
+      "id": "hateoas.incremental-migration-cost-risk",
+      "statement": "方案推进的难点是向后端协作方证明增量改造成本和数据更新风险可控；本次在资源响应中增加 _links 与 _templates，保持表结构、原有请求参数及保存接口响应不变，通过限定改动范围与回归验证推动协作落地",
+      "kind": "project_contribution",
+      "project_id": "hateoas",
+      "ownership": "collaborative",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户说明最难的是证明低成本，后端关心数据更新和脏数据风险；本次仅增加资源契约表达、不改表结构与请求参数；随后明确确认保存接口返回本身没有改动，并用完整口述再次确认改动边界，授权保存与提交"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "低成本是本次后端增量改造的范围判断，不推定整个 SDK 研发无成本或给出效率百分比",
+        "资源响应增加契约元数据与原保存接口响应不变是不同范围，不写成所有 API 原始 JSON 均未变化",
+        "沿用后端协作职责，不把服务端代码写成个人独立实现；不补写真实事故、数据迁移或零脏数据保证"
+      ],
+      "tags": ["migration", "collaboration", "compatibility", "risk-validation"]
+    },
+    {
+      "id": "hateoas.workflow-write-regression",
+      "statement": "用 AI 辅助生成针对 workflow 接口正常保存与发布的端到端测试，在前后端实现后重新做回归；保存用例使用相同输入对比原有原始响应 JSON，保存接口返回本身未改动，检查已覆盖保存场景的输入输出兼容性",
+      "kind": "project_contribution",
+      "project_id": "hateoas",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "用户明确说明通过 AI 生成完整真实端到端测试，验证 workflow 接口正常保存与发布，在前后端实现后重新验证；随后说明保存输入相同则对比原有 response JSON，并明确确认保存接口返回本身没有改动；本轮授权保存与提交"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "本条验证对象是 workflow 保存与发布，不迁移为工作区更新用例，也不与 MSW／Vitest 导航组件测试混同",
+        "具体确认的保存断言是原始响应 JSON 对比，不据此补写数据库重读、存量数据迁移测试或所有数据更新零风险结论",
+        "不补写测试框架、真实浏览器操作、执行通过数量、覆盖率或发布用例的具体版本创建断言",
+        "公开 SDK 的 34 个测试文件、233 项通过测试是独立口径，不作为这组生产回归测试的数量"
+      ],
+      "tags": ["e2e", "workflow", "regression", "ai-assisted-tests"]
     },
     {
       "id": "hateoas.quality",
