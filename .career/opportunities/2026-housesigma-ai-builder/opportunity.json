@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "id": "2026-housesigma-ai-builder",
+  "stage": "packaged",
+  "purpose": "application",
+  "application_status": "planned",
+  "target": {
+    "company": "HouseSigma",
+    "role": "AI Builder - 全职远程",
+    "jd_source": ".career/opportunities/2026-housesigma-ai-builder/outputs/job-description.md",
+    "deadline": null,
+    "planned_submission_date": null
+  },
+  "requirements": [
+    {
+      "id": "problem-framing-ownership",
+      "text": "定义模糊问题、理解上下游并以全栈能力端到端交付，对结果负责",
+      "priority": "must",
+      "claim_ids": ["career.experience.platform-engineering", "career.positioning.full-flow-axis", "domain-modeling.skill-workflow", "domain-modeling.methodology-recording", "domain-modeling.frontend-backend-contract", "domain-modeling.procurement-case", "domain-modeling.internal-use", "aiflow.result-boundary", "monitoring-sdk.downstream-driven-design"],
+      "gap": false,
+      "evidence_kind": "direct",
+      "evidence_note": "以真实业务约定澄清、模型到接口消费、编排到执行反馈及下游驱动监控设计证明；成熟后端改造沿用协作职责。"
+    },
+    {
+      "id": "critical-ai-collaboration",
+      "text": "批判性协作 AI，提供目标与约束，将 AI 能力落地为产品和工程工作流",
+      "priority": "must",
+      "claim_ids": ["career.capability.ai-determinism", "domain-modeling.project.scope", "domain-modeling.ai-proposal", "domain-modeling.skill-workflow", "domain-modeling.discovery-rule-provenance", "domain-modeling.downstream-model-review-gate", "hateoas.workflow-write-regression"],
+      "gap": false,
+      "evidence_kind": "direct",
+      "evidence_note": "Skill 工作流、来源追溯、人工审核和受约束 Proposal 是主要证据；AI 辅助回归测试是开发流程证据。"
+    },
+    {
+      "id": "engineering-quality",
+      "text": "判断方案质量，守住可维护性、可观测性、稳定性和安全性，通过测试及验收控制风险",
+      "priority": "must",
+      "claim_ids": ["career.capability.validation-feedback", "domain-modeling.validation", "domain-modeling.local-snapshot-validation", "domain-modeling.local-model-publication", "hateoas.workspace-navigation-component-tests", "hateoas.public-package-verification", "aiflow.engine-core", "aiflow.dynamic-branching", "aiflow.node-plugin-system", "aiflow.runtime.execution-isolation", "aiflow.runtime.failure-result-chain", "aiflow.execution-feedback", "monitoring-sdk.queue-retry", "monitoring-sdk.sourcemap"],
+      "gap": true,
+      "evidence_kind": "partial_direct",
+      "gap_details": ["具体安全设计、威胁分析或安全验收案例尚无本次选材中的 confirmed 证据；可维护性、可观测性及稳定性机制已有直接证据。"]
+    },
+    {
+      "id": "modernization-reusable-practice",
+      "text": "重构存量系统和低效流程，持续学习并沉淀可复用的 AI 工程实践",
+      "priority": "important",
+      "claim_ids": ["hateoas.project.sdk", "hateoas.migration-pilot", "hateoas.incremental-migration-cost-risk", "hateoas.production-and-public-phases", "hateoas.release-pipeline", "domain-modeling.skill-workflow", "monitoring-sdk.architecture"],
+      "gap": false,
+      "evidence_kind": "direct_and_transferable",
+      "evidence_note": "增量契约迁移、独立 npm 消费层与实际使用的 Skill 工作流支撑；不由此推定全团队 AI SOP 已全面推广。"
+    },
+    {
+      "id": "education-english",
+      "text": "计算机相关本科背景，具备良好的英语读写能力",
+      "priority": "important",
+      "claim_ids": ["career.education.bachelor-computing"],
+      "gap": true,
+      "evidence_kind": "partial_direct",
+      "gap_details": ["学历与专业已确认；英语读写的实际任务、水平及证明待用户补充。"]
+    }
+  ],
+  "selected_claim_ids": [
+    "career.identity.full-name",
+    "career.contact.phone",
+    "career.contact.email",
+    "career.location.current",
+    "career.education.bachelor-computing",
+    "career.experience.platform-engineering",
+    "career.positioning.market-title",
+    "career.positioning.full-flow-axis",
+    "career.working-boundary.invasive-backend",
+    "career.capability.upstream-contracts",
+    "career.capability.complex-frontend",
+    "career.capability.validation-feedback",
+    "career.capability.ai-determinism",
+    "timeline.shanghai-dingxin",
+    "timeline.shanghai-yixiao",
+    "timeline.shanghai-wuwulaike",
+    "domain-modeling.project.scope",
+    "domain-modeling.methodology-recording",
+    "domain-modeling.frontend-backend-contract",
+    "domain-modeling.validation",
+    "domain-modeling.internal-use",
+    "domain-modeling.ai-proposal",
+    "domain-modeling.model-driven-delivery",
+    "domain-modeling.procurement-case",
+    "domain-modeling.mcp-local-sync",
+    "domain-modeling.local-snapshot-validation",
+    "domain-modeling.local-model-publication",
+    "domain-modeling.skill-workflow",
+    "domain-modeling.discovery-rule-provenance",
+    "domain-modeling.downstream-model-review-gate",
+    "hateoas.project.sdk",
+    "hateoas.sdk-core",
+    "hateoas.template-driven-business-forms",
+    "hateoas.cache-response-contracts",
+    "hateoas.incremental-migration-cost-risk",
+    "hateoas.migration-pilot",
+    "hateoas.production-results",
+    "hateoas.production-and-public-phases",
+    "hateoas.adoption-boundary",
+    "hateoas.release-pipeline",
+    "hateoas.workspace-navigation-component-tests",
+    "hateoas.workflow-write-regression",
+    "hateoas.public-package-verification",
+    "aiflow.project.scope",
+    "aiflow.business-scope",
+    "aiflow.visual-editor",
+    "aiflow.variable-editor",
+    "aiflow.formula-editor",
+    "aiflow.result-boundary",
+    "aiflow.engine-core",
+    "aiflow.dynamic-branching",
+    "aiflow.node-plugin-system",
+    "aiflow.runtime.execution-isolation",
+    "aiflow.runtime.failure-result-chain",
+    "aiflow.execution-feedback",
+    "aiflow.data-and-backend-boundary",
+    "monitoring-sdk.project.scope",
+    "monitoring-sdk.downstream-driven-design",
+    "monitoring-sdk.architecture",
+    "monitoring-sdk.collection",
+    "monitoring-sdk.queue-retry",
+    "monitoring-sdk.sourcemap",
+    "monitoring-sdk.platform-coverage"
+  ],
+  "project_order": ["domain-modeling", "hateoas", "aiflow", "monitoring-sdk"],
+  "artifacts": [
+    ".career/opportunities/2026-housesigma-ai-builder/outputs/resume.md",
+    ".career/opportunities/2026-housesigma-ai-builder/outputs/self-introduction.md",
+    ".career/opportunities/2026-housesigma-ai-builder/outputs/interview-script.md",
+    ".career/opportunities/2026-housesigma-ai-builder/outputs/interview-plan.md",
+    ".career/opportunities/2026-housesigma-ai-builder/outputs/opportunity-brief.md",
+    ".career/opportunities/2026-housesigma-ai-builder/outputs/job-description.md",
+    ".career/opportunities/2026-housesigma-ai-builder/outputs/README.md"
+  ],
+  "feedback_ids": [],
+  "decisions": [
+    {
+      "type": "user_scope",
+      "text": "用户指定只使用职业经历中的项目 2～5，随后要求生成职业投递包用于练习。"
+    },
+    {
+      "type": "package_scope",
+      "text": "保存独立岗位简历、岗位自我介绍、项目口述底稿及练习计划；本轮使用 Markdown，不生成未被明确要求的 DOCX，不覆盖 Vault 通用材料。"
+    },
+    {
+      "type": "practice_authorization",
+      "text": "生成材料已获授权；练习 JSONL 的保存尚未获授权，当前仅在对话中练习。"
+    },
+    {
+      "type": "evidence_gap",
+      "text": "英语读写及具体安全案例待补；AI Code Review 的实际使用证据也待补，不写成已有经验。"
+    },
+    {
+      "type": "package_gate",
+      "text": "岗位包只消费 63 条 confirmed claims；简历与自我介绍使用相同依赖集；7 份 Markdown、8 份依赖记录和 16 个本地链接通过检查，5 个口述版本通过字符时长检查，state_lint 与 git diff --check 通过。旧通用练习记录的版本提示保留。"
+    },
+    {
+      "type": "next_action",
+      "next_skill": "interview-package",
+      "text": "先做一次 90～120 秒、无提示的岗位自我介绍诊断。尚未取得本岗位实际回答，不保存练习日志，不登记真实投递或面试。"
+    }
+  ]
+}

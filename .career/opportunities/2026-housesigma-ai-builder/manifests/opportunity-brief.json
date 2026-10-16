@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "artifact": ".career/opportunities/2026-housesigma-ai-builder/outputs/opportunity-brief.md",
+  "artifact_type": "opportunity_brief",
+  "opportunity_id": "2026-housesigma-ai-builder",
+  "generated_by": "career-positioning",
+  "claim_ids": [
+    "career.education.bachelor-computing", "career.experience.platform-engineering", "career.positioning.market-title", "career.positioning.full-flow-axis", "career.working-boundary.invasive-backend", "career.capability.validation-feedback", "career.capability.ai-determinism",
+    "domain-modeling.project.scope", "domain-modeling.methodology-recording", "domain-modeling.frontend-backend-contract", "domain-modeling.validation", "domain-modeling.internal-use", "domain-modeling.ai-proposal", "domain-modeling.model-driven-delivery", "domain-modeling.procurement-case", "domain-modeling.mcp-local-sync", "domain-modeling.local-snapshot-validation", "domain-modeling.local-model-publication", "domain-modeling.skill-workflow", "domain-modeling.discovery-rule-provenance", "domain-modeling.downstream-model-review-gate",
+    "hateoas.project.sdk", "hateoas.incremental-migration-cost-risk", "hateoas.migration-pilot", "hateoas.production-and-public-phases", "hateoas.release-pipeline", "hateoas.workspace-navigation-component-tests", "hateoas.workflow-write-regression", "hateoas.public-package-verification",
+    "aiflow.project.scope", "aiflow.business-scope", "aiflow.result-boundary", "aiflow.engine-core", "aiflow.dynamic-branching", "aiflow.node-plugin-system", "aiflow.runtime.execution-isolation", "aiflow.runtime.failure-result-chain", "aiflow.execution-feedback", "aiflow.data-and-backend-boundary",
+    "monitoring-sdk.project.scope", "monitoring-sdk.downstream-driven-design", "monitoring-sdk.architecture", "monitoring-sdk.queue-retry", "monitoring-sdk.sourcemap", "monitoring-sdk.platform-coverage"
+  ],
+  "status": "current"
+}

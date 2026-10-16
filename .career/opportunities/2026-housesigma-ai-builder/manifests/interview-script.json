@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "artifact": ".career/opportunities/2026-housesigma-ai-builder/outputs/interview-script.md",
+  "artifact_type": "interview_script",
+  "opportunity_id": "2026-housesigma-ai-builder",
+  "generated_by": "interview-package",
+  "claim_ids": [
+    "career.working-boundary.invasive-backend",
+    "domain-modeling.project.scope", "domain-modeling.methodology-recording", "domain-modeling.frontend-backend-contract", "domain-modeling.validation", "domain-modeling.internal-use", "domain-modeling.ai-proposal", "domain-modeling.model-driven-delivery", "domain-modeling.procurement-case", "domain-modeling.mcp-local-sync", "domain-modeling.local-snapshot-validation", "domain-modeling.local-model-publication", "domain-modeling.skill-workflow", "domain-modeling.discovery-rule-provenance", "domain-modeling.downstream-model-review-gate",
+    "hateoas.project.sdk", "hateoas.sdk-core", "hateoas.template-driven-business-forms", "hateoas.cache-response-contracts", "hateoas.incremental-migration-cost-risk", "hateoas.migration-pilot", "hateoas.production-results", "hateoas.production-and-public-phases", "hateoas.adoption-boundary", "hateoas.release-pipeline", "hateoas.workspace-navigation-component-tests", "hateoas.workflow-write-regression", "hateoas.public-package-verification",
+    "aiflow.project.scope", "aiflow.business-scope", "aiflow.visual-editor", "aiflow.variable-editor", "aiflow.formula-editor", "aiflow.result-boundary", "aiflow.engine-core", "aiflow.dynamic-branching", "aiflow.node-plugin-system", "aiflow.runtime.execution-isolation", "aiflow.runtime.failure-result-chain", "aiflow.execution-feedback", "aiflow.data-and-backend-boundary",
+    "monitoring-sdk.project.scope", "monitoring-sdk.downstream-driven-design", "monitoring-sdk.architecture", "monitoring-sdk.collection", "monitoring-sdk.queue-retry", "monitoring-sdk.sourcemap", "monitoring-sdk.platform-coverage"
+  ],
+  "status": "current"
+}
