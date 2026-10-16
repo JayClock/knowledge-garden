@@ -16,7 +16,6 @@
     "aiflow.project.scope",
     "aiflow.reimplementation-boundary",
     "aiflow.result-boundary",
-    "aiflow.telemetry.execution-correlation",
     "aiflow.variable-editor",
     "aiflow.visual-editor",
     "career.capability.ai-determinism",
@@ -41,6 +40,9 @@
     "domain-modeling.frontend-backend-contract",
     "domain-modeling.internal-use",
     "domain-modeling.methodology-recording",
+    "domain-modeling.skill-workflow",
+    "domain-modeling.discovery-rule-provenance",
+    "domain-modeling.downstream-model-review-gate",
     "domain-modeling.mcp-local-sync",
     "domain-modeling.fm-snapshot-export",
     "domain-modeling.mcp-snapshot-access",
@@ -105,5 +107,5 @@
     "timeline.shanghai-wuwulaike",
     "timeline.shanghai-yixiao"
   ],
-  "status": "current"
+  "status": "stale"
 }

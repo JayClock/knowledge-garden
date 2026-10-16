@@ -597,18 +597,20 @@
       "project_id": "aiflow",
       "ownership": "direct",
       "completion": "implemented",
-      "status": "confirmed",
+      "status": "deprecated",
       "evidence": [
         {
           "type": "user_confirmation",
           "locator": "用户明确确认监控接入、自定义事件和 executionId 关联"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮明确纠正：这是此前整理材料时将低代码工作流与监控 SDK 两个独立项目串成的一个应用案例，实际未在工作流中接入监控 SDK 进行此类埋点串联，本条旧串联陈述废弃，仅保留历史追踪"
         }
       ],
       "metrics": [],
       "constraints": [
-        "前端 SDK 记录用户路径和关键结果",
-        "节点状态、耗时和错误仍以执行引擎日志为事实源",
-        "不补写具体下游使用方式和量化收益"
+        "两个项目各自独立，不表述为工作流引擎已集成监控 SDK 并通过 executionId 串联前端操作与引擎日志"
       ],
       "tags": [
         "monitoring",
@@ -2183,7 +2185,7 @@
     },
     {
       "id": "aiflow.business-scope",
-      "statement": "低代码工作流引擎面向公司内部人员、企业客户和研发团队，覆盖多个行业的工作流场景",
+      "statement": "低代码工作流引擎面向公司内部人员、企业客户和研发团队，支持多个行业的普通业务流程编排与执行",
       "kind": "project_scope",
       "ownership": "team",
       "completion": "implemented",
@@ -2192,11 +2194,16 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：低代码工作流引擎／项目背景"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "本轮项目口语练习中，用户明确纠正：不是 AI 工作流引擎，就是普通工作流引擎；随后授权将已讨论内容合并保存到项目介绍"
         }
       ],
       "metrics": [],
       "constraints": [
-        "没有实际人数、执行规模、团队规模和业务收益数据"
+        "没有实际人数、执行规模、团队规模和业务收益数据",
+        "按普通业务工作流引擎表达，不将来源材料中的 AI／Agent 示例扩展为本项目范围"
       ],
       "tags": [
         "enterprise",
@@ -2206,7 +2213,7 @@
     },
     {
       "id": "aiflow.engine-core",
-      "statement": "实现 WorkflowEngine、GraphBuilder、ExecutionContext 和 VariableResolver，用邻接表、反向邻接表、入度表与标准 Kahn 算法完成图构建、拓扑排序和环检测",
+      "statement": "实现 WorkflowEngine、GraphBuilder、ExecutionContext 和 VariableResolver，构建邻接表、反向邻接表与入度表，通过 DFS 完成环检测、Kahn 算法规划拓扑执行顺序",
       "kind": "project_contribution",
       "ownership": "direct",
       "completion": "implemented",
@@ -2220,6 +2227,10 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：低代码工作流引擎／工作流协议与引擎"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "本轮口语练习中，用户说明 DFS 用全局访问集合与当前路径集合检测回边、回溯时移除路径节点；Kahn 在前驱出队后递减后继入度，入度为零才入队；随后授权保存讨论内容"
         }
       ],
       "metrics": [],
@@ -2316,6 +2327,131 @@
         "protocol"
       ],
       "project_id": "aiflow"
+    },
+    {
+      "id": "aiflow.runtime.execution-isolation",
+      "statement": "每次工作流运行新建独立 ExecutionContext 和已执行节点 Set；上下文按 nodeId 保存本次运行的输出，集合用于跳过本次已执行的节点",
+      "kind": "project_contribution",
+      "project_id": "aiflow",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "本轮用户确认全局数据指本次执行上下文；说明两次运行各有独立上下文、同名节点输出互不影响，并明确已执行节点 Set 是运行时新建的；随后授权保存"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/miaoma-aiflow-v2/packages/ai-engine/src/core/context.ts",
+          "locator": "DefaultExecutionContext：独立变量存储与完成节点集合；代表性机制定位"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/miaoma-aiflow-v2/packages/ai-engine/src/core/engine.ts",
+          "locator": "WorkflowEngine.execute：每次执行创建上下文与局部 executedNodes Set"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "节点 ID 在单次运行内定位节点，跨运行隔离由独立上下文负责",
+        "不从运行数据隔离推定已完成并发限流、自动重试或服务恢复"
+      ],
+      "tags": [
+        "execution-context",
+        "state-isolation",
+        "node-id"
+      ]
+    },
+    {
+      "id": "aiflow.node-registry-instance-reuse",
+      "statement": "在项目中以共享单例使用节点注册表，系统启动时按节点类型注册已经创建好的执行器实例，执行时按类型查找并复用",
+      "kind": "project_contribution",
+      "project_id": "aiflow",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "本轮用户说明节点类型与执行器注册到全局单例节点注册表，并在追问中明确注册的是已经创建好的执行器实例；随后授权保存"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/miaoma-aiflow-v2/packages/ai-engine/src/nodes/registry.ts",
+          "locator": "register／get：按节点类型保存、查找执行器实例；仅用于实例登记机制定位"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "共享单例是用户确认的项目使用方式；代表性重实现的注册表类与工厂可创建多个实例，不据此改写原项目使用方式",
+        "复用执行器不等于共享节点身份或单次运行的变量与输出"
+      ],
+      "tags": [
+        "registry",
+        "executor",
+        "instance-reuse"
+      ]
+    },
+    {
+      "id": "aiflow.runtime.failure-result-chain",
+      "statement": "doExecute 异常由 BaseNodeExecutor 捕获并转换为 success:false 的节点结果；WorkflowEngine 检查失败结果后主动 throw 退出执行循环，再由最外层捕获并返回含执行 ID、错误、耗时和日志的工作流失败结果",
+      "kind": "project_contribution",
+      "project_id": "aiflow",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "本轮用户纠正异常传递方式：基类捕获后记录 success:false，引擎检查失败状态后 throw 停止循环，最外层捕获并返回执行 ID 与错误；随后授权保存"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/miaoma-aiflow-v2/packages/ai-engine/src/nodes/base-executor.ts",
+          "locator": "BaseNodeExecutor.execute：catch 返回包含 success:false、error 与 duration 的节点结果"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/miaoma-aiflow-v2/packages/ai-engine/src/core/engine.ts",
+          "locator": "WorkflowEngine.execute：检查节点结果、主动抛错与外层失败结果返回"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "区分基类返回失败结果与引擎主动抛错，不写成 await 节点失败结果必然直接抛异常",
+        "不从失败停止推定已完成自动重试、恢复或真实事故处理"
+      ],
+      "tags": [
+        "error-handling",
+        "node-result",
+        "workflow-result"
+      ]
+    },
+    {
+      "id": "aiflow.variable-reference-identity",
+      "statement": "Tiptap 变量原子标签显示节点与变量的可读名称，以 nodeId 和 variableName 标识引用并保存为表达式；仅修改展示名称不影响引用，输出字段名变更时由用户重新选择引用",
+      "kind": "project_contribution",
+      "project_id": "aiflow",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "本轮用户纠正回显内容：显示节点名和变量名而不是实际变量值；复述不可拆分标签、保存表达式与执行期取值，并说明字段名改变后需要重新选择引用而非自动迁移；随后授权保存"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "区分显示标签、底层引用键和运行期实际值",
+        "底层 variableName 是取值键，不能把更改输出字段名等同于仅修改显示名称"
+      ],
+      "tags": [
+        "variable-reference",
+        "identity",
+        "tiptap"
+      ]
     },
     {
       "id": "aiflow.formula-editor",
@@ -2583,7 +2719,7 @@
     },
     {
       "id": "monitoring-sdk.platform-coverage",
-      "statement": "统一监控 SDK 覆盖低代码平台全部功能，Vanilla JS、React 与 Vue 功能消费同一监控协议；低代码工作流引擎是已确认的具体接入实例",
+      "statement": "统一监控 SDK 覆盖低代码平台前端各业务模块，Vanilla JS、React 与 Vue 模块消费同一监控协议",
       "kind": "result",
       "ownership": "direct",
       "completion": "implemented",
@@ -2592,6 +2728,10 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：监控 SDK／实际覆盖"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "用户本轮明确纠正两项目独立，移除工作流作为接入实例的串联表述"
         }
       ],
       "metrics": [],
@@ -2903,6 +3043,90 @@
         "content-conflict",
         "sync-record"
       ]
+    },
+    {
+      "id": "domain-modeling.skill-workflow",
+      "statement": "设计并实际使用一套将业务讨论收敛为领域模型与 API 契约的 Skill 工作流：由人类提供真实约定和主要履约，围绕双方责任、履约要求与结果凭证逐项澄清，并检查异常履约及后续责任",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "本次项目练习 Q02：用户明确说“我设计了一套skill，把整个业务讨论收敛为领域模型和API切约的工作流”；Q09 明确确认描述的是实际使用过的版本行为"
+        },
+        {
+          "type": "file",
+          "path": ".career/practice/domain-modeling/transcript-2026-10-10.md",
+          "locator": "Q02｜个人交付与 Skill；Q03｜异常规则由谁提供；Q09｜实际使用版本确认"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "个人动作是 Skill 工作流设计；不据此推定整个 Evidence-Framework、8X Flow 方法论或全部运行程序均由本人创造",
+        "履约路线适用于有权责约定的业务，纯领域对象和算法不补造合同",
+        "“100多轮”、订单及还款例子不是已核验项目指标或客户案例",
+        "未核验的转写词不写成新的技术名或个人实现事实"
+      ],
+      "tags": ["skill", "domain-modeling", "requirements", "api-contract"]
+    },
+    {
+      "id": "domain-modeling.discovery-rule-provenance",
+      "statement": "实际使用过的 Skill 建模版本将 AI 推断及来源保存在 Discovery 中，建模结果引用记录供反向追溯；AI 补充内容可以先写成模型中的 Rule，仍能区分人类提供与 AI 补充的来源",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "本次项目练习 Q05：用户说明 AI 推断记录在 Discovery、建模结果引用并反向追溯；Q08：用户确认“写为正式 rule”且可查询 AI 来源；Q09：用户确认这是实际使用过的版本行为"
+        },
+        {
+          "type": "file",
+          "path": ".career/practice/domain-modeling/transcript-2026-10-10.md",
+          "locator": "Q05｜AI 推断的记录位置；Q08｜Rule 结构还是候选记录；Q09｜实际使用版本确认"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "此项描述用户实际使用过的版本，不用当前仓库要求 pending 不编入正式规则的规范反向改写该经历",
+        "写成 Rule 结构与业务审核通过是不同阶段；来源可反查不自动证明业务依据充分",
+        "当前确认的是版本行为，不由此扩大单项程序的个人编码范围",
+        "不补写模型内审核状态字段、不可篡改审计或自动审批能力"
+      ],
+      "tags": ["discovery", "rule", "provenance", "ai-proposal"]
+    },
+    {
+      "id": "domain-modeling.downstream-model-review-gate",
+      "statement": "实际使用版本中的 AI 来源模型内容经过人类审核与修改，审核通过后才进入后续 API 和测试数据生成，未被确认的内容不被该下游生成链路消费",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "本次项目练习 Q10：用户说明 AI 来源内容经过人类审核与修改，“只有通过以后”才进行后续 API 和测试数据生成，生成“不会用到未被确认的内容”；Q11 重讲再次说明模型文件审核后才进入下游"
+        },
+        {
+          "type": "file",
+          "path": ".career/practice/domain-modeling/transcript-2026-10-10.md",
+          "locator": "Q10｜下游怎样处理 AI 来源的 Rule；Q11｜从规则生成到下游消费的重讲"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "用户确认的是实际使用流程的下游门槛，不据此推定脚本强制审批、认证或签名校验的具体实现",
+        "不把生成模型文件等同于业务审核或正式发布",
+        "API 和测试数据生成不自动证明实际代码或运行测试通过",
+        "不将当前 API Skill 的技术交付规则挪用为旧版本增加的人工接口筛选或发布机制"
+      ],
+      "tags": ["human-review", "model-consumption", "api", "test-data"]
     }
   ]
 }

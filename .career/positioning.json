@@ -20,7 +20,6 @@
     "domain-modeling.methodology-recording",
     "hateoas.project.sdk",
     "aiflow.project.scope",
-    "aiflow.telemetry.execution-correlation",
     "monitoring-sdk.project.scope"
   ],
   "target_role_families": [

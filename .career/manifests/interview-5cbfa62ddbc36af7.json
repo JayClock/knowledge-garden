@@ -16,7 +16,6 @@
     "aiflow.project.scope",
     "aiflow.reimplementation-boundary",
     "aiflow.result-boundary",
-    "aiflow.telemetry.execution-correlation",
     "aiflow.variable-editor",
     "aiflow.visual-editor",
     "career.capability.ai-determinism",
@@ -87,5 +86,5 @@
     "timeline.shanghai-wuwulaike",
     "timeline.shanghai-yixiao"
   ],
-  "status": "current"
+  "status": "stale"
 }
