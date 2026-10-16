@@ -1,26 +1,15 @@
 {
   "schema_version": 1,
-  "artifact": "content/Knowledge/Outputs/项目介绍：AI 辅助领域建模平台.md",
+  "artifact": "content/Knowledge/Outputs/项目介绍：基于权责关系的领域建模与 API 设计.md",
   "artifact_type": "interview_script",
   "generated_by": "interview-package",
   "claim_ids": [
-    "career.capability.progressive-architecture",
-    "career.capability.association-object-modeling",
-    "domain-modeling.project.scope",
-    "domain-modeling.validation",
-    "domain-modeling.internal-use",
     "domain-modeling.methodology-recording",
-    "domain-modeling.ai-proposal",
-    "domain-modeling.model-driven-delivery",
-    "domain-modeling.mcp-local-sync",
-    "domain-modeling.fm-snapshot-export",
-    "domain-modeling.mcp-snapshot-access",
-    "domain-modeling.local-snapshot-validation",
-    "domain-modeling.local-model-publication",
-    "domain-modeling.procurement-case",
-    "career.capability.contract-lifecycle",
+    "domain-modeling.skill-workflow",
+    "domain-modeling.internal-use",
     "domain-modeling.frontend-backend-contract",
-    "career.positioning.full-flow-axis"
+    "domain-modeling.model-driven-delivery",
+    "domain-modeling.downstream-model-review-gate"
   ],
-  "status": "current"
+  "status": "stale"
 }
