@@ -14,7 +14,6 @@
     "monitoring-sdk.sourcemap",
     "monitoring-sdk.platform-coverage",
     "monitoring-sdk.reimplementation-boundary",
-    "aiflow.telemetry.execution-correlation",
     "career.capability.contract-lifecycle",
     "career.positioning.full-flow-axis"
   ],

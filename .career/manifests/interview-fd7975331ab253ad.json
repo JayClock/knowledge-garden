@@ -4,6 +4,7 @@
   "artifact_type": "interview_script",
   "generated_by": "interview-package",
   "claim_ids": [
+    "aiflow.business-scope",
     "aiflow.project.scope",
     "aiflow.data-and-backend-boundary",
     "aiflow.engine-core",
@@ -13,7 +14,11 @@
     "aiflow.execution-feedback",
     "aiflow.failure-trace-order",
     "aiflow.result-boundary",
-    "aiflow.visual-editor",
+    "aiflow.runtime.execution-isolation",
+    "aiflow.node-registry-instance-reuse",
+    "aiflow.runtime.failure-result-chain",
+    "aiflow.variable-reference-identity",
+    "aiflow.reimplementation-boundary",
     "career.capability.contract-lifecycle"
   ],
   "status": "current"
