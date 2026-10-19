@@ -336,7 +336,7 @@
     },
     {
       "id": "domain-modeling.project.scope",
-      "statement": "设计并实现 AI 辅助领域建模平台，将 8X Flow 模型沉淀为可审核和可发布的结构化资产",
+      "statement": "设计并实现桌面端 AI 辅助增量领域建模平台，将业务讨论持续沉淀为本地结构化模型，以审核后的模型支持 API 契约与测试资产生成",
       "kind": "project_scope",
       "project_id": "domain-modeling",
       "ownership": "direct",
@@ -350,11 +350,16 @@
         {
           "type": "user_confirmation",
           "locator": "用户本轮纠正：建模平台不再是多人协作产品；原来技术的多人协作相关技术和方案，直接删除，并没有用到"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户明确当前为桌面端增量式建模流程，使用 Electron、React、React Flow 与 Pi SDK，AI 直接增量修改本地文件；最后要求将这些难点重构进项目介绍和职业经历"
         }
       ],
       "metrics": [],
       "constraints": [
         "本项目实际未使用多人在线协同编辑技术与方案，不消费已废弃的协同实现、故障与并发校验陈述",
+        "当前桌面端以 AI 直接修改本地文件、生成阶段校验及轮次结束后全量刷新为口径，不沿用只生成 Proposal 再逐项采纳的旧链路",
         "不补写效率提升"
       ],
       "tags": [
@@ -394,7 +399,7 @@
     },
     {
       "id": "domain-modeling.frontend-backend-contract",
-      "statement": "将参与方、权责、事件、领域对象和关系沉淀为前端与后端共同审核和消费的业务语义契约，并以发布模型支持 RESTful API、OpenAPI 草稿和测试数据候选",
+      "statement": "将参与方、权责、事件、领域对象和关系沉淀为前端与后端共同核对和消费的业务语义契约，以明确业务范围的模型支持 RESTful API 设计、OpenAPI 文档和场景化测试资产",
       "kind": "project_contribution",
       "project_id": "domain-modeling",
       "ownership": "direct",
@@ -403,7 +408,7 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认领域建模平台的主定位是前端与后端之间的契约"
+          "locator": "用户明确确认领域建模平台的主定位是前端与后端之间的契约；2026-10-19 用户授权按当前实现重构全部相关材料，将旧草稿发布叙事改为明确范围、机器检查与人工确认分工"
         }
       ],
       "metrics": [],
@@ -567,7 +572,7 @@
     },
     {
       "id": "aiflow.data-and-backend-boundary",
-      "statement": "低代码工作流引擎的 NestJS API、SSE 事件推送与 PostgreSQL / Prisma 数据持久化由后端同事实现；本人负责共同协议制定、前端接入与端侧执行反馈",
+      "statement": "低代码工作流引擎中，本人负责共同协议制定、SSE 服务端事件推送、前端接入与执行反馈；其他 NestJS API 与 PostgreSQL / Prisma 数据持久化由后端同事实现",
       "kind": "project_contribution",
       "project_id": "aiflow",
       "ownership": "collaborative",
@@ -577,11 +582,15 @@
         {
           "type": "user_confirmation",
           "locator": "用户确认数据层和服务端协作边界"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户明确确认：SSE 服务端也由我实现了。以此纠正原有 SSE 由后端同事实现的职责记录；其他 API 与数据持久化的分工沿用此前确认"
         }
       ],
       "metrics": [],
       "constraints": [
-        "服务端 API 与数据持久化属于后端团队成果，本人负责共同协议制定、前端接入与端侧执行反馈"
+        "SSE 服务端事件推送为本人直接实现；此次确认不扩展到其他服务端 API 或 PostgreSQL / Prisma 数据持久化的实现职责"
       ],
       "tags": [
         "collaboration",
@@ -621,7 +630,7 @@
     },
     {
       "id": "monitoring-sdk.project.scope",
-      "statement": "设计并实现低代码平台监控 SDK 的采集与上报侧，覆盖多包架构、React／Vue／Vanilla 适配、插件协议、统一事件、本地队列、性能与异常采集及 Sourcemap 链路",
+      "statement": "设计并实现低代码平台监控 SDK 与数据采集后端，覆盖多包架构、React／Vue／Vanilla 适配、插件协议、统一事件、本地队列、性能与异常采集、Sourcemap 链路，以及 NestJS 数据接收、Kafka 异步处理和 ClickHouse 存储查询",
       "kind": "project_scope",
       "project_id": "monitoring-sdk",
       "ownership": "direct",
@@ -632,11 +641,20 @@
           "type": "file",
           "path": "content/Knowledge/Sources/企业级监控平台全栈架构设计/企业级监控平台全栈架构设计与实践面试专项突击.md",
           "locator": "SDK 完成范围"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户明确说明：无可视化分析；随后授权重构整个项目介绍，以数据上报与异常定位替代可视化平台叙述"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户明确纠正：后端也是我写的，不再是与后端协同；个人范围包含 SDK 与数据采集后端实现"
         }
       ],
       "metrics": [],
       "constraints": [
-        "不补写 sendBeacon、IndexedDB 离线续传、微前端去重和远程开关为已完成"
+        "不补写 sendBeacon、IndexedDB 离线续传、微前端去重和远程开关为已完成",
+        "项目范围不含可视化分析，不将 SaaS 可视化平台建设列为项目成果"
       ],
       "tags": [
         "monitoring",
@@ -647,22 +665,62 @@
       ]
     },
     {
-      "id": "monitoring-sdk.platform-boundary",
-      "statement": "NestJS 数据服务、Kafka、ClickHouse、查询后端和监控控制台由其他同事负责，本人负责让 SDK 产出稳定、可关联的事件协议",
-      "kind": "boundary",
+      "id": "monitoring-sdk.backend-pipeline",
+      "statement": "实现基于 NestJS 的监控数据接收服务，使用 Kafka 异步处理 SDK 上报事件，并接入 ClickHouse 完成数据存储与查询",
+      "kind": "project_contribution",
       "project_id": "monitoring-sdk",
-      "ownership": "collaborative",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户明确纠正：后端也是我写的，不再是与后端协同"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级监控平台全栈架构设计/企业级监控平台全栈架构设计与实践面试专项突击.md",
+          "locator": "数据采集服务技术选型与设计；面试问题 7.4"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "此条记录数据采集与处理后端，不扩展到可视化分析或 SaaS 控制台建设"
+      ],
+      "tags": [
+        "monitoring",
+        "nestjs",
+        "kafka",
+        "clickhouse",
+        "backend"
+      ]
+    },
+    {
+      "id": "monitoring-sdk.platform-boundary",
+      "statement": "本人直接负责监控 SDK、NestJS 数据服务、Kafka 数据处理、ClickHouse 存储及查询后端，通过统一事件协议串联采集、上报与后端处理",
+      "kind": "project_contribution",
+      "project_id": "monitoring-sdk",
+      "ownership": "direct",
       "completion": "implemented",
       "status": "confirmed",
       "evidence": [
         {
           "type": "user_confirmation",
           "locator": "用户确认监控 SDK 与数据平台协作边界"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户明确说明：无可视化分析；移除此前监控控制台与可视化平台的范围描述，其他后端服务分工沿用此前确认"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户进一步明确纠正：后端也是我写的，不再是与后端协同；以此替代旧记录中由后端同事负责的职责表述"
         }
       ],
       "metrics": [],
       "constraints": [
-        "不能使用我搭建 ClickHouse、大盘或查询后端等表述",
+        "SDK 与数据采集处理后端均为本人直接实现，不再按端侧与后端团队协作表达该项目",
+        "项目不包含可视化分析，不使用监控控制台或 SaaS 可视化平台建设作为项目成果",
         "没有可核验的事件量、查询性能和业务收益"
       ],
       "tags": [
@@ -1364,15 +1422,22 @@
       "kind": "project_contribution",
       "ownership": "direct",
       "completion": "implemented",
-      "status": "confirmed",
+      "status": "deprecated",
       "evidence": [
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：领域建模平台／AI 辅助与模型生命周期"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户澄清当前桌面端由 Pi SDK 驱动 AI 直接增量修改本地模型文件，生成阶段校验，AI 结束后再全量读取并刷新 React Flow，并授权同步项目介绍和职业经历；旧 Proposal 链路不再用于当前项目表述"
         }
       ],
       "metrics": [],
-      "constraints": [],
+      "constraints": [
+        "保留旧记录追踪，不将逐项采纳、拒绝及其草稿发布流程用于当前桌面端架构",
+        "本轮未确认旧链路与新链路的历史切换时间，不补写迁移过程或将旧交互挪作当前实现"
+      ],
       "tags": [
         "ai-proposal",
         "human-in-the-loop",
@@ -1411,7 +1476,7 @@
     },
     {
       "id": "domain-modeling.model-driven-delivery",
-      "statement": "发布模型作为上下文用于 RESTful API 候选、OpenAPI 草稿、正常／异常测试数据和下游代码生成，正式接口契约必须人工审核",
+      "statement": "以明确业务范围的模型支持 RESTful API 设计，并从 API 设计源派生 OpenAPI 文档与场景化测试资产；业务和研发共同核对契约，派生产物供下游实现与验收消费",
       "kind": "project_contribution",
       "ownership": "direct",
       "completion": "implemented",
@@ -1419,7 +1484,7 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：领域建模平台／8X Flow 与模型驱动交付"
+          "locator": "用户明确确认模型驱动交付范围；2026-10-19 授权按当前实现重构全部相关内容，区分范围确认、API 技术校验、静态测试向量生成与真实执行验证"
         }
       ],
       "metrics": [],
@@ -1432,6 +1497,169 @@
         "codegen"
       ],
       "project_id": "domain-modeling"
+    },
+    {
+      "id": "domain-modeling.model-to-api-mapping",
+      "statement": "将业务模型中的对象、关系和规则转化为 API 契约，按照角色、HTTP 方法、资源和业务场景梳理接口候选，人工审核操作输入与结果，并通过资源关系支持客户端访问关联记录与处理进度",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "collaborative",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-17 本轮项目介绍补充：用户引用模型决定接口设计、逻辑位置和业务检查的讨论，明确确认“那些内容都在项目中都做过”，随后认可整合稿并要求“帮我更新一下”"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-19 用户明确纠正：支付请求是系统发起的，无对外 API，要求更换接口设计案例，随后要求继续处理"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "本人推进模型与接口契约，和研发共同核对实现约束；不据此声称全部后端代码由本人独立实现",
+        "支付请求由系统内部发起，不对外开放 API；领域对象存在不代表应暴露对应 CRUD，接口候选必须按角色与真实场景筛选",
+        "此项纠正不改变支付模型中请求、确认和凭证的业务关系，也不推定其他支付或退款对象的对外接口范围",
+        "CRM 电话销售可作为资源映射的设计示例，不能据此新增未经确认的客户案例、个人编码范围或生产交付成果",
+        "不补写真实客户名、接口路径、请求字段或具体协议版本"
+      ],
+      "tags": ["domain-modeling", "api-contract", "resource-relations", "human-review"]
+    },
+    {
+      "id": "domain-modeling.persistence-and-rule-placement",
+      "statement": "项目的支付案例以订单、支付请求、支付确认和支付凭证单四张表组织数据：订单管理支付请求，请求管理支付确认，确认引用凭证单；订单保留已确立的合同事实，不通过更新订单表达付款进度，履约情况由请求、确认和凭证关系判断；业务规则集中于领域对象或领域服务",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-17 本轮讨论表结构与逻辑组织后，用户明确确认相关内容在项目中做过，并授权保存支付／退款整合稿"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户纠正“模型中不是只有订单、支付请求、支付确认、支付凭证单吗”，随后要求重构；将此前 AI 扩展的支付尝试移出模型口径，明确支付确认与凭证单的区别"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户指出“订单不是禁止更新数据的吗”并要求重写；同时其当前人工修改的项目稿明确订单、支付请求、支付确认、支付凭证单是四张不同的表，订单管理请求、请求管理确认、确认引用凭证单。本轮保留这项人工补充并纠正订单状态更新假设"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "以订单、支付请求、支付确认和支付凭证单表达当前支付案例，不把技术重试或执行日志扩展为未经确认的领域对象",
+        "支付确认是履约结果，支付凭证单是确认依据；不将二者合并成同一个业务概念",
+        "本案例明确按四张表保存四类业务事实，不补写真实表名、字段清单、ORM 或数据库产品",
+        "订单合同记录禁止通过更新表达履约进度；不将查询得到的付款情况写成订单状态字段更新，不引入未经确认的投影表或事件存储实现"
+      ],
+      "tags": ["persistence", "schema-design", "domain-logic", "traceability"]
+    },
+    {
+      "id": "domain-modeling.async-fulfillment-and-compensation",
+      "statement": "项目中区分支付请求与支付确认，以请求已提出但尚未形成确认表达异步履约的等待阶段；超时后通过查询或对账取得支付结果，核验支付凭证单后形成支付确认；付款成功后无法发货时，退款作为新履约过程推进，而非用本地回滚撤销外部扣款",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-17 本轮讨论支付确认、异步中间态和退款补偿后，用户明确确认相关内容在项目中做过，并授权保存整合稿"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户明确支付案例的四个模型对象并要求重构；等待阶段从支付请求与支付确认的分离解释，不新增业务对象"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不补写具体消息队列、支付渠道、重试次数、对账周期或补偿框架",
+        "超时表示尚未确认结果，不等同于外部扣款失败"
+      ],
+      "tags": ["async", "fulfillment", "payment-confirmation", "compensation"]
+    },
+    {
+      "id": "domain-modeling.payment-transaction-and-idempotency",
+      "statement": "支付确认的一致性约束针对新增履约事实与既有请求、凭证单的关联，不包含订单更新；同库一次处理若需同时新增凭证单和确认，应原子提交，若只新增引用已有请求和凭证的确认，单条原子写入与关联约束可能足够；通过渠道流水唯一性与确认幂等控制重复生效，异常到账保留凭证并按约定处理",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-17 本轮讨论本地事务、重复回调幂等与订单关闭后的迟到支付后，用户明确确认相关内容在项目中做过，并授权保存整合稿"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户纠正支付模型为订单、支付请求、支付确认和支付凭证单，并要求据此重构；事务表述同步明确支付确认与请求、凭证单关联，不补设新模型或固定物理表映射"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户引用此前事务段落并纠正订单禁止更新，随后授权重写；撤回此前 AI 加入的订单状态同步更新与条件更新假设，将事务要求限定为新增确认及其请求、凭证关联的完整性"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "本地事务只覆盖同库数据，不将整个合同上下文或第三方支付、物流调用视作同一个数据库事务",
+        "不以更新订单或改写合同事实实现付款状态机；不为单条写入臆造多表更新，具体写入范围以本次新增事实为准",
+        "不补写具体隔离级别、锁类型、SQL、吞吐量、故障记录或迟到付款处理细节"
+      ],
+      "tags": ["transaction", "idempotency", "unique-constraint", "fact-integrity"]
+    },
+    {
+      "id": "domain-modeling.resource-authorization",
+      "statement": "项目中由权责关系推导服务端操作检查，分别校验调用者身份、具体资源归属与履约前置条件；发货需匹配订单卖方和已有履约事实，支付确认需校验凭证来源、订单和金额，不依赖前端隐藏按钮作为授权保障",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-17 本轮讨论身份、资源归属、状态条件和可信支付凭证后，用户明确确认相关内容在项目中做过，并授权保存整合稿"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户明确订单禁止更新并要求重写；操作前置条件按已有履约事实判断，不再使用未经确认的可变订单状态字段解释"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不补写鉴权框架、令牌协议、签名算法、多租户实现或具体支付供应商"
+      ],
+      "tags": ["authorization", "resource-ownership", "business-preconditions", "payment-validation"]
+    },
+    {
+      "id": "domain-modeling.scenario-acceptance",
+      "statement": "将 API 映射回正常和异常履约流程，审核后形成测试数据与断言，用于验收 AI 生成的实现；依据当前模型检查请求提交不等于付款完成、有效凭证形成关联正确的确认、订单合同记录保持不变、重复通知幂等、越权操作、迟到支付和退款未确认等情形",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "collaborative",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-17 用户明确确认模型到接口、逻辑位置与业务检查等步骤在项目中做过，并授权保存包含正常／异常场景验收的整合稿"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户纠正订单禁止更新并授权重写；验收要求同步检查订单合同记录不变，不再把推进订单状态作为成功条件；此次修订不新增实际测试运行结果"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不补写测试框架、覆盖率、用例数量、运行记录或所有场景均已自动化通过",
+        "正式接口契约及验收场景经人工审核，不表述为模型确定性一键生成完整业务系统"
+      ],
+      "tags": ["acceptance", "test-scenarios", "ai-coding", "model-driven-delivery"]
     },
     {
       "id": "domain-modeling.procurement-case",
@@ -2481,10 +2709,32 @@
       ]
     },
     {
-      "id": "aiflow.execution-feedback",
-      "statement": "负责发布管理和执行日志界面，对接后端 NestJS／SSE 展示节点状态、日志和错误，并用测试运行面板在发布前检查配置、变量和路径",
+      "id": "aiflow.sse-server",
+      "statement": "实现低代码工作流引擎的 SSE 服务端事件推送",
       "kind": "project_contribution",
-      "ownership": "collaborative",
+      "project_id": "aiflow",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户明确确认：SSE 服务端也由我实现了"
+        }
+      ],
+      "metrics": [],
+      "constraints": [],
+      "tags": [
+        "sse",
+        "server",
+        "execution-feedback"
+      ]
+    },
+    {
+      "id": "aiflow.execution-feedback",
+      "statement": "负责发布管理和执行日志界面，实现 SSE 服务端推送与前端接入，展示节点状态、日志和错误，并用测试运行面板在发布前检查配置、变量和路径",
+      "kind": "project_contribution",
+      "ownership": "direct",
       "completion": "implemented",
       "status": "confirmed",
       "evidence": [
@@ -2496,12 +2746,14 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：低代码工作流引擎／发布、验收与执行反馈"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户明确确认：SSE 服务端也由我实现了。执行反馈职责包含服务端事件推送与前端接入"
         }
       ],
       "metrics": [],
-      "constraints": [
-        "SSE 服务端实现由后端同事完成"
-      ],
+      "constraints": [],
       "tags": [
         "sse",
         "logs",
@@ -2747,6 +2999,48 @@
       "project_id": "monitoring-sdk"
     },
     {
+      "id": "monitoring-sdk.response-performance-improvement",
+      "statement": "监控数据采集与处理系统的响应性能提升 50%",
+      "kind": "result",
+      "project_id": "monitoring-sdk",
+      "ownership": "direct",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户明确纠正：50% 指标是确认过的，并要求恢复成果、使后续追问符合项目介绍逐字稿"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户进一步确认后端也是本人实现，不再是与后端协同；成果对应本人负责的 SDK 与后端完整数据采集处理链路"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "系统响应性能提升",
+          "value": 50,
+          "unit": "%",
+          "scope": "监控数据采集与处理系统",
+          "time_range": null,
+          "definition": "保持用户确认的系统响应性能提升表述，不擅自换算为接口耗时、吞吐量或 SDK 开销指标",
+          "baseline": null,
+          "comparison_conditions": null,
+          "source": "2026-10-18 用户明确确认：50% 指标是确认过的"
+        }
+      ],
+      "constraints": [
+        "这是用户已确认的系统级成果，不作为是否真实发生的待确认项",
+        "该成果对应本人负责的 SDK 与数据采集处理后端，不将系统级提升改写为单一 SDK 模块的性能指标",
+        "不自行补写具体测试工具、时间范围、优化前后数值、样本量、分位数、计算公式或将提升 50% 换算为响应时间下降 50%"
+      ],
+      "tags": [
+        "monitoring",
+        "response-performance",
+        "metric"
+      ]
+    },
+    {
       "id": "monitoring-sdk.reimplementation-boundary",
       "statement": "miaoma-monitor 是本人维护的内部重实现，只需复现代表性机制",
       "kind": "boundary",
@@ -2757,12 +3051,16 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：监控 SDK／来源与核验边界"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18，用户明确确认系统响应性能提升 50%；该数字作为 confirmed result 单独记录，不再按未确认的课程百分比排除"
         }
       ],
       "metrics": [],
       "constraints": [
         "代码缺失不否定原文稿确认范围",
-        "原文百分比、吞吐量和平台收益不能进入简历",
+        "仅来源示例、未经用户确认的百分比、吞吐量和平台收益不进入简历；已确认的系统响应性能提升 50% 使用 monitoring-sdk.response-performance-improvement",
         "没有记录的线上故障不能补写"
       ],
       "tags": [
@@ -3046,7 +3344,7 @@
     },
     {
       "id": "domain-modeling.skill-workflow",
-      "statement": "设计并实际使用一套将业务讨论收敛为领域模型与 API 契约的 Skill 工作流：由人类提供真实约定和主要履约，围绕双方责任、履约要求与结果凭证逐项澄清，并检查异常履约及后续责任",
+      "statement": "设计并实际使用双层循环 Harness 组织业务建模与 API 设计：外层 PDCA 管范围和阶段接续，内层操控循环 Steering Loop 管单次执行质量；从真实约定和主要履约出发澄清责任、请求、确认及证明凭证，并核对异常责任",
       "kind": "project_contribution",
       "project_id": "domain-modeling",
       "ownership": "direct",
@@ -3055,7 +3353,7 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "本次项目练习 Q02：用户明确说“我设计了一套skill，把整个业务讨论收敛为领域模型和API切约的工作流”；Q09 明确确认描述的是实际使用过的版本行为"
+          "locator": "项目练习 Q02、Q09 确认本人设计并实际使用建模工作流；2026-10-19 用户要求以 PDCA、Steering Loop 专有名词替代通用 Skill 工作流描述，并授权按当前实现重构全部相关材料"
         },
         {
           "type": "file",
@@ -3079,11 +3377,11 @@
       "project_id": "domain-modeling",
       "ownership": "team",
       "completion": "implemented",
-      "status": "confirmed",
+      "status": "deprecated",
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "本次项目练习 Q05：用户说明 AI 推断记录在 Discovery、建模结果引用并反向追溯；Q08：用户确认“写为正式 rule”且可查询 AI 来源；Q09：用户确认这是实际使用过的版本行为"
+          "locator": "项目练习 Q05、Q08、Q09 确认旧版实际行为；2026-10-19 用户指出当前实现不再采用该来源记录叙事，并授权重构全部相关材料，本条转为旧版历史追踪"
         },
         {
           "type": "file",
@@ -3093,10 +3391,9 @@
       ],
       "metrics": [],
       "constraints": [
-        "此项描述用户实际使用过的版本，不用当前仓库要求 pending 不编入正式规则的规范反向改写该经历",
-        "写成 Rule 结构与业务审核通过是不同阶段；来源可反查不自动证明业务依据充分",
-        "当前确认的是版本行为，不由此扩大单项程序的个人编码范围",
-        "不补写模型内审核状态字段、不可篡改审计或自动审批能力"
+        "仅作旧版历史记录，不进入当前定位、岗位映射、简历或面试稿；保留原始访谈，不以当前源码反向改写历史回答",
+        "当前材料消费 fm-incremental-validation、scope-api-handoff 与 api-static-test-vectors，不将访谈 Skill 等同来源存储或 AI 归因账本",
+        "保留历史完成状态不扩大个人实现范围，也不推定审核状态字段或自动审批能力"
       ],
       "tags": ["discovery", "rule", "provenance", "ai-proposal"]
     },
@@ -3107,11 +3404,11 @@
       "project_id": "domain-modeling",
       "ownership": "team",
       "completion": "implemented",
-      "status": "confirmed",
+      "status": "deprecated",
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "本次项目练习 Q10：用户说明 AI 来源内容经过人类审核与修改，“只有通过以后”才进行后续 API 和测试数据生成，生成“不会用到未被确认的内容”；Q11 重讲再次说明模型文件审核后才进入下游"
+          "locator": "项目练习 Q10、Q11 确认旧版下游流程；2026-10-19 用户授权按当前实现重构全部相关内容，改用明确范围的人类确认、有效 FM 结果与 API 自身检查分工"
         },
         {
           "type": "file",
@@ -3121,12 +3418,249 @@
       ],
       "metrics": [],
       "constraints": [
-        "用户确认的是实际使用流程的下游门槛，不据此推定脚本强制审批、认证或签名校验的具体实现",
-        "不把生成模型文件等同于业务审核或正式发布",
-        "API 和测试数据生成不自动证明实际代码或运行测试通过",
-        "不将当前 API Skill 的技术交付规则挪用为旧版本增加的人工接口筛选或发布机制"
+        "仅保留旧版下游流程追踪，当前材料消费 domain-modeling.scope-api-handoff，不将旧审核顺序写成当前自动化门禁",
+        "保留原始用户确认与访谈，不将当前实现反向覆盖为旧版行为",
+        "人工确认、机器检查与真实运行验证分别判断，不推定签名审批或服务执行结果"
       ],
       "tags": ["human-review", "model-consumption", "api", "test-data"]
+    },
+    {
+      "id": "domain-modeling.desktop-file-modeling",
+      "statement": "当前领域建模平台采用 Electron、React、React Flow 与 Pi SDK；AI 根据多轮业务讨论直接增量修改本地模型文件，持续完善模型对象、关系和规则",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户说明当前是桌面端增量建模流程，采用 Electron、React、React Flow 与 Pi SDK，AI 直接增量修改本地模型文件；随后授权将已讨论的难点写入项目介绍与职业经历"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "只确认项目技术栈和工作方式，单项个人编码范围沿用已有职责，不扩写为每个模块均独立实现",
+        "不把类 Figma 参考源码中的 revision、ownership、串行合并队列、撤销重做、Codex 子进程或 Visual Harness 移植为本项目已实现事实",
+        "不补写本地数据库、文件监听库、IPC 通道、自动保存或模型文件事务实现"
+      ],
+      "tags": ["electron", "react", "react-flow", "pi-sdk", "incremental-modeling", "local-files"]
+    },
+    {
+      "id": "domain-modeling.round-end-full-refresh",
+      "statement": "桌面端在每轮 AI 执行结束后重新读取完整的本地模型并全量刷新 React Flow 图谱，用户随多轮建模看到模型逐步形成",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户先描述监听文件变化及 React Flow 节点逐步出现，随后明确“全量刷新”，最终澄清“只有 AI 结束时，才重新读取文件”；以最后澄清的轮次结束后重载为准"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "业务模型增量修改与视图全量刷新分开，不表述为节点级差分更新或单轮执行中逐次写文件即时刷新",
+        "全量刷新不自动等同于 React 组件重新挂载、全图重新布局或丢失视口",
+        "不补写防抖、文件写入稳定性检测、选区视口保持、性能指标或刷新失败回退已实现"
+      ],
+      "tags": ["agent-lifecycle", "model-reload", "react-flow", "full-refresh"]
+    },
+    {
+      "id": "domain-modeling.generation-model-validation",
+      "statement": "在 AI 生成和修改本地模型的阶段进行模型结构与格式校验，使用 Evidence-Framework 的模型校验流程，将模型生成、检查与轮次结束后的图谱展示分开",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户说明在生成模型时进行模型结构与格式校验，并提供 https://github.com/JayClock/Evidence-Framework 说明校验机制，随后要求同步现有难点"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "实际确认范围是生成阶段的结构与格式校验；框架中的引用、CEL、范围完整性和模拟能力可以解释机制，不自动证明本项目全部能力均有实际运行记录",
+        "不补写自动修复次数、所有模型均通过、校验失败自动回滚或测试覆盖数字",
+        "结构正确、业务完整与人工业务确认是不同判断，不将校验通过等同于全部业务建模完成",
+        "校验工具的存在不扩大为用户独立实现整个 Evidence-Framework"
+      ],
+      "tags": ["generation-validation", "schema", "evidence-framework", "model-integrity"]
+    },
+    {
+      "id": "domain-modeling.agent-settled-lifecycle-design",
+      "statement": "生命周期衔接设计选用 Pi SDK 的 agent_settled 作为本轮最终停止与模型重载的事件边界，并将执行结束信号与模型校验结果分开判断",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "direct",
+      "completion": "design_only",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 对话核实 Pi SDK 1.3.0 的 agent_settled 与 agent_end 区别后，用户明确选择采用 agent_settled，随后授权将难点整合进项目介绍和职业经历"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "用户确认的是事件选型；当前未核对项目实际订阅代码或运行记录，正文使用生命周期设计、结束信号选用等表述，不升级为已完成接入或回归通过",
+        "agent_settled 表示不再自动继续，不表示模型或业务校验成功",
+        "取消、失败、校验报告与文件版本匹配、重复刷新去重及重载期间新任务处理策略仍需核对，不写成已实现功能"
+      ],
+      "tags": ["pi-sdk", "agent-settled", "lifecycle-design", "model-reload"]
+    },
+    {
+      "id": "domain-modeling.api-on-demand-evolution",
+      "statement": "业务模型随讨论持续增量完善，API 契约仅在需要变化时调整，模型的每轮修改不要求同步重建全部接口契约",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-18 用户明确 API 契约只有需要变化时才调整，在后续桌面端建模讨论后授权同步两份材料"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "不由按需调整推定自动语义差异分析、接口依赖图、自动兼容性判断或增量代码生成器已经实现",
+        "正式契约及其业务含义仍经过人工审核，不以模型文件发生变化自动触发全部 API 重生成"
+      ],
+      "tags": ["model-evolution", "api-contract", "on-demand-update", "mde"]
+    },
+    {
+      "id": "domain-modeling.fm-incremental-validation",
+      "statement": "当前 Evidence-Framework 以同一份 FM 承接有业务依据且获授权的增量建模，未知或冲突保留缺口；每批修改检查一致性，明确范围结束时另行检查范围完整性及适用场景模拟",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "file",
+          "path": ".career/evidence/evidence-framework-b67af39.md",
+          "url": "https://github.com/JayClock/Evidence-Framework/blob/b67af395b1e301a853e13a7def85b250ca5a4763/.agents/skills/evidence-fm/scripts/check_fm.py",
+          "locator": "check_model：consistent、complete、simulationPassed、modelDigest；业务依据纪律见同版本 evidence-fm/references/provenance.md"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-19 用户要求基于当前仓库核对并剔除旧叙事，随后明确授权重构所有相关内容"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "这是当前框架机制，不据此声称所有校验与模拟均已接入桌面端并实际运行通过",
+        "不由源码或 Skill 的存在推定全部框架代码由本人独立实现",
+        "机器检查不判断真实业务来源是否充分，不替代人类对业务含义和范围结束的确认"
+      ],
+      "tags": ["fm", "incremental-modeling", "consistency", "scope-completeness"]
+    },
+    {
+      "id": "domain-modeling.scope-api-handoff",
+      "statement": "当前建模流程将明确范围的人类结束确认、FM 检查和下游授权分开；API 只消费范围完整且与当前模型摘要匹配的有效 FM 结果，维护唯一 API 设计源，执行自身覆盖与契约检查后按授权生成派生产物并接续联合审核",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "file",
+          "path": ".career/evidence/evidence-framework-b67af39.md",
+          "url": "https://github.com/JayClock/Evidence-Framework/blob/b67af395b1e301a853e13a7def85b250ca5a4763/.agents/skills/evidence-modeling/references/workflow.md",
+          "locator": "范围结束与下游接续、检查结果与阶段交接；代码见同版本 evidence-api/scripts/fm_api_core/fm_adapter.py 的 load_fm"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-19 用户授权按已核对的当前实现重构全部相关材料，替代旧版先写 AI Rule 再逐条审批的流程叙事"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "人类确认和权限由工作流核对，不写成 FM 内审核状态、签名认证或不可绕过的审批程序",
+        "模型摘要绑定当前 FM 输入，不认证外部业务来源，也不代表文件锁或事务保证",
+        "不把框架机制直接扩大为桌面端所有检查均已集成或全部测试通过"
+      ],
+      "tags": ["scope-handoff", "human-confirmation", "model-digest", "api-validation"]
+    },
+    {
+      "id": "domain-modeling.api-static-test-vectors",
+      "statement": "当前 API 工具从同一 API 设计源派生 OpenAPI 文档、静态消费者流程及合成测试向量，向量保存请求与预期结果，运行环境负责身份和前置数据装配；实现验收另以实际执行结果判断",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "file",
+          "path": ".career/evidence/evidence-framework-b67af39.md",
+          "url": "https://github.com/JayClock/Evidence-Framework/blob/b67af395b1e301a853e13a7def85b250ca5a4763/.agents/skills/evidence-api/scripts/fm_api_core/e2e_vectors.py",
+          "locator": "build_vectors：request、expect、synthetic、runtimeValidated=false；派生顺序见同版本 evidence-api/references/api-design.md"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-19 用户授权根据当前实现重构所有相关内容，将笼统测试数据与断言生成准确区分为静态向量和真实运行验证"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "静态测试向量不等于已生成并执行完整测试程序，不证明服务、权限、数据库或外部集成已经运行通过",
+        "原有人工确认的支付场景与项目测试结果仍按各自 claim 表达，不由本工具输出反向否定或扩展",
+        "不补写运行次数、覆盖率、性能收益或生产规模"
+      ],
+      "tags": ["openapi", "static-test-vectors", "request-expect", "runtime-validation"]
+    },
+    {
+      "id": "hateoas.permission-change-module-coverage",
+      "statement": "HATEOAS 项目介绍称系统 80% 的功能模块在后端调整权限时不再需要同步修改前端判断分支",
+      "kind": "result",
+      "project_id": "hateoas",
+      "ownership": "collaborative",
+      "completion": "unknown",
+      "status": "candidate",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Outputs/项目介绍：HATEOAS.md",
+          "locator": "提取词 R 与项目介绍最后一段；本轮作为材料差异保留，尚未取得该指标的独立事实确认"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "保留项目介绍原文，确认前不进入职业经历、简历、自我介绍或岗位口述稿",
+        "待核对模块分母、覆盖范围及权限变化的适用条件，不将此比例推定为任意需求均无需前端修改"
+      ],
+      "tags": ["permission", "coverage", "pending-confirmation"]
+    },
+    {
+      "id": "hateoas.permission-change-task-cost",
+      "statement": "HATEOAS 项目介绍称相关权限调整任务的成本降至原来的一半",
+      "kind": "result",
+      "project_id": "hateoas",
+      "ownership": "collaborative",
+      "completion": "unknown",
+      "status": "candidate",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "content/Knowledge/Outputs/项目介绍：HATEOAS.md",
+          "locator": "提取词 R 与项目介绍最后一段；旧稿也有该表述，但尚无对应用户确认记录"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "保留项目介绍原文，确认前不传播到其他对外材料",
+        "待确认成本指开发工时、沟通回归工时还是其他口径，不改写成整体研发效率提升 50%"
+      ],
+      "tags": ["task-cost", "permission", "pending-confirmation"]
     }
   ]
 }

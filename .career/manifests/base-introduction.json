@@ -8,6 +8,8 @@
     "aiflow.dynamic-branching",
     "aiflow.engine-core",
     "aiflow.execution-feedback",
+    "aiflow.sse-server",
+    "aiflow.business-scope",
     "aiflow.formula-editor",
     "aiflow.project.scope",
     "aiflow.variable-editor",
@@ -16,7 +18,13 @@
     "career.experience.platform-engineering",
     "career.positioning.full-flow-axis",
     "career.positioning.market-title",
-    "domain-modeling.ai-proposal",
+    "domain-modeling.skill-workflow",
+    "domain-modeling.desktop-file-modeling",
+    "domain-modeling.round-end-full-refresh",
+    "domain-modeling.generation-model-validation",
+    "domain-modeling.fm-incremental-validation",
+    "domain-modeling.scope-api-handoff",
+    "domain-modeling.api-static-test-vectors",
     "domain-modeling.frontend-backend-contract",
     "domain-modeling.mcp-local-sync",
     "domain-modeling.methodology-recording",
@@ -27,11 +35,12 @@
     "hateoas.project.model-and-api",
     "hateoas.project.sdk",
     "monitoring-sdk.architecture",
+    "monitoring-sdk.backend-pipeline",
     "monitoring-sdk.downstream-driven-design",
     "monitoring-sdk.platform-coverage",
     "monitoring-sdk.project.scope",
     "monitoring-sdk.queue-retry",
     "monitoring-sdk.sourcemap"
   ],
-  "status": "stale"
+  "status": "current"
 }
