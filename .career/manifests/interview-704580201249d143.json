@@ -2,20 +2,73 @@
   "schema_version": 1,
   "artifact": "content/Knowledge/Outputs/项目介绍：前端埋点与监控 SDK.md",
   "artifact_type": "interview_script",
+  "opportunity_id": null,
   "generated_by": "interview-package",
   "claim_ids": [
-    "career.capability.progressive-architecture",
     "monitoring-sdk.project.scope",
-    "monitoring-sdk.platform-boundary",
-    "monitoring-sdk.downstream-driven-design",
+    "monitoring-sdk.backend-pipeline",
     "monitoring-sdk.architecture",
     "monitoring-sdk.collection",
     "monitoring-sdk.queue-retry",
     "monitoring-sdk.sourcemap",
+    "monitoring-sdk.platform-boundary",
     "monitoring-sdk.platform-coverage",
-    "monitoring-sdk.reimplementation-boundary",
-    "career.capability.contract-lifecycle",
-    "career.positioning.full-flow-axis"
+    "monitoring-sdk.response-performance-improvement"
   ],
+  "question_source": {
+    "path": "content/Knowledge/Sources/企业级监控平台全栈架构设计/企业级监控平台全栈架构设计与实践面试专项突击.md",
+    "sections": [
+      "7.1",
+      "7.2",
+      "7.3",
+      "7.8",
+      "7.4",
+      "7.6"
+    ]
+  },
+  "section_claim_ids": {
+    "项目介绍": [
+      "monitoring-sdk.project.scope",
+      "monitoring-sdk.backend-pipeline",
+      "monitoring-sdk.architecture",
+      "monitoring-sdk.collection",
+      "monitoring-sdk.queue-retry",
+      "monitoring-sdk.sourcemap",
+      "monitoring-sdk.platform-boundary",
+      "monitoring-sdk.platform-coverage",
+      "monitoring-sdk.response-performance-improvement"
+    ],
+    "7.1 如何设计和实现一个高扩展性、跨框架兼容的前端监控 SDK？设计过程中需要考虑哪些关键技术点？": [
+      "monitoring-sdk.project.scope",
+      "monitoring-sdk.architecture",
+      "monitoring-sdk.collection",
+      "monitoring-sdk.queue-retry",
+      "monitoring-sdk.platform-coverage"
+    ],
+    "7.2 如何在前端 SDK 中高效采集和分析 Web 性能指标，并确保监控数据的准确性？": [
+      "monitoring-sdk.collection",
+      "monitoring-sdk.queue-retry"
+    ],
+    "7.3 在前端监控 SDK 中捕获 JavaScript 异常的常见方法有哪些？如何提高异常监控的覆盖率和准确性？": [
+      "monitoring-sdk.project.scope",
+      "monitoring-sdk.architecture",
+      "monitoring-sdk.collection",
+      "monitoring-sdk.sourcemap"
+    ],
+    "7.8 上报请求数的控制如何实现？": [
+      "monitoring-sdk.architecture",
+      "monitoring-sdk.queue-retry"
+    ],
+    "7.4 为什么在数据采集服务中选择使用 Kafka 作为消息队列？如何利用 Kafka 实现高并发数据传输和高可靠性？": [
+      "monitoring-sdk.project.scope",
+      "monitoring-sdk.backend-pipeline",
+      "monitoring-sdk.queue-retry",
+      "monitoring-sdk.platform-boundary",
+      "monitoring-sdk.response-performance-improvement"
+    ],
+    "7.6 怎样处理 sourcemap 的问题？": [
+      "monitoring-sdk.sourcemap"
+    ]
+  },
   "status": "current"
 }

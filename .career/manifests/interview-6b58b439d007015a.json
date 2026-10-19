@@ -2,9 +2,9 @@
   "schema_version": 1,
   "artifact": "content/Knowledge/Outputs/项目介绍：HATEOAS.md",
   "artifact_type": "interview_script",
+  "opportunity_id": null,
   "generated_by": "interview-package",
   "claim_ids": [
-    "career.capability.progressive-architecture",
     "hateoas.project.sdk",
     "hateoas.project.model-and-api",
     "hateoas.production-and-public-phases",
@@ -21,19 +21,89 @@
     "hateoas.react-cache-event-policy",
     "hateoas.incremental-migration-cost-risk",
     "hateoas.workflow-write-regression",
-    "hateoas.quality",
     "hateoas.public-package-verification",
     "hateoas.production-results",
     "hateoas.backend-boundary",
     "hateoas.type-safety-boundary",
-    "hateoas.react-delete-boundary",
-    "hateoas.future-boundary",
-    "hateoas.adoption-boundary",
-    "hateoas.response-formats",
-    "hateoas.react-adapter",
-    "hateoas.release-pipeline",
-    "career.capability.contract-lifecycle",
-    "career.positioning.full-flow-axis"
+    "hateoas.adoption-boundary"
   ],
-  "status": "stale"
+  "section_claim_ids": {
+    "项目主轴": [
+      "hateoas.project.sdk",
+      "hateoas.resource-modeling",
+      "hateoas.sdk-core",
+      "hateoas.template-driven-business-forms",
+      "hateoas.workspace-navigation-consumption"
+    ],
+    "项目介绍": [
+      "hateoas.project.sdk",
+      "hateoas.resource-modeling",
+      "hateoas.sdk-core",
+      "hateoas.sdk-independent-consumption",
+      "hateoas.template-driven-business-forms",
+      "hateoas.type-safety-boundary",
+      "hateoas.cache-invalidation",
+      "hateoas.react-cache-event-policy",
+      "hateoas.migration-pilot",
+      "hateoas.workspace-navigation-consumption",
+      "hateoas.incremental-migration-cost-risk",
+      "hateoas.workflow-write-regression",
+      "hateoas.production-results",
+      "hateoas.backend-boundary"
+    ],
+    "为什么不复用前端权限模块，或者只返回 canPublish？": [
+      "hateoas.project.sdk",
+      "hateoas.project.model-and-api",
+      "hateoas.resource-modeling",
+      "hateoas.workspace-navigation-consumption",
+      "hateoas.backend-boundary"
+    ],
+    "SDK 怎样分层，Resource、State、Action 和 StateFactory 各做什么？": [
+      "hateoas.sdk-core",
+      "hateoas.sdk-independent-consumption",
+      "hateoas.state-factory-protocol-adaptation",
+      "hateoas.cache-invalidation",
+      "hateoas.react-cache-event-policy"
+    ],
+    "动态契约怎样校验，哪些变化可以不用前端发版？": [
+      "hateoas.sdk-core",
+      "hateoas.template-driven-business-forms",
+      "hateoas.type-safety-boundary",
+      "hateoas.workspace-navigation-consumption",
+      "hateoas.production-results"
+    ],
+    "多个入口怎样共享资源，React 何时重新请求？": [
+      "hateoas.sdk-independent-consumption",
+      "hateoas.cache-invalidation",
+      "hateoas.react-cache-event-policy"
+    ],
+    "动作执行后，哪些缓存失效，哪些能直接写回？": [
+      "hateoas.cache-invalidation",
+      "hateoas.cache-response-contracts"
+    ],
+    "缺少入口、请求失败、提交前权限变化，怎样区分？": [
+      "hateoas.project.sdk",
+      "hateoas.workspace-navigation-consumption",
+      "hateoas.cache-invalidation",
+      "hateoas.backend-boundary"
+    ],
+    "怎样让后端协作方确认改造成本和风险可控？": [
+      "hateoas.migration-pilot",
+      "hateoas.incremental-migration-cost-risk",
+      "hateoas.workflow-write-regression",
+      "hateoas.workspace-navigation-component-tests",
+      "hateoas.backend-boundary"
+    ],
+    "工作区试点怎样验证，SDK 后续怎样独立交付？": [
+      "hateoas.workspace-navigation-consumption",
+      "hateoas.workspace-navigation-component-tests",
+      "hateoas.workflow-write-regression",
+      "hateoas.production-and-public-phases",
+      "hateoas.public-package-verification",
+      "hateoas.production-results",
+      "hateoas.adoption-boundary"
+    ]
+  },
+  "status": "stale",
+  "stale_reason": "保留用户项目介绍中的系统 80% 功能模块及相关任务成本减半原文；两项尚无独立事实确认，已在 claims 中记录为 candidate，未纳入本 manifest 或其他对外材料。"
 }

@@ -2,6 +2,7 @@
   "schema_version": 1,
   "artifact": "content/Knowledge/Outputs/项目介绍：企业级低代码工作流引擎.md",
   "artifact_type": "interview_script",
+  "opportunity_id": null,
   "generated_by": "interview-package",
   "claim_ids": [
     "aiflow.business-scope",
@@ -12,14 +13,55 @@
     "aiflow.node-plugin-system",
     "aiflow.variable-editor",
     "aiflow.execution-feedback",
-    "aiflow.failure-trace-order",
+    "aiflow.sse-server",
     "aiflow.result-boundary",
     "aiflow.runtime.execution-isolation",
     "aiflow.node-registry-instance-reuse",
-    "aiflow.runtime.failure-result-chain",
-    "aiflow.variable-reference-identity",
-    "aiflow.reimplementation-boundary",
-    "career.capability.contract-lifecycle"
+    "aiflow.variable-reference-identity"
   ],
+  "question_source": {
+    "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/企业级类扣子、Dify AI 应用引擎架构设计与实践面试专项突击.md",
+    "sections": [
+      "7.1",
+      "7.3",
+      "7.5",
+      "7.6"
+    ]
+  },
+  "section_claim_ids": {
+    "项目介绍": [
+      "aiflow.business-scope",
+      "aiflow.project.scope",
+      "aiflow.engine-core",
+      "aiflow.dynamic-branching",
+      "aiflow.node-plugin-system",
+      "aiflow.variable-editor",
+      "aiflow.runtime.execution-isolation",
+      "aiflow.execution-feedback",
+      "aiflow.sse-server",
+      "aiflow.data-and-backend-boundary",
+      "aiflow.result-boundary"
+    ],
+    "7.1 如何设计一个支持自定义流程的工作流引擎？核心难点是什么？": [
+      "aiflow.project.scope",
+      "aiflow.engine-core",
+      "aiflow.dynamic-branching",
+      "aiflow.variable-editor",
+      "aiflow.runtime.execution-isolation"
+    ],
+    "7.3 如何实现工作流执行过程的流式响应，并实时推送到前端？": [
+      "aiflow.execution-feedback",
+      "aiflow.sse-server",
+      "aiflow.data-and-backend-boundary"
+    ],
+    "7.5 项目中的变量编辑器（支持 `${}` 高亮）是如何实现的？": [
+      "aiflow.variable-editor",
+      "aiflow.variable-reference-identity"
+    ],
+    "7.6 如何设计支持插件化扩展的节点系统？": [
+      "aiflow.node-plugin-system",
+      "aiflow.node-registry-instance-reuse"
+    ]
+  },
   "status": "current"
 }

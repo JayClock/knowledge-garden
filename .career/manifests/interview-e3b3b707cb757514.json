@@ -4,12 +4,23 @@
   "artifact_type": "interview_script",
   "generated_by": "interview-package",
   "claim_ids": [
+    "domain-modeling.project.scope",
+    "domain-modeling.desktop-file-modeling",
+    "domain-modeling.round-end-full-refresh",
+    "domain-modeling.generation-model-validation",
+    "domain-modeling.api-on-demand-evolution",
     "domain-modeling.methodology-recording",
     "domain-modeling.skill-workflow",
+    "domain-modeling.fm-incremental-validation",
+    "domain-modeling.scope-api-handoff",
+    "domain-modeling.api-static-test-vectors",
     "domain-modeling.internal-use",
     "domain-modeling.frontend-backend-contract",
     "domain-modeling.model-driven-delivery",
-    "domain-modeling.downstream-model-review-gate"
+    "domain-modeling.model-to-api-mapping",
+    "domain-modeling.persistence-and-rule-placement",
+    "domain-modeling.scenario-acceptance"
   ],
-  "status": "stale"
+  "status": "stale",
+  "stale_reason": "本轮原文已不含半小时成果，现为两个小时难以收敛的会议背景与渐进流程；保留用户原文，该时长背景尚无独立确认，不进入下游材料。CRM 按设计示例使用，未升级为真实客户或生产交付案例。"
 }
