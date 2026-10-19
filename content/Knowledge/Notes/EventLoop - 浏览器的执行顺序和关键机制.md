@@ -1,7 +1,7 @@
 ---
 date: 2024-10-19T11:00:11
 noteId: 1778930947163
-updated: 2026-07-09 20:21:41
+updated: 2026-10-16 14:20:11
 ---
 EventLoop - 浏览器的执行顺序和关键机制是什么？
 
@@ -9,8 +9,8 @@ EventLoop - 浏览器的执行顺序和关键机制是什么？
 
 ![浏览器 EventLoop](https://knowledge-garden.oss-cn-shanghai.aliyuncs.com/images/%E6%B5%8F%E8%A7%88%E5%99%A8%20EventLoop.png)
 
-Event Loop（事件循环）是 JavaScript 处理 **异步操作** 的核心机制。它允许 JavaScript 以 **非阻塞** 的方式执行代码，即使遇到 I/O 操作（如网络请求、定时器），也不会影响主线程继续执行其他任务。
-1. **执行同步任务**
+Event Loop 是 JavaScript 处理 **异步操作** 的核心机制。
+1. 首先是执行同步任务**
 	- 所有同步任务在[[JS 调用栈的核心机制|调用栈]]（Call Stack） 中依次执行，直到调用栈清空。
 	- 如果遇到微任务，则将它添加到微任务队列中，继续执行下一个同步代码。
 	- 如果遇到宏任务，则将它添加到宏任务队列中，继续执行下一个同步代码。
