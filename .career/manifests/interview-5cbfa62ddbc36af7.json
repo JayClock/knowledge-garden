@@ -10,6 +10,7 @@
     "aiflow.dynamic-branching",
     "aiflow.engine-core",
     "aiflow.execution-feedback",
+    "aiflow.sse-server",
     "aiflow.failure-trace-order",
     "aiflow.formula-editor",
     "aiflow.node-plugin-system",
@@ -33,8 +34,13 @@
     "career.positioning.market-title",
     "career.reflection.ai-low-code-transition",
     "career.working-boundary.invasive-backend",
-    "domain-modeling.ai-proposal",
     "domain-modeling.frontend-backend-contract",
+    "domain-modeling.skill-workflow",
+    "domain-modeling.desktop-file-modeling",
+    "domain-modeling.round-end-full-refresh",
+    "domain-modeling.scope-api-handoff",
+    "domain-modeling.api-static-test-vectors",
+    "domain-modeling.model-to-api-mapping",
     "domain-modeling.internal-use",
     "domain-modeling.model-driven-delivery",
     "domain-modeling.procurement-case",
@@ -74,6 +80,7 @@
     "hateoas.sdk-core",
     "hateoas.type-safety-boundary",
     "monitoring-sdk.architecture",
+    "monitoring-sdk.backend-pipeline",
     "monitoring-sdk.collection",
     "monitoring-sdk.downstream-driven-design",
     "monitoring-sdk.platform-boundary",
@@ -86,5 +93,5 @@
     "timeline.shanghai-wuwulaike",
     "timeline.shanghai-yixiao"
   ],
-  "status": "stale"
+  "status": "current"
 }
