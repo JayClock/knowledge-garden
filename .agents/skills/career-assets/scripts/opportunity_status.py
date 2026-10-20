@@ -25,6 +25,8 @@ def recommended_next_skill(opportunity: dict[str, Any], non_confirmed: list[str]
         return "career-evidence"
     if opportunity.get("stage") == "mapped" and opportunity.get("purpose") == "interview_practice":
         return "interview-package"
+    if opportunity.get("stage") == "packaged" and opportunity.get("purpose") == "outreach":
+        return "career-assets"
     return NEXT_ROUTES.get(str(opportunity.get("stage")), "career-assets")
 
 

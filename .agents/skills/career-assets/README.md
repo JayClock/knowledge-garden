@@ -19,7 +19,7 @@
 → 用户确认与 claims 事实账本
 → content/Knowledge/Outputs/职业经历.md
 → opportunity 岗位映射
-→ 简历／自我介绍／面试包
+→ 招呼语（默认）／简历、自我介绍、面试包（按需）
 → 投递与面试反馈
 → 下一轮调整
 ```
@@ -30,9 +30,21 @@
 | -------------------- | ----------------------------------------------- |
 | `career-evidence`    | 经历深挖、分轮确认、职业经历文档、claims 与证据 |
 | `career-positioning` | 长期定位、JD 映射、项目选择与 gap               |
-| `resume-package`     | 岗位简历、自我介绍与 DOCX                       |
+| `resume-package`     | 默认岗位招呼语；按需生成简历、自我介绍与 DOCX   |
 | `interview-package`  | 项目讲法、口语化、实际带练、追问与跨会话复测    |
 | `career-retro`       | 投递／面试反馈分类与下一轮动作                  |
+
+## 拿到岗位信息后的默认行为
+
+只提供公司、岗位、JD、链接或招聘截图时，默认只返回 **1 条可直接发送的招呼语**：
+
+- 核心身份／年限／学历择优＋最相关的能力或项目证据＋简短沟通邀请；
+- 前约 17 字优先放最强匹配信息，通常 50～150 字；这不是平台固定展示长度或回复率保证；
+- 内部做轻量匹配，不自动附带岗位分析、简历、自我介绍、Word 或面试材料；
+- 其它资料仅在明确要求时生成；要求“简历包”时交付简历与岗位自我介绍，Word 另行按需生成；
+- 默认只在对话中给出内容，不自动保存、投递或发送。保存招呼语后也不自动进入面试准备。
+
+详细写作规则见 `../resume-package/references/job-greeting.md`。
 
 ## 双层循环
 
@@ -142,7 +154,8 @@ python career-assets/scripts/practice_log.py status \
 
 ```text
 帮我梳理经历
-帮我按这个岗位出一版
+这是岗位信息／帮我按这个岗位出一版（默认只出招呼语）
+按这个岗位生成简历（明确要求后才生成）
 帮我准备面试
 开始口语练习，并记录本轮表现
 继续上次口语练习
@@ -162,15 +175,18 @@ python career-assets/scripts/practice_log.py status \
 
 ## 岗位交付
 
-每次岗位机会使用独立目录：
+默认在对话中只交付招呼语。经授权保存时，每次岗位机会使用独立目录；下列文件按请求生成，不是必须集齐的清单：
 
 ```text
 .career/opportunities/<opportunity_id>/outputs/
-├── resume.md
-├── resume.docx              # 用户明确要求时
-├── self-introduction.md
-└── interview-plan.md
+├── greeting.md              # 默认招呼语，经授权才保存
+├── resume.md                # 明确要求简历或简历包时
+├── resume.docx              # 明确要求 Word／DOCX 时
+├── self-introduction.md     # 明确要求自我介绍或简历包时
+└── interview-plan.md        # 明确要求面试材料时
 ```
+
+仅招呼语的机会使用 `purpose: outreach`，不要求完整简历基线；扩展为正式简历投递机会后再按 `application` 校验。已有岗位包和全局自我介绍不因新招呼语被覆盖。
 
 DOCX 模板和 OfficeCLI 规则位于 `resume-package`；技术面试口语化规则位于 `interview-package`。
 
@@ -180,7 +196,7 @@ DOCX 模板和 OfficeCLI 规则位于 `resume-package`；技术面试口语化�
 career-assets/          外层控制器、状态规范和计算型 Sensors
 career-evidence/        事实采集与验证
 career-positioning/     定位和岗位映射
-resume-package/         岗位简历与 DOCX
+resume-package/         默认招呼语；按需生成简历、自我介绍与 DOCX
 interview-package/      面试材料与口语化
 career-retro/           反馈回流
 ```

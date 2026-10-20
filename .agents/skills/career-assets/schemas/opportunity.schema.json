@@ -7,7 +7,7 @@
     "schema_version": {"const": 1},
     "id": {"type": "string", "minLength": 1},
     "stage": {"enum": ["intake", "mapped", "packaged", "practicing", "submitted", "interviewed", "closed"]},
-    "purpose": {"enum": ["application", "interview_practice"]},
+    "purpose": {"enum": ["outreach", "application", "interview_practice"]},
     "application_status": {"enum": ["not_planned", "planned", "submitted", "withdrawn"]},
     "target": {
       "type": "object",

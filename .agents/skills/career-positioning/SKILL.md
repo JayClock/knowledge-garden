@@ -7,6 +7,8 @@ description: 基于 confirmed career claims 建立长期职业定位，或把具
 
 你负责 Career Harness 的 position 阶段：把事实转成明确的市场定位和岗位选择依据，但不把岗位关键词反向写成职业事实。
 
+只收到岗位信息而没有明确要求分析、简历或面试资料时，按 `career-assets` 的默认入口交给 `resume-package` 生成招呼语；不自动输出本 Skill 的完整岗位分析，也不要求先创建 opportunity。明确要求岗位分析时才执行下列完整流程。
+
 ## 开始前
 
 1. 读取 `../career-assets/references/state-schema.md` 和 `../career-assets/references/fact-policy.md`。

@@ -151,7 +151,13 @@
 
 `stage` 允许值：`intake`、`mapped`、`packaged`、`practicing`、`submitted`、`interviewed`、`closed`。
 
-`purpose` 可选值：`application`、`interview_practice`。面试练习机会在 `mapped` 后直接路由到 `interview-package`，不要求进入 `resume-package` 或 `apply`。
+`purpose` 可选值：`outreach`、`application`、`interview_practice`。缺省仍按 `application` 兼容旧机会：
+
+- `outreach`：仅招呼语。默认先在对话中生成，不自动建档；经授权保存时才建立机会，映射核心要求与实际使用的 confirmed claims。保存招呼语及 manifest 后可设为 `packaged`，下一步返回 `career-assets` 等待用户要求，不自动进入简历或面试生成，也不修改为已投递。无需携带完整 `resume_policy` 基线。
+- `application`：正式简历投递机会，继续执行 `resume_policy`。用户后续明确要求从招呼语扩展为简历时，再经授权把已有 `outreach` 机会扩展为 `application` 并补齐基线；不创建重复机会。
+- `interview_practice`：在 `mapped` 后直接路由到 `interview-package`，不要求进入 `resume-package` 或 `apply`。
+
+为已有正式投递或面试机会补写招呼语时，保留原有 purpose、阶段、selected claims 和其它产物；招呼语 manifest 只记录正文实际使用的 claim 子集，不降级已有机会。
 
 `application_status` 可选值：`not_planned`、`planned`、`submitted`、`withdrawn`。`target.deadline` 只记录招聘方截止时间；用户自己的计划投递日期记录在 `target.planned_submission_date`，不要混为同一事实。
 
@@ -172,6 +178,8 @@
 ```
 
 `status`：`current`、`stale`、`archived`。
+
+经授权保存的招呼语使用 `outputs/greeting.md` 和 `manifests/greeting.json`，`artifact_type` 为 `greeting`，`generated_by` 为 `resume-package`。其 claim 集只需覆盖招呼语实际表达，不要求与简历、自我介绍一致，也不应用短文无关的 `resume_policy` 内容基线。未授权保存的对话草稿不创建文件或 manifest。
 
 职业经历的 manifest 固定为 `.career/manifests/career-history.json`：`artifact` 等于 `config.paths.career_history`，`artifact_type` 为 `career_history`，`generated_by` 为 `career-evidence`，`opportunity_id` 为 null，`claim_ids` 记录已确认正文使用的 claims。它不属于岗位简历包，不应用 resume_policy。
 

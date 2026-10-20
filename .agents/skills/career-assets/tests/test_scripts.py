@@ -290,6 +290,104 @@ class CareerHarnessScriptsTest(unittest.TestCase):
             self.assertEqual(status.returncode, 0, status.stdout + status.stderr)
             self.assertIn('"recommended_next_skill": "interview-package"', status.stdout)
 
+    def test_outreach_only_package_does_not_require_resume_or_route_to_interview(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            state = self.initialize(root)
+            claim_ids = ["career.greeting-match", "career.resume-baseline"]
+            claims = [
+                {
+                    "id": claim_id,
+                    "statement": "已确认的岗位相关经历",
+                    "kind": "positioning",
+                    "ownership": "direct",
+                    "completion": "validated",
+                    "status": "confirmed",
+                    "evidence": [{"type": "user_confirmation", "locator": "用户确认"}],
+                    "metrics": [],
+                    "constraints": [],
+                    "tags": [],
+                }
+                for claim_id in claim_ids
+            ]
+            claims_path = state / "claims.json"
+            claims_path.write_text(json.dumps({"schema_version": 1, "claims": claims}), encoding="utf-8")
+            config_path = state / "config.json"
+            config = json.loads(config_path.read_text(encoding="utf-8"))
+            config["resume_policy"] = {
+                "required_claim_ids": [claim_ids[1]],
+                "required_artifact_types": ["resume", "resume_docx", "self_introduction"],
+                "content_check_artifact_types": ["resume", "self_introduction"],
+                "content_markers_any": ["Required Resume Baseline"],
+            }
+            config_path.write_text(json.dumps(config), encoding="utf-8")
+
+            opportunity_dir = state / "opportunities" / "2026-outreach-role"
+            opportunity_dir.mkdir(parents=True)
+            opportunity_path = opportunity_dir / "opportunity.json"
+            opportunity = {
+                "schema_version": 1,
+                "id": opportunity_dir.name,
+                "stage": "mapped",
+                "purpose": "outreach",
+                "application_status": "not_planned",
+                "target": {"company": "示例公司", "role": "工程师", "jd_source": "user", "deadline": None},
+                "requirements": [
+                    {"id": "req-1", "text": "相关经历", "priority": "must", "claim_ids": [claim_ids[0]], "gap": False}
+                ],
+                "selected_claim_ids": [claim_ids[0]],
+                "artifacts": [],
+                "feedback_ids": [],
+                "decisions": [],
+            }
+            opportunity_path.write_text(json.dumps(opportunity), encoding="utf-8")
+            status_args = ("--state-dir", str(state), "--opportunity-id", opportunity_dir.name)
+            mapped = self.run_script(STATUS, *status_args)
+            self.assertEqual(mapped.returncode, 0, mapped.stdout + mapped.stderr)
+            self.assertEqual(json.loads(mapped.stdout)["opportunities"][0]["recommended_next_skill"], "resume-package")
+
+            outputs = opportunity_dir / "outputs"
+            outputs.mkdir()
+            greeting = outputs / "greeting.md"
+            greeting.write_text("平台工程师，具备岗位相关项目经验，方便进一步交流吗？\n", encoding="utf-8")
+            manifests = opportunity_dir / "manifests"
+            manifests.mkdir()
+            manifest = {
+                "schema_version": 1,
+                "artifact": greeting.relative_to(root).as_posix(),
+                "artifact_type": "greeting",
+                "opportunity_id": opportunity_dir.name,
+                "generated_by": "resume-package",
+                "claim_ids": [claim_ids[0]],
+                "status": "current",
+            }
+            (manifests / "greeting.json").write_text(json.dumps(manifest), encoding="utf-8")
+            opportunity["stage"] = "packaged"
+            opportunity["artifacts"] = ["outputs/greeting.md"]
+            opportunity_path.write_text(json.dumps(opportunity), encoding="utf-8")
+
+            lint_args = ("--state-dir", str(state), "--repo-root", str(root))
+            lint = self.run_script(LINT, *lint_args)
+            self.assertEqual(lint.returncode, 0, lint.stdout + lint.stderr)
+            packaged = self.run_script(STATUS, *status_args)
+            self.assertEqual(packaged.returncode, 0, packaged.stdout + packaged.stderr)
+            status = json.loads(packaged.stdout)["opportunities"][0]
+            self.assertEqual(status["recommended_next_skill"], "career-assets")
+            self.assertEqual(status["application_status"], "not_planned")
+            self.assertEqual([item["artifact_type"] for item in status["artifacts"]], ["greeting"])
+            self.assertEqual(list(outputs.iterdir()), [greeting])
+            schema = json.loads((SKILL_DIR / "schemas" / "opportunity.schema.json").read_text(encoding="utf-8"))
+            self.assertIn(opportunity["purpose"], schema["properties"]["purpose"]["enum"])
+
+            claims[0]["status"] = "candidate"
+            claims_path.write_text(json.dumps({"schema_version": 1, "claims": claims}), encoding="utf-8")
+            invalid = self.run_script(LINT, *lint_args)
+            self.assertNotEqual(invalid.returncode, 0)
+            self.assertIn("current artifact uses non-confirmed claim", invalid.stdout)
+            evidence = self.run_script(STATUS, *status_args)
+            self.assertNotEqual(evidence.returncode, 0)
+            self.assertEqual(json.loads(evidence.stdout)["opportunities"][0]["recommended_next_skill"], "career-evidence")
+
     def test_resume_policy_requires_claim_and_content_marker(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

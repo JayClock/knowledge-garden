@@ -1,6 +1,6 @@
 ---
 name: career-assets
-description: 以双层循环编排长期职业资产、岗位机会和求职反馈的 Career Harness。凡是用户要梳理或补充经历、整理大量求职材料、长期维护职业事实、按 JD 生成简历与自我介绍、准备项目面试、开始或继续口语练习、记录练习表现、同步受影响材料、复盘投递或面试，或要求重构职业资产工作流时，都应使用本 skill；具体执行由 career-evidence、career-positioning、resume-package、interview-package 和 career-retro 子 skill 完成。
+description: 以双层循环编排长期职业资产、岗位机会和求职反馈的 Career Harness。凡是用户提供岗位信息／JD、要写求职招呼语、梳理或补充经历、整理大量求职材料、长期维护职业事实、按 JD 生成简历与自我介绍、准备项目面试、开始或继续口语练习、记录练习表现、同步受影响材料、复盘投递或面试，或要求重构职业资产工作流时，都应使用本 skill。只收到岗位信息时默认仅生成招呼语，其它资料按明确要求生成；具体执行由 career-evidence、career-positioning、resume-package、interview-package 和 career-retro 子 skill 完成。
 ---
 
 # Career Harness
@@ -14,7 +14,7 @@ description: 以双层循环编排长期职业资产、岗位机会和求职反�
 → 分轮确认与 claims 事实账本
 → Outputs/职业经历.md 长期可读文档
 → opportunity 岗位映射
-→ 简历／自我介绍／面试包
+→ 招呼语（默认）／简历、自我介绍、面试包（按需）
 → 投递与面试反馈
 → 调整事实缺口、定位、表达或 Harness
 ```
@@ -50,7 +50,7 @@ python <career-assets>/scripts/init_state.py --root <git-root>
 | `capture`  | 收集来源、访谈和旧材料线索     | 候选事实已记录                  | `career-evidence`    |
 | `verify`   | 核对证据、职责、完成状态和冲突 | 对外使用的 claim 为 `confirmed` | `career-evidence`    |
 | `position` | 建立定位并映射 JD              | 核心要求已有 claim 或明确 gap   | `career-positioning` |
-| `package`  | 生成岗位简历与岗位自我介绍     | 同一 claim 集通过一致性检查     | `resume-package`     |
+| `package`  | 默认生成招呼语；其它岗位资料按需生成 | 仅请求产物通过事实与格式检查   | `resume-package`     |
 | `practice` | 准备材料并执行口述、追问与复测 | 材料可追溯；实际回答有观察和唯一下一步 | `interview-package`  |
 | `apply`    | 记录实际投递版本与状态         | 提交记录绑定 artifact manifest  | 本 Skill             |
 | `retro`    | 吸收投递／面试反馈             | 反馈已分类并产生下一步          | `career-retro`       |
@@ -63,11 +63,19 @@ python <career-assets>/scripts/init_state.py --root <git-root>
 
 - 材料阅读、事实补充、claims 更新、冲突核对：`../career-evidence/SKILL.md`
 - 职业定位、JD 要求拆解、项目选择和 gap：`../career-positioning/SKILL.md`
-- 岗位简历、自我介绍、DOCX 与交付：`../resume-package/SKILL.md`
+- 岗位招呼语（默认）、按需生成的简历、自我介绍、DOCX 与交付：`../resume-package/SKILL.md`
 - 项目整体讲法、具体回答、口语化、实际练习和跨会话恢复：`../interview-package/SKILL.md`
 - 投递／面试反馈、失败分类和下一轮调整：`../career-retro/SKILL.md`
 
-一次请求跨越多个阶段时，按表中顺序推进；每个阶段通过 Gate 后再进入下一个阶段。
+一次请求跨越多个阶段时，按表中顺序推进；每个阶段通过 Gate 后再进入下一个阶段。阶段顺序不表示用户授权生成所有后续资料。
+
+### 岗位信息默认入口
+
+- 只收到公司、岗位、JD、招聘链接或截图，或用户泛指“按这个岗位出一版”时，默认只生成 **1 条可直接发送的招呼语**，路由 `resume-package` 的招呼语模式。不自动附带匹配报告、简历、自我介绍、DOCX、面试材料或强化建议。
+- 内部先从岗位要求与 confirmed claims 中选择最相关的 1～2 个匹配点；招呼语不以完整简历定稿或正式岗位包建档为前提。仅在缺失信息确实影响表达时追问一个关键问题。
+- 遵循 `../resume-package/references/job-greeting.md`：核心身份／年限／学历择优＋岗位匹配优势＋简短沟通意向；前约 17 字优先放最强信息，总长通常 50～150 字。17 字是写作优先区，不宣称是各平台固定展示上限，也不保证回复率。
+- 明确要求简历、自我介绍、Word、面试或岗位分析时，只生成所要求的资料；明确要求“简历包”时才按包交付简历与岗位自我介绍，DOCX 仍须明确要求。
+- 默认在对话中给出招呼语；改变默认工作流不等于授权为之后每个岗位自动落盘、投递或发送消息。经授权保存招呼语时按 `resume-package` 维护依赖，不把已生成招呼语记为已投递。
 
 ### 口语练习入口
 
@@ -125,12 +133,12 @@ python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --o
 
 ## 状态纪律
 
-- `.career/claims.json` 是唯一职业事实源；定位、简历、自我介绍和面试材料都只能消费其中的 claim。
+- `.career/claims.json` 是唯一职业事实源；定位、招呼语、简历、自我介绍和面试材料都只能消费其中的 claim。
 - `content/Knowledge/Outputs/职业经历.md` 是长期可读经历文档，confirmed claims 是其已确认正文的事实依据。待补问题统一保存到 `positioning.open_questions`，默认不写入职业经历文档；仅在用户明确要求时展示摘要。写入前核对人工修改，不以旧账本覆盖补充或纠正。未解决事实冲突时保留用户内容并将文档标记 stale。
 - 只有 `confirmed` claim 可以进入保真简历和面试回答。
 - 每个对外 artifact 都要有 manifest，记录 `claim_ids`、`opportunity_id`、生成 Skill 和当前状态。
 - 岗位自我介绍保存在对应 opportunity 包中；全局 `自我介绍.md` 只保留通用基础版，不被不同岗位反复覆盖。
-- `.career/config.json.resume_policy` 保存跨岗位简历基线；正式投递 opportunity、简历包 manifest 和可读文本必须通过 required claims 与 content markers Gate。
+- `.career/config.json.resume_policy` 保存跨岗位简历基线；正式投递 opportunity、简历包 manifest 和可读文本必须通过 required claims 与 content markers Gate。仅招呼语使用实际匹配 claim 子集，不要求在短文中塞入全部简历基线，也不因此补生成简历。
 - 旧简历、逐字稿和岗位文案是线索或派生物，不得反向升级为事实。
 - 真实市场反馈可以改变项目选择、表达和下一轮计划，不能单独证明或否定历史事实。
 - 练习日志保存实际表现、底稿版本和唯一下一步，是非事实运行记录，不需要对外 artifact manifest；不能把 AI 修订稿当作用户原始回答，也不能用练习次数、字数或流畅度宣称掌握。
@@ -142,7 +150,8 @@ python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --o
 常见入口：
 
 - `帮我梳理经历` → capture / verify
-- `帮我按这个岗位出一版` → position → package
+- `这是岗位信息／帮我按这个岗位出一版` → 内部轻量匹配 → resume-package 招呼语模式，只输出招呼语
+- `按这个岗位写简历／自我介绍／完整简历包` → position → package，仅生成明确要求的资料
 - `帮我准备面试` → 有岗位先 position，再 practice；通用项目练习可直接 practice
 - `开始口语练习／记录这轮练习／继续上次练习` → interview-package 的实际练习入口
 - `继续补充` → 回到当前 opportunity 的首个未通过 Gate
@@ -154,6 +163,7 @@ python <career-assets>/scripts/opportunity_status.py --state-dir <state-dir> --o
 - 对外内容只使用 confirmed claim，且职责、完成状态和限制一致。
 - 保存经历时 claims、职业经历文档与 manifest 已同步；人工修改已经核对或保留待确认。
 - claim 变化已运行影响扫描；未同步的派生物已标记 stale。
-- 岗位产物绑定唯一 opportunity，不污染其他岗位和全局基础版。
+- 默认岗位入口仅输出招呼语；其它资料有明确请求才生成，未授权不保存或发送。
+- 经授权保存的岗位产物绑定唯一 opportunity，不污染其他岗位和全局基础版。
 - 实际练习有可观察的回答证据和唯一下一步；经授权保存时可跨会话恢复，未实测的时长与声音表现不冒充实测。
 - 真实反馈已经分类到事实、定位、表达、交付或 Harness，而不是只留一段复盘文字。
