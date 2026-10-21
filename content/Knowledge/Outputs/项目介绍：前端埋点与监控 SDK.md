@@ -25,13 +25,14 @@ updated: 2026-10-21 08:21:38
 ## 简历描述
 
 **企业级前端监控 SDK 与数据采集系统**
+
 * **技术栈**：TypeScript、PerformanceObserver / Web Vitals、Fetch / XMLHttpRequest、Sourcemap、NestJS、Kafka、ClickHouse、TypeORM、PostgreSQL、Nx + pnpm
 * **项目简介**：主导并构建企业级前端监控 SDK，实现监控采集和数据处理，形成覆盖前端性能和异常监控的完整解决方案。
 * **工作内容与成果**：
-  * 设计并实现了基于核心包和适配包的 SDK 架构，通过插件化机制支持多框架（React、Vue、Vanilla JS）集成，支持自定义监控项和扩展性增强。
-  * 构建了全面的性能和异常监控方案，覆盖了 FCP、LCP、CLS 等多项核心指标和 JavaScript 异常采集，提升了监控的广度与深度。
-  * 使用 Nest.js 和 Kafka 设计并构建了数据采集和处理的后端系统，系统的响应性能提升了 50%。
-  * 实现了 PerformanceObserver API 与全局异常捕获的结合监控，覆盖了 FCP、LCP、CLS 等 Web 性能指标和 JavaScript 异常采集。
+  * **SDK 架构设计**：设计并实现了基于核心包和适配包的 SDK 架构，通过插件化机制支持多框架（React、Vue、Vanilla JS）集成，支持自定义监控项和扩展性增强。
+  * **监控方案建设**：构建了全面的性能和异常监控方案，覆盖了 FCP、LCP、CLS 等多项核心指标和 JavaScript 异常采集，提升了监控的广度与深度。
+  * **数据采集与处理**：使用 NestJS 和 Kafka 设计并构建了数据采集和处理的后端系统，系统的响应性能提升了 50%。
+  * **指标与异常采集**：实现了 PerformanceObserver API 与全局异常捕获的结合监控，覆盖了 FCP、LCP、CLS 等 Web 性能指标和 JavaScript 异常采集。
 
 ## 可能追问
 
