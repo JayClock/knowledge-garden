@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/AI 编码工作流：双层循环逐字稿.md",
+  "artifact_type": "interview_script",
+  "opportunity_id": null,
+  "generated_by": "interview-package",
+  "project_id": "ai-development-harness",
+  "scope": "general_ai_coding_workflow_topic",
+  "claim_ids": [
+    "career.ai-development.acceptance-checks",
+    "career.ai-development.context-assembly",
+    "career.ai-development.cross-session-handoff",
+    "career.ai-development.evidence-based-delivery",
+    "career.ai-development.harness-practice",
+    "career.ai-development.instruction-governance",
+    "career.ai-development.layered-feedback",
+    "career.ai-development.single-task-steering",
+    "career.ai-development.source-ownership"
+  ],
+  "status": "current",
+  "section_claim_ids": {
+    "AI 编码工作流：双层循环逐字稿": [
+      "career.ai-development.acceptance-checks",
+      "career.ai-development.context-assembly",
+      "career.ai-development.cross-session-handoff",
+      "career.ai-development.evidence-based-delivery",
+      "career.ai-development.harness-practice",
+      "career.ai-development.instruction-governance",
+      "career.ai-development.layered-feedback",
+      "career.ai-development.single-task-steering",
+      "career.ai-development.source-ownership"
+    ]
+  },
+  "presentation_policy": "只保留通用 AI 编码口述正文，坏味道及处理动作直接融入叙述；按用户要求去掉仓库名称和建模平台背景，不附提取词、追问、表格或来源列表，证据依赖保留在本记录中",
+  "paired_resume": ".career/packages/general-projects-2-5/resume.md",
+  "paired_resume_sha256": "e236ba41b280f560aaca0aa5d4058745644c6df88978305c4e6a709b8b76fafd",
+  "evidence_source": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
+  "reference_sources": [
+    {
+      "repository": "https://github.com/JayClock/Evidence-Framework",
+      "commit": "303280bd16442330be432436f0059aa79f69362b",
+      "role": "本轮只读核对交付、小步实现、状态恢复与双维度审查；个人职责沿用 confirmed claims"
+    },
+    {
+      "repository": "https://github.com/asnowwolf/meta-project-poc",
+      "commit": "5c0cc28947be1d532a9f3305b420294cf859ec89",
+      "role": "阶段、工件与 Gate 的方法参考，不作为个人项目成果"
+    },
+    {
+      "path": "content/Knowledge/Sources/Agent 驾驭工程之美",
+      "role": "双层循环、上下文边界与跨会话交接的概念参考"
+    }
+  ],
+  "example_policy": "非法创建请求被拒绝且原有数据不变，是解释检查设计的条件式示意，不作为实际客户、历史事故或某次测试执行结果",
+  "oral_estimate": {
+    "section": "AI 编码工作流：双层循环逐字稿",
+    "non_whitespace_characters": 1431,
+    "estimated_seconds": {
+      "fast": 268.3,
+      "slow": 306.6
+    },
+    "target_seconds": {
+      "min": 180,
+      "max": 360
+    },
+    "basis": "character_estimate_280_to_320_cpm",
+    "duration_seconds": null,
+    "duration_basis": "unknown"
+  },
+  "artifact_sha256": "0b047f41064800f27e6d13416a0f33a8a446a8e18f3da065bfef5dcb39252e06",
+  "claims_sha256": "14c0897404b583b5186111784fc141ce223e255453f12244a25999fba0e4dd21",
+  "created_at": "2026-10-20T22:09:20+08:00",
+  "updated_at": "2026-10-20T22:30:41+08:00"
+}
