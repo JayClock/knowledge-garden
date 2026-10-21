@@ -46,6 +46,22 @@
 
 详细写作规则见 `../resume-package/references/job-greeting.md`。
 
+### 可持续维护的完整提示词
+
+用户授权保存并持续维护后，`config.greeting_template` 绑定一个经审核的简历包；本仓库完整可复制提示词为 `.career/templates/求职招呼语提示词.md`，仅用于 BOSS-HELPER 的「AI 招呼语」，放在私有状态目录而不是公开 Vault。
+
+文件仅含可全选复制的 System 正文，保留「角色 → input 求职者信息 → rules → outputformat」结构，从简历同步个人经历并剔除独立电话／邮箱行；不附使用说明或 User 模板，岗位信息沿用 BOSS-HELPER 现有 User 配置。移除追问、索取材料与其它资料生成分支，输出仅为可直接发送的招呼语正文。
+
+项目介绍、职业经历、自我介绍、所选简历、相关 claims 或规则变更后，Agent 先核对事实和影响，再同步模板；来源未就绪则保留正文并标记 stale。源稿的未确认数字不会被机械复制，也不将特定岗位选材自动回灌到通用模板。同步后，将文件全文复制到 BOSS-HELPER 的 System 消息配置；不自动写入其配置或发送消息。
+
+```bash
+python .agents/skills/career-assets/scripts/greeting_template.py check --state-dir .career --repo-root .
+# 完成语义审核及必要的源简历同步后：
+python .agents/skills/career-assets/scripts/greeting_template.py sync --state-dir .career --repo-root . --reviewed
+```
+
+检查已接入 `state_lint.py`，会发现正文、源文件、相关 claims 及新增／删除项目稿的漂移；这是 Agent 保存素材时的维护协议，不是常驻文件监听服务。具体授权、人工修改与阻塞处理见 `../resume-package/references/greeting-template-maintenance.md`。
+
 ## 双层循环
 
 外层 PDCA 管理一次求职机会的完整阶段：

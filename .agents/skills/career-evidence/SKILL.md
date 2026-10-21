@@ -63,6 +63,7 @@ description: 通过先读材料、顾问式深访和分轮确认挖出真实职�
 - 为文档维护 `.career/manifests/career-history.json`，类型为 `career_history`，`generated_by` 为 `career-evidence`，记录正文使用的 confirmed claim IDs。
 - 更新受影响的定位和 `positioning.open_questions`；变化的 claims 运行影响扫描，先标记依赖产物 stale，再把已同步的职业经历 manifest 设回 current。岗位材料只在本轮授权范围内同步。
 - 职业经历不是对外投递包，不套用岗位简历的强制主题和篇幅要求。
+- 若已配置 `config.greeting_template` 且用户已授权持续维护，保存 claims、职业经历或项目素材后，交回 `career-assets` 按 `../resume-package/references/greeting-template-maintenance.md` 核对并同步长期招呼语模板；必要来源未同步或事实未确认则保留模板正文并标记 stale，不把候选内容直接传播。
 
 ## 收口与恢复
 

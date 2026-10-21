@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from greeting_template import validate_saved_template
 from practice_log import load_sessions
 
 CLAIM_STATUSES = {"candidate", "confirmed", "contested", "deprecated", "reference_only"}
@@ -353,6 +354,9 @@ def main() -> int:
                 errors.append(f"{path}: references unknown claim {claim_id}")
             elif status == "current" and claim.get("status") != "confirmed":
                 errors.append(f"{path}: current artifact uses non-confirmed claim {claim_id}")
+
+    if isinstance(config, dict):
+        validate_saved_template(state_dir, repo_root, config, errors, warnings)
 
     feedback_count = validate_feedback(state_dir, claims, errors)
     practice_records = load_sessions(state_dir, repo_root, claims, errors, warnings)

@@ -10,6 +10,7 @@
 ├── claims.json
 ├── positioning.json
 ├── feedback.jsonl
+├── templates/                  # 经授权保存的私有完整提示词
 ├── practice/
 │   └── <project_id>/
 │       └── sessions.jsonl
@@ -51,6 +52,32 @@
 - `required_artifact_types` 指定需要携带这些 claim 的 current 产物；
 - `content_check_artifact_types` 只对可直接读取的文本产物执行内容检查；
 - `content_markers_any` 至少命中一个，确保强制主题真正出现在正文，而不只是 manifest。
+
+### 可选 greeting_template
+
+仅在用户授权保存并持续维护长期招呼语提示词后配置；初始化不自动建立：
+
+```json
+{
+  "greeting_template": {
+    "artifact": ".career/templates/求职招呼语提示词.md",
+    "maintenance_authorization": "用户要求保存完整模板，并随项目介绍、简历等素材变更同步维护",
+    "resume_manifest": "manifests/general-projects-2-5-resume.json",
+    "prompt_template": ".agents/skills/resume-package/assets/job-greeting-prompt.md",
+    "watch_sources": [
+      "content/Knowledge/Outputs/职业经历.md",
+      "content/Knowledge/Outputs/自我介绍.md"
+    ],
+    "watch_globs": ["content/Knowledge/Outputs/项目介绍：*.md"]
+  }
+}
+```
+
+`resume_manifest` 相对 state-dir，其余文件路径和 glob 相对 Git 根目录；简历 manifest 中的 `source_sections[].path` 自动加入监视。模板只消费已审核简历中的 confirmed facts，监视材料并非直接复制来源。本仓库仅维护 BOSS-HELPER 专用模板：文件仅含可全选复制的 System 正文（剔除独立电话／邮箱行的简历与规则），不附使用说明或 User 模板，岗位数据沿用 BOSS-HELPER 现有 User 配置；模板 claim 集排除电话、邮箱，仍校验完整源简历及其 manifest。配置中的持续维护授权不等于授权修改其它岗位包、BOSS-HELPER 配置、发送招呼语或升级候选事实。
+
+完整模板的 manifest 固定为 `<state-dir>/manifests/job-greeting-template.json`，类型 `greeting_template`、`generated_by: resume-package`、`opportunity_id: null`。除通用字段外，记录 `artifact_sha256`、相关完整 claim 对象的稳定 `claims_sha256`、`reviewed_at` 和 `source_files`；每个来源保存 `root`（`repo`／`state`）、相对 `path` 与文件字节 `sha256`。规则、简历、源 manifest 和监视材料任一变化均触发审核；glob 新增或删除也会改变来源集合。
+
+`greeting_template.py check` 只读检查；`sync --reviewed` 只在语义审核后重建模板与 manifest；`mark-stale` 保留正文并标记阻塞。统一 `state_lint.py` 对已启用模板执行同一 Gate，current 漂移报错、明确 stale 给出警告；单独模板 check 对 stale 返回失败，防止继续复用。详见 `../../resume-package/references/greeting-template-maintenance.md`。
 
 ## claims.json
 

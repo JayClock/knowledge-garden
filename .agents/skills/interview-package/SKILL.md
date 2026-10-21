@@ -54,6 +54,7 @@ description: 从 confirmed claims 生成面试材料，并带用户执行项目�
 - 岗位专项计划保存到 `.career/opportunities/<id>/outputs/interview-plan.md`。
 - 已有 Obsidian `15分钟`、逐字稿和追问地图可以继续维护，但必须建立 `.career/manifests/` 依赖记录。
 - 经授权保存材料后为产物写 manifest；关联岗位机会可进入 `practicing`，但材料完成不代表实际练习通过。
+- 若已配置 `config.greeting_template` 且用户已授权持续维护，保存项目介绍、自我介绍等素材后交回 `career-assets`，按 `../resume-package/references/greeting-template-maintenance.md` 审核影响并同步长期招呼语模板；事实或必要来源未就绪则保留正文、标记 stale，不因表达调整新增事实。
 
 ### Sensors
 

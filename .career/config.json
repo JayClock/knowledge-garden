@@ -8,6 +8,19 @@
     ],
     "project_output_root": "content/Knowledge/Outputs"
   },
+  "greeting_template": {
+    "artifact": ".career/templates/求职招呼语提示词.md",
+    "maintenance_authorization": "用户明确要求记录完整招呼语模板，并随着每次项目介绍、简历等素材变更同步更新；已明确只用于 BOSS-HELPER 的 AI 招呼语，以便后续同步提示词，仅维护可全选复制的 System 正文（个人经历与规则），不附使用说明或 User 模板，岗位数据沿用 BOSS-HELPER 现有 User 配置。只维护私有模板，不改源简历，不自动修改 BOSS-HELPER 配置、投递、发送或扩展其它岗位资料。",
+    "resume_manifest": "manifests/general-projects-2-5-resume.json",
+    "prompt_template": ".agents/skills/resume-package/assets/job-greeting-prompt.md",
+    "watch_sources": [
+      "content/Knowledge/Outputs/职业经历.md",
+      "content/Knowledge/Outputs/自我介绍.md"
+    ],
+    "watch_globs": [
+      "content/Knowledge/Outputs/项目介绍：*.md"
+    ]
+  },
   "resume_policy": {
     "required_claim_ids": [],
     "required_artifact_types": [

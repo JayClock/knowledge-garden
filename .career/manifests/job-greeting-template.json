@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "artifact": ".career/templates/求职招呼语提示词.md",
+  "artifact_type": "greeting_template",
+  "opportunity_id": null,
+  "generated_by": "resume-package",
+  "claim_ids": [
+    "aiflow.business-scope",
+    "aiflow.data-and-backend-boundary",
+    "aiflow.engine-core",
+    "aiflow.execution-feedback",
+    "aiflow.node-plugin-system",
+    "aiflow.project.scope",
+    "aiflow.sse-server",
+    "aiflow.technical-stack",
+    "aiflow.variable-editor",
+    "aiflow.visual-editor",
+    "career.ai-development.acceptance-checks",
+    "career.ai-development.context-assembly",
+    "career.ai-development.cross-session-handoff",
+    "career.ai-development.evidence-based-delivery",
+    "career.ai-development.harness-practice",
+    "career.ai-development.single-task-steering",
+    "career.capability.consumption-paths",
+    "career.capability.validation-feedback",
+    "career.education.bachelor-computing",
+    "career.engineering.github-actions-ci",
+    "career.engineering.monorepo-nx-pnpm",
+    "career.engineering.nx-react-multistage-docker",
+    "career.experience.platform-engineering",
+    "career.identity.full-name",
+    "career.location.current",
+    "career.positioning.full-flow-axis",
+    "career.positioning.market-title",
+    "domain-modeling.api-static-test-vectors",
+    "domain-modeling.desktop-file-modeling",
+    "domain-modeling.frontend-backend-contract",
+    "domain-modeling.generation-model-validation",
+    "domain-modeling.internal-use",
+    "domain-modeling.methodology-recording",
+    "domain-modeling.model-driven-delivery",
+    "domain-modeling.model-to-api-mapping",
+    "domain-modeling.project.scope",
+    "domain-modeling.round-end-full-refresh",
+    "domain-modeling.scenario-acceptance",
+    "domain-modeling.scope-api-handoff",
+    "domain-modeling.skill-workflow",
+    "domain-modeling.technical-stack",
+    "hateoas.backend-boundary",
+    "hateoas.cache-invalidation",
+    "hateoas.incremental-migration-cost-risk",
+    "hateoas.project.sdk",
+    "hateoas.react-cache-event-policy",
+    "hateoas.release-pipeline",
+    "hateoas.resource-modeling",
+    "hateoas.sdk-core",
+    "hateoas.sdk-independent-consumption",
+    "hateoas.technical-stack",
+    "hateoas.template-driven-business-forms",
+    "hateoas.type-safety-boundary",
+    "hateoas.workflow-write-regression",
+    "hateoas.workspace-navigation-component-tests",
+    "hateoas.workspace-navigation-consumption",
+    "monitoring-sdk.architecture",
+    "monitoring-sdk.backend-pipeline",
+    "monitoring-sdk.collection",
+    "monitoring-sdk.platform-boundary",
+    "monitoring-sdk.platform-coverage",
+    "monitoring-sdk.project.scope",
+    "monitoring-sdk.response-performance-improvement",
+    "monitoring-sdk.sourcemap",
+    "monitoring-sdk.technical-stack",
+    "timeline.shanghai-dingxin",
+    "timeline.shanghai-wuwulaike",
+    "timeline.shanghai-yixiao"
+  ],
+  "status": "current",
+  "artifact_sha256": "3723a3c0f17201c158d7e20e263e795453637ca53fe49761ec8800ad71a067d1",
+  "claims_sha256": "5ba633a6804fe67759106cf359362cbacd4bf4370cdc65b1fb3d1a21069e6e4e",
+  "source_files": [
+    {
+      "root": "repo",
+      "path": ".agents/skills/resume-package/assets/job-greeting-prompt.md",
+      "sha256": "3aa17c746ded5aaae3215d5a441ca135ae31d1fa7a012ba12bd9a21d2ba71f16"
+    },
+    {
+      "root": "repo",
+      "path": ".career/packages/general-projects-2-5/resume.md",
+      "sha256": "9a2e23a4643ba5fc0919939bf36a720586d6ffb1d7e71177da5b1cea907c6dc0"
+    },
+    {
+      "root": "repo",
+      "path": "content/Knowledge/Outputs/职业经历.md",
+      "sha256": "65f127e7df0859bff13ee665d58d42c95e5a543749b5de4472ebab1f1f1b7689"
+    },
+    {
+      "root": "repo",
+      "path": "content/Knowledge/Outputs/自我介绍.md",
+      "sha256": "a0798a03afa83b957c5f7c1e59991c7cbad3f181d2a034554d48fbd92b8f7f2d"
+    },
+    {
+      "root": "repo",
+      "path": "content/Knowledge/Outputs/项目介绍：AI 辅助领域建模与 API 设计平台.md",
+      "sha256": "4132bd32a2c436a4938a2e984fdfa6504497ff95f65b8685cbdeb9968efb20a3"
+    },
+    {
+      "root": "repo",
+      "path": "content/Knowledge/Outputs/项目介绍：HATEOAS.md",
+      "sha256": "d763a8d8b9c003294b390a612b00b0ab893f9ec574ca0c71a9209e33149f91f4"
+    },
+    {
+      "root": "repo",
+      "path": "content/Knowledge/Outputs/项目介绍：企业级低代码工作流引擎.md",
+      "sha256": "b263b8b6efe79ac0958317468b2a0f7646515799795942b3ffc43b2eb1ee142c"
+    },
+    {
+      "root": "repo",
+      "path": "content/Knowledge/Outputs/项目介绍：企业级类 Figma AI 设计与应用生成.md",
+      "sha256": "4342d92a31aaca82df0587881a1591f77523e316bca4dbea8000afd28ebd7879"
+    },
+    {
+      "root": "repo",
+      "path": "content/Knowledge/Outputs/项目介绍：前端埋点与监控 SDK.md",
+      "sha256": "a1b8d4739629dd67e016cb289410fe9977c149b602ca4f86816736bd0c8de9f1"
+    },
+    {
+      "root": "state",
+      "path": "manifests/general-projects-2-5-resume.json",
+      "sha256": "537998416404f4c304957f16c7621352bff346c23aff0329a60d5269c508e570"
+    }
+  ],
+  "reviewed_at": "2026-10-21T09:16:33+08:00"
+}

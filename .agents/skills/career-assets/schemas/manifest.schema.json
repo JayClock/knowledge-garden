@@ -10,6 +10,21 @@
     "opportunity_id": {"type": ["string", "null"]},
     "generated_by": {"enum": ["career-assets", "resume-package", "interview-package", "career-evidence", "career-positioning", "career-retro"]},
     "claim_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-    "status": {"enum": ["current", "stale", "archived"]}
+    "status": {"enum": ["current", "stale", "archived"]},
+    "artifact_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claims_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["root", "path", "sha256"],
+        "properties": {
+          "root": {"enum": ["repo", "state"]},
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "reviewed_at": {"type": "string", "format": "date-time"}
   }
 }

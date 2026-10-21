@@ -45,6 +45,12 @@ description: 面向明确岗位生成求职文案。用户只提供公司／岗�
 - 过长时压缩为最相关的 1～2 项证据；缺口不强行匹配，只有确实阻塞表达时才追问。
 - 保存后运行 state lint 与 `git diff --check`，确认只生成已授权的文件；不运行与本次招呼语无关的自我介绍时长或 DOCX 检查。
 
+## 长期招呼语提示词模板
+
+用户明确要求保存模板并随素材持续更新时，读取 `references/greeting-template-maintenance.md`。本仓库模板仅用于 BOSS-HELPER 的 AI 招呼语：文件仅保留可全选复制的 System 正文（个人经历与固定规则），不附使用说明或 User 模板，岗位信息沿用 BOSS-HELPER 现有 User 配置，不包含追问、索取材料或生成其它资料的交互分支。通用结构和规则维护在 `assets/job-greeting-prompt.md`，从所选简历剔除独立电话／邮箱行后生成私有完整版，写入 `config.greeting_template.artifact` 并建立 `greeting_template` manifest；不改源简历、不放入公开 Vault、不创建虚构岗位，也不自动修改 BOSS-HELPER 配置或发送消息。
+
+已配置且获得持续维护授权的模板，在所选简历、相关 claims、项目介绍、自我介绍或规则变更保存后核对并同步；先完成语义审核和必要的源简历同步，再运行 `../career-assets/scripts/greeting_template.py sync --state-dir <state-dir> --repo-root <git-root> --reviewed`。来源尚未同步或事实未确认时保留正文并 `mark-stale`，不得仅刷新摘要。模板人工修改不得静默覆盖；特定岗位简历不自动替换通用选材来源。
+
 ## 明确资料模式
 
 ### 额外前置条件
@@ -132,3 +138,4 @@ python ../interview-package/scripts/oral_time.py <self-introduction.md> --sectio
 - 自我介绍（如有）用能力主线串起所选全部主项目，包含独立提取词，并通过正文时长和口语化检查。
 - DOCX（如有）通过 OfficeCLI 与视觉验证。
 - 经授权保存时 manifests、opportunity artifacts 和 stage 已按本次范围更新，state lint 通过；仅招呼语不自动进入面试准备。
+- 已授权持续维护的长期招呼语模板随受影响素材同步；事实或必要来源尚未就绪则保留内容、标记 stale，并明确阻塞。
