@@ -73,7 +73,7 @@
 }
 ```
 
-`resume_manifest` 相对 state-dir，其余文件路径和 glob 相对 Git 根目录；简历 manifest 中的 `source_sections[].path` 自动加入监视。模板只消费已审核简历中的 confirmed facts，监视材料并非直接复制来源。本仓库仅维护 BOSS-HELPER 专用模板：文件仅含可全选复制的 System 正文（剔除独立电话／邮箱行的简历与规则），不附使用说明或 User 模板，岗位数据沿用 BOSS-HELPER 现有 User 配置；模板 claim 集排除电话、邮箱，仍校验完整源简历及其 manifest。配置中的持续维护授权不等于授权修改其它岗位包、BOSS-HELPER 配置、发送招呼语或升级候选事实。
+`resume_manifest` 相对 state-dir，其余文件路径和 glob 相对 Git 根目录；简历 manifest 中的 `source_sections[].path` 自动加入监视。模板只消费已审核简历中的 confirmed facts，监视材料并非直接复制来源。本仓库仅维护 BOSS-HELPER 专用模板：文件仅含可全选复制的 System 正文（剔除独立电话／邮箱行的简历与规则），不附使用说明或 User 模板，岗位数据沿用 BOSS-HELPER 现有 User 配置；模板 claim 集排除电话、邮箱，仍校验完整源简历及其 manifest。本仓库配置已记录用户追加的通用简历持续维护授权，先审核同步所选通用 Markdown 简历与 manifest，再同步 System 模板及现有通用 Word；Word 被占用时保留并记录待同步。该授权不等于授权修改其它岗位包、历史副本、BOSS-HELPER 配置、发送招呼语或升级候选事实。
 
 完整模板的 manifest 固定为 `<state-dir>/manifests/job-greeting-template.json`，类型 `greeting_template`、`generated_by: resume-package`、`opportunity_id: null`。除通用字段外，记录 `artifact_sha256`、相关完整 claim 对象的稳定 `claims_sha256`、`reviewed_at` 和 `source_files`；每个来源保存 `root`（`repo`／`state`）、相对 `path` 与文件字节 `sha256`。规则、简历、源 manifest 和监视材料任一变化均触发审核；glob 新增或删除也会改变来源集合。
 

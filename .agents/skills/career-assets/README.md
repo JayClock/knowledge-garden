@@ -52,7 +52,7 @@
 
 文件仅含可全选复制的 System 正文，保留「角色 → input 求职者信息 → rules → outputformat」结构，从简历同步个人经历并剔除独立电话／邮箱行；不附使用说明或 User 模板，岗位信息沿用 BOSS-HELPER 现有 User 配置。移除追问、索取材料与其它资料生成分支，输出仅为可直接发送的招呼语正文。
 
-项目介绍、职业经历、自我介绍、所选简历、相关 claims 或规则变更后，Agent 先核对事实和影响，再同步模板；来源未就绪则保留正文并标记 stale。源稿的未确认数字不会被机械复制，也不将特定岗位选材自动回灌到通用模板。同步后，将文件全文复制到 BOSS-HELPER 的 System 消息配置；不自动写入其配置或发送消息。
+项目介绍、职业经历、自我介绍、所选简历、相关 claims 或规则变更后，Agent 先核对事实和影响，按已授权的持续维护范围更新通用 Markdown 简历及依赖记录，再同步模板和现有通用 Word；不只更新模板而保留过期源简历。Word 被占用或有人工差异时保留并标记待同步，不阻塞 Markdown／System；事实来源未就绪则保留受影响正文并标记 stale。源稿的未确认数字不会被机械复制，也不将特定岗位选材自动回灌到通用模板。同步后，将文件全文复制到 BOSS-HELPER 的 System 消息配置；不自动写入其配置或发送消息。
 
 ```bash
 python .agents/skills/career-assets/scripts/greeting_template.py check --state-dir .career --repo-root .

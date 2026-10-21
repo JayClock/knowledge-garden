@@ -80,7 +80,7 @@ python <career-assets>/scripts/init_state.py --root <git-root>
 ### 长期招呼语模板同步
 
 - 用户授权保存并持续维护模板后，通过 `config.greeting_template` 定位完整私有提示词；本仓库为 `.career/templates/求职招呼语提示词.md`，仅用于 BOSS-HELPER。文件仅含可全选复制的 System 正文及从简历同步的个人经历（剔除独立电话／邮箱行），不附使用说明或 User 模板，岗位数据沿用 BOSS-HELPER 现有 User 配置；不进入公开 Vault，不维护通用聊天版本，也不自动修改 BOSS-HELPER 配置或发送消息。
-- 项目介绍、职业经历、自我介绍、所选简历、相关 claims 或提示词规则保存变更后，读取 `../resume-package/references/greeting-template-maintenance.md`，由 `resume-package` 核对影响并同步模板。既定持续维护授权只覆盖该模板，不扩展为其它岗位包或 Word 的写入授权。
+- 项目介绍、职业经历、自我介绍、所选简历、相关 claims 或提示词规则保存变更后，读取 `../resume-package/references/greeting-template-maintenance.md`，由 `resume-package` 核对影响并同步模板。本仓库用户已追加授权通用简历随资料持续维护：先审核并同步所选通用 Markdown 简历与依赖记录，再同步 System 模板及现有通用 Word；Word 被占用或存在人工差异时保留并标记待同步，不阻塞 Markdown／System。授权不扩展为其它岗位包或历史副本。
 - 先核对事实与人工修改；所选简历须经过审核，相关事实变化需先同步简历。运行 `scripts/greeting_template.py sync --state-dir <state-dir> --repo-root <git-root> --reviewed`，维护模板与依赖记录；不能机械搬运待确认内容或只刷新摘要掩盖未同步材料。
 - 事实未确认、必要来源尚未同步或超出本轮权限时，保留正文并用同一脚本的 `mark-stale` 标记；复用前运行 `check`。此 Gate 已接入 `state_lint.py`，不是常驻自动监听。
 
