@@ -20,9 +20,11 @@
     "career.ai-development.cross-session-handoff",
     "career.ai-development.evidence-based-delivery",
     "career.ai-development.harness-practice",
+    "career.ai-development.pattern-baseline",
     "career.ai-development.single-task-steering",
+    "career.capability.complex-frontend",
     "career.capability.consumption-paths",
-    "career.capability.validation-feedback",
+    "career.capability.upstream-contracts",
     "career.education.bachelor-computing",
     "career.engineering.github-actions-ci",
     "career.engineering.monorepo-nx-pnpm",
@@ -30,7 +32,6 @@
     "career.experience.platform-engineering",
     "career.identity.full-name",
     "career.location.current",
-    "career.positioning.full-flow-axis",
     "career.positioning.market-title",
     "domain-modeling.api-static-test-vectors",
     "domain-modeling.desktop-file-modeling",
@@ -75,8 +76,8 @@
     "timeline.shanghai-yixiao"
   ],
   "status": "current",
-  "artifact_sha256": "3723a3c0f17201c158d7e20e263e795453637ca53fe49761ec8800ad71a067d1",
-  "claims_sha256": "8ac45ffa9f04cbc290ea0c0e51e21a341f6d499c05a36ab27d5caf754a0208d7",
+  "artifact_sha256": "837e47698dd090ed698a9868dd9ab980037994ee764241b19fcd3a626f361781",
+  "claims_sha256": "a87162ac5d963c3691c3dd2fe3a905bba6c2a07dcbe9c3b0a4afda698948984b",
   "source_files": [
     {
       "root": "repo",
@@ -86,7 +87,7 @@
     {
       "root": "repo",
       "path": ".career/packages/general-projects-2-5/resume.md",
-      "sha256": "9a2e23a4643ba5fc0919939bf36a720586d6ffb1d7e71177da5b1cea907c6dc0"
+      "sha256": "958906eda90cefb2ca9381bc5cbe1fd94d913f5aa0c1b56fa3f8f57de1a6fe4e"
     },
     {
       "root": "repo",
@@ -111,18 +112,18 @@
     {
       "root": "repo",
       "path": "content/Knowledge/Outputs/项目介绍：企业级低代码工作流引擎.md",
-      "sha256": "1ff42f6c2f9b11fb4877900bf101f00837d91b2f8e4ab42a1f33ce00e8556d85"
+      "sha256": "08f61179040290f356c068029d56df28455032a8e711f393ae8a065464ebcb33"
     },
     {
       "root": "repo",
       "path": "content/Knowledge/Outputs/项目介绍：前端埋点与监控 SDK.md",
-      "sha256": "a1b8d4739629dd67e016cb289410fe9977c149b602ca4f86816736bd0c8de9f1"
+      "sha256": "1501a6b06bac661beabad6b743e68274c987973c9e452c1db40c1e24da2aa5b0"
     },
     {
       "root": "state",
       "path": "manifests/general-projects-2-5-resume.json",
-      "sha256": "edd7687c131c575a3e5d4023b04a465e5c7052adee480c446a2c216cc2d99a81"
+      "sha256": "a95423dd1eedb55a0eb9aef5b103957422bbeb3738e4cdac55e04fd13f9d49e0"
     }
   ],
-  "reviewed_at": "2026-10-21T09:53:52+08:00"
+  "reviewed_at": "2026-10-21T20:53:49+08:00"
 }

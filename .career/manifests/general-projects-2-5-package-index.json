@@ -90,15 +90,15 @@
   "created_at": "2026-10-19T22:42:15+08:00",
   "artifact": ".career/packages/general-projects-2-5/README.md",
   "artifact_type": "package_index",
-  "artifact_sha256": "0c0f4ff7234be1f56ec422a0465c7e0fc1109ab6bbcbbc5c9dbb8866f489d92d",
-  "updated_at": "2026-10-21T08:57:03+08:00",
+  "artifact_sha256": "131267d371f2246295fb8c7f44f17eeb2ae75aea72bd8b9d913627ed531a3fa0",
+  "updated_at": "2026-10-21T20:51:18+08:00",
   "artifacts": [
     {
       "artifact": ".career/packages/general-projects-2-5/resume.md",
       "manifest": ".career/manifests/general-projects-2-5-resume.json"
     },
     {
-      "artifact": ".career/packages/general-projects-2-5/钟杰-通用简历.docx",
+      "artifact": ".career/packages/general-projects-2-5/钟杰-全栈工程师.docx",
       "manifest": ".career/manifests/general-projects-2-5-resume-docx.json"
     },
     {
@@ -108,6 +108,10 @@
     {
       "artifact": "content/Knowledge/Outputs/AI 编码工作流：双层循环逐字稿.md",
       "manifest": ".career/manifests/interview-ai-coding-workflow.json"
+    },
+    {
+      "artifact": ".career/packages/general-projects-2-5/钟杰-全栈工程师.pdf",
+      "manifest": ".career/manifests/general-projects-2-5-resume-pdf.json"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "artifact": ".career/packages/general-projects-2-5/钟杰-通用简历.docx",
+  "artifact": ".career/packages/general-projects-2-5/钟杰-全栈工程师.docx",
   "artifact_type": "resume_docx",
   "opportunity_id": null,
   "generated_by": "resume-package",
@@ -12,12 +12,10 @@
     "career.education.bachelor-computing",
     "career.experience.platform-engineering",
     "career.positioning.market-title",
-    "career.positioning.full-flow-axis",
     "timeline.shanghai-dingxin",
     "timeline.shanghai-yixiao",
     "timeline.shanghai-wuwulaike",
     "career.capability.consumption-paths",
-    "career.capability.validation-feedback",
     "career.engineering.github-actions-ci",
     "career.engineering.nx-react-multistage-docker",
     "career.engineering.monorepo-nx-pnpm",
@@ -68,11 +66,18 @@
     "monitoring-sdk.platform-boundary",
     "monitoring-sdk.platform-coverage",
     "monitoring-sdk.response-performance-improvement",
-    "monitoring-sdk.technical-stack"
+    "monitoring-sdk.technical-stack",
+    "career.capability.upstream-contracts",
+    "career.capability.complex-frontend",
+    "career.ai-development.acceptance-checks",
+    "career.ai-development.context-assembly",
+    "career.ai-development.cross-session-handoff",
+    "career.ai-development.evidence-based-delivery",
+    "career.ai-development.harness-practice",
+    "career.ai-development.pattern-baseline",
+    "career.ai-development.single-task-steering"
   ],
-  "status": "stale",
-  "stale_reason": "2026-10-21 用户要求继续后，已核验通用 Word 的四项技术栈及 HATEOAS 提交校验表述与 Markdown 一致，指定删除的工具表述已清理；现有文件与两页排版保留不重写。全文仍与 Markdown 存在项目名称、AI 编码流程和能力概述差异，本轮仅完成技术表述核验，原有完整正文来源摘要保留历史含义。",
-  "marked_stale_at": "2026-10-21T08:20:09+08:00",
+  "status": "current",
   "package_id": "general-projects-2-5",
   "scope": "general_resume_package",
   "project_order": [
@@ -81,38 +86,91 @@
     "aiflow",
     "monitoring-sdk"
   ],
-  "claims_sha256": "0f416a9a9ccece95e675c5e4215a0482741daaec5eb7d50897db3bfd1bdffaeb",
-  "artifact_sha256": "109727b64ccf0396c92ca870332d86dd309c08443c2ac240402f92c4232314f0",
+  "claims_sha256": "296c5797918b40a30f28813fa0e7d02e48a6436a7166e3e7934b1122b611201f",
+  "artifact_sha256": "de9667bab98f28c4906a0bfc37ae1ff6db55f2099867289390e0e1e0a1808d20",
   "created_at": "2026-10-20T08:24:44+08:00",
   "source": {
     "artifact": ".career/packages/general-projects-2-5/resume.md",
     "manifest": ".career/manifests/general-projects-2-5-resume.json",
-    "artifact_sha256": "d927acb2f56ad56e7ff6af60fcc4c0233e6bde30956286be42a676f2c4398cb6",
-    "scope": "historical_full_text_source"
+    "artifact_sha256": "958906eda90cefb2ca9381bc5cbe1fd94d913f5aa0c1b56fa3f8f57de1a6fe4e",
+    "scope": "complete_current_markdown; six_labeled_capability_bullets; fullstack_engineer_display_title; four_projects_verbatim; first_two_projects_complete_on_page_one; two_pages"
   },
   "template": {
     "path": ".agents/skills/resume-package/assets/templates/钟杰-岗位定制简历模板.docx",
     "sha256": "3c1686a53e81b35a4eebd72161693701d161f4aebcb16a6e50f40b2d835be17d"
   },
-  "layout_policy": "preserve_template_visual_style_and_project_wording; omit_repeated_work_content_subheadings; convert_markdown_inline_formatting",
+  "layout_policy": "preserve_template_font_palette_ribbons_and_gutter; body_10.5pt; page_one_projects_1_and_2; page_two_projects_3_and_4_plus_work_and_education; capability_and_project_labels_bold",
   "validation": {
-    "scope": "technical_wording_verification_only",
+    "scope": "unify_last_three_project_roles_as_senior_frontend_expert",
     "pages": 2,
-    "visible_textboxes": 14,
+    "visible_textboxes": 12,
     "officecli_issue_count": 0,
     "baseline_schema_errors": 30,
-    "output_schema_errors": 30,
+    "output_schema_errors": 26,
     "new_schema_errors": 0,
     "placeholder_count": 0,
-    "project_text_matches_markdown": false,
+    "all_substantive_markdown_content_matches": true,
+    "project_text_matches_markdown": true,
+    "core_capabilities_match_markdown": true,
     "technical_stack_matches_markdown": true,
-    "submission_validation_matches_markdown": true,
     "choice_fallback_content_consistent": true,
-    "word_file_unchanged": true,
-    "visual_review": "native Word two-page contact sheet reviewed",
+    "overflowing_textboxes": 0,
+    "body_font_size_pt": 10.5,
+    "template_file_unchanged": true,
+    "template_style_and_relationships_preserved": true,
+    "visual_review": "Both native Word-rendered page PNGs reviewed in full; no truncation or overlap.",
+    "render_engine": "Microsoft Word 16.0",
     "technical_wording_source": ".career/packages/general-projects-2-5/resume.md",
-    "technical_wording_source_sha256": "9a2e23a4643ba5fc0919939bf36a720586d6ffb1d7e71177da5b1cea907c6dc0",
-    "checked_at": "2026-10-21T08:57:03+08:00"
+    "technical_wording_source_sha256": "958906eda90cefb2ca9381bc5cbe1fd94d913f5aa0c1b56fa3f8f57de1a6fe4e",
+    "checked_at": "2026-10-21T20:53:49+08:00",
+    "deleted_overview_paragraphs": 2,
+    "capability_bullets": 6,
+    "experience_years_in_header": true,
+    "first_page_capability_line_spacing_pt": 14.5,
+    "first_page_capability_space_after_pt": 2,
+    "first_page_project_body_line_spacing_pt": 14.5,
+    "first_page_project_body_space_after_pt": 2,
+    "source_sections_matched": 4,
+    "source_titles_matched": 4,
+    "source_paragraphs_checked": 41,
+    "second_page_project_body_line_spacing_pt": 15,
+    "first_page_projects": [
+      "domain-modeling",
+      "hateoas"
+    ],
+    "second_page_projects": [
+      "aiflow",
+      "monitoring-sdk"
+    ],
+    "all_projects_complete_on_assigned_page": true,
+    "priority_topics": [
+      "业务理解与建模",
+      "AI 研发效能与 Agent Harness 建设"
+    ],
+    "priority_topics_present": true,
+    "removed_standalone_bullets_absent": true,
+    "capability_order": [
+      "业务理解与建模",
+      "AI 研发效能与 Agent Harness 建设",
+      "React 与复杂前端",
+      "资源契约与交互",
+      "Node.js 与数据服务",
+      "工程化与交付"
+    ],
+    "all_capability_labels_bold": true,
+    "display_title": "全栈工程师",
+    "project_role_labels_match": true,
+    "project_role_lines_updated": 3
   },
-  "updated_at": "2026-10-21T08:57:03+08:00"
+  "updated_at": "2026-10-21T20:53:49+08:00",
+  "display_title": {
+    "text": "全栈工程师",
+    "scope": "general_resume_package",
+    "basis": "用户于 2026-10-21 明确要求简历岗位直接写全栈工程师。"
+  },
+  "project_role_labels": {
+    "hateoas": "高级前端专家",
+    "aiflow": "高级前端专家",
+    "monitoring-sdk": "高级前端专家"
+  }
 }
