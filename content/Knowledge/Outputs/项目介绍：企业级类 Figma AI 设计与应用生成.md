@@ -1,7 +1,7 @@
 ---
 title: 项目介绍：企业级类 Figma AI 设计与应用生成
 date: 2026-08-21 18:03:37
-updated: 2026-10-19 16:54:24
+updated: 2026-10-20 15:56:22
 ---
 
 # 项目介绍：企业级类 Figma AI 设计与应用生成
@@ -17,6 +17,20 @@ updated: 2026-10-19 16:54:24
 项目由我独立从 0 到 1 完成。一次任务先由 Coordinator 拆分页面区域，最多 5 个 Collaborator 并行生成各自的 Fragment；共享 Design Variables 和 Schema 统一结构，写入时再用串行合并和 revision 检查避免覆盖。生成后，Visual Harness 会通过截图定位问题节点，做局部修复，最多两轮。
 
 AI 运行时采用内置 Pi SDK Agent Runtime，由短生命周期 AgentSession 管理模型、工具和取消。针对外部 Agent，我封装了只读 MCP Server，通过 Sidecar 与本地 Socket 与 Electron 桌面端通信，提供节点数据、截图和设计资产提取，辅助外部 Agent 生成 React 组件。当前交付的是设计 DSL、可编辑设计文档和桌面端链路，打通了从自然语言到可编辑设计资产的高确定性工程闭环。
+
+## 简历描述
+
+**AI D2C 设计引擎全栈开发 / 架构设计**
+
+* **技术栈**：TypeScript、React 19、Tailwind CSS、Canvas、Electron、Pi SDK Agent Runtime、MCP（Stdio）、Unix Socket / Windows Named Pipe、Electron Forge、Electron Fuses、Nx + pnpm
+* **项目简介**：独立设计并开发面向内部产品设计与前端协作的桌面端 AI 设计生成工具，采用“编辑器内核 / Agent 生成 / MCP 接入 / 多端交付”四层架构，产出设计 DSL 与可编辑设计文档。
+* **工作内容与成果**：
+  * **DSL 内核设计**：以设计 DSL 统一图层、布局、设计变量和资产关系，连接 Agent 输出、Canvas 编辑器与只读 MCP 消费，形成产品设计与前端实现共同使用的设计契约。
+  * **编辑器内核开发**：基于 React 19 与 Canvas 实现图层树、属性面板、缩放平移、多选框选、拖拽、Auto Layout、批量属性与撤销重做，支持生成后的持续编辑。
+  * **多智能体系统设计**：基于内置 Pi SDK Agent Runtime 编排 Coordinator 与最多 5 个 Collaborator；按区域并行生成 Fragment，以共享 Variables、ownership、revision 和串行合并队列控制写入一致性。
+  * **视觉验证与局部修复**：实现 Visual Harness 的 validate → repair → revalidate 流程，通过截图定位具体 nodeId 并局部修复问题节点，默认最多两轮。
+  * **MCP 标准化接入**：实现只读 MCP Server、Stdio Sidecar 与跨平台 Bridge，使用 Unix Socket / Windows Named Pipe 访问 Electron 编辑器状态，向外部 Agent 提供节点、截图和资产，辅助生成 React 组件。
+  * **工程化与多端交付**：完成 Electron 三入口构建、extraResource 原生资源打包与 Fuses 安全加固，处理 Sidecar 开发及生产路径差异，输出 macOS / Windows 可运行安装包。
 
 ## 可能追问
 

@@ -5,6 +5,11 @@
   "opportunity_id": null,
   "generated_by": "career-evidence",
   "claim_ids": [
+    "career.engineering.monorepo-nx-pnpm",
+    "domain-modeling.technical-stack",
+    "hateoas.technical-stack",
+    "monitoring-sdk.technical-stack",
+    "aiflow.technical-stack",
     "aiflow.business-scope",
     "aiflow.data-and-backend-boundary",
     "aiflow.dynamic-branching",
@@ -29,6 +34,8 @@
     "career.capability.upstream-contracts",
     "career.capability.validation-feedback",
     "career.education.bachelor-computing",
+    "career.engineering.github-actions-ci",
+    "career.engineering.nx-react-multistage-docker",
     "career.experience.platform-engineering",
     "career.identity.full-name",
     "career.location.current",
@@ -50,11 +57,6 @@
     "domain-modeling.fm-incremental-validation",
     "domain-modeling.scope-api-handoff",
     "domain-modeling.api-static-test-vectors",
-    "domain-modeling.mcp-local-sync",
-    "domain-modeling.fm-snapshot-export",
-    "domain-modeling.mcp-snapshot-access",
-    "domain-modeling.local-snapshot-validation",
-    "domain-modeling.local-model-publication",
     "domain-modeling.model-driven-delivery",
     "domain-modeling.model-to-api-mapping",
     "domain-modeling.persistence-and-rule-placement",
@@ -119,5 +121,8 @@
     "timeline.shanghai-yixiao"
   ],
   "status": "stale",
-  "stale_reason": "项目正文已按已确认事实同步领域建模与 CRM 设计示例、普通业务工作流、DFS／Kahn、SSE 服务端及监控数据后端。教育信息保留既有人工稿的工学学士，账本尚仅确认到学士学位；待单独核对学位类别后再将全文设为 current。"
+  "stale_reason": "按用户要求清理旧 AI 研发专题及职业经历中的两处对应内容，其余既有正文保留。教育信息仍保留人工稿的工学学士，账本仅确认到学士学位；待单独核对学位类别后再将全文设为 current。",
+  "artifact_sha256": "65f127e7df0859bff13ee665d58d42c95e5a543749b5de4472ebab1f1f1b7689",
+  "claims_sha256": "e5dd77893aab3022f67938b33dcbd55b44955c8db579ef16f6eec1a533a28f72",
+  "updated_at": "2026-10-21T08:20:09+08:00"
 }

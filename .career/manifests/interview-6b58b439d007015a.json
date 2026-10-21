@@ -7,7 +7,6 @@
   "claim_ids": [
     "hateoas.project.sdk",
     "hateoas.project.model-and-api",
-    "hateoas.production-and-public-phases",
     "hateoas.resource-modeling",
     "hateoas.sdk-core",
     "hateoas.sdk-independent-consumption",
@@ -16,24 +15,49 @@
     "hateoas.migration-pilot",
     "hateoas.workspace-navigation-consumption",
     "hateoas.workspace-navigation-component-tests",
+    "hateoas.release-pipeline",
     "hateoas.state-factory-protocol-adaptation",
     "hateoas.cache-response-contracts",
     "hateoas.react-cache-event-policy",
     "hateoas.incremental-migration-cost-risk",
     "hateoas.workflow-write-regression",
-    "hateoas.public-package-verification",
     "hateoas.production-results",
     "hateoas.backend-boundary",
     "hateoas.type-safety-boundary",
-    "hateoas.adoption-boundary"
+    "career.engineering.monorepo-nx-pnpm",
+    "hateoas.technical-stack"
   ],
   "section_claim_ids": {
-    "项目主轴": [
+    "简历描述": [
       "hateoas.project.sdk",
       "hateoas.resource-modeling",
       "hateoas.sdk-core",
+      "hateoas.sdk-independent-consumption",
       "hateoas.template-driven-business-forms",
-      "hateoas.workspace-navigation-consumption"
+      "hateoas.cache-invalidation",
+      "hateoas.react-cache-event-policy",
+      "hateoas.workspace-navigation-consumption",
+      "hateoas.workspace-navigation-component-tests",
+      "hateoas.release-pipeline",
+      "hateoas.incremental-migration-cost-risk",
+      "hateoas.type-safety-boundary",
+      "hateoas.workflow-write-regression",
+      "hateoas.backend-boundary",
+      "career.engineering.monorepo-nx-pnpm",
+      "hateoas.technical-stack"
+    ],
+    "提取词": [
+      "hateoas.project.sdk",
+      "hateoas.resource-modeling",
+      "hateoas.sdk-core",
+      "hateoas.sdk-independent-consumption",
+      "hateoas.cache-invalidation",
+      "hateoas.react-cache-event-policy",
+      "hateoas.template-driven-business-forms",
+      "hateoas.workspace-navigation-consumption",
+      "hateoas.incremental-migration-cost-risk",
+      "hateoas.workflow-write-regression",
+      "hateoas.production-results"
     ],
     "项目介绍": [
       "hateoas.project.sdk",
@@ -51,14 +75,14 @@
       "hateoas.production-results",
       "hateoas.backend-boundary"
     ],
-    "为什么不复用前端权限模块，或者只返回 canPublish？": [
+    "为什么不复用前端权限模块，或者只返回权限布尔值？": [
       "hateoas.project.sdk",
       "hateoas.project.model-and-api",
       "hateoas.resource-modeling",
       "hateoas.workspace-navigation-consumption",
       "hateoas.backend-boundary"
     ],
-    "SDK 怎样分层，Resource、State、Action 和 StateFactory 各做什么？": [
+    "SDK 怎样分层，资源访问、响应解析和动作提交如何协作？": [
       "hateoas.sdk-core",
       "hateoas.sdk-independent-consumption",
       "hateoas.state-factory-protocol-adaptation",
@@ -94,16 +118,17 @@
       "hateoas.workspace-navigation-component-tests",
       "hateoas.backend-boundary"
     ],
-    "工作区试点怎样验证，SDK 后续怎样独立交付？": [
+    "工作区试点怎样验证？": [
       "hateoas.workspace-navigation-consumption",
       "hateoas.workspace-navigation-component-tests",
       "hateoas.workflow-write-regression",
-      "hateoas.production-and-public-phases",
-      "hateoas.public-package-verification",
-      "hateoas.production-results",
-      "hateoas.adoption-boundary"
+      "hateoas.production-results"
     ]
   },
   "status": "stale",
-  "stale_reason": "保留用户项目介绍中的系统 80% 功能模块及相关任务成本减半原文；两项尚无独立事实确认，已在 claims 中记录为 candidate，未纳入本 manifest 或其他对外材料。"
+  "stale_reason": "保留用户项目介绍中的系统 80% 功能模块及相关任务成本减半原文；两项尚无独立事实确认，已在 claims 中记录为 candidate，未纳入本 manifest 或其他对外材料。",
+  "technical_stack_source": ".career/evidence/hateoas-technical-stack-confirmation-2026-10-21.md",
+  "artifact_sha256": "d763a8d8b9c003294b390a612b00b0ab893f9ec574ca0c71a9209e33149f91f4",
+  "claims_sha256": "49ba8899bae79351bb3acc83a3fd9f35562a4a157ef14aba61e57975e387d6e6",
+  "updated_at": "2026-10-21T08:20:09+08:00"
 }

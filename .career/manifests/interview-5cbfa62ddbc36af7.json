@@ -91,7 +91,15 @@
     "monitoring-sdk.sourcemap",
     "timeline.shanghai-dingxin",
     "timeline.shanghai-wuwulaike",
-    "timeline.shanghai-yixiao"
+    "timeline.shanghai-yixiao",
+    "career.engineering.monorepo-nx-pnpm",
+    "domain-modeling.technical-stack",
+    "hateoas.technical-stack",
+    "aiflow.technical-stack",
+    "monitoring-sdk.technical-stack"
   ],
-  "status": "current"
+  "status": "current",
+  "artifact_sha256": "f63b71be1e7533783d908faed6773c3a7fa5ecf263456b3f85b000c947c0046d",
+  "claims_sha256": "0769bfdf3c9bf1b98d7f6c30e8412faf87f0b0b753bf5164fa98c66f3a3fe163",
+  "updated_at": "2026-10-21T08:20:09+08:00"
 }

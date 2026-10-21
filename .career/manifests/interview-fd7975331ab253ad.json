@@ -7,6 +7,7 @@
   "claim_ids": [
     "aiflow.business-scope",
     "aiflow.project.scope",
+    "aiflow.visual-editor",
     "aiflow.data-and-backend-boundary",
     "aiflow.engine-core",
     "aiflow.dynamic-branching",
@@ -17,7 +18,9 @@
     "aiflow.result-boundary",
     "aiflow.runtime.execution-isolation",
     "aiflow.node-registry-instance-reuse",
-    "aiflow.variable-reference-identity"
+    "aiflow.variable-reference-identity",
+    "career.engineering.monorepo-nx-pnpm",
+    "aiflow.technical-stack"
   ],
   "question_source": {
     "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/企业级类扣子、Dify AI 应用引擎架构设计与实践面试专项突击.md",
@@ -28,7 +31,28 @@
       "7.6"
     ]
   },
+  "resume_source": {
+    "title": "AI 应用引擎全栈开发 / 架构设计",
+    "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/企业级类扣子、Dify AI 应用引擎架构设计与实践面试专项突击.md",
+    "sections": [
+      "5. 简历描述 / 中级 / 高级",
+      "5. 简历描述 / 初级 / 中级（Tiptap 变量编辑器条目）"
+    ]
+  },
   "section_claim_ids": {
+    "简历描述": [
+      "aiflow.business-scope",
+      "aiflow.project.scope",
+      "aiflow.visual-editor",
+      "aiflow.engine-core",
+      "aiflow.node-plugin-system",
+      "aiflow.variable-editor",
+      "aiflow.execution-feedback",
+      "aiflow.sse-server",
+      "aiflow.data-and-backend-boundary",
+      "career.engineering.monorepo-nx-pnpm",
+      "aiflow.technical-stack"
+    ],
     "项目介绍": [
       "aiflow.business-scope",
       "aiflow.project.scope",
@@ -63,5 +87,9 @@
       "aiflow.node-registry-instance-reuse"
     ]
   },
-  "status": "current"
+  "status": "current",
+  "technical_stack_source": ".career/evidence/project-stack-cleanup-confirmation-2026-10-21.md",
+  "artifact_sha256": "b263b8b6efe79ac0958317468b2a0f7646515799795942b3ffc43b2eb1ee142c",
+  "claims_sha256": "abff03becce81d9e0997249995c786acbee90e0cb6d1d46b4b312ce0bd16a0b0",
+  "updated_at": "2026-10-21T08:20:09+08:00"
 }

@@ -233,7 +233,7 @@
   "resumes_session_id": null,
   "source": {
     "manifest": "manifests/interview-example.json",
-    "artifact": "content/Knowledge/Outputs/项目介绍：多人实时协同的 AI 辅助领域建模平台.md",
+    "artifact": "content/Knowledge/Outputs/项目介绍：AI 辅助领域建模与 API 设计平台.md",
     "sha256": "<snapshot 输出的底稿 SHA256>",
     "claim_ids": ["domain-modeling.project.scope"],
     "claims_sha256": "<snapshot 输出的相关 claims SHA256>"

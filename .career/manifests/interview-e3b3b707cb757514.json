@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "artifact": "content/Knowledge/Outputs/项目介绍：基于权责关系的领域建模与 API 设计.md",
+  "artifact": "content/Knowledge/Outputs/项目介绍：AI 辅助领域建模与 API 设计平台.md",
   "artifact_type": "interview_script",
   "generated_by": "interview-package",
   "claim_ids": [
@@ -19,8 +19,52 @@
     "domain-modeling.model-driven-delivery",
     "domain-modeling.model-to-api-mapping",
     "domain-modeling.persistence-and-rule-placement",
-    "domain-modeling.scenario-acceptance"
+    "domain-modeling.scenario-acceptance",
+    "career.engineering.monorepo-nx-pnpm",
+    "domain-modeling.technical-stack"
   ],
+  "section_claim_ids": {
+    "简历描述": [
+      "domain-modeling.project.scope",
+      "domain-modeling.methodology-recording",
+      "domain-modeling.skill-workflow",
+      "domain-modeling.desktop-file-modeling",
+      "domain-modeling.round-end-full-refresh",
+      "domain-modeling.generation-model-validation",
+      "domain-modeling.scope-api-handoff",
+      "domain-modeling.api-static-test-vectors",
+      "domain-modeling.model-driven-delivery",
+      "domain-modeling.internal-use",
+      "domain-modeling.frontend-backend-contract",
+      "domain-modeling.model-to-api-mapping",
+      "domain-modeling.scenario-acceptance",
+      "career.engineering.monorepo-nx-pnpm",
+      "domain-modeling.technical-stack"
+    ]
+  },
+  "resume_item_sources": {
+    "权责驱动建模": {
+      "heading": "为什么从权责关系开始建模？怎样让业务讨论收敛？",
+      "claim_ids": [
+        "domain-modeling.skill-workflow",
+        "domain-modeling.methodology-recording"
+      ],
+      "method_reference": "content/Knowledge/Sources/如何落地业务建模/15｜8X Flow（中）：如何通过模型发现业务系统的变化点？-如何落地业务建模-极客时间.md"
+    },
+    "模型驱动 API 交付": {
+      "heading": "难点二：怎样把业务模型转成可验收的 API 契约？",
+      "claim_ids": [
+        "domain-modeling.model-to-api-mapping",
+        "domain-modeling.scenario-acceptance",
+        "domain-modeling.model-driven-delivery",
+        "domain-modeling.api-static-test-vectors"
+      ]
+    }
+  },
   "status": "stale",
-  "stale_reason": "本轮原文已不含半小时成果，现为两个小时难以收敛的会议背景与渐进流程；保留用户原文，该时长背景尚无独立确认，不进入下游材料。CRM 按设计示例使用，未升级为真实客户或生产交付案例。"
+  "stale_reason": "本轮原文已不含半小时成果，现为两个小时难以收敛的会议背景与渐进流程；保留用户原文，该时长背景尚无独立确认，不进入下游材料。CRM 按设计示例使用，未升级为真实客户或生产交付案例。",
+  "technical_stack_source": ".career/evidence/technical-stack-source-audit-2026-10-20.md",
+  "artifact_sha256": "fefcad01826e5367178c07aaafaec37672b36389a5faeda44a514bb52cb7ce6f",
+  "claims_sha256": "f3dff7d59dfcf70953f9578ff021f4525ceb6df6da0dd9e9205b4c9544b73798",
+  "updated_at": "2026-10-20T16:01:41+08:00"
 }

@@ -13,7 +13,9 @@
     "monitoring-sdk.sourcemap",
     "monitoring-sdk.platform-boundary",
     "monitoring-sdk.platform-coverage",
-    "monitoring-sdk.response-performance-improvement"
+    "monitoring-sdk.response-performance-improvement",
+    "career.engineering.monorepo-nx-pnpm",
+    "monitoring-sdk.technical-stack"
   ],
   "question_source": {
     "path": "content/Knowledge/Sources/企业级监控平台全栈架构设计/企业级监控平台全栈架构设计与实践面试专项突击.md",
@@ -26,7 +28,27 @@
       "7.6"
     ]
   },
+  "resume_source": {
+    "title": "企业级前端监控 SDK 及 SaaS 平台架构设计",
+    "path": "content/Knowledge/Sources/企业级监控平台全栈架构设计/企业级监控平台全栈架构设计与实践面试专项突击.md",
+    "sections": [
+      "5. 简历描述 / 中级",
+      "5. 简历描述 / 高级"
+    ]
+  },
   "section_claim_ids": {
+    "简历描述": [
+      "monitoring-sdk.project.scope",
+      "monitoring-sdk.architecture",
+      "monitoring-sdk.collection",
+      "monitoring-sdk.sourcemap",
+      "monitoring-sdk.backend-pipeline",
+      "monitoring-sdk.platform-boundary",
+      "monitoring-sdk.platform-coverage",
+      "monitoring-sdk.response-performance-improvement",
+      "career.engineering.monorepo-nx-pnpm",
+      "monitoring-sdk.technical-stack"
+    ],
     "项目介绍": [
       "monitoring-sdk.project.scope",
       "monitoring-sdk.backend-pipeline",
@@ -36,7 +58,8 @@
       "monitoring-sdk.sourcemap",
       "monitoring-sdk.platform-boundary",
       "monitoring-sdk.platform-coverage",
-      "monitoring-sdk.response-performance-improvement"
+      "monitoring-sdk.response-performance-improvement",
+      "career.engineering.monorepo-nx-pnpm"
     ],
     "7.1 如何设计和实现一个高扩展性、跨框架兼容的前端监控 SDK？设计过程中需要考虑哪些关键技术点？": [
       "monitoring-sdk.project.scope",
@@ -70,5 +93,9 @@
       "monitoring-sdk.sourcemap"
     ]
   },
-  "status": "current"
+  "status": "current",
+  "technical_stack_source": ".career/evidence/project-stack-cleanup-confirmation-2026-10-21.md",
+  "artifact_sha256": "a1b8d4739629dd67e016cb289410fe9977c149b602ca4f86816736bd0c8de9f1",
+  "claims_sha256": "5c7d924104e967399c0b68a42754e477c67da1f7336af6f6e683a92069e9fea3",
+  "updated_at": "2026-10-21T08:20:09+08:00"
 }
