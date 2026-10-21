@@ -14,7 +14,7 @@
 
 项目介绍是项目讲法与面试问答的唯一维护入口，直接使用其中的“提取词”“项目介绍”和“可能追问”：
 
-- [领域建模与 API 设计](../../../../content/Knowledge/Outputs/项目介绍：基于权责关系的领域建模与%20API%20设计.md)
+- [AI 辅助领域建模与 API 设计平台](../../../../content/Knowledge/Outputs/项目介绍：AI%20辅助领域建模与%20API%20设计平台.md)
 - [HATEOAS](../../../../content/Knowledge/Outputs/项目介绍：HATEOAS.md)
 - [低代码工作流引擎](../../../../content/Knowledge/Outputs/项目介绍：企业级低代码工作流引擎.md)
 - [前端监控 SDK 与数据采集系统](../../../../content/Knowledge/Outputs/项目介绍：前端埋点与监控%20SDK.md)

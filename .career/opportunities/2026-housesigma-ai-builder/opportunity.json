@@ -34,7 +34,7 @@
       "id": "engineering-quality",
       "text": "判断方案质量，守住可维护性、可观测性、稳定性和安全性，通过测试及验收控制风险",
       "priority": "must",
-      "claim_ids": ["career.capability.validation-feedback", "domain-modeling.validation", "domain-modeling.local-snapshot-validation", "domain-modeling.local-model-publication", "hateoas.workspace-navigation-component-tests", "hateoas.public-package-verification", "aiflow.engine-core", "aiflow.dynamic-branching", "aiflow.node-plugin-system", "aiflow.runtime.execution-isolation", "aiflow.execution-feedback", "aiflow.sse-server", "monitoring-sdk.queue-retry", "monitoring-sdk.sourcemap", "monitoring-sdk.backend-pipeline", "monitoring-sdk.response-performance-improvement"],
+      "claim_ids": ["career.capability.validation-feedback", "domain-modeling.validation", "hateoas.workspace-navigation-component-tests", "hateoas.public-package-verification", "aiflow.engine-core", "aiflow.dynamic-branching", "aiflow.node-plugin-system", "aiflow.runtime.execution-isolation", "aiflow.execution-feedback", "aiflow.sse-server", "monitoring-sdk.queue-retry", "monitoring-sdk.sourcemap", "monitoring-sdk.backend-pipeline", "monitoring-sdk.response-performance-improvement"],
       "gap": true,
       "evidence_kind": "partial_direct",
       "gap_details": ["具体安全设计、威胁分析或安全验收案例尚无本次选材中的 confirmed 证据；可维护性、可观测性及稳定性机制已有直接证据。"]
@@ -43,7 +43,7 @@
       "id": "modernization-reusable-practice",
       "text": "重构存量系统和低效流程，持续学习并沉淀可复用的 AI 工程实践",
       "priority": "important",
-      "claim_ids": ["hateoas.project.sdk", "hateoas.migration-pilot", "hateoas.incremental-migration-cost-risk", "hateoas.production-and-public-phases", "hateoas.release-pipeline", "domain-modeling.skill-workflow", "monitoring-sdk.architecture"],
+      "claim_ids": ["career.engineering.monorepo-nx-pnpm", "hateoas.project.sdk", "hateoas.migration-pilot", "hateoas.incremental-migration-cost-risk", "hateoas.production-and-public-phases", "hateoas.release-pipeline", "domain-modeling.skill-workflow", "monitoring-sdk.architecture"],
       "gap": false,
       "evidence_kind": "direct_and_transferable",
       "evidence_note": "增量契约迁移、独立 npm 消费层与实际使用的 Skill 工作流支撑；不由此推定全团队 AI SOP 已全面推广。"
@@ -59,6 +59,11 @@
     }
   ],
   "selected_claim_ids": [
+    "career.engineering.monorepo-nx-pnpm",
+    "domain-modeling.technical-stack",
+    "hateoas.technical-stack",
+    "aiflow.technical-stack",
+    "monitoring-sdk.technical-stack",
     "career.identity.full-name",
     "career.contact.phone",
     "career.contact.email",
@@ -82,9 +87,6 @@
     "domain-modeling.internal-use",
     "domain-modeling.model-driven-delivery",
     "domain-modeling.procurement-case",
-    "domain-modeling.mcp-local-sync",
-    "domain-modeling.local-snapshot-validation",
-    "domain-modeling.local-model-publication",
     "domain-modeling.skill-workflow",
     "domain-modeling.fm-incremental-validation",
     "domain-modeling.scope-api-handoff",
@@ -178,6 +180,14 @@
     {
       "type": "material_consolidation",
       "text": "用户明确要求面试问答仅维护在项目介绍中，删除独立问答。已删除岗位重复项目口述底稿与依赖记录，练习计划只保留项目介绍导航和实际练习方法；简历、自我介绍、JD 和岗位映射保留。此前关于独立口述底稿的决策仅为历史记录，不再作为当前维护入口。"
+    },
+    {
+      "type": "material_sync",
+      "text": "2026-10-20 按用户授权全部同步：Monorepo 统一使用 Nx + pnpm；HATEOAS、工作流与监控技术栈采用指定源码核对后的 confirmed claims；建模平台当前材料不选用 MCP 同步分支及 FM JSON 技术栈列项，历史事实记录保留。四项目顺序、真实投递状态、练习记录和英语／安全缺口不变。"
+    },
+    {
+      "type": "material_sync",
+      "text": "2026-10-21 按用户要求同步 HATEOAS 技术栈：TypeScript、React Hooks、HAL / HAL-FORMS、Zod、Nx + pnpm、Vite、Vitest、MSW、Testing Library、TypeDoc；岗位简历与选材说明采用相同表述；随后按用户要求从所有项目介绍及相关职业素材中移除 tsup、tsc 技术栈列项和构建说明。项目顺序、个人职责、已有成果和真实投递状态不变，原始源码及历史记录保留。"
     },
     {
       "type": "next_action",

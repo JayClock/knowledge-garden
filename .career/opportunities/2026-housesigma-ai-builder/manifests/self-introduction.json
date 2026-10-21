@@ -5,6 +5,11 @@
   "opportunity_id": "2026-housesigma-ai-builder",
   "generated_by": "resume-package",
   "claim_ids": [
+    "career.engineering.monorepo-nx-pnpm",
+    "domain-modeling.technical-stack",
+    "hateoas.technical-stack",
+    "aiflow.technical-stack",
+    "monitoring-sdk.technical-stack",
     "career.identity.full-name",
     "career.contact.phone",
     "career.contact.email",
@@ -28,9 +33,6 @@
     "domain-modeling.internal-use",
     "domain-modeling.model-driven-delivery",
     "domain-modeling.procurement-case",
-    "domain-modeling.mcp-local-sync",
-    "domain-modeling.local-snapshot-validation",
-    "domain-modeling.local-model-publication",
     "domain-modeling.skill-workflow",
     "domain-modeling.fm-incremental-validation",
     "domain-modeling.scope-api-handoff",
@@ -74,5 +76,8 @@
     "monitoring-sdk.sourcemap",
     "monitoring-sdk.platform-coverage"
   ],
-  "status": "current"
+  "status": "current",
+  "artifact_sha256": "8ca3b3b7cc2cfdc2d5f0c85b06c556898d704915465715fe67ee640104d0250d",
+  "claims_sha256": "e2731c94ecd38d46707545e17a306d241e9d6618971cf65955ae7c58f3a2f4fd",
+  "updated_at": "2026-10-21T08:20:09+08:00"
 }
