@@ -188,7 +188,7 @@
     },
     {
       "id": "timeline.shanghai-dingxin",
-      "statement": "2025.04 至 2026.05 在上海鼎歆信息科技有限公司担任全栈工程师",
+      "statement": "2025.04 至 2026.09 在上海鼎歆信息科技有限公司担任全栈工程师",
       "kind": "timeline",
       "ownership": "not_applicable",
       "completion": "validated",
@@ -197,6 +197,10 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：职业时间线"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户明确要求将最新一家公司的结束时间改到 9 月"
         }
       ],
       "metrics": [],
@@ -336,7 +340,7 @@
     },
     {
       "id": "domain-modeling.project.scope",
-      "statement": "设计并实现桌面端 AI 辅助增量领域建模平台，将业务讨论持续沉淀为本地结构化模型，以审核后的模型支持 API 契约与测试资产生成",
+      "statement": "设计并实现桌面端 AI 辅助领域建模与 API 设计平台，通过增量建模将业务讨论持续沉淀为本地结构化模型，以审核后的模型支持 API 契约与测试资产生成",
       "kind": "project_scope",
       "project_id": "domain-modeling",
       "ownership": "direct",
@@ -354,12 +358,21 @@
         {
           "type": "user_confirmation",
           "locator": "2026-10-18 用户明确当前为桌面端增量式建模流程，使用 Electron、React、React Flow 与 Pi SDK，AI 直接增量修改本地文件；最后要求将这些难点重构进项目介绍和职业经历"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-19 用户接受项目名称 AI 辅助领域建模与 API 设计平台，并授权同步所有相关内容；基于权责关系保留为正文中的建模方法，项目范围、职责与完成状态不变"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-19 用户明确纠正：Evidence-Framework 就是本项目自身的一部分，不应写为依托外部框架衔接范围确认；建模、模型检查与 API 交付按平台内部能力表达"
         }
       ],
       "metrics": [],
       "constraints": [
         "本项目实际未使用多人在线协同编辑技术与方案，不消费已废弃的协同实现、故障与并发校验陈述",
         "当前桌面端以 AI 直接修改本地文件、生成阶段校验及轮次结束后全量刷新为口径，不沿用只生成 Proposal 再逐项采纳的旧链路",
+        "Evidence-Framework 是项目内部组成部分，不作为外部依赖或配套框架表述，也不列为外部技术栈；项目组成关系不改变既有个人职责与验证范围",
         "不补写效率提升"
       ],
       "tags": [
@@ -370,7 +383,7 @@
     },
     {
       "id": "domain-modeling.methodology-recording",
-      "statement": "以 Evidence 建模方法论为支撑，将参与方、角色、权责、事件、领域对象、关系及履约凭证等业务分析结果，在平台中结构化落地与记录，供业务、产品与研发共同讨论、审核与演进",
+      "statement": "在平台内部以 Evidence-Framework 承载建模方法与工作流，将参与方、角色、权责、事件、领域对象、关系及履约凭证等业务分析结果结构化落地与记录，供业务、产品与研发共同讨论、审核与演进",
       "kind": "project_contribution",
       "project_id": "domain-modeling",
       "ownership": "direct",
@@ -384,11 +397,15 @@
         {
           "type": "user_confirmation",
           "locator": "用户本轮纠正：建模过程需要多人同时参与，但平台实际未使用多人在线协同编辑技术与方案"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-19 用户明确 Evidence-Framework 是项目本身的一部分，纠正将其与平台分开、作为外部框架依托的表述"
         }
       ],
       "metrics": [],
       "constraints": [
-        "Evidence-Framework 支撑建模方法论与业务语义，平台本身负责落地和记录方法论结果"
+        "Evidence-Framework 是平台内部承载建模方法、模型检查与 API 交付流程的组成部分；项目组成关系不推定全部框架代码或建模方法均由本人独立创造"
       ],
       "tags": [
         "evidence-framework",
@@ -485,7 +502,7 @@
     },
     {
       "id": "hateoas.project.sdk",
-      "statement": "为解决 PC Web 与移动 Web 重复维护状态、权限和动作规则的问题，设计并实现 HATEOAS TypeScript SDK 与 React Hooks，使多端消费同一套 relation 和 action 契约",
+      "statement": "为解决低代码平台复杂权限体系下，前端需要维护与后端一致的权限和操作可用性判断逻辑、后端规则变化牵动前端修改与回归的问题，设计并实现 HATEOAS TypeScript SDK 与 React Hooks，将权限判断收敛到服务端，使 PC Web 与移动 Web 消费同一套资源关系和动作契约",
       "kind": "project_contribution",
       "project_id": "hateoas",
       "ownership": "direct",
@@ -500,11 +517,17 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：多端一致性驱动的 HATEOAS 资源动作契约与 TypeScript SDK"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-19 用户明确纠正项目介绍的核心背景：之前写的是复杂权限体系，前端要维护一份和后端一致的逻辑判断"
         }
       ],
       "metrics": [],
       "constraints": [
-        "不补写未经确认的资源数量、回归范围和效率比例"
+        "不补写未经确认的资源数量、回归范围和效率比例",
+        "项目动机先说明复杂权限体系下前后端重复维护判断逻辑；PC 与移动端复用属于应用范围与收益，不以客户端之间的规则重复替代前后端规则重复这一核心问题",
+        "技术栈以用户指定的 content/Knowledge/Sources/hateoas-ts/ 源码及 hateoas.technical-stack 为依据，不从通用简历示例补充依赖；Monorepo 统一采用 Nx + pnpm"
       ],
       "tags": [
         "hateoas",
@@ -559,7 +582,8 @@
       ],
       "metrics": [],
       "constraints": [
-        "并发限流、幂等重试、服务恢复和 Loop 属于延展方向"
+        "并发限流、幂等重试、服务恢复和 Loop 属于延展方向",
+        "技术栈以用户指定的 miaoma-aiflow-v2 源码及 aiflow.technical-stack 为依据，普通业务工作流不因参考仓库存在 AI 或 RAG 依赖而扩大范围；Monorepo 现行口径为 Nx + pnpm"
       ],
       "tags": [
         "workflow",
@@ -654,7 +678,8 @@
       "metrics": [],
       "constraints": [
         "不补写 sendBeacon、IndexedDB 离线续传、微前端去重和远程开关为已完成",
-        "项目范围不含可视化分析，不将 SaaS 可视化平台建设列为项目成果"
+        "项目范围不含可视化分析，不将 SaaS 可视化平台建设列为项目成果",
+        "技术栈以用户指定的 miaoma-monitor 源码及 monitoring-sdk.technical-stack 为依据，区分 SDK、数据后端与控制台依赖；Monorepo 现行口径为 Nx + pnpm"
       ],
       "tags": [
         "monitoring",
@@ -1524,7 +1549,12 @@
         "CRM 电话销售可作为资源映射的设计示例，不能据此新增未经确认的客户案例、个人编码范围或生产交付成果",
         "不补写真实客户名、接口路径、请求字段或具体协议版本"
       ],
-      "tags": ["domain-modeling", "api-contract", "resource-relations", "human-review"]
+      "tags": [
+        "domain-modeling",
+        "api-contract",
+        "resource-relations",
+        "human-review"
+      ]
     },
     {
       "id": "domain-modeling.persistence-and-rule-placement",
@@ -1555,7 +1585,12 @@
         "本案例明确按四张表保存四类业务事实，不补写真实表名、字段清单、ORM 或数据库产品",
         "订单合同记录禁止通过更新表达履约进度；不将查询得到的付款情况写成订单状态字段更新，不引入未经确认的投影表或事件存储实现"
       ],
-      "tags": ["persistence", "schema-design", "domain-logic", "traceability"]
+      "tags": [
+        "persistence",
+        "schema-design",
+        "domain-logic",
+        "traceability"
+      ]
     },
     {
       "id": "domain-modeling.async-fulfillment-and-compensation",
@@ -1580,7 +1615,12 @@
         "不补写具体消息队列、支付渠道、重试次数、对账周期或补偿框架",
         "超时表示尚未确认结果，不等同于外部扣款失败"
       ],
-      "tags": ["async", "fulfillment", "payment-confirmation", "compensation"]
+      "tags": [
+        "async",
+        "fulfillment",
+        "payment-confirmation",
+        "compensation"
+      ]
     },
     {
       "id": "domain-modeling.payment-transaction-and-idempotency",
@@ -1610,7 +1650,12 @@
         "不以更新订单或改写合同事实实现付款状态机；不为单条写入臆造多表更新，具体写入范围以本次新增事实为准",
         "不补写具体隔离级别、锁类型、SQL、吞吐量、故障记录或迟到付款处理细节"
       ],
-      "tags": ["transaction", "idempotency", "unique-constraint", "fact-integrity"]
+      "tags": [
+        "transaction",
+        "idempotency",
+        "unique-constraint",
+        "fact-integrity"
+      ]
     },
     {
       "id": "domain-modeling.resource-authorization",
@@ -1634,7 +1679,12 @@
       "constraints": [
         "不补写鉴权框架、令牌协议、签名算法、多租户实现或具体支付供应商"
       ],
-      "tags": ["authorization", "resource-ownership", "business-preconditions", "payment-validation"]
+      "tags": [
+        "authorization",
+        "resource-ownership",
+        "business-preconditions",
+        "payment-validation"
+      ]
     },
     {
       "id": "domain-modeling.scenario-acceptance",
@@ -1659,7 +1709,12 @@
         "不补写测试框架、覆盖率、用例数量、运行记录或所有场景均已自动化通过",
         "正式接口契约及验收场景经人工审核，不表述为模型确定性一键生成完整业务系统"
       ],
-      "tags": ["acceptance", "test-scenarios", "ai-coding", "model-driven-delivery"]
+      "tags": [
+        "acceptance",
+        "test-scenarios",
+        "ai-coding",
+        "model-driven-delivery"
+      ]
     },
     {
       "id": "domain-modeling.procurement-case",
@@ -2047,7 +2102,12 @@
         "统一 State 接口不等于为缺失的动作生成能力，也不等于对全部响应业务字段执行运行时 Schema 校验",
         "不推定生产业务实际使用了公开 SDK 支持的所有响应格式"
       ],
-      "tags": ["state-factory", "content-type", "protocol-adaptation", "hal-forms"]
+      "tags": [
+        "state-factory",
+        "content-type",
+        "protocol-adaptation",
+        "hal-forms"
+      ]
     },
     {
       "id": "hateoas.cache-response-contracts",
@@ -2080,7 +2140,12 @@
         "默认请求 URI 失效受 NO_STALE 标记影响，no-store 跳过 Content-Location 写回；删除事件与 stale 事件分别处理",
         "源码机制与生产阶段测试范围分开，不据当前源码推定全部策略已以同样配置用于生产"
       ],
-      "tags": ["cache", "content-location", "invalidates", "inv-by"]
+      "tags": [
+        "cache",
+        "content-location",
+        "invalidates",
+        "inv-by"
+      ]
     },
     {
       "id": "hateoas.react-cache-event-policy",
@@ -2106,7 +2171,12 @@
         "缓存失效通知不等于默认自动重新请求或所有组件立即显示新数据",
         "不把这条订阅策略扩展成 Hook 已直接订阅 delete 事件，也不推定业务页面均已开启 refreshOnStale"
       ],
-      "tags": ["react", "events", "refresh-on-stale", "subscription"]
+      "tags": [
+        "react",
+        "events",
+        "refresh-on-stale",
+        "subscription"
+      ]
     },
     {
       "id": "hateoas.incremental-migration-cost-risk",
@@ -2128,7 +2198,12 @@
         "资源响应增加契约元数据与原保存接口响应不变是不同范围，不写成所有 API 原始 JSON 均未变化",
         "沿用后端协作职责，不把服务端代码写成个人独立实现；不补写真实事故、数据迁移或零脏数据保证"
       ],
-      "tags": ["migration", "collaboration", "compatibility", "risk-validation"]
+      "tags": [
+        "migration",
+        "collaboration",
+        "compatibility",
+        "risk-validation"
+      ]
     },
     {
       "id": "hateoas.workflow-write-regression",
@@ -2151,7 +2226,12 @@
         "不补写测试框架、真实浏览器操作、执行通过数量、覆盖率或发布用例的具体版本创建断言",
         "公开 SDK 的 34 个测试文件、233 项通过测试是独立口径，不作为这组生产回归测试的数量"
       ],
-      "tags": ["e2e", "workflow", "regression", "ai-assisted-tests"]
+      "tags": [
+        "e2e",
+        "workflow",
+        "regression",
+        "ai-assisted-tests"
+      ]
     },
     {
       "id": "hateoas.quality",
@@ -2322,7 +2402,7 @@
     },
     {
       "id": "hateoas.type-safety-boundary",
-      "statement": "TypeScript 在编译期约束资源数据、relation 和目标资源类型；Action.submit() payload 仍是通用键值结构，字段约束主要由 HAL-FORMS 与 Standard Schema／Zod 在运行时完成",
+      "statement": "TypeScript 在编译期约束资源数据、relation 和目标资源类型；Action.submit() payload 仍是通用键值结构，字段约束由 HAL-FORMS 动作模板生成的 Zod 规则在运行时校验",
       "kind": "boundary",
       "ownership": "direct",
       "completion": "implemented",
@@ -2331,6 +2411,15 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：HATEOAS／协作与事实边界"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-21 用户指定 HATEOAS 技术栈并要求所有相关内容同步，运行时字段校验统一以 HAL-FORMS 动作模板与 Zod 表达，原有类型约束范围不变"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/hateoas-technical-stack-confirmation-2026-10-21.md",
+          "locator": "当前表述；同步范围"
         }
       ],
       "metrics": [],
@@ -2859,7 +2948,7 @@
     },
     {
       "id": "monitoring-sdk.architecture",
-      "statement": "以 pnpm Monorepo 管理 core、browser、react、vue、types 和工具包；核心层保留协议、插件、队列与 Transport，浏览器包封装 Web API，框架适配包只处理生命周期",
+      "statement": "以 Nx + pnpm Monorepo 管理 core、browser、react、vue、types 和工具包；核心层保留协议、插件、队列与 Transport，浏览器包封装 Web API，框架适配包只处理生命周期",
       "kind": "project_contribution",
       "ownership": "direct",
       "completion": "implemented",
@@ -2873,12 +2962,20 @@
         {
           "type": "user_confirmation",
           "locator": "用户明确确认；事实范围：监控 SDK／技术栈与架构要点"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户明确要求 monorepo 统一使用 nx + pnpm 记录，并进一步强调而不是现在的 pnpm＋Turborepo；以 Nx + pnpm 作为现行项目工程事实"
         }
       ],
       "metrics": [],
-      "constraints": [],
+      "constraints": [
+        "参考快照的 Turborepo 配置不是本人项目的现行 Monorepo 方案；本轮不修改参考源码，也不声称已经完成该仓库的 Nx 迁移"
+      ],
       "tags": [
         "monorepo",
+        "nx",
+        "pnpm",
         "plugin",
         "adapter"
       ],
@@ -3344,7 +3441,7 @@
     },
     {
       "id": "domain-modeling.skill-workflow",
-      "statement": "设计并实际使用双层循环 Harness 组织业务建模与 API 设计：外层 PDCA 管范围和阶段接续，内层操控循环 Steering Loop 管单次执行质量；从真实约定和主要履约出发澄清责任、请求、确认及证明凭证，并核对异常责任",
+      "statement": "设计并实际使用双层循环 Harness 组织业务建模与 API 设计：外层 PDCA 管范围和阶段接续，内层操控循环 Steering Loop 管单次执行质量；以真实约定和合同上下文为共同起点，围绕双方权责梳理履约请求、确认及凭证，沿履约时间线追溯业务依据、检查异常责任，为不同参与者提供一致的业务澄清与核对路径",
       "kind": "project_contribution",
       "project_id": "domain-modeling",
       "ownership": "direct",
@@ -3359,16 +3456,26 @@
           "type": "file",
           "path": ".career/practice/domain-modeling/transcript-2026-10-10.md",
           "locator": "Q02｜个人交付与 Skill；Q03｜异常规则由谁提供；Q09｜实际使用版本确认"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-19 用户指出平台应强调建模起点一致、追溯方法一致，引用 8X Flow 第 15 课对齐分析方法，并授权重构原有项目表达；统一的是业务知识发现与核对路径，不是复用固定业务模型"
         }
       ],
       "metrics": [],
       "constraints": [
         "个人动作是 Skill 工作流设计；不据此推定整个 Evidence-Framework、8X Flow 方法论或全部运行程序均由本人创造",
         "履约路线适用于有权责约定的业务，纯领域对象和算法不补造合同",
+        "通用性指业务分析起点与履约凭证追溯方法可复用，不推定所有业务拥有相同模型或已经验证所有业务场景；凭证追溯不等同于已实现完整数据血缘或独立审计系统",
         "“100多轮”、订单及还款例子不是已核验项目指标或客户案例",
         "未核验的转写词不写成新的技术名或个人实现事实"
       ],
-      "tags": ["skill", "domain-modeling", "requirements", "api-contract"]
+      "tags": [
+        "skill",
+        "domain-modeling",
+        "requirements",
+        "api-contract"
+      ]
     },
     {
       "id": "domain-modeling.discovery-rule-provenance",
@@ -3395,7 +3502,12 @@
         "当前材料消费 fm-incremental-validation、scope-api-handoff 与 api-static-test-vectors，不将访谈 Skill 等同来源存储或 AI 归因账本",
         "保留历史完成状态不扩大个人实现范围，也不推定审核状态字段或自动审批能力"
       ],
-      "tags": ["discovery", "rule", "provenance", "ai-proposal"]
+      "tags": [
+        "discovery",
+        "rule",
+        "provenance",
+        "ai-proposal"
+      ]
     },
     {
       "id": "domain-modeling.downstream-model-review-gate",
@@ -3422,7 +3534,12 @@
         "保留原始用户确认与访谈，不将当前实现反向覆盖为旧版行为",
         "人工确认、机器检查与真实运行验证分别判断，不推定签名审批或服务执行结果"
       ],
-      "tags": ["human-review", "model-consumption", "api", "test-data"]
+      "tags": [
+        "human-review",
+        "model-consumption",
+        "api",
+        "test-data"
+      ]
     },
     {
       "id": "domain-modeling.desktop-file-modeling",
@@ -3442,9 +3559,17 @@
       "constraints": [
         "只确认项目技术栈和工作方式，单项个人编码范围沿用已有职责，不扩写为每个模块均独立实现",
         "不把类 Figma 参考源码中的 revision、ownership、串行合并队列、撤销重做、Codex 子进程或 Visual Harness 移植为本项目已实现事实",
-        "不补写本地数据库、文件监听库、IPC 通道、自动保存或模型文件事务实现"
+        "不补写本地数据库、文件监听库、IPC 通道、自动保存或模型文件事务实现",
+        "2026-10-20 用户明确建模平台的技术栈不需要 MCP、FM JSON；当前技术栈消费 domain-modeling.technical-stack，不再从同步模块推导这些列项"
       ],
-      "tags": ["electron", "react", "react-flow", "pi-sdk", "incremental-modeling", "local-files"]
+      "tags": [
+        "electron",
+        "react",
+        "react-flow",
+        "pi-sdk",
+        "incremental-modeling",
+        "local-files"
+      ]
     },
     {
       "id": "domain-modeling.round-end-full-refresh",
@@ -3466,11 +3591,16 @@
         "全量刷新不自动等同于 React 组件重新挂载、全图重新布局或丢失视口",
         "不补写防抖、文件写入稳定性检测、选区视口保持、性能指标或刷新失败回退已实现"
       ],
-      "tags": ["agent-lifecycle", "model-reload", "react-flow", "full-refresh"]
+      "tags": [
+        "agent-lifecycle",
+        "model-reload",
+        "react-flow",
+        "full-refresh"
+      ]
     },
     {
       "id": "domain-modeling.generation-model-validation",
-      "statement": "在 AI 生成和修改本地模型的阶段进行模型结构与格式校验，使用 Evidence-Framework 的模型校验流程，将模型生成、检查与轮次结束后的图谱展示分开",
+      "statement": "在 AI 生成和修改本地模型的阶段，通过项目内部的模型校验流程进行结构与格式校验，将模型生成、检查与轮次结束后的图谱展示分开",
       "kind": "project_scope",
       "project_id": "domain-modeling",
       "ownership": "team",
@@ -3480,6 +3610,10 @@
         {
           "type": "user_confirmation",
           "locator": "2026-10-18 用户说明在生成模型时进行模型结构与格式校验，并提供 https://github.com/JayClock/Evidence-Framework 说明校验机制，随后要求同步现有难点"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-19 用户明确 Evidence-Framework 属于项目自身，模型校验按项目内部能力表达"
         }
       ],
       "metrics": [],
@@ -3489,7 +3623,12 @@
         "结构正确、业务完整与人工业务确认是不同判断，不将校验通过等同于全部业务建模完成",
         "校验工具的存在不扩大为用户独立实现整个 Evidence-Framework"
       ],
-      "tags": ["generation-validation", "schema", "evidence-framework", "model-integrity"]
+      "tags": [
+        "generation-validation",
+        "schema",
+        "evidence-framework",
+        "model-integrity"
+      ]
     },
     {
       "id": "domain-modeling.agent-settled-lifecycle-design",
@@ -3511,7 +3650,12 @@
         "agent_settled 表示不再自动继续，不表示模型或业务校验成功",
         "取消、失败、校验报告与文件版本匹配、重复刷新去重及重载期间新任务处理策略仍需核对，不写成已实现功能"
       ],
-      "tags": ["pi-sdk", "agent-settled", "lifecycle-design", "model-reload"]
+      "tags": [
+        "pi-sdk",
+        "agent-settled",
+        "lifecycle-design",
+        "model-reload"
+      ]
     },
     {
       "id": "domain-modeling.api-on-demand-evolution",
@@ -3532,11 +3676,16 @@
         "不由按需调整推定自动语义差异分析、接口依赖图、自动兼容性判断或增量代码生成器已经实现",
         "正式契约及其业务含义仍经过人工审核，不以模型文件发生变化自动触发全部 API 重生成"
       ],
-      "tags": ["model-evolution", "api-contract", "on-demand-update", "mde"]
+      "tags": [
+        "model-evolution",
+        "api-contract",
+        "on-demand-update",
+        "mde"
+      ]
     },
     {
       "id": "domain-modeling.fm-incremental-validation",
-      "statement": "当前 Evidence-Framework 以同一份 FM 承接有业务依据且获授权的增量建模，未知或冲突保留缺口；每批修改检查一致性，明确范围结束时另行检查范围完整性及适用场景模拟",
+      "statement": "项目内部的 Evidence-Framework 以同一份 FM 承接有业务依据且获授权的增量建模，未知或冲突保留缺口；每批修改检查一致性，明确范围结束时另行检查范围完整性及适用场景模拟",
       "kind": "project_scope",
       "project_id": "domain-modeling",
       "ownership": "team",
@@ -3556,11 +3705,16 @@
       ],
       "metrics": [],
       "constraints": [
-        "这是当前框架机制，不据此声称所有校验与模拟均已接入桌面端并实际运行通过",
+        "这是项目内部建模模块的机制，不据此声称所有校验与模拟均已接入桌面端并实际运行通过",
         "不由源码或 Skill 的存在推定全部框架代码由本人独立实现",
         "机器检查不判断真实业务来源是否充分，不替代人类对业务含义和范围结束的确认"
       ],
-      "tags": ["fm", "incremental-modeling", "consistency", "scope-completeness"]
+      "tags": [
+        "fm",
+        "incremental-modeling",
+        "consistency",
+        "scope-completeness"
+      ]
     },
     {
       "id": "domain-modeling.scope-api-handoff",
@@ -3588,7 +3742,12 @@
         "模型摘要绑定当前 FM 输入，不认证外部业务来源，也不代表文件锁或事务保证",
         "不把框架机制直接扩大为桌面端所有检查均已集成或全部测试通过"
       ],
-      "tags": ["scope-handoff", "human-confirmation", "model-digest", "api-validation"]
+      "tags": [
+        "scope-handoff",
+        "human-confirmation",
+        "model-digest",
+        "api-validation"
+      ]
     },
     {
       "id": "domain-modeling.api-static-test-vectors",
@@ -3616,7 +3775,12 @@
         "原有人工确认的支付场景与项目测试结果仍按各自 claim 表达，不由本工具输出反向否定或扩展",
         "不补写运行次数、覆盖率、性能收益或生产规模"
       ],
-      "tags": ["openapi", "static-test-vectors", "request-expect", "runtime-validation"]
+      "tags": [
+        "openapi",
+        "static-test-vectors",
+        "request-expect",
+        "runtime-validation"
+      ]
     },
     {
       "id": "hateoas.permission-change-module-coverage",
@@ -3638,7 +3802,11 @@
         "保留项目介绍原文，确认前不进入职业经历、简历、自我介绍或岗位口述稿",
         "待核对模块分母、覆盖范围及权限变化的适用条件，不将此比例推定为任意需求均无需前端修改"
       ],
-      "tags": ["permission", "coverage", "pending-confirmation"]
+      "tags": [
+        "permission",
+        "coverage",
+        "pending-confirmation"
+      ]
     },
     {
       "id": "hateoas.permission-change-task-cost",
@@ -3660,7 +3828,529 @@
         "保留项目介绍原文，确认前不传播到其他对外材料",
         "待确认成本指开发工时、沟通回归工时还是其他口径，不改写成整体研发效率提升 50%"
       ],
-      "tags": ["task-cost", "permission", "pending-confirmation"]
+      "tags": [
+        "task-cost",
+        "permission",
+        "pending-confirmation"
+      ]
+    },
+    {
+      "id": "monitoring-sdk.typescript-configuration-optimization",
+      "statement": "源文中的 TypeScript 项目结构和配置优化条目不属于本人实际完成的工作，用户已明确否定并要求删除",
+      "kind": "boundary",
+      "project_id": "monitoring-sdk",
+      "ownership": "not_applicable",
+      "completion": "unknown",
+      "status": "deprecated",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "在明确询问监控项目中的 TypeScript 项目结构与配置优化是否为本人实际完成的工作后，用户答复：否，删除。撤销上轮候选条目，并删除项目简历描述中的对应内容"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级监控平台全栈架构设计/企业级监控平台全栈架构设计与实践面试专项突击.md",
+          "locator": "5. 简历描述／高级：原始示例条目，仅保留来源追踪，不作为个人经历"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "用户已明确否定该项为本人工作，不再进入职业经历、自我介绍、简历或面试回答，也不保留为待确认问题",
+        "原始示例措辞不得再次反向升级为个人贡献；保留本 ID 仅用于追踪撤销决定",
+        "既有 TypeScript 接口约束与 pnpm Monorepo 分层事实独立保留，不因本条撤销而收缩"
+      ],
+      "tags": [
+        "typescript",
+        "configuration",
+        "modularity",
+        "withdrawn"
+      ]
+    },
+    {
+      "id": "career.engineering.github-actions-ci",
+      "statement": "本人配置过 GitHub Actions 持续集成流水线，主要执行代码检查、测试和构建",
+      "kind": "project_contribution",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "本轮工程化面试补充：用户先确认就做过配置流水线和 dockerfile，再明确答复：github action，主要是检擦、测试、构建；随后要求都帮我补充一下，授权保存材料"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "仅确认检查、测试和构建，不由此推定已实现镜像推送、服务器部署、生产审批、灰度发布或自动回滚",
+        "实际触发事件、分支规则、检查工具、执行命令、缓存及合并保护配置仍待项目文件或用户补充；材料中的通用示例不升级为实际配置",
+        "未明确本次流水线所属公司或项目，不自动绑定 HATEOAS、监控 SDK 或工作流引擎"
+      ],
+      "tags": [
+        "engineering",
+        "github-actions",
+        "ci",
+        "checks",
+        "test",
+        "build"
+      ]
+    },
+    {
+      "id": "career.engineering.nx-react-multistage-docker",
+      "statement": "本人为 Nx 管理的 React 项目编写过多阶段 Dockerfile，将依赖安装、应用构建和运行拆分为不同阶段",
+      "kind": "project_contribution",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "本轮工程化面试补充：用户确认做过 Dockerfile；在询问打包对象以及是否把依赖安装、构建和运行拆成多个阶段后，答复：打包的是 NX 管理的 REACT，拆分了；随后要求都帮我补充一下，授权保存材料"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "具体基础镜像、静态服务、阶段名称、Node 与包管理器版本、COPY 路径及 .dockerignore 配置仍待核对，不将参考写法作为历史实现",
+        "不补写镜像体积、构建提速、部署频率或生产运行验证结果",
+        "不因编写 Dockerfile 推定已实现 Compose 编排、镜像仓库发布或生产部署；未明确所属公司或项目，不自动关联既有项目"
+      ],
+      "tags": [
+        "engineering",
+        "nx",
+        "react",
+        "docker",
+        "multi-stage-build"
+      ]
+    },
+    {
+      "id": "career.engineering.monorepo-nx-pnpm",
+      "statement": "项目现行 Monorepo 工程方案统一使用 Nx + pnpm，由 Nx 管理项目任务与工程组织、pnpm 管理工作区依赖",
+      "kind": "project_scope",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户明确要求 monorepo 统一使用 nx + pnpm 记录，并进一步强调而不是现在的 pnpm＋Turborepo"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "Nx + pnpm 是现行职业事实，不仅是显示名称调整；后续项目技术栈与工程化表述不使用 pnpm + Turborepo",
+        "参考源码中的 Turborepo 配置仅保留为快照差异，不改动源码配置，也不由本条推定参考仓库已完成 Nx 迁移",
+        "不由统一选型推定已实现特定 Nx 缓存、依赖边界规则、远程缓存、affected 流水线或效率指标"
+      ],
+      "tags": ["engineering", "monorepo", "nx", "pnpm"]
+    },
+    {
+      "id": "domain-modeling.technical-stack",
+      "statement": "AI 辅助领域建模与 API 设计平台当前对外技术栈采用 Electron、React、React Flow、Pi SDK、OpenAPI；Monorepo 工程统一使用 Nx + pnpm",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户明确建模平台不需要 MCP、FM JSON，并要求更新事实文件；随后确认 Monorepo 统一使用 Nx + pnpm 而不是 pnpm + Turborepo"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/technical-stack-source-audit-2026-10-20.md",
+          "locator": "建模平台；Monorepo 统一记录口径"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "MCP 与 FM JSON 不列入当前项目技术栈，FM JSON 不作为独立框架或工具",
+        "不从 MCP 同步模块推导桌面端的技术栈、数据协议或个人实现职责；此前单独确认的同步功能保留独立追踪，不因本轮技术栈选材纠正断言历史功能从未实现",
+        "个人编码范围、生命周期事件的设计状态及模型检查的实际验证范围仍沿用各自 claim"
+      ],
+      "tags": ["technical-stack", "electron", "react", "react-flow", "pi-sdk", "openapi", "nx", "pnpm"]
+    },
+    {
+      "id": "hateoas.technical-stack",
+      "statement": "HATEOAS 当前对外技术栈为 TypeScript、React Hooks、HAL / HAL-FORMS、Zod、Nx + pnpm、Vite、Vitest、MSW、Testing Library、TypeDoc",
+      "kind": "project_scope",
+      "project_id": "hateoas",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户指定 content/Knowledge/Sources/hateoas-ts/ 作为技术栈核对来源，并要求更新事实文件；Monorepo 统一使用 Nx + pnpm"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-21 用户明确将 HATEOAS 技术栈改为 TypeScript、React Hooks、HAL / HAL-FORMS、Zod、Nx + pnpm、Vite、Vitest、MSW、Testing Library、TypeDoc，并要求所有相关内容同步更新"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/hateoas-technical-stack-confirmation-2026-10-21.md",
+          "locator": "用户确认与同步授权；当前表述"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/packages/resource/package.json",
+          "locator": "dependencies：Inversify、Immer、Zod、Standard Schema；核心引用见 container.ts、base-state.ts 和 action.ts"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/hateoas-ts/package.json",
+          "locator": "Nx / pnpm 任务及 TypeScript、React、Vite、Vitest、MSW、Testing Library、TypeDoc 声明"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/technical-stack-source-audit-2026-10-20.md",
+          "locator": "HATEOAS：实际源码引用与构建、测试配置核对"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "当前对外技术栈按 2026-10-21 用户指定清单选材，正文不再展开 Inversify、Immer、Standard Schema 或 vite-plugin-dts；源码及历史核对证据原样保留，不将本次表述调整写成依赖从未使用或已完成源码迁移",
+        "不把依赖存在升级为本轮已运行测试或已验证生产效果",
+        "不把 Axios 或 React Query 列为 SDK 实际技术栈",
+        "业务页面的 JSON Schema 动态表单由既有确认单独支持，不与 SDK 直接依赖清单混为一谈",
+        "当前快照缺少 .github 目录，原有发布流程确认继续保留，不声称本轮检查到实际 workflow 文件"
+      ],
+      "tags": ["technical-stack", "typescript", "react", "hal", "hal-forms", "zod", "nx", "pnpm", "vite", "vitest", "msw", "testing-library", "typedoc"]
+    },
+    {
+      "id": "monitoring-sdk.technical-stack",
+      "statement": "监控 SDK 与数据采集后端使用 TypeScript、PerformanceObserver、内置 Web Vitals 指标实现、Fetch / XMLHttpRequest 及浏览器异常入口；服务与数据链路采用 NestJS、Kafka、ClickHouse，后端基础依赖包括 TypeORM 与 PostgreSQL；Monorepo 统一采用 Nx + pnpm",
+      "kind": "project_scope",
+      "project_id": "monitoring-sdk",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户指定 content/Knowledge/Sources/企业级监控平台全栈架构设计/miaoma-monitor/ 核对技术栈；随后明确现行 Monorepo 使用 Nx + pnpm 而不是 pnpm + Turborepo"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-21 用户要求删除所有项目介绍中的 TSUP、TSC 相关内容，并同步更新所有素材；当前技术栈不再选用这些列项，其余范围不变"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/project-stack-cleanup-confirmation-2026-10-21.md",
+          "locator": "用户要求；当前选材规则"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级监控平台全栈架构设计/miaoma-monitor/packages/browser/package.json",
+          "locator": "core / browser-utils 工作区依赖及 tsup / tsc 构建；采集实现见 browser/src/tracing 和 browser-utils/src/metrics"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级监控平台全栈架构设计/miaoma-monitor/apps/backend/dsn-server/package.json",
+          "locator": "NestJS、kafkajs、ClickHouse 客户端、TypeORM、pg 声明"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/technical-stack-source-audit-2026-10-20.md",
+          "locator": "监控 SDK 与数据采集后端；Monorepo 统一记录口径"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "现行 Monorepo 是 Nx + pnpm，不将参考快照的 Turborepo 配置写成本人项目方案",
+        "源码内置 Web Vitals 指标实现，不称为已经安装 web-vitals npm 包",
+        "当前职业素材不再展开 tsup、tsc 技术栈列项或构建说明；历史源码及核对证据保留，不据此断言依赖从未使用",
+        "不因参考仓库控制台存在 React、Vite、Tailwind CSS、TanStack Query、Axios、Recharts 依赖就扩大本人可视化分析范围",
+        "代表性快照局部缺失不否定既有确认的多框架适配、Sourcemap、数据后端或响应性能提升 50%；也不把局部占位实现写成本轮已验证完整链路"
+      ],
+      "tags": ["technical-stack", "typescript", "nestjs", "kafka", "clickhouse", "nx", "pnpm"]
+    },
+    {
+      "id": "aiflow.technical-stack",
+      "statement": "低代码工作流前端采用 TypeScript、React、Next.js、React Flow（@xyflow/react）、Tiptap、Tailwind CSS、Radix UI、React Hook Form 与 Zod；执行与反馈包含 TypeScript 引擎及 SSE，服务与数据层包括 NestJS、Prisma、PostgreSQL；Monorepo 统一采用 Nx + pnpm，引擎包配置 Vitest",
+      "kind": "project_scope",
+      "project_id": "aiflow",
+      "ownership": "team",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户指定 content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/miaoma-aiflow-v2/ 核对技术栈；随后明确现行 Monorepo 使用 Nx + pnpm 而不是 pnpm + Turborepo"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-21 用户要求删除所有项目介绍中的 TSUP、TSC 相关内容，并同步更新所有素材；当前技术栈不再选用这些列项，其余范围不变"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/project-stack-cleanup-confirmation-2026-10-21.md",
+          "locator": "用户要求；当前选材规则"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/miaoma-aiflow-v2/apps/workflow/package.json",
+          "locator": "工作流编辑器与表单依赖；实际接入见 components/flow/editor、settings/variable-editor 和 components/ui"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/miaoma-aiflow-v2/apps/api-server/package.json",
+          "locator": "NestJS、Prisma、pg、RxJS；PostgreSQL datasource 见 prisma/schema.prisma，SSE 见 workflow.controller.ts"
+        },
+        {
+          "type": "file",
+          "path": "content/Knowledge/Sources/企业级类扣子、Dify AI 应用引擎架构设计/miaoma-aiflow-v2/packages/ai-engine/package.json",
+          "locator": "tsup 构建与 Vitest 测试配置；未在本轮执行"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/technical-stack-source-audit-2026-10-20.md",
+          "locator": "低代码工作流引擎；Monorepo 统一记录口径"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "现行 Monorepo 是 Nx + pnpm，不将参考快照的 Turborepo 配置写成本人项目方案",
+        "当前职业素材不再展开 tsup、tsc 技术栈列项或构建说明；历史源码及核对证据保留，不据此断言依赖从未使用",
+        "这是项目分层技术栈，不改变 aiflow.data-and-backend-boundary 的个人与后端分工；Prisma / PostgreSQL 持久化不据此变为本人独立实现",
+        "不把参考仓库中的 LangChain、LangGraph、Qdrant、AI 或知识库节点扩展为已确认的普通业务工作流项目范围",
+        "依赖版本只描述所读材料，不推定公司生产版本；配置了 Vitest 不代表本轮已执行或全部通过"
+      ],
+      "tags": ["technical-stack", "typescript", "nextjs", "react-flow", "tiptap", "nestjs", "nx", "pnpm"]
+    },
+    {
+      "id": "career.ai-development.harness-practice",
+      "statement": "亲自归纳 Evidence-Framework 中需求模糊、隐式约定、上下文倾倒与焦虑、信息散落、前馈痴迷、反馈过载、虚假胜利、跨会话状态丢失和指令文件腐化十类 Agent 坏味道，并设计、实际使用相应的 AI 辅助研发 Harness 流程",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 在逐项总结十类坏味道、Guides、任务规划和交付检查后，用户明确确认：都是我亲自设计并实际使用过的；随后授权同步职业经历并新增专题"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
+          "locator": "本轮确认与保存授权；坏味道与个人实践对应；来源版本 b67af395b1e301a853e13a7def85b250ca5a4763"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "确认范围是坏味道归纳及对应研发方法、流程机制的亲自设计和实际使用，不扩展成仓库全部代码或全部业务方法论由本人独立创造",
+        "按研发流程实践组织，不新增公司、任职时间或独立商业产品，不推定团队全量采用、规模或效率数字"
+      ],
+      "tags": ["ai-coding", "harness", "bad-smells", "engineering-practice"]
+    },
+    {
+      "id": "career.ai-development.acceptance-checks",
+      "statement": "设计并实际使用面向 AI 研发任务的验收机制，将要求转为固定输入、可观察结果、边界、反例和失败不变性，acceptanceCriteria 关联具体 CHECK，并以稳定路径、受限操作符和保留类型的 expected 表达来自独立业务依据的预期",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户对坏味道总结中的需求澄清、验收设计及任务检查明确确认：都是我亲自设计并实际使用过的"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
+          "locator": "需求模糊；虚假胜利；任务前馈装配协议与小步实现"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "具体业务例子用于解释检查设计，不据此新增生产客户、交付场景或本轮测试通过结果",
+        "CHECK 结构完整与业务预期正确分别判断，不把验收字段校验描述为自动执行全部业务断言"
+      ],
+      "tags": ["acceptance", "check", "typed-expectations", "spec"]
+    },
+    {
+      "id": "career.ai-development.context-assembly",
+      "statement": "设计并实际使用项目宪法、项目基线、工程指南和任务 Guides 四层前馈，显式记录架构与局部设计，按任务路由读取必要章节、源码和测试，通过来源引用与输入投影组织 Agent 上下文",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户对隐式约定、上下文倾倒及 Guides 分层设计与使用明确确认：都是我亲自设计并实际使用过的"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
+          "locator": "隐式约定；上下文倾倒；四层前馈与来源治理"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "按需加载是任务依据的组织方法，不推定特定模型的 token 节省、注意力效果或准确率提升",
+        "本条确认研发上下文设计与使用，不改变各业务项目的框架、服务端分工或技术栈"
+      ],
+      "tags": ["context-engineering", "guides", "architecture", "just-in-time"]
+    },
+    {
+      "id": "career.ai-development.single-task-steering",
+      "statement": "设计并实际使用外层 PDCA 管理研发任务、内层 Guides → Action → Sensors → Steer 控制单次交付的流程，一次执行一个获授权且就绪的任务，按实现、检查设计、任务依赖、业务来源或环境问题选择局部修复、重规划或澄清，完成后停止",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户确认坏味道总结中的任务规划、单任务交付与反馈纠偏均由本人亲自设计并实际使用"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
+          "locator": "上下文焦虑；前馈痴迷；单任务执行、小步实现与诊断"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "这是实际使用的流程与退出纪律，不写成自动推进、不可绕过的执行沙箱或全自动业务审批",
+        "任务恢复和转向按实际来源及授权判断，不把结构候选描述为已经完成语义就绪审核"
+      ],
+      "tags": ["pdca", "steering-loop", "single-task", "failure-routing"]
+    },
+    {
+      "id": "career.ai-development.source-ownership",
+      "statement": "设计并实际使用业务模型、API 契约、软件范围、架构、代码行为和任务状态的分层来源归属，以来源路径、稳定引用及摘要辅助检查新鲜度，生成文档和审核页作为可重建投影，并对工程指南、代码及环境变化另行判断影响",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户对信息散落、单一事实源和知识治理的设计及实际使用明确确认：都是我亲自设计并实际使用过的"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
+          "locator": "信息散落；四层前馈与来源治理；任务前馈装配协议"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "摘要辅助发现来源变化，不等同于自动判断语义兼容、人类授权或覆盖全部工程输入",
+        "不恢复已经废弃的独立 AI 来源归因账本或从 Rule 逐条审批的旧项目叙事"
+      ],
+      "tags": ["single-source-of-truth", "source-manifest", "freshness", "derived-artifacts"]
+    },
+    {
+      "id": "career.ai-development.evidence-based-delivery",
+      "statement": "设计并实际使用证据化交付，将任务检查的命令、工作目录、退出码和实际观察保存到 observedEvidence，使用只读 plan_state.py 检查任务、验收、CHECK、缺口引用、依赖顺序及完成任务的证据字段，并分别按 Standards 与 Spec 审查工程规范和需求忠实性",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户明确确认虚假胜利的解决机制、交付检查与双维度审查均由本人亲自设计并实际使用"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
+          "locator": "虚假胜利；双维度审查；plan_state.py 与状态检查测试设计"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "plan_state.py 只检查其实现中的结构关系及证据非空，不校验所有记录真实性、执行业务断言、自动审批或写入完成状态",
+        "本轮确认实际使用该交付方式，不补写某次任务的命令输出、通过数量、验收结论或效率指标"
+      ],
+      "tags": ["observed-evidence", "plan-state", "standards-review", "spec-review"]
+    },
+    {
+      "id": "career.ai-development.layered-feedback",
+      "statement": "设计并实际使用按风险和证明范围选择的分层检查，区分领域、HTTP、持久化和应用装配结果，分别处理实现失败、环境阻塞、警告、历史证据及缓存命中，成功保留紧凑摘要，失败保留可定位的断言和诊断输出",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户对前馈痴迷、反馈过载、虚假胜利中的分层测试、反馈分级与实际执行证据规则确认均由本人设计并实际使用"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
+          "locator": "前馈痴迷；反馈过载；测试指南"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "选择和使用分层检查不推定仓库全部套件本轮已运行通过，也不推定生产数据库或真实外部集成验证结果",
+        "Nx 缓存与 Gradle UP-TO-DATE 保留其实际含义，不写成本次重新执行测试"
+      ],
+      "tags": ["testing-boundaries", "sensors", "failure-classification", "execution-evidence"]
+    },
+    {
+      "id": "career.ai-development.cross-session-handoff",
+      "statement": "设计并实际使用文件化的跨会话交接，把局部设计、用户依据、执行结果、缺口影响和下一步归入各自来源，以 plan.yaml 的任务状态和 observedEvidence 恢复进度，新会话先核对工作树、直接前置、来源与环境新鲜度",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户确认上下文焦虑、跨会话状态丢失及其恢复机制均由本人亲自设计并实际使用"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
+          "locator": "上下文焦虑；跨会话状态丢失；Guides 开工检查与交付协议"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "恢复依据是当前文件与证据，不推定模型永久记忆、自动授权或桌面端所有任务恢复功能已完成",
+        "本次确认不重写历史访谈，也不扩展成具体恢复成功率或团队人数"
+      ],
+      "tags": ["cross-session", "handoff", "task-state", "knowledge-retention"]
+    },
+    {
+      "id": "career.ai-development.instruction-governance",
+      "statement": "设计并实际使用分层指令治理，让 AGENTS.md 保存路由与跨任务不变量，专业规则由对应文档和 Skill 单一维护，替换过期操作说明时同步导航、模板与检查，并使用 Guides 检查器发现维护范围内的失效本地链接、越界和已知过期表述",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-20 用户对指令文件腐化、规则唯一维护与对应检查机制确认均由本人亲自设计并实际使用"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
+          "locator": "指令文件腐化；Guides 检查器 check.mjs"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "检查器只覆盖其实际维护范围和规则，不写成检测任意语义冲突、所有外链可达性或业务正确性",
+        "个人设计和使用的确认不据此扩写为独立编写仓库每一行检查器或全部工程配置"
+      ],
+      "tags": ["instruction-governance", "agents-md", "guides-checker", "knowledge-maintenance"]
     }
   ]
 }

@@ -20,7 +20,13 @@
     "domain-modeling.methodology-recording",
     "hateoas.project.sdk",
     "aiflow.project.scope",
-    "monitoring-sdk.project.scope"
+    "monitoring-sdk.project.scope",
+    "career.engineering.monorepo-nx-pnpm",
+    "career.ai-development.harness-practice",
+    "career.ai-development.context-assembly",
+    "career.ai-development.evidence-based-delivery",
+    "career.ai-development.cross-session-handoff",
+    "career.ai-development.instruction-governance"
   ],
   "target_role_families": [
     "高级前端工程师",
@@ -29,18 +35,21 @@
     "AI 工程化平台工程师"
   ],
   "open_questions": [
+    "AI 研发 Harness 深入案例补充｜2026-10-20 用户已明确十类坏味道归纳及对应 Guides、任务规划、交付检查等机制均为本人亲自设计并实际使用；旧专题及职业经历中的独立专题段落已按用户要求删除，现有简历与 AI 编码口述稿保留；个人设计和实际使用的确认不变｜关联 career.ai-development.harness-practice、career.ai-development.acceptance-checks、career.ai-development.evidence-based-delivery、career.ai-development.cross-session-handoff｜下一步仅补一个可脱敏任务的输入、检查发现、实际转向、修订与复验记录，支持具体追问；若后续需要展开团队推广、公司时间或效率结果，再分别核对，不把它们作为当前已确认实践的阻塞项",
+    "前端工程化 CI 与 Docker 追问补证｜本轮已确认本人配置 GitHub Actions 执行检查、测试和构建，并为 Nx 管理的 React 项目编写分离依赖安装、构建和运行阶段的 Dockerfile｜关联 career.engineering.github-actions-ci、career.engineering.nx-react-multistage-docker｜待补实际 workflow 触发事件、分支、检查命令、Nx target、产物路径、阶段间复制及运行镜像；工程化笔记中的触发策略与命令表按参考方案使用，不据此扩展实际完成范围｜下一步由用户提供脱敏 workflow／Dockerfile 或口述实际配置",
+    "前端工程化人工口述稿核对｜原有完整口述版本含 package.json 环境约定、Nx 模块依赖约束与缓存、Prettier／ESLint 及 Husky＋lint-staged 的个人实践；本轮保留用户原文，仅修正 --no-verify 拼写并补 CI／Docker，尚未逐项取得独立事实确认｜工程化文档依赖记录保持 stale，新增快速口述只使用已确认实践｜下一步单独核对上述个人动作，再决定是否统一原稿与事实账本",
     "HATEOAS：资源数量、action 数量和回归范围变化",
     "HATEOAS 量化成果核对｜本轮按项目介绍统一其他材料时，发现原稿含系统 80% 的功能模块在权限调整时无需同步修改前端判断、相关任务成本减半；保留原文，两项暂记 candidate，未传播至其他材料｜关联 hateoas.permission-change-module-coverage、hateoas.permission-change-task-cost｜下一步请用户确认数字及适用范围，再补模块分母、任务成本定义和比较条件；不以本次资料同步授权代替事实确认",
     "职业经历教育表述核对｜现有人工稿含工学学士，已确认账本仅到本科学历、学士学位，原文保留；本轮只统一项目资料，不调整教育信息，经历依赖记录保留 stale｜关联 career.education.bachelor-computing｜下一步单独确认学位类别后补充账本，不从专业名称自动推定",
     "HATEOAS｜workflow 回归验证补证｜已确认 AI 辅助生成保存／发布端到端测试，前后端实现后重新回归，保存用例以相同输入对比原有原始响应 JSON、保存接口返回未改动｜关联 hateoas.workflow-write-regression、hateoas.incremental-migration-cost-risk｜待补发布用例的具体断言、测试入口／框架与执行记录，便于说明实际覆盖和验收范围｜下一步由用户提供可脱敏测试样本或复述实际运行链路",
-    "领域建模平台：使用频率与模型规模；若恢复客户材料，再补实际模型对象名、OpenAPI 审核项和可脱敏生成结果",
+    "AI 辅助领域建模与 API 设计平台：使用频率与模型规模；若恢复客户材料，再补实际模型对象名、OpenAPI 审核项和可脱敏生成结果",
     "领域建模原文核对｜本轮读取的项目稿已不含两小时至半小时的量化改善，当前表述为从两个小时难以收敛的会议转向参与者可推进的渐进流程；保留用户原文，不把旧问题中的半小时带回正文或下游｜关联 domain-modeling.skill-workflow、domain-modeling.internal-use｜会议时长背景尚无独立确认记录，项目稿保持 stale；CRM 电话销售按设计示例使用，不据此新增真实客户或生产交付成果；下一步仅在需要对外使用会议数据或 CRM 真实案例时分别核对",
     "领域建模桌面端生命周期接入｜已确认 Electron、React、React Flow、Pi SDK、AI 直接增量修改本地文件、生成阶段校验及轮次结束后全量刷新；agent_settled 已选为生命周期衔接方案｜关联 domain-modeling.agent-settled-lifecycle-design、domain-modeling.round-end-full-refresh、domain-modeling.generation-model-validation｜事件选型保持 design_only，后续核对实际订阅代码和运行记录，以及校验报告与本轮模型对应、失败或取消时的展示处理，避免把 SDK 能力视为项目验证结果｜下一步由用户提供接入代码或实际执行情况，再更新完成状态",
     "领域建模配套示例同步｜用户于 2026-10-18 明确支付模型为订单、支付请求、支付确认和支付凭证单，人工稿明确四张表，并纠正订单合同记录禁止更新；项目介绍与职业经历已同步。content/Knowledge/Outputs/案例：NestJS 与 Prisma 实现权责模型.md 仍使用 PaymentAttempt、缺少独立支付确认，并通过修改 Order.status 推动流程，与当前模型不一致，不能作为其直接实现证据｜关联 domain-modeling.persistence-and-rule-placement、domain-modeling.async-fulfillment-and-compensation、domain-modeling.payment-transaction-and-idempotency｜后续单独核对并重构 Schema、API、事务和测试示例，重新执行验证；本轮未改动示例代码，也未恢复用户已从正文删除的示例链接",
     "渐进式架构：HATEOAS 旧客户端兼容矩阵、低代码工作流引擎未知节点／插件失败降级、监控 SDK capability detection 与 fail-open、AI 服务不可用时的基础链路验证",
     "契约主轴：领域模型到正式前后端接口契约的实际审核样本，以及设计 DSL 到前端组件实现的真实交付范围与消费记录",
-    "领域建模 MCP 本地同步｜已确认服务端 FM 快照导出、MCP 工具／资源、本地下载校验与文件更新均已完成｜关联 domain-modeling.mcp-local-sync、domain-modeling.fm-snapshot-export、domain-modeling.mcp-snapshot-access、domain-modeling.local-snapshot-validation、domain-modeling.local-model-publication｜后续补个人实现范围与真实运行、测试验证记录，便于回答职责和验收追问｜下一步核对实际交付材料或由用户补充个人动作与验证方式",
+    "领域建模同步功能补证｜2026-10-20 用户明确当前技术栈不需要 MCP、FM JSON；本轮按技术栈选材纠正处理，不否定此前独立确认的同步功能，默认不再据此扩展当前技术栈｜关联 domain-modeling.technical-stack、domain-modeling.mcp-local-sync、domain-modeling.fm-snapshot-export、domain-modeling.mcp-snapshot-access、domain-modeling.local-snapshot-validation、domain-modeling.local-model-publication｜仅在后续明确需要展开同步功能时，再补个人动作与运行验证材料；不作为当前技术栈完善的待办",
     "监控系统响应性能指标的技术追问补充｜2026-10-18 用户明确纠正：50% 指标是确认过的；系统响应性能提升 50% 已作为 confirmed result 恢复到项目介绍与职业经历，数值及成果不再作为真实性待确认项｜关联 monitoring-sdk.response-performance-improvement｜后续仅为测量方法追问补充具体指标定义、时间范围、对比条件与原始数据；补充前保持已确认原表述，不换算为响应时间下降、吞吐量提升或 SDK 开销变化",
-    "领域建模框架与桌面集成补证｜2026-10-19 已按 Evidence-Framework b67af39 核对 FM 有据增量维护、一致性与范围检查、有效结果交接及静态测试向量；旧来源记录叙事仅保留历史，当前材料和依赖已替换｜关联 domain-modeling.fm-incremental-validation、domain-modeling.scope-api-handoff、domain-modeling.api-static-test-vectors｜桌面端技术栈与轮次刷新仍沿用既有确认，后续补实际调用范围检查、API 交接及运行验收的样本与个人编码分工；不因框架存在自动升级为桌面端全部集成或全部验证通过"
+    "领域建模内部模块与桌面端调用补证｜2026-10-19 用户明确 Evidence-Framework 是项目自身组成部分，建模、模型检查与 API 交付按平台内部能力表达；已按 b67af39 核对 FM 有据增量维护、一致性与范围检查、有效结果交接及静态测试向量，旧来源记录叙事仅保留历史｜关联 domain-modeling.fm-incremental-validation、domain-modeling.scope-api-handoff、domain-modeling.api-static-test-vectors｜项目组成关系已确认；后续仅补桌面端实际调用范围检查、API 交接和运行验收的样本及个人编码分工，具体调用与验证范围沿用各自证据"
   ]
 }
