@@ -1,0 +1,3547 @@
+{
+  "success": true,
+  "data": {
+    "matches": 102,
+    "results": [
+      {
+        "path": "/body/p[@paraId=00100000]",
+        "type": "p",
+        "text": "5080003378200AI 辅助领域建模与 API 设计平台上海鼎歆｜全栈工程师技术栈：Electron、React、React Flow、Pi SDK、OpenAPI、Nx + pnpm项目简介：设计并实现桌面端 AI 辅助领域建模与 API 设计平台，以真实约定和合同上下文统一业务分析起点，按履约与凭证关系澄清业务规则，将结构化模型衔接为 API 契约、接口文档与静态测试资产，供业务、产品...",
+        "childCount": 15,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100000",
+          "textId": "0020000D"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[2]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[3]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[4]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[5]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[6]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[7]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[8]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[9]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[10]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[11]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[12]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[13]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[14]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100002]",
+        "type": "p",
+        "text": "AI 辅助领域建模与 API 设计平台",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100002",
+          "textId": "001001C4"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100002]/r[1]",
+            "type": "run",
+            "text": "AI 辅助领域建模与 API 设计平台",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "11pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "11pt",
+              "bold.cs": true,
+              "color": "#000000",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100004]",
+        "type": "p",
+        "text": "上海鼎歆｜全栈工程师技术栈：Electron、React、React Flow、Pi SDK、OpenAPI、Nx + pnpm",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100004",
+          "textId": "001001C6"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100004]/r[1]",
+            "type": "run",
+            "text": "上海鼎歆｜全栈工程师\u000B技术栈：Electron、React、React Flow、Pi SDK、OpenAPI、Nx + pnpm",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100006]",
+        "type": "p",
+        "text": "项目简介：设计并实现桌面端 AI 辅助领域建模与 API 设计平台，以真实约定和合同上下文统一业务分析起点，按履约与凭证关系澄清业务规则，将结构化模型衔接为 API 契约、接口文档与静态测试资产，供业务、产品和研发共同核对与消费。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100006",
+          "textId": "00100250"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100006]/r[1]",
+            "type": "run",
+            "text": "项目简介：设计并实现桌面端 AI 辅助领域建模与 API 设计平台，以真实约定和合同上下文统一业务分析起点，按履约与凭证关系澄清业务规则，将结构化模型衔接为 API 契约、接口文档与静态测试资产，供业务、产品和研发共同核对与消费。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010000A]",
+        "type": "p",
+        "text": "权责驱动建模：设计以真实约定和合同上下文为共同起点的建模流程，围绕双方权责组织履约请求、确认与凭证，沿履约时间线追溯业务依据并递进检查异常责任，将分析结果沉淀为对象、关系与规则，供业务、产品和研发沿一致路径核对。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010000A",
+          "textId": "00100252"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010000A]/r[1]",
+            "type": "run",
+            "text": "权责驱动建模：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010000A]/r[2]",
+            "type": "run",
+            "text": "设计以真实约定和合同上下文为共同起点的建模流程，围绕双方权责组织履约请求、确认与凭证，沿履约时间线追溯业务依据并递进检查异常责任，将分析结果沉淀为对象、关系与规则，供业务、产品和研发沿一致路径核对。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010000C]",
+        "type": "p",
+        "text": "双层循环 Harness：设计并实际使用外层 PDCA 管理范围、审核与阶段接续，以内层 Steering Loop 组织前馈、行动、反馈和调整，控制单次模型修改的质量。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010000C",
+          "textId": "00100254"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010000C]/r[1]",
+            "type": "run",
+            "text": "双层循环 Harness：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010000C]/r[2]",
+            "type": "run",
+            "text": "设计并实际使用外层 PDCA 管理范围、审核与阶段接续，以内层 Steering Loop 组织前馈、行动、反馈和调整，控制单次模型修改的质量。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010000E]",
+        "type": "p",
+        "text": "桌面端增量建模：采用 Electron、React 与 React Flow 承载建模界面，通过 Pi SDK 驱动 AI 直接增量修改本地模型文件，生成阶段校验结构与格式，每轮结束后重读完整模型并全量刷新图谱。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010000E",
+          "textId": "00100256"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010000E]/r[1]",
+            "type": "run",
+            "text": "桌面端增量建模：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010000E]/r[2]",
+            "type": "run",
+            "text": "采用 Electron、React 与 React Flow 承载建模界面，通过 Pi SDK 驱动 AI 直接增量修改本地模型文件，生成阶段校验结构与格式，每轮结束后重读完整模型并全量刷新图谱。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100010]",
+        "type": "p",
+        "text": "模型驱动 API 交付：从业务操作在领域模型中的落点识别资源，沿聚合关系设计 URI，按角色、HTTP 方法和业务场景筛选接口能力，并通过超媒体链接导航关联资源；将接口放回正常与异常业务流程检查覆盖，生成 OpenAPI 文档及包含请求、预期结果的静态测试向量，支撑前后端实现与验收。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100010",
+          "textId": "00100258"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100010]/r[1]",
+            "type": "run",
+            "text": "模型驱动 API 交付：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100010]/r[2]",
+            "type": "run",
+            "text": "从业务操作在领域模型中的落点识别资源，沿聚合关系设计 URI，按角色、HTTP 方法和业务场景筛选接口能力，并通过超媒体链接导航关联资源；将接口放回正常与异常业务流程检查覆盖，生成 OpenAPI 文档及包含请求、预期结果的静态测试向量，支撑前后端实现与验收。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100014]",
+        "type": "p",
+        "text": "HATEOAS 与 TypeScript SDK",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100014",
+          "textId": "001001D3"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100014]/r[1]",
+            "type": "run",
+            "text": "HATEOAS 与 TypeScript SDK",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "11pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "11pt",
+              "bold.cs": true,
+              "color": "#000000",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100016]",
+        "type": "p",
+        "text": "上海易校｜高级前端专家／前端架构师技术栈：TypeScript、React Hooks、HAL / HAL-FORMS、Zod、Nx + pnpm、Vite、Vitest、MSW、Testing Library、TypeDoc",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100016",
+          "textId": "001001D5"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100016]/r[1]",
+            "type": "run",
+            "text": "上海易校｜高级前端专家／前端架构师\u000B技术栈：TypeScript、React Hooks、HAL / HAL-FORMS、Zod、Nx + pnpm、Vite、Vitest、MSW、Testing Library、TypeDoc",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100018]",
+        "type": "p",
+        "text": "项目简介：面向低代码平台的复杂权限体系，设计 HATEOAS 资源契约与 SDK，将权限判断收敛到服务端，减少前端维护与后端一致的权限和操作可用性判断逻辑；PC 与移动端按服务端返回的资源关系、可执行动作及字段约束组织交互。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100018",
+          "textId": "00100259"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100018]/r[1]",
+            "type": "run",
+            "text": "项目简介：面向低代码平台的复杂权限体系，设计 HATEOAS 资源契约与 SDK，将权限判断收敛到服务端，减少前端维护与后端一致的权限和操作可用性判断逻辑；PC 与移动端按服务端返回的资源关系、可执行动作及字段约束组织交互。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010001C]",
+        "type": "p",
+        "text": "资源契约与 SDK 分层：与后端协同设计 HAL / HAL-FORMS 资源关系和动作模板，实现框架无关的 TypeScript 核心与 React Hooks 适配层，分离资源定位、响应快照和动作提交，统一多端接入方式。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010001C",
+          "textId": "0010025B"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010001C]/r[1]",
+            "type": "run",
+            "text": "资源契约与 SDK 分层：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010001C]/r[2]",
+            "type": "run",
+            "text": "与后端协同设计 HAL / HAL-FORMS 资源关系和动作模板，实现框架无关的 TypeScript 核心与 React Hooks 适配层，分离资源定位、响应快照和动作提交，统一多端接入方式。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010001E]",
+        "type": "p",
+        "text": "请求去重与缓存管理：按绝对 URI 复用资源，对进行中的相同请求去重；根据写操作响应更新缓存或标记失效，通过事件订阅驱动 React 状态更新，并支持按配置刷新。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010001E",
+          "textId": "0010025D"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010001E]/r[1]",
+            "type": "run",
+            "text": "请求去重与缓存管理：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010001E]/r[2]",
+            "type": "run",
+            "text": "按绝对 URI 复用资源，对进行中的相同请求去重；根据写操作响应更新缓存或标记失效，通过事件订阅驱动 React 状态更新，并支持按配置刷新。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100020]",
+        "type": "p",
+        "text": "Schema 驱动表单：根据服务端动作模板的字段定义生成 Zod 校验规则与 JSON Schema 表单描述，在提交前验证数据，让字段渲染与校验使用同一份定义。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100020",
+          "textId": "0010025F"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100020]/r[1]",
+            "type": "run",
+            "text": "Schema 驱动表单：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100020]/r[2]",
+            "type": "run",
+            "text": "根据服务端动作模板的字段定义生成 Zod 校验规则与 JSON Schema 表单描述，在提交前验证数据，让字段渲染与校验使用同一份定义。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100022]",
+        "type": "p",
+        "text": "增量迁移与兼容性回归：以工作区导航为试点，与后端协同在 API 表达层增量接入契约，保持表结构、原有请求参数和保存接口响应不变；用 AI 辅助生成工作流保存与发布的端到端用例，并在改造后执行回归。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100022",
+          "textId": "00100261"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100022]/r[1]",
+            "type": "run",
+            "text": "增量迁移与兼容性回归：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100022]/r[2]",
+            "type": "run",
+            "text": "以工作区导航为试点，与后端协同在 API 表达层增量接入契约，保持表结构、原有请求参数和保存接口响应不变；用 AI 辅助生成工作流保存与发布的端到端用例，并在改造后执行回归。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100024]",
+        "type": "p",
+        "text": "AI 辅助领域建模与 API 设计平台",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100024",
+          "textId": "001001E2"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100026]",
+        "type": "p",
+        "text": "上海鼎歆｜全栈工程师技术栈：Electron、React、React Flow、Pi SDK、OpenAPI、Nx + pnpm",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100026",
+          "textId": "001001E4"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100028]",
+        "type": "p",
+        "text": "项目简介：设计并实现桌面端 AI 辅助领域建模与 API 设计平台，以真实约定和合同上下文统一业务分析起点，按履约与凭证关系澄清业务规则，将结构化模型衔接为 API 契约、接口文档与静态测试资产，供业务、产品和研发共同核对与消费。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100028",
+          "textId": "00100262"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=0010002C]",
+        "type": "p",
+        "text": "权责驱动建模：设计以真实约定和合同上下文为共同起点的建模流程，围绕双方权责组织履约请求、确认与凭证，沿履约时间线追溯业务依据并递进检查异常责任，将分析结果沉淀为对象、关系与规则，供业务、产品和研发沿一致路径核对。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010002C",
+          "textId": "00100264"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=0010002E]",
+        "type": "p",
+        "text": "双层循环 Harness：设计并实际使用外层 PDCA 管理范围、审核与阶段接续，以内层 Steering Loop 组织前馈、行动、反馈和调整，控制单次模型修改的质量。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010002E",
+          "textId": "00100266"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100030]",
+        "type": "p",
+        "text": "桌面端增量建模：采用 Electron、React 与 React Flow 承载建模界面，通过 Pi SDK 驱动 AI 直接增量修改本地模型文件，生成阶段校验结构与格式，每轮结束后重读完整模型并全量刷新图谱。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100030",
+          "textId": "00100268"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100032]",
+        "type": "p",
+        "text": "模型驱动 API 交付：从业务操作在领域模型中的落点识别资源，沿聚合关系设计 URI，按角色、HTTP 方法和业务场景筛选接口能力，并通过超媒体链接导航关联资源；将接口放回正常与异常业务流程检查覆盖，生成 OpenAPI 文档及包含请求、预期结果的静态测试向量，支撑前后端实现与验收。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100032",
+          "textId": "0010026A"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100036]",
+        "type": "p",
+        "text": "HATEOAS 与 TypeScript SDK",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100036",
+          "textId": "001001F1"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100038]",
+        "type": "p",
+        "text": "上海易校｜高级前端专家／前端架构师技术栈：TypeScript、React Hooks、HAL / HAL-FORMS、Zod、Nx + pnpm、Vite、Vitest、MSW、Testing Library、TypeDoc",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100038",
+          "textId": "001001F3"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=0010003A]",
+        "type": "p",
+        "text": "项目简介：面向低代码平台的复杂权限体系，设计 HATEOAS 资源契约与 SDK，将权限判断收敛到服务端，减少前端维护与后端一致的权限和操作可用性判断逻辑；PC 与移动端按服务端返回的资源关系、可执行动作及字段约束组织交互。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010003A",
+          "textId": "0010026B"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=0010003E]",
+        "type": "p",
+        "text": "资源契约与 SDK 分层：与后端协同设计 HAL / HAL-FORMS 资源关系和动作模板，实现框架无关的 TypeScript 核心与 React Hooks 适配层，分离资源定位、响应快照和动作提交，统一多端接入方式。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010003E",
+          "textId": "0010026D"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100040]",
+        "type": "p",
+        "text": "请求去重与缓存管理：按绝对 URI 复用资源，对进行中的相同请求去重；根据写操作响应更新缓存或标记失效，通过事件订阅驱动 React 状态更新，并支持按配置刷新。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100040",
+          "textId": "0010026F"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100042]",
+        "type": "p",
+        "text": "Schema 驱动表单：根据服务端动作模板的字段定义生成 Zod 校验规则与 JSON Schema 表单描述，在提交前验证数据，让字段渲染与校验使用同一份定义。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100042",
+          "textId": "00100271"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100044]",
+        "type": "p",
+        "text": "增量迁移与兼容性回归：以工作区导航为试点，与后端协同在 API 表达层增量接入契约，保持表结构、原有请求参数和保存接口响应不变；用 AI 辅助生成工作流保存与发布的端到端用例，并在改造后执行回归。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100044",
+          "textId": "00100273"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[4]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100046]",
+        "type": "p",
+        "text": "钟杰 全栈偏前端的平台工程师",
+        "childCount": 4,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100046",
+          "textId": "00100237"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[4]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100046]/r[1]",
+            "type": "run",
+            "text": "钟杰",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "28pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "28pt",
+              "bold.cs": true,
+              "color": "#262626",
+              "position": "1pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[4]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100046]/r[2]",
+            "type": "run",
+            "text": " ",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.ea": "zh-Hans",
+              "size": "28pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "28pt",
+              "bold.cs": true,
+              "color": "#262626",
+              "position": "1pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=00100000]/r[4]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100046]/r[3]",
+            "type": "run",
+            "text": "全栈偏前端的平台工程师",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "14pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "14pt",
+              "bold.cs": true,
+              "color": "#808080;themeColor=background1;themeShade=80",
+              "position": "1pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[4]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=0010004A]",
+        "type": "p",
+        "text": "钟杰 全栈偏前端的平台工程师",
+        "childCount": 4,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010004A",
+          "textId": "0010024E"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[5]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010004E]",
+        "type": "p",
+        "text": "项目经历",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010004E",
+          "textId": "00100290"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[5]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010004E]/r[1]",
+            "type": "run",
+            "text": "项目经历",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "14pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "14pt",
+              "bold.cs": true,
+              "color": "#FFFFFF",
+              "underline.color": "#FFFFFF",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[5]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100050]",
+        "type": "p",
+        "text": "项目经历",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100050",
+          "textId": "00100295"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[6]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100052]",
+        "type": "p",
+        "text": "上海｜15000248245",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100052",
+          "textId": "00100239"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[6]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100052]/r[1]",
+            "type": "run",
+            "text": "上海｜15000248245",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "10.5pt",
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "color": "#404040;themeColor=text1;themeTint=BF",
+              "underline.color": "#262626",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[6]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100054]",
+        "type": "p",
+        "text": "上海｜15000248245",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100054",
+          "textId": "00100250"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[7]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100056]",
+        "type": "p",
+        "text": "z891853602@gmail.com",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100056",
+          "textId": "0010023A"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[7]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100056]/r[1]",
+            "type": "run",
+            "text": "z891853602@gmail.com",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "10.5pt",
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "color": "#404040;themeColor=text1;themeTint=BF",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[7]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100058]",
+        "type": "p",
+        "text": "z891853602@gmail.com",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100058",
+          "textId": "00100251"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[8]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010005A]",
+        "type": "p",
+        "text": "能力概述",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010005A",
+          "textId": "00100291"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[8]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010005A]/r[1]",
+            "type": "run",
+            "text": "能力概述",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "14pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "14pt",
+              "bold.cs": true,
+              "color": "#FFFFFF",
+              "underline.color": "#FFFFFF",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[8]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=0010005C]",
+        "type": "p",
+        "text": "能力概述",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010005C",
+          "textId": "00100296"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010005E]",
+        "type": "p",
+        "text": "5 年以上开发经验，React、TypeScript 基本盘，定位全栈偏前端。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010005E",
+          "textId": "00100240"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010005E]/r[1]",
+            "type": "run",
+            "text": "5 年以上开发经验，React、TypeScript 基本盘，定位全栈偏前端。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100060]",
+        "type": "p",
+        "text": "使用 React Flow、Tiptap 构建流程画布与结构化变量编辑器。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100060",
+          "textId": "00100241"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100060]/r[1]",
+            "type": "run",
+            "text": "使用 React Flow、Tiptap 构建流程画布与结构化变量编辑器。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100062]",
+        "type": "p",
+        "text": "使用 NestJS、PostgreSQL、Prisma 完成服务与数据层开发。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100062",
+          "textId": "00100242"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100062]/r[1]",
+            "type": "run",
+            "text": "使用 NestJS、PostgreSQL、Prisma 完成服务与数据层开发。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100064]",
+        "type": "p",
+        "text": "以业务模型衔接 RESTful API、OpenAPI 文档与静态测试向量。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100064",
+          "textId": "00100243"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100064]/r[1]",
+            "type": "run",
+            "text": "以业务模型衔接 RESTful API、OpenAPI 文档与静态测试向量。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100066]",
+        "type": "p",
+        "text": "以资源关系、动作模板和 Schema 统一交互与表单校验。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100066",
+          "textId": "00100244"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100066]/r[1]",
+            "type": "run",
+            "text": "以资源关系、动作模板和 Schema 统一交互与表单校验。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100068]",
+        "type": "p",
+        "text": "配置 GitHub Actions 检查、测试和构建，编写 Nx React 多阶段 Dockerfile。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100068",
+          "textId": "00100245"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100068]/r[1]",
+            "type": "run",
+            "text": "配置 GitHub Actions 检查、测试和构建，编写 Nx React 多阶段 Dockerfile。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010006A]",
+        "type": "p",
+        "text": "通过测试、人工审核、日志与监控形成验证反馈，推进契约驱动交付。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010006A",
+          "textId": "00100246"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010006A]/r[1]",
+            "type": "run",
+            "text": "通过测试、人工审核、日志与监控形成验证反馈，推进契约驱动交付。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=0010006E]",
+        "type": "p",
+        "text": "5 年以上开发经验，React、TypeScript 基本盘，定位全栈偏前端。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010006E",
+          "textId": "00100257"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100070]",
+        "type": "p",
+        "text": "使用 React Flow、Tiptap 构建流程画布与结构化变量编辑器。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100070",
+          "textId": "00100258"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100072]",
+        "type": "p",
+        "text": "使用 NestJS、PostgreSQL、Prisma 完成服务与数据层开发。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100072",
+          "textId": "00100259"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100074]",
+        "type": "p",
+        "text": "以业务模型衔接 RESTful API、OpenAPI 文档与静态测试向量。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100074",
+          "textId": "0010025A"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100076]",
+        "type": "p",
+        "text": "以资源关系、动作模板和 Schema 统一交互与表单校验。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100076",
+          "textId": "0010025B"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100078]",
+        "type": "p",
+        "text": "配置 GitHub Actions 检查、测试和构建，编写 Nx React 多阶段 Dockerfile。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100078",
+          "textId": "0010025C"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=0010007A]",
+        "type": "p",
+        "text": "通过测试、人工审核、日志与监控形成验证反馈，推进契约驱动交付。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010007A",
+          "textId": "0010025D"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]",
+        "type": "p",
+        "text": "508000444500企业级低代码工作流引擎与复杂编排器上海易校｜高级前端专家／前端架构师技术栈：TypeScript、React、Next.js、React Flow（@xyflow/react）、Tiptap、Tailwind CSS、Radix UI、React Hook Form、Zod、NestJS、SSE、Prisma、PostgreSQL、Nx + pnpm、Vitest项目简介：...",
+        "childCount": 15,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010007E",
+          "textId": "0020000F"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[2]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[3]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[4]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[5]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[6]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[7]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[8]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[9]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[10]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[11]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[12]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[13]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[14]",
+            "type": "run",
+            "text": "",
+            "childCount": 0,
+            "format": {
+              "noproof": true,
+              "effective.size": "10.5pt",
+              "effective.size.src": "/styles/a",
+              "effective.font.ascii": "方正兰亭黑简体",
+              "effective.font.ascii.src": "/styles/a",
+              "effective.font.eastAsia": "方正兰亭黑简体",
+              "effective.font.eastAsia.src": "/styles/a",
+              "effective.font.hAnsi": "方正兰亭黑简体",
+              "effective.font.hAnsi.src": "/styles/a",
+              "effective.font.cs": "方正兰亭黑简体",
+              "effective.font.cs.src": "/styles/a",
+              "effective.color": "#000000",
+              "effective.color.src": "/styles/a"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100080]",
+        "type": "p",
+        "text": "企业级低代码工作流引擎与复杂编排器",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100080",
+          "textId": "00100274"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100080]/r[1]",
+            "type": "run",
+            "text": "企业级低代码工作流引擎与复杂编排器",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "11pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "11pt",
+              "bold.cs": true,
+              "color": "#000000",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100082]",
+        "type": "p",
+        "text": "上海易校｜高级前端专家／前端架构师技术栈：TypeScript、React、Next.js、React Flow（@xyflow/react）、Tiptap、Tailwind CSS、Radix UI、React Hook Form、Zod、NestJS、SSE、Prisma、PostgreSQL、Nx + pnpm、Vitest",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100082",
+          "textId": "00100202"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100082]/r[1]",
+            "type": "run",
+            "text": "上海易校｜高级前端专家／前端架构师\u000B技术栈：TypeScript、React、Next.js、React Flow（@xyflow/react）、Tiptap、Tailwind CSS、Radix UI、React Hook Form、Zod、NestJS、SSE、Prisma、PostgreSQL、Nx + pnpm、Vitest",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100084]",
+        "type": "p",
+        "text": "项目简介：设计并开发了一套企业级工作流编排引擎，支持 DAG 工作流执行。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100084",
+          "textId": "00100275"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100084]/r[1]",
+            "type": "run",
+            "text": "项目简介：设计并开发了一套企业级工作流编排引擎，支持 DAG 工作流执行。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100088]",
+        "type": "p",
+        "text": "引擎架构设计：自主设计并实现了基于 DAG（有向无环图） 的工作流执行引擎，通过 DFS 实现循环检测，利用 Kahn 算法 实现节点拓扑排序，支持复杂业务逻辑编排。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100088",
+          "textId": "00100277"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100088]/r[1]",
+            "type": "run",
+            "text": "引擎架构设计：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100088]/r[2]",
+            "type": "run",
+            "text": "自主设计并实现了基于 DAG（有向无环图） 的工作流执行引擎，通过 DFS 实现循环检测，利用 Kahn 算法 实现节点拓扑排序，支持复杂业务逻辑编排。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010008A]",
+        "type": "p",
+        "text": "核心模块开发：设计了基于 注册模式（Registry Pattern） 的节点扩展系统，实现了 Condition 节点的执行器，遵循开闭原则。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010008A",
+          "textId": "00100279"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010008A]/r[1]",
+            "type": "run",
+            "text": "核心模块开发：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010008A]/r[2]",
+            "type": "run",
+            "text": "设计了基于 注册模式（Registry Pattern） 的节点扩展系统，实现了 Condition 节点的执行器，遵循开闭原则。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010008C]",
+        "type": "p",
+        "text": "集成 Tiptap 开发了 Prompt 变量编辑器，支持通过 / 快捷插入变量，并实现了 ${node.var} 格式的变量解析与高亮。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010008C",
+          "textId": "0010027A"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010008C]/r[1]",
+            "type": "run",
+            "text": "集成 Tiptap 开发了 Prompt 变量编辑器，支持通过 / 快捷插入变量，并实现了 ${node.var} 格式的变量解析与高亮。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010008E]",
+        "type": "p",
+        "text": "高性能通信：在 NestJS 中实现了 SSE（Server-Sent Events） 流式响应机制，实时推送节点状态、日志和错误。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010008E",
+          "textId": "0010027C"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010008E]/r[1]",
+            "type": "run",
+            "text": "高性能通信：",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#404040",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          },
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010008E]/r[2]",
+            "type": "run",
+            "text": "在 NestJS 中实现了 SSE（Server-Sent Events） 流式响应机制，实时推送节点状态、日志和错误。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.ea": "zh-Hans",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100094]",
+        "type": "p",
+        "text": "企业级前端监控 SDK 与数据采集系统",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100094",
+          "textId": "0010027D"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100094]/r[1]",
+            "type": "run",
+            "text": "企业级前端监控 SDK 与数据采集系统",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.cs": "ar",
+              "size": "11pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "11pt",
+              "bold.cs": true,
+              "color": "#000000",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100096]",
+        "type": "p",
+        "text": "上海易校｜高级前端专家／前端架构师技术栈：TypeScript、PerformanceObserver / Web Vitals、Fetch / XMLHttpRequest、Sourcemap、NestJS、Kafka、ClickHouse、TypeORM、PostgreSQL、Nx + pnpm",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100096",
+          "textId": "00100211"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100096]/r[1]",
+            "type": "run",
+            "text": "上海易校｜高级前端专家／前端架构师\u000B技术栈：TypeScript、PerformanceObserver / Web Vitals、Fetch / XMLHttpRequest、Sourcemap、NestJS、Kafka、ClickHouse、TypeORM、PostgreSQL、Nx + pnpm",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.cs": "ar",
+              "size": "10pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100098]",
+        "type": "p",
+        "text": "项目简介：主导并构建企业级前端监控 SDK，实现监控采集和数据处理，形成覆盖前端性能和异常监控的完整解决方案。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100098",
+          "textId": "0010027E"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100098]/r[1]",
+            "type": "run",
+            "text": "项目简介：主导并构建企业级前端监控 SDK，实现监控采集和数据处理，形成覆盖前端性能和异常监控的完整解决方案。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "lang.cs": "ar",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010009C]",
+        "type": "p",
+        "text": "设计并实现了基于核心包和适配包的 SDK 架构，通过插件化机制支持多框架（React、Vue、Vanilla JS）集成，支持自定义监控项和扩展性增强。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010009C",
+          "textId": "0010027F"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010009C]/r[1]",
+            "type": "run",
+            "text": "设计并实现了基于核心包和适配包的 SDK 架构，通过插件化机制支持多框架（React、Vue、Vanilla JS）集成，支持自定义监控项和扩展性增强。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010009E]",
+        "type": "p",
+        "text": "构建了全面的性能和异常监控方案，覆盖了 FCP、LCP、CLS 等多项核心指标和 JavaScript 异常采集，提升了监控的广度与深度。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "0010009E",
+          "textId": "00100280"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=0010009E]/r[1]",
+            "type": "run",
+            "text": "构建了全面的性能和异常监控方案，覆盖了 FCP、LCP、CLS 等多项核心指标和 JavaScript 异常采集，提升了监控的广度与深度。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000A0]",
+        "type": "p",
+        "text": "使用 Nest.js 和 Kafka 设计并构建了数据采集和处理的后端系统，系统的响应性能提升了 50%。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000A0",
+          "textId": "0010029A"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000A0]/r[1]",
+            "type": "run",
+            "text": "使用 Nest.js 和 Kafka 设计并构建了数据采集和处理的后端系统，系统的响应性能提升了 50%。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00200001]",
+        "type": "p",
+        "text": "实现了 PerformanceObserver API 与全局异常捕获的结合监控，覆盖了 FCP、LCP、CLS 等 Web 性能指标和 JavaScript 异常采集。",
+        "childCount": 2,
+        "format": {
+          "paraId": "00200001",
+          "textId": "00200002"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00200001]/r[1]",
+            "type": "run",
+            "text": "实现了 PerformanceObserver API 与全局异常捕获的结合监控，覆盖了 FCP、LCP、CLS 等 Web 性能指标和 JavaScript 异常采集。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "font.hint": "eastAsia",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "position": "0pt",
+              "charSpacing": "0pt",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000A4]",
+        "type": "p",
+        "text": "企业级低代码工作流引擎与复杂编排器",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000A4",
+          "textId": "00100282"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000A6]",
+        "type": "p",
+        "text": "上海易校｜高级前端专家／前端架构师技术栈：TypeScript、React、Next.js、React Flow（@xyflow/react）、Tiptap、Tailwind CSS、Radix UI、React Hook Form、Zod、NestJS、SSE、Prisma、PostgreSQL、Nx + pnpm、Vitest",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000A6",
+          "textId": "0010021E"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000A8]",
+        "type": "p",
+        "text": "项目简介：设计并开发了一套企业级工作流编排引擎，支持 DAG 工作流执行。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000A8",
+          "textId": "00100283"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000AC]",
+        "type": "p",
+        "text": "引擎架构设计：自主设计并实现了基于 DAG（有向无环图） 的工作流执行引擎，通过 DFS 实现循环检测，利用 Kahn 算法 实现节点拓扑排序，支持复杂业务逻辑编排。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000AC",
+          "textId": "00100285"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000AE]",
+        "type": "p",
+        "text": "核心模块开发：设计了基于 注册模式（Registry Pattern） 的节点扩展系统，实现了 Condition 节点的执行器，遵循开闭原则。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000AE",
+          "textId": "00100287"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000B0]",
+        "type": "p",
+        "text": "集成 Tiptap 开发了 Prompt 变量编辑器，支持通过 / 快捷插入变量，并实现了 ${node.var} 格式的变量解析与高亮。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000B0",
+          "textId": "00100288"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000B2]",
+        "type": "p",
+        "text": "高性能通信：在 NestJS 中实现了 SSE（Server-Sent Events） 流式响应机制，实时推送节点状态、日志和错误。",
+        "childCount": 3,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000B2",
+          "textId": "0010028A"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000B8]",
+        "type": "p",
+        "text": "企业级前端监控 SDK 与数据采集系统",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000B8",
+          "textId": "0010028B"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000BA]",
+        "type": "p",
+        "text": "上海易校｜高级前端专家／前端架构师技术栈：TypeScript、PerformanceObserver / Web Vitals、Fetch / XMLHttpRequest、Sourcemap、NestJS、Kafka、ClickHouse、TypeORM、PostgreSQL、Nx + pnpm",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000BA",
+          "textId": "0010022D"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000BC]",
+        "type": "p",
+        "text": "项目简介：主导并构建企业级前端监控 SDK，实现监控采集和数据处理，形成覆盖前端性能和异常监控的完整解决方案。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000BC",
+          "textId": "0010028C"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000C0]",
+        "type": "p",
+        "text": "设计并实现了基于核心包和适配包的 SDK 架构，通过插件化机制支持多框架（React、Vue、Vanilla JS）集成，支持自定义监控项和扩展性增强。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000C0",
+          "textId": "0010028D"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000C2]",
+        "type": "p",
+        "text": "构建了全面的性能和异常监控方案，覆盖了 FCP、LCP、CLS 等多项核心指标和 JavaScript 异常采集，提升了监控的广度与深度。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000C2",
+          "textId": "0010028E"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000C4]",
+        "type": "p",
+        "text": "使用 Nest.js 和 Kafka 设计并构建了数据采集和处理的后端系统，系统的响应性能提升了 50%。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000C4",
+          "textId": "0010029B"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00200002]",
+        "type": "p",
+        "text": "实现了 PerformanceObserver API 与全局异常捕获的结合监控，覆盖了 FCP、LCP、CLS 等 Web 性能指标和 JavaScript 异常采集。",
+        "childCount": 2,
+        "format": {
+          "paraId": "00200002"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[2]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000C8]",
+        "type": "p",
+        "text": "2025.04—2026.09｜上海鼎歆信息科技有限公司｜全栈工程师",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000C8",
+          "textId": "00100247"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[2]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000C8]/r[1]",
+            "type": "run",
+            "text": "2025.04—2026.09｜上海鼎歆信息科技有限公司｜全栈工程师",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[2]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000CA]",
+        "type": "p",
+        "text": "2021.10—2025.04｜上海易校信息科技有限公司｜高级前端专家／前端架构师",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000CA",
+          "textId": "00100248"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[2]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000CA]/r[1]",
+            "type": "run",
+            "text": "2021.10—2025.04｜上海易校信息科技有限公司｜高级前端专家／前端架构师",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[2]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000CC]",
+        "type": "p",
+        "text": "2020.09—2021.10｜上海五五来客技术有限公司｜初级前端",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000CC",
+          "textId": "00100249"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[2]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000CC]/r[1]",
+            "type": "run",
+            "text": "2020.09—2021.10｜上海五五来客技术有限公司｜初级前端",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[2]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000CE]",
+        "type": "p",
+        "text": "2025.04—2026.09｜上海鼎歆信息科技有限公司｜全栈工程师",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000CE",
+          "textId": "0010025E"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[2]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000D0]",
+        "type": "p",
+        "text": "2021.10—2025.04｜上海易校信息科技有限公司｜高级前端专家／前端架构师",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000D0",
+          "textId": "0010025F"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[2]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000D2]",
+        "type": "p",
+        "text": "2020.09—2021.10｜上海五五来客技术有限公司｜初级前端",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000D2",
+          "textId": "00100260"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[4]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000D4]",
+        "type": "p",
+        "text": "工作经历",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000D4",
+          "textId": "00100292"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[4]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000D4]/r[1]",
+            "type": "run",
+            "text": "工作经历",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "14pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "14pt",
+              "bold.cs": true,
+              "color": "#FFFFFF",
+              "underline.color": "#FFFFFF",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[4]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000D6]",
+        "type": "p",
+        "text": "工作经历",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000D6",
+          "textId": "00100297"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[6]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000D8]",
+        "type": "p",
+        "text": "教育背景",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000D8",
+          "textId": "00100293"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[6]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000D8]/r[1]",
+            "type": "run",
+            "text": "教育背景",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "14pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "14pt",
+              "bold.cs": true,
+              "color": "#FFFFFF",
+              "underline.color": "#FFFFFF",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[6]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000DA]",
+        "type": "p",
+        "text": "教育背景",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000DA",
+          "textId": "00100298"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[7]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100136]",
+        "type": "p",
+        "text": "2020.06 毕业｜上海海事大学｜计算机科学与技术｜本科、学士学位",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100136",
+          "textId": "0010024A"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[7]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=00100136]/r[1]",
+            "type": "run",
+            "text": "2020.06 毕业｜上海海事大学｜计算机科学与技术｜本科、学士学位",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[7]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=00100138]",
+        "type": "p",
+        "text": "2020.06 毕业｜上海海事大学｜计算机科学与技术｜本科、学士学位",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "00100138",
+          "textId": "00100261"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[10]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000E0]",
+        "type": "p",
+        "text": "以契约驱动全流交付，连接需求澄清、平台实现与验证反馈。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000E0",
+          "textId": "0010024B"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[10]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000E0]/r[1]",
+            "type": "run",
+            "text": "以契约驱动全流交付，连接需求澄清、平台实现与验证反馈。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[10]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000E2]",
+        "type": "p",
+        "text": "兼顾业务建模与复杂前端，沉淀可共同核对和消费的模型与契约。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000E2",
+          "textId": "0010024C"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[10]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000E2]/r[1]",
+            "type": "run",
+            "text": "兼顾业务建模与复杂前端，沉淀可共同核对和消费的模型与契约。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[10]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000E4]",
+        "type": "p",
+        "text": "使用测试、运行日志与人工审核验证交付，并以反馈推动改进。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000E4",
+          "textId": "0010024D"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[10]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000E4]/r[1]",
+            "type": "run",
+            "text": "使用测试、运行日志与人工审核验证交付，并以反馈推动改进。",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "10.5pt",
+              "bold": false,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "10.5pt",
+              "bold.cs": false,
+              "color": "#595959",
+              "underline.color": "#545454",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[10]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000E6]",
+        "type": "p",
+        "text": "以契约驱动全流交付，连接需求澄清、平台实现与验证反馈。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000E6",
+          "textId": "00100262"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[10]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000E8]",
+        "type": "p",
+        "text": "兼顾业务建模与复杂前端，沉淀可共同核对和消费的模型与契约。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000E8",
+          "textId": "00100263"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[10]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000EA]",
+        "type": "p",
+        "text": "使用测试、运行日志与人工审核验证交付，并以反馈推动改进。",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000EA",
+          "textId": "00100264"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[12]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000EC]",
+        "type": "p",
+        "text": "自我评价",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000EC",
+          "textId": "00100294"
+        },
+        "children": [
+          {
+            "path": "/body/p[@paraId=0010007E]/r[12]/AlternateContent[1]/Choice[1]/drawing[1]/anchor[1]/graphic[1]/graphicData[1]/wsp[1]/txbx[1]/txbxContent[1]/p[@paraId=001000EC]/r[1]",
+            "type": "run",
+            "text": "自我评价",
+            "childCount": 0,
+            "format": {
+              "font.latin": "Microsoft YaHei",
+              "font.ea": "Microsoft YaHei",
+              "lang.latin": "zh-TW",
+              "lang.ea": "zh-TW",
+              "size": "14pt",
+              "bold": true,
+              "font.cs": "Microsoft YaHei",
+              "size.cs": "14pt",
+              "bold.cs": true,
+              "color": "#FFFFFF",
+              "underline.color": "#FFFFFF",
+              "kern": "24",
+              "effective.font.ascii": "Microsoft YaHei",
+              "effective.font.eastAsia": "Microsoft YaHei",
+              "effective.font.hAnsi": "Microsoft YaHei"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[12]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]/p[@paraId=001000EE]",
+        "type": "p",
+        "text": "自我评价",
+        "childCount": 2,
+        "format": {
+          "rsidR": "00640EB6",
+          "rsidRDefault": "00000000",
+          "paraId": "001000EE",
+          "textId": "00100299"
+        },
+        "children": []
+      }
+    ]
+  }
+}

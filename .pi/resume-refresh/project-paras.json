@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "error": {
+    "error": "Path not found: /body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]/txbxContent[1]. No shape found at /body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]. Available children: shapetype(1), shape(1)",
+    "code": "not_found"
+  }
+}

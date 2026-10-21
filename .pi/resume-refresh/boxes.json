@@ -1,0 +1,148 @@
+{
+  "success": true,
+  "data": {
+    "matches": 14,
+    "results": [
+      {
+        "path": "/body/p[@paraId=00100000]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "AI 辅助领域建模与 API 设计平台上海鼎歆｜全栈工程师技术栈：Electron、React、React Flow、Pi SDK、OpenAPI、Nx + pnpm项目简介：设计并实现桌面端 AI 辅助领域建模与 API 设计平台，以真实约定和合同上下文统一业务分析起点，按履约与凭证关系澄清业务规则，将结构化模型衔接为 API 契约、接口文档与静态测试资产，供业务、产品和研发共同核对与消费。权责...",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[4]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "钟杰 全栈偏前端的平台工程师",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[5]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "项目经历",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[6]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "上海｜15000248245",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[7]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "z891853602@gmail.com",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[8]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "能力概述",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=00100000]/r[11]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "5 年以上开发经验，React、TypeScript 基本盘，定位全栈偏前端。使用 React Flow、Tiptap 构建流程画布与结构化变量编辑器。使用 NestJS、PostgreSQL、Prisma 完成服务与数据层开发。以业务模型衔接 RESTful API、OpenAPI 文档与静态测试向量。以资源关系、动作模板和 Schema 统一交互与表单校验。配置 GitHub Actions ...",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[1]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "企业级低代码工作流引擎与复杂编排器上海易校｜高级前端专家／前端架构师技术栈：TypeScript、React、Next.js、React Flow（@xyflow/react）、Tiptap、Tailwind CSS、Radix UI、React Hook Form、Zod、NestJS、SSE、Prisma、PostgreSQL、Nx + pnpm、Vitest项目简介：设计并开发了一套企业级工...",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[2]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "2025.04—2026.09｜上海鼎歆信息科技有限公司｜全栈工程师2021.10—2025.04｜上海易校信息科技有限公司｜高级前端专家／前端架构师2020.09—2021.10｜上海五五来客技术有限公司｜初级前端",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[4]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "工作经历",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[6]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "教育背景",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[7]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "2020.06 毕业｜上海海事大学｜计算机科学与技术｜本科、学士学位",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[10]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "以契约驱动全流交付，连接需求澄清、平台实现与验证反馈。兼顾业务建模与复杂前端，沉淀可共同核对和消费的模型与契约。使用测试、运行日志与人工审核验证交付，并以反馈推动改进。",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      },
+      {
+        "path": "/body/p[@paraId=0010007E]/r[12]/AlternateContent[1]/Fallback[1]/pict[1]/shape[1]/textbox[1]",
+        "type": "textbox",
+        "text": "自我评价",
+        "childCount": 1,
+        "format": {
+          "inset": "1.27mm,1.27mm,1.27mm,1.27mm"
+        },
+        "children": []
+      }
+    ]
+  }
+}
