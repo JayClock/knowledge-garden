@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "artifact": ".career/opportunities/2026-infinigence-webui/outputs/greeting.md",
+  "artifact_type": "greeting",
+  "opportunity_id": "2026-infinigence-webui",
+  "generated_by": "resume-package",
+  "claim_ids": ["career.experience.platform-engineering", "career.capability.complex-frontend", "monitoring-sdk.architecture", "monitoring-sdk.platform-coverage"],
+  "status": "current",
+  "artifact_sha256": "a6080e6ad62110e2214aa5ba21f1b82f9c01854ea5ed5dee9012857a209a6314",
+  "claims_sha256": "f0c7e15668a45cac87ad2827869047f707fd33e365329e357b2affa5a6b8d6a9"
+}

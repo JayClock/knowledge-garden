@@ -83,7 +83,7 @@
     "aiflow",
     "monitoring-sdk"
   ],
-  "claims_sha256": "04d30d18054ed0899f4d5f7e1b4bb7faf72402805398c1111761808822d279dd",
+  "claims_sha256": "7d2bc56c680806946c64f3e3ce511a470fc9733052c1e2ac3b94f5e8ff2d2254",
   "created_at": "2026-10-19T22:42:15+08:00",
   "artifact": ".career/packages/general-projects-2-5/resume.md",
   "artifact_type": "resume",
@@ -181,7 +181,7 @@
   "project_description_policy": "domain_modeling_adapted_from_confirmed_claims_and_harness_practice; other_three_projects_verbatim_copy",
   "source_sections": [
     {
-      "career_history_project_number": 2,
+      "career_history_project_number": 1,
       "project_id": "domain-modeling",
       "output_heading": "AI 辅助研发平台｜领域建模与契约驱动交付",
       "path": "content/Knowledge/Outputs/项目介绍：AI 辅助领域建模与 API 设计平台.md",
@@ -190,7 +190,7 @@
       "additional_evidence": ".career/evidence/ai-development-harness-confirmation-2026-10-20.md",
       "source_manifest": ".career/manifests/interview-e3b3b707cb757514.json",
       "source_manifest_status_at_generation": "stale",
-      "source_file_sha256": "fefcad01826e5367178c07aaafaec37672b36389a5faeda44a514bb52cb7ce6f",
+      "source_file_sha256": "ee7d03d320c71ea483668cd4200b7eeff09ee5653ec775e2a74d058ac97b3de2",
       "base_source_text_sha256": "041501aaed9dc6d529210c881c943e4e84204cdb1eebe8ae61d07e806918df8d",
       "output_section_sha256": "e7594e47b3fba73ee63d2f3762db505054d5f205967c6bf51bf9f6000d73ea7f",
       "output_section_hash_basis": "UTF-8 text after project heading and before next level-3 heading, stripped",
@@ -219,7 +219,7 @@
       ]
     },
     {
-      "career_history_project_number": 3,
+      "career_history_project_number": 2,
       "project_id": "hateoas",
       "output_heading": "HATEOAS 与 TypeScript SDK",
       "path": "content/Knowledge/Outputs/项目介绍：HATEOAS.md",
@@ -249,7 +249,7 @@
       ]
     },
     {
-      "career_history_project_number": 4,
+      "career_history_project_number": 3,
       "project_id": "aiflow",
       "output_heading": "企业级低代码工作流引擎与复杂编排器",
       "path": "content/Knowledge/Outputs/项目介绍：企业级低代码工作流引擎.md",
@@ -257,7 +257,7 @@
       "selection": "从首个列表项开始复制全部正文；项目标题取自职业经历",
       "source_manifest": ".career/manifests/interview-fd7975331ab253ad.json",
       "source_manifest_status_at_generation": "current",
-      "source_file_sha256": "b263b8b6efe79ac0958317468b2a0f7646515799795942b3ffc43b2eb1ee142c",
+      "source_file_sha256": "1ff42f6c2f9b11fb4877900bf101f00837d91b2f8e4ab42a1f33ce00e8556d85",
       "copied_text_sha256": "cb459d942f57c1be03f677b0bcc5d2ca9df398c808c3e34f648202e3ab41bd77",
       "claim_ids": [
         "aiflow.business-scope",
@@ -274,7 +274,7 @@
       ]
     },
     {
-      "career_history_project_number": 5,
+      "career_history_project_number": 4,
       "project_id": "monitoring-sdk",
       "output_heading": "企业级前端监控 SDK 与数据采集系统",
       "path": "content/Knowledge/Outputs/项目介绍：前端埋点与监控 SDK.md",
@@ -300,12 +300,12 @@
   ],
   "career_history_source": {
     "path": "content/Knowledge/Outputs/职业经历.md",
-    "sha256": "65f127e7df0859bff13ee665d58d42c95e5a543749b5de4472ebab1f1f1b7689",
+    "sha256": "36f5ec1be954f6b632053c09c9446a3dd4c7b2cf62fe1279eb9f8116da9b381c",
     "project_numbers": [
+      1,
       2,
       3,
-      4,
-      5
+      4
     ]
   },
   "writing_decision": {

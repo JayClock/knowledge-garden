@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "artifact": ".career/opportunities/2026-infinigence-webui/outputs/opportunity-brief.md",
+  "artifact_type": "opportunity_brief",
+  "opportunity_id": "2026-infinigence-webui",
+  "generated_by": "career-assets",
+  "claim_ids": ["career.identity.full-name", "career.contact.phone", "career.contact.email", "career.location.current", "career.education.bachelor-computing", "career.experience.platform-engineering", "career.capability.complex-frontend", "timeline.shanghai-dingxin", "timeline.shanghai-yixiao", "timeline.shanghai-wuwulaike", "career.engineering.monorepo-nx-pnpm", "career.engineering.github-actions-ci", "career.engineering.nx-react-multistage-docker", "aiflow.project.scope", "aiflow.technical-stack", "aiflow.visual-editor", "aiflow.variable-editor", "aiflow.formula-editor", "aiflow.engine-core", "aiflow.dynamic-branching", "aiflow.node-plugin-system", "aiflow.execution-feedback", "aiflow.data-and-backend-boundary", "hateoas.project.sdk", "hateoas.technical-stack", "hateoas.production-and-public-phases", "hateoas.sdk-core", "hateoas.cache-invalidation", "hateoas.cache-response-contracts", "hateoas.react-adapter", "hateoas.template-driven-business-forms", "hateoas.migration-pilot", "hateoas.workspace-navigation-component-tests", "hateoas.public-package-verification", "hateoas.backend-boundary", "hateoas.release-pipeline", "monitoring-sdk.project.scope", "monitoring-sdk.architecture", "monitoring-sdk.collection", "monitoring-sdk.queue-retry", "monitoring-sdk.sourcemap", "monitoring-sdk.platform-coverage", "monitoring-sdk.backend-pipeline", "monitoring-sdk.response-performance-improvement"],
+  "status": "current",
+  "artifact_sha256": "e4a6f488da17cbe99106655d5e6ae4124a6ab26fbadbcb80b1cfcf87cab3951b",
+  "claims_sha256": "902b2e93534457874e832e56a6ae9396d3c45fafba6143da7a40c5e94bb51b76"
+}

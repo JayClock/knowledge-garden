@@ -14,8 +14,6 @@
     "career.capability.consumption-paths",
     "career.capability.validation-feedback",
     "career.capability.ai-determinism",
-    "figma-ai.project.scope",
-    "figma-ai.product-frontend-contract",
     "domain-modeling.frontend-backend-contract",
     "domain-modeling.methodology-recording",
     "hateoas.project.sdk",
@@ -47,7 +45,7 @@
     "领域建模桌面端生命周期接入｜已确认 Electron、React、React Flow、Pi SDK、AI 直接增量修改本地文件、生成阶段校验及轮次结束后全量刷新；agent_settled 已选为生命周期衔接方案｜关联 domain-modeling.agent-settled-lifecycle-design、domain-modeling.round-end-full-refresh、domain-modeling.generation-model-validation｜事件选型保持 design_only，后续核对实际订阅代码和运行记录，以及校验报告与本轮模型对应、失败或取消时的展示处理，避免把 SDK 能力视为项目验证结果｜下一步由用户提供接入代码或实际执行情况，再更新完成状态",
     "领域建模配套示例同步｜用户于 2026-10-18 明确支付模型为订单、支付请求、支付确认和支付凭证单，人工稿明确四张表，并纠正订单合同记录禁止更新；项目介绍与职业经历已同步。content/Knowledge/Outputs/案例：NestJS 与 Prisma 实现权责模型.md 仍使用 PaymentAttempt、缺少独立支付确认，并通过修改 Order.status 推动流程，与当前模型不一致，不能作为其直接实现证据｜关联 domain-modeling.persistence-and-rule-placement、domain-modeling.async-fulfillment-and-compensation、domain-modeling.payment-transaction-and-idempotency｜后续单独核对并重构 Schema、API、事务和测试示例，重新执行验证；本轮未改动示例代码，也未恢复用户已从正文删除的示例链接",
     "渐进式架构：HATEOAS 旧客户端兼容矩阵、低代码工作流引擎未知节点／插件失败降级、监控 SDK capability detection 与 fail-open、AI 服务不可用时的基础链路验证",
-    "契约主轴：领域模型到正式前后端接口契约的实际审核样本，以及设计 DSL 到前端组件实现的真实交付范围与消费记录",
+    "契约主轴：领域模型到正式前后端接口契约的实际审核样本与消费记录",
     "领域建模同步功能补证｜2026-10-20 用户明确当前技术栈不需要 MCP、FM JSON；本轮按技术栈选材纠正处理，不否定此前独立确认的同步功能，默认不再据此扩展当前技术栈｜关联 domain-modeling.technical-stack、domain-modeling.mcp-local-sync、domain-modeling.fm-snapshot-export、domain-modeling.mcp-snapshot-access、domain-modeling.local-snapshot-validation、domain-modeling.local-model-publication｜仅在后续明确需要展开同步功能时，再补个人动作与运行验证材料；不作为当前技术栈完善的待办",
     "监控系统响应性能指标的技术追问补充｜2026-10-18 用户明确纠正：50% 指标是确认过的；系统响应性能提升 50% 已作为 confirmed result 恢复到项目介绍与职业经历，数值及成果不再作为真实性待确认项｜关联 monitoring-sdk.response-performance-improvement｜后续仅为测量方法追问补充具体指标定义、时间范围、对比条件与原始数据；补充前保持已确认原表述，不换算为响应时间下降、吞吐量提升或 SDK 开销变化",
     "领域建模内部模块与桌面端调用补证｜2026-10-19 用户明确 Evidence-Framework 是项目自身组成部分，建模、模型检查与 API 交付按平台内部能力表达；已按 b67af39 核对 FM 有据增量维护、一致性与范围检查、有效结果交接及静态测试向量，旧来源记录叙事仅保留历史｜关联 domain-modeling.fm-incremental-validation、domain-modeling.scope-api-handoff、domain-modeling.api-static-test-vectors｜项目组成关系已确认；后续仅补桌面端实际调用范围检查、API 交接和运行验收的样本及个人编码分工，具体调用与验证范围沿用各自证据"

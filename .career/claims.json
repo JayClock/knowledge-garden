@@ -171,7 +171,7 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认个人主轴从契约出发；领域建模平台承载前后端契约，Figma AI 承载产品设计与前端实现之间的契约"
+          "locator": "用户明确确认个人主轴从契约出发；领域建模平台承载前后端契约"
         }
       ],
       "metrics": [],
@@ -248,94 +248,6 @@
       "tags": [
         "timeline",
         "wuwulaike"
-      ]
-    },
-    {
-      "id": "figma-ai.project.scope",
-      "statement": "独立设计并实现内部研发类 Figma AI 设计生成工具，覆盖设计 DSL、Canvas 编辑器、多智能体生成、Visual Harness、只读 MCP、跨进程 Bridge 和桌面端交付链路",
-      "kind": "project_scope",
-      "project_id": "figma-ai",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/企业级类 Figma AI 设计与应用生成引擎架构设计与实践面试专项突击.md",
-          "locator": "项目范围"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：内部研发类 Figma AI 设计生成工具"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "项目是内部研发工具，不派生外部客户、商业化和未经核验的效率数字"
-      ],
-      "tags": [
-        "ai",
-        "figma",
-        "canvas",
-        "mcp",
-        "electron"
-      ]
-    },
-    {
-      "id": "figma-ai.product-frontend-contract",
-      "statement": "以设计 DSL 将图层、布局、样式、变量和资产关系结构化为产品设计与前端实现之间的设计契约，并由 Agent 生成、Canvas 编辑器、导入链路与只读 MCP 共同消费",
-      "kind": "project_contribution",
-      "project_id": "figma-ai",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/1.D2C!T2UI 全链路拆解、AI 设计生成引擎原理与项目初始化.md",
-          "locator": "设计 DSL 与设计到前端消费链路"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认 Figma AI 的主定位是产品设计与前端实现之间的契约"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "当前已经建立设计契约和消费路径，不表述为已完成产品内完整页面代码生成或 Design ↔ Code 双向同步",
-        "不把 AI 生成本身替代产品设计决定或前端实现验收"
-      ],
-      "tags": [
-        "design-contract",
-        "product-design",
-        "frontend",
-        "dsl"
-      ]
-    },
-    {
-      "id": "figma-ai.runtime.boundary",
-      "statement": "AI 运行时先通过本地 Codex CLI 验证生成链路，后迁移为桌面端内置 Pi SDK Agent Runtime，并以 Schema、revision、ownership 和人工确认约束生成写入",
-      "kind": "project_contribution",
-      "project_id": "figma-ai",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Agent 生成与质量闭环"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "内置表示随应用交付，不表示取消进程隔离",
-        "完整 Design to Code 双向同步不是已完成事实"
-      ],
-      "tags": [
-        "pi-sdk",
-        "agent-runtime",
-        "schema",
-        "revision"
       ]
     },
     {
@@ -841,7 +753,7 @@
     },
     {
       "id": "career.capability.complex-frontend",
-      "statement": "复杂前端能力覆盖 Canvas 和 React Flow 编辑器、Tiptap 变量编辑器、动态属性面板，以及视口、拖拽、选区、浮动菜单和弱网错误处理",
+      "statement": "复杂前端能力覆盖 React Flow 编辑器、Tiptap 变量编辑器、动态配置表单，以及视口、拖拽、选区、浮动菜单和弱网错误处理",
       "kind": "positioning",
       "ownership": "direct",
       "completion": "validated",
@@ -861,7 +773,6 @@
       "tags": [
         "frontend",
         "editor",
-        "canvas",
         "react-flow",
         "tiptap"
       ]
@@ -916,7 +827,7 @@
     },
     {
       "id": "career.capability.contract-lifecycle",
-      "statement": "能够围绕契约的形成、表达、消费、执行、验证和演进组织平台工程：用领域模型连接前后端，用设计 DSL 连接产品设计与前端，用工作流协议连接编辑器与运行时，再用测试、监控、版本和人工 Gate 验证契约是否兑现",
+      "statement": "能够围绕契约的形成、表达、消费、执行、验证和演进组织平台工程：用领域模型连接前后端，用工作流协议连接编辑器与运行时，再用测试、监控、版本和人工 Gate 验证契约是否兑现",
       "kind": "positioning",
       "ownership": "direct",
       "completion": "validated",
@@ -924,7 +835,7 @@
       "evidence": [
         {
           "type": "user_confirmation",
-          "locator": "用户明确确认个人主轴从契约出发；领域建模平台是前后端契约，Figma AI 是产品设计与前端实现之间的契约"
+          "locator": "用户明确确认个人主轴从契约出发；领域建模平台是前后端契约"
         },
         {
           "type": "file",
@@ -979,11 +890,6 @@
           "locator": "core、browser、React／Vue 适配与插件架构"
         },
         {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/3.基于 Codex 多智能体引擎、Harness 内核架构与设计产物自验证落地.md",
-          "locator": "DesignPatch、revision、Visual Harness 与人工接管"
-        },
-        {
           "type": "user_confirmation",
           "locator": "由现有 confirmed 项目事实综合；用户要求把渐进式基线、增强层、失败边界和演进兼容补入全部职业材料"
         }
@@ -991,7 +897,7 @@
       "metrics": [],
       "constraints": [
         "不把分层、懒加载、骨架屏或分批渲染自动等同于严格的 Progressive Enhancement",
-        "不声称 Canvas、协同编辑器或 SPA 在没有 JavaScript 时仍能完成全部核心任务",
+        "不声称编辑器或 SPA 在没有 JavaScript 时仍能完成全部核心任务",
         "各项目的基础能力、降级路径、完成状态和量化结果仍以对应 confirmed claim 为准"
       ],
       "tags": [
@@ -1048,7 +954,7 @@
     },
     {
       "id": "career.capability.ai-determinism",
-      "statement": "能够把适合 LLM 的语义理解和候选生成，与必须由 DSL、Schema、版本、人工审核和质量门禁控制的确定性执行分开",
+      "statement": "能够把适合 LLM 的语义理解和候选生成，与必须由 Schema、版本、人工审核和质量门禁控制的确定性执行分开",
       "kind": "positioning",
       "ownership": "direct",
       "completion": "validated",
@@ -1070,324 +976,6 @@
         "harness",
         "determinism"
       ]
-    },
-    {
-      "id": "figma-ai.architecture.dsl",
-      "statement": "以设计 DSL 统一 Agent 输出、Canvas 编辑器、原生 JSON／Pencil／Figma 导入和 MCP 读取的数据结构，并按编辑器内核、Agent 生成、MCP 接入与多端交付划分架构",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/1.D2C!T2UI 全链路拆解、AI 设计生成引擎原理与项目初始化.md",
-          "locator": "DSL 与四层架构"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／系统架构"
-        }
-      ],
-      "metrics": [],
-      "constraints": [],
-      "tags": [
-        "dsl",
-        "architecture"
-      ],
-      "project_id": "figma-ai"
-    },
-    {
-      "id": "figma-ai.editor.features",
-      "statement": "基于 React 19、Canvas、Electron 和 Tailwind 实现三栏编辑器，覆盖导入、图层树、属性面板、缩放平移、节点创建、单选多选框选、拖拽与跨容器挂载、Auto Layout、基础吸附、批量属性和撤销重做",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/2.可视化编辑器全栈开发、Agent 面板、 DSL 数据内核层设计.md",
-          "locator": "编辑器实现"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／设计 DSL 与可视化编辑器"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "基础吸附只完成节点对齐；分布对齐和智能间距仍是后续方向"
-      ],
-      "tags": [
-        "canvas",
-        "editor",
-        "undo-redo"
-      ],
-      "project_id": "figma-ai"
-    },
-    {
-      "id": "figma-ai.agent-orchestration",
-      "statement": "实现 Coordinator 与 Collaborator 多智能体编排：Coordinator 生成共享 Variables 和最多 5 个 Assignment，Collaborator 并行生成 Fragment，通过 ownership、固定 regionId、revision 与串行合并队列控制一致性",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/3.基于 Codex 多智能体引擎、Harness 内核架构与设计产物自验证落地.md",
-          "locator": "多智能体编排"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／Agent 生成与质量闭环"
-        }
-      ],
-      "metrics": [],
-      "constraints": [],
-      "tags": [
-        "multi-agent",
-        "revision",
-        "ownership"
-      ],
-      "project_id": "figma-ai"
-    },
-    {
-      "id": "figma-ai.visual-harness",
-      "statement": "实现 Visual Harness 的 validate → repair → revalidate 闭环，定位具体 nodeId 并局部替换问题节点，默认最多自动修复两轮，超过上限保留当前文档和 Run 历史",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/3.基于 Codex 多智能体引擎、Harness 内核架构与设计产物自验证落地.md",
-          "locator": "Visual Harness"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／视觉验证—修复循环"
-        }
-      ],
-      "metrics": [],
-      "constraints": [],
-      "tags": [
-        "visual-harness",
-        "repair",
-        "quality-gate"
-      ],
-      "project_id": "figma-ai"
-    },
-    {
-      "id": "figma-ai.run-lifecycle",
-      "statement": "Generation Run 和 Activity 表达生成阶段、增量、失败与取消；Run 与 Thread 按项目持久化，支持历史回溯、断点恢复、用户取消和短生命周期 Session 释放",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/3.基于 Codex 多智能体引擎、Harness 内核架构与设计产物自验证落地.md",
-          "locator": "Run、Activity 与历史"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／过程反馈"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "取消不会自动回滚已经写入项目的中间结果"
-      ],
-      "tags": [
-        "state-machine",
-        "history",
-        "cancel"
-      ],
-      "project_id": "figma-ai"
-    },
-    {
-      "id": "figma-ai.mcp-bridge",
-      "statement": "实现五类只读 MCP 设计资产工具，并通过 Stdio Sidecar、Unix Socket／Windows Named Pipe 和 Electron 主进程访问编辑器状态，处理超时、消息上限、错误分级、应用未启动与打包路径差异",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/4.MCP 设计资产接入、服务端开发与多端交付及面试实战复盘.md",
-          "locator": "MCP、Bridge 与 Sidecar"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／MCP 接入与桌面交付"
-        }
-      ],
-      "metrics": [],
-      "constraints": [],
-      "tags": [
-        "mcp",
-        "sidecar",
-        "ipc",
-        "electron"
-      ],
-      "project_id": "figma-ai"
-    },
-    {
-      "id": "figma-ai.desktop-delivery",
-      "statement": "完成 Electron Main／Preload／Renderer 三入口构建、extraResource 原生资源打包、Fuses 安全加固和 macOS／Windows 可运行安装包输出",
-      "kind": "result",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/4.MCP 设计资产接入、服务端开发与多端交付及面试实战复盘.md",
-          "locator": "多端交付"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／MCP 接入与桌面交付"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "代码签名、公证、自动更新和 Linux 正式分发不是已完成成果"
-      ],
-      "tags": [
-        "electron",
-        "macos",
-        "windows",
-        "packaging"
-      ],
-      "project_id": "figma-ai"
-    },
-    {
-      "id": "figma-ai.fig-import-boundary",
-      "statement": "实现本地 .fig 归档解包、Kiwi 二进制解码、父子关系重建和内部 DSL 映射",
-      "kind": "project_contribution",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "file",
-          "path": "content/Knowledge/Sources/企业级类 Figma AI 设计与应用生成/2.可视化编辑器全栈开发、Agent 面板、 DSL 数据内核层设计.md",
-          "locator": "Figma 文件导入"
-        },
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／设计 DSL 与可视化编辑器"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "Auto Layout 属性未完整导入",
-        "不支持节点会降级或跳过",
-        "样式去重与 Design Token 提取仍待优化"
-      ],
-      "tags": [
-        "figma",
-        "kiwi",
-        "etl"
-      ],
-      "project_id": "figma-ai"
-    },
-    {
-      "id": "figma-ai.current-output-boundary",
-      "statement": "当前核心产物是 L1 高质量设计 DSL 与可编辑设计文档；只读 MCP 可辅助外部 Agent 将选中 Frame 生成 React 组件",
-      "kind": "boundary",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／项目角色与当前阶段"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "产品内置完整页面代码生成与 Design ↔ Code 双向同步属于后续阶段"
-      ],
-      "tags": [
-        "d2c",
-        "design-to-code"
-      ],
-      "project_id": "figma-ai"
-    },
-    {
-      "id": "figma-ai.reimplementation-scale",
-      "statement": "代表性内部重实现包含 1 个 Electron 应用和 9 个 package，静态快照有 197 个非测试 TypeScript／TSX 文件约 26,981 行、40 个测试文件约 12,205 行和 246 个静态测试用例",
-      "kind": "result",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／可验证工程规模与开发轨迹"
-        }
-      ],
-      "metrics": [
-        {
-          "name": "implementation_files",
-          "value": 197,
-          "scope": "representative_reimplementation"
-        },
-        {
-          "name": "implementation_loc",
-          "value": 26981,
-          "scope": "representative_reimplementation"
-        },
-        {
-          "name": "test_files",
-          "value": 40,
-          "scope": "representative_reimplementation"
-        },
-        {
-          "name": "static_test_cases",
-          "value": 246,
-          "scope": "representative_reimplementation"
-        }
-      ],
-      "constraints": [
-        "仅用于内部核验持续复现，不进入对外简历",
-        "快照仍是 Codex CLI 阶段，不镜像后续 Pi SDK 迁移"
-      ],
-      "tags": [
-        "internal-verification",
-        "reimplementation"
-      ],
-      "project_id": "figma-ai"
-    },
-    {
-      "id": "figma-ai.test-execution-boundary",
-      "statement": "现有测试材料静态覆盖编辑器交互、生成链路、Schema、历史持久化和 MCP 跨进程风险",
-      "kind": "boundary",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／可验证工程规模与开发轨迹"
-        }
-      ],
-      "metrics": [],
-      "constraints": [
-        "当时环境缺少子项目 node_modules，只做静态核对，没有实际执行测试套件"
-      ],
-      "tags": [
-        "testing",
-        "static-review"
-      ],
-      "project_id": "figma-ai"
     },
     {
       "id": "domain-modeling.internal-use",
@@ -3166,29 +2754,6 @@
       "project_id": "monitoring-sdk"
     },
     {
-      "id": "figma-ai.asset-protocol",
-      "statement": "MCP 资产链路从节点树提取图片，以 SHA256 形成内容寻址 ID，并用 miaoma-asset:// URI 解耦设计节点和二进制资源",
-      "kind": "project_contribution",
-      "project_id": "figma-ai",
-      "ownership": "direct",
-      "completion": "implemented",
-      "status": "confirmed",
-      "evidence": [
-        {
-          "type": "user_confirmation",
-          "locator": "用户明确确认；事实范围：Figma AI／MCP 接入与桌面交付"
-        }
-      ],
-      "metrics": [],
-      "constraints": [],
-      "tags": [
-        "mcp",
-        "asset",
-        "sha256",
-        "uri"
-      ]
-    },
-    {
       "id": "hateoas.response-formats",
       "statement": "SDK 内置 HAL／HAL-FORMS、JSON:API、Siren、Collection+JSON、HTML、Text、Event Stream 和 Binary 响应解析，并允许按 Content-Type 注册自定义 StateFactory",
       "kind": "project_contribution",
@@ -3321,7 +2886,7 @@
         "Spring Boot、TypeScript、示意表名、示例工具名、版本号与目录路径不自动成为实际技术栈或部署配置",
         "不补写双向编辑合并、数据库 CDC 或多人在线协同编辑",
         "实现完成不等于方案中的测试用例已执行通过，不补写性能或业务收益数字",
-        "不将 Figma AI 项目的只读 MCP、Stdio Sidecar 或跨进程 Bridge 实现挪用为本项目事实"
+        "不将其他项目的实现挪用为本项目事实"
       ],
       "tags": [
         "mcp",
@@ -3558,7 +3123,7 @@
       "metrics": [],
       "constraints": [
         "只确认项目技术栈和工作方式，单项个人编码范围沿用已有职责，不扩写为每个模块均独立实现",
-        "不把类 Figma 参考源码中的 revision、ownership、串行合并队列、撤销重做、Codex 子进程或 Visual Harness 移植为本项目已实现事实",
+        "不把其他项目参考源码中的机制移植为本项目已实现事实",
         "不补写本地数据库、文件监听库、IPC 通道、自动保存或模型文件事务实现",
         "2026-10-20 用户明确建模平台的技术栈不需要 MCP、FM JSON；当前技术栈消费 domain-modeling.technical-stack，不再从同步模块推导这些列项"
       ],

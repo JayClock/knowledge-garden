@@ -5,7 +5,7 @@ tags:
   - resume/fullstack
   - resume/ai
 date: 2026-08-22 17:33:04
-updated: 2026-10-21 08:08:40
+updated: 2026-10-21 09:31:31
 ---
 
 # 项目介绍：AI 辅助领域建模与 API 设计平台

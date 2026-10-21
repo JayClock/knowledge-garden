@@ -76,7 +76,7 @@
   ],
   "status": "current",
   "artifact_sha256": "3723a3c0f17201c158d7e20e263e795453637ca53fe49761ec8800ad71a067d1",
-  "claims_sha256": "5ba633a6804fe67759106cf359362cbacd4bf4370cdc65b1fb3d1a21069e6e4e",
+  "claims_sha256": "8ac45ffa9f04cbc290ea0c0e51e21a341f6d499c05a36ab27d5caf754a0208d7",
   "source_files": [
     {
       "root": "repo",
@@ -91,7 +91,7 @@
     {
       "root": "repo",
       "path": "content/Knowledge/Outputs/职业经历.md",
-      "sha256": "65f127e7df0859bff13ee665d58d42c95e5a543749b5de4472ebab1f1f1b7689"
+      "sha256": "36f5ec1be954f6b632053c09c9446a3dd4c7b2cf62fe1279eb9f8116da9b381c"
     },
     {
       "root": "repo",
@@ -101,7 +101,7 @@
     {
       "root": "repo",
       "path": "content/Knowledge/Outputs/项目介绍：AI 辅助领域建模与 API 设计平台.md",
-      "sha256": "4132bd32a2c436a4938a2e984fdfa6504497ff95f65b8685cbdeb9968efb20a3"
+      "sha256": "ee7d03d320c71ea483668cd4200b7eeff09ee5653ec775e2a74d058ac97b3de2"
     },
     {
       "root": "repo",
@@ -111,12 +111,7 @@
     {
       "root": "repo",
       "path": "content/Knowledge/Outputs/项目介绍：企业级低代码工作流引擎.md",
-      "sha256": "b263b8b6efe79ac0958317468b2a0f7646515799795942b3ffc43b2eb1ee142c"
-    },
-    {
-      "root": "repo",
-      "path": "content/Knowledge/Outputs/项目介绍：企业级类 Figma AI 设计与应用生成.md",
-      "sha256": "4342d92a31aaca82df0587881a1591f77523e316bca4dbea8000afd28ebd7879"
+      "sha256": "1ff42f6c2f9b11fb4877900bf101f00837d91b2f8e4ab42a1f33ce00e8556d85"
     },
     {
       "root": "repo",
@@ -126,8 +121,8 @@
     {
       "root": "state",
       "path": "manifests/general-projects-2-5-resume.json",
-      "sha256": "537998416404f4c304957f16c7621352bff346c23aff0329a60d5269c508e570"
+      "sha256": "edd7687c131c575a3e5d4023b04a465e5c7052adee480c446a2c216cc2d99a81"
     }
   ],
-  "reviewed_at": "2026-10-21T09:16:33+08:00"
+  "reviewed_at": "2026-10-21T09:53:52+08:00"
 }

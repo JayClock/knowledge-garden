@@ -77,7 +77,7 @@
     "monitoring-sdk.platform-coverage"
   ],
   "status": "current",
-  "artifact_sha256": "fb80062125535cd2e81cc9b41039b7bdb8b44c3b17f9a5c12e40c5ad57227bf2",
-  "claims_sha256": "e2731c94ecd38d46707545e17a306d241e9d6618971cf65955ae7c58f3a2f4fd",
+  "artifact_sha256": "326082b9d024c3fe5a8795c81ce91e9e0793c98eca81b6861b5a499de3696b03",
+  "claims_sha256": "718fbee45d0b76f870a6e04fa74ea15109ee5aaba4385fbd5098391aad6a66de",
   "updated_at": "2026-10-21T08:20:09+08:00"
 }

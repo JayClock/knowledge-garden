@@ -5,23 +5,13 @@
 ## 能力概述
 
 - **5 年以上软件开发经验**，以 React、TypeScript 为核心，长期开发低代码平台、复杂编辑器与内部研发工具。
-- 基于 Canvas、React Flow、Tiptap 实现画布、动态属性面板、变量和公式编辑；在工作流界面中使用 Tailwind CSS、Radix UI。
+- 基于 React Flow、Tiptap 实现画布、动态配置表单、变量和公式编辑；在工作流界面中使用 Tailwind CSS、Radix UI。
 - 设计并实现 React / Vue / Vanilla JS 多框架监控 SDK，通过核心包与框架适配包分层复用采集能力。
-- 独立完成 Electron 内部工具，覆盖 Main / Preload / Renderer 构建、Fuses 安全加固及 macOS / Windows 安装包交付。
 - 用 TypeScript SDK、HAL / HAL-FORMS、Zod 与动态表单连接接口和页面，处理缓存失效、请求去重与多端消费。
 - 使用 Nx + pnpm 组织工程、Vite 构建 SDK；配置 GitHub Actions 检查、测试和构建，编写 React 项目的多阶段 Dockerfile。
-- 将 AI 生成接入设计工具，以结构校验、版本控制及局部修复约束输出；通过自动化测试、运行日志和监控支持交付验证。
+- 通过自动化测试、运行日志和监控支持交付验证。
 
 ## 项目经历
-
-### 企业级类 Figma AI 设计与应用生成工具｜上海鼎歆
-
-独立设计并实现内部研发工具，以设计 DSL 连接自然语言生成、可编辑设计文档与前端资产消费。
-
-- 基于 React 19、Canvas、Electron 与 Tailwind CSS 构建三栏编辑器，实现图层树、属性面板、缩放平移、单选 / 多选 / 框选、跨容器拖拽、Auto Layout、基础吸附及撤销重做。
-- 用统一 DSL 表达图层、布局、样式、变量和资产关系；实现 Coordinator / Collaborator 并行生成，以 ownership、regionId、revision 和串行合并队列控制写入一致性。
-- 实现 Visual Harness 的“校验 → 局部修复 → 再校验”，按 nodeId 定位并替换问题节点，最多自动修复两轮；运行时从本地 Codex CLI 验证迁移到内置 Pi SDK。
-- 完成五类只读 MCP 工具与跨进程 Bridge，辅助外部 Agent 读取选中 Frame 生成 React 组件；打通 Electron 三入口构建、资源打包与 Fuses 加固，产出 macOS / Windows 可运行安装包。
 
 ### 企业级低代码工作流引擎｜上海易校
 
