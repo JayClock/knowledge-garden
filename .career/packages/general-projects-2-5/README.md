@@ -3,8 +3,9 @@
 ## 文件
 
 - [通用简历](resume.md)：已更新项目名称、AI 编码实践及 HATEOAS 技术栈，仍保留四个项目；没有新增独立 Harness 项目。
+- [求职招呼语完整提示词](../../templates/求职招呼语提示词.md)：按用户持续维护授权保存，嵌入本包最新 Markdown 简历全文，保留「角色 → input → rules → outputformat」结构；项目介绍、简历等素材变化后经事实审核同步，未确认内容不直接传播。配置与依赖检查由 Career Harness 维护，不影响各岗位包、Word 或历史副本。
 - [AI 编码工作流逐字稿](../../../content/Knowledge/Outputs/AI%20编码工作流：双层循环逐字稿.md)：纯口述正文，将双层循环、坏味道及对应处理动作串成一段完整回答。
-- [通用简历 Word 版](钟杰-通用简历.docx)：保留上一版，Markdown 的项目名称、编码流程及 HATEOAS 技术栈尚未同步，待更新后重新检查排版。
+- [通用简历 Word 版](钟杰-通用简历.docx)：技术栈及提交校验表述已核验同步，保留现有文件与两页排版；项目名称、AI 编码流程和能力概述的其他正文差异仍待同步。
 - [通用自我介绍](self-introduction.md)：保留上一版，尚未同步本轮项目名称与编码工作流表述。
 
 本包不绑定公司或 JD，采用「全栈偏前端的平台工程师」定位，以「契约驱动的全流交付」串起四个项目。独立保存，不覆盖全局自我介绍或已有岗位包。
@@ -22,7 +23,7 @@
 
 ## 2026-10-21 技术栈同步
 
-HATEOAS 当前技术栈统一为 TypeScript、React Hooks、HAL / HAL-FORMS、Zod、Nx + pnpm、Vite、Vitest、MSW、Testing Library、TypeDoc。项目稿、职业经历、Markdown 简历及审核包中的 HATEOAS Markdown 副本已同步；字段校验统一按动作模板生成 Zod 规则、提交前验证数据表达。工作流与监控项目的构建工具列项也已精简，并同步职业经历、Markdown 简历、审核副本、审核版 Word 和压缩包的技术表述。通用 Word 正在打开，保留原文件待关闭后同步；此前其他正文差异继续按原记录待更新。
+HATEOAS 当前技术栈统一为 TypeScript、React Hooks、HAL / HAL-FORMS、Zod、Nx + pnpm、Vite、Vitest、MSW、Testing Library、TypeDoc。项目稿、职业经历、Markdown 简历及审核包中的 HATEOAS Markdown 副本已同步；字段校验统一按动作模板生成 Zod 规则、提交前验证数据表达。工作流与监控项目的构建工具列项也已精简，并同步职业经历、Markdown 简历、审核副本、审核版 Word 和压缩包的技术表述。用户要求继续后，已确认通用 Word 的技术栈及提交校验表述与 Markdown 一致，并完成两页排版核验，无需重写现有文件；此前其他正文差异继续按原记录待更新。
 
 ## 2026-10-20 项目表达调整
 

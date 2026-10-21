@@ -129,8 +129,8 @@
   "notes": "通用审核包：自我介绍取全局基础版，简历取通用简历 DOCX，项目介绍为四个简历项目的 Markdown 副本（去除 Obsidian frontmatter）。",
   "claims_sha256": "253231775589046bbf81bd01df9fdb11608335f15d1c306276f6dd5621c7e89f",
   "archive_sha256": "16d018ab2d67977054d46efa10e2fd86a8bd3d827b110c26f1055843c0da4e10",
-  "updated_at": "2026-10-21T08:20:09+08:00",
-  "stale_reason": "2026-10-21 已同步 HATEOAS 技术栈及运行时校验表述，并清理工作流与监控的 tsup、tsc 列项；三份审核项目副本、审核版 Word 与压缩包中的对应文件已更新。完整原稿的 HATEOAS 量化表述与建模会议背景仍待独立核对；审核 Word 保留此前版本的项目名称和 AI 编码流程，局部技术同步不代表这些正文差异已解决。通用 Word 正在打开，未覆盖。",
+  "updated_at": "2026-10-21T08:57:03+08:00",
+  "stale_reason": "2026-10-21 已同步 HATEOAS 技术栈及运行时校验表述，并清理工作流与监控的 tsup、tsc 列项；三份审核项目副本、审核版 Word 与压缩包中的对应文件已更新。完整原稿的 HATEOAS 量化表述与建模会议背景仍待独立核对；审核 Word 保留此前版本的项目名称和 AI 编码流程，局部技术同步不代表这些正文差异已解决。用户要求继续后，已核验现有通用 Word 的技术表述与 Markdown 一致，原文件及人工修改保留；不再存在打开文件造成的技术同步阻塞。",
   "synchronized_at": "2026-10-21T08:20:09+08:00",
   "technical_stack_validation": {
     "scope": "existing_review_docx_technical_wording_only",
@@ -142,8 +142,10 @@
     "pages": 2,
     "visual_review": "native Word contact sheet reviewed",
     "archive_updated_entries": 4,
-    "blocked_artifact": ".career/packages/general-projects-2-5/钟杰-通用简历.docx",
-    "blocked_reason": "open in Word; original preserved"
+    "general_word_verified_artifact": ".career/packages/general-projects-2-5/钟杰-通用简历.docx",
+    "general_word_technical_wording_verified": true,
+    "general_word_preserved": true,
+    "general_word_verified_at": "2026-10-21T08:57:03+08:00"
   },
   "artifact_sha256": "76d657c2e2af37cf97a80f080b2d05b56928a5e7f149b19ca7568503025d663c"
 }
