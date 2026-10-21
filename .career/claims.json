@@ -3916,6 +3916,32 @@
         "个人设计和使用的确认不据此扩写为独立编写仓库每一行检查器或全部工程配置"
       ],
       "tags": ["instruction-governance", "agents-md", "guides-checker", "knowledge-maintenance"]
+    },
+    {
+      "id": "career.ai-development.pattern-baseline",
+      "statement": "在 AI 辅助研发中实际使用参考实现、自动化架构约束、存量违规基线与持续清理，规范新增代码并渐进改造存量代码，治理 Agent 持续复制待淘汰旧模式的问题",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-21 用户指定模式复制漂移文章澄清含义；在逐项询问正向范例、自动化架构约束、存量违规基线与持续清理的实际使用情况后，明确答复：都用过了"
+        },
+        {
+          "type": "file",
+          "path": ".career/evidence/pattern-baseline-confirmation-2026-10-21.md",
+          "locator": "用户确认与已确认范围"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "确认的是四项机制的实际使用，不推定全部检查器由本人独立开发，不新增具体项目或公司归属、团队推广范围及效率数字",
+        "课程中的 Spring Boot、ArchUnit、Controller / Mapper 示例仅用于概念说明，不作为个人技术栈或交付事实"
+      ],
+      "tags": ["ai-coding", "harness", "pattern-baseline", "architecture-checks", "incremental-modernization"]
     }
   ]
 }
