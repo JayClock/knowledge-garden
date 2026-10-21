@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "artifact": "content/Knowledge/Outputs/前端工程化：从开发到部署的自动化与标准化.md",
+  "artifact_type": "interview_script",
+  "opportunity_id": null,
+  "generated_by": "interview-package",
+  "claim_ids": [
+    "career.engineering.github-actions-ci",
+    "career.engineering.nx-react-multistage-docker",
+    "hateoas.release-pipeline",
+    "career.engineering.monorepo-nx-pnpm"
+  ],
+  "status": "stale",
+  "stale_reason": "本轮新增的快速口述及 CI／Docker 实践段已对应 confirmed claims；保留的原有完整口述含环境约定、Nx 模块约束与缓存、Prettier／ESLint、Husky＋lint-staged 的个人实践，尚待分别核对。触发条件、具体命令、镜像与文件路径的通用方案以参考示例呈现，不作为个人历史配置；未据此新增部署成果。",
+  "artifact_sha256": "3461bd8fadb654eb249867b373d0c8d20809bd19b75c6ce9e8829eb1341f7f87",
+  "claims_sha256": "8d8e1d6326fc7d901a1d44e430d3670765af5fb4b1dbba052cdd0d7906470846",
+  "updated_at": "2026-10-21T08:20:09+08:00"
+}
