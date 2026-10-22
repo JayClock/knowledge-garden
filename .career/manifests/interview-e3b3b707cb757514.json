@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "artifact": "content/Knowledge/Outputs/项目介绍：AI 辅助领域建模与 API 设计平台.md",
+  "artifact": "content/Knowledge/Outputs/项目介绍：AI 原生领域建模与 API 设计平台.md",
   "artifact_type": "interview_script",
   "generated_by": "interview-package",
   "claim_ids": [
@@ -20,8 +20,10 @@
     "domain-modeling.model-to-api-mapping",
     "domain-modeling.persistence-and-rule-placement",
     "domain-modeling.scenario-acceptance",
+    "career.ai-development.modeling-inputs",
     "career.engineering.monorepo-nx-pnpm",
-    "domain-modeling.technical-stack"
+    "domain-modeling.technical-stack",
+    "domain-modeling.technology-agnostic-portability"
   ],
   "section_claim_ids": {
     "简历描述": [
@@ -38,33 +40,76 @@
       "domain-modeling.frontend-backend-contract",
       "domain-modeling.model-to-api-mapping",
       "domain-modeling.scenario-acceptance",
+      "career.ai-development.modeling-inputs",
       "career.engineering.monorepo-nx-pnpm",
-      "domain-modeling.technical-stack"
+      "domain-modeling.technical-stack",
+      "domain-modeling.technology-agnostic-portability"
     ]
   },
   "resume_item_sources": {
-    "权责驱动建模": {
+    "运营合约建模": {
       "heading": "为什么从权责关系开始建模？怎样让业务讨论收敛？",
       "claim_ids": [
         "domain-modeling.skill-workflow",
-        "domain-modeling.methodology-recording"
+        "domain-modeling.methodology-recording",
+        "career.ai-development.modeling-inputs"
       ],
       "method_reference": "content/Knowledge/Sources/如何落地业务建模/15｜8X Flow（中）：如何通过模型发现业务系统的变化点？-如何落地业务建模-极客时间.md"
     },
-    "模型驱动 API 交付": {
+    "AI Coding 交付输入": {
       "heading": "难点二：怎样把业务模型转成可验收的 API 契约？",
       "claim_ids": [
+        "career.ai-development.modeling-inputs",
         "domain-modeling.model-to-api-mapping",
         "domain-modeling.scenario-acceptance",
         "domain-modeling.model-driven-delivery",
-        "domain-modeling.api-static-test-vectors"
+        "domain-modeling.api-static-test-vectors",
+        "domain-modeling.frontend-backend-contract"
+      ]
+    },
+    "双层循环 Harness": {
+      "heading": "难点一：怎样让 AI 多轮增量建模可控？",
+      "claim_ids": [
+        "domain-modeling.skill-workflow",
+        "domain-modeling.generation-model-validation",
+        "career.ai-development.modeling-inputs"
+      ]
+    },
+    "桌面端增量建模": {
+      "heading": "难点一：怎样让 AI 多轮增量建模可控？",
+      "claim_ids": [
+        "domain-modeling.desktop-file-modeling",
+        "domain-modeling.round-end-full-refresh",
+        "domain-modeling.generation-model-validation"
       ]
     }
   },
   "status": "stale",
   "stale_reason": "本轮原文已不含半小时成果，现为两个小时难以收敛的会议背景与渐进流程；保留用户原文，该时长背景尚无独立确认，不进入下游材料。CRM 按设计示例使用，未升级为真实客户或生产交付案例。",
   "technical_stack_source": ".career/evidence/technical-stack-source-audit-2026-10-20.md",
-  "artifact_sha256": "fefcad01826e5367178c07aaafaec37672b36389a5faeda44a514bb52cb7ce6f",
-  "claims_sha256": "f3dff7d59dfcf70953f9578ff021f4525ceb6df6da0dd9e9205b4c9544b73798",
-  "updated_at": "2026-10-20T16:01:41+08:00"
+  "artifact_sha256": "b205a5fd18da02743ea3bbde835c8a6a4da3e2964c2d0ea18207c3714f89d777",
+  "claims_sha256": "6f46cd434b0fa8a3f953fca71f0a0493cfab9ad056716cc08fe9dcea4373224a",
+  "updated_at": "2026-10-22T16:53:21+08:00",
+  "content_refactor_decision": {
+    "authorized_at": "2026-10-22T16:21:45+08:00",
+    "basis": "用户要求重构第一个项目；统一为企业运营合约、AI Coding 交付输入、双层循环 Harness 与桌面端增量建模四层结构。",
+    "narrative_order": [
+      "企业运营合约",
+      "业务模型／RESTful API／测试数据",
+      "AI Coding 反馈循环",
+      "桌面端承载"
+    ],
+    "downstream": [
+      "general_resume_markdown",
+      "resume_docx",
+      "resume_pdf",
+      "greeting_template"
+    ]
+  },
+  "ai_native_and_portability_decision": {
+    "authorized_at": "2026-10-22T16:53:21+08:00",
+    "basis": "用户将项目命名从 AI 辅助更新为 AI 原生，并要求业务理解与 AI Coding 建模明确体现技术无关可迁移性。",
+    "expression": "以业务语义和契约剥离语言、框架细节，为不同技术栈的前后端实现与 AI Coding 提供可迁移的上下文和验证依据。",
+    "claim_id": "domain-modeling.technology-agnostic-portability"
+  }
 }

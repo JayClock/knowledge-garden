@@ -41,7 +41,6 @@
       "monitoring-sdk.project.scope",
       "monitoring-sdk.architecture",
       "monitoring-sdk.collection",
-      "monitoring-sdk.sourcemap",
       "monitoring-sdk.backend-pipeline",
       "monitoring-sdk.platform-boundary",
       "monitoring-sdk.platform-coverage",
@@ -95,7 +94,56 @@
   },
   "status": "current",
   "technical_stack_source": ".career/evidence/project-stack-cleanup-confirmation-2026-10-21.md",
-  "artifact_sha256": "1501a6b06bac661beabad6b743e68274c987973c9e452c1db40c1e24da2aa5b0",
+  "artifact_sha256": "3911c1ea323663c747293461906db081a3cf79788783c8458aeaa689fae9ab47",
   "claims_sha256": "5c7d924104e967399c0b68a42754e477c67da1f7336af6f6e683a92069e9fea3",
-  "updated_at": "2026-10-21T19:42:23+08:00"
+  "updated_at": "2026-10-22T17:05:28+08:00",
+  "technical_stack_selection": {
+    "authorized_at": "2026-10-21T23:09:25+08:00",
+    "excluded_labels": [
+      "Fetch / XMLHttpRequest",
+      "Sourcemap"
+    ],
+    "scope": "monitoring_sdk_resume_description_technical_stack",
+    "basis": "用户要求最后一个项目不需要 Fetch / XMLHttpRequest、Sourcemap，并同步更新项目文件；按技术栈列项精简处理。"
+  },
+  "resume_item_sources": {
+    "SDK 与多框架适配": {
+      "heading": "如何设计和实现一个高扩展性、跨框架兼容的前端监控 SDK？设计过程中需要考虑哪些关键技术点？",
+      "claim_ids": [
+        "monitoring-sdk.architecture",
+        "monitoring-sdk.platform-coverage"
+      ]
+    },
+    "性能与异常采集": {
+      "heading": "如何在前端 SDK 中高效采集和分析 Web 性能指标，并确保监控数据的准确性？",
+      "claim_ids": [
+        "monitoring-sdk.collection"
+      ]
+    },
+    "数据接收与异步处理": {
+      "heading": "为什么在数据采集服务中选择使用 Kafka 作为消息队列？如何利用 Kafka 实现高并发数据传输和高可靠性？",
+      "claim_ids": [
+        "monitoring-sdk.backend-pipeline",
+        "monitoring-sdk.platform-boundary"
+      ]
+    },
+    "存储查询与性能结果": {
+      "heading": "为什么在数据采集服务中选择使用 Kafka 作为消息队列？如何利用 Kafka 实现高并发数据传输和高可靠性？",
+      "claim_ids": [
+        "monitoring-sdk.backend-pipeline",
+        "monitoring-sdk.response-performance-improvement"
+      ]
+    }
+  },
+  "content_refactor_decision": {
+    "authorized_at": "2026-10-22T17:05:28+08:00",
+    "basis": "用户确认自身定位为全栈偏前端工程师，并要求按该方式重构；合并重复采集表述，将监控项目组织为前端 SDK、性能与异常采集、NestJS/Kafka 处理、ClickHouse 存储查询四层。",
+    "resume_structure": [
+      "SDK 与多框架适配",
+      "性能与异常采集",
+      "数据接收与异步处理",
+      "存储查询与性能结果"
+    ],
+    "project_order": "unchanged"
+  }
 }

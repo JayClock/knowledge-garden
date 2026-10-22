@@ -81,10 +81,11 @@
     "domain-modeling.technical-stack",
     "hateoas.technical-stack",
     "aiflow.technical-stack",
-    "monitoring-sdk.technical-stack"
+    "monitoring-sdk.technical-stack",
+    "domain-modeling.technology-agnostic-portability"
   ],
   "status": "current",
-  "artifact_sha256": "4936f2eb0f1713298c9312d6970ca00fbcac73f5a42c570db87c65fd226aa286",
-  "claims_sha256": "c7653fd5341aedfa325a8350b85f8c23d6deb9d6611440a8e4148e18da87ea02",
-  "updated_at": "2026-10-21T08:20:09+08:00"
+  "artifact_sha256": "0b43fe19de996632c059c4af7e79dacea2d9af9bbab8264e2a2d1b61dc611a9b",
+  "claims_sha256": "b2e34d082ac589f7b818db2f5e3bae2d69e679aefe20f57837706f55c0f88443",
+  "updated_at": "2026-10-22T16:53:21+08:00"
 }

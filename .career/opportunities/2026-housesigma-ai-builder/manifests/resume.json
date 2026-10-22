@@ -76,8 +76,10 @@
     "monitoring-sdk.sourcemap",
     "monitoring-sdk.platform-coverage"
   ],
-  "status": "current",
+  "status": "stale",
   "artifact_sha256": "2f97da304705c021e210885761987563f5a81db06c8d2e2769eb88a9bec36fa0",
   "claims_sha256": "718fbee45d0b76f870a6e04fa74ea15109ee5aaba4385fbd5098391aad6a66de",
-  "updated_at": "2026-10-21T08:20:09+08:00"
+  "updated_at": "2026-10-21T08:20:09+08:00",
+  "stale_reason": "2026-10-22 用户确认监控 SDK 项目归属上海鼎歆；该历史岗位包仍保留旧公司标签，需在再次投递前按当前事实重新生成。",
+  "marked_stale_at": "2026-10-22T16:49:09+08:00"
 }

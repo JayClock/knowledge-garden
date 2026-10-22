@@ -8,7 +8,7 @@
 - Q12、Q15 为用户主动跳过，已分别保存在 `sessions.jsonl` 中，不补造回答，不评价能力。
 - Q21 只有 AI 参考回答，用户尚未重答。
 - 练习时项目底稿（历史路径）：`content/Knowledge/Outputs/项目介绍：基于权责关系的领域建模与 API 设计.md`。
-- 当前项目入口：`content/Knowledge/Outputs/项目介绍：AI 辅助领域建模与 API 设计平台.md`。2026-10-19 统一项目名称；以下原始回答与历史快照保持原样。
+- 当前项目入口：`content/Knowledge/Outputs/项目介绍：AI 原生领域建模与 API 设计平台.md`。2026-10-22 更新项目名称；以下原始回答与历史快照保持原样。
 - 首轮底稿 SHA256：`31d7cbb42379d04c0c3dac2b0786a2e05e3841e1d31f3fad8224de679af3a5e3`。
 - 后续底稿 SHA256：`c5abcd598cb86032ac5126d6d7b7afdc5a33942cf00bc493299b9b29676f31ea`。Q13 及之后使用这一轮前取得的快照；旧快照保留，不以重构后的文件替换。
 - 两个快照的相关 claims SHA256 均为 `cc26e67b787c2926e3391d405f86d54ad2d06a2228678f0edc660e245d0fe985`。

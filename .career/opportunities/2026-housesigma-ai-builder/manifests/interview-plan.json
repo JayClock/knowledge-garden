@@ -76,7 +76,7 @@
     "monitoring-sdk.sourcemap",
     "monitoring-sdk.platform-coverage"
   ],
-  "status": "current",
+  "status": "stale",
   "artifact_sha256": "4f04e09f815c15addf82d20283657b83342398169a90f1b32679c4324afc7190",
   "claims_sha256": "718fbee45d0b76f870a6e04fa74ea15109ee5aaba4385fbd5098391aad6a66de",
   "updated_at": "2026-10-21T08:20:09+08:00"
