@@ -252,7 +252,7 @@
     },
     {
       "id": "domain-modeling.project.scope",
-      "statement": "设计并实现桌面端 AI 辅助领域建模与 API 设计平台，通过增量建模将业务讨论持续沉淀为本地结构化模型，以审核后的模型支持 API 契约与测试资产生成",
+      "statement": "设计并实现桌面端 AI 原生领域建模与 API 设计平台，通过增量建模将业务讨论持续沉淀为本地结构化模型，以审核后的模型支持 API 契约与测试资产生成",
       "kind": "project_scope",
       "project_id": "domain-modeling",
       "ownership": "direct",
@@ -278,6 +278,10 @@
         {
           "type": "user_confirmation",
           "locator": "2026-10-19 用户明确纠正：Evidence-Framework 就是本项目自身的一部分，不应写为依托外部框架衔接范围确认；建模、模型检查与 API 交付按平台内部能力表达"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-22 用户将项目正式命名更新为 AI 原生领域建模与 API 设计平台，并授权同步相关材料"
         }
       ],
       "metrics": [],
@@ -3505,11 +3509,16 @@
         "参考源码中的 Turborepo 配置仅保留为快照差异，不改动源码配置，也不由本条推定参考仓库已完成 Nx 迁移",
         "不由统一选型推定已实现特定 Nx 缓存、依赖边界规则、远程缓存、affected 流水线或效率指标"
       ],
-      "tags": ["engineering", "monorepo", "nx", "pnpm"]
+      "tags": [
+        "engineering",
+        "monorepo",
+        "nx",
+        "pnpm"
+      ]
     },
     {
       "id": "domain-modeling.technical-stack",
-      "statement": "AI 辅助领域建模与 API 设计平台当前对外技术栈采用 Electron、React、React Flow、Pi SDK、OpenAPI；Monorepo 工程统一使用 Nx + pnpm",
+      "statement": "AI 原生领域建模与 API 设计平台当前对外技术栈采用 Electron、React、React Flow、Pi SDK、OpenAPI；Monorepo 工程统一使用 Nx + pnpm",
       "kind": "project_scope",
       "project_id": "domain-modeling",
       "ownership": "team",
@@ -3532,7 +3541,16 @@
         "不从 MCP 同步模块推导桌面端的技术栈、数据协议或个人实现职责；此前单独确认的同步功能保留独立追踪，不因本轮技术栈选材纠正断言历史功能从未实现",
         "个人编码范围、生命周期事件的设计状态及模型检查的实际验证范围仍沿用各自 claim"
       ],
-      "tags": ["technical-stack", "electron", "react", "react-flow", "pi-sdk", "openapi", "nx", "pnpm"]
+      "tags": [
+        "technical-stack",
+        "electron",
+        "react",
+        "react-flow",
+        "pi-sdk",
+        "openapi",
+        "nx",
+        "pnpm"
+      ]
     },
     {
       "id": "hateoas.technical-stack",
@@ -3580,7 +3598,21 @@
         "业务页面的 JSON Schema 动态表单由既有确认单独支持，不与 SDK 直接依赖清单混为一谈",
         "当前快照缺少 .github 目录，原有发布流程确认继续保留，不声称本轮检查到实际 workflow 文件"
       ],
-      "tags": ["technical-stack", "typescript", "react", "hal", "hal-forms", "zod", "nx", "pnpm", "vite", "vitest", "msw", "testing-library", "typedoc"]
+      "tags": [
+        "technical-stack",
+        "typescript",
+        "react",
+        "hal",
+        "hal-forms",
+        "zod",
+        "nx",
+        "pnpm",
+        "vite",
+        "vitest",
+        "msw",
+        "testing-library",
+        "typedoc"
+      ]
     },
     {
       "id": "monitoring-sdk.technical-stack",
@@ -3628,7 +3660,15 @@
         "不因参考仓库控制台存在 React、Vite、Tailwind CSS、TanStack Query、Axios、Recharts 依赖就扩大本人可视化分析范围",
         "代表性快照局部缺失不否定既有确认的多框架适配、Sourcemap、数据后端或响应性能提升 50%；也不把局部占位实现写成本轮已验证完整链路"
       ],
-      "tags": ["technical-stack", "typescript", "nestjs", "kafka", "clickhouse", "nx", "pnpm"]
+      "tags": [
+        "technical-stack",
+        "typescript",
+        "nestjs",
+        "kafka",
+        "clickhouse",
+        "nx",
+        "pnpm"
+      ]
     },
     {
       "id": "aiflow.technical-stack",
@@ -3681,7 +3721,16 @@
         "不把参考仓库中的 LangChain、LangGraph、Qdrant、AI 或知识库节点扩展为已确认的普通业务工作流项目范围",
         "依赖版本只描述所读材料，不推定公司生产版本；配置了 Vitest 不代表本轮已执行或全部通过"
       ],
-      "tags": ["technical-stack", "typescript", "nextjs", "react-flow", "tiptap", "nestjs", "nx", "pnpm"]
+      "tags": [
+        "technical-stack",
+        "typescript",
+        "nextjs",
+        "react-flow",
+        "tiptap",
+        "nestjs",
+        "nx",
+        "pnpm"
+      ]
     },
     {
       "id": "career.ai-development.harness-practice",
@@ -3707,7 +3756,12 @@
         "确认范围是坏味道归纳及对应研发方法、流程机制的亲自设计和实际使用，不扩展成仓库全部代码或全部业务方法论由本人独立创造",
         "按研发流程实践组织，不新增公司、任职时间或独立商业产品，不推定团队全量采用、规模或效率数字"
       ],
-      "tags": ["ai-coding", "harness", "bad-smells", "engineering-practice"]
+      "tags": [
+        "ai-coding",
+        "harness",
+        "bad-smells",
+        "engineering-practice"
+      ]
     },
     {
       "id": "career.ai-development.acceptance-checks",
@@ -3733,7 +3787,12 @@
         "具体业务例子用于解释检查设计，不据此新增生产客户、交付场景或本轮测试通过结果",
         "CHECK 结构完整与业务预期正确分别判断，不把验收字段校验描述为自动执行全部业务断言"
       ],
-      "tags": ["acceptance", "check", "typed-expectations", "spec"]
+      "tags": [
+        "acceptance",
+        "check",
+        "typed-expectations",
+        "spec"
+      ]
     },
     {
       "id": "career.ai-development.context-assembly",
@@ -3759,7 +3818,12 @@
         "按需加载是任务依据的组织方法，不推定特定模型的 token 节省、注意力效果或准确率提升",
         "本条确认研发上下文设计与使用，不改变各业务项目的框架、服务端分工或技术栈"
       ],
-      "tags": ["context-engineering", "guides", "architecture", "just-in-time"]
+      "tags": [
+        "context-engineering",
+        "guides",
+        "architecture",
+        "just-in-time"
+      ]
     },
     {
       "id": "career.ai-development.single-task-steering",
@@ -3785,7 +3849,12 @@
         "这是实际使用的流程与退出纪律，不写成自动推进、不可绕过的执行沙箱或全自动业务审批",
         "任务恢复和转向按实际来源及授权判断，不把结构候选描述为已经完成语义就绪审核"
       ],
-      "tags": ["pdca", "steering-loop", "single-task", "failure-routing"]
+      "tags": [
+        "pdca",
+        "steering-loop",
+        "single-task",
+        "failure-routing"
+      ]
     },
     {
       "id": "career.ai-development.source-ownership",
@@ -3811,7 +3880,43 @@
         "摘要辅助发现来源变化，不等同于自动判断语义兼容、人类授权或覆盖全部工程输入",
         "不恢复已经废弃的独立 AI 来源归因账本或从 Rule 逐条审批的旧项目叙事"
       ],
-      "tags": ["single-source-of-truth", "source-manifest", "freshness", "derived-artifacts"]
+      "tags": [
+        "single-source-of-truth",
+        "source-manifest",
+        "freshness",
+        "derived-artifacts"
+      ]
+    },
+    {
+      "id": "career.ai-development.modeling-inputs",
+      "statement": "将从企业运营合约中梳理出的参与方、权责、履约流程和异常责任所引起的数据变化沉淀为业务模型、RESTful API 设计与测试数据，并将这些建模产物作为 AI Coding 的结构化上下文和验证依据",
+      "kind": "project_contribution",
+      "project_id": "ai-development-harness",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-22 用户明确说明建模使用的数据是给 AI Coding 使用的，并指定从企业商业合约、参与方、权责、履约流程和异常责任的数据变化沉淀业务模型、RESTful API 与测试数据"
+        },
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-22 用户进一步纠正核心能力的起点表述为‘以企业运营合约为起点’"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "建模产物为 AI Coding 提供上下文与验证依据，不据此推定代码生成、业务审核或生产发布已经全自动化",
+        "测试数据沿用已确认的静态测试向量范围，实际运行结果仍由对应检查和人工审核判断"
+      ],
+      "tags": [
+        "ai-coding",
+        "business-modeling",
+        "restful-api",
+        "test-data",
+        "context-engineering"
+      ]
     },
     {
       "id": "career.ai-development.evidence-based-delivery",
@@ -3837,7 +3942,12 @@
         "plan_state.py 只检查其实现中的结构关系及证据非空，不校验所有记录真实性、执行业务断言、自动审批或写入完成状态",
         "本轮确认实际使用该交付方式，不补写某次任务的命令输出、通过数量、验收结论或效率指标"
       ],
-      "tags": ["observed-evidence", "plan-state", "standards-review", "spec-review"]
+      "tags": [
+        "observed-evidence",
+        "plan-state",
+        "standards-review",
+        "spec-review"
+      ]
     },
     {
       "id": "career.ai-development.layered-feedback",
@@ -3863,7 +3973,12 @@
         "选择和使用分层检查不推定仓库全部套件本轮已运行通过，也不推定生产数据库或真实外部集成验证结果",
         "Nx 缓存与 Gradle UP-TO-DATE 保留其实际含义，不写成本次重新执行测试"
       ],
-      "tags": ["testing-boundaries", "sensors", "failure-classification", "execution-evidence"]
+      "tags": [
+        "testing-boundaries",
+        "sensors",
+        "failure-classification",
+        "execution-evidence"
+      ]
     },
     {
       "id": "career.ai-development.cross-session-handoff",
@@ -3889,7 +4004,12 @@
         "恢复依据是当前文件与证据，不推定模型永久记忆、自动授权或桌面端所有任务恢复功能已完成",
         "本次确认不重写历史访谈，也不扩展成具体恢复成功率或团队人数"
       ],
-      "tags": ["cross-session", "handoff", "task-state", "knowledge-retention"]
+      "tags": [
+        "cross-session",
+        "handoff",
+        "task-state",
+        "knowledge-retention"
+      ]
     },
     {
       "id": "career.ai-development.instruction-governance",
@@ -3915,7 +4035,12 @@
         "检查器只覆盖其实际维护范围和规则，不写成检测任意语义冲突、所有外链可达性或业务正确性",
         "个人设计和使用的确认不据此扩写为独立编写仓库每一行检查器或全部工程配置"
       ],
-      "tags": ["instruction-governance", "agents-md", "guides-checker", "knowledge-maintenance"]
+      "tags": [
+        "instruction-governance",
+        "agents-md",
+        "guides-checker",
+        "knowledge-maintenance"
+      ]
     },
     {
       "id": "career.ai-development.pattern-baseline",
@@ -3941,7 +4066,86 @@
         "确认的是四项机制的实际使用，不推定全部检查器由本人独立开发，不新增具体项目或公司归属、团队推广范围及效率数字",
         "课程中的 Spring Boot、ArchUnit、Controller / Mapper 示例仅用于概念说明，不作为个人技术栈或交付事实"
       ],
-      "tags": ["ai-coding", "harness", "pattern-baseline", "architecture-checks", "incremental-modernization"]
+      "tags": [
+        "ai-coding",
+        "harness",
+        "pattern-baseline",
+        "architecture-checks",
+        "incremental-modernization"
+      ]
+    },
+    {
+      "id": "monitoring-sdk.company-affiliation",
+      "statement": "企业级前端监控 SDK 与数据采集系统归属于上海鼎歆信息科技有限公司任职阶段",
+      "kind": "project_scope",
+      "project_id": "monitoring-sdk",
+      "ownership": "not_applicable",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-22 用户明确要求监控埋点项目改为上海鼎歆，并在通用简历中排在第一位"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "仅记录项目与任职阶段归属，不扩展项目职责、交付范围或量化结果"
+      ],
+      "tags": [
+        "monitoring",
+        "dingxin",
+        "timeline"
+      ]
+    },
+    {
+      "id": "domain-modeling.company-affiliation",
+      "statement": "AI 原生领域建模与 API 设计平台归属于上海鼎歆信息科技有限公司任职阶段",
+      "kind": "project_scope",
+      "project_id": "domain-modeling",
+      "ownership": "not_applicable",
+      "completion": "validated",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-22 用户明确要求建模与 API 设计平台归为上海鼎歆，并在通用简历中排在第二位"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "仅记录项目与任职阶段归属，不扩展项目职责、交付范围或量化结果"
+      ],
+      "tags": [
+        "domain-modeling",
+        "dingxin",
+        "timeline"
+      ]
+    },
+    {
+      "id": "domain-modeling.technology-agnostic-portability",
+      "statement": "以企业运营合约、业务模型、RESTful API 与测试数据承载业务语义和验证依据，剥离具体语言与框架细节，使建模产物能够迁移到不同技术栈的前后端实现与 AI Coding 工作流",
+      "kind": "project_contribution",
+      "project_id": "domain-modeling",
+      "ownership": "direct",
+      "completion": "implemented",
+      "status": "confirmed",
+      "evidence": [
+        {
+          "type": "user_confirmation",
+          "locator": "2026-10-22 用户明确要求业务理解与 AI Coding 建模体现技术无关可迁移性"
+        }
+      ],
+      "metrics": [],
+      "constraints": [
+        "可迁移性指业务语义、契约和验证依据可被不同技术栈消费，不声称自动生成任意语言或框架的完整系统"
+      ],
+      "tags": [
+        "domain-modeling",
+        "ai-coding",
+        "portability",
+        "technology-agnostic"
+      ]
     }
   ]
 }
