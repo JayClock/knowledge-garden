@@ -20,6 +20,7 @@
     "career.ai-development.cross-session-handoff",
     "career.ai-development.evidence-based-delivery",
     "career.ai-development.harness-practice",
+    "career.ai-development.modeling-inputs",
     "career.ai-development.pattern-baseline",
     "career.ai-development.single-task-steering",
     "career.capability.complex-frontend",
@@ -34,6 +35,7 @@
     "career.location.current",
     "career.positioning.market-title",
     "domain-modeling.api-static-test-vectors",
+    "domain-modeling.company-affiliation",
     "domain-modeling.desktop-file-modeling",
     "domain-modeling.frontend-backend-contract",
     "domain-modeling.generation-model-validation",
@@ -41,12 +43,14 @@
     "domain-modeling.methodology-recording",
     "domain-modeling.model-driven-delivery",
     "domain-modeling.model-to-api-mapping",
+    "domain-modeling.persistence-and-rule-placement",
     "domain-modeling.project.scope",
     "domain-modeling.round-end-full-refresh",
     "domain-modeling.scenario-acceptance",
     "domain-modeling.scope-api-handoff",
     "domain-modeling.skill-workflow",
     "domain-modeling.technical-stack",
+    "domain-modeling.technology-agnostic-portability",
     "hateoas.backend-boundary",
     "hateoas.cache-invalidation",
     "hateoas.incremental-migration-cost-risk",
@@ -65,34 +69,34 @@
     "monitoring-sdk.architecture",
     "monitoring-sdk.backend-pipeline",
     "monitoring-sdk.collection",
+    "monitoring-sdk.company-affiliation",
     "monitoring-sdk.platform-boundary",
     "monitoring-sdk.platform-coverage",
     "monitoring-sdk.project.scope",
     "monitoring-sdk.response-performance-improvement",
-    "monitoring-sdk.sourcemap",
     "monitoring-sdk.technical-stack",
     "timeline.shanghai-dingxin",
     "timeline.shanghai-wuwulaike",
     "timeline.shanghai-yixiao"
   ],
   "status": "current",
-  "artifact_sha256": "837e47698dd090ed698a9868dd9ab980037994ee764241b19fcd3a626f361781",
-  "claims_sha256": "a87162ac5d963c3691c3dd2fe3a905bba6c2a07dcbe9c3b0a4afda698948984b",
+  "artifact_sha256": "ed1a41ec2b3b4b7317907d54fcf07070a50b9578ef7919130dec83ce57f2d6bf",
+  "claims_sha256": "548fdfe96d1587c4efa8a60e69606c251fbc0102ac55c0c07ca30645149ea476",
   "source_files": [
     {
       "root": "repo",
       "path": ".agents/skills/resume-package/assets/job-greeting-prompt.md",
-      "sha256": "3aa17c746ded5aaae3215d5a441ca135ae31d1fa7a012ba12bd9a21d2ba71f16"
+      "sha256": "d23bd45a688bf0de0433baed158fbc096b179dfdd6c33bfbe07fdfc1c3730a8e"
     },
     {
       "root": "repo",
       "path": ".career/packages/general-projects-2-5/resume.md",
-      "sha256": "958906eda90cefb2ca9381bc5cbe1fd94d913f5aa0c1b56fa3f8f57de1a6fe4e"
+      "sha256": "3f777f9a5845c433ea9b37a2425d6a3f2bae441523138c9ad1950428b77df8ca"
     },
     {
       "root": "repo",
       "path": "content/Knowledge/Outputs/职业经历.md",
-      "sha256": "36f5ec1be954f6b632053c09c9446a3dd4c7b2cf62fe1279eb9f8116da9b381c"
+      "sha256": "590b6f46941e5b5ac5ba1aa388c6098736f1efd67e2f4ac856c70c3719c33d95"
     },
     {
       "root": "repo",
@@ -101,8 +105,8 @@
     },
     {
       "root": "repo",
-      "path": "content/Knowledge/Outputs/项目介绍：AI 辅助领域建模与 API 设计平台.md",
-      "sha256": "ee7d03d320c71ea483668cd4200b7eeff09ee5653ec775e2a74d058ac97b3de2"
+      "path": "content/Knowledge/Outputs/项目介绍：AI 原生领域建模与 API 设计平台.md",
+      "sha256": "b205a5fd18da02743ea3bbde835c8a6a4da3e2964c2d0ea18207c3714f89d777"
     },
     {
       "root": "repo",
@@ -117,13 +121,13 @@
     {
       "root": "repo",
       "path": "content/Knowledge/Outputs/项目介绍：前端埋点与监控 SDK.md",
-      "sha256": "1501a6b06bac661beabad6b743e68274c987973c9e452c1db40c1e24da2aa5b0"
+      "sha256": "3911c1ea323663c747293461906db081a3cf79788783c8458aeaa689fae9ab47"
     },
     {
       "root": "state",
       "path": "manifests/general-projects-2-5-resume.json",
-      "sha256": "a95423dd1eedb55a0eb9aef5b103957422bbeb3738e4cdac55e04fd13f9d49e0"
+      "sha256": "3f42a321281e0594c5681bb28ca3e8ba18ba208dc27a9c2ee2d36e771c45abf1"
     }
   ],
-  "reviewed_at": "2026-10-21T20:53:49+08:00"
+  "reviewed_at": "2026-10-22T17:07:08+08:00"
 }
