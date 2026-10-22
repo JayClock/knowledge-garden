@@ -59,7 +59,6 @@
     "monitoring-sdk.project.scope",
     "monitoring-sdk.architecture",
     "monitoring-sdk.collection",
-    "monitoring-sdk.sourcemap",
     "monitoring-sdk.backend-pipeline",
     "monitoring-sdk.platform-boundary",
     "monitoring-sdk.platform-coverage",
@@ -72,23 +71,28 @@
     "career.ai-development.cross-session-handoff",
     "career.ai-development.evidence-based-delivery",
     "career.ai-development.harness-practice",
+    "career.ai-development.modeling-inputs",
     "career.ai-development.pattern-baseline",
-    "career.ai-development.single-task-steering"
+    "career.ai-development.single-task-steering",
+    "domain-modeling.persistence-and-rule-placement",
+    "monitoring-sdk.company-affiliation",
+    "domain-modeling.company-affiliation",
+    "domain-modeling.technology-agnostic-portability"
   ],
   "status": "current",
   "package_id": "general-projects-2-5",
   "scope": "general_resume_package",
   "project_order": [
+    "monitoring-sdk",
     "domain-modeling",
-    "hateoas",
     "aiflow",
-    "monitoring-sdk"
+    "hateoas"
   ],
-  "claims_sha256": "296c5797918b40a30f28813fa0e7d02e48a6436a7166e3e7934b1122b611201f",
+  "claims_sha256": "76d7b31a95ec66e78b289da07a6405f0410fd2b8736029ec7b3f497f947eaec4",
   "created_at": "2026-10-19T22:42:15+08:00",
   "artifact": ".career/packages/general-projects-2-5/resume.md",
   "artifact_type": "resume",
-  "artifact_sha256": "958906eda90cefb2ca9381bc5cbe1fd94d913f5aa0c1b56fa3f8f57de1a6fe4e",
+  "artifact_sha256": "3f777f9a5845c433ea9b37a2425d6a3f2bae441523138c9ad1950428b77df8ca",
   "section_claim_ids": {
     "基本信息、核心能力、工作经历及教育背景": [
       "career.identity.full-name",
@@ -108,14 +112,22 @@
       "career.capability.upstream-contracts",
       "career.capability.complex-frontend",
       "career.ai-development.harness-practice",
+      "career.ai-development.modeling-inputs",
       "career.ai-development.single-task-steering",
       "career.ai-development.context-assembly",
       "career.ai-development.pattern-baseline",
       "career.ai-development.acceptance-checks",
       "career.ai-development.evidence-based-delivery",
-      "career.ai-development.cross-session-handoff"
+      "career.ai-development.cross-session-handoff",
+      "domain-modeling.methodology-recording",
+      "domain-modeling.frontend-backend-contract",
+      "domain-modeling.model-driven-delivery",
+      "domain-modeling.api-static-test-vectors",
+      "domain-modeling.persistence-and-rule-placement",
+      "domain-modeling.skill-workflow",
+      "domain-modeling.technology-agnostic-portability"
     ],
-    "AI 辅助领域建模与 API 设计平台": [
+    "AI 原生领域建模与 API 设计平台": [
       "domain-modeling.project.scope",
       "domain-modeling.methodology-recording",
       "domain-modeling.skill-workflow",
@@ -129,8 +141,11 @@
       "domain-modeling.frontend-backend-contract",
       "domain-modeling.model-to-api-mapping",
       "domain-modeling.scenario-acceptance",
+      "career.ai-development.modeling-inputs",
       "career.engineering.monorepo-nx-pnpm",
-      "domain-modeling.technical-stack"
+      "domain-modeling.technical-stack",
+      "domain-modeling.company-affiliation",
+      "domain-modeling.technology-agnostic-portability"
     ],
     "HATEOAS 资源契约与 TypeScript SDK 开发": [
       "hateoas.project.sdk",
@@ -167,28 +182,59 @@
       "monitoring-sdk.project.scope",
       "monitoring-sdk.architecture",
       "monitoring-sdk.collection",
-      "monitoring-sdk.sourcemap",
       "monitoring-sdk.backend-pipeline",
       "monitoring-sdk.platform-boundary",
       "monitoring-sdk.platform-coverage",
       "monitoring-sdk.response-performance-improvement",
       "career.engineering.monorepo-nx-pnpm",
-      "monitoring-sdk.technical-stack"
+      "monitoring-sdk.technical-stack",
+      "monitoring-sdk.company-affiliation"
     ]
   },
   "project_description_policy": "all_four_project_titles_and_resume_description_list_bodies_verbatim_from_source_sections; no_independent_rewriting",
   "source_sections": [
     {
       "career_history_project_number": 1,
+      "project_id": "monitoring-sdk",
+      "output_heading": "企业级前端监控 SDK 与数据采集系统",
+      "path": "content/Knowledge/Outputs/项目介绍：前端埋点与监控 SDK.md",
+      "heading": "简历描述",
+      "selection": "逐字复制「简历描述」中的项目标题与全部列表正文；公司与岗位沿用简历信息",
+      "source_manifest": ".career/manifests/interview-704580201249d143.json",
+      "source_manifest_status_at_generation": "current",
+      "source_file_sha256": "3911c1ea323663c747293461906db081a3cf79788783c8458aeaa689fae9ab47",
+      "copied_text_sha256": "6baf0be2393c6578006f49e64e8b03f95018b4893f57a96e30e79040edca49c6",
+      "claim_ids": [
+        "monitoring-sdk.project.scope",
+        "monitoring-sdk.architecture",
+        "monitoring-sdk.collection",
+        "monitoring-sdk.backend-pipeline",
+        "monitoring-sdk.platform-boundary",
+        "monitoring-sdk.platform-coverage",
+        "monitoring-sdk.response-performance-improvement",
+        "career.engineering.monorepo-nx-pnpm",
+        "monitoring-sdk.technical-stack",
+        "monitoring-sdk.company-affiliation"
+      ],
+      "source_section_sha256": "608de51e9bd7071a8a0d0c843b745780834b9c49a4840834f1104cd752bfcff9",
+      "output_section_sha256": "6baf0be2393c6578006f49e64e8b03f95018b4893f57a96e30e79040edca49c6",
+      "output_section_hash_basis": "UTF-8 list body after company line and before next heading, stripped; identical to source list body",
+      "source_section_reviewed_against_confirmed_claims": true,
+      "last_synced_at": "2026-10-22T17:05:28+08:00",
+      "resume_role_label": "全栈工程师",
+      "resume_company_label": "上海鼎歆"
+    },
+    {
+      "career_history_project_number": 2,
       "project_id": "domain-modeling",
-      "output_heading": "AI 辅助领域建模与 API 设计平台",
-      "path": "content/Knowledge/Outputs/项目介绍：AI 辅助领域建模与 API 设计平台.md",
+      "output_heading": "AI 原生领域建模与 API 设计平台",
+      "path": "content/Knowledge/Outputs/项目介绍：AI 原生领域建模与 API 设计平台.md",
       "heading": "简历描述",
       "selection": "逐字复制「简历描述」中的项目标题与全部列表正文；公司与岗位沿用简历信息",
       "source_manifest": ".career/manifests/interview-e3b3b707cb757514.json",
       "source_manifest_status_at_generation": "stale",
-      "source_file_sha256": "ee7d03d320c71ea483668cd4200b7eeff09ee5653ec775e2a74d058ac97b3de2",
-      "output_section_sha256": "041501aaed9dc6d529210c881c943e4e84204cdb1eebe8ae61d07e806918df8d",
+      "source_file_sha256": "b205a5fd18da02743ea3bbde835c8a6a4da3e2964c2d0ea18207c3714f89d777",
+      "output_section_sha256": "9dd67006058d9a6565aee9738c17b5bd32057bed33ceb57d42aba0ecfc1ddea0",
       "output_section_hash_basis": "UTF-8 list body after company line and before next heading, stripped; identical to source list body",
       "claim_ids": [
         "domain-modeling.project.scope",
@@ -204,16 +250,53 @@
         "domain-modeling.frontend-backend-contract",
         "domain-modeling.model-to-api-mapping",
         "domain-modeling.scenario-acceptance",
+        "career.ai-development.modeling-inputs",
         "career.engineering.monorepo-nx-pnpm",
-        "domain-modeling.technical-stack"
+        "domain-modeling.technical-stack",
+        "domain-modeling.company-affiliation",
+        "domain-modeling.technology-agnostic-portability"
       ],
-      "source_section_sha256": "c035920c598faf4cb989cbd02771670934ccddef65d5ad86f1ed746147980a65",
-      "copied_text_sha256": "041501aaed9dc6d529210c881c943e4e84204cdb1eebe8ae61d07e806918df8d",
+      "source_section_sha256": "452dc27adc5238c77cd05cd3deacfd3900147debe5a114518b7493de3c136746",
+      "copied_text_sha256": "9dd67006058d9a6565aee9738c17b5bd32057bed33ceb57d42aba0ecfc1ddea0",
       "source_section_reviewed_against_confirmed_claims": true,
-      "last_synced_at": "2026-10-21T20:29:55+08:00"
+      "last_synced_at": "2026-10-22T16:53:21+08:00",
+      "resume_company_label": "上海鼎歆",
+      "resume_role_label": "全栈工程师"
     },
     {
-      "career_history_project_number": 2,
+      "career_history_project_number": 3,
+      "project_id": "aiflow",
+      "output_heading": "企业级低代码工作流引擎全栈开发 / 架构设计",
+      "path": "content/Knowledge/Outputs/项目介绍：企业级低代码工作流引擎.md",
+      "heading": "简历描述",
+      "selection": "逐字复制「简历描述」中的项目标题与全部列表正文；公司与岗位沿用简历信息",
+      "source_manifest": ".career/manifests/interview-fd7975331ab253ad.json",
+      "source_manifest_status_at_generation": "current",
+      "source_file_sha256": "08f61179040290f356c068029d56df28455032a8e711f393ae8a065464ebcb33",
+      "copied_text_sha256": "a33f5a17dac83c391c6d8471732fbcda8c01688d6510ece9bab5652f8e00bb0a",
+      "claim_ids": [
+        "aiflow.business-scope",
+        "aiflow.project.scope",
+        "aiflow.visual-editor",
+        "aiflow.engine-core",
+        "aiflow.node-plugin-system",
+        "aiflow.variable-editor",
+        "aiflow.execution-feedback",
+        "aiflow.sse-server",
+        "aiflow.data-and-backend-boundary",
+        "career.engineering.monorepo-nx-pnpm",
+        "aiflow.technical-stack"
+      ],
+      "source_section_sha256": "ee98915506b04da6119b038981fa825f85ab9dbc7decbc895573b69d1fa1decd",
+      "output_section_sha256": "a33f5a17dac83c391c6d8471732fbcda8c01688d6510ece9bab5652f8e00bb0a",
+      "output_section_hash_basis": "UTF-8 list body after company line and before next heading, stripped; identical to source list body",
+      "source_section_reviewed_against_confirmed_claims": true,
+      "last_synced_at": "2026-10-22T16:47:58+08:00",
+      "resume_role_label": "高级前端专家",
+      "resume_company_label": "上海易校"
+    },
+    {
+      "career_history_project_number": 4,
       "project_id": "hateoas",
       "output_heading": "HATEOAS 资源契约与 TypeScript SDK 开发",
       "path": "content/Knowledge/Outputs/项目介绍：HATEOAS.md",
@@ -245,74 +328,14 @@
       "output_section_sha256": "f4f6525cc7c9439e2a7a3d5e2b6f1488fcf0bcc0d4980bc6c86e5c66e4bb1a55",
       "output_section_hash_basis": "UTF-8 list body after company line and before next heading, stripped; identical to source list body",
       "source_section_reviewed_against_confirmed_claims": true,
-      "last_synced_at": "2026-10-21T20:29:55+08:00",
-      "resume_role_label": "高级前端专家"
-    },
-    {
-      "career_history_project_number": 3,
-      "project_id": "aiflow",
-      "output_heading": "企业级低代码工作流引擎全栈开发 / 架构设计",
-      "path": "content/Knowledge/Outputs/项目介绍：企业级低代码工作流引擎.md",
-      "heading": "简历描述",
-      "selection": "逐字复制「简历描述」中的项目标题与全部列表正文；公司与岗位沿用简历信息",
-      "source_manifest": ".career/manifests/interview-fd7975331ab253ad.json",
-      "source_manifest_status_at_generation": "current",
-      "source_file_sha256": "08f61179040290f356c068029d56df28455032a8e711f393ae8a065464ebcb33",
-      "copied_text_sha256": "a33f5a17dac83c391c6d8471732fbcda8c01688d6510ece9bab5652f8e00bb0a",
-      "claim_ids": [
-        "aiflow.business-scope",
-        "aiflow.project.scope",
-        "aiflow.visual-editor",
-        "aiflow.engine-core",
-        "aiflow.node-plugin-system",
-        "aiflow.variable-editor",
-        "aiflow.execution-feedback",
-        "aiflow.sse-server",
-        "aiflow.data-and-backend-boundary",
-        "career.engineering.monorepo-nx-pnpm",
-        "aiflow.technical-stack"
-      ],
-      "source_section_sha256": "ee98915506b04da6119b038981fa825f85ab9dbc7decbc895573b69d1fa1decd",
-      "output_section_sha256": "a33f5a17dac83c391c6d8471732fbcda8c01688d6510ece9bab5652f8e00bb0a",
-      "output_section_hash_basis": "UTF-8 list body after company line and before next heading, stripped; identical to source list body",
-      "source_section_reviewed_against_confirmed_claims": true,
-      "last_synced_at": "2026-10-21T20:29:55+08:00",
-      "resume_role_label": "高级前端专家"
-    },
-    {
-      "career_history_project_number": 4,
-      "project_id": "monitoring-sdk",
-      "output_heading": "企业级前端监控 SDK 与数据采集系统",
-      "path": "content/Knowledge/Outputs/项目介绍：前端埋点与监控 SDK.md",
-      "heading": "简历描述",
-      "selection": "逐字复制「简历描述」中的项目标题与全部列表正文；公司与岗位沿用简历信息",
-      "source_manifest": ".career/manifests/interview-704580201249d143.json",
-      "source_manifest_status_at_generation": "current",
-      "source_file_sha256": "1501a6b06bac661beabad6b743e68274c987973c9e452c1db40c1e24da2aa5b0",
-      "copied_text_sha256": "5c85db5529c411b18c8c3c0a2c33012e5a9d58ecd60a916a538c54299a36818f",
-      "claim_ids": [
-        "monitoring-sdk.project.scope",
-        "monitoring-sdk.architecture",
-        "monitoring-sdk.collection",
-        "monitoring-sdk.sourcemap",
-        "monitoring-sdk.backend-pipeline",
-        "monitoring-sdk.platform-boundary",
-        "monitoring-sdk.platform-coverage",
-        "monitoring-sdk.response-performance-improvement",
-        "career.engineering.monorepo-nx-pnpm",
-        "monitoring-sdk.technical-stack"
-      ],
-      "source_section_sha256": "23740c3775524f5c4d79d599d398cf4a7660d681530b6a203338c5cbf346333e",
-      "output_section_sha256": "5c85db5529c411b18c8c3c0a2c33012e5a9d58ecd60a916a538c54299a36818f",
-      "output_section_hash_basis": "UTF-8 list body after company line and before next heading, stripped; identical to source list body",
-      "source_section_reviewed_against_confirmed_claims": true,
-      "last_synced_at": "2026-10-21T20:29:55+08:00",
-      "resume_role_label": "高级前端专家"
+      "last_synced_at": "2026-10-22T16:47:58+08:00",
+      "resume_role_label": "高级前端专家",
+      "resume_company_label": "上海易校"
     }
   ],
   "career_history_source": {
     "path": "content/Knowledge/Outputs/职业经历.md",
-    "sha256": "36f5ec1be954f6b632053c09c9446a3dd4c7b2cf62fe1279eb9f8116da9b381c",
+    "sha256": "2afcd88136bc6cfa941e22803ebcbdb441a94d851d6d7294bc3ea3fc17c8b417",
     "project_numbers": [
       1,
       2,
@@ -332,24 +355,37 @@
       "resume_docx",
       "resume_pdf",
       "greeting_template"
+    ],
+    "project_order": [
+      "monitoring-sdk",
+      "domain-modeling",
+      "aiflow",
+      "hateoas"
     ]
   },
-  "updated_at": "2026-10-21T20:53:49+08:00",
-  "overview_policy": "six_labeled_action_based_bullets; business_modeling_and_ai_harness_first; frontend_contracts_backend_delivery_follow; duplicate_identity_bullet_merged_into_header_and_frontend_bullet",
+  "updated_at": "2026-10-22T17:05:28+08:00",
+  "overview_policy": "six_labeled_action_based_bullets; business_modeling_outputs_feed_ai_coding_workflow; frontend_contracts_backend_delivery_follow; duplicate_identity_bullet_merged_into_header_and_frontend_bullet",
   "capability_summary_decision": {
-    "authorized_at": "2026-10-21T20:51:18+08:00",
-    "basis": "用户确认六项结构及完整文案，并要求简历岗位直接写全栈工程师。",
+    "authorized_at": "2026-10-22T16:53:21+08:00",
+    "basis": "用户明确将项目命名更新为 AI 原生，并要求第一项核心能力体现业务语义与契约不绑定语言和框架、可迁移到不同技术栈的 AI Coding。",
     "bullet_count": 6,
     "capability_order": [
-      "业务理解与建模",
-      "AI 研发效能与 Agent Harness 建设",
+      "业务理解与 AI Coding 建模",
+      "AI Coding 工作流与 Agent Harness",
       "React 与复杂前端",
       "资源契约与交互",
       "Node.js 与数据服务",
       "工程化与交付"
     ],
     "format": "能力名称：具体动作",
-    "project_descriptions": "unchanged_verbatim_source_copy"
+    "project_descriptions": "first_project_refactored_and_synced_verbatim; remaining_projects_unchanged_verbatim_source_copy",
+    "layout_refinement": {
+      "reviewed_at": "2026-10-22T16:17:59+08:00",
+      "business_modeling_bullet": "**业务理解与 AI Coding 建模**：以企业运营合约为起点，梳理参与方、权责、履约流程及异常责任带来的数据变化，沉淀业务模型、RESTful API 与测试数据；以业务语义和契约剥离语言、框架细节，为不同技术栈的 AI Coding 提供可迁移的上下文和验证依据。",
+      "ai_coding_workflow_bullet": "**AI Coding 工作流与 Agent Harness**：围绕上述建模产物组织任务拆解、开发规范、自动验证与结果交接，构建“上下文—实现—验证—反馈”循环，以参考实现和渐进治理保持代码与业务约定一致。",
+      "react_bullet": "**React 与复杂前端**：使用 React、TypeScript、React Flow、Tiptap 构建流程画布与结构化变量编辑器。",
+      "basis": "前两条明确建模产物供 AI Coding 消费及其进入 Agent Harness 反馈循环的关系；React 条目继续保留四项技术及画布、变量编辑器内容，字号、行距和模块位置不变。"
+    }
   },
   "display_title": {
     "text": "全栈工程师",
@@ -357,13 +393,125 @@
     "basis": "用户于 2026-10-21 明确要求简历岗位直接写全栈工程师。"
   },
   "project_role_labels": {
-    "hateoas": "高级前端专家",
+    "monitoring-sdk": "全栈工程师",
+    "domain-modeling": "全栈工程师",
     "aiflow": "高级前端专家",
-    "monitoring-sdk": "高级前端专家"
+    "hateoas": "高级前端专家"
   },
   "project_role_decision": {
-    "authorized_at": "2026-10-21T20:53:49+08:00",
-    "basis": "用户明确后面三个项目的职位均为高级前端专家。",
+    "authorized_at": "2026-10-22T16:47:58+08:00",
+    "basis": "用户明确监控埋点和建模平台均归属上海鼎歆；岗位按对应任职时间线写全栈工程师。低代码与 HATEOAS 保留上海易校、高级前端专家。",
     "scope": "project_company_role_lines"
+  },
+  "business_modeling_summary_decision": {
+    "authorized_at": "2026-10-22T16:53:21+08:00",
+    "basis": "用户将建模项目定位更新为 AI 原生，并要求业务理解与 AI Coding 建模体现技术无关可迁移性；以业务语义和契约作为跨语言、框架与技术栈的稳定层。",
+    "text": "**业务理解与 AI Coding 建模**：以企业运营合约为起点，梳理参与方、权责、履约流程及异常责任带来的数据变化，沉淀业务模型、RESTful API 与测试数据；以业务语义和契约剥离语言、框架细节，为不同技术栈的 AI Coding 提供可迁移的上下文和验证依据。",
+    "claim_ids": [
+      "career.ai-development.modeling-inputs",
+      "domain-modeling.methodology-recording",
+      "domain-modeling.skill-workflow",
+      "domain-modeling.frontend-backend-contract",
+      "domain-modeling.model-driven-delivery",
+      "domain-modeling.api-static-test-vectors",
+      "domain-modeling.persistence-and-rule-placement",
+      "domain-modeling.technology-agnostic-portability"
+    ],
+    "scope": "first_core_capability_bullet",
+    "project_descriptions": "first_project_refactored_and_synced_verbatim"
+  },
+  "ai_coding_workflow_summary_decision": {
+    "authorized_at": "2026-10-22T14:31:36+08:00",
+    "basis": "用户明确建模产物供 AI Coding 使用；第二条承接第一条，说明这些产物如何进入任务、实现、验证和反馈循环。",
+    "text": "**AI Coding 工作流与 Agent Harness**：围绕上述建模产物组织任务拆解、开发规范、自动验证与结果交接，构建“上下文—实现—验证—反馈”循环，以参考实现和渐进治理保持代码与业务约定一致。",
+    "claim_ids": [
+      "career.ai-development.modeling-inputs",
+      "career.ai-development.harness-practice",
+      "career.ai-development.single-task-steering",
+      "career.ai-development.context-assembly",
+      "career.ai-development.pattern-baseline",
+      "career.ai-development.acceptance-checks",
+      "career.ai-development.evidence-based-delivery",
+      "career.ai-development.cross-session-handoff"
+    ],
+    "scope": "second_core_capability_bullet"
+  },
+  "technical_stack_selection": {
+    "monitoring-sdk": {
+      "authorized_at": "2026-10-21T23:09:25+08:00",
+      "excluded_labels": [
+        "Fetch / XMLHttpRequest",
+        "Sourcemap"
+      ],
+      "scope": "monitoring_sdk_resume_description_technical_stack",
+      "basis": "用户要求最后一个项目不需要 Fetch / XMLHttpRequest、Sourcemap，并同步更新项目文件；按技术栈列项精简处理。"
+    }
+  },
+  "first_project_refactor_decision": {
+    "authorized_at": "2026-10-22T16:21:45+08:00",
+    "basis": "用户要求重构第一个项目；项目正文与通用简历继续逐字同步项目介绍文件的「简历描述」。",
+    "structure": [
+      "运营合约建模",
+      "AI Coding 交付输入",
+      "双层循环 Harness",
+      "桌面端增量建模"
+    ],
+    "layout_goal": "保持模板不变，并让前两个项目完整显示在第一页。"
+  },
+  "project_company_labels": {
+    "monitoring-sdk": "上海鼎歆",
+    "domain-modeling": "上海鼎歆",
+    "aiflow": "上海易校",
+    "hateoas": "上海易校"
+  },
+  "project_order_decision": {
+    "authorized_at": "2026-10-22T16:47:58+08:00",
+    "basis": "用户明确项目顺序为监控埋点、建模与 API 设计平台、低代码工作流、HATEOAS。",
+    "project_order": [
+      "monitoring-sdk",
+      "domain-modeling",
+      "aiflow",
+      "hateoas"
+    ],
+    "page_allocation": [
+      [
+        "monitoring-sdk",
+        "domain-modeling"
+      ],
+      [
+        "aiflow",
+        "hateoas"
+      ]
+    ]
+  },
+  "ai_native_naming_decision": {
+    "authorized_at": "2026-10-22T16:53:21+08:00",
+    "from": "AI 辅助领域建模与 API 设计平台",
+    "to": "AI 原生领域建模与 API 设计平台",
+    "scope": [
+      "project_introduction",
+      "career_history",
+      "general_resume",
+      "self_introduction",
+      "resume_docx",
+      "resume_pdf",
+      "greeting_template"
+    ]
+  },
+  "monitoring_project_refactor_decision": {
+    "authorized_at": "2026-10-22T17:05:28+08:00",
+    "basis": "用户确认全栈偏前端定位并要求重构监控项目；保留项目第一位，减少重复采集描述，强化端侧、服务端与存储查询的完整链路。",
+    "structure": [
+      "SDK 与多框架适配",
+      "性能与异常采集",
+      "数据接收与异步处理",
+      "存储查询与性能结果"
+    ],
+    "project_order": [
+      "monitoring-sdk",
+      "domain-modeling",
+      "aiflow",
+      "hateoas"
+    ]
   }
 }

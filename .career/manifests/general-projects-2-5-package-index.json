@@ -26,6 +26,7 @@
     "career.ai-development.harness-practice",
     "career.ai-development.instruction-governance",
     "career.ai-development.layered-feedback",
+    "career.ai-development.modeling-inputs",
     "career.ai-development.single-task-steering",
     "career.ai-development.source-ownership",
     "domain-modeling.project.scope",
@@ -75,23 +76,26 @@
     "monitoring-sdk.platform-boundary",
     "monitoring-sdk.platform-coverage",
     "monitoring-sdk.response-performance-improvement",
-    "monitoring-sdk.technical-stack"
+    "monitoring-sdk.technical-stack",
+    "monitoring-sdk.company-affiliation",
+    "domain-modeling.company-affiliation",
+    "domain-modeling.technology-agnostic-portability"
   ],
   "status": "current",
   "package_id": "general-projects-2-5",
   "scope": "general_resume_package",
   "project_order": [
+    "monitoring-sdk",
     "domain-modeling",
-    "hateoas",
     "aiflow",
-    "monitoring-sdk"
+    "hateoas"
   ],
-  "claims_sha256": "7e047062f5ae7a924431c82fa9b7b04900753d10916f6b0b265e1560dce05f48",
+  "claims_sha256": "833ef87214c6befc1761bde7e0f6f6224fd3ddd20a32548e11e3311c3312485e",
   "created_at": "2026-10-19T22:42:15+08:00",
   "artifact": ".career/packages/general-projects-2-5/README.md",
   "artifact_type": "package_index",
-  "artifact_sha256": "131267d371f2246295fb8c7f44f17eeb2ae75aea72bd8b9d913627ed531a3fa0",
-  "updated_at": "2026-10-21T20:51:18+08:00",
+  "artifact_sha256": "b05b9368208aa6478449a19583d47e45862d310298cb581fdacefc256a8a0c97",
+  "updated_at": "2026-10-22T17:06:59+08:00",
   "artifacts": [
     {
       "artifact": ".career/packages/general-projects-2-5/resume.md",
@@ -113,5 +117,11 @@
       "artifact": ".career/packages/general-projects-2-5/钟杰-全栈工程师.pdf",
       "manifest": ".career/manifests/general-projects-2-5-resume-pdf.json"
     }
-  ]
+  ],
+  "project_company_labels": {
+    "monitoring-sdk": "上海鼎歆",
+    "domain-modeling": "上海鼎歆",
+    "aiflow": "上海易校",
+    "hateoas": "上海易校"
+  }
 }

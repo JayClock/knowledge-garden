@@ -61,7 +61,6 @@
     "monitoring-sdk.project.scope",
     "monitoring-sdk.architecture",
     "monitoring-sdk.collection",
-    "monitoring-sdk.sourcemap",
     "monitoring-sdk.backend-pipeline",
     "monitoring-sdk.platform-boundary",
     "monitoring-sdk.platform-coverage",
@@ -74,26 +73,31 @@
     "career.ai-development.cross-session-handoff",
     "career.ai-development.evidence-based-delivery",
     "career.ai-development.harness-practice",
+    "career.ai-development.modeling-inputs",
     "career.ai-development.pattern-baseline",
-    "career.ai-development.single-task-steering"
+    "career.ai-development.single-task-steering",
+    "domain-modeling.persistence-and-rule-placement",
+    "monitoring-sdk.company-affiliation",
+    "domain-modeling.company-affiliation",
+    "domain-modeling.technology-agnostic-portability"
   ],
   "status": "current",
   "package_id": "general-projects-2-5",
   "scope": "general_resume_package",
   "project_order": [
+    "monitoring-sdk",
     "domain-modeling",
-    "hateoas",
     "aiflow",
-    "monitoring-sdk"
+    "hateoas"
   ],
-  "claims_sha256": "296c5797918b40a30f28813fa0e7d02e48a6436a7166e3e7934b1122b611201f",
-  "artifact_sha256": "de9667bab98f28c4906a0bfc37ae1ff6db55f2099867289390e0e1e0a1808d20",
+  "claims_sha256": "76d7b31a95ec66e78b289da07a6405f0410fd2b8736029ec7b3f497f947eaec4",
+  "artifact_sha256": "9a98b273c601537f42e457e6092214d1d580d269d763b74cfee32e29630d4605",
   "created_at": "2026-10-20T08:24:44+08:00",
   "source": {
     "artifact": ".career/packages/general-projects-2-5/resume.md",
     "manifest": ".career/manifests/general-projects-2-5-resume.json",
-    "artifact_sha256": "958906eda90cefb2ca9381bc5cbe1fd94d913f5aa0c1b56fa3f8f57de1a6fe4e",
-    "scope": "complete_current_markdown; six_labeled_capability_bullets; fullstack_engineer_display_title; four_projects_verbatim; first_two_projects_complete_on_page_one; two_pages"
+    "artifact_sha256": "3f777f9a5845c433ea9b37a2425d6a3f2bae441523138c9ad1950428b77df8ca",
+    "scope": "complete_current_markdown; monitoring_project_refactored_for_frontend_leaning_fullstack; four_projects_verbatim; current_company_projects_on_page_one; two_pages"
   },
   "template": {
     "path": ".agents/skills/resume-package/assets/templates/钟杰-岗位定制简历模板.docx",
@@ -101,11 +105,11 @@
   },
   "layout_policy": "preserve_template_font_palette_ribbons_and_gutter; body_10.5pt; page_one_projects_1_and_2; page_two_projects_3_and_4_plus_work_and_education; capability_and_project_labels_bold",
   "validation": {
-    "scope": "unify_last_three_project_roles_as_senior_frontend_expert",
+    "scope": "refactor_monitoring_project_for_frontend_leaning_fullstack",
     "pages": 2,
     "visible_textboxes": 12,
     "officecli_issue_count": 0,
-    "baseline_schema_errors": 30,
+    "baseline_schema_errors": 26,
     "output_schema_errors": 26,
     "new_schema_errors": 0,
     "placeholder_count": 0,
@@ -118,11 +122,11 @@
     "body_font_size_pt": 10.5,
     "template_file_unchanged": true,
     "template_style_and_relationships_preserved": true,
-    "visual_review": "Both native Word-rendered page PNGs reviewed in full; no truncation or overlap.",
+    "visual_review": "Both PDF pages were rendered at 160 DPI and inspected. Page one contains the complete monitoring and AI-native domain-modeling projects. The monitoring project now presents two frontend SDK bullets followed by NestJS/Kafka processing and ClickHouse storage/query evidence; there is no clipping or overlap.",
     "render_engine": "Microsoft Word 16.0",
     "technical_wording_source": ".career/packages/general-projects-2-5/resume.md",
-    "technical_wording_source_sha256": "958906eda90cefb2ca9381bc5cbe1fd94d913f5aa0c1b56fa3f8f57de1a6fe4e",
-    "checked_at": "2026-10-21T20:53:49+08:00",
+    "technical_wording_source_sha256": "3f777f9a5845c433ea9b37a2425d6a3f2bae441523138c9ad1950428b77df8ca",
+    "checked_at": "2026-10-22T17:06:59+08:00",
     "deleted_overview_paragraphs": 2,
     "capability_bullets": 6,
     "experience_years_in_header": true,
@@ -133,25 +137,25 @@
     "source_sections_matched": 4,
     "source_titles_matched": 4,
     "source_paragraphs_checked": 41,
-    "second_page_project_body_line_spacing_pt": 15,
+    "second_page_project_body_line_spacing_pt": 14.5,
     "first_page_projects": [
-      "domain-modeling",
-      "hateoas"
+      "monitoring-sdk",
+      "domain-modeling"
     ],
     "second_page_projects": [
       "aiflow",
-      "monitoring-sdk"
+      "hateoas"
     ],
     "all_projects_complete_on_assigned_page": true,
     "priority_topics": [
-      "业务理解与建模",
-      "AI 研发效能与 Agent Harness 建设"
+      "业务理解与 AI Coding 建模",
+      "AI Coding 工作流与 Agent Harness"
     ],
     "priority_topics_present": true,
     "removed_standalone_bullets_absent": true,
     "capability_order": [
-      "业务理解与建模",
-      "AI 研发效能与 Agent Harness 建设",
+      "业务理解与 AI Coding 建模",
+      "AI Coding 工作流与 Agent Harness",
       "React 与复杂前端",
       "资源契约与交互",
       "Node.js 与数据服务",
@@ -160,17 +164,53 @@
     "all_capability_labels_bold": true,
     "display_title": "全栈工程师",
     "project_role_labels_match": true,
-    "project_role_lines_updated": 3
+    "project_role_lines_updated": 3,
+    "business_modeling_summary_matches": true,
+    "ai_coding_modeling_relationship_matches": true,
+    "monitoring_sdk_stack_matches_source": true,
+    "react_bullet_condensed_without_technical_omissions": true,
+    "first_project_structure": [
+      "运营合约建模",
+      "AI Coding 交付输入",
+      "双层循环 Harness",
+      "桌面端增量建模"
+    ],
+    "first_project_structure_matches_markdown": true,
+    "first_project_ai_coding_context_present": true,
+    "project_company_labels_match": true,
+    "project_order_matches_markdown": true,
+    "company_role_lines_changed_in_this_revision": 1,
+    "ai_native_project_name_present": true,
+    "technology_agnostic_portability_present": true,
+    "old_ai_assisted_project_name_absent": true,
+    "first_page_capability_lines": 9,
+    "first_page_project_lines": 29,
+    "second_page_project_lines": 28,
+    "first_page_project_textbox_lines": 29,
+    "monitoring_project_structure": [
+      "SDK 与多框架适配",
+      "性能与异常采集",
+      "数据接收与异步处理",
+      "存储查询与性能结果"
+    ],
+    "monitoring_fullstack_frontend_positioning_matches": true
   },
-  "updated_at": "2026-10-21T20:53:49+08:00",
+  "updated_at": "2026-10-22T17:06:59+08:00",
   "display_title": {
     "text": "全栈工程师",
     "scope": "general_resume_package",
     "basis": "用户于 2026-10-21 明确要求简历岗位直接写全栈工程师。"
   },
   "project_role_labels": {
-    "hateoas": "高级前端专家",
+    "monitoring-sdk": "全栈工程师",
+    "domain-modeling": "全栈工程师",
     "aiflow": "高级前端专家",
-    "monitoring-sdk": "高级前端专家"
+    "hateoas": "高级前端专家"
+  },
+  "project_company_labels": {
+    "monitoring-sdk": "上海鼎歆",
+    "domain-modeling": "上海鼎歆",
+    "aiflow": "上海易校",
+    "hateoas": "上海易校"
   }
 }

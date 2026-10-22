@@ -5,9 +5,9 @@
 - [通用简历](resume.md)：岗位名称为「全栈工程师」；核心能力共 6 条，依次为业务理解与建模、AI 研发效能与 Agent Harness 建设、React 与复杂前端、资源契约与交互、Node.js 与数据服务、工程化与交付，统一采用「能力名称：具体动作」格式；四个项目的标题、技术栈、简介和成果条目均从对应项目介绍的「简历描述」逐字同步。
 - [求职招呼语完整提示词](../../templates/求职招呼语提示词.md)：按用户持续维护授权保存，嵌入本包最新 Markdown 简历全文，保留「角色 → input → rules → outputformat」结构；项目介绍、简历等素材变化后经事实审核同步，未确认内容不直接传播。配置与依赖检查由 Career Harness 维护，不影响各岗位包、Word 或历史副本。
 - [AI 编码工作流逐字稿](../../../content/Knowledge/Outputs/AI%20编码工作流：双层循环逐字稿.md)：纯口述正文，将双层循环、坏味道及对应处理动作串成一段完整回答。
-- [通用简历 Word 版](钟杰-全栈工程师.docx)：保留模板样式与两页排版；第一页完整展示 AI 建模和 HATEOAS 项目，第二页展示低代码、监控 SDK、工作经历与教育背景，正文与 Markdown 一致。
+- [通用简历 Word 版](钟杰-全栈工程师.docx)：保留模板样式与两页排版；第一页完整展示监控 SDK 与 AI 建模项目，第二页展示低代码、HATEOAS、工作经历与教育背景，正文与 Markdown 一致。
 - [通用简历 PDF 版](钟杰-全栈工程师.pdf)：从最新 Word 导出，已核对两页正文与排版。
-- [通用自我介绍](self-introduction.md)：保留上一版，尚未同步本轮项目名称与编码工作流表述。
+- [通用自我介绍](self-introduction.md)：按监控、建模、低代码、HATEOAS 的顺序同步项目归属与全栈主线。
 
 交付规则：生成或更新通用 Word 简历后，同步从通过检查的 Word 导出同目录、同名 PDF；正文与排版检查通过后一起交付。
 
@@ -21,10 +21,10 @@
 
 | 职业经历编号 | 简历项目 | 项目介绍文件 |
 |---|---|---|
-| 1 | AI 辅助领域建模与 API 设计平台 | `content/Knowledge/Outputs/项目介绍：AI 辅助领域建模与 API 设计平台.md` |
-| 2 | HATEOAS 资源契约与 TypeScript SDK 开发 | `content/Knowledge/Outputs/项目介绍：HATEOAS.md` |
+| 1 | 企业级前端监控 SDK 与数据采集系统 | `content/Knowledge/Outputs/项目介绍：前端埋点与监控 SDK.md` |
+| 2 | AI 原生领域建模与 API 设计平台 | `content/Knowledge/Outputs/项目介绍：AI 原生领域建模与 API 设计平台.md` |
 | 3 | 企业级低代码工作流引擎全栈开发 / 架构设计 | `content/Knowledge/Outputs/项目介绍：企业级低代码工作流引擎.md` |
-| 4 | 企业级前端监控 SDK 与数据采集系统 | `content/Knowledge/Outputs/项目介绍：前端埋点与监控 SDK.md` |
+| 4 | HATEOAS 资源契约与 TypeScript SDK 开发 | `content/Knowledge/Outputs/项目介绍：HATEOAS.md` |
 
 ## 历史记录：2026-10-21 技术栈同步
 

@@ -33,6 +33,7 @@
     "career.capability.progressive-architecture",
     "career.capability.upstream-contracts",
     "career.capability.validation-feedback",
+    "career.ai-development.modeling-inputs",
     "career.education.bachelor-computing",
     "career.engineering.github-actions-ci",
     "career.engineering.nx-react-multistage-docker",
@@ -103,11 +104,36 @@
     "monitoring-sdk.sourcemap",
     "timeline.shanghai-dingxin",
     "timeline.shanghai-wuwulaike",
-    "timeline.shanghai-yixiao"
+    "timeline.shanghai-yixiao",
+    "monitoring-sdk.company-affiliation",
+    "domain-modeling.company-affiliation",
+    "domain-modeling.technology-agnostic-portability"
   ],
   "status": "stale",
-  "stale_reason": "按用户要求清理旧 AI 研发专题及职业经历中的两处对应内容，其余既有正文保留。教育信息仍保留人工稿的工学学士，账本仅确认到学士学位；待单独核对学位类别后再将全文设为 current。",
-  "artifact_sha256": "36f5ec1be954f6b632053c09c9446a3dd4c7b2cf62fe1279eb9f8116da9b381c",
-  "claims_sha256": "a461acd4f7872d24730d69f5d890ca882b0918e1f78dd63e7c758bab1de3d103",
-  "updated_at": "2026-10-21T08:20:09+08:00"
+  "stale_reason": "项目名称、技术无关可迁移性、项目顺序与公司归属已按 2026-10-22 用户确认同步；教育信息仍保留人工稿的工学学士，账本仅确认到学士学位，待单独核对学位类别后再将全文设为 current。",
+  "artifact_sha256": "590b6f46941e5b5ac5ba1aa388c6098736f1efd67e2f4ac856c70c3719c33d95",
+  "claims_sha256": "d57dad9c41e66f44deffe0f6f0875132ac6333b6fcd51dbec34c3b210b265668",
+  "updated_at": "2026-10-22T17:06:59+08:00",
+  "project_order": [
+    "monitoring-sdk",
+    "domain-modeling",
+    "aiflow",
+    "hateoas"
+  ],
+  "project_company_labels": {
+    "monitoring-sdk": "上海鼎歆",
+    "domain-modeling": "上海鼎歆",
+    "aiflow": "上海易校",
+    "hateoas": "上海易校"
+  },
+  "project_order_decision": {
+    "authorized_at": "2026-10-22T17:06:59+08:00",
+    "basis": "用户要求职业经历文件顺序同步调整；核对正文后确认已为监控系统、AI 原生领域建模、低代码工作流、HATEOAS，保持该顺序。",
+    "project_order": [
+      "monitoring-sdk",
+      "domain-modeling",
+      "aiflow",
+      "hateoas"
+    ]
+  }
 }

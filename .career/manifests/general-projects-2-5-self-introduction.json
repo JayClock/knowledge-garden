@@ -66,31 +66,44 @@
     "monitoring-sdk.platform-boundary",
     "monitoring-sdk.platform-coverage",
     "monitoring-sdk.response-performance-improvement",
-    "monitoring-sdk.technical-stack"
+    "monitoring-sdk.technical-stack",
+    "monitoring-sdk.company-affiliation",
+    "domain-modeling.company-affiliation",
+    "domain-modeling.technology-agnostic-portability"
   ],
-  "status": "stale",
-  "stale_reason": "配对 Markdown 简历已更新项目名称及 AI 编码流程；本轮未要求重写自我介绍，保留原文待同步。",
-  "marked_stale_at": "2026-10-20T22:09:20+08:00",
+  "status": "current",
   "package_id": "general-projects-2-5",
   "scope": "general_resume_package",
   "project_order": [
+    "monitoring-sdk",
     "domain-modeling",
-    "hateoas",
     "aiflow",
-    "monitoring-sdk"
+    "hateoas"
   ],
-  "claims_sha256": "0f416a9a9ccece95e675c5e4215a0482741daaec5eb7d50897db3bfd1bdffaeb",
+  "claims_sha256": "af78c7e97fc7b4d512bc23273073f2d81bb25c80d44b91e6cad1eebc4a9d96bd",
   "created_at": "2026-10-19T22:42:15+08:00",
   "artifact": ".career/packages/general-projects-2-5/self-introduction.md",
   "artifact_type": "self_introduction",
-  "artifact_sha256": "e546c0858fd217e0f25f6b27251742a7c09c2124bd091131ac8acc7abc6f0d6f",
+  "artifact_sha256": "ac71e6e3fc2ebb6782fe251c424f8236b01bed9bed3c7d6e6d96094c90a600d1",
   "paired_resume": ".career/packages/general-projects-2-5/resume.md",
   "oral_section": "90～120 秒版本",
-  "non_whitespace_characters": 525,
+  "non_whitespace_characters": 556,
   "estimated_seconds": {
-    "fast": 98.4,
-    "slow": 112.5
+    "fast": 104.3,
+    "slow": 119.1
   },
   "duration_basis": "character_count_estimate",
-  "updated_at": "2026-10-21T08:20:09+08:00"
+  "updated_at": "2026-10-22T16:53:21+08:00",
+  "project_company_labels": {
+    "monitoring-sdk": "上海鼎歆",
+    "domain-modeling": "上海鼎歆",
+    "aiflow": "上海易校",
+    "hateoas": "上海易校"
+  },
+  "project_role_labels": {
+    "monitoring-sdk": "全栈工程师",
+    "domain-modeling": "全栈工程师",
+    "aiflow": "高级前端专家",
+    "hateoas": "高级前端专家"
+  }
 }

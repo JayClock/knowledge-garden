@@ -42,15 +42,15 @@
       "authorization": "用户于 2026-10-21 明确要求 Word 生成后导出为 PDF；后续生成或更新通用 Word 简历时同步导出同名 PDF，并核对正文和排版。",
       "page_project_order": [
         [
-          "domain-modeling",
-          "hateoas"
+          "monitoring-sdk",
+          "domain-modeling"
         ],
         [
           "aiflow",
-          "monitoring-sdk"
+          "hateoas"
         ]
       ],
-      "pagination_authorization": "2026-10-21 用户要求第一个项目与第二个项目均完整展示在第一页；项目正文继续按项目介绍逐字同步。",
+      "pagination_authorization": "2026-10-22 用户明确指定通用简历顺序为监控埋点、建模与 API 设计平台、低代码工作流、HATEOAS；前两个项目完整展示在第一页。",
       "position_title": "全栈工程师",
       "position_title_authorization": "用户于 2026-10-21 明确要求简历岗位直接写全栈工程师。"
     },
@@ -77,20 +77,27 @@
       "verification": "compare_all_four_source_titles_and_list_bodies; validate_docx_pdf_text_and_layout",
       "authorization": "用户于 2026-10-21 明确要求简历项目描述从各项目介绍文件复制和同步；先审核对应「简历描述」的已确认事实，再原样同步，文案调整在项目介绍中维护。",
       "project_role_labels": {
-        "hateoas": "高级前端专家",
+        "monitoring-sdk": "全栈工程师",
+        "domain-modeling": "全栈工程师",
         "aiflow": "高级前端专家",
-        "monitoring-sdk": "高级前端专家"
+        "hateoas": "高级前端专家"
       },
-      "project_role_authorization": "用户于 2026-10-21 明确 HATEOAS、低代码工作流、前端监控 SDK 三个项目的职位均写高级前端专家。"
+      "project_role_authorization": "2026-10-22 用户明确监控埋点与建模平台归属上海鼎歆；岗位按对应任职时间线使用全栈工程师。低代码工作流与 HATEOAS 保留上海易校、高级前端专家。",
+      "project_company_labels": {
+        "monitoring-sdk": "上海鼎歆",
+        "domain-modeling": "上海鼎歆",
+        "aiflow": "上海易校",
+        "hateoas": "上海易校"
+      }
     },
     "capability_summary": {
       "scope": "general_resume_package",
       "style": "six_labeled_action_based_bullets",
       "bullet_count": 6,
-      "authorization": "2026-10-21 用户确认六项核心能力结构：业务建模、AI 研发流程、前端、资源契约、后端、工程交付；统一能力名称与具体动作写法，合并重复的年限与定位条目，保留第一页前两个完整项目。",
+      "authorization": "2026-10-22 用户明确将第一项核心能力定为业务理解与 AI Coding 建模，并要求体现业务语义与契约不绑定具体语言、框架、可迁移到不同技术栈；保留六项结构与前两项优先顺序。",
       "priority_topics": [
-        "业务理解与建模",
-        "AI 研发效能与 Agent Harness 建设"
+        "业务理解与 AI Coding 建模",
+        "AI Coding 工作流与 Agent Harness"
       ],
       "priority_placement": "first_two_bullets_with_bold_labels",
       "condensation_rule": "保留业务建模与 AI 研发流程的具体动作和产出，排版压缩时优先精简其余条目。",
@@ -99,14 +106,15 @@
         "通过测试、人工审核、日志与监控形成验证反馈，推进契约驱动交付。"
       ],
       "capability_order": [
-        "业务理解与建模",
-        "AI 研发效能与 Agent Harness 建设",
+        "业务理解与 AI Coding 建模",
+        "AI Coding 工作流与 Agent Harness",
         "React 与复杂前端",
         "资源契约与交互",
         "Node.js 与数据服务",
         "工程化与交付"
       ],
-      "all_labels_bold": true
+      "all_labels_bold": true,
+      "technology_independence": "业务模型、RESTful API 与测试数据承载业务语义和验证依据，剥离语言与框架细节，为不同技术栈的 AI Coding 提供可迁移输入。"
     }
   }
 }
